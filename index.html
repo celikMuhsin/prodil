@@ -94,10 +94,29 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <button class="text-gray-600 hover:text-gray-900 focus:outline-none" onclick="toggleMobileMenu()">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-20 shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#home"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50"
+                    onclick="toggleMobileMenu()">Anasayfa</a>
+                <a href="#about"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50"
+                    onclick="toggleMobileMenu()">Kurumsal</a>
+                <a href="#features"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50"
+                    onclick="toggleMobileMenu()">Özellikler</a>
+                <a href="#contact"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50"
+                    onclick="toggleMobileMenu()">İletişim</a>
             </div>
         </div>
     </header>
@@ -111,25 +130,25 @@
 
             <!-- Logo in White Container for Clarity -->
             <div
-                class="inline-block bg-white backdrop-blur-sm rounded-2xl p-6 mb-8 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src="assets/logo.png" alt="Prodil Logo" class="h-16 md:h-20 w-auto">
+                class="inline-block bg-white backdrop-blur-sm rounded-2xl p-4 mb-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src="assets/logo.png" alt="Prodil Logo" class="h-10 md:h-12 w-auto">
             </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
                 Sakarya'nın Dil Eğitimindeki <br>
                 <span class="text-accent-500">Profesyonel Yüzü</span>
             </h1>
-            <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+            <p class="mt-4 text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-8 font-light leading-relaxed">
                 YKS'de üstün başarı için; üniversite adaylarına özel geliştirdiğimiz <strong
                     class="text-white font-medium">TYT ve YDT sınav teknikleri</strong> ve stratejik eğitim modelimizle
                 hedeflerinize emin adımlarla ilerleyin.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#contact"
-                    class="bg-accent-500 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-accent-600 transition-colors shadow-lg">
+                    class="bg-accent-500 text-white px-6 py-3 rounded-lg text-base font-bold hover:bg-accent-600 transition-colors shadow-lg">
                     Hemen Başla
                 </a>
                 <a href="#features"
-                    class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors">
+                    class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-lg text-base font-semibold hover:bg-white/20 transition-colors">
                     Daha Fazla Bilgi
                 </a>
             </div>
@@ -153,12 +172,12 @@
 
                 <!-- Content Side -->
                 <div class="w-full lg:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6 leading-tight">
                         Sakarya'da Geleceğin <br>
                         <span class="text-primary-900">Dil Uzmanlarının</span> İlk Tercihi
                     </h2>
 
-                    <div class="space-y-6 text-lg text-gray-600">
+                    <div class="space-y-6 text-base text-gray-600">
                         <p>
                             YKS-YDT (Yabancı Dil Testi) maratonunda hedefiniz <strong class="text-primary-900">İngilizce
                                 Öğretmenliği</strong>, <strong class="text-primary-900">İngiliz Dili ve
@@ -192,10 +211,10 @@
     <section id="features" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="mt-2 text-3xl leading-8 font-extrabold text-gray-900 sm:text-4xl">
+                <h2 class="mt-2 text-2xl leading-8 font-extrabold text-gray-900 sm:text-3xl">
                     Neden Prodil?
                 </h2>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                <p class="mt-4 max-w-2xl text-lg text-gray-500 mx-auto">
                     Dil öğreniminde sizi başarıya götürecek standartlarımız.
                 </p>
             </div>
@@ -207,7 +226,7 @@
                     <div class="w-16 h-16 bg-primary-900 rounded-xl flex items-center justify-center mb-6 shadow-lg">
                         <i class="fa-solid fa-chalkboard-user text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Tecrübeli Eğitmen Kadrosu</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">Tecrübeli Eğitmen Kadrosu</h3>
                     <p class="text-gray-600 leading-relaxed">
                         Alanında uzman, formasyon sahibi ve deneyimli öğretmenlerimizle dil öğrenim süreci artık çok
                         daha etkili.
@@ -220,7 +239,7 @@
                     <div class="w-16 h-16 bg-accent-500 rounded-xl flex items-center justify-center mb-6 shadow-lg">
                         <i class="fa-solid fa-laptop-file text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Modern Öğrenme Metotları</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">Modern Öğrenme Metotları</h3>
                     <p class="text-gray-600 leading-relaxed">
                         Teknoloji destekli sınıflar ve güncel materyaller ile çağı yakalayan interaktif bir eğitim
                         deneyimi.
@@ -233,7 +252,7 @@
                     <div class="w-16 h-16 bg-primary-900 rounded-xl flex items-center justify-center mb-6 shadow-lg">
                         <i class="fa-solid fa-pen-to-square text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">İleri Sınav Teknikleri</h3>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">İleri Sınav Teknikleri</h3>
                     <p class="text-gray-600 leading-relaxed">
                         Soru kökü analizi, çeldirici eleme yöntemleri ve zaman yönetimi stratejileri ile YKS-YDT'de
                         maksimum net hedefleyen taktiksel yaklaşım.
@@ -276,38 +295,37 @@
     </div>
 
     <!-- Contact & Location Section -->
-    <section id="contact" class="py-24 bg-gray-50">
+    <section id="contact" class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Bize Ulaşın</h2>
-                <p class="mt-4 text-xl text-gray-500">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">Bize Ulaşın</h2>
+                <p class="mt-2 text-sm text-gray-500">
                     Bizimle iletişime geçin veya kurumumuzu ziyaret edin.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
                 <!-- Info Side -->
-                <div class="space-y-8">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                         <!-- Mobile Phone Card -->
                         <div
-                            class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-row md:flex-col items-center md:text-center gap-3 md:gap-3 hover:shadow-md transition-shadow group h-full">
-                            <div class="flex flex-row md:flex-col items-center gap-3 md:gap-2 flex-shrink-0">
+                            class="bg-white p-3 md:p-4 rounded-xl shadow-sm border border-gray-100 flex flex-row md:flex-col items-center md:text-center gap-2 md:gap-2 hover:shadow-md transition-shadow group h-full">
+                            <div class="flex flex-row md:flex-col items-center gap-2 md:gap-1 flex-shrink-0">
                                 <div class="flex-shrink-0">
-                                    <i
-                                        class="fa-solid fa-mobile-screen-button text-accent-500 text-2xl md:text-3xl"></i>
+                                    <i class="fa-solid fa-mobile-screen-button text-accent-500 text-xl md:text-2xl"></i>
                                 </div>
-                                <h4 class="text-base font-semibold text-gray-900">Cep</h4>
+                                <h4 class="text-sm font-semibold text-gray-900">Cep</h4>
                             </div>
                             <div class="flex-grow md:w-full md:mt-auto">
                                 <a href="tel:05304309001"
-                                    class="group flex flex-row md:flex-col items-center justify-between md:justify-center gap-2 w-full h-full">
+                                    class="group flex flex-row md:flex-col items-center justify-between md:justify-center gap-1 w-full h-full">
                                     <span
-                                        class="text-sm md:text-base font-bold text-gray-900 group-hover:text-accent-600 whitespace-nowrap">0
+                                        class="text-xs md:text-sm font-bold text-gray-900 group-hover:text-accent-600 whitespace-nowrap">0
                                         (530) 430 90 01</span>
                                     <span
-                                        class="inline-flex items-center gap-1.5 bg-accent-50 text-accent-600 text-[11px] font-bold px-3 py-1.5 rounded-full border border-accent-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm flex-shrink-0">
-                                        Ara <i class="fa-solid fa-phone text-[9px]"></i>
+                                        class="inline-flex items-center gap-1 bg-accent-50 text-accent-600 text-[10px] font-bold px-2 py-1 rounded-full border border-accent-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm flex-shrink-0">
+                                        Ara <i class="fa-solid fa-phone text-[8px]"></i>
                                     </span>
                                 </a>
                             </div>
@@ -315,22 +333,22 @@
 
                         <!-- Landline Phone Card -->
                         <div
-                            class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-row md:flex-col items-center md:text-center gap-3 md:gap-3 hover:shadow-md transition-shadow group h-full">
-                            <div class="flex flex-row md:flex-col items-center gap-3 md:gap-2 flex-shrink-0">
+                            class="bg-white p-3 md:p-4 rounded-xl shadow-sm border border-gray-100 flex flex-row md:flex-col items-center md:text-center gap-2 md:gap-2 hover:shadow-md transition-shadow group h-full">
+                            <div class="flex flex-row md:flex-col items-center gap-2 md:gap-1 flex-shrink-0">
                                 <div class="flex-shrink-0">
-                                    <i class="fa-solid fa-phone text-gray-400 text-2xl md:text-3xl"></i>
+                                    <i class="fa-solid fa-phone text-gray-400 text-xl md:text-2xl"></i>
                                 </div>
-                                <h4 class="text-base font-semibold text-gray-900">Sabit</h4>
+                                <h4 class="text-sm font-semibold text-gray-900">Sabit</h4>
                             </div>
                             <div class="flex-grow md:w-full md:mt-auto">
                                 <a href="tel:02642818177"
-                                    class="group flex flex-row md:flex-col items-center justify-between md:justify-center gap-2 w-full h-full">
+                                    class="group flex flex-row md:flex-col items-center justify-between md:justify-center gap-1 w-full h-full">
                                     <span
-                                        class="text-sm md:text-base font-bold text-gray-900 group-hover:text-accent-600 whitespace-nowrap">0
+                                        class="text-xs md:text-sm font-bold text-gray-900 group-hover:text-accent-600 whitespace-nowrap">0
                                         (264) 281 81 77</span>
                                     <span
-                                        class="inline-flex items-center gap-1.5 bg-gray-50 text-gray-500 text-[11px] font-bold px-3 py-1.5 rounded-full border border-gray-100 transition-all group-hover:bg-accent-50 group-hover:text-accent-600 group-hover:border-accent-100 shadow-sm flex-shrink-0">
-                                        Ara <i class="fa-solid fa-phone text-[9px]"></i>
+                                        class="inline-flex items-center gap-1 bg-gray-50 text-gray-500 text-[10px] font-bold px-2 py-1 rounded-full border border-gray-100 transition-all group-hover:bg-accent-50 group-hover:text-accent-600 group-hover:border-accent-100 shadow-sm flex-shrink-0">
+                                        Ara <i class="fa-solid fa-phone text-[8px]"></i>
                                     </span>
                                 </a>
                             </div>
@@ -338,26 +356,26 @@
 
                         <!-- WhatsApp Card -->
                         <div onclick="openWhatsappModal()"
-                            class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100 flex flex-row md:flex-col items-center md:text-center gap-3 md:gap-3 cursor-pointer hover:shadow-md transition-shadow group relative overflow-hidden bg-green-50/50 border-green-100 h-full">
+                            class="bg-white p-3 md:p-4 rounded-xl shadow-sm border border-gray-100 flex flex-row md:flex-col items-center md:text-center gap-2 md:gap-2 cursor-pointer hover:shadow-md transition-shadow group relative overflow-hidden bg-green-50/50 border-green-100 h-full">
                             <div
-                                class="absolute right-0 top-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
-                                <i class="fa-brands fa-whatsapp text-green-500"></i>
+                                class="absolute right-0 top-0 p-1 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
+                                <i class="fa-brands fa-whatsapp text-green-500 text-sm"></i>
                             </div>
-                            <div class="flex flex-row md:flex-col items-center gap-3 md:gap-2 flex-shrink-0">
+                            <div class="flex flex-row md:flex-col items-center gap-2 md:gap-1 flex-shrink-0">
                                 <div class="flex-shrink-0">
                                     <i
-                                        class="fa-brands fa-whatsapp text-green-600 text-3xl md:text-4xl group-hover:scale-110 transition-transform"></i>
+                                        class="fa-brands fa-whatsapp text-green-600 text-2xl md:text-3xl group-hover:scale-110 transition-transform"></i>
                                 </div>
                                 <div class="text-left md:text-center">
-                                    <h4 class="text-base font-semibold text-gray-900">WhatsApp</h4>
-                                    <p class="text-green-600 text-xs md:text-sm font-medium hidden md:block">Hızlı
+                                    <h4 class="text-sm font-semibold text-gray-900">WhatsApp</h4>
+                                    <p class="text-green-600 text-[10px] md:text-xs font-medium hidden md:block">Hızlı
                                         İletişim</p>
                                 </div>
                             </div>
                             <div class="flex-grow flex justify-end md:w-full md:mt-auto md:justify-center">
                                 <button
-                                    class="inline-flex items-center justify-center gap-1.5 bg-white text-green-600 text-[11px] font-bold px-3 py-1.5 rounded-full border border-green-200 shadow-sm group-hover:bg-green-600 group-hover:text-white group-hover:border-green-600 transition-all duration-300 md:w-auto">
-                                    Mesaj Gönder <i class="fa-solid fa-paper-plane text-[9px]"></i>
+                                    class="inline-flex items-center justify-center gap-1 bg-white text-green-600 text-[10px] font-bold px-2 py-1 rounded-full border border-green-200 shadow-sm group-hover:bg-green-600 group-hover:text-white group-hover:border-green-600 transition-all duration-300 md:w-auto">
+                                    Mesaj <i class="fa-solid fa-paper-plane text-[8px]"></i>
                                 </button>
                             </div>
                         </div>
@@ -365,23 +383,23 @@
 
                     <!-- Email Card -->
                     <div onclick="openEmailModal()"
-                        class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between cursor-pointer hover:shadow-md transition-shadow group relative overflow-hidden">
-                        <div class="flex items-center space-x-4">
+                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between cursor-pointer hover:shadow-md transition-shadow group relative overflow-hidden">
+                        <div class="flex items-center space-x-3">
                             <div class="flex-shrink-0">
                                 <i
-                                    class="fa-solid fa-envelope text-accent-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                                    class="fa-solid fa-envelope text-accent-500 text-xl group-hover:scale-110 transition-transform"></i>
                             </div>
                             <div>
-                                <p class="text-gray-900 font-medium text-base">
+                                <p class="text-gray-900 font-medium text-sm">
                                     <span class="font-bold">E-posta :</span> sakaryaprodil@gmail.com
                                 </p>
                             </div>
                         </div>
-                        <div class="pr-2">
+                        <div class="pr-1">
                             <button
-                                class="inline-flex items-center gap-1.5 bg-gray-50 text-gray-600 text-[11px] font-bold px-3 py-1.5 rounded-full border border-gray-200 transition-all duration-300 group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
-                                <i class="fa-solid fa-pen text-[9px]"></i>
-                                <span>Bize Yazın</span>
+                                class="inline-flex items-center gap-1 bg-gray-50 text-gray-600 text-[10px] font-bold px-2 py-1 rounded-full border border-gray-200 transition-all duration-300 group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
+                                <i class="fa-solid fa-pen text-[8px]"></i>
+                                <span>Yaz</span>
                             </button>
                         </div>
                     </div>
@@ -389,54 +407,54 @@
                     <!-- Address Card -->
                     <a href="https://www.google.com/maps/place/Prodil+Dil+Merkezi/@40.776179,30.391038,19z/data=!4m6!3m5!1s0x14ccb39bd528f251:0x2fcba46058f611!8m2!3d40.776179!4d30.3910384!16s%2Fg%2F11xyj4ppvp?hl=tr&entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D"
                         target="_blank"
-                        class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between space-x-4 cursor-pointer hover:shadow-md transition-shadow group block">
-                        <div class="flex items-center space-x-4">
+                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between space-x-3 cursor-pointer hover:shadow-md transition-shadow group block">
+                        <div class="flex items-center space-x-3">
                             <div class="flex-shrink-0">
                                 <i
-                                    class="fa-solid fa-location-dot text-accent-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                                    class="fa-solid fa-location-dot text-accent-500 text-xl group-hover:scale-110 transition-transform"></i>
                             </div>
                             <div class="flex items-start">
-                                <span class="text-gray-900 text-base font-bold mr-2 mt-0.5">Adres :</span>
+                                <span class="text-gray-900 text-sm font-bold mr-1 mt-0.5">Adres :</span>
                                 <div class="flex flex-col items-end">
-                                    <span class="text-gray-900 text-base">Semerciler Mh., Çınar Sk., No:6,</span>
-                                    <span class="text-gray-600 text-sm">Adapazarı / SAKARYA</span>
+                                    <span class="text-gray-900 text-sm">Semerciler Mh., Çınar Sk., No:6,</span>
+                                    <span class="text-gray-600 text-xs">Adapazarı / SAKARYA</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex-shrink-0 pl-2">
+                        <div class="flex-shrink-0 pl-1">
                             <span
-                                class="inline-flex items-center gap-1.5 bg-accent-50 text-accent-600 text-[11px] font-bold px-3 py-1.5 rounded-full border border-accent-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
-                                Konum <i class="fa-solid fa-arrow-up-right-from-square text-[9px] ml-0.5"></i>
+                                class="inline-flex items-center gap-1 bg-accent-50 text-accent-600 text-[10px] font-bold px-2 py-1 rounded-full border border-accent-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
+                                Konum <i class="fa-solid fa-arrow-up-right-from-square text-[8px] ml-0.5"></i>
                             </span>
                         </div>
                     </a>
 
                     <!-- Social Media & QR Code -->
-                    <div class="pt-4 flex items-end justify-between">
+                    <div class="pt-2 flex items-end justify-between">
                         <div>
-                            <h4 class="text-lg font-semibold text-gray-900 mb-4">Bizi Takip Edin</h4>
-                            <div class="flex space-x-4">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-2">Bizi Takip Edin</h4>
+                            <div class="flex space-x-2">
                                 <a href="https://www.instagram.com/sakaryaprodil/" target="_blank"
-                                    class="w-10 h-10 rounded-full bg-primary-900 text-white flex items-center justify-center hover:bg-accent-500 transition-colors">
-                                    <i class="fa-brands fa-instagram"></i>
+                                    class="w-8 h-8 rounded-full bg-primary-900 text-white flex items-center justify-center hover:bg-accent-500 transition-colors">
+                                    <i class="fa-brands fa-instagram text-sm"></i>
                                 </a>
                                 <a href="https://www.facebook.com/Prodil" target="_blank"
-                                    class="w-10 h-10 rounded-full bg-primary-900 text-white flex items-center justify-center hover:bg-accent-500 transition-colors">
-                                    <i class="fa-brands fa-facebook-f"></i>
+                                    class="w-8 h-8 rounded-full bg-primary-900 text-white flex items-center justify-center hover:bg-accent-500 transition-colors">
+                                    <i class="fa-brands fa-facebook-f text-sm"></i>
                                 </a>
                             </div>
                         </div>
                         <!-- QR Codes -->
-                        <div class="flex gap-4">
+                        <div class="flex gap-2">
                             <!-- Instagram QR -->
                             <a href="https://www.instagram.com/sakaryaprodil/" target="_blank"
                                 class="block bg-white p-1 rounded-lg shadow-md border border-gray-200 transform hover:scale-105 transition-transform cursor-pointer">
-                                <img src="assets/qrcode.png" alt="Instagram QR" class="h-48 w-48 object-contain">
+                                <img src="assets/qrcode.png" alt="Instagram QR" class="h-24 w-24 object-contain">
                             </a>
                             <!-- Facebook QR -->
                             <a href="https://www.facebook.com/Prodil" target="_blank"
                                 class="block bg-white p-1 rounded-lg shadow-md border border-gray-200 transform hover:scale-105 transition-transform cursor-pointer">
-                                <img src="assets/qrcode_fb.png" alt="Facebook QR" class="h-48 w-48 object-contain">
+                                <img src="assets/qrcode_fb.png" alt="Facebook QR" class="h-24 w-24 object-contain">
                             </a>
                         </div>
                     </div>
@@ -444,7 +462,7 @@
 
                 <!-- Map Placeholder Side -->
                 <div
-                    class="h-full min-h-[400px] w-full bg-gray-200 rounded-2xl overflow-hidden shadow-lg relative border-4 border-white">
+                    class="h-full min-h-[300px] w-full bg-gray-200 rounded-2xl overflow-hidden shadow-lg relative border-4 border-white">
                     <!-- Google Maps Iframe -->
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d755.340046471469!2d30.39122!3d40.776095!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ccb39bd528f251%3A0x2fcba46058f611!2sProdil%20Dil%20Merkezi!5e0!3m2!1str!2str!4v1769666504245!5m2!1str!2str"
@@ -469,10 +487,10 @@
                 <!-- Brand -->
                 <div class="col-span-1 md:col-span-1">
                     <div class="flex items-center space-x-3 mb-6">
-                        <div class="h-10 w-10 bg-white rounded-lg flex items-center justify-center">
-                            <span class="text-primary-900 font-bold text-xl">P</span>
+                        <div class="h-8 w-8 bg-white rounded-lg flex items-center justify-center">
+                            <span class="text-primary-900 font-bold text-lg">P</span>
                         </div>
-                        <span class="text-2xl font-bold tracking-tight">PRODİL</span>
+                        <span class="text-xl font-bold tracking-tight">PRODİL</span>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Sakarya'nın en köklü dil okulu olarak, global standartlarda eğitim anlayışımızla geleceğinizi
@@ -482,7 +500,7 @@
 
                 <!-- Links -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Hızlı Erişim</h4>
+                    <h4 class="text-base font-semibold mb-6">Hızlı Erişim</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
                         <li><a href="#home" class="hover:text-white transition-colors">Anasayfa</a></li>
                         <li><a href="#about" class="hover:text-white transition-colors">Kurumsal</a></li>
@@ -493,7 +511,7 @@
 
                 <!-- Programs -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Programlar</h4>
+                    <h4 class="text-base font-semibold mb-6">Programlar</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
                         <li>Genel İngilizce</li>
                         <li>YKS-YDT Hazırlık</li>
@@ -505,7 +523,7 @@
 
                 <!-- Newsletter -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Öğrenci İşleri</h4>
+                    <h4 class="text-base font-semibold mb-6">Öğrenci İşleri</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
                         <li><a href="#" class="hover:text-white transition-colors">Sınav Sonuçları</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Öğrenci Bilgi Sistemi</a></li>
@@ -652,23 +670,60 @@
 
     <!-- Scripts -->
     <script>
-        // WhatsApp Logic
-        function openWhatsappModal() {
-            document.getElementById('whatsappModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+        // Mobile Menu Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         }
+
+        // WhatsApp Logic
+        // WhatsApp Modalını Aç
+        function openWhatsappModal() {
+            const modal = document.getElementById('whatsappModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Arka plan kaymasını engelle
+        }
+
+        // WhatsApp Modalını Kapat
         function closeWhatsappModal() {
-            document.getElementById('whatsappModal').classList.add('hidden');
+            const modal = document.getElementById('whatsappModal');
+            modal.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
+
+        // WhatsApp'a Gönder (DÜZELTİLEN KISIM BURASI)
         function sendWhatsapp() {
             const name = document.getElementById('ws-name').value;
             const body = document.getElementById('ws-body').value;
-            if (!name || !body) { alert("Lütfen alanları doldurunuz."); return; }
-            const msg = `*Merhaba Prodil, Ben ${name}.*\n\n*Mesaj:* ${body}`;
-            window.open(`https://wa.me/905304309001?text=${encodeURIComponent(msg)}`, '_blank');
-            setTimeout(closeWhatsappModal, 1000);
+
+            // HATA VEREN YERİ DÜZELTTİK: (Sadece rakam, boşluksuz, artısız)
+            const phoneNumber = "905304309001";
+
+            if (!body) {
+                alert('Lütfen bir mesaj yazınız.');
+                return;
+            }
+
+            const message = `Merhaba, ben ${name}. ${body}`;
+            const encodedMessage = encodeURIComponent(message);
+
+            // Hem mobil uygulama hem web için güvenli link yapısı
+            const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            window.open(url, '_blank');
+            closeWhatsappModal();
         }
+
+        // Modal dışına tıklayınca kapatma
+        window.onclick = function (event) {
+            const modal = document.getElementById('whatsappModal');
+            if (event.target == modal) {
+                closeWhatsappModal();
+            }
+        }
+
+
+
 
         // Email Logic
         function openEmailModal() {
