@@ -47,6 +47,8 @@
         /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+            /* Header yüksekliği (80px) + 20px boşluk */
         }
 
         /* Gradient Overlay for Hero */
@@ -128,20 +130,23 @@
             <img src="assets/globe.png" alt="Global Education"
                 class="h-32 md:h-40 mx-auto mb-6 drop-shadow-2xl animate-pulse">
 
-            <!-- Logo in White Container for Clarity -->
+            <!-- Logo in White Container -->
             <div
-                class="inline-block bg-white backdrop-blur-sm rounded-2xl p-4 mb-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src="assets/logo.png" alt="Prodil Logo" class="h-10 md:h-12 w-auto">
+                class="inline-block bg-white backdrop-blur-sm rounded-2xl p-3 mb-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src="assets/logo.png" alt="Prodil Logo" class="h-8 md:h-10 w-auto">
             </div>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+
+            <h1 class="text-2xl md:text-4xl font-extrabold text-white mb-4 leading-tight tracking-tight">
                 Sakarya'nın Dil Eğitimindeki <br>
                 <span class="text-accent-500">Profesyonel Yüzü</span>
             </h1>
-            <p class="mt-4 text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-8 font-light leading-relaxed">
+
+            <p class="mt-4 text-sm md:text-base text-gray-300 max-w-2xl mx-auto mb-6 font-light leading-relaxed">
                 YKS'de üstün başarı için; üniversite adaylarına özel geliştirdiğimiz <strong
                     class="text-white font-medium">TYT ve YDT sınav teknikleri</strong> ve stratejik eğitim modelimizle
                 hedeflerinize emin adımlarla ilerleyin.
             </p>
+
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#contact"
                     class="bg-accent-500 text-white px-6 py-3 rounded-lg text-base font-bold hover:bg-accent-600 transition-colors shadow-lg">
@@ -219,15 +224,15 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Feature 1 -->
                 <div
-                    class="bg-gray-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100">
-                    <div class="w-16 h-16 bg-primary-900 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                        <i class="fa-solid fa-chalkboard-user text-white text-2xl"></i>
+                    class="bg-gray-50 rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100">
+                    <div class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                        <i class="fa-solid fa-chalkboard-user text-white text-lg"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-3">Tecrübeli Eğitmen Kadrosu</h3>
-                    <p class="text-gray-600 leading-relaxed">
+                    <h3 class="text-base font-bold text-gray-900 mb-2">Tecrübeli Eğitmen Kadrosu</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
                         Alanında uzman, formasyon sahibi ve deneyimli öğretmenlerimizle dil öğrenim süreci artık çok
                         daha etkili.
                     </p>
@@ -235,12 +240,12 @@
 
                 <!-- Feature 2 -->
                 <div
-                    class="bg-gray-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100">
-                    <div class="w-16 h-16 bg-accent-500 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                        <i class="fa-solid fa-laptop-file text-white text-2xl"></i>
+                    class="bg-gray-50 rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100">
+                    <div class="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                        <i class="fa-solid fa-laptop-file text-white text-lg"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-3">Modern Öğrenme Metotları</h3>
-                    <p class="text-gray-600 leading-relaxed">
+                    <h3 class="text-base font-bold text-gray-900 mb-2">Modern Öğrenme Metotları</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
                         Teknoloji destekli sınıflar ve güncel materyaller ile çağı yakalayan interaktif bir eğitim
                         deneyimi.
                     </p>
@@ -248,12 +253,12 @@
 
                 <!-- Feature 3 -->
                 <div
-                    class="bg-gray-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100">
-                    <div class="w-16 h-16 bg-primary-900 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                        <i class="fa-solid fa-pen-to-square text-white text-2xl"></i>
+                    class="bg-gray-50 rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100">
+                    <div class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                        <i class="fa-solid fa-pen-to-square text-white text-lg"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-3">İleri Sınav Teknikleri</h3>
-                    <p class="text-gray-600 leading-relaxed">
+                    <h3 class="text-base font-bold text-gray-900 mb-2">İleri Sınav Teknikleri</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
                         Soru kökü analizi, çeldirici eleme yöntemleri ve zaman yönetimi stratejileri ile YKS-YDT'de
                         maksimum net hedefleyen taktiksel yaklaşım.
                     </p>
@@ -300,106 +305,95 @@
             <div class="text-center mb-8">
                 <h2 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">Bize Ulaşın</h2>
                 <p class="mt-2 text-sm text-gray-500">
-                    Bizimle iletişime geçin veya kurumumuzu ziyaret edin.
+                    İletişime geçin veya kurumumuzu ziyaret edin.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
                 <!-- Info Side -->
                 <div class="space-y-4">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <!-- Mobile Phone Card -->
-                        <div
-                            class="bg-white p-3 md:p-4 rounded-xl shadow-sm border border-gray-100 flex flex-row md:flex-col items-center md:text-center gap-2 md:gap-2 hover:shadow-md transition-shadow group h-full">
-                            <div class="flex flex-row md:flex-col items-center gap-2 md:gap-1 flex-shrink-0">
-                                <div class="flex-shrink-0">
-                                    <i class="fa-solid fa-mobile-screen-button text-accent-500 text-xl md:text-2xl"></i>
-                                </div>
-                                <h4 class="text-sm font-semibold text-gray-900">Cep</h4>
+                    <!-- Mobile Phone Card -->
+                    <div
+                        class="bg-white p-2 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between gap-2 hover:shadow-md transition-shadow group">
+                        <div class="flex items-center gap-2 w-full">
+                            <div class="w-10 flex-shrink-0 flex justify-center">
+                                <i
+                                    class="fa-solid fa-mobile-screen-button text-accent-500 text-2xl group-hover:scale-110 transition-transform"></i>
                             </div>
-                            <div class="flex-grow md:w-full md:mt-auto">
-                                <a href="tel:05304309001"
-                                    class="group flex flex-row md:flex-col items-center justify-between md:justify-center gap-1 w-full h-full">
-                                    <span
-                                        class="text-xs md:text-sm font-bold text-gray-900 group-hover:text-accent-600 whitespace-nowrap">0
-                                        (530) 430 90 01</span>
-                                    <span
-                                        class="inline-flex items-center gap-1 bg-accent-50 text-accent-600 text-[10px] font-bold px-2 py-1 rounded-full border border-accent-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm flex-shrink-0">
-                                        Ara <i class="fa-solid fa-phone text-[8px]"></i>
-                                    </span>
+                            <div class="flex-grow">
+                                <a href="tel:05304039001"
+                                    class="text-gray-900 font-bold text-sm block hover:text-accent-600 transition-colors">
+                                    0 (530) 403 90 01
                                 </a>
                             </div>
                         </div>
+                        <div class="flex-shrink-0">
+                            <span
+                                class="inline-flex items-center gap-1 bg-accent-50 text-accent-600 text-[10px] font-bold px-2 py-1 rounded-full border border-accent-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
+                                Ara <i class="fa-solid fa-phone text-[8px]"></i>
+                            </span>
+                        </div>
+                    </div>
 
-                        <!-- Landline Phone Card -->
-                        <div
-                            class="bg-white p-3 md:p-4 rounded-xl shadow-sm border border-gray-100 flex flex-row md:flex-col items-center md:text-center gap-2 md:gap-2 hover:shadow-md transition-shadow group h-full">
-                            <div class="flex flex-row md:flex-col items-center gap-2 md:gap-1 flex-shrink-0">
-                                <div class="flex-shrink-0">
-                                    <i class="fa-solid fa-phone text-gray-400 text-xl md:text-2xl"></i>
-                                </div>
-                                <h4 class="text-sm font-semibold text-gray-900">Sabit</h4>
+                    <!-- Landline Phone Card -->
+                    <div
+                        class="bg-white p-2 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between gap-2 hover:shadow-md transition-shadow group">
+                        <div class="flex items-center gap-2 w-full">
+                            <div class="w-10 flex-shrink-0 flex justify-center">
+                                <i
+                                    class="fa-solid fa-phone text-gray-400 text-2xl group-hover:scale-110 transition-transform"></i>
                             </div>
-                            <div class="flex-grow md:w-full md:mt-auto">
+                            <div class="flex-grow">
                                 <a href="tel:02642818177"
-                                    class="group flex flex-row md:flex-col items-center justify-between md:justify-center gap-1 w-full h-full">
-                                    <span
-                                        class="text-xs md:text-sm font-bold text-gray-900 group-hover:text-accent-600 whitespace-nowrap">0
-                                        (264) 281 81 77</span>
-                                    <span
-                                        class="inline-flex items-center gap-1 bg-gray-50 text-gray-500 text-[10px] font-bold px-2 py-1 rounded-full border border-gray-100 transition-all group-hover:bg-accent-50 group-hover:text-accent-600 group-hover:border-accent-100 shadow-sm flex-shrink-0">
-                                        Ara <i class="fa-solid fa-phone text-[8px]"></i>
-                                    </span>
+                                    class="text-gray-900 font-bold text-sm block hover:text-accent-600 transition-colors">
+                                    0 (264) 281 81 77
                                 </a>
                             </div>
                         </div>
+                        <div class="flex-shrink-0">
+                            <span
+                                class="inline-flex items-center gap-1 bg-gray-50 text-gray-500 text-[10px] font-bold px-2 py-1 rounded-full border border-gray-100 transition-all group-hover:bg-accent-50 group-hover:text-accent-600 group-hover:border-accent-100 shadow-sm">
+                                Ara <i class="fa-solid fa-phone text-[8px]"></i>
+                            </span>
+                        </div>
+                    </div>
 
-                        <!-- WhatsApp Card -->
-                        <div onclick="openWhatsappModal()"
-                            class="bg-white p-3 md:p-4 rounded-xl shadow-sm border border-gray-100 flex flex-row md:flex-col items-center md:text-center gap-2 md:gap-2 cursor-pointer hover:shadow-md transition-shadow group relative overflow-hidden bg-green-50/50 border-green-100 h-full">
-                            <div
-                                class="absolute right-0 top-0 p-1 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">
-                                <i class="fa-brands fa-whatsapp text-green-500 text-sm"></i>
+                    <!-- WhatsApp Card -->
+                    <div onclick="openWhatsappModal()"
+                        class="bg-white p-2 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between gap-2 cursor-pointer hover:shadow-md transition-shadow group relative overflow-hidden bg-green-50/30 border-green-100/50">
+                        <div class="flex items-center gap-2 w-full">
+                            <div class="w-10 flex-shrink-0 flex justify-center">
+                                <i
+                                    class="fa-brands fa-whatsapp text-green-600 text-3xl group-hover:scale-110 transition-transform"></i>
                             </div>
-                            <div class="flex flex-row md:flex-col items-center gap-2 md:gap-1 flex-shrink-0">
-                                <div class="flex-shrink-0">
-                                    <i
-                                        class="fa-brands fa-whatsapp text-green-600 text-2xl md:text-3xl group-hover:scale-110 transition-transform"></i>
-                                </div>
-                                <div class="text-left md:text-center">
-                                    <h4 class="text-sm font-semibold text-gray-900">WhatsApp</h4>
-                                    <p class="text-green-600 text-[10px] md:text-xs font-medium hidden md:block">Hızlı
-                                        İletişim</p>
-                                </div>
+                            <div class="flex-grow">
+                                <span class="text-gray-900 font-bold text-sm block">WhatsApp</span>
                             </div>
-                            <div class="flex-grow flex justify-end md:w-full md:mt-auto md:justify-center">
-                                <button
-                                    class="inline-flex items-center justify-center gap-1 bg-white text-green-600 text-[10px] font-bold px-2 py-1 rounded-full border border-green-200 shadow-sm group-hover:bg-green-600 group-hover:text-white group-hover:border-green-600 transition-all duration-300 md:w-auto">
-                                    Mesaj <i class="fa-solid fa-paper-plane text-[8px]"></i>
-                                </button>
-                            </div>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <button
+                                class="inline-flex items-center justify-center gap-1 bg-white text-green-600 text-[10px] font-bold px-2 py-1 rounded-full border border-green-200 shadow-sm group-hover:bg-green-600 group-hover:text-white group-hover:border-green-600 transition-all duration-300">
+                                Mesaj <i class="fa-solid fa-paper-plane text-[8px]"></i>
+                            </button>
                         </div>
                     </div>
 
                     <!-- Email Card -->
                     <div onclick="openEmailModal()"
-                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between cursor-pointer hover:shadow-md transition-shadow group relative overflow-hidden">
-                        <div class="flex items-center space-x-3">
-                            <div class="flex-shrink-0">
+                        class="bg-white p-2 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between gap-2 cursor-pointer hover:shadow-md transition-shadow group">
+                        <div class="flex items-center gap-2 w-full">
+                            <div class="w-10 flex-shrink-0 flex justify-center">
                                 <i
                                     class="fa-solid fa-envelope text-accent-500 text-xl group-hover:scale-110 transition-transform"></i>
                             </div>
-                            <div>
-                                <p class="text-gray-900 font-medium text-sm">
-                                    <span class="font-bold">E-posta :</span> sakaryaprodil@gmail.com
-                                </p>
+                            <div class="flex-grow">
+                                <p class="text-gray-900 font-medium text-sm">sakaryaprodil@gmail.com</p>
                             </div>
                         </div>
-                        <div class="pr-1">
+                        <div class="flex-shrink-0">
                             <button
                                 class="inline-flex items-center gap-1 bg-gray-50 text-gray-600 text-[10px] font-bold px-2 py-1 rounded-full border border-gray-200 transition-all duration-300 group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
-                                <i class="fa-solid fa-pen text-[8px]"></i>
-                                <span>Yaz</span>
+                                <i class="fa-solid fa-pen text-[8px]"></i> <span>Yaz</span>
                             </button>
                         </div>
                     </div>
@@ -407,21 +401,19 @@
                     <!-- Address Card -->
                     <a href="https://www.google.com/maps/place/Prodil+Dil+Merkezi/@40.776179,30.391038,19z/data=!4m6!3m5!1s0x14ccb39bd528f251:0x2fcba46058f611!8m2!3d40.776179!4d30.3910384!16s%2Fg%2F11xyj4ppvp?hl=tr&entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D"
                         target="_blank"
-                        class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between space-x-3 cursor-pointer hover:shadow-md transition-shadow group block">
-                        <div class="flex items-center space-x-3">
-                            <div class="flex-shrink-0">
+                        class="bg-white p-2 rounded-xl shadow-sm border border-gray-100 flex items-center justify-between gap-2 cursor-pointer hover:shadow-md transition-shadow group block">
+                        <div class="flex items-center gap-2 w-full overflow-hidden">
+                            <div class="w-10 flex-shrink-0 flex justify-center">
                                 <i
-                                    class="fa-solid fa-location-dot text-accent-500 text-xl group-hover:scale-110 transition-transform"></i>
+                                    class="fa-solid fa-location-dot text-accent-500 text-2xl group-hover:scale-110 transition-transform"></i>
                             </div>
-                            <div class="flex items-start">
-                                <span class="text-gray-900 text-sm font-bold mr-1 mt-0.5">Adres :</span>
-                                <div class="flex flex-col items-end">
-                                    <span class="text-gray-900 text-sm">Semerciler Mh., Çınar Sk., No:6,</span>
-                                    <span class="text-gray-600 text-xs">Adapazarı / SAKARYA</span>
-                                </div>
+                            <div class="flex flex-col">
+                                <span class="text-gray-900 text-xs md:text-sm font-medium leading-tight">Semerciler Mh.,
+                                    Çınar Sk., No:6,</span>
+                                <span class="text-gray-600 text-[10px] md:text-xs mt-0.5">Adapazarı / SAKARYA</span>
                             </div>
                         </div>
-                        <div class="flex-shrink-0 pl-1">
+                        <div class="flex-shrink-0 pl-2">
                             <span
                                 class="inline-flex items-center gap-1 bg-accent-50 text-accent-600 text-[10px] font-bold px-2 py-1 rounded-full border border-accent-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
                                 Konum <i class="fa-solid fa-arrow-up-right-from-square text-[8px] ml-0.5"></i>
@@ -432,29 +424,29 @@
                     <!-- Social Media & QR Code -->
                     <div class="pt-2 flex items-end justify-between">
                         <div>
-                            <h4 class="text-sm font-semibold text-gray-900 mb-2">Bizi Takip Edin</h4>
-                            <div class="flex space-x-2">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Bizi Takip Edin</h4>
+                            <div class="flex space-x-3">
                                 <a href="https://www.instagram.com/sakaryaprodil/" target="_blank"
-                                    class="w-8 h-8 rounded-full bg-primary-900 text-white flex items-center justify-center hover:bg-accent-500 transition-colors">
-                                    <i class="fa-brands fa-instagram text-sm"></i>
+                                    class="w-12 h-12 rounded-full bg-primary-900 text-white flex items-center justify-center hover:bg-accent-500 transition-colors">
+                                    <i class="fa-brands fa-instagram text-2xl"></i>
                                 </a>
                                 <a href="https://www.facebook.com/Prodil" target="_blank"
-                                    class="w-8 h-8 rounded-full bg-primary-900 text-white flex items-center justify-center hover:bg-accent-500 transition-colors">
-                                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                                    class="w-12 h-12 rounded-full bg-primary-900 text-white flex items-center justify-center hover:bg-accent-500 transition-colors">
+                                    <i class="fa-brands fa-facebook-f text-xl"></i>
                                 </a>
                             </div>
                         </div>
                         <!-- QR Codes -->
-                        <div class="flex gap-2">
+                        <div class="flex gap-4">
                             <!-- Instagram QR -->
                             <a href="https://www.instagram.com/sakaryaprodil/" target="_blank"
                                 class="block bg-white p-1 rounded-lg shadow-md border border-gray-200 transform hover:scale-105 transition-transform cursor-pointer">
-                                <img src="assets/qrcode.png" alt="Instagram QR" class="h-24 w-24 object-contain">
+                                <img src="assets/qrcode.png" alt="Instagram QR" class="h-28 w-28 object-contain">
                             </a>
                             <!-- Facebook QR -->
                             <a href="https://www.facebook.com/Prodil" target="_blank"
                                 class="block bg-white p-1 rounded-lg shadow-md border border-gray-200 transform hover:scale-105 transition-transform cursor-pointer">
-                                <img src="assets/qrcode_fb.png" alt="Facebook QR" class="h-24 w-24 object-contain">
+                                <img src="assets/qrcode_fb.png" alt="Facebook QR" class="h-28 w-28 object-contain">
                             </a>
                         </div>
                     </div>
@@ -470,11 +462,7 @@
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
-                <!-- Overlay Text (Just in case iframe doesn't load/for demo) -->
-                <div
-                    class="pointer-events-none absolute inset-0 flex items-center justify-center bg-gray-200/50 z-[-1]">
-                    <span class="text-gray-500 font-semibold">Harita Yüklenecek</span>
-                </div>
+
             </div>
         </div>
         </div>
@@ -505,7 +493,6 @@
                         <li><a href="#home" class="hover:text-white transition-colors">Anasayfa</a></li>
                         <li><a href="#about" class="hover:text-white transition-colors">Kurumsal</a></li>
                         <li><a href="#features" class="hover:text-white transition-colors">Eğitimler</a></li>
-                        <li><a href="#contact" class="hover:text-white transition-colors">İletişim</a></li>
                     </ul>
                 </div>
 
@@ -513,11 +500,9 @@
                 <div>
                     <h4 class="text-base font-semibold mb-6">Programlar</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
-                        <li>Genel İngilizce</li>
                         <li>YKS-YDT Hazırlık</li>
-                        <li>TOEFL / IELTS</li>
-                        <li>Kurumsal Eğitimler</li>
-                        <li>Çocuklar İçin İngilizce</li>
+                        <li>TYT-AYT Hazırlık</li>
+
                     </ul>
                 </div>
 
@@ -525,8 +510,6 @@
                 <div>
                     <h4 class="text-base font-semibold mb-6">Öğrenci İşleri</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="#" class="hover:text-white transition-colors">Sınav Sonuçları</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Öğrenci Bilgi Sistemi</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Akademik Takvim</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Rehberlik Servisi</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Yayınlarımız</a></li>
@@ -537,10 +520,10 @@
             <div
                 class="border-t border-gray-800 mt-12 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
                 <p class="text-sm text-gray-500">
-                    &copy; 2026 Prodil Yabancı Dil Kursu. Tüm hakları saklıdır.
+                    &copy; 2026 Prodil Language Center. Tüm hakları saklıdır.
                 </p>
                 <div class="text-sm text-gray-600 mt-2 md:mt-0">
-                    Designed for Success
+                    PRODİL
     </footer>
 
     <!-- WhatsApp Modal -->
@@ -614,28 +597,34 @@
                         <h3 class="text-xl font-semibold text-gray-900" id="modal-title">Bize Ulaşın</h3>
                     </div>
 
-                    <div class="space-y-4">
+                    <form id="emailForm" action="https://formsubmit.co/ajax/sakaryaprodil@gmail.com" method="POST"
+                        class="space-y-4">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="Web Sitesinden Yeni Mesaj!">
+
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">İsim Soyisim</label>
-                            <input type="text" id="mail-name"
+                            <input type="text" name="name" required
                                 class="w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm">
                         </div>
 
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Telefon Numarası</label>
-                            <input type="tel" id="mail-phone"
+                            <input type="tel" name="phone" required
                                 class="w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm">
                         </div>
 
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">E-posta</label>
-                            <input type="email" id="mail-from"
+                            <input type="email" name="email" required
                                 class="w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm">
                         </div>
 
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Konu</label>
-                            <input type="text" id="mail-subject" list="subject-options"
+                            <input type="text" name="_subject" list="subject-options" required
                                 class="w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                                 placeholder="Seçiniz veya yazınız...">
                             <datalist id="subject-options">
@@ -650,19 +639,18 @@
 
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Mesajınız</label>
-                            <textarea id="mail-body" rows="5"
+                            <textarea name="message" rows="5" required
                                 class="w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 focus:border-gray-500 focus:ring-gray-500 sm:text-sm"></textarea>
                         </div>
-                    </div>
 
-                    <div class="mt-6">
-                        <button type="button"
-                            class="w-full flex justify-center items-center gap-2 rounded-md bg-slate-800 px-4 py-3 text-sm font-bold text-white shadow-sm hover:bg-slate-700 transition-colors"
-                            onclick="sendMail()">
-                            <i class="fa-solid fa-envelope"></i>
-                            Gönder
-                        </button>
-                    </div>
+                        <div class="mt-6">
+                            <button type="submit"
+                                class="w-full flex justify-center items-center gap-2 rounded-md bg-slate-800 px-4 py-3 text-sm font-bold text-white shadow-sm hover:bg-slate-700 transition-colors">
+                                <i class="fa-solid fa-envelope"></i>
+                                Gönder
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -696,8 +684,8 @@
             const name = document.getElementById('ws-name').value;
             const body = document.getElementById('ws-body').value;
 
-            // HATA VEREN YERİ DÜZELTTİK: (Sadece rakam, boşluksuz, artısız)
-            const phoneNumber = "905304309001";
+            // Numara düzeltildi: 430 yerine 403 (arama sonuçlarına göre)
+            const phoneNumber = "905304039001";
 
             if (!body) {
                 alert('Lütfen bir mesaj yazınız.');
@@ -707,8 +695,8 @@
             const message = `Merhaba, ben ${name}. ${body}`;
             const encodedMessage = encodeURIComponent(message);
 
-            // Hem mobil uygulama hem web için güvenli link yapısı
-            const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            // API yapısı güncellendi
+            const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
             window.open(url, '_blank');
             closeWhatsappModal();
@@ -727,36 +715,52 @@
 
         // Email Logic
         function openEmailModal() {
-            document.getElementById('emailModal').classList.remove('hidden');
+            const modal = document.getElementById('emailModal');
+            modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
-            // Reset fields
-            document.getElementById('mail-name').value = '';
-            document.getElementById('mail-phone').value = '';
-            document.getElementById('mail-from').value = '';
-            document.getElementById('mail-subject').value = '';
-            document.getElementById('mail-body').value = '';
+
+            // Eğer form varsa resetle
+            const form = modal.querySelector('form');
+            if (form) form.reset();
         }
+
         function closeEmailModal() {
             document.getElementById('emailModal').classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
-        function sendMail() {
-            const name = document.getElementById('mail-name').value;
-            const phone = document.getElementById('mail-phone').value;
-            const from = document.getElementById('mail-from').value;
-            const subject = document.getElementById('mail-subject').value;
-            const body = document.getElementById('mail-body').value;
 
-            if (!name || !from || !subject || !body) {
-                alert("Lütfen zorunlu alanları (İsim, E-posta, Konu, Mesaj) doldurunuz.");
-                return;
-            }
+        // AJAX Form Submit Handle
+        document.getElementById('emailForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-            const mailBody = `Gönderen: ${name}\nTelefon: ${phone}\nE-posta: ${from}\n\n${body}`;
-            window.location.href = `mailto:sakaryaprodil@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
+            const btn = this.querySelector('button[type="submit"]');
+            const originalBtnText = btn.innerHTML;
 
-            setTimeout(closeEmailModal, 1000);
-        }
+            // Loading state
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Gönderiliyor...';
+
+            const formData = new FormData(this);
+
+            fetch("https://formsubmit.co/ajax/sakaryaprodil@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert("Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.");
+                    closeEmailModal();
+                    this.reset();
+                })
+                .catch(error => {
+                    alert("Bir hata oluştu. Lütfen daha sonra tekrar deneyiniz veya WhatsApp hattımızdan bize ulaşınız.");
+                    console.error('Error:', error);
+                })
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = originalBtnText;
+                });
+        });
 
         document.addEventListener('keydown', function (event) {
             if (event.key === "Escape") { closeWhatsappModal(); closeEmailModal(); }
