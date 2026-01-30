@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome Icons -->ddd
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Tailwind CSS -->
@@ -70,10 +70,83 @@
             background-size: cover;
             background-position: center;
         }
+
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-container {
+            position: relative;
+            width: 12rem;
+            /* Increased from 10rem */
+            height: 12rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid rgba(0, 51, 102, 0.1);
+            border-top-color: #003366;
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-logo {
+            width: 8rem;
+            /* Increased from 6rem */
+            height: 8rem;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+
+            100% {
+                transform: scale(0.9);
+                opacity: 0.8;
+            }
+        }
     </style>
 </head>
 
-<body class="font-sans text-gray-700 bg-gray-50 antialiased">
+<body class="font-sans text-gray-700 bg-gray-50 antialiased overflow-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-container">
+            <div class="loader-circle"></div>
+            <img src="assets/favicon.png" alt="Yükleniyor..." class="loader-logo">
+        </div>
+    </div>
 
     <!-- Header / Navbar -->
     <header class="bg-white shadow-sm fixed w-full top-0 z-50">
@@ -95,6 +168,8 @@
                         class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Kurumsal</a>
                     <a href="#features"
                         class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Özellikler</a>
+                    <a href="dersler.html"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Ders</a>
                     <a href="#contact"
                         class="text-gray-600 hover:text-primary-900 font-medium transition-colors">İletişim</a>
                 </nav>
@@ -130,6 +205,9 @@
                 <a href="#features"
                     class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50"
                     onclick="toggleMobileMenu()">Özellikler</a>
+                <a href="dersler.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50"
+                    onclick="toggleMobileMenu()">Ders</a>
                 <a href="#contact"
                     class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50"
                     onclick="toggleMobileMenu()">İletişim</a>
@@ -141,14 +219,18 @@
     <section id="home" class="hero-bg h-screen min-h-[600px] flex items-center justify-center pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <!-- Globe Image -->
-            <img src="assets/globe.png" alt="Global Education"
-                class="h-32 md:h-40 mx-auto mb-6 drop-shadow-2xl animate-pulse">
+            <a href="dersler.html" class="block cursor-pointer transition-transform hover:scale-110 duration-300">
+                <img src="assets/globe.png" alt="Global Education"
+                    class="h-32 md:h-40 mx-auto mb-6 drop-shadow-2xl animate-pulse">
+            </a>
 
             <!-- Logo in White Container -->
-            <div
-                class="inline-block bg-white backdrop-blur-sm rounded-2xl p-3 mb-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src="assets/logo.png" alt="Prodil Logo" class="h-8 md:h-10 w-auto">
-            </div>
+            <a href="dersler.html" class="inline-block cursor-pointer">
+                <div
+                    class="bg-white backdrop-blur-sm rounded-2xl p-3 mb-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                    <img src="assets/logo.png" alt="Prodil Logo" class="h-8 md:h-10 w-auto">
+                </div>
+            </a>
 
             <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-4 leading-tight tracking-tight">
                 Dil Eğitiminde Sınav Tekniklerinin <br>
@@ -692,6 +774,17 @@
 
     <!-- Scripts -->
     <script>
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            // Minimum bekleme süresi (örn. 500ms) ekleyerek too-fast loading'de bile görünmesini sağlayabiliriz
+            // ya da direkt load'da kapatabiliriz.
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }, 600);
+        });
+
         // Mobile Menu Logic
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');

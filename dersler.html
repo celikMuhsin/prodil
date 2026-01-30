@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dersler - Prodil | İngilizce Çalışma Platformu</title>
+    <meta name="description" content="Prodil interaktif kelime kartları ve sınavlar ile İngilizcenizi geliştirin.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            900: '#003366', // Prodil Blue
+                            800: '#002244',
+                            700: '#004080',
+                        },
+                        accent: {
+                            500: '#D9232E', // Prodil Red
+                            600: '#b91c1c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Style from UzmanMatematik -->
+    <link rel="stylesheet" href="assets/css/kelime_kart.css">
+
+    <style>
+        /* Custom Styles for Exams & Page Layout */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Tab Styles */
+        .tab-btn {
+            position: relative;
+            padding: 0.2rem 0.625rem;
+            font-weight: 700;
+            font-size: 0.7rem;
+            color: #718096;
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            /* Bouncy spring */
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+            overflow: hidden;
+            letter-spacing: 0.025em;
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            color: #2d3748;
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* Active State - Blue (Vocab) */
+        #tab-vocab.active {
+            background-color: #003366;
+            color: white;
+            border-color: #003366;
+            box-shadow: 0 8px 15px -4px rgba(0, 51, 102, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* Active State - Red (Exam) */
+        #tab-exam.active {
+            background-color: #D9232E;
+            color: white;
+            border-color: #D9232E;
+            box-shadow: 0 8px 15px -4px rgba(217, 35, 46, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* Exam Grid Styles */
+        .exam-card {
+            @apply bg-white p-3 md:p-4 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all cursor-pointer group h-full;
+            /* Layout - Default (Mobile/Tablet) -> Row */
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+            /* gap-4 equivalent */
+            text-align: left;
+        }
+
+        /* Desktop -> Column */
+        @media (min-width: 1024px) {
+            .exam-card {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        .exam-card:hover {
+            @apply border-primary-900 transform -translate-y-1;
+        }
+
+        /* Exam Interface */
+        #eng-exam-interface {
+            display: none;
+        }
+
+        .btn {
+            @apply px-4 py-2 rounded-lg font-semibold transition-colors shadow-sm;
+        }
+
+        .btn-outline {
+            @apply px-4 py-2 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 transition-colors w-full text-left;
+        }
+
+        /* Variables expected by Exam Engine if not provided by CSS */
+        :root {
+            --accent-color: #D9232E;
+        }
+
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-container {
+            position: relative;
+            width: 12rem;
+            /* Increased from 10rem */
+            height: 12rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid rgba(0, 51, 102, 0.1);
+            border-top-color: #003366;
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-logo {
+            width: 8rem;
+            /* Increased from 6rem */
+            height: 8rem;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0.9);
+                opacity: 0.8;
+            }
+        }
+
+        /* Search Box Styles */
+        .search-wrapper {
+            position: relative;
+            width: 100px;
+            /* Reduced from 200px */
+            z-index: 60;
+            /* Higher than content below */
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.4rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            color: #4a5568;
+            outline: none;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+
+        .search-input:focus {
+            border-color: #003366;
+            box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+        }
+
+        .search-input::placeholder {
+            color: #a0aec0;
+            font-weight: 500;
+        }
+
+        .search-dropdown {
+            position: absolute;
+            top: 110%;
+            right: 0;
+            width: 250px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 10000;
+            /* significantly higher just in case */
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .search-dropdown.show {
+            display: block;
+        }
+
+        .search-item {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+            color: #2d3748;
+            cursor: pointer;
+            border-bottom: 1px solid #f7fafc;
+            transition: background 0.1s;
+        }
+
+        .search-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-item:hover {
+            background-color: #f7fafc;
+            color: #003366;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-700 bg-gray-50 antialiased flex flex-col min-h-screen overflow-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-container">
+            <div class="loader-circle"></div>
+            <img src="assets/favicon.png" alt="Yükleniyor..." class="loader-logo">
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-[9999]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Area -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="assets/logo.png" alt="Prodil Logo" class="h-10 md:h-12 w-auto object-contain">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Anasayfa</a>
+                    <a href="index.html#about"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Kurumsal</a>
+                    <a href="index.html#features"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Özellikler</a>
+                    <a href="dersler.html" class="text-primary-900 font-bold transition-colors">Ders</a>
+                    <a href="index.html#contact"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">İletişim</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="index.html#contact"
+                        class="bg-primary-900 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary-800 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Bilgi Al / Kayıt Ol
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none"
+                        onclick="toggleMobileMenu()">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-20 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-[9999] rounded-b-3xl">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html"
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:text-primary-900 hover:bg-gray-50 transition-colors">
+                    Anasayfa
+                </a>
+                <a href="index.html#about"
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:text-primary-900 hover:bg-gray-50 transition-colors">
+                    Kurumsal
+                </a>
+                <a href="index.html#features"
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:text-primary-900 hover:bg-gray-50 transition-colors">
+                    Özellikler
+                </a>
+                <a href="dersler.html"
+                    class="block px-4 py-3 rounded-xl text-base font-bold text-primary-900 bg-blue-50 transition-colors">
+                    Ders
+                </a>
+                <a href="index.html#contact"
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:text-primary-900 hover:bg-gray-50 transition-colors">
+                    İletişim
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-20">
+
+        <!-- Page Header -->
+        <div class="h-4"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
+
+            <!-- Tabs aligned with content (max-w-900px) -->
+            <div class="w-full max-w-[900px] mx-auto mb-3 flex justify-between items-end relative z-[2000]">
+                <div class="flex justify-start gap-4">
+                    <button onclick="switchTab('vocab')" id="tab-vocab" class="tab-btn active">
+                        <i class="fa-solid fa-book-open text-lg"></i>
+                        <span>Kelime</span>
+                    </button>
+                    <button onclick="switchTab('exam')" id="tab-exam" class="tab-btn">
+                        <i class="fa-solid fa-pen-to-square text-lg"></i>
+                        <span>Sınav</span>
+                    </button>
+                </div>
+
+                <!-- Search Box -->
+                <div class="search-wrapper">
+                    <input type="text" id="vocab-search" class="search-input" placeholder="ARA...">
+                    <div id="search-dropdown" class="search-dropdown">
+                        <!-- Results will be injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+
+            <!-- 1. Vocabulary Section -->
+            <div id="content-vocab" class="fade-in">
+                <div id="vocabulary-wrapper">
+                    <!-- Javascript will inject content here -->
+                    <div class="text-center py-12 text-gray-500">
+                        <i class="fa-solid fa-spinner fa-spin text-3xl mb-3"></i>
+                        <p>Kelimeler Yükleniyor...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Exam Section -->
+            <div id="content-exam" class="hidden fade-in">
+
+                <!-- Exam Grid -->
+                <div id="eng-exam-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Meaning -->
+                    <div class="exam-card" onclick="startExam('meaning')">
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-xl md:text-2xl mb-0 md:mb-2 shrink-0">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Kelime Anlamı</h3>
+                            <p class="text-gray-600 text-xs">İngilizce kelimenin Türkçe karşılığını bul.</p>
+                        </div>
+                    </div>
+
+                    <!-- Cloze -->
+                    <div class="exam-card" onclick="startExam('cloze')">
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xl md:text-2xl mb-0 md:mb-2 shrink-0">
+                            <i class="fa-solid fa-grip-lines"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Boşluk Doldurma</h3>
+                            <p class="text-gray-600 text-xs">Cümledeki eksik kelimeyi tamamla.</p>
+                        </div>
+                    </div>
+
+                    <!-- Antonym -->
+                    <div class="exam-card" onclick="startExam('antonym')">
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 bg-red-100 rounded-full flex items-center justify-center text-red-600 text-xl md:text-2xl mb-0 md:mb-2 shrink-0">
+                            <i class="fa-solid fa-right-left"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Zıt Anlam</h3>
+                            <p class="text-gray-600 text-xs">Verilen kelimenin zıttını seç.</p>
+                        </div>
+                    </div>
+
+                    <!-- Synonym -->
+                    <div class="exam-card" onclick="startExam('synonym')">
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 text-xl md:text-2xl mb-0 md:mb-2 shrink-0">
+                            <i class="fa-solid fa-clone"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Eş Anlam Avcısı</h3>
+                            <p class="text-gray-600 text-xs">Aynı anlama gelen kelimeyi bul.</p>
+                        </div>
+                    </div>
+
+                    <!-- Morphology -->
+                    <div class="exam-card" onclick="startExam('morphology')">
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 text-xl md:text-2xl mb-0 md:mb-2 shrink-0">
+                            <i class="fa-solid fa-sitemap"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Kelime Ailesi</h3>
+                            <p class="text-gray-600 text-xs">Kelimenin isim, fiil veya sıfat halini bul.</p>
+                        </div>
+                    </div>
+
+                    <!-- Listening -->
+                    <div class="exam-card" onclick="startExam('listening')">
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 text-xl md:text-2xl mb-0 md:mb-2 shrink-0">
+                            <i class="fa-solid fa-headphones"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Dinle ve Bul</h3>
+                            <p class="text-gray-600 text-xs">Duyduğun kelimeyi seçeneklerden işaretle.</p>
+                        </div>
+                    </div>
+
+                    <!-- Scramble -->
+                    <div class="exam-card" onclick="startExam('scramble')">
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 text-xl md:text-2xl mb-0 md:mb-2 shrink-0">
+                            <i class="fa-solid fa-shuffle"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Harf Karıştırma</h3>
+                            <p class="text-gray-600 text-xs">Karışık harflerden kelimeyi oluştur.</p>
+                        </div>
+                    </div>
+
+                    <!-- Sentence Builder -->
+                    <div class="exam-card" onclick="startExam('sentence_builder')">
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 text-xl md:text-2xl mb-0 md:mb-2 shrink-0">
+                            <i class="fa-solid fa-hammer"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Cümle Kur</h3>
+                            <p class="text-gray-600 text-xs">Kelimeleri doğru sıraya dizerek cümle yap.</p>
+                        </div>
+                    </div>
+
+                    <!-- True False -->
+                    <div class="exam-card" onclick="startExam('true_false')">
+                        <div
+                            class="w-12 h-12 md:w-16 md:h-16 bg-pink-100 rounded-full flex items-center justify-center text-pink-600 text-xl md:text-2xl mb-0 md:mb-2 shrink-0">
+                            <i class="fa-solid fa-check-double"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Doğru / Yanlış</h3>
+                            <p class="text-gray-600 text-xs">Kelime ve anlamı eşleşiyor mu?</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Exam Playing Interface -->
+                <div id="eng-exam-interface"
+                    class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-xl border border-gray-100 relative">
+
+                    <button onclick="EnglishExam.close()"
+                        class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors">
+                        <i class="fa-solid fa-times text-2xl"></i>
+                    </button>
+
+                    <div id="eng-exam-title"
+                        class="text-center text-xl font-bold text-gray-500 mb-8 uppercase tracking-wide border-b pb-4">
+                        Sınav Başlığı
+                    </div>
+
+                    <div id="eng-exam-question-area" class="min-h-[200px] flex flex-col justify-center">
+                        <!-- Questions injected here -->
+                    </div>
+
+                    <div id="eng-exam-feedback" class="mt-8 text-center text-xl font-bold min-h-[40px]">
+                        <!-- Feedback here -->
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-gray-500">
+                &copy; 2026 Prodil Language Center. Tüm hakları saklıdır.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }, 600);
+
+            // Search Functionality
+            const searchInput = document.getElementById('vocab-search');
+            const searchDropdown = document.getElementById('search-dropdown');
+
+            if (searchInput && searchDropdown) {
+
+                const updateDropdown = (query) => {
+                    let results = [];
+
+                    if (!query || query.length === 0) {
+                        // Show first 10 items if query is empty
+                        results = window.vocabularyData.slice(0, 10);
+                    } else {
+                        // Filter Logic (Starts With)
+                        results = window.vocabularyData.filter(item =>
+                            item.word.toLowerCase().startsWith(query)
+                        ).slice(0, 10); // Limit to 10 results
+                    }
+
+                    if (results.length > 0) {
+                        searchDropdown.innerHTML = results.map(item => `
+                            <div class="search-item" onclick="selectWord('${item.word}')">
+                                <strong>${item.word}</strong> <span style="font-size:0.8em; color:#718096; margin-left:5px;">(${item.definitions[0]?.core_meaning_tr || ''})</span>
+                            </div>
+                        `).join('');
+                        searchDropdown.classList.add('show');
+                    } else {
+                        searchDropdown.classList.remove('show');
+                    }
+                };
+
+                // Trigger on input
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    updateDropdown(query);
+                });
+
+                // Trigger on focus (show list immediately)
+                searchInput.addEventListener('focus', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    updateDropdown(query);
+                });
+
+                // Close dropdown on click outside
+                document.addEventListener('click', (e) => {
+                    if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+                        searchDropdown.classList.remove('show');
+                    }
+                });
+            }
+        });
+
+        // Search Select Logic
+        function selectWord(word) {
+            const searchDropdown = document.getElementById('search-dropdown');
+            const searchInput = document.getElementById('vocab-search');
+
+            // 1. Sınav sekmesindeysek Kelime sekmesine geç
+            switchTab('vocab');
+
+            // 2. Kelimeyi bul ve getir
+            if (window.vocabCard) {
+                window.vocabCard.searchAndGo(word);
+            }
+
+            // 3. En tepeye (veya sekmelerin göründüğü yere) kaydır
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // UI Cleanup
+            searchInput.value = '';
+            searchDropdown.classList.remove('show');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('-translate-x-full')) {
+                menu.classList.remove('-translate-x-full');
+            } else {
+                menu.classList.add('-translate-x-full');
+            }
+        }
+
+        // Close Mobile Menu on Click Outside
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+
+            // If menu is open (doesn't have -translate-x-full) and click is NOT on menu or button
+            if (!menu.classList.contains('-translate-x-full') && !menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.classList.add('-translate-x-full');
+            }
+        });
+
+        // Close Mobile Menu on Scroll
+        window.addEventListener('scroll', () => {
+            const menu = document.getElementById('mobile-menu');
+            if (!menu.classList.contains('-translate-x-full')) {
+                menu.classList.add('-translate-x-full');
+            }
+        }, { passive: true });
+
+        function switchTab(tabId) {
+            // Buttons
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('tab-' + tabId).classList.add('active');
+
+            // Content
+            document.getElementById('content-vocab').classList.add('hidden');
+            document.getElementById('content-exam').classList.add('hidden');
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+        }
+
+        function startExam(type) {
+            EnglishExam.start(type);
+        }
+    </script>
+
+    <!-- Project Data & Logic -->
+    <script src="assets/js/ingilizce/kelime_ing.js"></script>
+    <script src="assets/js/ingilizce/exam_engine.js"></script>
+    <script src="assets/js/kelime_kart.js"></script>
+
+</body>
+
+</html>
