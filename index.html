@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome Icons -->ddd
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Tailwind CSS -->
@@ -119,7 +119,7 @@
 
         <!-- Mobile Menu -->
         <div id="mobile-menu"
-            class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-20 shadow-lg">
+            class="md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-20 shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-40 rounded-br-3xl">
             <div class="px-4 pt-2 pb-4 space-y-1">
                 <a href="#home"
                     class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50"
@@ -156,9 +156,9 @@
             </h1>
 
             <p class="mt-4 text-sm md:text-base text-gray-300 max-w-2xl mx-auto mb-6 font-light leading-relaxed">
-                YKS'de üstün başarı için; üniversite adaylarına özel geliştirdiğimiz <strong
-                    class="text-white font-medium">TYT ve YDT sınav teknikleri</strong> ve stratejik eğitim modelimizle
-                hedeflerinize emin adımlarla ilerleyin.
+                YKS'de üstün başarı için; üniversite adaylarına özel <strong class="text-white font-medium">TYT ve YDT
+                    sınav teknikleri</strong> ve stratejik eğitim modelimizle
+                hedeflerinize ilerleyin.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -213,9 +213,9 @@
                             "Sadece dil öğretmiyoruz; sizi hayallerinizdeki kampüse taşıyan stratejiyi kuruyoruz."
                         </p>
 
-                        <div class="pt-4">
+                        <div class="pt-2">
                             <a href="#contact"
-                                class="inline-flex items-center text-accent-600 font-bold hover:text-accent-500 transition-colors">
+                                class="inline-flex items-center text-accent-600 font-bold hover:text-accent-500 transition-colors text-sm">
                                 Başarı Hikayelerimiz İçin İletişime Geçin
                                 <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
                             </a>
@@ -242,23 +242,36 @@
                 <!-- Feature 1 -->
                 <div
                     class="bg-gray-50 rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100">
-                    <div class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center mb-4 shadow-lg">
-                        <i class="fa-solid fa-chalkboard-user text-white text-lg"></i>
+
+                    <div class="flex items-center mb-4">
+
+                        <div
+                            class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center shadow-lg shrink-0">
+                            <i class="fa-solid fa-chalkboard-user text-white text-lg"></i>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-gray-900 ml-4">Tecrübeli Eğitmen Kadrosu</h3>
+
                     </div>
-                    <h3 class="text-base font-bold text-gray-900 mb-2">Tecrübeli Eğitmen Kadrosu</h3>
                     <p class="text-gray-600 leading-relaxed text-sm">
                         Alanında uzman, formasyon sahibi ve deneyimli öğretmenlerimizle dil öğrenim süreci artık çok
                         daha etkili.
                     </p>
                 </div>
-
                 <!-- Feature 2 -->
                 <div
                     class="bg-gray-50 rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100">
-                    <div class="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center mb-4 shadow-lg">
-                        <i class="fa-solid fa-laptop-file text-white text-lg"></i>
+
+                    <div class="flex items-center mb-4">
+
+                        <div
+                            class="w-12 h-12 bg-accent-500 rounded-lg flex items-center justify-center shadow-lg shrink-0">
+                            <i class="fa-solid fa-laptop-file text-white text-lg"></i>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-gray-900 ml-4">Modern Öğrenme Metotları</h3>
+
                     </div>
-                    <h3 class="text-base font-bold text-gray-900 mb-2">Modern Öğrenme Metotları</h3>
                     <p class="text-gray-600 leading-relaxed text-sm">
                         Teknoloji destekli sınıflar ve güncel materyaller ile çağı yakalayan interaktif bir eğitim
                         deneyimi.
@@ -268,17 +281,22 @@
                 <!-- Feature 3 -->
                 <div
                     class="bg-gray-50 rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100">
-                    <div class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center mb-4 shadow-lg">
-                        <i class="fa-solid fa-pen-to-square text-white text-lg"></i>
+
+                    <div class="flex items-center mb-4">
+
+                        <div
+                            class="w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center shadow-lg shrink-0">
+                            <i class="fa-solid fa-pen-to-square text-white text-lg"></i>
+                        </div>
+
+                        <h3 class="text-sm font-bold text-gray-900 ml-4">İleri Sınav Teknikleri</h3>
+
                     </div>
-                    <h3 class="text-base font-bold text-gray-900 mb-2">İleri Sınav Teknikleri</h3>
                     <p class="text-gray-600 leading-relaxed text-sm">
                         Soru kökü analizi, çeldirici eleme yöntemleri ve zaman yönetimi stratejileri ile YKS-YDT'de
                         maksimum net hedefleyen taktiksel yaklaşım.
                     </p>
                 </div>
-            </div>
-        </div>
     </section>
 
     <!-- Stats / Trust Banner (Optional but adds value) -->
@@ -286,27 +304,27 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-6 gap-8 text-center text-white">
                 <div>
-                    <div class="text-4xl font-bold mb-2">20+</div>
+                    <div class="text-3xl font-bold mb-2">20+</div>
                     <div class="text-gray-400 text-sm uppercase tracking-wider">Yıllık Tecrübe</div>
                 </div>
                 <div>
-                    <div class="text-4xl font-bold mb-2">1.000+</div>
+                    <div class="text-3xl font-bold mb-2">1.000+</div>
                     <div class="text-gray-400 text-sm uppercase tracking-wider">Kazanan Öğrenci</div>
                 </div>
                 <div>
-                    <div class="text-4xl font-bold mb-2">%98+</div>
+                    <div class="text-3xl font-bold mb-2">%98+</div>
                     <div class="text-gray-400 text-sm uppercase tracking-wider">Memnuniyet</div>
                 </div>
                 <div>
-                    <div class="text-4xl font-bold mb-2">20+</div>
+                    <div class="text-3xl font-bold mb-2">20+</div>
                     <div class="text-gray-400 text-sm uppercase tracking-wider">Haftalık Ders</div>
                 </div>
                 <div>
-                    <div class="text-4xl font-bold mb-2">40+</div>
+                    <div class="text-3xl font-bold mb-2">40+</div>
                     <div class="text-gray-400 text-sm uppercase tracking-wider">Deneme Sınavı</div>
                 </div>
                 <div>
-                    <div class="text-4xl font-bold mb-2">10.000+</div>
+                    <div class="text-3xl font-bold mb-2">10.000+</div>
                     <div class="text-gray-400 text-sm uppercase tracking-wider">Soru Çözümü</div>
                 </div>
             </div>
@@ -332,18 +350,18 @@
                         <div class="flex items-center gap-2 w-full">
                             <div class="w-10 flex-shrink-0 flex justify-center">
                                 <i
-                                    class="fa-solid fa-mobile-screen-button text-accent-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                                    class="fa-solid fa-mobile-screen-button text-gray-700 text-2xl group-hover:scale-110 transition-transform"></i>
                             </div>
                             <div class="flex-grow">
                                 <a href="tel:05304039001"
-                                    class="text-gray-900 font-bold text-sm block hover:text-accent-600 transition-colors">
+                                    class="text-gray-900 text-sm block hover:text-accent-600 transition-colors">
                                     0 (530) 403 90 01
                                 </a>
                             </div>
                         </div>
                         <div class="flex-shrink-0">
                             <span
-                                class="inline-flex items-center gap-1 bg-accent-50 text-accent-600 text-[10px] font-bold px-2 py-1 rounded-full border border-accent-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
+                                class="inline-flex items-center gap-1 bg-accent-50 text-gray-700 text-[10px] font-bold px-2 py-1 rounded-full border border-accent-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
                                 Ara <i class="fa-solid fa-phone text-[8px]"></i>
                             </span>
                         </div>
@@ -355,18 +373,18 @@
                         <div class="flex items-center gap-2 w-full">
                             <div class="w-10 flex-shrink-0 flex justify-center">
                                 <i
-                                    class="fa-solid fa-phone text-gray-400 text-2xl group-hover:scale-110 transition-transform"></i>
+                                    class="fa-solid fa-phone text-red-800 text-2xl group-hover:scale-110 transition-transform"></i>
                             </div>
                             <div class="flex-grow">
                                 <a href="tel:02642818177"
-                                    class="text-gray-900 font-bold text-sm block hover:text-accent-600 transition-colors">
+                                    class="text-gray-900 text-sm block hover:text-gray-400 transition-colors">
                                     0 (264) 281 81 77
                                 </a>
                             </div>
                         </div>
                         <div class="flex-shrink-0">
                             <span
-                                class="inline-flex items-center gap-1 bg-gray-50 text-gray-500 text-[10px] font-bold px-2 py-1 rounded-full border border-gray-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
+                                class="inline-flex items-center gap-1 bg-gray-50 text-red-800 text-[10px] font-bold px-2 py-1 rounded-full border border-gray-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
                                 Ara <i class="fa-solid fa-phone text-[8px]"></i>
                             </span>
                         </div>
@@ -381,7 +399,7 @@
                                     class="fa-brands fa-whatsapp text-green-600 text-3xl group-hover:scale-110 transition-transform"></i>
                             </div>
                             <div class="flex-grow">
-                                <span class="text-gray-900 font-bold text-sm block">WhatsApp</span>
+                                <span class="text-gray-900 text-sm block">WhatsApp</span>
                             </div>
                         </div>
                         <div class="flex-shrink-0">
@@ -398,16 +416,16 @@
                         <div class="flex items-center gap-2 w-full">
                             <div class="w-10 flex-shrink-0 flex justify-center">
                                 <i
-                                    class="fa-solid fa-envelope text-accent-500 text-xl group-hover:scale-110 transition-transform"></i>
+                                    class="fa-solid fa-envelope text-blue-900 text-xl group-hover:scale-110 transition-transform"></i>
                             </div>
                             <div class="flex-grow">
-                                <p class="text-gray-900 font-medium text-sm">sakaryaprodil@gmail.com</p>
+                                <p class="text-gray-900 font-medium text-xs md:text-sm">sakaryaprodil@gmail.com</p>
                             </div>
                         </div>
                         <div class="flex-shrink-0">
                             <button
-                                class="inline-flex items-center gap-1 bg-gray-50 text-gray-600 text-[10px] font-bold px-2 py-1 rounded-full border border-gray-200 transition-all duration-300 group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
-                                <i class="fa-solid fa-pen text-[8px]"></i> <span>Yaz</span>
+                                class="inline-flex items-center gap-1 bg-gray-50 text-blue-900 text-[10px] font-bold px-2 py-1 rounded-full border border-gray-200 transition-all duration-300 group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
+                                <i class="fa-solid fa-pen text-[8px]"></i> <span>Bize Yazın</span>
                             </button>
                         </div>
                     </div>
@@ -419,7 +437,7 @@
                         <div class="flex items-center gap-2 w-full overflow-hidden">
                             <div class="w-10 flex-shrink-0 flex justify-center">
                                 <i
-                                    class="fa-solid fa-location-dot text-accent-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                                    class="fa-solid fa-location-dot text-red-700 text-2xl group-hover:scale-110 transition-transform"></i>
                             </div>
                             <div class="flex flex-col">
                                 <span
@@ -431,7 +449,7 @@
                         </div>
                         <div class="flex-shrink-0 pl-2">
                             <span
-                                class="inline-flex items-center gap-1 bg-accent-50 text-accent-600 text-[10px] font-bold px-2 py-1 rounded-full border border-accent-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
+                                class="inline-flex items-center gap-1 bg-accent-50 text-red-700 text-[10px] font-bold px-2 py-1 rounded-full border border-accent-100 transition-all group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 shadow-sm">
                                 Konum <i class="fa-solid fa-arrow-up-right-from-square text-[8px] ml-0.5"></i>
                             </span>
                         </div>
@@ -440,7 +458,7 @@
                     <!-- Social Media & QR Code -->
                     <div class="pt-2 flex items-end justify-between">
                         <div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-4">Bizi Takip Edin</h4>
+                            <h4 class="text-base font-bold text-gray-900 mb-4">Bizi Takip Edin</h4>
                             <div class="flex space-x-3">
                                 <a href="https://www.instagram.com/sakaryaprodil/" target="_blank"
                                     class="w-12 h-12 rounded-full bg-primary-900 text-white flex items-center justify-center hover:bg-accent-500 transition-colors">
@@ -492,12 +510,12 @@
                 <div class="col-span-1 md:col-span-1">
                     <div class="flex items-center space-x-3 mb-6">
                         <div class="h-8 w-8 bg-white rounded-lg flex items-center justify-center">
-                            <span class="text-primary-900 font-bold text-lg">P</span>
+                            <img src="assets/favicon.png" alt="Prodil" class="h-6 w-6 object-contain">
                         </div>
                         <span class="text-xl font-bold tracking-tight">PRODİL</span>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Sakarya'nın en köklü dil okulu olarak, global standartlarda eğitim anlayışımızla geleceğinizi
+                        Sakarya'nın en köklü dil kursu olarak, global standartlarda eğitim anlayışımızla geleceğinizi
                         şekillendiriyoruz.
                     </p>
                 </div>
@@ -677,19 +695,34 @@
         // Mobile Menu Logic
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            // hidden sildik, yerine translate toggle yapıyoruz
+            // Kapalıyken -translate-x-full var. Açmak için bunu kaldıracağız (veya tersi).
+            // Ancak Tailwind ile default class olarak -translate-x-full verdik.
+            // Açıldığında bu class silinmeli veya translate-x-0 eklenmeli.
+            // En temiz yol: toggle fonksiyonu translete-x-full'u aç/kapa yapar.
+
+            if (menu.classList.contains('-translate-x-full')) {
+                menu.classList.remove('-translate-x-full');
+            } else {
+                menu.classList.add('-translate-x-full');
+            }
         }
 
-        // Close Mobile Menu on Click Outside
-        document.addEventListener('click', function (event) {
+        // Close Mobile Menu on Click or Touch Outside
+        function closeMenuOutside(event) {
             const menu = document.getElementById('mobile-menu');
             const button = document.getElementById('mobile-menu-btn');
 
-            // Eğer menü açıksa ve tıklanan yer menü veya buton değilse kapat
-            if (!menu.classList.contains('hidden') && !menu.contains(event.target) && !button.contains(event.target)) {
-                menu.classList.add('hidden');
+            // Eğer menü açıksa (yani -translate-x-full YOKSA) ve tıklanan yer menü veya buton değilse kapat
+            const isMenuOpen = !menu.classList.contains('-translate-x-full');
+
+            if (isMenuOpen && !menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.add('-translate-x-full');
             }
-        });
+        }
+
+        document.addEventListener('click', closeMenuOutside);
+        document.addEventListener('touchstart', closeMenuOutside);
 
         // WhatsApp Logic
         // WhatsApp Modalını Aç
@@ -794,7 +827,7 @@
         });
     </script>
 
-    <a href="https://wa.me/905304309001" target="_blank"
+    <a href="https://wa.me/905304039001" target="_blank"
         class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50 flex items-center justify-center h-14 w-14">
         <i class="fa-brands fa-whatsapp text-4xl"></i>
     </a>
