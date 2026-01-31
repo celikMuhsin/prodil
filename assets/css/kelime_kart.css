@@ -27,7 +27,8 @@
     background: var(--bg-page);
     min-height: auto;
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
+    /* Footer ile mesafe */
     overflow: visible;
     /* Ensure sticky works */
 }
@@ -35,8 +36,8 @@
 .vocab-card {
     background: var(--bg-paper);
     width: 100%;
-    max-width: 900px;
-    /* Okuma genişliği */
+    max-width: 1400px;
+    /* Daha geniş çalışma alanı */
     margin: 0 auto;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     border-radius: 8px;
@@ -88,11 +89,18 @@
 
 /* Sticky Header Offset Fix */
 [id^="sec-"] {
-    scroll-margin-top: 100px;
-    /* Reduced since controls are gone */
+    scroll-margin-top: 140px;
+    /* Increased for sticky header */
 }
 
 @media (max-width: 768px) {
+    .vocab-card {
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+
     .sticky-header-wrapper {
         top: 0;
         left: 0;
@@ -101,6 +109,102 @@
         border-radius: 0;
         /* Ensure no corners cut content */
     }
+}
+
+/* Custom Dropdown Styles */
+.custom-dropdown-container {
+    position: relative;
+    /* width: 180px; REMOVED for dynamic sizing */
+    min-width: 150px;
+    /* Minimum width safety */
+    font-family: var(--font-body);
+}
+
+.dropdown-trigger {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    user-select: none;
+    height: 32px;
+    /* Fixed height for alignment */
+}
+
+.dropdown-trigger:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    /* Align right */
+    margin-top: 5px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: max-content;
+    /* Fit to content width */
+    min-width: 100%;
+    max-height: 800px;
+    /* Show all items */
+    overflow-y: auto;
+    z-index: 1001;
+    display: none;
+    /* Hidden by default */
+    padding: 5px 0;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.1s;
+    line-height: 1.4;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f5f9;
+}
+
+.dropdown-item.separator {
+    height: 1px;
+    background: var(--border);
+    margin: 5px 0;
+    padding: 0;
+    cursor: default;
+}
+
+.dropdown-item .cefr-tag {
+    margin-right: 10px;
+    font-size: 0.75rem;
+    /* Standart yazı boyutu */
+    font-weight: 700;
+    padding: 2px 0;
+    /* İç boşluk */
+    width: 26px;
+    /* Sabit genişlik */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    line-height: 1.2;
 }
 
 /* --- Navigation Header (Controls) --- */
@@ -157,14 +261,19 @@
 }
 
 .section-nav {
-    padding: 6px 12px;
+    width: 130px;
+    /* Fixed width to fit "Bölüme Git..." */
+    min-width: 0;
+    max-width: none;
+    padding: 4px 8px;
+    font-size: 0.85rem;
     border: 1px solid var(--border);
     border-radius: 6px;
     background: #f8fafc;
     color: var(--text-main);
-    font-size: 0.85rem;
     cursor: pointer;
     font-family: var(--font-body);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .section-nav:focus {
@@ -174,10 +283,9 @@
 
 /* --- Layout Structure --- */
 .content-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    /* Sol ana içerik, Sağ yan panel (masaüstü) */
-    gap: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 @media (max-width: 768px) {
@@ -188,16 +296,20 @@
 }
 
 /* --- Sol Ana Panel --- */
+/* --- Sol Ana Panel --- */
 .main-content {
     padding: 20px 30px 30px 30px;
-    border-right: 1px solid var(--border);
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
 }
 
 @media (max-width: 768px) {
     .main-content {
         border-right: none;
         border-bottom: 1px solid var(--border);
-        padding: 20px;
+        padding: 10px 15px 20px 15px;
+        /* Mobilde padding azaltıldı */
         order: 1;
         /* Ana içerik ilk gelsin */
     }
@@ -205,7 +317,8 @@
     .side-panel {
         order: 2;
         /* Yan panel sonra gelsin */
-        padding: 20px;
+        padding: 5px 15px 20px 15px;
+        /* Mobilde padding azaltıldı */
     }
 }
 
@@ -213,8 +326,8 @@
 /* Başlık Bloğu */
 .word-header {
     margin-bottom: 0px;
-    padding: 10px 30px;
-    /* Slightly more compact */
+    padding: 15px 30px;
+    /* Balanced top/bottom padding for vertical centering */
     background: #fff;
 }
 
@@ -245,8 +358,8 @@
 .antonym-card {
     background: #fff;
     border: 1px solid #fed7d7;
-    border-left: 4px solid #f56565;
-    padding: 10px 12px;
+    border-left: 6px solid #f56565;
+    padding: 10px 14px;
     border-radius: 6px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s;
@@ -312,7 +425,8 @@
 }
 
 .main-word {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
+    /* Reduced font size */
     font-weight: 800;
     color: #1a202c;
     margin: 0;
@@ -400,6 +514,14 @@
     margin-bottom: 15px;
 }
 
+#sec-definitions .definition-box:first-child {
+    margin-top: 10px;
+}
+
+#sec-collocations .collo-grid {
+    margin-top: 10px;
+}
+
 .def-row {
     margin-bottom: 10px;
 }
@@ -418,7 +540,7 @@
 }
 
 .example-box {
-    background: var(--bg-page);
+    background: #fff;
     padding: 10px 15px;
     border-left: 3px solid var(--text-light);
     font-size: 0.9rem;
@@ -434,12 +556,156 @@
     margin-top: 4px;
 }
 
-/* Gramer Tablosu Gibi Yapı */
+/* Gramer Tablosu & Akordeon İçelik */
 .grammar-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
 }
+
+/* --- Accordion / Collapsible Styles --- */
+.section-wrapper {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.accordion-header {
+    background: #f8fafc;
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.accordion-header:hover {
+    background: #edf2f7;
+}
+
+.section-wrapper.open>.accordion-header {
+    border-bottom-color: var(--border);
+    background: #f1f5f9;
+}
+
+.accordion-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    color: var(--text-light);
+}
+
+.section-wrapper.open>.accordion-header>.accordion-icon {
+    transform: rotate(180deg);
+    color: var(--accent);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    background: #fff;
+}
+
+.section-wrapper.open>.accordion-content {
+    max-height: 15000px;
+    /* Arbitrary large height */
+    padding: 30px 20px 5px 20px;
+}
+
+/* Hide original section titles since we use accordion headers now */
+.accordion-content .section-title {
+    display: none;
+}
+
+/* --- Nested Accordion Fix (Hikayeler vb.) --- */
+/* Ana akordeonun içindeki akordeonlar (örn: Hikaye seviyeleri) */
+.accordion-content .section-wrapper {
+    margin: 0;
+    border: none;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.accordion-content .section-wrapper:first-child {
+    border-top: none;
+}
+
+/* İçteki akordeonun başlığı */
+.accordion-content .section-wrapper .accordion-header {
+    background: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.accordion-content .section-wrapper .accordion-header:hover {
+    background: #f8fafc;
+}
+
+/* İçteki akordeonun içeriği */
+.accordion-content .section-wrapper .accordion-content {
+    background: #fff;
+    padding: 0;
+}
+
+/* Hikaye İçeriği Özel Stil */
+.story-content {
+    padding: 10px 5px;
+    /* Minimal yan boşluk */
+}
+
+.accordion-content .section-wrapper.open>.accordion-content {
+    padding: 0;
+    /* Kenarlara yapışsın istendiği için padding azaltıldı */
+}
+
+/* Mobilde ana akordeon padding'ini de azaltalım ki yer kazanalım */
+@media (max-width: 768px) {
+    .section-wrapper.open>.accordion-content {
+        padding: 5px 15px;
+        /* Mobilde genel padding azaltıldı */
+    }
+
+    .story-content {
+        padding: 10px 2px;
+        /* Mobilde neredeyse sıfır */
+    }
+
+    /* İç içe durumda parent padding'i sıfırlayabilir miyiz? Zor. 
+       Ama hikayeler için özel bir class atayıp yapabiliriz. 
+       Şimdilik genel iyileştirme yeterli olabilir. */
+}
+
+/* --- Turevler Ozel Bosluk Ayari --- */
+/* Üstten 10px boşluk (diğerleri gibi) */
+#sec-derivatives .derivative-list {
+    margin-top: 10px;
+}
+
+/* Alttaki fazla boşluğu al */
+/* Alttaki fazla boşluğu al (Sadece AÇIKKEN) */
+#sec-derivatives.open .accordion-content {
+    padding-bottom: 3px !important;
+}
+
+#sec-derivatives ul {
+    margin-bottom: 0;
+}
+
 
 .grammar-item {
     border: 1px solid var(--border);
@@ -464,10 +730,25 @@
     color: var(--text-main);
 }
 
+
+/* --- Grammar Ozel Bosluk Ayari --- */
+#sec-grammar .grammar-grid,
+#sec-grammar .logic-box {
+    margin-top: 15px;
+}
+
+#sec-grammar.open .accordion-content {
+    padding-bottom: 3px !important;
+}
+
+#sec-grammar .logic-box {
+    padding-bottom: 15px !important;
+}
+
 /* --- Sağ Yan Panel (Side Bar) --- */
+/* --- Sağ Yan Panel (Side Bar) - DEPRECATED/HIDDEN --- */
 .side-panel {
-    background: #fafbfc;
-    padding: 30px 20px;
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -775,33 +1056,68 @@
     display: block;
 }
 
-/* Pragmatics (Idioms) */
+/* Pragmatics (Idioms) - Card Design */
+.idiom-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .idiom-card {
     background: #fff;
-    border-left: 3px solid #ecc94b;
-    /* Yellow for idioms */
-    padding: 10px;
-    margin-bottom: 8px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #ecc94b;
+    /* Stronger Yellow Accent */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.idiom-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .idiom-phrase {
-    font-weight: 700;
-    color: var(--text-main);
+    font-weight: 800;
+    color: #2d3748;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
 }
 
 .idiom-meaning {
-    font-size: 0.9rem;
-    color: var(--text-light);
+    font-size: 0.95rem;
+    color: #718096;
+    font-style: italic;
+    border-top: 1px dashed #edf2f7;
+    padding-top: 6px;
+    margin-top: 2px;
 }
 
+/* Cultural Note Box */
 .note-box {
     background: #ebf8ff;
-    padding: 10px;
-    border-radius: 6px;
+    padding: 15px;
+    border-radius: 8px;
     font-size: 0.9rem;
-    margin-top: 10px;
+    margin-top: 15px;
     color: #2c5282;
+    border: 1px solid #bee3f8;
+    line-height: 1.6;
+}
+
+.note-box strong {
+    color: #2b6cb0;
+    font-weight: 800;
+    display: block;
+    /* Stack on top */
+    margin-bottom: 6px;
+    /* Space below title */
 }
 
 /* Grammar Logic */
@@ -809,7 +1125,7 @@
     margin-top: 15px;
     background: #fffaf0;
     /* Light orange */
-    padding: 12px;
+    padding: 12px 12px 15px 12px;
     border-radius: 6px;
     border: 1px dashed #ed8936;
 }
@@ -858,11 +1174,6 @@
     background: var(--accent);
     color: white;
     padding: 4px 8px;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 0.85rem;
-    display: flex;
-    justify-content: space-between;
 }
 
 .tag-cloud {
@@ -951,64 +1262,71 @@
 
 /* Cognate Hint Box - Comparison Design */
 /* Cognate Hint Box - Clean & Open Design */
+/* Cognate Hint Box - Boxed Design */
 .hint-box {
-    margin-top: 25px;
+    margin-top: 15px;
     background: #f0fff4;
-    /* Keep the subtle green tint for the whole section */
-    border-top: 2px solid #38b2ac;
-    /* Just a top border definition */
-    border-bottom: 2px solid #38b2ac;
-    padding: 15px 5px;
-    /* Minimal padding */
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-/* Remove the icon content */
-.hint-box::before {
-    display: none;
+    border: 1px solid #c6f6d5;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .hint-title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 800;
-    color: #234e52;
+    color: #276749;
     margin-bottom: 12px;
-    text-align: left;
-    /* Sola yasla */
-    letter-spacing: 0.5px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     border: none;
-    padding: 0 0 0 5px;
+    padding: 0;
 }
 
+.hint-title::before {
+    content: '💡';
+    font-size: 1.1em;
+}
+
+/* Story Box */
 .hint-story {
-    font-size: 0.9rem;
-    /* Fontu küçült */
+    background: #fff;
+    border: 1px solid #9ae6b4;
+    /* Green border */
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    /* Equal spacing 12px */
     color: #2f855a;
-    line-height: 1.5;
-    margin-bottom: 15px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    position: relative;
     text-align: left;
-    /* Sola yasla */
-    padding: 0 5px;
 }
 
-/* The 'Bridge' text */
+/* Story Decoration Label REMOVED */
+.hint-story::before {
+    display: none;
+}
+
+/* Comparison / Bridge Box */
 .hint-bridge {
-    background: transparent;
-    color: #319795;
-    font-size: 0.85rem;
-    /* Fontu küçült */
-    font-weight: 600;
-    padding: 0 5px 8px 5px;
-    border: none;
-    border-bottom: 2px solid #b2f5ea;
-    margin-bottom: 10px;
-    display: block;
+    background: #e6fffa;
+    /* Teal tint */
+    border: 1px solid #81e6d9;
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: #285e61;
     font-style: italic;
-    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    /* Equal spacing 12px */
+    line-height: 1.5;
     text-align: left;
 }
 
@@ -1016,77 +1334,100 @@
     display: none;
 }
 
-/* The List */
+/* List Container */
 .hint-list {
     list-style: none;
-    padding: 0 5px;
+    padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Equal spacing 12px */
     background: transparent;
     border: none;
-    border-radius: 0;
 }
 
+/* List Items (Cards) */
 .hint-list li {
-    padding: 0 0 12px 0;
-    border-bottom: 1px dashed #cbd5e0;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #4299e1;
+    /* Blue accent default */
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
     color: #4a5568;
     line-height: 1.4;
-    font-size: 0.85rem;
-    /* Fontu küçült */
-    position: relative;
-    padding-left: 18px;
-    /* Bullet için yer */
-    background: transparent;
+    transition: transform 0.2s;
     margin: 0;
-    margin-bottom: 8px;
-    border-left: none;
     text-align: left;
 }
 
-.hint-list li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
+.hint-list li:hover {
+    transform: translateX(2px);
+    border-color: #cbd5e0;
+    border-left-color: #3182ce;
 }
 
-/* Bullets aligned correctly next to the first line */
-.hint-list li:nth-child(even)::before {
-    content: "•";
-    color: #3182ce;
-    font-weight: bold;
-    font-size: 1.5em;
-    position: absolute;
-    left: 0;
-    top: -2px;
-    /* Hafif yukarı çekip hizala */
-    line-height: 1;
-}
-
+/* Alternating Outline Colors */
 .hint-list li:nth-child(even) {
-    border-left: none;
-    background: transparent;
+    border-left-color: #ed8936;
+    /* Orange accent */
 }
 
-.hint-list li:nth-child(odd)::before {
-    content: "•";
-    color: #d69e2e;
-    font-weight: bold;
-    font-size: 1.5em;
-    position: absolute;
-    left: 0;
-    top: -2px;
-    line-height: 1;
+/* Remove old bullets */
+.hint-list li::before {
+    display: none !important;
 }
 
-.hint-list li:nth-child(odd) {
-    border-left: none;
-    background: transparent;
-}
-
+/* Strong text inside list */
 .hint-list strong {
-    display: inline;
-    font-size: 0.9rem;
-    color: #2c3e50;
-    font-weight: 800;
+    color: #2d3748;
+    font-weight: 700;
+    margin-right: 5px;
+    display: block;
+    /* Title on its own line looks cleaner in card */
+    margin-bottom: 2px;
+}
+
+/* Header Title Adjustment */
+.main-word {
+    font-size: 1.5rem;
     margin: 0;
-    margin-right: 4px;
+    line-height: normal;
+    /* Better for vertical centering */
+    color: #1a202c;
+    position: relative;
+    top: 1px;
+    /* Optical adjustment */
+}
+
+/* --- Progression Ozel Bosluk Ayari --- */
+#sec-progression .progression-table {
+    margin-top: 10px;
+}
+
+#sec-progression.open .accordion-content {
+    padding-bottom: 5px !important;
+}
+
+/* --- Diğer Tüm Bölümler İçin Ortak Ayar (Idioms, Nuance, Cognate, Errors, History, Collocations) --- */
+#sec-idioms .study-block,
+#sec-nuance .side-block,
+#sec-nuance .nuance-scale,
+#sec-cognate .hint-box,
+#sec-errors .study-block,
+#sec-history .side-block,
+#sec-collocations .study-block {
+    margin-top: 10px;
+}
+
+/* Alt boşlukları kısalım */
+#sec-idioms.open .accordion-content,
+#sec-nuance.open .accordion-content,
+#sec-cognate.open .accordion-content,
+#sec-errors.open .accordion-content,
+#sec-history.open .accordion-content,
+#sec-collocations.open .accordion-content {
+    padding-bottom: 5px !important;
 }

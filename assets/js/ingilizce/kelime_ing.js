@@ -8,7 +8,7 @@ window.vocabularyData = [
             "cefr_level": "A2",
             "frequency_rank": 350,
             "frequency_band": "High Frequency",
-            "part_of_speech": "adjective"
+            "part_of_speech": ["adjective"]
         },
         "phonetics": {
             "ipa_us": "/ˈeɪ.bəl/",
@@ -284,7 +284,7 @@ window.vocabularyData = [
             "cefr_level": "A1",
             "frequency_rank": 120,
             "frequency_band": "High Frequency",
-            "part_of_speech": "noun / verb"
+            "part_of_speech": ["noun", "verb"]
         },
         "phonetics": {
             "ipa_us": "/eɪdʒ/",
@@ -564,7 +564,7 @@ window.vocabularyData = [
             "cefr_level": "A2",
             "frequency_rank": 850,
             "frequency_band": "High Frequency",
-            "part_of_speech": "noun"
+            "part_of_speech": ["noun"]
         },
         "phonetics": {
             "ipa_us": "/ˈæl.bəm/",
@@ -810,7 +810,7 @@ window.vocabularyData = [
             "cefr_level": "B1",
             "frequency_rank": 1500,
             "frequency_band": "Medium Frequency",
-            "part_of_speech": "noun"
+            "part_of_speech": ["noun"]
         },
         "phonetics": {
             "ipa_us": "/ˈæl.kə.hɑːl/",
@@ -1076,7 +1076,7 @@ window.vocabularyData = [
             "cefr_level": "A1",
             "frequency_rank": 300,
             "frequency_band": "High Frequency",
-            "part_of_speech": "adj / adv / interjection"
+            "part_of_speech": ["adjective", "adverb", "interjection"]
         },
         "phonetics": {
             "ipa_us": "/ˌɑːl ˈraɪt/",
@@ -1331,7 +1331,7 @@ window.vocabularyData = [
             "cefr_level": "A2",
             "frequency_rank": 2000,
             "frequency_band": "Medium Frequency",
-            "part_of_speech": "noun"
+            "part_of_speech": ["noun"]
         },
         "phonetics": {
             "ipa_us": "/ˈæl.fə.bet/",
@@ -1577,7 +1577,7 @@ window.vocabularyData = [
             "cefr_level": "A2",
             "frequency_rank": 2500,
             "frequency_band": "Medium Frequency",
-            "part_of_speech": "noun"
+            "part_of_speech": ["noun"]
         },
         "phonetics": {
             "ipa_us": "/ˈæm.bjə.ləns/",
@@ -1793,7 +1793,7 @@ window.vocabularyData = [
             "cefr_level": "A2",
             "frequency_rank": 3200,
             "frequency_band": "Low Frequency",
-            "part_of_speech": "noun"
+            "part_of_speech": ["noun"]
         },
         "phonetics": {
             "ipa_us": "/əˈkwer.i.əm/",
@@ -2027,7 +2027,7 @@ window.vocabularyData = [
             "cefr_level": "A1",
             "frequency_rank": 600,
             "frequency_band": "High Frequency",
-            "part_of_speech": "verb"
+            "part_of_speech": ["verb"]
         },
         "phonetics": {
             "ipa_us": "/əˈraɪv/",
@@ -2277,7 +2277,7 @@ window.vocabularyData = [
             "cefr_level": "A1",
             "frequency_rank": 1200,
             "frequency_band": "High Frequency",
-            "part_of_speech": "noun"
+            "part_of_speech": ["noun"]
         },
         "phonetics": {
             "ipa_us": "/ˈɔː.t̬əm/",

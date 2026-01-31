@@ -49,11 +49,33 @@ class VocabCard {
             // Toplayıcı dizi (Başlık ve ID'leri tutacak)
             const availableSections = [];
 
-            // Helper to wrap content with ID and track it
-            const wrapSection = (id, title, content) => {
+            // Helper to wrap content with Accordion Structure
+            const wrapSection = (id, title, content, isOpen = false) => {
                 if (!content) return '';
-                availableSections.push({ id, title });
-                return `<div id="${id}" class="section-wrapper">${content}</div>`;
+
+                // Prevent duplicates in dropdown list
+                if (!availableSections.some(s => s.id === id)) {
+                    availableSections.push({ id, title });
+                }
+
+                const activeClass = isOpen ? 'open' : '';
+                const showClass = isOpen ? 'show' : '';
+                // Always use 'down' icon. CSS rotates it 180deg when .open is present.
+                const iconClass = 'fa-chevron-down';
+
+                return `
+                    <div id="${id}" class="section-wrapper ${activeClass}">
+                        <div class="accordion-header" onclick="vocabCard.toggleAccordion('${id}')">
+                            <div class="accordion-title">
+                                <span style="font-size:0.8em; color:var(--accent); opacity:0.7;">●</span> ${title}
+                            </div>
+                            <div class="accordion-icon"><i class="fa-solid ${iconClass}"></i></div>
+                        </div>
+                        <div class="accordion-content ${showClass}">
+                            ${content}
+                        </div>
+                    </div>
+                `;
             };
 
             // 1. HEADER section
@@ -82,10 +104,9 @@ class VocabCard {
                     </div>
                 `;
             });
-            // Definitions is always present, add manually
+            // Definitions is always present, wrap it as OPEN by default
             if (definitionsHtml) {
-                availableSections.push({ id: 'sec-definitions', title: 'Anlamlar' });
-                definitionsHtml = `<div id="sec-definitions">${definitionsHtml}</div>`;
+                definitionsHtml = wrapSection('sec-definitions', 'Anlamlar', definitionsHtml, true);
             }
 
             let grammarHtml = '';
@@ -386,59 +407,71 @@ class VocabCard {
             // Combine for display in sidebar
             const combinedHistoryHtml = historyHtml + hintHtml;
 
-            // Stories
+            // Stories Logic (Moved BACK to bottom for Dropdown Order)
             let storiesHtml = '';
             if (item.stories) {
                 const storyLevels = Object.keys(item.stories);
 
-                // 1. Add Main Section FIRST (Manual Push)
-                availableSections.push({ id: 'sec-stories', title: 'Hikayeler' });
+                if (storyLevels.length > 0) {
+                    // Dropdown için ANA BAŞLIĞI en başa ekleyelim
+                    // ID'yi 'sec-stories-main' yaparak wrapSection ile aynı yapıyoruz -> Duplicate engelleniyor
+                    availableSections.push({ id: 'sec-stories-main', title: 'Okuma Hikayeleri' });
 
-                const content = `
-                    <div class="study-block">
-                        <h3 class="section-title">Okuma Hikayeleri (Seviyeli)</h3>
-                        <div class="stories-wrapper">
-                            ${storyLevels.map(level => {
-                    const storyId = `sec-story-${level}`;
-                    // 2. Add Sub-sections with Indentation (Using unicode space for cleaner look in select)
-                    availableSections.push({ id: storyId, title: '\u00A0\u00A0 ' + level + ' Hikaye' });
+                    const storyItemsHtml = storyLevels.map(level => {
+                        const storyId = `sec-story-${level}`;
 
-                    return `
-                                <div id="${storyId}" class="story-container">
-                                    <div class="story-header">CEFR Seviyesi: <span class="cefr-tag tag-${level}">${level}</span></div>
-                                    <div class="story-content">
-                                        <div class="story-lang english">
-                                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                                <h4>English</h4>
-                                                <button class="audio-mini-btn" onclick="vocabCard.playStoryAudio(this)" data-text="${encodeURIComponent(item.stories[level].en.replace(/<[^>]*>/g, ''))}" title="Hikayeyi Dinle">
-                                                    🔊
-                                                </button>
-                                            </div>
-                                            <p>${item.stories[level].en}</p>
-                                        </div>
-                                        <div class="story-lang turkish">
-                                            <h4>Türkçe</h4>
-                                            <p>${item.stories[level].tr}</p>
-                                        </div>
+                        const exists = availableSections.some(s => s.id === storyId);
+                        if (!exists) {
+                            availableSections.push({
+                                id: storyId,
+                                title: `${level} Seviye Hikaye`,
+                                html: `<span class="cefr-tag tag-${level}">${level}</span> <span style="font-size:0.85em; opacity:0.9;">Seviye Hikaye</span>`
+                            });
+                        }
+
+                        // Content for inner accordions
+                        const storyContent = `
+                        <div class="story-container" style="border:none; box-shadow:none; margin:0;">
+                             <div class="story-content">
+                                <div class="story-lang english">
+                                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                        <h4 style="margin:0;">ENGLISH</h4>
+                                        <button class="audio-mini-btn" onclick="vocabCard.playStoryAudio(this)" data-text="${encodeURIComponent(item.stories[level].en.replace(/<[^>]*>/g, ''))}" title="Hikayeyi Dinle">
+                                            🔊
+                                        </button>
                                     </div>
+                                    <p>${item.stories[level].en}</p>
                                 </div>
-                            `}).join('')}
+                                <div class="story-lang turkish">
+                                    <h4 style="margin-bottom:10px;">TÜRKÇE</h4>
+                                    <p>${item.stories[level].tr}</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                `;
-                // Manually wrap to avoid double-adding 'Hikayeler' to availableSections
-                storiesHtml = `<div id="sec-stories" class="section-wrapper">${content}</div>`;
+                        `;
+                        return wrapSection(storyId, `<span class="cefr-tag tag-${level}">${level}</span> Seviye Hikaye`, storyContent);
+                    }).join('');
+
+                    const content = `
+                        <div style="display:flex; flex-direction:column; gap:10px;">${storyItemsHtml}</div>
+                    `;
+                    storiesHtml = wrapSection('sec-stories-main', 'Okuma Hikayeleri', content);
+                }
             }
 
 
-            // GENERATE HEADER WITH DROPDOWN
-            const sectionOptions = availableSections.map(s =>
-                `<option value="${s.id}">${s.title}</option>`
-            ).join('');
+
 
             // Clean IPA (remove slashes)
             const rawIpa = phonetics.ipa_us || '';
             const cleanIpa = rawIpa.replace(/\//g, '');
+
+            // GENERATE HEADER WITH CUSTOM DROPDOWN
+            const dropdownItemsHtml = availableSections.map(s => `
+                <div class="dropdown-item" onclick="vocabCard.selectSection('${s.id}')">
+                    ${s.html || s.title}
+                </div>
+            `).join('');
 
             const headerHtml = `
             <div class="controls-top">
@@ -467,11 +500,20 @@ class VocabCard {
                             <h1 class="main-word">${item.word}</h1>
                         </div>
                         
-                        <!-- RIGHT: Dropdown -->
-                        <select class="section-nav" onchange="vocabCard.scrollToSection(this.value)">
-                            <option value="" selected disabled>Bölüme Git...</option>
-                            ${sectionOptions}
-                        </select>
+                        <!-- RIGHT: Custom Dropdown -->
+                        <div class="custom-dropdown-container">
+                            <div class="dropdown-trigger" onclick="vocabCard.toggleDropdown()">
+                                <span id="dropdown-label">Bölüme Git...</span>
+                                <span style="font-size:0.7em; margin-left:6px;">▼</span>
+                            </div>
+                            <div class="dropdown-menu" id="vocab-dropdown-menu">
+                                <div class="dropdown-item" onclick="vocabCard.selectSection('toggle-all')">
+                                    <span id="toggle-all-text" style="font-weight:bold; color:var(--primary);">➕ Hepsini Aç</span>
+                                </div>
+                                <div class="dropdown-item separator"></div>
+                                ${dropdownItemsHtml}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -482,7 +524,19 @@ class VocabCard {
                 <div class="word-meta" style="padding: 10px 30px; border-bottom: 1px solid var(--border);">
                     <span class="meta-chip" style="background:${this.getLevelColor(meta.cefr_level)}; color:white; border:none;">${meta.cefr_level || 'A1'}</span>
                     <span class="meta-chip">${translate(meta.frequency_band) || 'Genel'}</span>
-                    <span class="meta-chip">${translate(meta.part_of_speech) || 'Kelime'}</span>
+                    ${(() => {
+                    const posRaw = meta.part_of_speech;
+                    let posArray = [];
+                    if (Array.isArray(posRaw)) {
+                        posArray = posRaw;
+                    } else if (typeof posRaw === 'string') {
+                        // Split 'noun / verb' style
+                        posArray = posRaw.split('/').map(s => s.trim());
+                    } else {
+                        posArray = ['Kelime'];
+                    }
+                    return posArray.map(p => `<span class="meta-chip">${translate(p)}</span>`).join('');
+                })()}
                 </div>
             `;
 
@@ -493,9 +547,9 @@ class VocabCard {
                     ${tagsHtml}
                     
                     <div class="content-grid">
-                        <!-- MAIN LEFT COLUMN -->
+                        <!-- SINGLE COLUMN CONTENT -->
                         <div class="main-content">
-                            <div class="study-block" style="margin-top:0;">
+                            <div class="study-block" style="margin-top:0; margin-bottom:15px;">
                                 ${definitionsHtml}
                             </div>
                             
@@ -504,19 +558,23 @@ class VocabCard {
                             ${progressionHtml}
 
                             ${pedagogyHtml}
+                            
+                            <!-- SIDEBAR CONTENT MOVED HERE -->
+                            ${nuanceHtml}
+                            ${combinedHistoryHtml} <!-- Köken & İpucu -->
+                            ${collocationsHtml}
+                            ${pragmaticsHtml} <!-- Deyimler -->
+
+                            <!-- Stories at the bottom -->
                             ${storiesHtml}
                         </div>
-    
-                        <!-- RIGHT SIDEBAR -->
-                        <aside class="side-panel">
-                            ${nuanceHtml}
-                            ${combinedHistoryHtml}
-                            ${collocationsHtml}
-                            ${pragmaticsHtml}
-                        </aside>
                     </div>
                 </div>
             `;
+
+            // Adjust Width Dynamic
+            this.adjustDropdownWidth();
+
         } catch (error) {
             console.error(error);
             this.container.innerHTML = `<div style="color:red; padding:20px;">Hata oluştu: ${error.message}</div>`;
@@ -622,15 +680,183 @@ class VocabCard {
         }
     }
 
-    scrollToSection(id) {
+    handleDropdown(selectElement) {
+        const value = selectElement.value;
+        if (!value) return;
+
+        // 1. İşlemi yap
+        this.scrollToSection(value);
+
+        // 2. Dropdown'u sıfırla ("Bölüme Git..." kalsın)
+
+        // Hepsini Aç/Kapat özel durumu için buton metnini güncelle
+        if (value === 'toggle-all') {
+            const option = selectElement.querySelector('option[value="toggle-all"]');
+            if (option) {
+                // Mevcut duruma göre tersini ayarla (scrollToSection zaten işlemi yaptı, şimdi UI güncelle)
+                // Not: scrollToSection içinde metin değişimi yapmıyoruz artık, burada UI yönetiyoruz.
+                // Eğer şu an "Aç" yazıyorsa, işlem yapıldı -> "Kapat" yap.
+                const currentText = option.textContent;
+                if (currentText.includes('Aç')) {
+                    option.textContent = '➖ Hepsini Kapat';
+                } else {
+                    option.textContent = '➕ Hepsini Aç';
+                }
+            }
+        }
+
+        selectElement.selectedIndex = 0; // "Bölüme Git..." option'ı
+        selectElement.blur(); // Mobilde seçimi kapatmak için
+    }
+
+    scrollToSection(arg) {
+        let id = arg;
+        let selectEl = null;
+
+        // If argument is the select element itself
+        if (typeof arg === 'object' && arg.tagName === 'SELECT') {
+            id = arg.value;
+            selectEl = arg;
+        }
+
         if (!id) return;
+
+        // Reset dropdown to default "Bölüme Git..." immediately
+        if (selectEl) {
+            selectEl.selectedIndex = 0;
+            selectEl.blur(); // Remove focus
+        }
+
+        // Handle Toggle All
+        if (id === 'toggle-all') {
+            const allSections = this.container.querySelectorAll('.section-wrapper');
+            const toggleText = document.getElementById('toggle-all-text');
+
+            let action = 'open'; // Default action
+
+            // Determine action based on CURRENT TEXT
+            if (toggleText) {
+                const currentText = toggleText.textContent.trim();
+                if (currentText.includes('Kapat')) {
+                    action = 'close';
+                } else {
+                    action = 'open';
+                }
+            }
+
+            allSections.forEach(sec => {
+                if (action === 'open') {
+                    sec.classList.add('open');
+                } else {
+                    sec.classList.remove('open');
+                }
+            });
+
+            // Update Text AFTER action
+            if (toggleText) {
+                if (action === 'open') {
+                    toggleText.textContent = '➖ Hepsini Kapat';
+                } else {
+                    toggleText.textContent = '➕ Hepsini Aç';
+                }
+            }
+            return;
+        }
+
         const el = document.getElementById(id);
         if (el) {
             el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Eğer kapalıysa aç
+            if (!el.classList.contains('open')) {
+                el.classList.add('open');
+            }
+
+            // Recursively open all parent accordions
+            let currentEl = el.parentElement;
+            while (currentEl) {
+                // Find closest parent section-wrapper
+                const parentSection = currentEl.closest('.section-wrapper');
+                if (parentSection) {
+                    if (!parentSection.classList.contains('open')) {
+                        parentSection.classList.add('open');
+                    }
+                    // Continue searching up from the parent's parent
+                    currentEl = parentSection.parentElement;
+                } else {
+                    // No more sections found up the tree
+                    break;
+                }
+            }
+        }
+    }
+
+    toggleAccordion(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        // 1. Durumu kaydet
+        const wasOpen = el.classList.contains('open');
+
+        // 2. Auto-Collapse Siblings Logic REMOVED
+        // User wants multiple sections to stay open.
+        /*
+        const parent = el.parentElement;
+        if (parent) {
+            const siblings = Array.from(parent.children).filter(child =>
+                child.classList.contains('section-wrapper') && child.id !== id
+            );
+
+            siblings.forEach(sib => {
+                if (sib.classList.contains('open')) {
+                    sib.classList.remove('open');
+                }
+            });
+        }
+        */
+
+        // 3. Hedefi Toggle Yap
+        if (wasOpen) {
+            el.classList.remove('open');
+        } else {
+            el.classList.add('open');
+        }
+    }
+
+    // --- Custom Dropdown Methods ---
+    toggleDropdown() {
+        const menu = document.getElementById('vocab-dropdown-menu');
+        if (menu) {
+            menu.classList.toggle('show');
+        }
+    }
+
+    selectSection(id) {
+        this.closeDropdown();
+        this.scrollToSection(id);
+    }
+
+    closeDropdown() {
+        const menu = document.getElementById('vocab-dropdown-menu');
+        if (menu) {
+            menu.classList.remove('show');
         }
     }
 
     addEventListeners() {
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            const container = document.querySelector('.custom-dropdown-container');
+            if (container && !container.contains(e.target)) {
+                this.closeDropdown();
+            }
+        });
+
+        // Close dropdown on scroll
+        window.addEventListener('scroll', () => {
+            this.closeDropdown();
+        });
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') this.nextCard();
             if (e.key === 'ArrowLeft') this.prevCard();
@@ -662,6 +888,33 @@ class VocabCard {
                 }
             }
         }, { passive: true });
+    }
+
+    adjustDropdownWidth() {
+        const menu = document.getElementById('vocab-dropdown-menu');
+        const container = this.container.querySelector('.custom-dropdown-container');
+
+        if (!menu || !container) return;
+
+        // 1. Make measurable
+        // Save current styles
+        const prevDisplay = menu.style.display;
+        const prevVisibility = menu.style.visibility;
+
+        // Force show invisibly
+        menu.style.display = 'block';
+        menu.style.visibility = 'hidden';
+
+        // 2. Measure
+        const menuWidth = menu.getBoundingClientRect().width;
+
+        // 3. Restore
+        menu.style.display = prevDisplay;
+        menu.style.visibility = prevVisibility;
+
+        // 4. Apply to Container
+        // Add a tiny buffer for borders
+        container.style.width = `${Math.ceil(menuWidth) + 2}px`;
     }
 }
 

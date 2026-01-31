@@ -5,9 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dersler - Prodil | İngilizce Çalışma Platformu</title>
-    <meta name="description" content="Prodil interaktif kelime kartları ve sınavlar ile İngilizcenizi geliştirin.">
-    <meta name="robots" content="noindex, nofollow">
+    <title>PRODİL - Profesyonel Dil Kursu - Sakarya İngilizce | YKS-TYT-AYT-YDT Üniversite Sınavlarına Hazırlık</title>
+    <meta name="description"
+        content="Sakarya'nın en köklü dil okulu Prodil ile İngilizce öğrenin. YKS-TYT-AYT-YDT üniversite sınavlarına hazırlık. Ücretsiz seviye tespiti için tıklayın.">
+    <meta name="keywords"
+        content="sakarya ingilizce kursu, sakarya dil kursu, ydt hazırlık sakarya, yks hazırlık sakarya, ayt hazırlık sakarya, tyt hazırlık sakarya, yds hazırlık sakarya, yökdil hazırlık sakarya, sakarya ingilizce kursu, prodil, sakarya ingilizce sınav teknikleri merkezi, sınav teknikleri, ingilizce dersane, sınav ingilizcesi, ingilizce soru çözümü">
+    <meta name="author" content="Muhsin Çelik">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Prodil - Sakarya'nın Dil Okulu">
+    <meta property="og:description"
+        content="İngilizceyi ezberleyerek değil, yaşayarak öğrenin. Sakarya merkezde profesyonel eğitim.">
+    <meta property="og:image" content="https://prodil.net/assets/logo.png">
+    <meta property="og:url" content="https://prodil.net">
 
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
@@ -294,7 +303,7 @@
     </style>
 </head>
 
-<body class="font-sans text-gray-700 bg-gray-50 antialiased flex flex-col min-h-screen overflow-hidden">
+<body class="font-sans text-gray-700 bg-gray-50 antialiased flex flex-col min-h-screen">
 
     <!-- Preloader -->
     <div id="preloader">
@@ -323,7 +332,7 @@
                         class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Kurumsal</a>
                     <a href="index.html#features"
                         class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Özellikler</a>
-                    <a href="dersler.html" class="text-primary-900 font-bold transition-colors">Ders</a>
+                    <a href="dersler.html" class="text-primary-900 font-bold transition-colors">Çalışma Odası</a>
                     <a href="index.html#contact"
                         class="text-gray-600 hover:text-primary-900 font-medium transition-colors">İletişim</a>
                 </nav>
@@ -364,7 +373,7 @@
                 </a>
                 <a href="dersler.html"
                     class="block px-4 py-3 rounded-xl text-base font-bold text-primary-900 bg-blue-50 transition-colors">
-                    Ders
+                    Çalışma Odası
                 </a>
                 <a href="index.html#contact"
                     class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:text-primary-900 hover:bg-gray-50 transition-colors">
@@ -383,7 +392,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
 
             <!-- Tabs aligned with content (max-w-900px) -->
-            <div class="w-full max-w-[900px] mx-auto mb-3 flex justify-between items-end relative z-[2000]">
+            <div class="w-full max-w-[900px] mx-auto mb-5 flex justify-between items-end relative z-[2000]">
                 <div class="flex justify-start gap-4">
                     <button onclick="switchTab('vocab')" id="tab-vocab" class="tab-btn active">
                         <i class="fa-solid fa-book-open text-lg"></i>
@@ -391,7 +400,7 @@
                     </button>
                     <button onclick="switchTab('exam')" id="tab-exam" class="tab-btn">
                         <i class="fa-solid fa-pen-to-square text-lg"></i>
-                        <span>Sınav</span>
+                        <span>Egzersiz</span>
                     </button>
                 </div>
 
@@ -612,10 +621,14 @@
                     }
                 };
 
-                // Trigger on input
+                // Trigger on input with Debounce (300ms)
+                let searchTimeout;
                 searchInput.addEventListener('input', (e) => {
-                    const query = e.target.value.toLowerCase().trim();
-                    updateDropdown(query);
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        const query = e.target.value.toLowerCase().trim();
+                        updateDropdown(query);
+                    }, 300);
                 });
 
                 // Trigger on focus (show list immediately)
@@ -628,6 +641,14 @@
                 document.addEventListener('click', (e) => {
                     if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
                         searchDropdown.classList.remove('show');
+                    }
+                });
+
+                // Close dropdown on scroll
+                window.addEventListener('scroll', () => {
+                    searchDropdown.classList.remove('show');
+                    if (document.activeElement === searchInput) {
+                        searchInput.blur();
                     }
                 });
             }
