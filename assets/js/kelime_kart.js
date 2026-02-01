@@ -42,6 +42,8 @@ class VocabCard {
             // Defer measurement to ensure rendering is complete
             requestAnimationFrame(() => {
                 this.adjustDropdownWidth();
+                // Ensure page starts at top for each new card
+                window.scrollTo(0, 0);
             });
         } catch (error) {
             console.error(error);
@@ -123,187 +125,7 @@ class VocabCard {
         }
 
         let grammarHtml = '';
-        let pedagogyHtml = '';
-        if (pedagogy.common_errors && pedagogy.common_errors.length > 0) {
-            const content = `
-                <div class="study-block">
-                    <h3 class="section-title" style="color:#e53e3e;">⚠️ Sık Yapılan Hatalar</h3>
-                    ${pedagogy.common_errors.map(err => `
-                        <div class="alert-box">
-                            <span class="alert-wrong">❌ ${err.incorrect}</span>
-                            <span class="alert-correct">✅ ${err.correction}</span>
-                            <div style="margin-top:5px; font-size:0.85rem; color:#4a5568;">${err.explanation}</div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-            pedagogyHtml = wrapSection('sec-errors', 'Sık Hatalar', content);
-        }
 
-        let derivativesHtml = '';
-        if (morph.family_members && morph.family_members.length > 0) {
-            const content = `
-                <div class="side-block">
-                    <h3 class="section-title">Kelime Ailesi (Türevler)</h3>
-                    <ul class="derivative-list">
-                        ${morph.family_members.map(fam => `
-                            <li class="derivative-item" onclick="vocabCard.searchAndGo('${fam.word}')">
-                                <div>
-                                    <span class="der-word">${fam.word}</span>
-                                    <span class="der-pos">${fam.pos}</span>
-                                </div>
-                                <div class="der-note">${fam.note || ''}</div>
-                            </li>
-                        `).join('')}
-                    </ul>
-                </div>
-            `;
-            derivativesHtml = wrapSection('sec-derivatives', 'Türevler', content);
-        }
-
-        let progressionHtml = '';
-        if (progression.levels && progression.levels.length > 0) {
-            const content = `
-               <div class="side-block">
-                   <h3 class="section-title">Seviye Gelişimi</h3>
-                   <table class="progression-table">
-                       ${progression.levels.map(lvl => `
-                           <tr>
-                               <td>
-                                   <span class="cefr-tag tag-${lvl.cefr}">${lvl.cefr}</span>
-                               </td>
-                               <td>
-                                   <div style="font-weight:500;">${lvl.en}</div>
-                                   <div style="color:#718096; font-style:italic;">${lvl.tr}</div>
-                               </td>
-                           </tr>
-                       `).join('')}
-                   </table>
-               </div>
-           `;
-            progressionHtml = wrapSection('sec-progression', 'Seviye Gelişimi', content);
-        }
-
-        let historyHtml = '';
-        if (history.timeline && history.timeline.length > 0) {
-            const timelineContent = `
-                <div class="side-block">
-                    <h3 class="section-title">Köken & Tarihçe</h3>
-                    <div class="timeline-path">
-                        ${history.timeline.map(step => `
-                            <div class="timeline-step">
-                                <div class="timeline-era">${step.era || step.language}</div>
-                                <div class="timeline-content">
-                                    <strong style="color:#2d3748;">${step.word}</strong>: ${step.meaning}
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
-            historyHtml = wrapSection('sec-history', 'Köken & Tarihçe', timelineContent);
-        }
-
-        let collocationsHtml = '';
-        if (item.collocations) {
-            const mods = item.collocations.modifiers_adverbs || [];
-            const verbs = item.collocations.verbs_preceding || [];
-            if (mods.length > 0 || verbs.length > 0) {
-                const content = `
-                    <div class="study-block">
-                        <h3 class="section-title">Eş Dizimler (Collocations)</h3>
-                        <div class="collo-grid">
-                            ${mods.length > 0 ? `
-                                <div class="collo-group">
-                                    <h4 class="collo-header">Nasıl Kullanılır? (Zarflar)</h4>
-                                    ${mods.map(m => `
-                                        <div class="collo-item">
-                                            <span class="collo-word">${m.word}</span>
-                                            <span class="collo-example">"${m.example}"</span>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            ` : ''}
-                            ${verbs.length > 0 ? `
-                                <div class="collo-group">
-                                    <h4 class="collo-header">Hangi Fiillerle?</h4>
-                                    ${verbs.map(v => `
-                                        <div class="collo-item">
-                                            <span class="collo-word">${v.word}</span>
-                                            <span class="collo-example">"${v.example}"</span>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            ` : ''}
-                        </div>
-                    </div>
-                `;
-                collocationsHtml = wrapSection('sec-collocations', 'Eş Dizimler', content);
-            }
-        }
-
-        let pragmaticsHtml = '';
-        if (item.pragmatics && item.pragmatics.idioms_and_phrases) {
-            const content = `
-                <div class="study-block">
-                    <h3 class="section-title">Deyimler & İfadeler</h3>
-                    <div class="idiom-list">
-                        ${item.pragmatics.idioms_and_phrases.map(idm => `
-                            <div class="idiom-card">
-                                <div class="idiom-phrase">${idm.phrase}</div>
-                                <div class="idiom-meaning">${idm.meaning_tr}</div>
-                            </div>
-                        `).join('')}
-                    </div>
-                    ${item.pragmatics.sociolinguistics ? `
-                        <div class="note-box">
-                            <strong>💡 Sosyo-Kültürel Not:</strong> ${item.pragmatics.sociolinguistics.note_tr}
-                        </div>
-                    `: ''}
-                </div>
-             `;
-            pragmaticsHtml = wrapSection('sec-idioms', 'Deyimler', content);
-        }
-
-        let tenseLogicHtml = '';
-        if (grammar.tense_logic) {
-            tenseLogicHtml = `
-                <div class="logic-box">
-                    <div class="logic-title">⚡ Mantık: ${grammar.tense_logic.why_use_it}</div>
-                    ${grammar.tense_logic.critical_comparison ? `
-                        <div class="logic-compare">
-                            <strong>Kritik Ayrım:</strong> ${grammar.tense_logic.critical_comparison.rule}
-                            <div class="logic-examples">
-                                <div class="wrong">❌ ${grammar.tense_logic.critical_comparison.example_wrong}</div>
-                                <div class="right">✅ ${grammar.tense_logic.critical_comparison.example_right}</div>
-                            </div>
-                        </div>
-                    ` : ''}
-                </div>
-            `;
-        }
-
-        const structsHtml = grammar.structures && grammar.structures.length > 0 ? `
-             <div class="grammar-grid">
-                ${grammar.structures.map(st => `
-                    <div class="grammar-item">
-                        <div class="grammar-pattern">${st.pattern}</div>
-                        <div class="grammar-note">${st.notes_tr}</div>
-                    </div>
-                `).join('')}
-             </div>
-         ` : '';
-
-        if (structsHtml || tenseLogicHtml) {
-            const content = `
-                <div class="study-block">
-                    <h3 class="section-title">Gramer & Mantık</h3>
-                    ${structsHtml}
-                    ${tenseLogicHtml}
-                </div>
-             `;
-            grammarHtml = wrapSection('sec-grammar', 'Gramer', content);
-        }
 
         let nuanceHtml = '';
         const nuance = item.lexical_nuance || {};
@@ -396,6 +218,192 @@ class VocabCard {
             `;
             nuanceHtml = wrapSection('sec-nuance', 'Nüanslar', content);
         }
+
+        let derivativesHtml = '';
+        if (morph.family_members && morph.family_members.length > 0) {
+            const content = `
+                <div class="side-block">
+                    <h3 class="section-title">Kelime Ailesi (Türevler)</h3>
+                    <ul class="derivative-list">
+                        ${morph.family_members.map(fam => `
+                            <li class="derivative-item" onclick="vocabCard.searchAndGo('${fam.word}')">
+                                <div>
+                                    <span class="der-word">${fam.word}</span>
+                                    <span class="der-pos">${fam.pos}</span>
+                                </div>
+                                <div class="der-note">${fam.note || ''}</div>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+            derivativesHtml = wrapSection('sec-derivatives', 'Türevler', content);
+        }
+
+        let tenseLogicHtml = '';
+        if (grammar.tense_logic) {
+            tenseLogicHtml = `
+                <div class="logic-box">
+                    <div class="logic-title">⚡ Mantık: ${grammar.tense_logic.why_use_it}</div>
+                    ${grammar.tense_logic.critical_comparison ? `
+                        <div class="logic-compare">
+                            <strong>Kritik Ayrım:</strong> ${grammar.tense_logic.critical_comparison.rule}
+                            <div class="logic-examples">
+                                <div class="wrong">❌ ${grammar.tense_logic.critical_comparison.example_wrong}</div>
+                                <div class="right">✅ ${grammar.tense_logic.critical_comparison.example_right}</div>
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        const structsHtml = grammar.structures && grammar.structures.length > 0 ? `
+             <div class="grammar-grid">
+                ${grammar.structures.map(st => `
+                    <div class="grammar-item">
+                        <div class="grammar-pattern">${st.pattern}</div>
+                        <div class="grammar-note">${st.notes_tr}</div>
+                    </div>
+                `).join('')}
+             </div>
+         ` : '';
+
+        if (structsHtml || tenseLogicHtml) {
+            const content = `
+                <div class="study-block">
+                    <h3 class="section-title">Gramer & Mantık</h3>
+                    ${structsHtml}
+                    ${tenseLogicHtml}
+                </div>
+             `;
+            grammarHtml = wrapSection('sec-grammar', 'Gramer', content);
+        }
+
+        let progressionHtml = '';
+        if (progression.levels && progression.levels.length > 0) {
+            const content = `
+               <div class="side-block">
+                   <h3 class="section-title">Seviye Gelişimi</h3>
+                   <table class="progression-table">
+                       ${progression.levels.map(lvl => `
+                           <tr>
+                               <td>
+                                   <span class="cefr-tag tag-${lvl.cefr}">${lvl.cefr}</span>
+                               </td>
+                               <td>
+                                   <div style="font-weight:500;">${lvl.en}</div>
+                                   <div style="color:#718096; font-style:italic;">${lvl.tr}</div>
+                               </td>
+                           </tr>
+                       `).join('')}
+                   </table>
+               </div>
+           `;
+            progressionHtml = wrapSection('sec-progression', 'Seviye Gelişimi', content);
+        }
+
+        let pedagogyHtml = '';
+        if (pedagogy.common_errors && pedagogy.common_errors.length > 0) {
+            const content = `
+                <div class="study-block">
+                    <h3 class="section-title" style="color:#e53e3e;">⚠️ Sık Yapılan Hatalar</h3>
+                    ${pedagogy.common_errors.map(err => `
+                        <div class="alert-box">
+                            <span class="alert-wrong">❌ ${err.incorrect}</span>
+                            <span class="alert-correct">✅ ${err.correction}</span>
+                            <div style="margin-top:5px; font-size:0.85rem; color:#4a5568;">${err.explanation}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            pedagogyHtml = wrapSection('sec-errors', 'Sık Hatalar', content);
+        }
+
+        let historyHtml = '';
+        if (history.timeline && history.timeline.length > 0) {
+            const timelineContent = `
+                <div class="side-block">
+                    <h3 class="section-title">Köken & Tarihçe</h3>
+                    <div class="timeline-path">
+                        ${history.timeline.map(step => `
+                            <div class="timeline-step">
+                                <div class="timeline-era">${step.era || step.language}</div>
+                                <div class="timeline-content">
+                                    <strong style="color:#2d3748;">${step.word}</strong>: ${step.meaning}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            historyHtml = wrapSection('sec-history', 'Köken & Tarihçe', timelineContent);
+        }
+
+        let collocationsHtml = '';
+        if (item.collocations) {
+            const mods = item.collocations.modifiers_adverbs || [];
+            const verbs = item.collocations.verbs_preceding || [];
+            if (mods.length > 0 || verbs.length > 0) {
+                const content = `
+                    <div class="study-block">
+                        <h3 class="section-title">Eş Dizimler (Collocations)</h3>
+                        <div class="collo-grid">
+                            ${mods.length > 0 ? `
+                                <div class="collo-group">
+                                    <h4 class="collo-header">Nasıl Kullanılır? (Zarflar)</h4>
+                                    ${mods.map(m => `
+                                        <div class="collo-item">
+                                            <span class="collo-word">${m.word}</span>
+                                            <span class="collo-example">"${m.example}"</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                            ${verbs.length > 0 ? `
+                                <div class="collo-group">
+                                    <h4 class="collo-header">Hangi Fiillerle?</h4>
+                                    ${verbs.map(v => `
+                                        <div class="collo-item">
+                                            <span class="collo-word">${v.word}</span>
+                                            <span class="collo-example">"${v.example}"</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+                collocationsHtml = wrapSection('sec-collocations', 'Eş Dizimler', content);
+            }
+        }
+
+        let pragmaticsHtml = '';
+        if (item.pragmatics && item.pragmatics.idioms_and_phrases) {
+            const content = `
+                <div class="study-block">
+                    <h3 class="section-title">Deyimler & İfadeler</h3>
+                    <div class="idiom-list">
+                        ${item.pragmatics.idioms_and_phrases.map(idm => `
+                            <div class="idiom-card">
+                                <div class="idiom-phrase">${idm.phrase}</div>
+                                <div class="idiom-meaning">${idm.meaning_tr}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    ${item.pragmatics.sociolinguistics ? `
+                        <div class="note-box">
+                            <strong>💡 Sosyo-Kültürel Not:</strong> ${item.pragmatics.sociolinguistics.note_tr}
+                        </div>
+                    `: ''}
+                </div>
+             `;
+            pragmaticsHtml = wrapSection('sec-idioms', 'Deyimler', content);
+        }
+
+
+
+
 
         let hintHtml = '';
         if (history.turkish_cognate_hint) {
@@ -492,7 +500,7 @@ class VocabCard {
                     <i class="fa-solid fa-arrow-left"></i>
                 </button>
                 <span style="font-size:1.1rem; color:#718096; min-width:30px; text-align:center; font-weight:500;">
-                    ${index + 1}/${this.data.length}
+                    ${index + 1} / ${this.data.length}
                 </span>
                 <button onclick="vocabCard.nextCard()" class="nav-btn-small hover:bg-gray-50 text-gray-600">
                     <i class="fa-solid fa-arrow-right"></i>
@@ -501,7 +509,7 @@ class VocabCard {
 
             <!-- Right: Pronunciation -->
             <div style="display:flex; align-items:center; gap:5px;">
-                <span style="font-family:'Courier New'; font-size:1.1rem; color:#4a5568; background:#edf2f7; padding:0 4px; border-radius:3px;">
+                <span style="font-family:'Courier New'; font-size:1.1rem; color:#4a5568; padding:0 4px; border-radius:3px;">
                     ${cleanIpa}
                 </span>
                 <button onclick="vocabCard.playGoogleAudio('${item.word}')" class="nav-btn-small rounded-full text-blue-600 bg-blue-50 border-transparent">
@@ -565,11 +573,11 @@ class VocabCard {
                         <div class="study-block" style="margin-top:0; margin-bottom:15px;">
                             ${definitionsHtml}
                         </div>
+                        ${nuanceHtml}
                         ${derivativesHtml}
                         ${grammarHtml}
                         ${progressionHtml}
                         ${pedagogyHtml}
-                        ${nuanceHtml}
                         ${combinedHistoryHtml}
                         ${collocationsHtml}
                         ${pragmaticsHtml}
@@ -1018,6 +1026,12 @@ class VocabCard {
 
             this.isDragging = true;
             this.startPos = this.getPositionX(event);
+            // Capture Y start position to detect vertical scroll intention
+            this.startPosY = event.type.includes('mouse') ? event.pageY : event.touches[0].clientY;
+
+            // RESET LOCK STATE
+            this.lockDirection = null; // 'horizontal' or 'vertical'
+
             this.animationID = requestAnimationFrame(this.animation);
 
             // Clear any existing transition
@@ -1026,34 +1040,68 @@ class VocabCard {
         }
 
         const touchMove = (event) => {
-            if (this.isDragging) {
-                const currentPosition = this.getPositionX(event);
-                const diff = currentPosition - this.startPos;
+            if (!this.isDragging) return;
 
-                // 1. Block Prev Swipe on First Card
-                if (this.currentIndex === 0 && diff > 0) {
-                    this.currentTranslate = 0;
-                    return;
-                }
+            const currentPosition = this.getPositionX(event);
+            const currentPositionY = event.type.includes('mouse') ? event.pageY : event.touches[0].clientY;
 
-                this.currentTranslate = diff;
+            const diff = currentPosition - this.startPos;
+            const diffY = currentPositionY - this.startPosY;
 
-                // Ghost Kart Oluşturma (Henüz yoksa ve hareket belirginse)
-                if (!this.ghostCard && Math.abs(diff) > 20) {
-                    this.createGhostCard(diff);
-                }
-
-                // Hareketli Ghost Kart Kontrolü
-                if (this.ghostCard) {
-                    const width = window.innerWidth;
-                    if (diff > 0) { // Prev (Sağa çekiyoruz, soldan gelen görünmeli)
-                        this.ghostCard.style.transform = `translateX(${-width + diff}px)`;
-                    } else { // Next (Sola çekiyoruz, sağdan gelen görünmeli)
-                        this.ghostCard.style.transform = `translateX(${width + diff}px)`;
+            // --- AXIS LOCKING LOGIC ---
+            // If direction isn't locked yet, check threshold
+            if (!this.lockDirection) {
+                const absDiffX = Math.abs(diff);
+                const absDiffY = Math.abs(diffY);
+                // Threshold of 5px to determine intent
+                if (absDiffX > 5 || absDiffY > 5) {
+                    if (absDiffX > absDiffY) {
+                        this.lockDirection = 'horizontal';
+                    } else {
+                        this.lockDirection = 'vertical';
+                        // If determined vertical, cancel dragging flag immediately to "release" swipe control
+                        this.isDragging = false;
+                        this.currentTranslate = 0;
+                        this.setSliderPosition();
+                        return;
                     }
                 }
             }
+
+            // If locked vertically, do nothing (let native scroll happen)
+            if (this.lockDirection === 'vertical') {
+                return;
+            }
+
+            // If locked horizontally, PREVENT NATIVE SCROLL and do swipe
+            if (this.lockDirection === 'horizontal') {
+                if (event.cancelable) event.preventDefault();
+            }
+
+            // 1. Block Prev Swipe on First Card
+            if (this.currentIndex === 0 && diff > 0) {
+                this.currentTranslate = 0;
+                return;
+            }
+
+            this.currentTranslate = diff;
+
+            // Ghost Kart Oluşturma (Henüz yoksa ve hareket belirginse)
+            if (!this.ghostCard && Math.abs(diff) > 20) {
+                this.createGhostCard(diff);
+            }
+
+            // Hareketli Ghost Kart Kontrolü
+            if (this.ghostCard) {
+                const width = window.innerWidth;
+                if (diff > 0) { // Prev (Sağa çekiyoruz, soldan gelen görünmeli)
+                    this.ghostCard.style.transform = `translateX(${-width + diff}px)`;
+                } else { // Next (Sola çekiyoruz, sağdan gelen görünmeli)
+                    this.ghostCard.style.transform = `translateX(${width + diff}px)`;
+                }
+            }
         }
+
 
         const touchEnd = () => {
             if (this.isDropdownInteraction) {
@@ -1082,7 +1130,8 @@ class VocabCard {
         }
 
         this.container.addEventListener('touchstart', touchStart, { passive: true });
-        this.container.addEventListener('touchmove', touchMove, { passive: true });
+        // Revert passive: false if swipe locking not working well, but keeping it for axis locking
+        this.container.addEventListener('touchmove', touchMove, { passive: false });
         this.container.addEventListener('touchend', touchEnd);
 
         // JS Sticky Fallback for Mobile (Robustness)
@@ -1117,17 +1166,24 @@ class VocabCard {
         const navbarHeight = header ? header.offsetHeight : 50; // Fallback to 50px
 
         // If the top controls slide under the navbar, we stick.
-        if (triggerPoint < navbarHeight) {
-            if (!stickyWrapper.classList.contains('mobile-fixed')) {
+        // If the top controls slide under the navbar, we stick.
+        // LOGIC UPDATE: Use different triggers for adding vs removing to apply hysteresis and stability
+        if (!stickyWrapper.classList.contains('mobile-fixed')) {
+            // Activation Condition: Top controls bottom slides under navbar
+            if (triggerPoint < navbarHeight) {
                 stickyWrapper.classList.add('mobile-fixed');
-                // Set top dynamically based on current navbar height
                 stickyWrapper.style.top = `${navbarHeight}px`;
                 placeholder.style.height = `${stickyWrapper.offsetHeight}px`;
             }
         } else {
-            if (stickyWrapper.classList.contains('mobile-fixed')) {
+            // Deactivation Condition: Placeholder bottom slides back down BELOW navbar
+            // usage of placeholder.getBoundingClientRect().top ensures we track the original position
+            const placeholderRect = placeholder.getBoundingClientRect();
+            // We unstick only if the placeholder (original psotion) moves clearly below the navbar
+            // Using a slight offset (e.g. 5px) prevents rapid toggling
+            if (placeholderRect.top > navbarHeight) {
                 stickyWrapper.classList.remove('mobile-fixed');
-                stickyWrapper.style.top = ''; // Clear inline style
+                stickyWrapper.style.top = '';
                 placeholder.style.height = '0';
             }
         }
@@ -1148,7 +1204,12 @@ class VocabCard {
     setSliderPosition() {
         const card = this.container.querySelector('.vocab-card');
         if (card) {
-            card.style.transform = `translateX(${this.currentTranslate}px)`;
+            if (this.currentTranslate === 0) {
+                // If 0, remove transform entirely so position:fixed works relative to viewport
+                card.style.transform = '';
+            } else {
+                card.style.transform = `translateX(${this.currentTranslate}px)`;
+            }
         }
     }
 

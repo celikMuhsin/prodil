@@ -143,8 +143,14 @@ html {
         margin: 0;
         border-radius: 0;
         padding: 8px 15px;
-        /* Balanced padding for mobile */
+        /* Reverted to original base padding */
         box-sizing: border-box;
+        transition: padding 0.2s ease;
+    }
+
+    .sticky-header-wrapper.mobile-fixed {
+        padding: 10px 25px;
+        /* Increased padding specifically for sticky state alignment */
     }
 }
 
@@ -761,8 +767,10 @@ html {
     background: #f1f5f9;
 }
 
+
 .accordion-title {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    /* sekmelerin başlıgını büyütüp küçültüyor */
     font-weight: 700;
     color: var(--text-main);
     display: flex;
@@ -790,7 +798,7 @@ html {
 .section-wrapper.open>.accordion-content {
     max-height: 15000px;
     /* Arbitrary large height */
-    padding: 30px 20px 5px 20px;
+    padding: 15px 20px 5px 20px;
 }
 
 /* Hide original section titles since we use accordion headers now */
@@ -819,8 +827,29 @@ html {
     padding-right: 10px;
 }
 
+
+
 .accordion-content .section-wrapper .accordion-header:hover {
     background: #f8fafc;
+}
+
+/* Fix: Remove extra margin from blocks inside accordion to reduce whitespace */
+.accordion-content .side-block,
+.accordion-content .study-block {
+    margin-bottom: 8px !important;
+    margin-top: 8px !important;
+}
+
+/* Fix: Remove potential default margins from the table itself */
+.accordion-content table,
+.accordion-content .progression-table {
+    margin-top: 8px !important;
+    border-collapse: collapse;
+}
+
+/* Reduce table cell padding inside accordion for compactness */
+.accordion-content .progression-table td {
+    padding: 8px 0;
 }
 
 /* İçteki akordeonun içeriği */
@@ -999,11 +1028,19 @@ html {
 
 .cefr-tag {
     font-weight: 700;
-    font-size: 0.75rem;
-    padding: 2px 6px;
-    border-radius: 4px;
+    font-size: 0.7rem;
+    /* Compact Square */
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0;
+    /* Prevent shrinking in flex containers (like dropdown) */
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 3px;
     color: #fff;
-    display: inline-block;
     margin-right: 6px;
 }
 
