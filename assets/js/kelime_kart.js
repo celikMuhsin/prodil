@@ -31,11 +31,18 @@ class VocabCard {
 
     renderCard() {
         try {
+            // Ensure no lingering artifacts
+            this.container.innerHTML = '';
+
             const item = this.data[this.currentIndex];
             if (!item) return;
 
             this.container.innerHTML = this.generateCardHTML(item, this.currentIndex);
-            this.adjustDropdownWidth();
+
+            // Defer measurement to ensure rendering is complete
+            requestAnimationFrame(() => {
+                this.adjustDropdownWidth();
+            });
         } catch (error) {
             console.error(error);
             this.container.innerHTML = `<div style="color:red; padding:20px;">Hata oluştu: ${error.message}</div>`;
@@ -478,7 +485,7 @@ class VocabCard {
         // Compact Header Redesign
         const headerHtml = `
         <!-- Top Row: Controls (Not Sticky) -->
-        <div style="display:flex; justify-content:space-between; align-items:center; width:100%; border-bottom:1px solid #f0f0f0; padding:2px 10px; margin-bottom:0;">
+        <div style="display:flex; justify-content:space-between; align-items:center; width:100%; border-bottom:1px solid #f0f0f0; padding:10px 15px; margin-bottom:0;">
             <!-- Left: Nav -->
             <div style="display:flex; align-items:center; gap:5px;">
                  <button onclick="vocabCard.prevCard()" class="nav-btn-small hover:bg-gray-50 text-gray-400" ${index === 0 ? 'disabled' : ''}>
@@ -506,9 +513,9 @@ class VocabCard {
         <div id="sticky-placeholder" style="height:0; width:100%;"></div>
         
         <!-- Sticky Wrapper (Only Word Line) -->
-        <div class="sticky-header-wrapper" style="padding: 2px 10px; display:flex; flex-direction:column; gap:0;">
+        <div class="sticky-header-wrapper">
             <!-- Bottom Row: Word & Dropdown (Ultra Compact) -->
-            <div style="display:flex; justify-content:space-between; align-items:center; width:100%; padding: 2px 5px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
                 <h1 style="font-size:2.0rem; font-weight:800; color:var(--text-main); margin:0; line-height:1; letter-spacing:-0.5px;">
                     ${item.word}
                 </h1>
@@ -651,6 +658,8 @@ class VocabCard {
             this.renderCard();
             // Scroll to top to see tabs and header
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Ensure sticky state is correct after jump
+            setTimeout(() => this.updateStickyState(), 50);
         } else {
             console.log("Kelime bulunamadı, navigasyon yapılmadı: " + word);
         }
@@ -719,6 +728,8 @@ class VocabCard {
             setTimeout(() => {
                 if (ghostCard.parentNode) ghostCard.parentNode.removeChild(ghostCard);
                 newCard.classList.remove('anim-slide-in-right', 'anim-slide-in-left');
+                // Ensure sticky state is updated after animation
+                this.updateStickyState();
             }, 400); // CSS animasyon süresi (0.4s) ile aynı
         }
     }
@@ -1018,6 +1029,13 @@ class VocabCard {
             if (this.isDragging) {
                 const currentPosition = this.getPositionX(event);
                 const diff = currentPosition - this.startPos;
+
+                // 1. Block Prev Swipe on First Card
+                if (this.currentIndex === 0 && diff > 0) {
+                    this.currentTranslate = 0;
+                    return;
+                }
+
                 this.currentTranslate = diff;
 
                 // Ghost Kart Oluşturma (Henüz yoksa ve hareket belirginse)
@@ -1067,11 +1085,54 @@ class VocabCard {
         this.container.addEventListener('touchmove', touchMove, { passive: true });
         this.container.addEventListener('touchend', touchEnd);
 
-        // JS Sticky Fallback removed in favor of native CSS sticky support
-        /* 
-        window.addEventListener('scroll', () => { ... }); 
-        */
+        // JS Sticky Fallback for Mobile (Robustness)
+        // We use a bound function so we can call it manually after render
+        this.handleScroll = this.handleScroll.bind(this);
+        window.addEventListener('scroll', this.handleScroll, { passive: true });
+
+        // Initial check
+        this.updateStickyState();
     }
+
+    handleScroll() {
+        if (window.innerWidth > 768) return;
+        this.updateStickyState();
+    }
+
+    updateStickyState() {
+        // Only run on mobile
+        if (window.innerWidth > 768) return;
+
+        const stickyWrapper = this.container.querySelector('.sticky-header-wrapper');
+        const placeholder = this.container.querySelector('#sticky-placeholder');
+        const topControls = this.container.querySelector('.vocab-card > div:first-child');
+
+        if (!stickyWrapper || !placeholder || !topControls) return;
+
+        // Calculate trigger point: Bottom of the top controls
+        const triggerPoint = topControls.getBoundingClientRect().bottom;
+
+        // Dynamic Navbar Height Calculation
+        const header = document.querySelector('header');
+        const navbarHeight = header ? header.offsetHeight : 50; // Fallback to 50px
+
+        // If the top controls slide under the navbar, we stick.
+        if (triggerPoint < navbarHeight) {
+            if (!stickyWrapper.classList.contains('mobile-fixed')) {
+                stickyWrapper.classList.add('mobile-fixed');
+                // Set top dynamically based on current navbar height
+                stickyWrapper.style.top = `${navbarHeight}px`;
+                placeholder.style.height = `${stickyWrapper.offsetHeight}px`;
+            }
+        } else {
+            if (stickyWrapper.classList.contains('mobile-fixed')) {
+                stickyWrapper.classList.remove('mobile-fixed');
+                stickyWrapper.style.top = ''; // Clear inline style
+                placeholder.style.height = '0';
+            }
+        }
+    }
+
 
     getPositionX(event) {
         return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
@@ -1097,11 +1158,19 @@ class VocabCard {
 
         if (diff > 0) {
             // Sağa kaydırma -> Önceki kart (Soldan gelecek)
-            targetIndex = this.currentIndex - 1;
-            startX = -window.innerWidth;
+            // Blocked in touchMove if index 0, but safe check:
+            if (this.currentIndex > 0) {
+                targetIndex = this.currentIndex - 1;
+                startX = -window.innerWidth;
+            }
         } else {
             // Sola kaydırma -> Sonraki kart (Sağdan gelecek)
-            targetIndex = this.currentIndex + 1;
+            // Loop Logic:
+            if (this.currentIndex === this.data.length - 1) {
+                targetIndex = 0; // Loop to start
+            } else {
+                targetIndex = this.currentIndex + 1;
+            }
             startX = window.innerWidth;
         }
 
@@ -1173,6 +1242,15 @@ class VocabCard {
             // Değişkenleri sıfırla
             this.currentTranslate = 0;
             this.ghostCard = null; // renderCard overwrite ettiği için remove'a gerek yok, referansı kopar yeter
+
+            // CRITICAL FIX: Ensure main card has no transform after render
+            const card = this.container.querySelector('.vocab-card');
+            if (card) {
+                card.style.transform = '';
+            }
+
+            // Ensure sticky state is correct after swipe finish
+            this.updateStickyState();
         }, 300);
     }
 
@@ -1188,7 +1266,8 @@ class VocabCard {
         // Ana kartın pozisyonunu sıfırla (eğer değişmediyse)
         const card = this.container.querySelector('.vocab-card');
         if (card) {
-            card.style.transform = 'translateX(0px)';
+            // CRITICAL FIX: Clear transform so sticky/fixed works relative to viewport
+            card.style.transform = '';
             card.style.transition = 'transform 0.3s ease-out';
         }
     }
@@ -1197,7 +1276,8 @@ class VocabCard {
         const card = this.container.querySelector('.vocab-card');
         if (card) {
             card.style.transition = 'transform 0.3s ease-out';
-            card.style.transform = 'translateX(0px)';
+            // CRITICAL FIX: Clear transform instead of setting to 0px
+            card.style.transform = '';
         }
         if (this.ghostCard) {
             this.ghostCard.style.transition = 'transform 0.3s ease-out';
@@ -1224,7 +1304,8 @@ class VocabCard {
     }
 
     adjustDropdownWidth() {
-        const menu = document.getElementById('vocab-dropdown-menu');
+        // Scope to container to avoid any ghost card conflicts
+        const menu = this.container.querySelector('#vocab-dropdown-menu');
         const container = this.container.querySelector('.custom-dropdown-container');
 
         if (!menu || !container) return;

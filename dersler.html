@@ -68,9 +68,11 @@
         /* Tab Styles */
         .tab-btn {
             position: relative;
-            padding: 0.2rem 0.625rem;
+            padding: 0.4rem 1rem;
+            /* Increased to match search input */
             font-weight: 700;
-            font-size: 0.7rem;
+            font-size: 0.85rem;
+            /* Increased to match search input */
             color: #718096;
             background: #ffffff;
             border: 2px solid #e2e8f0;
@@ -79,7 +81,7 @@
             /* Bouncy spring */
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.5rem;
             cursor: pointer;
             overflow: hidden;
             letter-spacing: 0.025em;
@@ -263,6 +265,20 @@
             font-weight: 500;
         }
 
+        /* Mobile Adjustments for Search Box */
+        @media (max-width: 640px) {
+            .search-wrapper {
+                width: 60px;
+                /* Reduced width (approx half of desktop/tablet visual usually, or just smaller) */
+            }
+
+            .search-input {
+                padding-top: 0.6rem;
+                /* Increased height */
+                padding-bottom: 0.6rem;
+            }
+        }
+
         .search-dropdown {
             position: absolute;
             top: 110%;
@@ -320,7 +336,7 @@
                 <!-- Logo Area -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html" class="flex items-center gap-2">
-                        <img src="assets/logo.png" alt="Prodil Logo" class="h-10 md:h-12 w-auto object-contain">
+                        <img src="assets/logo.png" alt="Prodil Logo" class="h-14 md:h-12 w-auto object-contain">
                     </a>
                 </div>
 
@@ -349,7 +365,7 @@
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none"
                         onclick="toggleMobileMenu()">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                        <i class="fa-solid fa-bars text-3xl"></i>
                     </button>
                 </div>
             </div>

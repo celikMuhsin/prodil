@@ -75,9 +75,10 @@ html {
     position: -webkit-sticky;
     /* iOS Safari */
     position: sticky;
-    top: 50px;
-    /* Reduced from 70px to match new scale */
-    z-index: 900;
+    top: 80px;
+    /* Exact match for Navbar height */
+    z-index: 950;
+    /* Higher z-index to stay above content */
     background: #fff;
     /* Ensure bg covers scrolling content */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -85,20 +86,29 @@ html {
     margin-top: -1px;
     /* Prevent visual gap */
     width: 100%;
-    padding: 2px 5px;
-    /* Minimal padding */
+    padding: 10px 15px;
+    /* Increased padding for breathing room */
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
 }
 
 /* JS-Activated Fixed Class for Mobile */
 .sticky-header-wrapper.mobile-fixed {
     position: fixed !important;
-    top: 50px;
+    top: 80px;
     /* Match sticky top */
     left: 0;
     width: 100%;
-    z-index: 900;
+    z-index: 950;
     animation: slideDown 0.2s ease-out;
     /* Smooth entry */
+}
+
+@media (max-width: 640px) {
+    .sticky-header-wrapper.mobile-fixed {
+        top: 50px;
+        /* Mobile Navbar Height (5rem * 10px font size) */
+    }
 }
 
 @keyframes slideDown {
@@ -113,8 +123,8 @@ html {
 
 /* Sticky Header Offset Fix */
 [id^="sec-"] {
-    scroll-margin-top: 140px;
-    /* Increased for sticky header */
+    scroll-margin-top: 180px;
+    /* Increased for larger sticky header */
 }
 
 @media (max-width: 768px) {
@@ -127,13 +137,14 @@ html {
 
     .sticky-header-wrapper {
         top: 50px;
-        /* Sticky top adjusted for mobile header */
+        /* Adjusted for Mobile Navbar (5rem = 50px) */
         left: 0;
         width: 100%;
         margin: 0;
         border-radius: 0;
-        padding: 2px 0;
-        /* Minimal padding */
+        padding: 8px 15px;
+        /* Balanced padding for mobile */
+        box-sizing: border-box;
     }
 }
 
@@ -739,8 +750,10 @@ html {
     user-select: none;
 }
 
-.accordion-header:hover {
-    background: #edf2f7;
+@media (hover: hover) {
+    .accordion-header:hover {
+        background: #edf2f7;
+    }
 }
 
 .section-wrapper.open>.accordion-header {
