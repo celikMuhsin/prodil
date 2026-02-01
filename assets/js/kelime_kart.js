@@ -10,6 +10,18 @@ class VocabCard {
         }
 
         this.init();
+
+        this.init();
+
+        // Swipe & Track Variables
+        this.isDragging = false;
+        this.startPos = 0;
+        this.currentTranslate = 0;
+        this.prevTranslate = 0;
+        this.animationID = 0;
+        this.currentIndex = 0;
+        this.ghostCard = null;
+        this.isDropdownInteraction = false;
     }
 
     init() {
@@ -22,563 +34,527 @@ class VocabCard {
             const item = this.data[this.currentIndex];
             if (!item) return;
 
-            // --- Helper: Safely get nested properties ---
-            const meta = item.meta || {};
-            const phonetics = item.phonetics || {};
-            const definitions = item.definitions || [];
-            const grammar = item.grammar_profile || { structures: [] };
-            const progression = item.sentence_progression || { levels: [] };
-            const morph = item.morphology_tree || { family_members: [] };
-            const pedagogy = item.pedagogy_engine || { common_errors: [] };
-            const history = item.word_journey || { timeline: [] };
-
-            // --- HTML Construction ---
-
-            // Helper to translate common English terms
-            const translate = (text) => {
-                const map = {
-                    'noun': 'İsim', 'verb': 'Fiil', 'adjective': 'Sıfat', 'adverb': 'Zarf',
-                    'preposition': 'Edat', 'conjunction': 'Bağlaç',
-                    'High Frequency': 'Sık Kullanılan', 'Medium Frequency': 'Orta Sıklık', 'Low Frequency': 'Az Kullanılan',
-                    'General': 'Genel', 'Academic': 'Akademik', 'Technical': 'Teknik'
-                };
-                // Return translation or original if not found (checking case-insensitive)
-                return map[text] || map[Object.keys(map).find(k => k.toLowerCase() === text.toLowerCase())] || text;
-            };
-
-            // Toplayıcı dizi (Başlık ve ID'leri tutacak)
-            const availableSections = [];
-
-            // Helper to wrap content with Accordion Structure
-            const wrapSection = (id, title, content, isOpen = false) => {
-                if (!content) return '';
-
-                // Prevent duplicates in dropdown list
-                if (!availableSections.some(s => s.id === id)) {
-                    availableSections.push({ id, title });
-                }
-
-                const activeClass = isOpen ? 'open' : '';
-                const showClass = isOpen ? 'show' : '';
-                // Always use 'down' icon. CSS rotates it 180deg when .open is present.
-                const iconClass = 'fa-chevron-down';
-
-                return `
-                    <div id="${id}" class="section-wrapper ${activeClass}">
-                        <div class="accordion-header" onclick="vocabCard.toggleAccordion('${id}')">
-                            <div class="accordion-title">
-                                <span style="font-size:0.8em; color:var(--accent); opacity:0.7;">●</span> ${title}
-                            </div>
-                            <div class="accordion-icon"><i class="fa-solid ${iconClass}"></i></div>
-                        </div>
-                        <div class="accordion-content ${showClass}">
-                            ${content}
-                        </div>
-                    </div>
-                `;
-            };
-
-            // 1. HEADER section
-            // Dropdown Logic (Will be generated after collecting sections, but placed here in structure)
-            // We'll use a placeholder and replace it later or simply generate header at the end if possible.
-            // Easier approach: Generate content first, then header.
-
-            // ... (Skipping Header generation for a moment to process content) ...
-
-            // 2. MAIN CONTENT PROCESSING
-
-            // Definitions
-            let definitionsHtml = '';
-            definitions.forEach((def, idx) => {
-                definitionsHtml += `
-                    <div class="definition-box">
-                        <div class="def-row">
-                            <div class="meaning-en">${idx + 1}. ${def.core_meaning_en || ''}</div>
-                            <div class="meaning-tr">${def.core_meaning_tr || ''}</div>
-                        </div>
-                        ${def.example ? `
-                        <div class="example-box">
-                            "${def.example.sentence}"
-                            <div class="example-tr">${def.example.translation}</div>
-                        </div>` : ''}
-                    </div>
-                `;
-            });
-            // Definitions is always present, wrap it as OPEN by default
-            if (definitionsHtml) {
-                definitionsHtml = wrapSection('sec-definitions', 'Anlamlar', definitionsHtml, true);
-            }
-
-            let grammarHtml = '';
-            // Combined Logic handled below
-
-            let pedagogyHtml = '';
-            if (pedagogy.common_errors && pedagogy.common_errors.length > 0) {
-                const content = `
-                    <div class="study-block">
-                        <h3 class="section-title" style="color:#e53e3e;">⚠️ Sık Yapılan Hatalar</h3>
-                        ${pedagogy.common_errors.map(err => `
-                            <div class="alert-box">
-                                <span class="alert-wrong">❌ ${err.incorrect}</span>
-                                <span class="alert-correct">✅ ${err.correction}</span>
-                                <div style="margin-top:5px; font-size:0.85rem; color:#4a5568;">${err.explanation}</div>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-                pedagogyHtml = wrapSection('sec-errors', 'Sık Hatalar', content);
-            }
-
-            // 3. SIDE PANEL (Right Panel)
-
-            // Derivatives
-            let derivativesHtml = '';
-            if (morph.family_members && morph.family_members.length > 0) {
-                const content = `
-                    <div class="side-block">
-                        <h3 class="section-title">Kelime Ailesi (Türevler)</h3>
-                        <ul class="derivative-list">
-                            ${morph.family_members.map(fam => `
-                                <li class="derivative-item" onclick="vocabCard.searchAndGo('${fam.word}')">
-                                    <div>
-                                        <span class="der-word">${fam.word}</span>
-                                        <span class="der-pos">${fam.pos}</span>
-                                    </div>
-                                    <div class="der-note">${fam.note || ''}</div>
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
-                `;
-                derivativesHtml = wrapSection('sec-derivatives', 'Türevler', content);
-            }
-
-            // Progression Levels
-            let progressionHtml = '';
-            if (progression.levels && progression.levels.length > 0) {
-                const content = `
-                   <div class="side-block">
-                       <h3 class="section-title">Seviye Gelişimi</h3>
-                       <table class="progression-table">
-                           ${progression.levels.map(lvl => `
-                               <tr>
-                                   <td>
-                                       <span class="cefr-tag tag-${lvl.cefr}">${lvl.cefr}</span>
-                                   </td>
-                                   <td>
-                                       <div style="font-weight:500;">${lvl.en}</div>
-                                       <div style="color:#718096; font-style:italic;">${lvl.tr}</div>
-                                   </td>
-                               </tr>
-                           `).join('')}
-                       </table>
-                   </div>
-               `;
-                progressionHtml = wrapSection('sec-progression', 'Seviye Gelişimi', content);
-            }
-
-            // History
-            let historyHtml = '';
-            if (history.timeline && history.timeline.length > 0) {
-                const timelineContent = `
-                    <div class="side-block">
-                        <h3 class="section-title">Köken & Tarihçe</h3>
-                        <div class="timeline-path">
-                            ${history.timeline.map(step => `
-                                <div class="timeline-step">
-                                    <div class="timeline-era">${step.era || step.language}</div>
-                                    <div class="timeline-content">
-                                        <strong style="color:#2d3748;">${step.word}</strong>: ${step.meaning}
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
-                historyHtml = wrapSection('sec-history', 'Köken & Tarihçe', timelineContent);
-            }
-
-            // --- NEW SECTIONS ---
-
-            // 4. COLLOCATIONS (Main Content -> Now Side)
-            let collocationsHtml = '';
-            if (item.collocations) {
-                const mods = item.collocations.modifiers_adverbs || [];
-                const verbs = item.collocations.verbs_preceding || [];
-                if (mods.length > 0 || verbs.length > 0) {
-                    const content = `
-                        <div class="study-block">
-                            <h3 class="section-title">Eş Dizimler (Collocations)</h3>
-                            <div class="collo-grid">
-                                ${mods.length > 0 ? `
-                                    <div class="collo-group">
-                                        <h4 class="collo-header">Nasıl Kullanılır? (Zarflar)</h4>
-                                        ${mods.map(m => `
-                                            <div class="collo-item">
-                                                <span class="collo-word">${m.word}</span>
-                                                <span class="collo-example">"${m.example}"</span>
-                                            </div>
-                                        `).join('')}
-                                    </div>
-                                ` : ''}
-                                ${verbs.length > 0 ? `
-                                    <div class="collo-group">
-                                        <h4 class="collo-header">Hangi Fiillerle?</h4>
-                                        ${verbs.map(v => `
-                                            <div class="collo-item">
-                                                <span class="collo-word">${v.word}</span>
-                                                <span class="collo-example">"${v.example}"</span>
-                                            </div>
-                                        `).join('')}
-                                    </div>
-                                ` : ''}
-                            </div>
-                        </div>
-                    `;
-                    collocationsHtml = wrapSection('sec-collocations', 'Eş Dizimler', content);
-                }
-            }
-
-            // 5. PRAGMATICS (Idioms) (Main Content -> Now Side)
-            let pragmaticsHtml = '';
-            if (item.pragmatics && item.pragmatics.idioms_and_phrases) {
-                const content = `
-                    <div class="study-block">
-                        <h3 class="section-title">Deyimler & İfadeler</h3>
-                        <div class="idiom-list">
-                            ${item.pragmatics.idioms_and_phrases.map(idm => `
-                                <div class="idiom-card">
-                                    <div class="idiom-phrase">${idm.phrase}</div>
-                                    <div class="idiom-meaning">${idm.meaning_tr}</div>
-                                </div>
-                            `).join('')}
-                        </div>
-                        ${item.pragmatics.sociolinguistics ? `
-                            <div class="note-box">
-                                <strong>💡 Sosyo-Kültürel Not:</strong> ${item.pragmatics.sociolinguistics.note_tr}
-                            </div>
-                        `: ''}
-                    </div>
-                 `;
-                pragmaticsHtml = wrapSection('sec-idioms', 'Deyimler', content);
-            }
-
-            // 6. GRAMMAR LOGIC (Inside Grammar)
-            let tenseLogicHtml = '';
-            if (grammar.tense_logic) {
-                tenseLogicHtml = `
-                    <div class="logic-box">
-                        <div class="logic-title">⚡ Mantık: ${grammar.tense_logic.why_use_it}</div>
-                        ${grammar.tense_logic.critical_comparison ? `
-                            <div class="logic-compare">
-                                <strong>Kritik Ayrım:</strong> ${grammar.tense_logic.critical_comparison.rule}
-                                <div class="logic-examples">
-                                    <div class="wrong">❌ ${grammar.tense_logic.critical_comparison.example_wrong}</div>
-                                    <div class="right">✅ ${grammar.tense_logic.critical_comparison.example_right}</div>
-                                </div>
-                            </div>
-                        ` : ''}
-                    </div>
-                `;
-            }
-
-            // Combine Grammar Sections
-            const structsHtml = grammar.structures && grammar.structures.length > 0 ? `
-                 <div class="grammar-grid">
-                    ${grammar.structures.map(st => `
-                        <div class="grammar-item">
-                            <div class="grammar-pattern">${st.pattern}</div>
-                            <div class="grammar-note">${st.notes_tr}</div>
-                        </div>
-                    `).join('')}
-                 </div>
-             ` : '';
-
-            if (structsHtml || tenseLogicHtml) {
-                const content = `
-                    <div class="study-block">
-                        <h3 class="section-title">Gramer & Mantık</h3>
-                        ${structsHtml}
-                        ${tenseLogicHtml}
-                    </div>
-                 `;
-                grammarHtml = wrapSection('sec-grammar', 'Gramer', content);
-            }
-
-            // 7. LEXICAL NUANCE (Side Panel)
-            let nuanceHtml = '';
-            const nuance = item.lexical_nuance || {};
-            if (nuance.synonym_scale || (nuance.antonyms && nuance.antonyms.length > 0)) {
-                // ... content generation same as before ... 
-                let scaleHtml = '';
-                if (nuance.synonym_scale && nuance.synonym_scale.scale) {
-                    scaleHtml = `
-                    <div class="nuance-scale">
-                        <div class="scale-title">${nuance.synonym_scale.turkishConcept || 'Güç Sıralaması'}</div>
-                        ${nuance.synonym_scale.scale.map(s => `
-                            <div class="scale-item" style="opacity: ${0.6 + (s.value / 20)}; flex-direction: column; align-items: flex-start; gap: 4px;">
-                                <div style="display:flex; justify-content:space-between; width:100%">
-                                    <span><strong>${s.word}</strong> <span style="font-size:0.8em; font-weight:normal">(${s.turkish || ''})</span></span>
-                                    <span style="font-size:0.85em; background:rgba(255,255,255,0.3); padding:1px 6px; border-radius:10px; font-weight:bold;">${s.value}/10</span>
-                                </div>
-                                <div style="font-size:0.75em; font-style:italic;">${s.usage || s.note}</div>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-                }
-
-                let antonymsHtml = '';
-                if (nuance.antonyms && nuance.antonyms.length > 0) {
-                    // ... antonyms logic ... 
-                    const isObject = typeof nuance.antonyms[0] === 'object';
-                    if (isObject) {
-                        antonymsHtml = `
-                        <div style="margin-top:25px;">
-                            <h4 class="section-title" style="font-size:0.9rem; color:#e53e3e;">Zıt Anlamlılar</h4>
-                            <div class="antonym-list">
-                                ${nuance.antonyms.map(a => `
-                                    <div class="antonym-card">
-                                        <div class="antonym-header">
-                                            <span class="antonym-word">${a.word}</span>
-                                            <span class="antonym-score">${a.value}/10</span>
-                                        </div>
-                                        <div class="antonym-meaning">${a.turkish}</div>
-                                        ${a.note ? `<div class="antonym-note">${a.note}</div>` : ''}
-                                        ${a.warning ? `<div class="antonym-warning">⚠️ ${a.warning}</div>` : ''}
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-                    } else {
-                        antonymsHtml = `
-                        <div style="margin-top:10px;">
-                            <strong>Zıt Anlamlılar:</strong>
-                            <div class="tag-cloud">
-                                ${nuance.antonyms.map(a => `<span class="tag-antonym">${a}</span>`).join('')}
-                            </div>
-                        </div>
-                    `;
-                    }
-                }
-                const content = `
-                <div class="side-block">
-                    <h3 class="section-title">Kelime Nüansları</h3>
-                    ${scaleHtml}
-                    ${antonymsHtml}
-                </div>
-                `;
-                nuanceHtml = wrapSection('sec-nuance', 'Nüanslar', content);
-            }
-
-            // 8. COGNATE HINT (Side Panel)
-            let hintHtml = '';
-            if (history.turkish_cognate_hint) {
-                const h = history.turkish_cognate_hint;
-                const formatItem = (text) => {
-                    const parts = text.split(':');
-                    if (parts.length > 1) {
-                        return `<strong>${parts[0]}:</strong> ${parts.slice(1).join(':')}`;
-                    }
-                    return text;
-                };
-
-                const hintContent = `
-                    <div class="hint-box">
-                        <h3 class="section-title">Türkçe İpucu: ${h.word}</h3>
-                        <div class="hint-story">${h.story}</div>
-                        
-                        <div class="hint-comparison">
-                            ${h.example ? `<div class="hint-bridge">${h.example}</div>` : ''}
-                            
-                            ${(h.example2 || h.example3) ? `
-                                <ul class="hint-list">
-                                    ${h.example3 ? `<li>${formatItem(h.example3)}</li>` : ''} 
-                                    ${h.example2 ? `<li>${formatItem(h.example2)}</li>` : ''}
-                                </ul>
-                            ` : ''}
-                        </div>
-                    </div>
-                `;
-                hintHtml = wrapSection('sec-hint', 'Türkçe İpucu', hintContent);
-            }
-
-            // Combine for display in sidebar
-            const combinedHistoryHtml = historyHtml + hintHtml;
-
-            // Stories Logic (Moved BACK to bottom for Dropdown Order)
-            let storiesHtml = '';
-            if (item.stories) {
-                const storyLevels = Object.keys(item.stories);
-
-                if (storyLevels.length > 0) {
-                    // Dropdown için ANA BAŞLIĞI en başa ekleyelim
-                    // ID'yi 'sec-stories-main' yaparak wrapSection ile aynı yapıyoruz -> Duplicate engelleniyor
-                    availableSections.push({ id: 'sec-stories-main', title: 'Okuma Hikayeleri' });
-
-                    const storyItemsHtml = storyLevels.map(level => {
-                        const storyId = `sec-story-${level}`;
-
-                        const exists = availableSections.some(s => s.id === storyId);
-                        if (!exists) {
-                            availableSections.push({
-                                id: storyId,
-                                title: `${level} Seviye Hikaye`,
-                                html: `<span class="cefr-tag tag-${level}">${level}</span> <span style="font-size:0.85em; opacity:0.9;">Seviye Hikaye</span>`
-                            });
-                        }
-
-                        // Content for inner accordions
-                        const storyContent = `
-                        <div class="story-container" style="border:none; box-shadow:none; margin:0;">
-                             <div class="story-content">
-                                <div class="story-lang english">
-                                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                                        <h4 style="margin:0;">ENGLISH</h4>
-                                        <button class="audio-mini-btn" onclick="vocabCard.playStoryAudio(this)" data-text="${encodeURIComponent(item.stories[level].en.replace(/<[^>]*>/g, ''))}" title="Hikayeyi Dinle">
-                                            🔊
-                                        </button>
-                                    </div>
-                                    <p>${item.stories[level].en}</p>
-                                </div>
-                                <div class="story-lang turkish">
-                                    <h4 style="margin-bottom:10px;">TÜRKÇE</h4>
-                                    <p>${item.stories[level].tr}</p>
-                                </div>
-                            </div>
-                        </div>
-                        `;
-                        return wrapSection(storyId, `<span class="cefr-tag tag-${level}">${level}</span> Seviye Hikaye`, storyContent);
-                    }).join('');
-
-                    const content = `
-                        <div style="display:flex; flex-direction:column; gap:10px;">${storyItemsHtml}</div>
-                    `;
-                    storiesHtml = wrapSection('sec-stories-main', 'Okuma Hikayeleri', content);
-                }
-            }
-
-
-
-
-            // Clean IPA (remove slashes)
-            const rawIpa = phonetics.ipa_us || '';
-            const cleanIpa = rawIpa.replace(/\//g, '');
-
-            // GENERATE HEADER WITH CUSTOM DROPDOWN
-            const dropdownItemsHtml = availableSections.map(s => `
-                <div class="dropdown-item" onclick="vocabCard.selectSection('${s.id}')">
-                    ${s.html || s.title}
-                </div>
-            `).join('');
-
-            const headerHtml = `
-            <div class="controls-top">
-                <!-- LEFT GROUP: Prev / Counter / Next -->
-                <div class="nav-left">
-                    <button class="nav-btn" onclick="vocabCard.prevCard()" ${this.currentIndex === 0 ? 'disabled' : ''} title="Önceki">←</button>
-                    <span class="nav-counter">${this.currentIndex + 1} / ${this.data.length}</span>
-                    <button class="nav-btn next" onclick="vocabCard.nextCard()" title="Sonraki">→</button>
-                </div>
-
-                <!-- RIGHT GROUP: Phonetics & Audio -->
-                <div class="phonetics-row" style="margin-left:auto;">
-                    <span class="ipa">${cleanIpa}</span>
-                    <button class="audio-mini-btn" onclick="vocabCard.playGoogleAudio('${item.word}')" title="Telaffuzu Dinle">
-                        🔊
-                    </button>
-                </div>
-            </div>
-
-            <div id="sticky-placeholder" style="height:0; width:100%;"></div>
-            <div class="sticky-header-wrapper">
-                <div class="word-header">
-                    <!-- Word & Dropdown -->
-                    <div class="word-title-row">
-                        <div class="word-left-group" style="display:flex; align-items:center; gap:10px;">
-                            <h1 class="main-word">${item.word}</h1>
-                        </div>
-                        
-                        <!-- RIGHT: Custom Dropdown -->
-                        <div class="custom-dropdown-container">
-                            <div class="dropdown-trigger" onclick="vocabCard.toggleDropdown()">
-                                <span id="dropdown-label">Bölüme Git...</span>
-                                <span style="font-size:0.7em; margin-left:6px;">▼</span>
-                            </div>
-                            <div class="dropdown-menu" id="vocab-dropdown-menu">
-                                <div class="dropdown-item" onclick="vocabCard.selectSection('toggle-all')">
-                                    <span id="toggle-all-text" style="font-weight:bold; color:var(--primary);">➕ Hepsini Aç</span>
-                                </div>
-                                <div class="dropdown-item separator"></div>
-                                ${dropdownItemsHtml}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            `;
-
-            // Tags (Outside Sticky Header)
-            const tagsHtml = `
-                <div class="word-meta" style="padding: 10px 30px; border-bottom: 1px solid var(--border);">
-                    <span class="meta-chip" style="background:${this.getLevelColor(meta.cefr_level)}; color:white; border:none;">${meta.cefr_level || 'A1'}</span>
-                    <span class="meta-chip">${translate(meta.frequency_band) || 'Genel'}</span>
-                    ${(() => {
-                    const posRaw = meta.part_of_speech;
-                    let posArray = [];
-                    if (Array.isArray(posRaw)) {
-                        posArray = posRaw;
-                    } else if (typeof posRaw === 'string') {
-                        // Split 'noun / verb' style
-                        posArray = posRaw.split('/').map(s => s.trim());
-                    } else {
-                        posArray = ['Kelime'];
-                    }
-                    return posArray.map(p => `<span class="meta-chip">${translate(p)}</span>`).join('');
-                })()}
-                </div>
-            `;
-
-            // --- Layout Assembly ---
-            this.container.innerHTML = `
-                <div class="vocab-card fade-in">
-                    ${headerHtml}
-                    ${tagsHtml}
-                    
-                    <div class="content-grid">
-                        <!-- SINGLE COLUMN CONTENT -->
-                        <div class="main-content">
-                            <div class="study-block" style="margin-top:0; margin-bottom:15px;">
-                                ${definitionsHtml}
-                            </div>
-                            
-                            ${derivativesHtml}
-                            ${grammarHtml}
-                            ${progressionHtml}
-
-                            ${pedagogyHtml}
-                            
-                            <!-- SIDEBAR CONTENT MOVED HERE -->
-                            ${nuanceHtml}
-                            ${combinedHistoryHtml} <!-- Köken & İpucu -->
-                            ${collocationsHtml}
-                            ${pragmaticsHtml} <!-- Deyimler -->
-
-                            <!-- Stories at the bottom -->
-                            ${storiesHtml}
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            // Adjust Width Dynamic
+            this.container.innerHTML = this.generateCardHTML(item, this.currentIndex);
             this.adjustDropdownWidth();
-
         } catch (error) {
             console.error(error);
             this.container.innerHTML = `<div style="color:red; padding:20px;">Hata oluştu: ${error.message}</div>`;
         }
+    }
+
+    generateCardHTML(item, index) {
+        // --- Helper: Safely get nested properties ---
+        const meta = item.meta || {};
+        const phonetics = item.phonetics || {};
+        const definitions = item.definitions || [];
+        const grammar = item.grammar_profile || { structures: [] };
+        const progression = item.sentence_progression || { levels: [] };
+        const morph = item.morphology_tree || { family_members: [] };
+        const pedagogy = item.pedagogy_engine || { common_errors: [] };
+        const history = item.word_journey || { timeline: [] };
+
+        // --- HTML Construction ---
+
+        // Helper to translate common English terms
+        const translate = (text) => {
+            const map = {
+                'noun': 'İsim', 'verb': 'Fiil', 'adjective': 'Sıfat', 'adverb': 'Zarf',
+                'preposition': 'Edat', 'conjunction': 'Bağlaç',
+                'High Frequency': 'Sık Kullanılan', 'Medium Frequency': 'Orta Sıklık', 'Low Frequency': 'Az Kullanılan',
+                'General': 'Genel', 'Academic': 'Akademik', 'Technical': 'Teknik'
+            };
+            return map[text] || map[Object.keys(map).find(k => k.toLowerCase() === text.toLowerCase())] || text;
+        };
+
+        const availableSections = [];
+
+        // Helper to wrap content with Accordion Structure
+        const wrapSection = (id, title, content, isOpen = false) => {
+            if (!content) return '';
+            if (!availableSections.some(s => s.id === id)) {
+                availableSections.push({ id, title });
+            }
+            const activeClass = isOpen ? 'open' : '';
+            const showClass = isOpen ? 'show' : '';
+            const iconClass = 'fa-chevron-down';
+
+            return `
+                <div id="${id}" class="section-wrapper ${activeClass}">
+                    <div class="accordion-header" onclick="vocabCard.toggleAccordion('${id}')">
+                        <div class="accordion-title">
+                            <span style="font-size:0.8em; color:var(--accent); opacity:0.7;">●</span> ${title}
+                        </div>
+                        <div class="accordion-icon"><i class="fa-solid ${iconClass}"></i></div>
+                    </div>
+                    <div class="accordion-content ${showClass}">
+                        ${content}
+                    </div>
+                </div>
+            `;
+        };
+
+        // 2. MAIN CONTENT PROCESSING
+        let definitionsHtml = '';
+        definitions.forEach((def, idx) => {
+            definitionsHtml += `
+                <div class="definition-box">
+                    <div class="def-row">
+                        <div class="meaning-en">${idx + 1}. ${def.core_meaning_en || ''}</div>
+                        <div class="meaning-tr">${def.core_meaning_tr || ''}</div>
+                    </div>
+                    ${def.example ? `
+                    <div class="example-box">
+                        "${def.example.sentence}"
+                        <div class="example-tr">${def.example.translation}</div>
+                    </div>` : ''}
+                </div>
+            `;
+        });
+        if (definitionsHtml) {
+            definitionsHtml = wrapSection('sec-definitions', 'Anlamlar', definitionsHtml, true);
+        }
+
+        let grammarHtml = '';
+        let pedagogyHtml = '';
+        if (pedagogy.common_errors && pedagogy.common_errors.length > 0) {
+            const content = `
+                <div class="study-block">
+                    <h3 class="section-title" style="color:#e53e3e;">⚠️ Sık Yapılan Hatalar</h3>
+                    ${pedagogy.common_errors.map(err => `
+                        <div class="alert-box">
+                            <span class="alert-wrong">❌ ${err.incorrect}</span>
+                            <span class="alert-correct">✅ ${err.correction}</span>
+                            <div style="margin-top:5px; font-size:0.85rem; color:#4a5568;">${err.explanation}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            pedagogyHtml = wrapSection('sec-errors', 'Sık Hatalar', content);
+        }
+
+        let derivativesHtml = '';
+        if (morph.family_members && morph.family_members.length > 0) {
+            const content = `
+                <div class="side-block">
+                    <h3 class="section-title">Kelime Ailesi (Türevler)</h3>
+                    <ul class="derivative-list">
+                        ${morph.family_members.map(fam => `
+                            <li class="derivative-item" onclick="vocabCard.searchAndGo('${fam.word}')">
+                                <div>
+                                    <span class="der-word">${fam.word}</span>
+                                    <span class="der-pos">${fam.pos}</span>
+                                </div>
+                                <div class="der-note">${fam.note || ''}</div>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+            derivativesHtml = wrapSection('sec-derivatives', 'Türevler', content);
+        }
+
+        let progressionHtml = '';
+        if (progression.levels && progression.levels.length > 0) {
+            const content = `
+               <div class="side-block">
+                   <h3 class="section-title">Seviye Gelişimi</h3>
+                   <table class="progression-table">
+                       ${progression.levels.map(lvl => `
+                           <tr>
+                               <td>
+                                   <span class="cefr-tag tag-${lvl.cefr}">${lvl.cefr}</span>
+                               </td>
+                               <td>
+                                   <div style="font-weight:500;">${lvl.en}</div>
+                                   <div style="color:#718096; font-style:italic;">${lvl.tr}</div>
+                               </td>
+                           </tr>
+                       `).join('')}
+                   </table>
+               </div>
+           `;
+            progressionHtml = wrapSection('sec-progression', 'Seviye Gelişimi', content);
+        }
+
+        let historyHtml = '';
+        if (history.timeline && history.timeline.length > 0) {
+            const timelineContent = `
+                <div class="side-block">
+                    <h3 class="section-title">Köken & Tarihçe</h3>
+                    <div class="timeline-path">
+                        ${history.timeline.map(step => `
+                            <div class="timeline-step">
+                                <div class="timeline-era">${step.era || step.language}</div>
+                                <div class="timeline-content">
+                                    <strong style="color:#2d3748;">${step.word}</strong>: ${step.meaning}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            historyHtml = wrapSection('sec-history', 'Köken & Tarihçe', timelineContent);
+        }
+
+        let collocationsHtml = '';
+        if (item.collocations) {
+            const mods = item.collocations.modifiers_adverbs || [];
+            const verbs = item.collocations.verbs_preceding || [];
+            if (mods.length > 0 || verbs.length > 0) {
+                const content = `
+                    <div class="study-block">
+                        <h3 class="section-title">Eş Dizimler (Collocations)</h3>
+                        <div class="collo-grid">
+                            ${mods.length > 0 ? `
+                                <div class="collo-group">
+                                    <h4 class="collo-header">Nasıl Kullanılır? (Zarflar)</h4>
+                                    ${mods.map(m => `
+                                        <div class="collo-item">
+                                            <span class="collo-word">${m.word}</span>
+                                            <span class="collo-example">"${m.example}"</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                            ${verbs.length > 0 ? `
+                                <div class="collo-group">
+                                    <h4 class="collo-header">Hangi Fiillerle?</h4>
+                                    ${verbs.map(v => `
+                                        <div class="collo-item">
+                                            <span class="collo-word">${v.word}</span>
+                                            <span class="collo-example">"${v.example}"</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+                collocationsHtml = wrapSection('sec-collocations', 'Eş Dizimler', content);
+            }
+        }
+
+        let pragmaticsHtml = '';
+        if (item.pragmatics && item.pragmatics.idioms_and_phrases) {
+            const content = `
+                <div class="study-block">
+                    <h3 class="section-title">Deyimler & İfadeler</h3>
+                    <div class="idiom-list">
+                        ${item.pragmatics.idioms_and_phrases.map(idm => `
+                            <div class="idiom-card">
+                                <div class="idiom-phrase">${idm.phrase}</div>
+                                <div class="idiom-meaning">${idm.meaning_tr}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    ${item.pragmatics.sociolinguistics ? `
+                        <div class="note-box">
+                            <strong>💡 Sosyo-Kültürel Not:</strong> ${item.pragmatics.sociolinguistics.note_tr}
+                        </div>
+                    `: ''}
+                </div>
+             `;
+            pragmaticsHtml = wrapSection('sec-idioms', 'Deyimler', content);
+        }
+
+        let tenseLogicHtml = '';
+        if (grammar.tense_logic) {
+            tenseLogicHtml = `
+                <div class="logic-box">
+                    <div class="logic-title">⚡ Mantık: ${grammar.tense_logic.why_use_it}</div>
+                    ${grammar.tense_logic.critical_comparison ? `
+                        <div class="logic-compare">
+                            <strong>Kritik Ayrım:</strong> ${grammar.tense_logic.critical_comparison.rule}
+                            <div class="logic-examples">
+                                <div class="wrong">❌ ${grammar.tense_logic.critical_comparison.example_wrong}</div>
+                                <div class="right">✅ ${grammar.tense_logic.critical_comparison.example_right}</div>
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        const structsHtml = grammar.structures && grammar.structures.length > 0 ? `
+             <div class="grammar-grid">
+                ${grammar.structures.map(st => `
+                    <div class="grammar-item">
+                        <div class="grammar-pattern">${st.pattern}</div>
+                        <div class="grammar-note">${st.notes_tr}</div>
+                    </div>
+                `).join('')}
+             </div>
+         ` : '';
+
+        if (structsHtml || tenseLogicHtml) {
+            const content = `
+                <div class="study-block">
+                    <h3 class="section-title">Gramer & Mantık</h3>
+                    ${structsHtml}
+                    ${tenseLogicHtml}
+                </div>
+             `;
+            grammarHtml = wrapSection('sec-grammar', 'Gramer', content);
+        }
+
+        let nuanceHtml = '';
+        const nuance = item.lexical_nuance || {};
+        if (nuance.synonym_scale || (nuance.antonyms && nuance.antonyms.length > 0)) {
+            let scaleHtml = '';
+            // --- 1. Synonyms (Green Section) ---
+            if (nuance.synonym_scale && nuance.synonym_scale.scale) {
+                scaleHtml = `
+                <div class="nuance-group theme-green">
+                    <div class="nuance-header" style="justify-content: space-between; align-items: center; display: flex;">
+                        <span><i class="fa-solid fa-check"></i> EŞ ANLAM</span>
+                        <span style="font-size:0.75rem; color:#718096; font-weight:normal;">${nuance.synonym_scale.turkishConcept || ''}</span>
+                    </div>
+                    <div class="nuance-scale">
+                        ${nuance.synonym_scale.scale.map(s => {
+                    const percent = s.value * 10;
+                    return `
+                            <div class="scale-item" style="display:flex; flex-direction: column; align-items: flex-start; gap: 4px;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; width:100%">
+                                    <span><strong style="color: #1a202c; font-size: 1.1rem;">${s.word}</strong> <span style="font-size:0.8em; font-weight:normal; color: #4a5568;">(${s.turkish || ''})</span></span>
+                                    <div style="display:flex; align-items:center; gap:6px;">
+                                        <div style="width:50px; height:8px; background:#e2e8f0; border-radius:4px; overflow:hidden;">
+                                            <div style="width:${percent}%; height:100%; background:#38a169; border-radius:4px;"></div>
+                                        </div>
+                                        <span style="font-size:0.85em; font-weight:bold; color:#2d3748; min-width:30px; text-align:right;">%${percent}</span>
+                                    </div>
+                                </div>
+                                <div style="font-size:0.75em; font-style:italic; color:#2d3748;">${s.usage || s.note || ''}</div>
+                            </div>
+                        `;
+                }).join('')}
+                    </div>
+                </div>
+            `;
+            }
+
+            // --- 2. Antonyms (Red Section) ---
+            let antonymsHtml = '';
+            if (nuance.antonyms && nuance.antonyms.length > 0) {
+                const isObject = typeof nuance.antonyms[0] === 'object';
+                let antonymItems = '';
+
+                if (isObject) {
+                    antonymItems = nuance.antonyms.map(a => {
+                        const percent = a.value * 10;
+                        return `
+                        <div class="antonym-card">
+                            <div class="antonym-header" style="justify-content:space-between; align-items:center; width:100%; display:flex;">
+                                <span>
+                                    <span class="antonym-word" style="color: #c53030; font-weight: 700; font-size: 1.1rem;">${a.word}</span>
+                                    <span style="font-size:0.8em; font-weight:normal; color: #4a5568;">(${a.turkish || ''})</span>
+                                </span>
+                                <div style="display:flex; align-items:center; gap:6px;">
+                                    <div style="width:50px; height:8px; background:#e2e8f0; border-radius:4px; overflow:hidden;">
+                                        <div style="width:${100 - percent}%; height:100%; background:#e53e3e; border-radius:4px;"></div>
+                                    </div>
+                                    <span style="font-size:0.85em; font-weight:bold; color:#2d3748; min-width:30px; text-align:right;">%${percent}</span>
+                                </div>
+                            </div>
+                            ${a.note ? `<div class="antonym-note" style="color:#718096; font-style:italic; font-size: 0.75em; margin-top:2px;">${a.note}</div>` : ''}
+                            ${a.warning ? `<div class="antonym-warning" style="color:#e53e3e; font-weight:bold; font-size: 0.7em;">⚠️ ${a.warning}</div>` : ''}
+                        </div>
+                    `;
+                    }).join('');
+                } else {
+                    antonymItems = `
+                        <div class="tag-cloud">
+                            ${nuance.antonyms.map(a => `<span class="tag-antonym" style="background:#fff5f5; color:#c53030; border:1px solid #feb2b2;">${a}</span>`).join('')}
+                        </div>
+                    `;
+                }
+
+                antonymsHtml = `
+                    <div class="nuance-group theme-red">
+                        <div class="nuance-header">
+                            <i class="fa-solid fa-xmark"></i> ZIT ANLAM
+                        </div>
+                        <div class="antonym-list">
+                            ${antonymItems}
+                        </div>
+                    </div>
+                `;
+            }
+
+            const content = `
+            <div class="side-block">
+                ${scaleHtml}
+                ${antonymsHtml}
+            </div>
+            `;
+            nuanceHtml = wrapSection('sec-nuance', 'Nüanslar', content);
+        }
+
+        let hintHtml = '';
+        if (history.turkish_cognate_hint) {
+            const h = history.turkish_cognate_hint;
+            const formatItem = (text) => {
+                const parts = text.split(':');
+                if (parts.length > 1) {
+                    return `<strong>${parts[0]}:</strong> ${parts.slice(1).join(':')}`;
+                }
+                return text;
+            };
+
+            const hintContent = `
+                <div class="hint-box">
+                    <h3 class="section-title">Türkçe İpucu: ${h.word}</h3>
+                    <div class="hint-story">${h.story}</div>
+                    
+                    <div class="hint-comparison">
+                        ${h.example ? `<div class="hint-bridge">${h.example}</div>` : ''}
+                        
+                        ${(h.example2 || h.example3) ? `
+                            <ul class="hint-list">
+                                ${h.example3 ? `<li>${formatItem(h.example3)}</li>` : ''} 
+                                ${h.example2 ? `<li>${formatItem(h.example2)}</li>` : ''}
+                            </ul>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+            hintHtml = wrapSection('sec-hint', 'Türkçe İpucu', hintContent);
+        }
+
+        const combinedHistoryHtml = historyHtml + hintHtml;
+
+        let storiesHtml = '';
+        if (item.stories) {
+            const storyLevels = Object.keys(item.stories);
+            if (storyLevels.length > 0) {
+                availableSections.push({ id: 'sec-stories-main', title: 'Okuma Hikayeleri' });
+                const storyItemsHtml = storyLevels.map(level => {
+                    const storyId = `sec-story-${level}`;
+                    const exists = availableSections.some(s => s.id === storyId);
+                    if (!exists) {
+                        availableSections.push({
+                            id: storyId,
+                            title: `${level} Seviye Hikaye`,
+                            html: `<span class="cefr-tag tag-${level}">${level}</span> <span style="font-size:0.85em; opacity:0.9;">Seviye Hikaye</span>`
+                        });
+                    }
+                    const storyContent = `
+                    <div class="story-container" style="border:none; box-shadow:none; margin:0;">
+                         <div class="story-content">
+                            <div class="story-lang english">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                    <h4 style="margin:0;">ENGLISH</h4>
+                                    <button class="audio-mini-btn" onclick="vocabCard.playStoryAudio(this)" data-text="${encodeURIComponent(item.stories[level].en.replace(/<[^>]*>/g, ''))}" title="Hikayeyi Dinle">
+                                        🔊
+                                    </button>
+                                </div>
+                                <p>${item.stories[level].en}</p>
+                            </div>
+                            <div class="story-lang turkish">
+                                <h4 style="margin-bottom:10px;">TÜRKÇE</h4>
+                                <p>${item.stories[level].tr}</p>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                    return wrapSection(storyId, `<span class="cefr-tag tag-${level}">${level}</span> Seviye Hikaye`, storyContent);
+                }).join('');
+                const content = `
+                    <div style="display:flex; flex-direction:column; gap:10px;">${storyItemsHtml}</div>
+                `;
+                storiesHtml = wrapSection('sec-stories-main', 'Okuma Hikayeleri', content);
+            }
+        }
+
+        const rawIpa = phonetics.ipa_us || '';
+        const cleanIpa = rawIpa.replace(/\//g, '');
+
+        const dropdownItemsHtml = availableSections.map(s => `
+            <div class="dropdown-item" onclick="vocabCard.selectSection('${s.id}')">
+                ${s.html || s.title}
+            </div>
+        `).join('');
+
+        const headerHtml = `
+        <div class="controls-top">
+            <div class="nav-left">
+                <button class="nav-btn" onclick="vocabCard.prevCard()" ${index === 0 ? 'disabled' : ''} title="Önceki">←</button>
+                <span class="nav-counter">${index + 1} / ${this.data.length}</span>
+                <button class="nav-btn next" onclick="vocabCard.nextCard()" title="Sonraki">→</button>
+            </div>
+            <div class="phonetics-row" style="margin-left:auto;">
+                <span class="ipa">${cleanIpa}</span>
+                <button class="audio-mini-btn" onclick="vocabCard.playGoogleAudio('${item.word}')" title="Telaffuzu Dinle">
+                    🔊
+                </button>
+            </div>
+        </div>
+
+        <div id="sticky-placeholder" style="height:0; width:100%;"></div>
+        <div class="sticky-header-wrapper">
+            <div class="word-header">
+                <div class="word-title-row">
+                    <div class="word-left-group" style="display:flex; align-items:center; gap:10px;">
+                        <h1 class="main-word">${item.word}</h1>
+                    </div>
+                    <div class="custom-dropdown-container">
+                        <div class="dropdown-trigger" onclick="vocabCard.toggleDropdown()">
+                            <span id="dropdown-label">Bölüme Git...</span>
+                            <span style="font-size:0.7em; margin-left:6px;">▼</span>
+                        </div>
+                        <div class="dropdown-menu" id="vocab-dropdown-menu">
+                            <div class="dropdown-item" onclick="vocabCard.selectSection('toggle-all')">
+                                <span id="toggle-all-text" style="font-weight:bold; color:var(--primary);">➕ Hepsini Aç</span>
+                            </div>
+                            <div class="dropdown-item separator"></div>
+                            ${dropdownItemsHtml}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+
+        const tagsHtml = `
+            <div class="word-meta" style="padding: 10px 30px; border-bottom: 1px solid var(--border);">
+                <span class="meta-chip" style="background:${this.getLevelColor(meta.cefr_level)}; color:white; border:none;">${meta.cefr_level || 'A1'}</span>
+                <span class="meta-chip">${translate(meta.frequency_band) || 'Genel'}</span>
+                ${(() => {
+                const posRaw = meta.part_of_speech;
+                let posArray = [];
+                if (Array.isArray(posRaw)) {
+                    posArray = posRaw;
+                } else if (typeof posRaw === 'string') {
+                    posArray = posRaw.split('/').map(s => s.trim());
+                } else {
+                    posArray = ['Kelime'];
+                }
+                return posArray.map(p => `<span class="meta-chip">${translate(p)}</span>`).join('');
+            })()}
+            </div>
+        `;
+
+        return `
+            <div class="vocab-card">
+                ${headerHtml}
+                ${tagsHtml}
+                <div class="content-grid">
+                    <div class="main-content">
+                        <div class="study-block" style="margin-top:0; margin-bottom:15px;">
+                            ${definitionsHtml}
+                        </div>
+                        ${derivativesHtml}
+                        ${grammarHtml}
+                        ${progressionHtml}
+                        ${pedagogyHtml}
+                        ${nuanceHtml}
+                        ${combinedHistoryHtml}
+                        ${collocationsHtml}
+                        ${pragmaticsHtml}
+                        ${storiesHtml}
+                    </div>
+                </div>
+            </div>
+        `;
     }
 
     getLevelColor(level) {
@@ -665,18 +641,69 @@ class VocabCard {
     }
 
     nextCard() {
+        const oldContent = this.container.innerHTML;
+
         if (this.currentIndex < this.data.length - 1) {
             this.currentIndex++;
         } else {
             this.currentIndex = 0;
         }
+
         this.renderCard();
+        this.animateTransition('next', oldContent);
     }
 
     prevCard() {
+        const oldContent = this.container.innerHTML;
+
         if (this.currentIndex > 0) {
             this.currentIndex--;
-            this.renderCard();
+        } else {
+            // Opsiyonel: Başa döngü veya durma. Şimdilik sınırda kalıyor.
+            return;
+        }
+
+        this.renderCard();
+        this.animateTransition('prev', oldContent);
+    }
+
+    animateTransition(direction, oldContent) {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const newCard = this.container.querySelector('.vocab-card');
+        if (!newCard) return;
+
+        // 1. Ghost Card (Eski Kart) Hazırla
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = oldContent;
+        const ghostCard = wrapper.firstElementChild;
+
+        if (ghostCard) {
+            ghostCard.classList.add('ghost-card');
+
+            // Sticky header'ın etkisini kırmak için
+            const ghostSticky = ghostCard.querySelector('.sticky-header-wrapper');
+            if (ghostSticky) {
+                ghostSticky.classList.remove('mobile-fixed');
+                ghostSticky.style.position = 'static';
+            }
+
+            this.container.appendChild(ghostCard);
+
+            // 2. Animasyon Sınıflarını Ekle
+            if (direction === 'next') {
+                ghostCard.classList.add('anim-slide-out-left');
+                newCard.classList.add('anim-slide-in-right');
+            } else {
+                ghostCard.classList.add('anim-slide-out-right');
+                newCard.classList.add('anim-slide-in-left');
+            }
+
+            // 3. Temizlik
+            setTimeout(() => {
+                if (ghostCard.parentNode) ghostCard.parentNode.removeChild(ghostCard);
+                newCard.classList.remove('anim-slide-in-right', 'anim-slide-in-left');
+            }, 400); // CSS animasyon süresi (0.4s) ile aynı
         }
     }
 
@@ -854,13 +881,91 @@ class VocabCard {
 
         // Close dropdown on scroll
         window.addEventListener('scroll', () => {
-            this.closeDropdown();
+            // Eğer kullanıcı dropdown ile etkileşime giriyorsa kapatma
+            if (!this.isDropdownInteraction) {
+                this.closeDropdown();
+            }
         });
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') this.nextCard();
             if (e.key === 'ArrowLeft') this.prevCard();
         });
+
+        // --- Mobile Swipe Events (Interactive) ---
+        const touchStart = (index) => {
+            return (event) => {
+                // Dropdown içindeyse swipe başlatma
+                if (event.target.closest('.custom-dropdown-container') || event.target.closest('.dropdown-menu')) {
+                    this.isDropdownInteraction = true;
+                    return;
+                }
+
+                this.isDragging = true;
+                this.startPos = this.getPositionX(event);
+                this.animationID = requestAnimationFrame(this.animation);
+
+                // Clear any existing transition
+                const card = this.container.querySelector('.vocab-card');
+                if (card) card.style.transition = 'none';
+            }
+        }
+
+        const touchMove = (event) => {
+            if (this.isDragging) {
+                const currentPosition = this.getPositionX(event);
+                const diff = currentPosition - this.startPos;
+                this.currentTranslate = diff;
+
+                // Ghost Kart Oluşturma (Henüz yoksa)
+                if (!this.ghostCard && Math.abs(diff) > 20) {
+                    this.createGhostCard(diff);
+                }
+
+                // Hareketli Ghost Kart Kontrolü
+                if (this.ghostCard) {
+                    const width = window.innerWidth;
+                    // Eğer sağa kaydırıyorsak (Prev), ghost soldan gelmeli (-width + diff)
+                    // Eğer sola kaydırıyorsak (Next), ghost sağdan gelmeli (width + diff)
+                    if (diff > 0) { // Prev
+                        this.ghostCard.style.transform = `translateX(${-width + diff}px)`;
+                    } else { // Next
+                        this.ghostCard.style.transform = `translateX(${width + diff}px)`;
+                    }
+                }
+            }
+        }
+
+        const touchEnd = () => {
+            // Etkileşim bittiyse flag'i hemen değil, biraz gecikmeli kapat
+            // (Scroll momentum bitene kadar veya yanlışlıkla kapanmasın diye)
+            if (this.isDropdownInteraction) {
+                setTimeout(() => {
+                    this.isDropdownInteraction = false;
+                }, 500);
+                return;
+            }
+
+            this.isDragging = false;
+            cancelAnimationFrame(this.animationID);
+
+            const movedBy = this.currentTranslate;
+            const threshold = 100; // Trigger noktası
+
+            // Eğer yeterince kaydırıldıysa
+            if (Math.abs(movedBy) > threshold) {
+                const direction = movedBy < 0 ? 'next' : 'prev';
+                this.finishSwipe(direction);
+            } else {
+                // Yeterince kaydırılmadı, geri snap yap
+                this.snapBack();
+                this.currentTranslate = 0;
+            }
+        }
+
+        this.container.addEventListener('touchstart', touchStart(this.currentIndex), { passive: true });
+        this.container.addEventListener('touchmove', touchMove, { passive: true });
+        this.container.addEventListener('touchend', touchEnd);
 
         // --- JS Sticky Fallback for Mobile ---
         window.addEventListener('scroll', () => {
@@ -888,6 +993,156 @@ class VocabCard {
                 }
             }
         }, { passive: true });
+    }
+
+    getPositionX(event) {
+        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+    }
+
+    animation = () => {
+        if (this.isDragging) {
+            this.setSliderPosition();
+            requestAnimationFrame(this.animation);
+        }
+    }
+
+    setSliderPosition() {
+        const card = this.container.querySelector('.vocab-card');
+        if (card) {
+            card.style.transform = `translateX(${this.currentTranslate}px)`;
+        }
+    }
+
+    createGhostCard(diff) {
+        let targetIndex = -1;
+        let startX = 0;
+
+        if (diff > 0) {
+            // Sağa kaydırma -> Önceki kart (Soldan gelecek)
+            targetIndex = this.currentIndex - 1;
+            startX = -window.innerWidth;
+        } else {
+            // Sola kaydırma -> Sonraki kart (Sağdan gelecek)
+            targetIndex = this.currentIndex + 1;
+            startX = window.innerWidth;
+        }
+
+        if (targetIndex >= 0 && targetIndex < this.data.length) {
+            // Wrapper'a overflow class ekle (Sticky bozulmasın diye sadece animasyonda gizle)
+            this.container.classList.add('animating');
+
+            const item = this.data[targetIndex];
+            const html = this.generateCardHTML(item, targetIndex);
+
+            const wrapper = document.createElement('div');
+            wrapper.innerHTML = html;
+            this.ghostCard = wrapper.firstElementChild;
+
+            this.ghostCard.classList.add('ghost-card');
+            this.ghostCard.style.position = 'absolute';
+            this.ghostCard.style.top = '0';
+            this.ghostCard.style.width = '100%';
+            // Başlangıç pozisyonu ekran dışı
+            this.ghostCard.style.transform = `translateX(${startX}px)`;
+            this.ghostCard.style.zIndex = '1000'; // Üstte
+
+            // Sticky header fix
+            const ghostSticky = this.ghostCard.querySelector('.sticky-header-wrapper');
+            if (ghostSticky) {
+                ghostSticky.classList.remove('mobile-fixed');
+                ghostSticky.style.position = 'static';
+            }
+
+            this.container.appendChild(this.ghostCard);
+        }
+    }
+
+    finishSwipe(direction) {
+        if (!this.ghostCard) {
+            // Ghost card yoksa normal fonksiyonları çağır (failsafe)
+            if (direction === 'next') this.nextCard();
+            else this.prevCard();
+            return;
+        }
+
+        const card = this.container.querySelector('.vocab-card');
+        const width = window.innerWidth;
+
+        // 1. Animasyonu Tamamla (Snap to Finish)
+        this.ghostCard.style.transition = 'transform 0.3s ease-out';
+        this.ghostCard.style.transform = 'translateX(0px)';
+
+        if (card) {
+            card.style.transition = 'transform 0.3s ease-out';
+            card.style.transform = direction === 'next'
+                ? `translateX(${-width}px)`
+                : `translateX(${width}px)`;
+        }
+
+        // 2. Animasyon Bitince Datayı Güncelle
+        setTimeout(() => {
+            if (direction === 'next') {
+                if (this.currentIndex < this.data.length - 1) this.currentIndex++;
+                else this.currentIndex = 0;
+            } else {
+                if (this.currentIndex > 0) this.currentIndex--;
+                else return; // Sınırda kal
+            }
+
+            // Normal render (Animasyonsuz, çünkü zaten görsel olarak oradayız)
+            this.renderCard();
+
+            // Değişkenleri sıfırla
+            this.currentTranslate = 0;
+            this.ghostCard = null; // renderCard overwrite ettiği için remove'a gerek yok, referansı kopar yeter
+        }, 300);
+    }
+
+    removeGhostCard() {
+        if (this.ghostCard) {
+            this.ghostCard.remove();
+            this.ghostCard = null;
+        }
+
+        // Wrapper'dan overflow class'ı kaldır
+        this.container.classList.remove('animating');
+
+        // Ana kartın pozisyonunu sıfırla (eğer değişmediyse)
+        const card = this.container.querySelector('.vocab-card');
+        if (card) {
+            card.style.transform = 'translateX(0px)';
+            card.style.transition = 'transform 0.3s ease-out';
+        }
+    }
+
+    snapBack() {
+        const card = this.container.querySelector('.vocab-card');
+        if (card) {
+            card.style.transition = 'transform 0.3s ease-out';
+            card.style.transform = 'translateX(0px)';
+        }
+        if (this.ghostCard) {
+            this.ghostCard.style.transition = 'transform 0.3s ease-out';
+            // Ghost kartı geldiği yere geri gönder
+            const width = window.innerWidth;
+            const currentX = parseFloat(this.ghostCard.style.transform.replace('translateX(', '').replace('px)', ''));
+            // Eğer currentX < 0 ise (Ghost sağda duruyor, sola çekilmiş), geri sağa gitmeli?
+            // Mantık: Ghost Next ise (Sağdaysa) -> +width'e dönmeli. Ghost Prev ise (Soldaysa) -> -width'e dönmeli.
+            // currentTranslate < 0 ise sola çekiyorduk (Next Card Geliyor). Ghost X > 0.
+
+            // Basitçe createGhostCard'daki startX mantığının tersi
+            // Eğer currentTranslate < 0 (Sola çekiş, Next Geliyor) -> Ghost +Width'teydi.
+            if (this.currentTranslate < 0) {
+                this.ghostCard.style.transform = `translateX(${width}px)`;
+            } else {
+                this.ghostCard.style.transform = `translateX(${-width}px)`;
+            }
+
+            // Animasyon bitince ghost'u sil
+            setTimeout(() => {
+                this.removeGhostCard();
+            }, 300);
+        }
     }
 
     adjustDropdownWidth() {

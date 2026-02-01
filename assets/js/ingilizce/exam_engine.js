@@ -65,7 +65,7 @@ const EnglishExam = {
     },
 
     renderMeaningQuestion: function (item, container) {
-        document.getElementById('eng-exam-title').innerText = "Soru: Kelime Anlamı";
+        document.getElementById('eng-exam-title').innerText = "Kelime Anlamı";
 
         // Prepare options (1 correct, 3 wrong)
         const def = item.definitions[0];
@@ -89,7 +89,7 @@ const EnglishExam = {
         let html = `
             <div style="text-align:center; margin-bottom:20px;">
                 <h2 style="font-size:2.5rem; color:#2c3e50;">${item.word}</h2>
-                <p style="color:#718096; font-style:italic;">Hangi anlama gelir?</p>
+                <p style="color:#718096; font-style:italic;">kelimesi hangi anlama gelir?</p>
             </div>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
                 ${options.map(opt => `
@@ -103,7 +103,7 @@ const EnglishExam = {
     },
 
     renderClozeQuestion: function (item, container) {
-        document.getElementById('eng-exam-title').innerText = "Soru: Boşluk Doldurma";
+        document.getElementById('eng-exam-title').innerText = "Boşluk Doldurma";
 
         // Find a suitable sentence
         let sentenceObj = null;
@@ -138,7 +138,7 @@ const EnglishExam = {
         let html = `
             <div style="text-align:center; margin-bottom:20px;">
                 <h3 style="font-size:1.4rem; color:#2c3e50; margin-bottom:10px;">"${maskedSentence}"</h3>
-                <p style="color:#718096;">Tr: ${sentenceObj.translation}</p>
+                <p style="color:#718096;">${sentenceObj.translation}</p>
             </div>
             <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
                 ${options.map(opt => `
@@ -152,7 +152,7 @@ const EnglishExam = {
     },
 
     renderAntonymQuestion: function (item, container) {
-        document.getElementById('eng-exam-title').innerText = "Soru: Zıt Anlam";
+        document.getElementById('eng-exam-title').innerText = "Zıt Anlam";
 
         // Check availability
         const nuance = item.lexical_nuance;
@@ -176,7 +176,7 @@ const EnglishExam = {
         let html = `
             <div style="text-align:center; margin-bottom:20px;">
                 <h2 style="font-size:2.0rem; color:#c53030;">${item.word}</h2>
-                <p>Kelimesinin <strong>ZIT</strong> anlamlısı hangisidir?</p>
+                <p>kelimesinin zıt anlamlısı hangisidir?</p>
             </div>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
                 ${options.map(opt => `
@@ -190,7 +190,7 @@ const EnglishExam = {
     },
 
     renderMorphologyQuestion: function (item, container) {
-        document.getElementById('eng-exam-title').innerText = "Soru: Kelime Ailesi";
+        document.getElementById('eng-exam-title').innerText = "Kelime Ailesi";
 
         const fam = (item.morphology_tree && item.morphology_tree.family_members) ? item.morphology_tree.family_members : [];
         if (fam.length === 0) {
@@ -204,7 +204,7 @@ const EnglishExam = {
         }
 
         const target = fam[Math.floor(Math.random() * fam.length)];
-        const questionText = `<strong>"${item.word}"</strong> kelimesinin <strong>${target.pos}</strong> (türü) hali nedir?`;
+        const questionText = `<strong>"${item.word}"</strong> kelimesinin ${target.pos} hali nedir?`;
 
         // Distractors
         let options = [target.word];
@@ -228,7 +228,7 @@ const EnglishExam = {
     },
 
     renderListeningQuestion: function (item, container) {
-        document.getElementById('eng-exam-title').innerText = "Soru: Dinle ve Bul";
+        document.getElementById('eng-exam-title').innerText = "Dinle ve Bul";
 
         let distractors = ["apple", "table", "cable", "stable"];
         if (this.currentData.length > 3) {
@@ -263,7 +263,7 @@ const EnglishExam = {
     },
 
     renderScrambleQuestion: function (item, container) {
-        document.getElementById('eng-exam-title').innerText = "Soru: Harf Karıştırma";
+        document.getElementById('eng-exam-title').innerText = "Harf Karıştırma";
 
         const meaning = item.definitions[0].core_meaning_tr;
         const letters = item.word.toUpperCase().split('');
@@ -324,7 +324,7 @@ const EnglishExam = {
     },
 
     renderSynonymQuestion: function (item, container) {
-        document.getElementById('eng-exam-title').innerText = "Soru: Eş Anlam Avcısı";
+        document.getElementById('eng-exam-title').innerText = "Eş Anlam Avcısı";
 
         const nuance = item.lexical_nuance;
         if (!nuance || !nuance.synonyms || nuance.synonyms.length === 0) {
@@ -360,7 +360,7 @@ const EnglishExam = {
     },
 
     renderSentenceBuilderQuestion: function (item, container) {
-        document.getElementById('eng-exam-title').innerText = "Soru: Cümle Kur";
+        document.getElementById('eng-exam-title').innerText = "Cümle Kur";
 
         let sentence = "";
         if (item.definitions && item.definitions[0].example) {
@@ -422,7 +422,7 @@ const EnglishExam = {
     },
 
     renderTrueFalseQuestion: function (item, container) {
-        document.getElementById('eng-exam-title').innerText = "Soru: Doğru / Yanlış";
+        document.getElementById('eng-exam-title').innerText = "Doğru / Yanlış";
 
         // Decide truth
         const isTrue = Math.random() > 0.5;

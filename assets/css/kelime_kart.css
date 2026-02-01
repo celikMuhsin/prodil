@@ -387,17 +387,117 @@
 .antonym-val {
     font-size: 0.75rem;
     color: #fff;
-    background: #f56565;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-weight: 600;
+    background: #edf2f7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
 }
 
-.antonym-tr {
-    font-size: 0.9rem;
-    color: #2d3748;
-    font-weight: 500;
-    margin-bottom: 2px;
+.der-note {
+    font-size: 0.8rem;
+    color: #718096;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+
+
+/* --- Mobil Slide Animasyonları --- */
+
+/* Ghost Card: Geçiş sırasında eski kartın kopyası */
+.ghost-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    /* Yeni kartın (z-index: auto/0) üzerinde */
+    pointer-events: none;
+    /* Etkileşimi engelle */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    /* Gölgeyi koru */
+    background: var(--bg-paper);
+    /* Arka planı koru */
+}
+
+/* Container için relative pozisyon (Ghost card referansı) */
+#vocabulary-wrapper {
+    position: relative;
+    /* overflow-x: hidden; -> Bu sticky'yi bozuyor. JS ile dinamik yönetilecek. */
+}
+
+/* Animasyon sırasında overflow'u gizlemek için dinamik sınıf */
+#vocabulary-wrapper.animating {
+    overflow-x: hidden;
+}
+
+/* Animasyon Keyframes */
+
+/* Sola Giderken (Next) */
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-120%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Sağa Giderken (Prev) - Back hareketi */
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-120%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Class'lar */
+.anim-slide-out-left {
+    animation: slideOutLeft 0.4s ease-in-out forwards;
+}
+
+.anim-slide-in-right {
+    animation: slideInRight 0.4s ease-in-out forwards;
+}
+
+.anim-slide-out-right {
+    animation: slideOutRight 0.4s ease-in-out forwards;
+}
+
+.anim-slide-in-left {
+    animation: slideInLeft 0.4s ease-in-out forwards;
 }
 
 .antonym-note {
@@ -1194,10 +1294,10 @@
 /* Cognate Hint */
 .hint-box {
     margin-top: 20px;
-    background: #f0fff4;
-    border: 1px solid #c6f6d5;
-    padding: 12px;
-    border-radius: 6px;
+    /* Dış kutuyu şeffaf yapıp padding'i kaldırıyoruz */
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
 .hint-title {
@@ -1263,14 +1363,7 @@
 /* Cognate Hint Box - Comparison Design */
 /* Cognate Hint Box - Clean & Open Design */
 /* Cognate Hint Box - Boxed Design */
-.hint-box {
-    margin-top: 15px;
-    background: #f0fff4;
-    border: 1px solid #c6f6d5;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-}
+/* Mükerrer blok silindi */
 
 .hint-title {
     font-size: 1rem;
@@ -1293,7 +1386,8 @@
 
 /* Story Box */
 .hint-story {
-    background: #fff;
+    background: #f0fff4;
+    /* Dış kutunun rengini buraya taşıdık */
     border: 1px solid #9ae6b4;
     /* Green border */
     border-radius: 8px;
@@ -1430,4 +1524,63 @@
 #sec-history.open .accordion-content,
 #sec-collocations.open .accordion-content {
     padding-bottom: 5px !important;
+}
+
+/* --- Nuance Section Refactor --- */
+.nuance-group {
+    margin-bottom: 20px;
+}
+
+.nuance-header {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid;
+}
+
+/* Green Theme (Synonyms) */
+.theme-green .nuance-header {
+    color: #2f855a;
+    border-color: #c6f6d5;
+}
+
+.theme-green .scale-item {
+    background: linear-gradient(to right, #f0fff4, #fff);
+    border-left: 3px solid #48bb78;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+/* Red Theme (Antonyms) */
+.theme-red .nuance-header {
+    color: #c53030;
+    border-color: #fed7d7;
+}
+
+.theme-red .antonym-card {
+    background: linear-gradient(to right, #fff5f5, #fff);
+    border-left: 3px solid #f56565;
+    /* Overwrite old border if exists */
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.theme-red .antonym-header,
+.theme-red .antonym-note {
+    border: none !important;
+}
+
+.theme-red .antonym-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
