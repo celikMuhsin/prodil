@@ -75,12 +75,13 @@ class VocabCard {
                 availableSections.push({ id, title });
             }
             const activeClass = isOpen ? 'open' : '';
-            const showClass = isOpen ? 'show' : '';
-            const iconClass = 'fa-chevron-down';
+            // If open, no hidden class. If closed, add hidden class.
+            const showClass = isOpen ? '' : 'hidden';
+            const iconClass = isOpen ? 'fa-chevron-up' : 'fa-chevron-down';
 
             return `
                 <div id="${id}" class="section-wrapper ${activeClass}">
-                    <div class="accordion-header" onclick="vocabCard.toggleAccordion('${id}')">
+                    <div class="accordion-header">
                         <div class="accordion-title">
                             <span style="font-size:0.8em; color:var(--accent); opacity:0.7;">●</span> ${title}
                         </div>
@@ -469,45 +470,60 @@ class VocabCard {
         const cleanIpa = rawIpa.replace(/\//g, '');
 
         const dropdownItemsHtml = availableSections.map(s => `
-            <div class="dropdown-item" onclick="vocabCard.selectSection('${s.id}')">
+            <div class="dropdown-item" data-section="${s.id}">
                 ${s.html || s.title}
             </div>
         `).join('');
 
+        // Compact Header Redesign
         const headerHtml = `
-        <div class="controls-top">
-            <div class="nav-left">
-                <button class="nav-btn" onclick="vocabCard.prevCard()" ${index === 0 ? 'disabled' : ''} title="Önceki">←</button>
-                <span class="nav-counter">${index + 1} / ${this.data.length}</span>
-                <button class="nav-btn next" onclick="vocabCard.nextCard()" title="Sonraki">→</button>
+        <!-- Top Row: Controls (Not Sticky) -->
+        <div style="display:flex; justify-content:space-between; align-items:center; width:100%; border-bottom:1px solid #f0f0f0; padding:2px 10px; margin-bottom:0;">
+            <!-- Left: Nav -->
+            <div style="display:flex; align-items:center; gap:5px;">
+                 <button onclick="vocabCard.prevCard()" class="nav-btn-small hover:bg-gray-50 text-gray-400" ${index === 0 ? 'disabled' : ''}>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <span style="font-size:1.1rem; color:#718096; min-width:30px; text-align:center; font-weight:500;">
+                    ${index + 1}/${this.data.length}
+                </span>
+                <button onclick="vocabCard.nextCard()" class="nav-btn-small hover:bg-gray-50 text-gray-600">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
             </div>
-            <div class="phonetics-row" style="margin-left:auto;">
-                <span class="ipa">${cleanIpa}</span>
-                <button class="audio-mini-btn" onclick="vocabCard.playGoogleAudio('${item.word}')" title="Telaffuzu Dinle">
-                    🔊
+
+            <!-- Right: Pronunciation -->
+            <div style="display:flex; align-items:center; gap:5px;">
+                <span style="font-family:'Courier New'; font-size:1.1rem; color:#4a5568; background:#edf2f7; padding:0 4px; border-radius:3px;">
+                    ${cleanIpa}
+                </span>
+                <button onclick="vocabCard.playGoogleAudio('${item.word}')" class="nav-btn-small rounded-full text-blue-600 bg-blue-50 border-transparent">
+                    <i class="fa-solid fa-volume-high"></i>
                 </button>
             </div>
         </div>
 
         <div id="sticky-placeholder" style="height:0; width:100%;"></div>
-        <div class="sticky-header-wrapper">
-            <div class="word-header">
-                <div class="word-title-row">
-                    <div class="word-left-group" style="display:flex; align-items:center; gap:10px;">
-                        <h1 class="main-word">${item.word}</h1>
+        
+        <!-- Sticky Wrapper (Only Word Line) -->
+        <div class="sticky-header-wrapper" style="padding: 2px 10px; display:flex; flex-direction:column; gap:0;">
+            <!-- Bottom Row: Word & Dropdown (Ultra Compact) -->
+            <div style="display:flex; justify-content:space-between; align-items:center; width:100%; padding: 2px 5px;">
+                <h1 style="font-size:2.0rem; font-weight:800; color:var(--text-main); margin:0; line-height:1; letter-spacing:-0.5px;">
+                    ${item.word}
+                </h1>
+                
+                <div class="custom-dropdown-container">
+                    <div class="dropdown-trigger">
+                        <span id="dropdown-label">Bölüme Git...</span>
+                        <span style="font-size:0.7em; margin-left:6px;">▼</span>
                     </div>
-                    <div class="custom-dropdown-container">
-                        <div class="dropdown-trigger" onclick="vocabCard.toggleDropdown()">
-                            <span id="dropdown-label">Bölüme Git...</span>
-                            <span style="font-size:0.7em; margin-left:6px;">▼</span>
+                    <div class="dropdown-menu" id="vocab-dropdown-menu">
+                        <div class="dropdown-item" data-section="toggle-all">
+                            <span id="toggle-all-text" style="font-weight:bold; color:var(--primary);">➕ Hepsini Aç</span>
                         </div>
-                        <div class="dropdown-menu" id="vocab-dropdown-menu">
-                            <div class="dropdown-item" onclick="vocabCard.selectSection('toggle-all')">
-                                <span id="toggle-all-text" style="font-weight:bold; color:var(--primary);">➕ Hepsini Aç</span>
-                            </div>
-                            <div class="dropdown-item separator"></div>
-                            ${dropdownItemsHtml}
-                        </div>
+                        <div class="dropdown-item separator"></div>
+                        ${dropdownItemsHtml}
                     </div>
                 </div>
             </div>
@@ -515,7 +531,7 @@ class VocabCard {
         `;
 
         const tagsHtml = `
-            <div class="word-meta" style="padding: 10px 30px; border-bottom: 1px solid var(--border);">
+            <div class="word-meta" style="padding: 8px 15px; border-bottom: 1px solid var(--border); display:flex; flex-wrap:wrap; gap:5px;">
                 <span class="meta-chip" style="background:${this.getLevelColor(meta.cefr_level)}; color:white; border:none;">${meta.cefr_level || 'A1'}</span>
                 <span class="meta-chip">${translate(meta.frequency_band) || 'Genel'}</span>
                 ${(() => {
@@ -772,10 +788,23 @@ class VocabCard {
             }
 
             allSections.forEach(sec => {
+                const content = sec.querySelector('.accordion-content');
+                const icon = sec.querySelector('.accordion-icon i');
+
                 if (action === 'open') {
                     sec.classList.add('open');
+                    if (content) content.classList.remove('hidden');
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
                 } else {
                     sec.classList.remove('open');
+                    if (content) content.classList.add('hidden');
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
                 }
             });
 
@@ -794,10 +823,22 @@ class VocabCard {
         if (el) {
             el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-            // Eğer kapalıysa aç
-            if (!el.classList.contains('open')) {
-                el.classList.add('open');
-            }
+            // Helper to open a section
+            const openSection = (sectionElement) => {
+                if (!sectionElement.classList.contains('open')) {
+                    sectionElement.classList.add('open');
+                    const content = sectionElement.querySelector('.accordion-content');
+                    const icon = sectionElement.querySelector('.accordion-icon i');
+                    if (content) content.classList.remove('hidden');
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
+                }
+            };
+
+            // Open target
+            openSection(el);
 
             // Recursively open all parent accordions
             let currentEl = el.parentElement;
@@ -805,9 +846,7 @@ class VocabCard {
                 // Find closest parent section-wrapper
                 const parentSection = currentEl.closest('.section-wrapper');
                 if (parentSection) {
-                    if (!parentSection.classList.contains('open')) {
-                        parentSection.classList.add('open');
-                    }
+                    openSection(parentSection);
                     // Continue searching up from the parent's parent
                     currentEl = parentSection.parentElement;
                 } else {
@@ -871,17 +910,83 @@ class VocabCard {
     }
 
     addEventListeners() {
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            const container = document.querySelector('.custom-dropdown-container');
-            if (container && !container.contains(e.target)) {
+        if (this.eventsBound) return; // Prevent duplicate listeners
+        this.eventsBound = true;
+
+        // --- Buton Tıklamaları ---
+        this.container.addEventListener('click', (e) => {
+            if (e.target.closest('#btn-prev')) this.prevCard();
+            if (e.target.closest('#btn-next')) this.nextCard();
+            if (e.target.closest('#btn-play-sound')) this.playSound();
+        });
+
+        // Toggle Expand/Collapse (Accordion)
+        this.container.addEventListener('click', (e) => {
+            const header = e.target.closest('.accordion-header');
+            if (header) {
+                // Find parent wrapper to sync with "Toggle All" logic
+                const wrapper = header.closest('.section-wrapper');
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+
+                let isOpen = false;
+
+                if (wrapper) {
+                    // Toggle wrapper state
+                    wrapper.classList.toggle('open');
+                    isOpen = wrapper.classList.contains('open');
+                } else {
+                    // Fallback if no wrapper (legacy logic)
+                    isOpen = content.classList.contains('hidden');
+                }
+
+                if (isOpen) {
+                    content.classList.remove('hidden');
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
+                } else {
+                    content.classList.add('hidden');
+                    if (icon) {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                }
+            }
+        });
+
+        // Dropdown Toggle
+        this.container.addEventListener('click', (e) => {
+            const trigger = e.target.closest('.dropdown-trigger');
+            if (trigger) {
+                this.isDropdownInteraction = true;
+                const menu = trigger.nextElementSibling;
+                menu.classList.toggle('show');
+                const icon = trigger.querySelector('.fa-chevron-down, .fa-chevron-up');
+                if (icon) {
+                    icon.classList.toggle('fa-chevron-down');
+                    icon.classList.toggle('fa-chevron-up');
+                }
+            } else if (!e.target.closest('.custom-dropdown-container')) {
                 this.closeDropdown();
+            }
+        });
+
+        // Dropdown Item Selection
+        this.container.addEventListener('click', (e) => {
+            const item = e.target.closest('.dropdown-item');
+            if (item) {
+                const sectionId = item.getAttribute('data-section');
+                if (sectionId) {
+                    this.scrollToSection(sectionId);
+                    this.closeDropdown();
+                }
             }
         });
 
         // Close dropdown on scroll
         window.addEventListener('scroll', () => {
-            // Eğer kullanıcı dropdown ile etkileşime giriyorsa kapatma
             if (!this.isDropdownInteraction) {
                 this.closeDropdown();
             }
@@ -893,22 +998,20 @@ class VocabCard {
         });
 
         // --- Mobile Swipe Events (Interactive) ---
-        const touchStart = (index) => {
-            return (event) => {
-                // Dropdown içindeyse swipe başlatma
-                if (event.target.closest('.custom-dropdown-container') || event.target.closest('.dropdown-menu')) {
-                    this.isDropdownInteraction = true;
-                    return;
-                }
-
-                this.isDragging = true;
-                this.startPos = this.getPositionX(event);
-                this.animationID = requestAnimationFrame(this.animation);
-
-                // Clear any existing transition
-                const card = this.container.querySelector('.vocab-card');
-                if (card) card.style.transition = 'none';
+        const touchStart = (event) => {
+            // Dropdown içindeyse swipe başlatma
+            if (event.target.closest('.custom-dropdown-container') || event.target.closest('.dropdown-menu')) {
+                this.isDropdownInteraction = true;
+                return;
             }
+
+            this.isDragging = true;
+            this.startPos = this.getPositionX(event);
+            this.animationID = requestAnimationFrame(this.animation);
+
+            // Clear any existing transition
+            const card = this.container.querySelector('.vocab-card');
+            if (card) card.style.transition = 'none';
         }
 
         const touchMove = (event) => {
@@ -917,7 +1020,7 @@ class VocabCard {
                 const diff = currentPosition - this.startPos;
                 this.currentTranslate = diff;
 
-                // Ghost Kart Oluşturma (Henüz yoksa)
+                // Ghost Kart Oluşturma (Henüz yoksa ve hareket belirginse)
                 if (!this.ghostCard && Math.abs(diff) > 20) {
                     this.createGhostCard(diff);
                 }
@@ -925,11 +1028,9 @@ class VocabCard {
                 // Hareketli Ghost Kart Kontrolü
                 if (this.ghostCard) {
                     const width = window.innerWidth;
-                    // Eğer sağa kaydırıyorsak (Prev), ghost soldan gelmeli (-width + diff)
-                    // Eğer sola kaydırıyorsak (Next), ghost sağdan gelmeli (width + diff)
-                    if (diff > 0) { // Prev
+                    if (diff > 0) { // Prev (Sağa çekiyoruz, soldan gelen görünmeli)
                         this.ghostCard.style.transform = `translateX(${-width + diff}px)`;
-                    } else { // Next
+                    } else { // Next (Sola çekiyoruz, sağdan gelen görünmeli)
                         this.ghostCard.style.transform = `translateX(${width + diff}px)`;
                     }
                 }
@@ -937,8 +1038,6 @@ class VocabCard {
         }
 
         const touchEnd = () => {
-            // Etkileşim bittiyse flag'i hemen değil, biraz gecikmeli kapat
-            // (Scroll momentum bitene kadar veya yanlışlıkla kapanmasın diye)
             if (this.isDropdownInteraction) {
                 setTimeout(() => {
                     this.isDropdownInteraction = false;
@@ -950,49 +1049,28 @@ class VocabCard {
             cancelAnimationFrame(this.animationID);
 
             const movedBy = this.currentTranslate;
-            const threshold = 100; // Trigger noktası
+            const threshold = 80; // Hassasiyet artırıldı (100 -> 80)
 
-            // Eğer yeterince kaydırıldıysa
+            // Eğer yeterince kaydırıldıysa aksiyon al
             if (Math.abs(movedBy) > threshold) {
                 const direction = movedBy < 0 ? 'next' : 'prev';
                 this.finishSwipe(direction);
             } else {
                 // Yeterince kaydırılmadı, geri snap yap
                 this.snapBack();
-                this.currentTranslate = 0;
             }
+            // Her durumda sıfırla
+            this.currentTranslate = 0;
         }
 
-        this.container.addEventListener('touchstart', touchStart(this.currentIndex), { passive: true });
+        this.container.addEventListener('touchstart', touchStart, { passive: true });
         this.container.addEventListener('touchmove', touchMove, { passive: true });
         this.container.addEventListener('touchend', touchEnd);
 
-        // --- JS Sticky Fallback for Mobile ---
-        window.addEventListener('scroll', () => {
-            // Only apply on mobile where CSS sticky might fail
-            if (window.innerWidth > 768) return;
-
-            const stickyEl = this.container.querySelector('.sticky-header-wrapper');
-            const placeholder = document.getElementById('sticky-placeholder');
-
-            if (!stickyEl || !placeholder) return;
-
-            // Get the top position of the placeholder relative to viewport
-            const rect = placeholder.getBoundingClientRect();
-
-            // If placeholder barely touches top (scrolled past), fix the header
-            if (rect.top <= 0) {
-                if (!stickyEl.classList.contains('mobile-fixed')) {
-                    stickyEl.classList.add('mobile-fixed');
-                    placeholder.style.height = stickyEl.offsetHeight + 'px'; // Reserve space
-                }
-            } else {
-                if (stickyEl.classList.contains('mobile-fixed')) {
-                    stickyEl.classList.remove('mobile-fixed');
-                    placeholder.style.height = '0px'; // Collapse space
-                }
-            }
-        }, { passive: true });
+        // JS Sticky Fallback removed in favor of native CSS sticky support
+        /* 
+        window.addEventListener('scroll', () => { ... }); 
+        */
     }
 
     getPositionX(event) {

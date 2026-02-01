@@ -67,11 +67,16 @@ html {
 
 /* --- Navigation Header (Controls) --- */
 /* --- Sticky Wrapper --- */
+/* --- Navigation Header (Controls) --- */
+/* --- Sticky Wrapper --- */
+/* --- Navigation Header (Controls) --- */
+/* --- Sticky Wrapper --- */
 .sticky-header-wrapper {
     position: -webkit-sticky;
     /* iOS Safari */
     position: sticky;
-    top: 70px;
+    top: 50px;
+    /* Reduced from 70px to match new scale */
     z-index: 900;
     background: #fff;
     /* Ensure bg covers scrolling content */
@@ -80,12 +85,15 @@ html {
     margin-top: -1px;
     /* Prevent visual gap */
     width: 100%;
+    padding: 2px 5px;
+    /* Minimal padding */
 }
 
 /* JS-Activated Fixed Class for Mobile */
 .sticky-header-wrapper.mobile-fixed {
     position: fixed !important;
-    top: 70px;
+    top: 50px;
+    /* Match sticky top */
     left: 0;
     width: 100%;
     z-index: 900;
@@ -118,20 +126,31 @@ html {
     }
 
     .sticky-header-wrapper {
-        top: 0;
+        top: 50px;
+        /* Sticky top adjusted for mobile header */
         left: 0;
         width: 100%;
         margin: 0;
         border-radius: 0;
-        /* Ensure no corners cut content */
+        padding: 2px 0;
+        /* Minimal padding */
     }
+}
+
+.section-wrapper {
+    margin-bottom: 12px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 /* Custom Dropdown Styles */
 .custom-dropdown-container {
     position: relative;
     /* width: 180px; REMOVED for dynamic sizing */
-    min-width: 150px;
+    min-width: 120px;
+    /* Further reduced min width */
     /* Minimum width safety */
     font-family: var(--font-body);
 }
@@ -140,8 +159,10 @@ html {
     background: #f8fafc;
     border: 1px solid var(--border);
     border-radius: 6px;
-    padding: 6px 12px;
-    font-size: 0.85rem;
+    padding: 0 8px;
+    /* Compact padding */
+    font-size: 1.1rem;
+    /* Smaller font */
     color: var(--text-main);
     cursor: pointer;
     display: flex;
@@ -149,13 +170,30 @@ html {
     align-items: center;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     user-select: none;
-    height: 32px;
-    /* Fixed height for alignment */
+    height: 28px;
+    /* Aggressively Compact Height */
 }
 
 .dropdown-trigger:hover {
     background: #edf2f7;
     border-color: #cbd5e0;
+}
+
+/* New compact nav button class */
+.nav-btn-small {
+    width: 28px;
+    /* Aggressively Compact Size */
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: all 0.2s;
 }
 
 .dropdown-menu {
