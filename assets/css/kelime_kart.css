@@ -1,3 +1,19 @@
+/* Global Settings for Mobile Consistency */
+html {
+    -webkit-text-size-adjust: 100%;
+    /* Prevent font boosting on mobile */
+    text-size-adjust: 100%;
+    font-size: 16px;
+    /* Base size */
+}
+
+@media (max-width: 640px) {
+    html {
+        font-size: 14px;
+        /* Slightly smaller text on mobile to prevent overflow */
+    }
+}
+
 :root {
     --bg-page: #f4f6f8;
     --bg-paper: #ffffff;
