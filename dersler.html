@@ -283,7 +283,10 @@
             position: absolute;
             top: 110%;
             right: 0;
-            width: 250px;
+            right: 0;
+            width: max-content;
+            min-width: 200px;
+            max-width: 300px;
             background: white;
             border: 1px solid #e2e8f0;
             border-radius: 0.5rem;
@@ -657,14 +660,18 @@
                 document.addEventListener('click', (e) => {
                     if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
                         searchDropdown.classList.remove('show');
+                        searchInput.value = ''; // Clear input on outcome click
                     }
                 });
 
                 // Close dropdown on scroll
                 window.addEventListener('scroll', () => {
-                    searchDropdown.classList.remove('show');
-                    if (document.activeElement === searchInput) {
-                        searchInput.blur();
+                    if (searchDropdown.classList.contains('show')) {
+                        searchDropdown.classList.remove('show');
+                        searchInput.value = ''; // Clear input on scroll
+                        if (document.activeElement === searchInput) {
+                            searchInput.blur();
+                        }
                     }
                 });
             }

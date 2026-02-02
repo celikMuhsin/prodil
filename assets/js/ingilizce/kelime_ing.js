@@ -99,14 +99,48 @@ window.vocabularyData = [
         },
         "collocations": {
             "modifiers_adverbs": [
-                { "word": "perfectly", "strength": "strong", "example": "I am perfectly able to look after myself." },
-                { "word": "barely", "strength": "weak", "example": "He was barely able to stand." },
-                { "word": "physically", "strength": "neutral", "example": "Is he physically able to travel?" },
-                { "word": "financially", "strength": "neutral", "example": "We are not financially able to buy a house." }
+                {
+                    "word": "perfectly",
+                    "turkish": "tamamen, fazlasıyla",
+                    "strength": "strong",
+                    "example": "I am perfectly able to look after myself.",
+                    "example_tr": "Kendime bakabilecek durumdayım."
+                },
+                {
+                    "word": "barely",
+                    "turkish": "ancak, güçbela",
+                    "strength": "weak",
+                    "example": "He was barely able to stand.",
+                    "example_tr": "Ayakta zor durabiliyordu."
+                },
+                {
+                    "word": "physically",
+                    "turkish": "fiziksel olarak",
+                    "strength": "neutral",
+                    "example": "Is he physically able to travel?",
+                    "example_tr": "Seyahat edebilecek fiziksel güce sahip mi?"
+                },
+                {
+                    "word": "financially",
+                    "turkish": "maddi açıdan",
+                    "strength": "neutral",
+                    "example": "We are not financially able to buy a house.",
+                    "example_tr": "Bir ev alacak maddi gücümüz yok."
+                }
             ],
             "verbs_preceding": [
-                { "word": "seem", "example": "They seem able to cope." },
-                { "word": "feel", "example": "I don't feel able to drive right now." }
+                {
+                    "word": "seem",
+                    "turkish": "görünmek",
+                    "example": "They seem able to cope.",
+                    "example_tr": "Başa çıkabiliyor gibi görünüyorlar."
+                },
+                {
+                    "word": "feel",
+                    "turkish": "hissetmek",
+                    "example": "I don't feel able to drive right now.",
+                    "example_tr": "Şu an araba kullanabilecek gibi hissetmiyorum."
+                }
             ]
         },
         "lexical_nuance": {
@@ -121,6 +155,9 @@ window.vocabularyData = [
                         "turkish": "yapabilmek",
                         "note": "En temel, gündelik",
                         "usage": "Günlük konuşma: 'I can swim.'",
+                        "description_tr": "Günlük konuşma dilinde, en temel yetenek ifadesidir.",
+                        "example_en": "I can swim very fast.",
+                        "example_tr": "Çok hızlı yüzebilirim.",
                         "example": "I can speak basic English.",
                         "strength": "Düşük"
                     },
@@ -130,6 +167,9 @@ window.vocabularyData = [
                         "turkish": "muktedir, yapabilen",
                         "note": "Daha resmi, eylem odaklı",
                         "usage": "İş/akademik: 'She is able to lead the team.'",
+                        "description_tr": "Daha resmi, bir işi yapmaya gücü yetme veya muktedir olma durumudur.",
+                        "example_en": "She is able to lead the team to success.",
+                        "example_tr": "Ekibi başarıya götürebilecek yetkinliktedir.",
                         "example": "He is able to solve complex problems.",
                         "strength": "Orta"
                     },
@@ -139,6 +179,9 @@ window.vocabularyData = [
                         "turkish": "yetenekli, kapasiteli",
                         "note": "Potansiyel ve kapasite vurgusu",
                         "usage": "Potansiyel: 'He's capable of great things.'",
+                        "description_tr": "Potansiyel, kapasite ve doğal yetenek vurgusu taşır.",
+                        "example_en": "He's capable of achieving great things.",
+                        "example_tr": "Harika şeyler başarabilecek kapasitededir.",
                         "example": "She is capable of learning quickly.",
                         "strength": "Yüksek"
                     },
@@ -148,6 +191,9 @@ window.vocabularyData = [
                         "turkish": "ustalık derecesinde, yetkin",
                         "note": "Uzmanlık derecesinde yetkinlik",
                         "usage": "Teknik/uzmanlık: 'She is proficient in Python.'",
+                        "description_tr": "Bir konuda uzmanlık, ustalık ve ileri düzey beceri belirtir.",
+                        "example_en": "She is proficient in three languages.",
+                        "example_tr": "Üç dilde uzmanlık derecesinde yetkindir.",
                         "example": "He is proficient in three languages.",
                         "strength": "En Üst"
                     }
@@ -159,6 +205,9 @@ window.vocabularyData = [
                     "value": 2,
                     "turkish": "yapamaz, aciz",
                     "note": "Geçici veya durumsal yapamama",
+                    "description_tr": "Genellikle geçici veya o ana özgü yapamama durumunu anlatır.",
+                    "example_en": "I am unable to attend the meeting today.",
+                    "example_tr": "Bugün toplantıya katılamıyorum.",
                     "example": "I'm unable to attend the meeting."
                 },
                 {
@@ -166,6 +215,9 @@ window.vocabularyData = [
                     "value": 1,
                     "turkish": "yetersiz, yeteneksiz",
                     "note": "Kalıcı veya yapısal yetersizlik",
+                    "description_tr": "Kalıcı yetersizlik veya bir şeyi yapacak yapıda (kapasitede) olmama durumudur.",
+                    "example_en": "He is incapable of hurting a fly.",
+                    "example_tr": "O, bir karıncayı bile incitebilecek yapıda değildir.",
                     "example": "He's incapable of understanding the problem."
                 },
                 {
@@ -173,6 +225,9 @@ window.vocabularyData = [
                     "value": 0,
                     "turkish": "beceriksiz, acemi",
                     "note": "Beceriksiz, sakar, tamamen uyumsuz",
+                    "description_tr": "Beceriksiz, sakar veya işe yatkın olmayan demektir.",
+                    "example_en": "His inept handling of the situation caused problems.",
+                    "example_tr": "Durumu beceriksizce yönetmesi sorunlara yol açtı.",
                     "example": "His inept handling made things worse.",
                     "warning": "Hakaret içerebilir, dikkatli kullanın!"
                 }
@@ -183,12 +238,16 @@ window.vocabularyData = [
                 {
                     "phrase": "ready, willing, and able",
                     "meaning_tr": "dünden razı, her şeye hazır ve nazır",
-                    "register": "cliché/idiomatic"
+                    "register": "cliché/idiomatic",
+                    "example": "I am ready, willing, and able to work.",
+                    "example_tr": "Çalışmaya dünden razıyım."
                 },
                 {
                     "phrase": "able-bodied",
                     "meaning_tr": "eli ayağı tutan, fiziksel engeli olmayan",
-                    "register": "neutral"
+                    "register": "neutral",
+                    "example": "Every able-bodied man was called to fight.",
+                    "example_tr": "Eli ayağı tutan her erkek savaşmaya çağrıldı."
                 }
             ],
             "sociolinguistics": {
@@ -196,6 +255,79 @@ window.vocabularyData = [
                 "note_en": "In modern contexts, be mindful of ableist language. 'Disabled' is generally preferred over euphemisms like 'differently abled' by the community.",
                 "note_tr": "Modern İngilizcede engellilik bağlamında dil kullanımına dikkat edilmelidir."
             }
+        },
+        "cultural_context": {
+            "register": {
+                "level": "formal",
+                "description": "Günlük konuşmada genellikle 'can' tercih edilirken, 'able' daha çok yazılı, resmi veya akademik dilde yetkinliği vurgulamak için kullanılır."
+            },
+            "inclusive_language": {
+                "title": "Kapsayıcı Dil (Inclusive Language)",
+                "content": "Modern İngilizcede 'disabled' (engelli) kelimesi yerine bazen 'differently abled' gibi terimler tartışılsa da, 'able-bodied' (fiziksel engeli olmayan) terimi hukuki ve tıbbi metinlerde hala yaygındır ancak günlük dilde dikkatli kullanılmalıdır."
+            },
+            "grammar_nuance": {
+                "title": "Able vs Capable Farkı",
+                "content": "'Able' genellikle o anki, geçici bir yapabilme durumunu (örn: toplantıya gelebilmek) anlatırken; 'Capable' daha kalıcı, potansiyel bir yeteneği (örn: cinayet işleyebilecek kapasitede olmak) ifade eder."
+            },
+            "business_english": {
+                "title": "İş Dünyası & CV",
+                "content": "İş ilanlarında 'able to work under pressure' (baskı altında çalışabilen) veya 'problem-solving ability' kalıpları çok sık geçer. Bu kelime profesyonel yetkinlik (competence) sinyali verir.",
+                "keywords": ["able to work under pressure", "problem-solving ability"]
+            },
+            "trivia": {
+                "title": "Biliyor muydunuz?",
+                "content": "'Ready, willing, and able' kalıbı Amerikan hukuk dilinden günlük dile yerleşmiş, bir şeyi yapmaya hem hazır hem istekli hem de muktedir olmayı anlatan meşhur bir üçlemedir."
+            }
+        },
+        "exam_strategies": {
+            "frequency": {
+                "yds": 85,
+                "yokdil": 90,
+                "ydt": 70,
+                "description": "ÖSYM havuzunda en sık geçen ilk 500 kelime arasındadır."
+            },
+            "vocabulary": [
+                {
+                    "title": "Edat Farkı (Prepositions)",
+                    "content": "Sınavlarda 'able <b>TO</b> do' ile 'capable <b>OF</b> doing' ayrımı sıkça sorulur. Boşluktan sonra 'to V1' varsa 'able', 'of Ving' varsa 'capable' seçin."
+                },
+                {
+                    "title": "Kelime Türetme",
+                    "content": "Şıklarda 'able' (sıfat) ve 'enable' (fiil) birlikte verilebilir. Cümle fiil arıyorsa (örn: 'This law ___ us to...') 'enable' tercih edilmelidir."
+                },
+                {
+                    "title": "Suffix Analizi (-able)",
+                    "content": "-able eki eklendiği fiile 'yapılabilir' anlamı katar (readable, doable). Bilmediğiniz kelimelerde bu mantığı kurun."
+                },
+                {
+                    "title": "Eşdizim (Collocations)",
+                    "content": "Cloze testlerde 'perfectly able' veya 'barely able' ikilileri yaygındır. 'Able' öncesi boşlukta zarf arayın."
+                }
+            ],
+            "grammar": [
+                {
+                    "title": "Gramer Tuzağı: Geçmiş Yetenek",
+                    "content": "Geçmişte tek seferlik zor bir başarı anlatılıyorsa 'could' yerine 'was able to' veya 'managed to' kullanılır. (e.g. He was able to escape the fire)."
+                },
+                {
+                    "title": "Pasif Yapı (Passive)",
+                    "content": "Modalların pasif hali kafa karıştırabilir. 'It must be able to be done' (Yapılabilmesi gerekir) gibi yapılar YÖKDİL metinlerinde çıkar."
+                }
+            ],
+            "reading": [
+                {
+                    "title": "Akademik Çeviri",
+                    "content": "'Able to' ifadesini 'muktedir olmak' diye değil, '-ebilmek' veya 'kapasitesine sahip olmak' şeklinde çevirin. Örn: 'Technologies able to reduce emissions'."
+                },
+                {
+                    "title": "Paraphrase (Zıt Anlam)",
+                    "content": "Soruda 'unable' görüyorsanız, cevapta 'failed to', 'could not' veya 'lacked the ability' gibi yapılar arayın."
+                },
+                {
+                    "title": "Alan Bağlamı (YÖKDİL)",
+                    "content": "Sağlıkta 'disabled' (engelli), Fende 'viable' (yaşayabilir/able to survive), Sosyalde 'enable' (yetkilendirmek/empower) sık çıkar."
+                }
+            ]
         },
         "morphology_tree": {
             "root": "habilis (Latin)",
@@ -405,52 +537,108 @@ window.vocabularyData = [
         },
         "collocations": {
             "modifiers_adverbs": [
-                { "word": "advanced", "strength": "strong", "example": "at an advanced age (ileri yaşta)" },
-                { "word": "early", "strength": "neutral", "example": "at an early age (erken yaşta)" },
-                { "word": "golden", "strength": "literary", "example": "golden age (altın çağ)" },
-                { "word": "middle", "strength": "neutral", "example": "middle age (orta yaş)" }
+                {
+                    "word": "advanced",
+                    "turkish": "ileri",
+                    "strength": "strong",
+                    "example": "He died at an advanced age.",
+                    "example_tr": "İleri bir yaşta vefat etti."
+                },
+                {
+                    "word": "early",
+                    "turkish": "erken",
+                    "strength": "neutral",
+                    "example": "She started reading at an early age.",
+                    "example_tr": "Erken yaşta okumaya başladı."
+                },
+                {
+                    "word": "tender",
+                    "turkish": "henüz çok genç",
+                    "strength": "literary",
+                    "example": "He left home at the tender age of 14.",
+                    "example_tr": "14 gibi henüz çok genç (körpe) bir yaşta evden ayrıldı."
+                },
+                {
+                    "word": "middle",
+                    "turkish": "orta",
+                    "strength": "neutral",
+                    "example": "Men in middle age often buy sports cars.",
+                    "example_tr": "Orta yaştaki erkekler genelde spor araba alır."
+                }
             ],
             "verbs_preceding": [
-                { "word": "reach", "example": "reach the age of 18 (18 yaşına basmak/ulaşmak)" },
-                { "word": "look", "example": "look your age (yaşını göstermek)" },
-                { "word": "feel", "example": "feel your age (yaşlandığını hissetmek)" }
+                {
+                    "word": "reach",
+                    "turkish": "ulaşmak, basmak",
+                    "example": "When you reach the age of 18, you can vote.",
+                    "example_tr": "18 yaşına bastığında oy kullanabilirsin."
+                },
+                {
+                    "word": "look",
+                    "turkish": "göstermek",
+                    "example": "She doesn't look her age at all.",
+                    "example_tr": "Hiç yaşını göstermiyor."
+                },
+                {
+                    "word": "feel",
+                    "turkish": "hissetmek",
+                    "example": "I'm starting to feel my age.",
+                    "example_tr": "Yaşlandığımı (yaşımı) hissetmeye başlıyorum."
+                }
             ]
         },
         "lexical_nuance": {
             "synonym_scale": {
                 "concept": "Time Period / Era",
                 "turkishConcept": "Zaman Dilimi / Çağ",
+                "description": "Zaman dilimlerini ifade eden kelimelerin kapsam sıralaması",
                 "scale": [
                     {
                         "word": "period",
-                        "value": 2,
+                        "value": 3,
                         "turkish": "dönem",
-                        "note": "Kısa veya uzun herhangi bir zaman aralığı",
-                        "usage": "General: 'a short period of time'",
+                        "note": "Belirli bir süre",
+                        "usage": "General: 'a difficult period'",
+                        "description_tr": "Kısa veya uzun, başlangıcı ve sonu olan herhangi bir zaman dilimi.",
+                        "example_en": "The post-war period was difficult.",
+                        "example_tr": "Savaş sonrası dönem zordu.",
+                        "example": "a short period of time",
                         "strength": "Genel"
                     },
                     {
                         "word": "age",
-                        "value": 5,
+                        "value": 6,
                         "turkish": "çağ",
-                        "note": "Belirgin özellikleri olan uzun dönem",
-                        "usage": "Historical: 'The Ice Age'",
+                        "note": "Kültürel/Tarihi bütünlük",
+                        "usage": "Historical: 'The Iron Age'",
+                        "description_tr": "Belirgin karakteristik özellikleri (teknoloji, kültür vb.) olan uzun tarihsel dönem.",
+                        "example_en": "We live in the information age.",
+                        "example_tr": "Bilgi çağında yaşıyoruz.",
+                        "example": "The Bronze Age",
                         "strength": "Orta"
                     },
                     {
                         "word": "era",
-                        "value": 7,
+                        "value": 8,
                         "turkish": "devir",
-                        "note": "Önemli bir olayla başlayan yeni düzen",
-                        "usage": "Grand: 'A new era of peace'",
+                        "note": "Köklü değişimle başlayan dönem",
+                        "usage": "Grand: 'A new era of exploration'",
+                        "description_tr": "Genellikle önemli bir olay, kişi veya değişimle başlayan yeni ve farklı bir düzen.",
+                        "example_en": "The fall of the wall marked the end of an era.",
+                        "example_tr": "Duvarın yıkılışı bir devrin sonunu işaret ediyordu.",
+                        "example": "The Victorian Era",
                         "strength": "Güçlü"
                     },
                     {
                         "word": "epoch",
-                        "value": 9,
-                        "turkish": "epok, çağ",
-                        "note": "Jeolojik veya çok köklü değişim dönemi",
+                        "value": 10,
+                        "turkish": "epok",
+                        "note": "Jeolojik/Evrensel dönem",
                         "usage": "Scientific: 'The Holocene Epoch'",
+                        "description_tr": "Jeolojide veya tarihte çok köklü, geri döndürülemez değişimlerin olduğu çok uzun dönem.",
+                        "example_en": "This discovery marked a new epoch in medicine.",
+                        "example_tr": "Bu keşif tıpta yeni bir çığır (epok) açtı.",
+                        "example": "A new epoch in history",
                         "strength": "Akademik"
                     }
                 ]
@@ -460,13 +648,19 @@ window.vocabularyData = [
                     "word": "youth",
                     "value": 8,
                     "turkish": "gençlik",
-                    "note": "Yaşlılığın (old age) zıttı olarak"
+                    "note": "Yaşlılığın karşıtı",
+                    "description_tr": "Gençlik dönemi, tazelik.",
+                    "example_en": "She wants to recapture her youth.",
+                    "example_tr": "Gençliğini yeniden yakalamak istiyor."
                 },
                 {
                     "word": "childhood",
                     "value": 6,
                     "turkish": "çocukluk",
-                    "note": "Yetişkinlik yaşının zıttı"
+                    "note": "Yetişkinliğin karşıtı",
+                    "description_tr": "Çocuk olma evresi.",
+                    "example_en": "He had a happy childhood.",
+                    "example_tr": "Mutlu bir çocukluğu vardı."
                 }
             ]
         },
@@ -474,25 +668,93 @@ window.vocabularyData = [
             "idioms_and_phrases": [
                 {
                     "phrase": "act your age",
-                    "meaning_tr": "yaşına göre davran, çocuk gibi davranma",
-                    "register": "informal/command"
+                    "meaning_tr": "yaşına göre davran, çocuklaşma",
+                    "register": "informal/command",
+                    "example": "Stop crying and act your age!",
+                    "example_tr": "Ağlamayı kes ve yaşına göre davran!"
                 },
                 {
                     "phrase": "come of age",
                     "meaning_tr": "reşit olmak, rüştünü ispatlamak",
-                    "register": "neutral"
+                    "register": "neutral",
+                    "example": "The movie is a coming-of-age story.",
+                    "example_tr": "Film, bir olgunlaşma (büyüme) hikayesidir."
                 },
                 {
                     "phrase": "age is just a number",
-                    "meaning_tr": "yaş sadece bir sayıdır (önemli değildir)",
-                    "register": "cliché"
+                    "meaning_tr": "yaş sadece bir sayıdır",
+                    "register": "cliché",
+                    "example": "She started running at 70; age is just a number.",
+                    "example_tr": "70'inde koşmaya başladı; yaş sadece bir sayıdır."
+                }
+            ]
+        },
+        "cultural_context": {
+            "register": {
+                "level": "neutral",
+                "description": "'Age' kelimesi nötrdür. Ancak insanlardan bahsederken 'old' demek yerine 'elderly' veya 'senior' demek nezaket gereğidir."
+            },
+            "inclusive_language": {
+                "title": "Yaş Ayrımcılığı (Ageism)",
+                "content": "Batı kültüründe, özellikle kadınlara 'How old are you?' diye sormak kabalık (rude) sayılabilir. Bunun yerine dolaylı yollar tercih edilir veya konu açılmaz."
+            },
+            "grammar_nuance": {
+                "title": "Age vs Grow",
+                "content": "'Aging' biyolojik yıpranmayı veya şarap gibi olgunlaşmayı ifade eder. 'Growing up' ise çocukluktan yetişkinliğe geçişi (büyümeyi) anlatır."
+            },
+            "business_english": {
+                "title": "İş Dünyası Terimleri",
+                "content": "'Retirement age' (emeklilik yaşı) ve 'working-age population' (çalışma çağındaki nüfus) ekonomi haberlerinin vazgeçilmez terimleridir.",
+                "keywords": ["retirement age", "working-age"]
+            },
+            "trivia": {
+                "title": "Middle Age Değişimi",
+                "content": "Eskiden 40 yaş 'middle age' (orta yaş) kabul edilirken, insan ömrü uzadığı için artık 50'ler hatta 60'lar 'new middle age' olarak anılmaktadır."
+            }
+        },
+        "exam_strategies": {
+            "frequency": {
+                "yds": 90,
+                "yokdil": 95,
+                "ydt": 85,
+                "description": "ÖSYM sınavlarında hem okuma parçalarında (tarihsel çağlar) hem kelime sorularında (insan yaşı) çok sık çıkar."
+            },
+            "vocabulary": [
+                {
+                    "title": "Edat (Preposition): AT",
+                    "content": "Bir eylemin kaç yaşında yapıldığını anlatırken '<b>AT</b> the age of...' kalıbı kullanılır. 'In the age' bu bağlamda hatalıdır."
+                },
+                {
+                    "title": "Kelime Ayrımı: Era vs Age",
+                    "content": "Soruda jeolojik veya çok uzun bir dönemden (Buzul çağı gibi) bahsediyorsa 'Age' veya 'Epoch' uygundur. Politik veya kültürel bir dönemse 'Era' (Reagan Era) seçilebilir."
                 }
             ],
-            "sociolinguistics": {
-                "topic": "Politeness",
-                "note_en": "In Western cultures, asking a woman's age directly can be considered rude. It's often safer to guess younger or avoid the topic unless necessary.",
-                "note_tr": "Batı kültüründe özellikle kadınlara doğrudan yaş sormak kabalık sayılabilir."
-            }
+            "grammar": [
+                {
+                    "title": "Fiil Olarak Age",
+                    "content": "Parçada 'The population is aging' (Nüfus yaşlanıyor) cümlesindeki 'aging' fiildir. Genellikle continuous tense ile kullanılır."
+                },
+                {
+                    "title": "Sıfat Tamlaması Kuralı",
+                    "content": "'A five-year-old child' yapısında 'years' kelimesi çoğul eki (-s) ALMAZ. Bu klasik bir gramer tuzağıdır."
+                }
+            ],
+            "reading": [
+                {
+                    "title": "Demografi Metinleri",
+                    "content": "YÖKDİL Sosyal ve Sağlık metinlerinde 'Aging population' (Yaşlanan nüfus) konusu çok popülerdir. 'Silver economy' (Gümüş/Yaşlı ekonomisi) terimine aşina olun."
+                }
+            ]
+        },
+        "morphology_tree": {
+            "root": "aetatem (Latin)",
+            "family_members": [
+                { "word": "age", "pos": "n/v", "level": "A1", "note": "yaş, çağ; yaşlanmak" },
+                { "word": "aged", "pos": "adj", "level": "B1", "note": "yaşlı, ... yaşındaki (middle-aged)" },
+                { "word": "aging", "pos": "n/adj", "level": "B2", "note": "yaşlanma, yaşlanan nüfus" },
+                { "word": "ageless", "pos": "adj", "level": "C1", "suffix": "-less", "note": "yaşsız, ebedi, hiç yaşlanmayan" },
+                { "word": "ageism", "pos": "n", "level": "C2", "suffix": "-ism", "note": "yaş ayrımcılığı" }
+            ]
         },
         "pedagogy_engine": {
             "common_errors": [
@@ -500,13 +762,13 @@ window.vocabularyData = [
                     "error_id": "err_have_age",
                     "incorrect": "I have 25 years.",
                     "correction": "I am 25 years old.",
-                    "explanation": "İspanyolca/Fransızca/Türkçe mantığıyla 'sahip olmak' (have) kullanılmaz, 'olmak' (be) kullanılır."
+                    "explanation": "Türkçe mantığıyla 'sahip olmak' (have) kullanılmaz, 'olmak' (be) kullanılır."
                 },
                 {
                     "error_id": "err_noun_adj",
                     "incorrect": "a twenty-years-old man",
                     "correction": "a twenty-year-old man",
-                    "explanation": "Sıfat tamlaması yaparken 'year' çoğul eki (-s) almaz."
+                    "explanation": "Sıfat tamlaması yaparken araya tire girince 'year' -s eki almaz."
                 }
             ],
             "exam_prep": {
@@ -524,9 +786,9 @@ window.vocabularyData = [
             "turkish_cognate_hint": {
                 "word": "Ebedi / Ezel",
                 "connection_type": "Distant Conceptual",
-                "story": "İngilizce 'Age' (Çağ/Yaş) kelimesinin kökü Hindu-Avrupa dilindeki *aiw- (hayat gücü, sonsuzluk) köküne gider. Bu kök Latince'de 'aevum' (çağ) olmuştur. Türkçede kullandığımız Arapça kökenli 'Ebedi' (sonsuz) veya 'Ezel' kelimeleriyle ses benzerliği olmasa da, 'çağ/zaman' kavramı ortaktır. Ancak daha akılda kalıcı bir ipucu: 'Age' kelimesini **'Ağaç'** ile kodlayabilirsiniz. Ağaçlar yaş halkalarıyla bilinir; her halka bir 'age' (yaş) gösterir.",
-                "example": "Ağaç -> Age (Okunuşu 'eyç', e harfi ağacın tepesi gibi düşünülebilir).",
-                "example2": "Age of Empires (İmparatorluklar Çağı) oyununu hatırlayın; her çağ atlamada binalar değişir."
+                "story": "İngilizce 'Age' (Çağ/Yaş) kelimesinin kökü Latince 'aevum' (çağ) kelimesine dayanır. 'Age of Empires' oyunundaki çağ atlama mantığını düşünebilirsiniz. Ayrıca 'Ağaç' kelimesindeki **A-G-Ç** sesleri ile 'Age' kelimesi arasında kodlama yapabilirsiniz: Ağaçların yaşı halkalarla sayılır.",
+                "example": "Ağaç -> Age (Yaş/Çağ)",
+                "example2": "Age of Empires -> Çağlar"
             }
         },
         "stories": {
@@ -668,52 +930,115 @@ window.vocabularyData = [
         },
         "collocations": {
             "modifiers_adverbs": [
-                { "word": "debt", "example": "debut album (ilk çıkış albümü)" },
-                { "word": "live", "example": "live album (konser kaydı albümü)" },
-                { "word": "compilation", "example": "compilation album (toplama/seçki albüm)" },
-                { "word": "solo", "example": "solo album (tek başına yapılan albüm)" }
+                {
+                    "word": "debut",
+                    "turkish": "ilk çıkış",
+                    "strength": "strong",
+                    "example": "Their debut album sold millions.",
+                    "example_tr": "İlk (çıkış) albümleri milyonlar sattı."
+                },
+                {
+                    "word": "solo",
+                    "turkish": "solo, bireysel",
+                    "strength": "strong",
+                    "example": "The guitarist released a solo album.",
+                    "example_tr": "Gitarist solo bir albüm çıkardı."
+                },
+                {
+                    "word": "instrumental",
+                    "turkish": "enstrümantal (sözsüz)",
+                    "strength": "neutral",
+                    "example": "an instrumental album",
+                    "example_tr": "sözsüz (enstrümantal) bir albüm"
+                },
+                {
+                    "word": "platinum",
+                    "turkish": "platin (çok satan)",
+                    "strength": "colloquial",
+                    "example": "The album went platinum in a week.",
+                    "example_tr": "Albüm bir haftada platin (satış rekoru) oldu."
+                }
             ],
             "verbs_preceding": [
-                { "word": "release", "example": "release an album (albüm çıkarmak)" },
-                { "word": "record", "example": "record an album (albüm kaydetmek)" },
-                { "word": "flip through", "example": "flip through an album (albüm sayfalarını çevirmek)" }
+                {
+                    "word": "release",
+                    "turkish": "piyasaya sürmek",
+                    "example": "They will release the album in May.",
+                    "example_tr": "Albümü Mayıs'ta çıkaracaklar."
+                },
+                {
+                    "word": "record",
+                    "turkish": "kaydetmek",
+                    "example": "The band is recording a new album in London.",
+                    "example_tr": "Grup Londra'da yeni bir albüm kaydediyor."
+                },
+                {
+                    "word": "dedicate",
+                    "turkish": "ithaf etmek",
+                    "example": "He dedicated the album to his late mother.",
+                    "example_tr": "Albümü merhum annesine ithaf etti."
+                }
             ]
         },
         "lexical_nuance": {
             "synonym_scale": {
                 "concept": "Music Collection Formats",
-                "turkishConcept": "Müzik Koleksiyon Formatları",
+                "turkishConcept": "Müzik Formatları",
+                "description": "Müzik yayın formatlarının kapsam sıralaması",
                 "scale": [
                     {
                         "word": "single",
                         "value": 2,
                         "turkish": "tekli",
-                        "note": "Tek (veya 2) şarkılık çıkış",
-                        "usage": "Radio: 'The new single is a hit.'",
+                        "note": "Tek şarkılık çıkış",
+                        "usage": "Radio hit",
+                        "description_tr": "Genellikle albümden önce yayınlanan ve radyolarda çalınan tek şarkıdır.",
+                        "example_en": "They released the first single from the album.",
+                        "example_tr": "Albümden çıkan ilk single'ı yayınladılar.",
                         "strength": "Kısa"
                     },
                     {
                         "word": "EP",
                         "value": 4,
                         "turkish": "kısa çalar",
-                        "note": "Extended Play: Albümden kısa, singledan uzun (4-6 şarkı)",
-                        "usage": "Indie bands: 'They released a 5-track EP.'",
+                        "note": "Extended Play (4-6 şarkı)",
+                        "usage": "Indie bands: 'A 5-track EP'",
+                        "description_tr": "Single'dan uzun ama albümden kısa (genelde 4-6 şarkılık) kayıttır.",
+                        "example_en": "The band recorded a 5-track EP.",
+                        "example_tr": "Grup 5 şarkılık bir EP kaydetti.",
                         "strength": "Orta"
                     },
                     {
                         "word": "album",
-                        "value": 8,
+                        "value": 7,
                         "turkish": "albüm",
-                        "note": "Tam uzunlukta eser (LP - Long Play)",
-                        "usage": "Standard: 'The studio album has 12 tracks.'",
-                        "strength": "Tam"
+                        "note": "LP (Long Play), tam uzunlukta",
+                        "usage": "Standard release (10+ songs)",
+                        "description_tr": "Sanatçının 10-15 şarkıdan oluşan standart uzunluktaki ana çalışmasıdır.",
+                        "example_en": "Her new album has 12 songs.",
+                        "example_tr": "Yeni albümünde 12 şarkı var.",
+                        "strength": "Standart"
+                    },
+                    {
+                        "word": "compilation",
+                        "value": 8,
+                        "turkish": "derleme",
+                        "note": "Farklı sanatçılar veya hit şarkılar",
+                        "usage": "Greatest Hits",
+                        "description_tr": "En sevilen şarkıların veya farklı sanatçıların şarkılarının toplandığı albümdür.",
+                        "example_en": "They bought a compilation of 80s hits.",
+                        "example_tr": "80'lerin hitlerinden oluşan bir derleme aldılar.",
+                        "strength": "Toplama"
                     },
                     {
                         "word": "discography",
                         "value": 10,
                         "turkish": "diskografi",
-                        "note": "Bir sanatçının tüm albümlerinin listesi",
-                        "usage": "Career: 'His entire discography.'",
+                        "note": "Bir sanatçının tüm eserleri",
+                        "usage": "Entire career",
+                        "description_tr": "Bir sanatçının kariyeri boyunca çıkardığı tüm albümlerin bütünüdür.",
+                        "example_en": "I have the band's entire discography.",
+                        "example_tr": "Grubun tüm diskografisine sahibim.",
                         "strength": "Bütüncül"
                     }
                 ]
@@ -724,20 +1049,77 @@ window.vocabularyData = [
             "idioms_and_phrases": [
                 {
                     "phrase": "family album",
-                    "meaning_tr": "aile albümü (hatıralar bütünü)",
-                    "register": "neutral"
+                    "meaning_tr": "aile albümü (fotoğraf)",
+                    "register": "general",
+                    "example": "We looked through the old family album.",
+                    "example_tr": "Eski aile albümüne göz attık."
                 },
                 {
-                    "phrase": "difficult second album",
-                    "meaning_tr": "ikinci albüm sendromu (ilk başarının ardından gelen baskı)",
-                    "register": "music journalism"
+                    "phrase": "concept album",
+                    "meaning_tr": "kavramsal albüm (bir hikaye anlatan)",
+                    "register": "music",
+                    "example": "Pink Floyd is famous for concept albums.",
+                    "example_tr": "Pink Floyd konsept albümleriyle ünlüdür."
                 }
             ],
             "sociolinguistics": {
                 "topic": "Vinyl Revival",
-                "note_en": "Referring to an album as a 'record' or 'LP' (Long Play) has become trendy again due to the resurgence of vinyl, implying a nostalgic or audiophile quality.",
-                "note_tr": "Plakların geri dönüşüyle birlikte albümlere 'record' veya 'LP' denmesi (plak formatı kastedilmese bile) havalı/nostaljik bir kullanım oldu."
+                "note_en": "Referring to an album as a 'record' or 'LP' has become trendy again due to the resurgence of vinyl. The 'Album Experience' (listening start-to-finish) is valued by audiophiles.",
+                "note_tr": "Plakların (vinyl) geri dönüşüyle 'record' kelimesi tekrar popüler oldu. Odyofiller albümü baştan sona dinleme deneyimine önem verir."
             }
+        },
+        "cultural_context": {
+            "register": {
+                "level": "neutral",
+                "description": "Genel kullanım."
+            },
+            "inclusive_language": null,
+            "grammar_nuance": {
+                "title": "On vs In",
+                "content": "Bir şarkının albümde olduğunu söylerken 'ON the album' denir. Kitapta (IN the book) mantığından farklıdır. Çünkü albüm bir yüzey (disk) formatıdır."
+            },
+            "business_english": {
+                "title": "Success Terms",
+                "content": "'Go Gold' (Altın Plak) ve 'Go Platinum' (Platin Plak) terimleri albüm satış başarısını gösterir."
+            },
+            "trivia": {
+                "title": "Beyaz Sayfalar",
+                "content": "'Album' kelimesi Latincede 'beyaz tablet' (albus) anlamına gelir. Roma'da üzerine duyuruların yazıldığı beyaz tahtalardı, zamanla 'boş kitap/koleksiyon' anlamına evrildi."
+            }
+        },
+        "exam_strategies": {
+            "frequency": {
+                "yds": 55,
+                "yokdil": 50,
+                "ydt": 75,
+                "description": "Daha çok YDT (Dil Sınavı) ve sanat/sosyal içerikli YDS metinlerinde çıkar."
+            },
+            "vocabulary": [
+                {
+                    "title": "Preposition Tuzağı (ON)",
+                    "content": "Sınavda 'The best song ___ the album' sorulursa 'ON' seçin. 'In' çeldiricisidir."
+                },
+                {
+                    "title": "Fiil Seçimi: Release",
+                    "content": "Kitaplar 'publish', albümler 'release' edilir. Film ve albüm için 'release' (salmak/yayınlamak) kullanılır."
+                }
+            ],
+            "grammar": [],
+            "reading": [
+                {
+                    "title": "Debut (İlk Çıkış)",
+                    "content": "Parçada 'their debut album' ifadesi geçiyorsa, bu o sanatçının kariyerinin başlagıcıdır. Kronoloji sorularında 'first work' şıkkını arayın."
+                }
+            ]
+        },
+        "morphology_tree": {
+            "root": "albus (Latin 'White')",
+            "family_members": [
+                { "word": "album", "pos": "n", "level": "A2", "note": "beyaz tablet -> koleksiyon defteri -> müzik albümü" },
+                { "word": "albino", "pos": "n/adj", "level": "C1", "note": "renk pigmenti olmayan, beyaz tenli canlı" },
+                { "word": "albumen", "pos": "n", "level": "C2", "note": "yumurta akı (beyaz kısmı)" },
+                { "word": "albedo", "pos": "n", "level": "C2", "note": "yüzeyin ışığı yansıtma gücü (beyazlık oranı)" }
+            ]
         },
         "pedagogy_engine": {
             "common_errors": [
@@ -745,12 +1127,12 @@ window.vocabularyData = [
                     "error_id": "err_prep_in_on",
                     "incorrect": "My favorite song is in this album.",
                     "correction": "My favorite song is on this album.",
-                    "explanation": "Mesafe/yüzey mantığıyla: Şarkılar diskin/kaydın 'üzerine' (on) yazılır."
+                    "explanation": "Mesafe/yüzey mantığıyla: Şarkılar diskin/kaydın 'üzerine' (on) işlenir."
                 }
             ],
             "exam_prep": {
                 "ielts_tag": "Arts & Media",
-                "tip": "Speaking sınavında müzik zevkiniz sorulursa 'I prefer listening to full albums rather than shuffled playlists' demek, sanat/bütünlük anlayışınızı göstermek için güzel bir cümledir.",
+                "tip": "Speaking sınavında 'I prefer listening to full albums rather than shuffled playlists' demek, sanatsal bütülüğe verdiğiniz önemi gösteren kaliteli bir cümledir.",
                 "keywords": ["tracklist", "cover art", "lyrics"]
             },
             "gamification": {
@@ -768,11 +1150,10 @@ window.vocabularyData = [
                 { "era": "20th Century", "word": "album", "meaning": "collection of phonograph records" }
             ],
             "turkish_cognate_hint": {
-                "word": "Albino / Alp",
+                "word": "Albino",
                 "connection_type": "Direct Root",
-                "story": "Latincede 'Albus' (veya 'Alb') BEYAZ demektir. Türkçedeki 'Albino' (beyaz tenli/pigmentsiz) kelimesi buradan gelir. 'Albüm' kelimesi de aslında 'içi boş, BEYAZ sayfalı defter' demektir. Fotoğraflar bu beyazlığın üzerine yapıştırılır. Hatta 'Alpler' (Moutains) isminin bile 'beyaz/karla kaplı dağlar' kökünden geldiği düşünülür.",
-                "example": "Albus Dumbledore (Harry Potter) -> İsmi 'Beyaz' demektir, saçı/sakalı ve iyiliği temsil eder.",
-                "example2": "Albino -> Bembeyaz."
+                "story": "Latincede 'Albus' BEYAZ demektir. Türkçedeki 'Albino' (beyaz tenli) buradan gelir. 'Albüm' de aslında içi boş, BEYAZ sayfalı defter demektir. Fotoğraflar bu beyazlığın üzerine yapıştırılır.",
+                "example": "Albus Dumbledore -> İsmi 'Beyaz' (iyilik/ak sakal) demektir."
             }
         },
         "stories": {
@@ -781,7 +1162,7 @@ window.vocabularyData = [
                 "en": "This is my house. There is an old book in the living room. It is a photo <strong>album</strong>. There are pictures of my family in it. My mother and father look young. I look like a baby too. I like looking at the <strong>album</strong>. It makes me happy."
             },
             "A2": {
-                "tr": "Dün bir müzik mağazasına gittim. En sevdiğim şarkıcı yeni bir <strong>albüm</strong> çıkardı. <strong>Albüm</strong>ün adı 'Mavi Gökyüzü'. İçinde on şarkı var. CD'yi aldım ve eve koştum. Hemen dinledim. <strong>Albüm</strong>deki tüm şarkılar harika.",
+                "tr": "Dün bir müzik mağazasına gittim. En sevdiğim şarkıcı yeni bir <strong>albüm</strong> çıkardı (released). <strong>Albüm</strong>ün adı 'Mavi Gökyüzü'. İçinde on şarkı var. CD'yi aldım ve eve koştum. Hemen dinledim. <strong>Albümdeki</strong> (on the album) tüm şarkılar harika.",
                 "en": "Yesterday I went to a music store. My favorite singer released a new <strong>album</strong>. The name of the <strong>album</strong> is 'Blue Sky'. There are ten songs in it. I bought the CD and ran home. I listened to it immediately. All the songs <strong>on the album</strong> are great."
             },
             "B1": {
@@ -915,54 +1296,108 @@ window.vocabularyData = [
         },
         "collocations": {
             "modifiers_adverbs": [
-                { "word": "pure", "example": "pure alcohol (saf alkol)" },
-                { "word": "strong", "example": "strong alcohol (sert içki)" },
-                { "word": "rubbing", "example": "rubbing alcohol (ispirto/pansuman alkolü)" }
+                {
+                    "word": "rubbing",
+                    "turkish": "pansuman alkolü/ispirto",
+                    "strength": "specific",
+                    "example": "Use rubbing alcohol to clean the wound.",
+                    "example_tr": "Yarayı temizlemek için ispirto kullanın."
+                },
+                {
+                    "word": "pure",
+                    "turkish": "saf",
+                    "strength": "strong",
+                    "example": "Pure alcohol is lethal.",
+                    "example_tr": "Saf alkol öldürücüdür."
+                },
+                {
+                    "word": "binge",
+                    "turkish": "tıkınırcasına/aşırı",
+                    "strength": "colloquial",
+                    "example": "Binge drinking is a serious problem on campuses.",
+                    "example_tr": "Tıkınırcasına (kısa sürede aşırı) içki içmek kampüslerde ciddi bir sorundur."
+                }
             ],
             "verbs_preceding": [
-                { "word": "consume", "example": "consume alcohol (alkol tüketmek)" },
-                { "word": "abuse", "example": "abuse alcohol (alkolü kötüye kullanmak)" },
-                { "word": "avoid", "example": "avoid alcohol (alkolden kaçınmak)" }
+                {
+                    "word": "consume",
+                    "turkish": "tüketmek",
+                    "example": "He admitted to consuming alcohol.",
+                    "example_tr": "Alkol tükettiğini itiraf etti."
+                },
+                {
+                    "word": "abuse",
+                    "turkish": "kötüye kullanmak (bağımlılık)",
+                    "example": "People who abuse alcohol need help.",
+                    "example_tr": "Alkolü kötüye kullananların (bağımlıların) yardıma ihtiyacı vardır."
+                },
+                {
+                    "word": "abstain from",
+                    "turkish": "uzak durmak / içmemek",
+                    "example": "He abstains from alcohol for health reasons.",
+                    "example_tr": "Sağlık nedenleriyle alkolden uzak duruyor."
+                }
             ]
         },
         "lexical_nuance": {
             "synonym_scale": {
                 "concept": "Intoxicating Beverages",
-                "turkishConcept": "Keyif Verici İçecekler",
+                "turkishConcept": "Alkollü İçecekler",
+                "description": "İçki türlerinin resmilik ve sertlik derecelendirmesi",
                 "scale": [
                     {
                         "word": "drink",
                         "value": 3,
                         "turkish": "içki",
-                        "note": "En genel tabir: 'Do you want a drink?'",
+                        "note": "En genel, sosyal tabir",
+                        "usage": "Social: 'Let's have a drink.'",
+                        "description_tr": "Genel anlamda içki (su hariç) demektir, sosyal ortamda alkollü içki kast edilir.",
+                        "example_en": "Can I buy you a drink?",
+                        "example_tr": "Sana bir içki ısmarlayabilir miyim?",
                         "strength": "Nötr"
                     },
                     {
                         "word": "alcohol",
                         "value": 5,
                         "turkish": "alkol",
-                        "note": "Madde veya kategori adı, biraz resmi",
+                        "note": "Madde veya kategori adı",
+                        "usage": "Formal/Medical: 'Contains alcohol.'",
+                        "description_tr": "Kimyasal madde olarak veya genel kategori adı olarak kullanılır.",
+                        "example_en": "This product contains 5% alcohol.",
+                        "example_tr": "Bu ürün %5 alkol içerir.",
                         "strength": "Resmi"
                     },
                     {
                         "word": "liquor",
                         "value": 7,
                         "turkish": "sert içki",
-                        "note": "Viski, votka gibi yüksek alkollü içecekler (ABD)",
+                        "note": "Viski, votka vb. (ABD)",
+                        "usage": "Hard liquor",
+                        "description_tr": "Genellikle damıtılmış, alkol oranı yüksek sert içkiler (viski, votka) için kullanılır (US).",
+                        "example_en": "The store sells beer and liquor.",
+                        "example_tr": "Mağaza bira ve sert içki satıyor.",
                         "strength": "Spesifik"
                     },
                     {
                         "word": "spirits",
                         "value": 8,
                         "turkish": "ispirto / sert içki",
-                        "note": "Damıtılmış içkiler için teknik/İngiliz terimi",
+                        "note": "Damıtılmış yüksek alkol (UK/Official)",
+                        "usage": "Wines and Spirits",
+                        "description_tr": "Sert alkollü içkilerin resmi ve teknik adıdır (UK).",
+                        "example_en": "Sales of spirits have increased.",
+                        "example_tr": "Sert içki satışları arttı.",
                         "strength": "Teknik"
                     },
                     {
                         "word": "booze",
                         "value": 2,
                         "turkish": "zıkkım / içki",
-                        "note": "Argo kullanım",
+                        "note": "Sokak ağzı, argo",
+                        "usage": "Party: 'Bring the booze!'",
+                        "description_tr": "Argoda içki anlamında kullanılır, biraz kaba kaçabilir.",
+                        "example_en": "They brought a lot of booze to the party.",
+                        "example_tr": "Partiye bolca içki (zıkkım) getirdiler.",
                         "strength": "Argo"
                     }
                 ]
@@ -972,13 +1407,19 @@ window.vocabularyData = [
                     "word": "sobriety",
                     "value": 10,
                     "turkish": "ayıklık",
-                    "note": "Alkol almama durumu"
+                    "note": "Alkol etkisinde olmama veya hiç içmeme durumu.",
+                    "description_tr": "Ayık olma durumu veya alkol kullanmama yaşam tarzıdır.",
+                    "example_en": "He celebrated ten years of sobriety.",
+                    "example_tr": "On yıllık ayıklığını (alkolsüzlüğünü) kutladı."
                 },
                 {
-                    "word": "teetotalism",
+                    "word": "teetotaler",
                     "value": 9,
-                    "turkish": "yeşilaycılık",
-                    "note": "Hiç içki içmeme prensibi"
+                    "turkish": "yeşilaycı",
+                    "note": "Prensip olarak ağzına içki sürmeyen kişi.",
+                    "description_tr": "Asla alkol kullanmayan, prensip sahibi kişi.",
+                    "example_en": "She acts like a teetotaler but she drinks sometimes.",
+                    "example_tr": "Yeşilaycı gibi davranıyor ama bazen içer."
                 }
             ]
         },
@@ -987,24 +1428,83 @@ window.vocabularyData = [
                 {
                     "phrase": "Dutch courage",
                     "meaning_tr": "içkiden gelen (sahte) cesaret",
-                    "register": "idiomatic"
-                },
-                {
-                    "phrase": "hold one's liquor",
-                    "meaning_tr": "içkiye dayanıklı olmak, sarhoş belli etmemek",
-                    "register": "informal"
+                    "register": "idiomatic",
+                    "example": "He needed some Dutch courage to talk to her.",
+                    "example_tr": "Onunla konuşmak için biraz içki cesaretine ihtiyacı vardı."
                 },
                 {
                     "phrase": "hair of the dog",
                     "meaning_tr": "çivi çiviyi söker (akşamdan kalmalığa karşı sabah içilen içki)",
                     "register": "idiomatic"
+                },
+                {
+                    "phrase": "under the influence",
+                    "meaning_tr": "etkisi altında (sarhoş)",
+                    "register": "legal/formal",
+                    "example": "Driving under the influence (DUI) is a crime.",
+                    "example_tr": "Alkollü (etki altında) araç kullanmak suçtur."
                 }
             ],
             "sociolinguistics": {
                 "topic": "Social Drinking",
-                "note_en": "In many cultures, refusing a drink can be socially awkward. Phrases like 'I'm driving' or 'I have an early start' are polite excuses.",
-                "note_tr": "İçki ikramını reddederken sebep belirtmek (araba kullanıyorum vb.) kibarlık kuralıdır."
+                "note_en": "In many cultures, refusing a toast (cheers) can be seen as rude. However, 'Mocktails' (alcohol-free cocktails) are becoming popular for non-drinkers.",
+                "note_tr": "Kadeh kaldırmayı (şerefe) reddetmek bazı kültürlerde kabalık olabilir. Ancak alkol kullanmayanlar için 'Mocktail' kültürü yaygınlaşmaktadır."
             }
+        },
+        "cultural_context": {
+            "register": {
+                "level": "mixed",
+                "description": "Tıbbi bağlamda nötr, sosyal bağlamda dikkatli kullanılması gereken bir kelimedir."
+            },
+            "inclusive_language": null,
+            "grammar_nuance": {
+                "title": "Uncountable",
+                "content": "Alkol sıvı/madde olduğu için sayılamaz. 'I drank two alcohols' denmez, 'two drinks' veya 'two beers' denir."
+            },
+            "business_english": {
+                "title": "Sin Taxes",
+                "content": "Ekonomide alkol ve tütün üzerine konulan vergilere 'Sin Tax' (Günah Vergisi) denir. Bu terim okuma parçalarında çıkabilir.",
+                "keywords": ["sin tax", "excise duty"]
+            },
+            "trivia": {
+                "title": "Prohibition (Yasak Dönemi)",
+                "content": "ABD'de 1920-1933 yılları arasında alkol satışı yasaktı. Bu döneme 'Prohibition Era' denir. 'Speakeasy' (gizli bar) ve 'Moonshine' (kaçak içki) kelimeleri bu dönemden kalmadır."
+            }
+        },
+        "exam_strategies": {
+            "frequency": {
+                "yds": 70,
+                "yokdil": 85,
+                "ydt": 60,
+                "description": "YÖKDİL Sağlık (bağımlılık/karaciğer) ve Sosyal (trafik kazaları/suç) metinlerinde sık geçer."
+            },
+            "vocabulary": [
+                {
+                    "title": "Formal Eş Anlamlılar",
+                    "content": "Essay yazarken 'drunk people' yerine 'intoxicated individuals' derseniz puanınız artar."
+                },
+                {
+                    "title": "Related Words",
+                    "content": "'Beverage' her türlü içecek (su dahil) demektir. 'Spirit' ise yüksek alkollü içkidir (viski vb.)."
+                }
+            ],
+            "grammar": [],
+            "reading": [
+                {
+                    "title": "Bağımlılık Metinleri",
+                    "content": "Parçada 'substance abuse' geçiyorsa, genellikle uyuşturucu veya alkol kötüye kullanımından bahsediliyordur. 'Withdrawal symptoms' (yoksunluk belirtileri) terimine dikkat."
+                }
+            ]
+        },
+        "morphology_tree": {
+            "root": "al-kuhl (Arabic)",
+            "family_members": [
+                { "word": "alcohol", "pos": "n", "level": "B1", "note": "alkol" },
+                { "word": "alcoholic", "pos": "n/adj", "level": "B2", "note": "alkolik, alkol içeren" },
+                { "word": "alcoholism", "pos": "n", "level": "C1", "suffix": "-ism", "note": "alkolizm (hastalık)" },
+                { "word": "non-alcoholic", "pos": "adj", "level": "B1", "prefix": "non-", "note": "alkolsüz" },
+                { "word": "workaholic", "pos": "n", "level": "C1", "note": "işkolik (analoji ile türetilmiş)" }
+            ]
         },
         "pedagogy_engine": {
             "common_errors": [
@@ -1012,33 +1512,32 @@ window.vocabularyData = [
                     "error_id": "err_plural_s",
                     "incorrect": "They sell many alcohols.",
                     "correction": "They sell many types of alcohol.",
-                    "explanation": "Alkol kütle ismidir (uncountable), -s çoğul eki almaz."
+                    "explanation": "Alkol kütle ismidir (uncountable), -s çoğul eki almaz. Çeşit kastediliyorsa 'types of' eklenir."
                 }
             ],
             "exam_prep": {
                 "ielts_tag": "Health & Society",
-                "tip": "Essay yazarken 'drinking' yerine 'alcohol consumption' veya 'substance abuse' demek daha akademik puan getirir.",
+                "tip": "Essay yazarken 'drinking' yerine 'alcohol consumption' veya 'substance abuse' demek daha akademik görünür.",
                 "keywords": ["addiction", "rehabilitation", "social impact"]
             },
             "gamification": {
                 "challenge_type": "true_false",
-                "question": "Alcohol acts as a stimulant on the central nervous system.",
+                "question": "Alcohol is a stimulant.",
                 "answer": "False",
-                "explanation": "Yanlış. Alkol teknik olarak bir 'Depressant' (baskılayıcı/yavaşlatıcı) maddedir, uyarıcı değildir."
+                "explanation": "Yanlış. Alkol teknik olarak bir 'Depressant' (merkezi sinir sistemini baskılayıcı) maddedir."
             }
         },
         "word_journey": {
             "timeline": [
-                { "era": "Arabic", "word": "al-kuhl", "meaning": "fine powder for eyeliner (sürme)" },
-                { "era": "Medieval Latin", "word": "alcohol", "meaning": "fine powder -> distilled essence" },
-                { "era": "18th Century", "word": "alcohol", "meaning": "intoxicating ingredient in liquor" }
+                { "era": "Arabic", "word": "al-kuhl", "meaning": "fine powder (sürme)" },
+                { "era": "Medieval Latin", "word": "alcohol", "meaning": "distilled essence/spirit" },
+                { "era": "18th Century", "word": "alcohol", "meaning": "intoxicating ingredient" }
             ],
             "turkish_cognate_hint": {
                 "word": "Alkol",
                 "connection_type": "Direct Loan",
-                "story": "Kelimenin aslı Arapça 'El-Kuhl'dür (Göz sürmesi). Simyacılar, bir katının ısıtılıp gaz haline geçmesine (süblimleşme) ve sonra tekrar yoğunlaşmasına 'ruhu (özü) ortaya çıkarma' dediler. Göz sürmesi de çok ince bir toz olduğu için, damıtılmış şaraptan elde edilen o saf sıvıya da 'şarabın özü/tozu' mantığıyla 'Alkol' dediler. Türkçedeki 'Alkol' kelimesi de buradan gelir.",
-                "example": "Spirit (Ruh) kelimesinin hem 'hayalet' hem de 'ispirto/içki' anlamına gelmesi bu simya geleneğindendir.",
-                "example2": "Kohl (Sürme) kelimesi kozmetikte hala kullanılır."
+                "story": "Kelimenin aslı Arapça 'El-Kuhl' (Göz sürmesi). Simyacılar, damıtma yoluyla elde edilen saf öze bu ismi verdiler ('şarabın ruhu/özü'). Türkçeye olduğu gibi geçmiştir.",
+                "example": "Spirit (Ruh) kelimesinin hem 'hayalet' hem de 'ispirto' anlamına gelmesi bu simya geleneğindendir."
             }
         },
         "stories": {
@@ -1180,52 +1679,97 @@ window.vocabularyData = [
         },
         "collocations": {
             "modifiers_adverbs": [
-                { "word": "quite", "example": "quite all right (gayet iyi/uygun)" },
-                { "word": "perfectly", "example": "perfectly all right (tamamen uygun/sorunsuz)" }
+                {
+                    "word": "quite",
+                    "turkish": "gayet/oldukça",
+                    "strength": "strong",
+                    "example": "It's quite all right to be nervous.",
+                    "example_tr": "Gergin olmak gayet normaldir (sorun değildir)."
+                },
+                {
+                    "word": "perfectly",
+                    "turkish": "tamamen/fazlasıyla",
+                    "strength": "strong",
+                    "example": "The car runs perfectly all right.",
+                    "example_tr": "Araba (mekanik olarak) tamamen sorunsuz çalışıyor."
+                },
+                {
+                    "word": "seem",
+                    "turkish": "görünmek",
+                    "example": "Does this size seem all right to you?",
+                    "example_tr": "Bu beden sana uygun görünüyor mu?"
+                }
             ],
             "verbs_preceding": [
-                { "word": "turn out", "example": "turn out all right (sonunda iyiye bağlanmak/sonuçlanmak)" },
-                { "word": "feel", "example": "feel all right (iyi hissetmek)" },
-                { "word": "seem", "example": "seem all right (iyi/düzgün görünmek)" }
+                {
+                    "word": "turn out",
+                    "turkish": "sonuçlanmak",
+                    "example": "Everything turned out all right in the end.",
+                    "example_tr": "Sonunda her şey tatlıya (iyiye) bağlandı."
+                },
+                {
+                    "word": "feel",
+                    "turkish": "hissetmek",
+                    "example": "I don't feel quite all right today.",
+                    "example_tr": "Bugün kendimi pek iyi hissetmiyorum."
+                },
+                {
+                    "word": "make",
+                    "turkish": "düzeltmek/telafi etmek",
+                    "example": "I want to make everything all right again.",
+                    "example_tr": "Her şeyi tekrar düzeltmek (yoluna koymak) istiyorum."
+                }
             ]
         },
         "lexical_nuance": {
             "synonym_scale": {
-                "concept": "Wellness/Satisfaction",
-                "turkishConcept": "İyilik/Memnuniyet Durumu",
+                "concept": "Levels of Wellness/Agreement",
+                "turkishConcept": "İyilik/Onay Seviyeleri",
+                "description": "Nötr'den pozitife doğru iyilik durumları",
                 "scale": [
                     {
-                        "word": "great",
-                        "value": 10,
-                        "turkish": "harika",
-                        "strength": "Duygusal Pik"
+                        "word": "so-so",
+                        "value": 3,
+                        "turkish": "şöyle böyle",
+                        "note": "Ne iyi ne kötü",
+                        "usage": "I'm feeling so-so.",
+                        "description_tr": "Durumun ne iyi ne kötü, vasat olduğunu belirtir.",
+                        "example_en": "How was the movie? It was so-so.",
+                        "example_tr": "Film nasıldı? Şöyle böyleydi.",
+                        "strength": "Nötr-Negatif"
+                    },
+                    {
+                        "word": "all right",
+                        "value": 5,
+                        "turkish": "iyi/yolunda",
+                        "note": "Yeterli, sorunsuz, tatmin edici",
+                        "usage": "The movie was all right.",
+                        "description_tr": "Her şeyin yolunda olduğunu veya bir şeyin kabul edilebilir seviyede olduğunu anlatır.",
+                        "example_en": "Is everything all right here?",
+                        "example_tr": "Burada her şey yolunda mı?",
+                        "strength": "Nötr-Pozitif"
                     },
                     {
                         "word": "fine",
                         "value": 6,
                         "turkish": "iyi/hoş",
-                        "note": "Standart iyi",
+                        "note": "Standart iyi, bazen 'peki' (isteksiz) anlamında",
+                        "usage": "I'm fine, thanks.",
+                        "description_tr": "Genel iyilik halidir, bazen konuyu kapatmak için de kullanılır.",
+                        "example_en": "Just do whatever you want, it's fine.",
+                        "example_tr": "Ne istiyorsan yap, sorun değil (iyi).",
                         "strength": "Pozitif"
                     },
                     {
-                        "word": "all right",
-                        "value": 5,
-                        "turkish": "iyi/idare eder",
-                        "note": "'Kötü değil' anlamında nötr bir iyilik.",
-                        "strength": "Nötr-Pozitif"
-                    },
-                    {
-                        "word": "okay",
-                        "value": 5,
-                        "turkish": "tamam",
-                        "note": "Benzer anlam, daha informel",
-                        "strength": "Nötr"
-                    },
-                    {
-                        "word": "so-so",
-                        "value": 3,
-                        "turkish": "şöyle böyle",
-                        "strength": "Nötr-Negatif"
+                        "word": "great",
+                        "value": 9,
+                        "turkish": "harika",
+                        "note": "Beklenenden iyi",
+                        "usage": "I feel great!",
+                        "description_tr": "Durumun standarttan çok daha iyi olduğunu vurgular.",
+                        "example_en": "You look great today!",
+                        "example_tr": "Bugün harika görünüyorsun!",
+                        "strength": "Güçlü"
                     }
                 ]
             },
@@ -1233,13 +1777,20 @@ window.vocabularyData = [
                 {
                     "word": "wrong",
                     "value": 1,
-                    "turkish": "yanlış/ters",
-                    "note": "'Something is wrong' (Bir terslik var)"
+                    "turkish": "ters/yanlış",
+                    "note": "'Something is wrong' (Bir terslik var)",
+                    "description_tr": "İşlerin yolunda gitmediğini, bir terslik olduğunu belirtir.",
+                    "example_en": "Something feels wrong about this deal.",
+                    "example_tr": "Bu anlaşmada ters gelen bir şeyler var."
                 },
                 {
-                    "word": "unwell",
-                    "value": 2,
-                    "turkish": "rahatsız/hasta"
+                    "word": "unacceptable",
+                    "value": 0,
+                    "turkish": "kabul edilemez",
+                    "note": "Onay vermeme durumu",
+                    "description_tr": "Bir durumun kesinlikle uygun olmadığını ifade eder.",
+                    "example_en": "This behavior is unacceptable.",
+                    "example_tr": "Bu davranış kabul edilemez."
                 }
             ]
         },
@@ -1247,20 +1798,84 @@ window.vocabularyData = [
             "idioms_and_phrases": [
                 {
                     "phrase": "Are you all right?",
-                    "meaning_tr": "İyi misin? (İngiltere'de bazen sadece 'Naber?' anlamında selamlaşmadır)",
-                    "register": "British English"
+                    "meaning_tr": "Naber? / İyi misin?",
+                    "register": "British English",
+                    "example": "Alright mate? (Naber dostum?)",
+                    "example_tr": "İngiltere'de selamlaşma kalıbıdır, sağlık sorusu değildir."
                 },
                 {
-                    "phrase": "It will be all right on the night",
-                    "meaning_tr": "Son ana kadar sorun çıksa da, gösteri zamanı her şey düzelir",
-                    "register": "Theatrical idiom"
+                    "phrase": "It'll be all right on the night",
+                    "meaning_tr": "Kervan yolda düzülür (son anda işler yoluna girer)",
+                    "register": "idiomatic",
+                    "example": "Rehearsals were chaotic, but it'll be all right on the night.",
+                    "example_tr": "Provalar kaotikti ama gösteri zamanı her şey düzelir."
+                },
+                {
+                    "phrase": "That's quite all right",
+                    "meaning_tr": "Hiç önemli değil / Rica ederim",
+                    "register": "polite/formal",
+                    "example": "Use this phrase to accept an apology graciously.",
+                    "example_tr": "Bir özrü nazikçe kabul etmek için kullanılır."
                 }
             ],
             "sociolinguistics": {
-                "topic": "Refusal Politeness",
-                "note_en": "Saying 'That's all right' is a polite way to accept an apology or refuse an offer gently.",
-                "note_tr": "Bir özrü kabul ederken 'That's all right' (Sorun değil) demek çok yaygındır."
+                "topic": "Signposting (Konuşma Yönlendirme)",
+                "note_en": "In spoken English, 'All right' is often used to signal a change of topic or to close a conversation. (e.g., 'All right then, see you later.')",
+                "note_tr": "Konuşmada 'All right' demek, genellikle 'Peki o zaman...' diyerek konuyu değiştirme veya vedalaşma işaretidir."
             }
+        },
+        "cultural_context": {
+            "register": {
+                "level": "neutral",
+                "description": "Hem resmi hem günlük dilde kullanılır. Yazımda 'Alright' kullanmaktan kaçının."
+            },
+            "inclusive_language": null,
+            "grammar_nuance": {
+                "title": "Predicate Adjective",
+                "content": "'All right' genellikle fiilden sonra gelir (Results are all right). İsimden önce (an all right movie) kullanımı daha nadirdir ve gayriresmidir."
+            },
+            "business_english": {
+                "title": "Closing Deals",
+                "content": "Toplantı sonunda 'Is that all right with everyone?' demek, 'Herkes mutabık mı/Onaylıyor mu?' demektir ve anlaşmayı mühürler."
+            },
+            "trivia": {
+                "title": "Spelling War: Alright vs All Right",
+                "content": "'Alright' kelimesi 'Already' ve 'Altogether' gibi analoji ile türetilmiştir ancak hala (yüzyıllardır) dilbilgisi otoriteleri tarafından 'standart dışı' kabul edilir. Sınavda asla 'Alright' yazmayın."
+            }
+        },
+        "exam_strategies": {
+            "frequency": {
+                "yds": 40,
+                "yokdil": 30,
+                "ydt": 80,
+                "description": "Diyalog sorularında (YDT) ve dinleme bölümlerinde (IELTS/TOEFL) frekansı çok yüksektir."
+            },
+            "vocabulary": [
+                {
+                    "title": "Diyalog İpuçları",
+                    "content": "Bir konuşmacı 'All right...' diyorsa, muhtemelen yeni bir konuya geçiyor veya bir teklifi kabul ediyordur. Tonlamaya dikkat edin."
+                },
+                {
+                    "title": "Yazım Hatası Tuzağı",
+                    "content": "Şıklarda 'Alright' ve 'All right' varsa, her zaman ayrı yazılan 'All right' seçeneği gramer açısından güvenlidir."
+                }
+            ],
+            "grammar": [],
+            "reading": [
+                {
+                    "title": "Understatement (Hafife Alma)",
+                    "content": "İngilizler çok iyi bir şeye bile sadece 'It was all right' diyebilirler. Bağlama göre bu 'eh işte' veya 'muhteşemdi' anlamına gelebilir (British Understatement)."
+                }
+            ]
+        },
+        "morphology_tree": {
+            "root": "eall + riht (Old English)",
+            "family_members": [
+                { "word": "all right", "pos": "adj/adv", "level": "A1", "note": "tamamen doğru -> tamam/iyi" },
+                { "word": "right", "pos": "adj", "level": "A1", "note": "doğru, haklı" },
+                { "word": "all", "pos": "det", "level": "A1", "note": "bütün, hepsi" },
+                { "word": "alright", "pos": "adj/adv", "level": "A2", "note": "gayriresmi yazılış (günlük kullanım için, sınavda kullanmayın)" }
+            ]
         },
         "pedagogy_engine": {
             "common_errors": [
@@ -1268,19 +1883,19 @@ window.vocabularyData = [
                     "error_id": "err_spelling_alright",
                     "incorrect": "The movie was alright.",
                     "correction": "The movie was all right.",
-                    "explanation": "'Alright' yazımı mesajlaşmada kabul görse de, sınavlarda ve resmi yazılarda hala hata sayılır."
+                    "explanation": "'Alright' yazımı mesajlaşmada kabul görse de, sınavlarda ve resmi yazılarda hala hata sayılır. Her zaman iki kelime olarak yazın."
                 }
             ],
             "exam_prep": {
-                "ielts_tag": "Listening Section",
-                "tip": "Dinleme sınavında konuşmacı bir konuyu kapatıp diğerine geçerken ses tonunu yükseltip 'All right...' der. Bu bir 'işaret'tir (signpost), yeni konuya geçildiğini haber verir.",
+                "ielts_tag": "Listening",
+                "tip": "Dinleme sınavında konuşmacı bir konuyu kapatıp diğerine geçerken ses tonunu yükseltip 'All right...' der. Bu bir 'işaret'tir (signpost).",
                 "keywords": ["signposting", "transition"]
             },
             "gamification": {
                 "challenge_type": "multiple_choice",
-                "question": "Which sentence implies the food was just acceptable, not great?",
-                "answer": "The food was all right.",
-                "distractors": ["The food was delicious.", "The food was terrible.", "The food was amazing."]
+                "question": "Which spelling is formally correct?",
+                "answer": "All right",
+                "distractors": ["Alright", "Allright", "Al-right"]
             }
         },
         "word_journey": {
@@ -1290,9 +1905,9 @@ window.vocabularyData = [
                 { "era": "19th Century", "word": "alright", "meaning": "disputed spelling emerges (analogy to already)" }
             ],
             "turkish_cognate_hint": {
-                "word": "Ray / Rasyonel",
+                "word": "Ray",
                 "connection_type": "Distant Conceptual",
-                "story": "'Right' (doğru/sağ) kelimesi Hint-Avrupa *reg- (düz gitmek, yönetmek) kökünden gelir. Türkçedeki 'Ray' (tren rayı, düz çizgi) veya 'Rasyonel' (akılcı/doğru) kelimeleriyle uzaktan akrabadır. 'All Right' demek, her şeyin 'rayında' olması, düzgün gitmesi demektir.",
+                "story": "'Right' (doğru/sağ) kelimesi 'düz gitmek' kökünden gelir. Türkçedeki 'Ray' (tren rayı) kelimesiyle uzaktan akrabadır. 'All Right' demek, her şeyin 'rayında' olması, düzgün gitmesi demektir.",
                 "example": "All right -> Her şey rayında."
             }
         },
@@ -1435,14 +2050,47 @@ window.vocabularyData = [
         },
         "collocations": {
             "modifiers_adverbs": [
-                { "word": "phonetic", "example": "phonetic alphabet (sesçil alfabe)" },
-                { "word": "Latin/Roman", "example": "Latin alphabet (Latin alfabesi)" },
-                { "word": "Cyrillic", "example": "Cyrillic alphabet (Kiril alfabesi)" }
+                {
+                    "word": "phonetic",
+                    "turkish": "fonetik/sesçil",
+                    "strength": "technical",
+                    "example": "NATO phonetic alphabet (NATO fonetik alfabesi - Alpha, Bravo...)",
+                    "example_tr": "Havacılıkta NATO fonetik alfabesi kullanılır."
+                },
+                {
+                    "word": "Latin/Roman",
+                    "turkish": "Latin",
+                    "strength": "standard",
+                    "example": "Turkish uses the Latin alphabet.",
+                    "example_tr": "Türkçe Latin alfabesini kullanır."
+                },
+                {
+                    "word": "Cyrillic",
+                    "turkish": "Kiril",
+                    "strength": "specific",
+                    "example": "Russian is written in the Cyrillic alphabet.",
+                    "example_tr": "Rusça Kiril alfabesiyle yazılır."
+                }
             ],
             "verbs_preceding": [
-                { "word": "recite", "example": "recite the alphabet (alfabeyi ezbere okumak)" },
-                { "word": "learn", "example": "learn the alphabet (okuma yazma öğrenmek)" },
-                { "word": "invent", "example": "invent an alphabet (alfabe icat etmek)" }
+                {
+                    "word": "recite",
+                    "turkish": "ezbere okumak",
+                    "example": "The child can recite the alphabet.",
+                    "example_tr": "Çocuk alfabeyi ezbere sayabiliyor."
+                },
+                {
+                    "word": "devise",
+                    "turkish": "icat etmek/tasarlamak",
+                    "example": "He devised a new alphabet for the language.",
+                    "example_tr": "Dil için yeni bir alfabe tasarladı."
+                },
+                {
+                    "word": "transliterate",
+                    "turkish": "harf çevirisi yapmak",
+                    "example": "Names are transliterated into the Latin alphabet.",
+                    "example_tr": "İsimler Latin alfabesine çevrilir (harf harf)."
+                }
             ]
         },
         "lexical_nuance": {
@@ -1453,30 +2101,42 @@ window.vocabularyData = [
                     {
                         "word": "alphabet",
                         "value": 5,
-                        "turkish": "alfabe",
-                        "note": "Sesleri temsil eden harfler sistemi (A, B, C)",
-                        "strength": "Ses Odaklı"
+                        "turkish": "alfabe/abece",
+                        "note": "Harflerden oluşan ses temelli set (A, B, C)",
+                        "description_tr": "Her sesin bir harfle karşılandığı standart yazı sistemidir.",
+                        "example_en": "The Greek alphabet is thousands of years old.",
+                        "example_tr": "Yunan alfabesi binlerce yıllıktır.",
+                        "strength": "Fonetik"
                     },
                     {
                         "word": "script",
                         "value": 6,
-                        "turkish": "yazı sistemi/alfabe",
-                        "note": "Genel yazı karakteri türü (Arabic script, Devanagari script)",
+                        "turkish": "yazı sistemi/hat",
+                        "note": "Bir dilin yazım şekli (Arabic Script, cursive script)",
+                        "description_tr": "Bir dilin karakterlerinin el yazısı veya basılı özgün biçimidir.",
+                        "example_en": "Urdu is written in the Arabic script.",
+                        "example_tr": "Urduca Arap yazısıyla (hattıyla) yazılır.",
                         "strength": "Teknik"
-                    },
-                    {
-                        "word": "hieroglyph",
-                        "value": 8,
-                        "turkish": "hiyeroglif",
-                        "note": "Resim yazısı (harf değil sembol)",
-                        "strength": "Tarihi"
                     },
                     {
                         "word": "character set",
                         "value": 9,
                         "turkish": "karakter seti",
-                        "note": "Dijital ortamda tüm semboller (ASCII, Unicode)",
+                        "note": "Dijital ortamdaki sembollerin tamamı (ASCII, Unicode)",
+                        "description_tr": "Bilgisayar sistemlerinde kullanılan tüm harf ve sembollerin listesidir.",
+                        "example_en": "UTF-8 covers almost every character set.",
+                        "example_tr": "UTF-8 neredeyse tüm karakter setlerini kapsar.",
                         "strength": "Dijital"
+                    },
+                    {
+                        "word": "hieroglyphics",
+                        "value": 8,
+                        "turkish": "hiyeroglif",
+                        "note": "Resim yazısı (harf değil sembol)",
+                        "description_tr": "Antik Mısır'da kullanılan resim temelli yazı sistemidir.",
+                        "example_en": "They deciphered the hieroglyphics on the wall.",
+                        "example_tr": "Duvardaki hiyeroglifleri çözdüler.",
+                        "strength": "Tarihi"
                     }
                 ]
             },
@@ -1484,8 +2144,11 @@ window.vocabularyData = [
                 {
                     "word": "illiteracy",
                     "value": 1,
-                    "turkish": "okuma yazma bilmeme",
-                    "note": "Alfabeye hakim olmama durumu"
+                    "turkish": "cahillik / okuma yazma bilmeme",
+                    "note": "Alfabeye hakim olmama durumu",
+                    "description_tr": "Okuma yazma becerisinin olmaması durumudur.",
+                    "example_en": "They started a campaign to fight illiteracy.",
+                    "example_tr": "Cahillikle (okuma yazma bilmemekle) savaşmak için kampanya başlattılar."
                 }
             ]
         },
@@ -1493,20 +2156,78 @@ window.vocabularyData = [
             "idioms_and_phrases": [
                 {
                     "phrase": "alphabet soup",
-                    "meaning_tr": "kısaltmalar çorbası (çok fazla kısaltma içeren karışık metin/durum)",
-                    "register": "informal/humorous"
+                    "meaning_tr": "kısaltma çorbası (çok fazla kısaltma içeren metin)",
+                    "register": "humorous",
+                    "example": "The report was a veritable alphabet soup of government agencies.",
+                    "example_tr": "Rapor, devlet kurumlarının kısaltmalarıyla dolu bir çorbaya dönmüştü."
                 },
                 {
                     "phrase": "the ABCs of something",
                     "meaning_tr": "bir işin alfabesi (temel kuralları)",
-                    "register": "idiomatic"
+                    "register": "idiomatic",
+                    "example": "He taught me the ABCs of investing.",
+                    "example_tr": "Bana yatırım yapmanın alfabesini (temelini) öğretti."
                 }
             ],
             "sociolinguistics": {
-                "topic": "NATO Phonetic Alphabet",
-                "note_en": "In phone calls or radio comms, distinct words are used for letters to avoid confusion (Alpha, Bravo, Charlie, Delta...). Essential for spelling names.",
-                "note_tr": "Telefonda kodlama yaparken karışıklığı önlemek için kullanılır (Ankara'nın A'sı yerine Alpha, Bravo...)."
+                "topic": "Code Names",
+                "note_en": "Government agencies often use 'Alphabet Agencies' (FBI, CIA, NSA) as a term. It refers to organizations known by their acronyms.",
+                "note_tr": "FBI, CIA gibi kurumlar 'Alphabet Agencies' olarak bilinir."
             }
+        },
+        "cultural_context": {
+            "register": {
+                "level": "neutral",
+                "description": "Akademik ve günlük dilde ortaktır."
+            },
+            "inclusive_language": null,
+            "grammar_nuance": {
+                "title": "Alphabet vs Letters",
+                "content": "İngilizcede 26 'harf' (letters) vardır, 26 'alfabe' değil. 'Alphabet' tekil bir setin adıdır. 'Do you know your alphabets?' sorusu yanlıştır, 'Do you know your letters?' denir."
+            },
+            "business_english": {
+                "title": "Alphabet Inc.",
+                "content": "Google'ın çatı şirketi 'Alphabet Inc.'dir. Bu isim, dilin temeli (alfabe) ve yatırım getirisi (Alpha-bet) kelime oyununa dayanır."
+            },
+            "trivia": {
+                "title": "& (Ampersand)",
+                "content": "Eskiden '&' işareti alfabenin 27. harfi sayılırdı ve 'and, per se, and' olarak okunurdu. Zamanla 'Ampersand' ismini aldı."
+            }
+        },
+        "exam_strategies": {
+            "frequency": {
+                "yds": 30,
+                "yokdil": 50,
+                "ydt": 40,
+                "description": "Linguistics (Dilbilim) ve Tarih metinlerinde (Fenikeliler vb.) çıkar."
+            },
+            "vocabulary": [
+                {
+                    "title": "Acronym vs Initialism",
+                    "content": "NATO (okunur) bir 'Acronym', FBI (harf harf okunur) bir 'Initialism'dir. Her ikisi de alfabe temellidir."
+                },
+                {
+                    "title": "Vowel & Consonant",
+                    "content": "Sınavda 'vowel' (ünlü) ve 'consonant' (ünsüz) terimleri 'alphabet' ile bağlantılı sorulabilir."
+                }
+            ],
+            "grammar": [],
+            "reading": [
+                {
+                    "title": "Tarihsel Metinler",
+                    "content": "Parçada 'cuneiform' (çivi yazısı) veya 'hieroglyph' geçiyorsa, konu muhtemelen alfabenin evrimi ve yazı tarihidir."
+                }
+            ]
+        },
+        "morphology_tree": {
+            "root": "Alpha + Beta (Greek)",
+            "family_members": [
+                { "word": "alphabet", "pos": "n", "level": "A2", "note": "alfabe" },
+                { "word": "alphabetical", "pos": "adj", "level": "B1", "suffix": "-ical", "note": "alfabetik, abecesel" },
+                { "word": "alphabetize", "pos": "v", "level": "C1", "suffix": "-ize", "note": "alfabetik sıraya koymak" },
+                { "word": "literacy", "pos": "n", "level": "B2", "note": "okuryazarlık (alfabe bilgisi)" },
+                { "word": "illiterate", "pos": "adj", "level": "B2", "note": "okuma yazma bilmeyen" }
+            ]
         },
         "pedagogy_engine": {
             "common_errors": [
@@ -1524,9 +2245,10 @@ window.vocabularyData = [
             },
             "gamification": {
                 "challenge_type": "sequence",
-                "question": "Arrange correctly: Alpha, Charlie, ____, Delta",
-                "answer": "Bravo",
-                "distractors": ["Beta", "Bingo", "Blue"]
+                "question": "Which comes first in alphabetical order?",
+                "answer": "Abacus",
+                "distractors": ["Abandon", "Ability", "Abroad"],
+                "explanation": "Abacus (A-B-A), Abandon (A-B-A-N)... C, N'den önce gelir."
             }
         },
         "word_journey": {
@@ -1538,7 +2260,7 @@ window.vocabularyData = [
             "turkish_cognate_hint": {
                 "word": "Alfabe",
                 "connection_type": "Direct Loan",
-                "story": "Türkçedeki 'Alfabe' ile İngilizce 'Alphabet' %100 aynı kökten gelir: Yunan alfabesinin ilk iki harfi 'Alpha' (A) ve 'Beta' (B). Nasıl ki biz eskiden 'Elif-Ba' (Arap alfabesinin ilk iki harfi) diyorsak, veya çocuklara 'ABECE' öğretiyorsak, batı dilleri de 'Alpha-Beta' demiştir. Yani kelimenin anlamı aslında 'A ve B' demektir.",
+                "story": "Türkçedeki 'Alfabe' ile İngilizce 'Alphabet' %100 aynı kökten gelir: Yunan alfabesinin ilk iki harfi 'Alpha' (A) ve 'Beta' (B). Nasıl ki biz eskiden 'Elif-Ba' (Arap alfabesinin ilk iki harfi) diyorsak, batı dilleri de 'Alpha-Beta' demiştir.",
                 "example": "Alpha (A) + Beta (B) = Alphabet."
             }
         },
@@ -1672,13 +2394,47 @@ window.vocabularyData = [
         },
         "collocations": {
             "modifiers_adverbs": [
-                { "word": "air", "example": "air ambulance (helikopter ambulans)" },
-                { "word": "private", "example": "private ambulance (özel ambulans)" }
+                {
+                    "word": "air",
+                    "turkish": "hava ambulansı (helikopter)",
+                    "strength": "specific",
+                    "example": "The injured hiker was evacuated by air ambulance.",
+                    "example_tr": "Yaralı yürüyüşçü hava ambulansı ile tahliye edildi."
+                },
+                {
+                    "word": "private",
+                    "turkish": "özel",
+                    "strength": "standard",
+                    "example": "Private ambulance services charge a fee.",
+                    "example_tr": "Özel ambulans servisleri ücret talep eder."
+                },
+                {
+                    "word": "blue-light",
+                    "turkish": "tepe lambalı (acil giden)",
+                    "strength": "idiomatic",
+                    "example": "It was a blue-light run to the hospital.",
+                    "example_tr": "Hastaneye (sirenler açık) acil bir sürüş yapıldı."
+                }
             ],
             "verbs_preceding": [
-                { "word": "call", "example": "call an ambulance (ambulans çağırmak)" },
-                { "word": "drive", "example": "drive an ambulance (ambulans sürmek)" },
-                { "word": "chase", "example": "chase ambulances (tazminat peşinde koşmak - mecazi)" }
+                {
+                    "word": "call",
+                    "turkish": "çağırmak (telefonda)",
+                    "example": "Call an ambulance immediately!",
+                    "example_tr": "Derhal bir ambulans çağırın!"
+                },
+                {
+                    "word": "dispatch",
+                    "turkish": "sevk etmek (merkezden)",
+                    "example": "The operator dispatched two ambulances to the scene.",
+                    "example_tr": "Operatör olay yerine iki ambulans sevk etti."
+                },
+                {
+                    "word": "rush",
+                    "turkish": "aceleyle yetiştirmek",
+                    "example": "He was rushed to hospital by ambulance.",
+                    "example_tr": "Ambulansla hastaneye yetiştirildi."
+                }
             ]
         },
         "lexical_nuance": {
@@ -1691,21 +2447,40 @@ window.vocabularyData = [
                         "value": 5,
                         "turkish": "ambulans",
                         "note": "Standart acil durum aracı",
+                        "description_tr": "Hasta ve yaralı taşımak için donatılmış standart araçtır.",
+                        "example_en": "The ambulance rushed to the scene.",
+                        "example_tr": "Ambulans olay yerine hızla gitti.",
                         "strength": "Genel"
                     },
                     {
                         "word": "paramedic unit",
                         "value": 7,
                         "turkish": "ilk yardım birimi",
-                        "note": "Daha teknik, personeli vurgular",
+                        "note": "Daha teknik, personeli ve tıbbi müdahaleyi vurgular",
+                        "description_tr": "İçinde ileri yaşam desteği sunabilen uzman personelin bulunduğu birimdir.",
+                        "example_en": "A paramedic unit was dispatched immediately.",
+                        "example_tr": "Derhal bir ilk yardım birimi sevk edildi.",
                         "strength": "Teknik"
                     },
                     {
                         "word": "medevac",
                         "value": 9,
                         "turkish": "tıbbi tahliye aracı",
-                        "note": "Askeri veya helikopterle tahliye (Medical Evacuation)",
+                        "note": "Genellikle askeri veya helikopterle tahliye (Medical Evacuation)",
+                        "description_tr": "Genellikle helikopter veya uçakla yapılan acil tıbbi tahliyedir.",
+                        "example_en": "The soldier was airlifted by medevac.",
+                        "example_tr": "Asker, tıbbi tahliye aracıyla (helikopterle) hava yoluyla taşındı.",
                         "strength": "Askeri/Kritik"
+                    },
+                    {
+                        "word": "first responder",
+                        "value": 4,
+                        "turkish": "ilk müdahale aracı",
+                        "note": "Olay yerine ambulansdan önce varan polis/itfaiye aracı",
+                        "description_tr": "Olay yerine ilk varan polis, itfaiye veya gönüllü sağlık ekibi aracıdır.",
+                        "example_en": "First responder vehicles are smaller and faster.",
+                        "example_tr": "İlk müdahale araçları daha küçük ve daha hızlıdır.",
+                        "strength": "Hızlı"
                     }
                 ]
             },
@@ -1716,46 +2491,112 @@ window.vocabularyData = [
                 {
                     "phrase": "ambulance chaser",
                     "meaning_tr": "kazaları kovalayan çıkarcı avukat",
-                    "register": "derogatory (aşağılayıcı)"
+                    "register": "derogatory",
+                    "example": "He's just an ambulance chaser looking for a lawsuit.",
+                    "example_tr": "O sadece dava açmak için fırsat kollayan çıkarcı bir avukat."
                 },
                 {
-                    "phrase": "don't shoot the ambulance",
-                    "meaning_tr": "haberciyi/yardım edeni suçlama (nadir varyasyon)",
-                    "register": "idiomatic"
+                    "phrase": "monitor situation",
+                    "meaning_tr": "durumu izlemek (sirenler kapalı)",
+                    "register": "police/medical",
+                    "example": "We are monitoring the patient in the ambulance.",
+                    "example_tr": "Ambulansın içinde hastayı izliyoruz (takip ediyoruz)."
                 }
             ],
             "sociolinguistics": {
                 "topic": "Siren Etiquette",
-                "note_en": "In most Western countries, failing to yield (pull over) to an ambulance with lights flashing is a serious traffic offense.",
-                "note_tr": "Batı ülkelerinde sireni çalan ambulansa yol vermemek çok ciddi bir trafik suçudur."
+                "note_en": "In Western countries, 'pulling over' (moving to the side) for an ambulance is a strict legal and moral duty. Drivers create an 'emergency corridor'.",
+                "note_tr": "Batı ülkelerinde siren çalan ambulansa yol vermek (kenara çekilmek) katı bir yasal ve ahlaki görevdir."
             }
+        },
+        "cultural_context": {
+            "register": {
+                "level": "neutral",
+                "description": "Her seviyede kullanılır."
+            },
+            "inclusive_language": null,
+            "grammar_nuance": {
+                "title": "Vehicle Prepositions",
+                "content": "Ambulansın 'içinde' tedavi oluyorsanız 'in the ambulance', ulaşım aracı olarak bahsediyorsanız 'by ambulance' kullanılır."
+            },
+            "business_english": {
+                "title": "Private Medical Transport",
+                "content": "Sigorta şirketleri 'Patient Transport Service' (PTS) terimini kullanır. Bu, acil olmayan (non-emergency) hasta nakil ambulansıdır.",
+                "keywords": ["PTS", "medical repatriation"]
+            },
+            "trivia": {
+                "title": "Star of Life",
+                "content": "Ambulansların üzerindeki mavi, altı uçlu yıldız ve yılanlı asa sembolüne 'Star of Life' denir. Yılanlı asa, tıbbın sembolü 'Asclepius'un asası'dır."
+            }
+        },
+        "exam_strategies": {
+            "frequency": {
+                "yds": 55,
+                "yokdil": 75,
+                "ydt": 50,
+                "description": "Sağlık bilimleri (YÖKDİL) ve trafik kazası haberlerinde (YDS) sık geçer."
+            },
+            "vocabulary": [
+                {
+                    "title": "İlgili Terimler",
+                    "content": "'Stretcher' (sedye), 'Siren' (siren), 'Resuscitate' (hayata döndürmek/kalp masajı) kelimeleri ambulans bağlamında sık sorulur."
+                },
+                {
+                    "title": "Passive Voice",
+                    "content": "'He was taken to hospital' cümlesinde 'by ambulance' gizli özne gibidir, çoğu zaman yazılmaz ama ima edilir."
+                }
+            ],
+            "grammar": [],
+            "reading": [
+                {
+                    "title": "Afet Yönetimi (Triage)",
+                    "content": "Parçada 'triage' (seçme/ayırma) geçiyorsa, ambulansların hastaları aciliyet sırasına göre taşıdığı bir afet senaryosu anlatılıyordur."
+                }
+            ]
+        },
+        "morphology_tree": {
+            "root": "ambulare (Latin 'to walk')",
+            "family_members": [
+                { "word": "ambulance", "pos": "n", "level": "A2", "note": "yürüyen hastane -> ambulans" },
+                { "word": "ambulator", "pos": "v", "level": "C2", "note": "gezinmek, yürümek (tıbbi)" },
+                { "word": "ambulatory", "pos": "adj", "level": "C2", "note": "ayakta tedavi edilen, yürüyebilen hasta" },
+                { "word": "somnambulist", "pos": "n", "level": "C2", "prefix": "somn-", "note": "uyurgezer (uykuda yürüyen)" },
+                { "word": "pram", "pos": "n", "level": "B2", "note": "perambulator kısaltması (bebek arabası)" }
+            ]
         },
         "pedagogy_engine": {
             "common_errors": [
                 {
                     "error_id": "err_wrong_prep",
                     "incorrect": "She went to hospital with ambulance.",
-                    "correction": "She went to hospital by ambulance (or in an ambulance).",
-                    "explanation": "Taşıt araçlarında genel metod için 'by', içinde bulunma durumu için 'in' kullanılır. 'With' kullanılmaz."
+                    "correction": "She went to hospital by ambulance.",
+                    "explanation": "Taşıt araçlarıyla ulaşım belirtirken 'by' kullanılır. 'With' (ile) birliktelik bildirir, araç bildirmez."
                 }
             ],
             "exam_prep": {
                 "ielts_tag": "Health / Emergencies",
-                "tip": "Acil durum senaryosu anlatılırken 'The ambulance arrived' yerine 'Professional medical assistance arrived promptly via ambulance' demek kelime çeşitliliğini gösterir.",
+                "tip": "Acil durum senaryosu anlatılırken 'The ambulance arrived' yerine 'Paramedics arrived promptly via ambulance' demek kelime çeşitliliğini gösterir.",
                 "keywords": ["critical condition", "stabilize", "paramedics"]
+            },
+            "gamification": {
+                "challenge_type": "sequence",
+                "question": "Order the emergency response stages:",
+                "answer": "Call -> Dispatch -> Arrival -> Transport",
+                "distractors": ["Transport -> Call -> Dispatch", "Arrival -> Dispatch -> Call"],
+                "explanation": "Önce aranır (Call), merkez aracı yollar (Dispatch), araç varır (Arrival), hasta taşınır (Transport)."
             }
         },
         "word_journey": {
             "timeline": [
                 { "era": "Latin", "word": "ambulare", "meaning": "to walk" },
-                { "era": "French", "word": "hôpital ambulant", "meaning": "walking (mobile) hospital" },
+                { "era": "French", "word": "hôpital ambulant", "meaning": "walking (mobile) hospital (Napoleon Era)" },
                 { "era": "Modern English", "word": "ambulance", "meaning": "vehicle for transporting sick" }
             ],
             "turkish_cognate_hint": {
                 "word": "Ambulans / Pera",
                 "connection_type": "Loanword",
-                "story": "Ambulans kelimesi 'Ambul-' (yürümek) kökünden gelir. Napolyon zamanında savaşta yaralanan askerlere giden seyyar hastanelere 'Hôpital Ambulant' (Yürüyen Hastane) denirdi. Zamanla sadece sondaki 'Ambulant/Ambulance' kaldı. İstanbul'daki 'Pera' (karşı yaka, öte taraf) veya 'Perambulator' (bebek arabası) kelimeleri de bu kökten veya benzer hareket köklerinden gelir. Yani Ambulans aslında 'yürüyen/gezen klinik' demektir.",
-                "example": "Somnambulist -> Som (Uyku) + Ambul (Yürü) = Uyurgezer."
+                "story": "Ambulans kelimesi 'Ambul-' (yürümek) kökünden gelir. Napolyon zamanında savaşta yaralanan askerlere giden seyyar hastanelere 'Hôpital Ambulant' (Yürüyen Hastane) denirdi. Zamanla sadece sondaki 'Ambulant/Ambulance' kaldı. Ayrıca 'Somnambulist' (Uyurgezer) kelimesinde de aynı 'ambul' (yürüme) kökü vardır.",
+                "example": "Som (Uyku) + Ambul (Yürü) = Uyurgezer."
             }
         },
         "stories": {
@@ -1898,14 +2739,47 @@ window.vocabularyData = [
         },
         "collocations": {
             "modifiers_adverbs": [
-                { "word": "saltwater", "example": "saltwater aquarium (tuzlu su akvaryumu)" },
-                { "word": "freshwater", "example": "freshwater aquarium (tatlı su akvaryumu)" },
-                { "word": "giant", "example": "giant aquarium (dev akvaryum)" }
+                {
+                    "word": "saltwater",
+                    "turkish": "tuzlu su",
+                    "strength": "specific",
+                    "example": "Saltwater aquariums are harder to maintain.",
+                    "example_tr": "Tuzlu su akvaryumlarının bakımı daha zordur."
+                },
+                {
+                    "word": "freshwater",
+                    "turkish": "tatlı su",
+                    "strength": "specific",
+                    "example": "Goldfish live in freshwater aquariums.",
+                    "example_tr": "Japon balıkları tatlı su akvaryumlarında yaşar."
+                },
+                {
+                    "word": "public",
+                    "turkish": "halka açık (dev)",
+                    "strength": "standard",
+                    "example": "We visited the public aquarium downtown.",
+                    "example_tr": "Şehir merkezindeki halka açık akvaryumu ziyaret ettik."
+                }
             ],
             "verbs_preceding": [
-                { "word": "maintain", "example": "maintain an aquarium (akvaryum bakımı yapmak)" },
-                { "word": "stock", "example": "stock an aquarium (akvaryuma balık koymak)" },
-                { "word": "visit", "example": "visit the aquarium (akvaryum gezmek)" }
+                {
+                    "word": "maintain",
+                    "turkish": "bakımını yapmak",
+                    "example": "It takes time to maintain a large aquarium.",
+                    "example_tr": "Büyük bir akvaryumun bakımını yapmak zaman alır."
+                },
+                {
+                    "word": "set up",
+                    "turkish": "kurmak",
+                    "example": "I want to set up a tropical aquarium.",
+                    "example_tr": "Tropikal bir akvaryum kurmak istiyorum."
+                },
+                {
+                    "word": "stock",
+                    "turkish": "balıkla doldurmak",
+                    "example": "He stocked the aquarium with neon tetras.",
+                    "example_tr": "Akvaryumu neon tetra balıklarıyla doldurdu."
+                }
             ]
         },
         "lexical_nuance": {
@@ -1917,28 +2791,40 @@ window.vocabularyData = [
                         "word": "fish bowl",
                         "value": 2,
                         "turkish": "fanus",
-                        "note": "Küçük, yuvarlak, tekniksiz",
+                        "note": "Küçük, yuvarlak, filtresiz cam kap (genellikle Japon balığı için)",
+                        "description_tr": "Genellikle tek bir balık için kullanılan küçük, yuvarlak cam kap.",
+                        "example_en": "You shouldn't keep a goldfish in a small bowl.",
+                        "example_tr": "Bir japon balığını küçük bir fanusta beslememelisin.",
                         "strength": "Basit"
                     },
                     {
                         "word": "fish tank",
                         "value": 5,
                         "turkish": "balık tankı",
-                        "note": "Ev tipi dikdörtgen cam",
+                        "note": "Ev tipi, genellikle dikdörtgen cam sistem",
+                        "description_tr": "Evde balık beslemek için kullanılan standart dikdörtgen cam prizmadır.",
+                        "example_en": "He cleaned the algae off the fish tank.",
+                        "example_tr": "Balık tankındaki yosunları temizledi.",
                         "strength": "Standart"
                     },
                     {
                         "word": "aquarium",
                         "value": 8,
                         "turkish": "akvaryum",
-                        "note": "Hem evdeki tank hem de devasa tesis",
+                        "note": "Hem evdeki tank hem de devasa turistik tesis",
+                        "description_tr": "Hem ev tipi tankı hem de içinde gezilebilen büyük su canlıları müzesini ifade eder.",
+                        "example_en": "The city aquarium has a shark tunnel.",
+                        "example_tr": "Şehir akvaryumunda bir köpekbalığı tüneli var.",
                         "strength": "Kapsamlı"
                     },
                     {
                         "word": "oceanarium",
                         "value": 10,
                         "turkish": "okyanus akvaryumu",
-                        "note": "Açık denize bağlı veya devasa deniz parkı",
+                        "note": "Açık denize bağlı veya devasa deniz parkı (SeaWorld vb.)",
+                        "description_tr": "Okyanus canlılarını büyük ölçekte barındıran devasa tesistir.",
+                        "example_en": "The oceanarium houses whales and dolphins.",
+                        "example_tr": "Okyanus akvaryumu balinalara ve yunuslara ev sahipliği yapıyor.",
                         "strength": "Devasa"
                     }
                 ]
@@ -1949,15 +2835,73 @@ window.vocabularyData = [
             "idioms_and_phrases": [
                 {
                     "phrase": "living in a fishbowl",
-                    "meaning_tr": "fanusta yaşamak (gizlisi saklısı olmamak, herkes tarafından izlenmek)",
-                    "register": "idiomatic"
+                    "meaning_tr": "kendi halinde/göz önünde yaşamak (gizlisi saklısı olmamak)",
+                    "register": "idiomatic",
+                    "example": "Celebrities often feel like they are living in a fishbowl.",
+                    "example_tr": "Ünlüler genellikle fanusta yaşıyormuş gibi hissederler (her an izleniyorlar)."
                 }
             ],
             "sociolinguistics": {
-                "topic": "Ethics of Zoos/Aquariums",
-                "note_en": "Modern debate focuses on whether aquariums are prisons for animals or necessary arks for conservation and education.",
-                "note_tr": "Günümüzde akvaryumların hayvan hapishaneleri mi yoksa koruma/eğitim amaçlı sığınaklar mı olduğu tartışılmaktadır."
+                "topic": "Conservation",
+                "note_en": "Modern aquariumsbrand themselves as 'conservation centers' rather than zoos to emphasize their role in saving endangered species.",
+                "note_tr": "Modern akvaryumlar kendilerini hayvanat bahçesi olarak değil, 'koruma merkezi' olarak tanıtır."
             }
+        },
+        "cultural_context": {
+            "register": {
+                "level": "neutral",
+                "description": "Bilimsel ve günlük dilde kullanılır."
+            },
+            "inclusive_language": null,
+            "grammar_nuance": {
+                "title": "Plural: Aquariums vs Aquaria",
+                "content": "Latince kökenli olduğu için çoğulu 'Aquaria' olabilir ama modern İngilizcede %95 oranında 'Aquariums' kullanılır. 'Aquaria' aşırı teknik kaçar."
+            },
+            "business_english": {
+                "title": "Aquascape",
+                "content": "Akvaryum peyzajı mimarlığına 'Aquascaping' denir. Bu, niş bir iş koludur ve sanat dalı olarak kabul edilir.",
+                "keywords": ["hardscape", "substrate", "flora"]
+            },
+            "trivia": {
+                "title": "Feng Shui",
+                "content": "Asya kültüründe ve Feng Shui felsefesinde akvaryumlar zenginlik ve bereket getirdiğine inanıldığı için iş yerlerinde çok yaygındır."
+            }
+        },
+        "exam_strategies": {
+            "frequency": {
+                "yds": 20,
+                "yokdil": 30,
+                "ydt": 25,
+                "description": "Çevre ve Biyoloji metinlerinde (Environment/Biology) nadiren çıkar."
+            },
+            "vocabulary": [
+                {
+                    "title": "Tank",
+                    "content": "Sınavda 'aquarium' yerine 'tank' veya 'vessel' kelimeleri eş anlamlı olarak kullanılabilir."
+                },
+                {
+                    "title": "Marine vs Aquatic",
+                    "content": "'Marine' (deniz/tuzlu su) ve 'Aquatic' (sucul/genel) ayrımına dikkat edin. Akvaryumlar her ikisini de barındırabilir."
+                }
+            ],
+            "grammar": [],
+            "reading": [
+                {
+                    "title": "Esaret Tartışması",
+                    "content": "Parçada 'captivity' (esaret) ve 'conservation' (koruma) zıtlığı varsa, konu hayvanat bahçeleri veya akvaryumların etiğidir."
+                }
+            ]
+        },
+        "morphology_tree": {
+            "root": "Aqua (Water) + -arium (Place)",
+            "family_members": [
+                { "word": "aquarium", "pos": "n", "level": "A2", "note": "su yeri -> akvaryum" },
+                { "word": "aquatic", "pos": "adj", "level": "B2", "note": "suda yaşayan, suyla ilgili" },
+                { "word": "aquarius", "pos": "n", "level": "C1", "note": "kova burcu (su taşıyıcı)" },
+                { "word": "terrarium", "pos": "n", "level": "C1", "note": "kara canlıları için cam kafes (terra: toprak)" },
+                { "word": "vivarium", "pos": "n", "level": "C2", "note": "canlılar için yaşam alanı (genel terim)" },
+                { "word": "planetarium", "pos": "n", "level": "B2", "note": "gökevi (gezegen yeri)" }
+            ]
         },
         "pedagogy_engine": {
             "common_errors": [
@@ -1988,7 +2932,7 @@ window.vocabularyData = [
             "turkish_cognate_hint": {
                 "word": "Akvaryum / Solaryum",
                 "connection_type": "Suffix Pattern",
-                "story": "İngilizcede ve Türkçede sonu '-arium' veya '-aryum' ile biten kelimeler hep 'bir şeyin yapıldığı YER' anlamına gelir. \n- Aquarium: Aqua (Su) + Arium (Yer) = Su yeri.\n- Solarium: Solar (Güneş) + Arium (Yer) = Güneşlenme yeri.\n- Terrarium: Terra (Toprak) + Arium (Yer) = Toprak yeri.\n- Planetarium: Planet (Gezegen) + Arium (Yer) = Gezegen evi.",
+                "story": "İngilizcede ve Türkçede sonu '-arium' veya '-aryum' ile biten kelimeler hep 'bir şeyin yapıldığı YER' anlamına gelir. \n- Aquarium: Aqua (Su) + Arium (Yer) = Su yeri.\n- Solarium: Solar (Güneş) + Arium (Yer) = Güneşlenme yeri.\n- Terrarium: Terra (Toprak) + Arium (Yer) = Toprak yeri (sürüngenler için).\n- Planetarium: Planet (Gezegen) + Arium (Yer) = Gezegen evi.",
                 "example": "Aqua -> Akvaryum."
             }
         },
@@ -2131,13 +3075,47 @@ window.vocabularyData = [
         },
         "collocations": {
             "modifiers_adverbs": [
-                { "word": "safe and sound", "example": "arrive safe and sound (sağ salim varmak)" },
-                { "word": "early / late", "example": "arrive early (erken varmak)" },
-                { "word": "unexpectedly", "example": "arrive unexpectedly (beklenmedik bir anda gelmek)" }
+                {
+                    "word": "safe and sound",
+                    "turkish": "sağ salim/kazasız belasız",
+                    "strength": "idiomatic",
+                    "example": "They arrived home safe and sound.",
+                    "example_tr": "Eve sağ salim vardılar."
+                },
+                {
+                    "word": "unexpectedly",
+                    "turkish": "beklenmedik bir anda",
+                    "strength": "strong",
+                    "example": "Guests arrived unexpectedly.",
+                    "example_tr": "Misafirler çat kapı (beklenmedik anda) geldi."
+                },
+                {
+                    "word": "punctually",
+                    "turkish": "tam vaktinde",
+                    "strength": "formal",
+                    "example": "Please arrive punctually for the meeting.",
+                    "example_tr": "Lütfen toplantı için tam vaktinde orada olun."
+                }
             ],
             "verbs_preceding": [
-                { "word": "fail to", "example": "fail to arrive (varmamak/ulaşmamak)" },
-                { "word": "wait to", "example": "wait for smt to arrive (bir şeyin gelmesini beklemek)" }
+                {
+                    "word": "fail to",
+                    "turkish": "ulaşmamak/gelmemek",
+                    "example": "The package failed to arrive.",
+                    "example_tr": "Paket yerine ulaşmadı."
+                },
+                {
+                    "word": "be due to",
+                    "turkish": "gelmesi beklenmek/planlanmak",
+                    "example": "The train is due to arrive at 10.",
+                    "example_tr": "Trenin 10'da gelmesi planlanıyor."
+                },
+                {
+                    "word": "await",
+                    "turkish": "gelmesini beklemek",
+                    "example": "We are awaiting his arrival.",
+                    "example_tr": "Onun gelişini bekliyoruz."
+                }
             ]
         },
         "lexical_nuance": {
@@ -2150,13 +3128,19 @@ window.vocabularyData = [
                         "value": 3,
                         "turkish": "gelmek",
                         "note": "Hareket konuşana doğru (Come here)",
+                        "description_tr": "Konuşmacının olduğu yere doğru hareketi ifade eder.",
+                        "example_en": "Can you come here please?",
+                        "example_tr": "Buraya gelebilir misin lütfen?",
                         "strength": "Basit"
                     },
                     {
                         "word": "get to",
                         "value": 5,
                         "turkish": "gitmek/varmak",
-                        "note": "İnformel, süreç içerir (How do I get to...?)",
+                        "note": "Günlük dil, süreç içerir (How do I get to...?)",
+                        "description_tr": "Günlük dilde bir yere ulaşmayı anlatır, genellikle yol tarifi sorarken kullanılır.",
+                        "example_en": "How do I get to the nearest bank?",
+                        "example_tr": "En yakın bankaya nasıl giderim?",
                         "strength": "Konuşma Dili"
                     },
                     {
@@ -2164,13 +3148,19 @@ window.vocabularyData = [
                         "value": 7,
                         "turkish": "varmak",
                         "note": "Anlık bir olay, sonuç odaklı (The plane arrived)",
+                        "description_tr": "Yolculuğun sonunda hedefe ulaşma anını belirtir.",
+                        "example_en": "We arrived just in time.",
+                        "example_tr": "Tam zamanında vardık.",
                         "strength": "Standart"
                     },
                     {
                         "word": "reach",
                         "value": 8,
                         "turkish": "ulaşmak/erişmek",
-                        "note": "Çaba içerir (Reach the summit)",
+                        "note": "Çaba ve zorluk içerir (Reach the summit)",
+                        "description_tr": "Genellikle bir çaba sonucu veya zorlukla bir noktaya erişmeyi ifade eder.",
+                        "example_en": "They finally reached the top of the mountain.",
+                        "example_tr": "Sonunda dağın zirvesine ulaştılar.",
                         "strength": "Güçlü"
                     }
                 ]
@@ -2179,13 +3169,20 @@ window.vocabularyData = [
                 {
                     "word": "depart",
                     "value": 1,
-                    "turkish": "kalkmak/ayrılmak",
-                    "note": "Leave/Depart"
+                    "turkish": "kalkmak/hareket etmek",
+                    "note": "Resmi (uçak/tren için)",
+                    "description_tr": "Bir taşıtın veya kişinin bir yerden resmen ayrılmasıdır.",
+                    "example_en": "The train departs at 09:00.",
+                    "example_tr": "Tren saat 09:00'da kalkar."
                 },
                 {
                     "word": "leave",
-                    "value": 1,
-                    "turkish": "ayrılmak"
+                    "value": 2,
+                    "turkish": "ayrılmak",
+                    "note": "Genel kullanım",
+                    "description_tr": "Bir yerden gitmek, çıkmak anlamında en genel fiildir.",
+                    "example_en": "I have to leave now.",
+                    "example_tr": "Şimdi gitmem (çıkmam) lazım."
                 }
             ]
         },
@@ -2194,19 +3191,77 @@ window.vocabularyData = [
                 {
                     "phrase": "Dead on arrival (DOA)",
                     "meaning_tr": "Hastaneye vardığında ölü / (Mecazi) Başından başarısız, ölü doğmuş fikir",
-                    "register": "medical/slang"
+                    "register": "medical/slang",
+                    "example": "The proposal was dead on arrival.",
+                    "example_tr": "Teklif daha sunulduğu an reddedildi (ölü doğdu)."
                 },
                 {
                     "phrase": "To have arrived",
                     "meaning_tr": "Başarmak, statü sahibi olmak, 'yırtmak'",
-                    "register": "idiomatic"
+                    "register": "idiomatic",
+                    "example": "With her new mansion, she felt she had finally arrived.",
+                    "example_tr": "Yeni malikanesiyle sonunda 'başardığını/olduğunu' hissetti."
                 }
             ],
             "sociolinguistics": {
                 "topic": "Punctuality",
-                "note_en": "In English-speaking cultures, 'arriving on time' usually means arriving 5 minutes early. Arriving late without notice is considered disrespectful.",
-                "note_tr": "Dakiklik kültürü: 'Zamanında varmak' aslında 5 dakika erken gitmektir."
+                "note_en": "In English-speaking cultures (UK/USA/Canada), 'arriving on time' for business usually means arriving 5-10 minutes early. Being exactly on time is barely acceptable, late is rude.",
+                "note_tr": "İngiliz kültüründe iş randevusuna 'zamanında varmak', aslında 5-10 dakika erken gitmektir."
             }
+        },
+        "cultural_context": {
+            "register": {
+                "level": "neutral",
+                "description": "Her seviyede kullanılır."
+            },
+            "inclusive_language": null,
+            "grammar_nuance": {
+                "title": "Home Rule",
+                "content": "'Home' kelimesi yönelme durumunda edat almaz. 'Arrive at home' YANLIŞTIR. Doğrusu: 'Arrive home', 'Go home', 'Come home'."
+            },
+            "business_english": {
+                "title": "ETA",
+                "content": "Lojistik ve iş dünyasında 'ETA' (Estimated Time of Arrival - Tahmini Varış Zamanı) çok sık kullanılır.",
+                "keywords": ["ETA", "ETD (Estimated Time of Departure)"]
+            },
+            "trivia": {
+                "title": "River Connection",
+                "content": "'Arrive' kelimesi 'River' (Nehir) ile aynı kökten gelir (Ad-Ripa: Kıyıya gitmek). Eskiden yolculuklar hep suyla biterdi."
+            }
+        },
+        "exam_strategies": {
+            "frequency": {
+                "yds": 60,
+                "yokdil": 50,
+                "ydt": 70,
+                "description": "Özellikle edat sorularında (arrive AT/IN) çok sık test edilir."
+            },
+            "vocabulary": [
+                {
+                    "title": "Reach vs Arrive",
+                    "content": "Sınavda boşluktan sonra edat (at/in) varsa 'arrive', yoksa 'reach' seçilmelidir. 'Reach to' yanlıştır."
+                },
+                {
+                    "title": "Get to",
+                    "content": "'Get at' (ulaşmak/demeye getirmek) ve 'Get to' (varmak) phrasal verb ayrımlarına dikkat edin."
+                }
+            ],
+            "grammar": [],
+            "reading": [
+                {
+                    "title": "Varış Yanılgısı",
+                    "content": "Psikoloji metinlerinde 'Arrival Fallacy' (bir hedefe varınca sonsuza dek mutlu olma yanılgısı) terimi çıkabilir."
+                }
+            ]
+        },
+        "morphology_tree": {
+            "root": "Ad (to) + Ripa (Shore) -> Arripare",
+            "family_members": [
+                { "word": "arrive", "pos": "v", "level": "A1", "note": "kıyıya çıkmak -> varmak" },
+                { "word": "arrival", "pos": "n", "level": "B1", "suffix": "-al", "note": "varış, geliş" },
+                { "word": "river", "pos": "n", "level": "A1", "note": "nehir (kıyısı olan su)" },
+                { "word": "riparian", "pos": "adj", "level": "C2", "note": "nehir kıyısına ait, kıyısal" }
+            ]
         },
         "pedagogy_engine": {
             "common_errors": [
@@ -2215,6 +3270,12 @@ window.vocabularyData = [
                     "incorrect": "We arrived to the hotel.",
                     "correction": "We arrived at the hotel.",
                     "explanation": "'Arrive' fiili yönelme (movement towards) değil nokta (point) bildirir, bu yüzden 'to' almaz. Küçük yerler için 'at', şehir/ülke için 'in' alır."
+                },
+                {
+                    "error_id": "err_arrive_at_home",
+                    "incorrect": "I arrived at home.",
+                    "correction": "I arrived home.",
+                    "explanation": "'Home' kelimesi burada bir zarftır (yer-yön zarfı), bu yüzden edat almaz."
                 }
             ],
             "exam_prep": {
@@ -2226,7 +3287,7 @@ window.vocabularyData = [
                 "challenge_type": "fill_in_blank",
                 "question": "The plane arrived ____ New York ____ 5 PM.",
                 "answer": "in / at",
-                "explanation": "Şehirler için 'in', saatler için 'at'."
+                "explanation": "Büyük yerler (şehir) için 'in', saatler için 'at'."
             }
         },
         "word_journey": {
@@ -2238,7 +3299,7 @@ window.vocabularyData = [
             "turkish_cognate_hint": {
                 "word": "River / Arrive",
                 "connection_type": "Shared Root",
-                "story": "İngilizcede 'River' (Nehir) kelimesi 'Ripa' (Kıyı) kökünden gelir. 'Arrive' kelimesi de (Ad-Ripa) 'Kıyıya çıkmak' demektir. Eskiden deniz yolculuğu ana ulaşım şekliydi, bir yere 'varmak' demek karaya ayak basmak demekti.",
+                "story": "İngilizcede 'River' (Nehir) kelimesi 'Ripa' (Kıyı) kökünden gelir. 'Arrive' kelimesi de (Ad-Ripa) 'Kıyıya çıkmak' demektir. Eskiden deniz yolculuğu ana ulaşım şekliydi, bir yere 'varmak' aslında karaya ayak basmaktı.",
                 "example": "River (Nehir-Kıyı) -> Arrive (Kıyıya varmak)."
             }
         },
@@ -2381,39 +3442,76 @@ window.vocabularyData = [
         },
         "collocations": {
             "modifiers_adverbs": [
-                { "word": "late / early", "example": "late autumn (sonbahar sonu)" },
-                { "word": "golden", "example": "golden autumn (altın sonbahar - güneşli ve sarı)" },
-                { "word": "crisp", "example": "crisp autumn morning (serin ve taze sonbahar sabahı)" }
+                {
+                    "word": "golden",
+                    "turkish": "altın sarısı",
+                    "strength": "literary",
+                    "example": "We walked through the golden autumn leaves.",
+                    "example_tr": "Altın sarısı sonbahar yapraklarının arasında yürüdük."
+                },
+                {
+                    "word": "crisp",
+                    "turkish": "serin ve taze",
+                    "strength": "common",
+                    "example": "I love the crisp autumn air.",
+                    "example_tr": "Serin ve taze sonbahar havasını severim."
+                },
+                {
+                    "word": "mild",
+                    "turkish": "yumuşak/ılıman",
+                    "strength": "weather",
+                    "example": "It was an unusually mild autumn.",
+                    "example_tr": "Alışılmadık derecede ılıman bir sonbahardı."
+                }
             ],
             "verbs_preceding": [
-                { "word": "arrive", "example": "autumn arrived (sonbahar geldi)" },
-                { "word": "turn into", "example": "turn into autumn (sonbahara dönmek)" }
+                {
+                    "word": "arrive / set in",
+                    "turkish": "gelmek / bastırmak",
+                    "example": "Autumn has finally set in.",
+                    "example_tr": "Sonbahar nihayet bastırdı (tamamen geldi)."
+                },
+                {
+                    "word": "turn",
+                    "turkish": "(yaprakların) rengi dönmek",
+                    "example": "The leaves turn brown in autumn.",
+                    "example_tr": "Sonbaharda yapraklar kahverengiye döner."
+                }
             ]
         },
         "lexical_nuance": {
             "synonym_scale": {
-                "concept": "Third Season",
+                "concept": "The Third Season",
                 "turkishConcept": "Üçüncü Mevsim",
                 "scale": [
                     {
                         "word": "fall",
                         "value": 5,
                         "turkish": "sonbahar (US)",
-                        "note": "Amerikan, daha gündelik ('Fall of the leaf' kısaltması)",
-                        "strength": "Gündelik"
+                        "note": "Amerikan İngilizcesi (Yaprakların düşmesinden: Fall of the leaves)",
+                        "description_tr": "Kuzey Amerika'da sonbahar mevsimi için kullanılan standart terimdir.",
+                        "example_en": "We are going to visit Vermont this fall.",
+                        "example_tr": "Bu sonbaharda Vermont'u ziyaret edeceğiz.",
+                        "strength": "Yaygın (US)"
                     },
                     {
                         "word": "autumn",
                         "value": 7,
                         "turkish": "sonbahar (UK/US)",
-                        "note": "İngiliz (standart), Amerikan (daha şık/resmi)",
-                        "strength": "Standart/Şık"
+                        "note": "İngiliz (Standart), Amerikan (Daha resmi/şiirsel)",
+                        "description_tr": "İngiltere'de standart, Amerika'da ise daha resmi veya edebi kullanılan terimdir.",
+                        "example_en": "Autumn days are getting shorter.",
+                        "example_tr": "Sonbahar günleri kısalıyor.",
+                        "strength": "Standart"
                     },
                     {
                         "word": "harvest",
-                        "value": 8,
+                        "value": 9,
                         "turkish": "hasat zamanı",
-                        "note": "Eskiden mevsimin adı 'Harvest' idi (Old English)",
+                        "note": "Eski İngilizcede mevsimin asıl adıydı (Harvest). Şimdi sadece tarımsal dönem.",
+                        "description_tr": "Tarımsal ürünlerin toplandığı dönemdir, eskiden mevsim adıydı.",
+                        "example_en": "The harvest festival is next week.",
+                        "example_tr": "Hasat festivali haftaya.",
                         "strength": "Tarihi/Kırsal"
                     }
                 ]
@@ -2423,28 +3521,85 @@ window.vocabularyData = [
                     "word": "spring",
                     "value": 1,
                     "turkish": "ilkbahar",
-                    "note": "Doğanın uyanışı vs uykuya dalışı"
+                    "note": "Doğanın uyanışı (Spring) vs Doğanın uykuya dalışı (Autumn)",
+                    "description_tr": "Kıştan sonra gelen, doğanın canlandığı mevsimdir.",
+                    "example_en": "I prefer spring to autumn.",
+                    "example_tr": "İlkbaharı sonbahara tercih ederim."
                 }
             ]
         },
         "pragmatics": {
             "idioms_and_phrases": [
                 {
-                    "phrase": "autumn years",
-                    "meaning_tr": "yaşlılık yılları, ömrün sonbaharı",
-                    "register": "polite/literary"
+                    "phrase": "Autumn years",
+                    "meaning_tr": "ömrün sonbaharı (yaşlılık dönemi)",
+                    "register": "polite/literary",
+                    "example": "He spent his autumn years gardening.",
+                    "example_tr": "Ömrünün sonbaharını bahçe işleriyle geçirdi."
                 },
                 {
                     "phrase": "Indian summer",
                     "meaning_tr": "pastırma yazı (sonbaharda aniden ısınan hava)",
-                    "register": "idiomatic"
+                    "register": "idiomatic",
+                    "example": "We had a lovely Indian summer this year.",
+                    "example_tr": "Bu yıl harika bir pastırma yazı yaşadık."
                 }
             ],
             "sociolinguistics": {
-                "topic": "Seasonal Affective Disorder (SAD)",
-                "note_en": "In autumn, as days get shorter, some people experience low mood. This cultural/medical phenomenon is often linked to the 'autumn blues'.",
-                "note_tr": "Sonbaharda günlerin kısalmasıyla gelen melankoli veya depresyon hali."
+                "topic": "Back to School",
+                "note_en": "Culturally, autumn is associated with 'new beginnings' as much as January, because the academic year starts in September.",
+                "note_tr": "Kültürel olarak sonbahar, en az Ocak ayı kadar 'yeni başlangıçlar' demektir çünkü okul dönemi başlar."
             }
+        },
+        "cultural_context": {
+            "register": {
+                "level": "neutral",
+                "description": "Günlük ve edebi dilde kullanılır."
+            },
+            "inclusive_language": null,
+            "grammar_nuance": {
+                "title": "Capitalization",
+                "content": "Mevsim isimleri (spring, summer, autumn, winter) İngilizcede özel isim değildir, cümle başında değilse küçük harfle yazılır."
+            },
+            "business_english": null,
+            "trivia": {
+                "title": "Fall Back",
+                "content": "Saatlerin geri alınmasını hatırlamak için: 'Spring forward, Fall back' (Baharda ileri, Güzün geri) tekerlemesi kullanılır."
+            }
+        },
+        "exam_strategies": {
+            "frequency": {
+                "yds": 40,
+                "yokdil": 45,
+                "ydt": 50,
+                "description": "Mevsimler genelde okuma parçalarında zaman zarfı olarak geçer."
+            },
+            "vocabulary": [
+                {
+                    "title": "Foliage",
+                    "content": "'Foliage' (yaprak örtüsü), sonbahar manzaralarını anlatırken sık kullanılan ileri seviye bir kelimedir."
+                },
+                {
+                    "title": "Equinox",
+                    "content": "'Autumnal Equinox' (Güz Ekinoksu - 23 Eylül) fen bilimleri metinlerinde çıkabilir."
+                }
+            ],
+            "grammar": [],
+            "reading": [
+                {
+                    "title": "Metaforik Anlam",
+                    "content": "Edebi metinlerde 'autumn', bir medeniyetin veya kişinin çöküş/olgunluk dönemini (decline/maturity) simgeler."
+                }
+            ]
+        },
+        "morphology_tree": {
+            "root": "Autumnus (Latin)",
+            "family_members": [
+                { "word": "autumn", "pos": "n", "level": "A1", "note": "sonbahar" },
+                { "word": "autumnal", "pos": "adj", "level": "C1", "note": "sonbahara ait, hazin" },
+                { "word": "fall", "pos": "n", "level": "A1", "note": "sonbahar (US - yaprakların düşmesinden)" },
+                { "word": "harvest", "pos": "n", "level": "B1", "note": "hasat (ürün toplama)" }
+            ]
         },
         "pedagogy_engine": {
             "common_errors": [
@@ -2480,10 +3635,10 @@ window.vocabularyData = [
                 { "era": "16th Century", "word": "Fall", "meaning": "short for 'fall of the leaf' (became US standard)" }
             ],
             "turkish_cognate_hint": {
-                "word": "Hasat? (Hayır) / Ot (Belki)",
-                "connection_type": "False Friend / None",
-                "story": "Autumn kelimesinin kökeni belirsizdir ama Türkçedeki 'Güz' kelimesi kadar melankoliktir. İngilizcedeki 'Fall' (Düşmek) kelimesini hatırlamak kolaydır: Yapraklar DÜŞÜYOR. Autumn içindeki 'n' harfinin okunmaması (Silent N), 'Hymn' (İlahi) veya 'Column' (Kolon) kelimelerindeki gibidir.",
-                "example": "Column -> Autumn (Sessiz N kardeşliği)."
+                "word": "Column / Autumn",
+                "connection_type": "Silent N Pattern",
+                "story": "Autumn kelimesinin kökeni belirsizdir ama sonundaki 'N' harfinin okunmaması, 'Column' (Kolon), 'Damn' (Lanet) veya 'Hymn' (İlahi) kelimeleriyle aynı kuraldır. Telaffuz ederken sondaki 'n' harfini yutun.",
+                "example": "Column (Kolın) -> Autumn (O-tım)."
             }
         },
         "stories": {
@@ -2496,20 +3651,20 @@ window.vocabularyData = [
                 "en": "Schools open in <strong>autumn</strong>. Summer vacation ends. I buy new notebooks and pencils. September, October, and November are the <strong>autumn</strong> months. Birds fly to warm countries. We drink hot chocolate at home."
             },
             "B1": {
-                "tr": "Çiftçiler için <strong>sonbahar</strong> çok meşgul bir zamandır. Buna 'hasat zamanı' derler. Elmalar ve kabaklar toplanmaya hazırdır. Cadılar Bayramı (Halloween) <strong>sonbahar</strong>da kutlanır. İnsanlar evlerini turuncu balkabakları ile süslerler. Doğa uyumaya hazırlanır.",
-                "en": "For farmers, <strong>autumn</strong> is a very busy time. They call it 'harvest time'. Apples and pumpkins are ready to be picked. Halloween is celebrated in <strong>autumn</strong>. People decorate their houses with orange pumpkins. Nature prepares to sleep."
+                "tr": "Çiftçiler için <strong>sonbahar</strong> çok meşgul bir zamandır. Buna 'hasat zamanı' derler. Elmalar ve kabaklar toplanmaya hazırdır. Cadılar Bayramı (Halloween) <strong>sonbahar</strong>da kutlanır. İnsanlar evlerini turuncu balkabakları ile süslerler. Doğa kış uykusuna hazırlanır.",
+                "en": "For farmers, <strong>autumn</strong> is a very busy time. They call it 'harvest time'. Apples and pumpkins are ready to be picked. Halloween is celebrated in <strong>autumn</strong>. People decorate their houses with orange pumpkins. Nature prepares for winter sleep."
             },
             "B2": {
-                "tr": "İngiltere'de 'Winter is coming' (Kış geliyor) hissi <strong>sonbahar</strong>da başlar. Amerikalılar buna 'Fall' der çünkü yapraklar ağaçlardan düşer (fall). İki kelime de doğrudur. Bence <strong>sonbahar</strong> en romantik mevsimdir. Hava ne çok sıcak ne de çok soğuktur, tam kitap okuma havasıdır.",
-                "en": "In England, the feeling that 'Winter is coming' starts in <strong>autumn</strong>. Americans call it 'Fall' because leaves fall from the trees. Both words are correct. I think <strong>autumn</strong> is the most romantic season. The weather is neither too hot nor too cold, it is perfect weather for reading books."
+                "tr": "İngiltere'de insanlar genelde 'Autumn' der. Amerikalılar ise 'Fall' kelimesini tercih eder çünkü bu mevsimde yapraklar ağaçlardan düşer (fall). İki kelime de doğrudur. Bence <strong>sonbahar</strong> en romantik mevsimdir. Hava ne çok sıcak ne de çok soğuktur; dışarıda 'gevrek' (crisp) bir hava vardır, tam yürüyüş havasıdır.",
+                "en": "In England, people usually say 'Autumn'. Americans prefer the word 'Fall' because leaves fall from the trees in this season. Both words are correct. I think <strong>autumn</strong> is the most romantic season. The weather is neither too hot nor too cold; there is a 'crisp' air outside, perfect for walking."
             },
             "C1": {
-                "tr": "Bazen Kasım ayında hava aniden ısınır; güneş parlar ve sanki yaz geri gelmiş gibi hissedersiniz. Buna 'Pastırma Yazı' (Indian Summer) denir. Bu, kışın acı soğuğundan önceki son hediyedir. <strong>Sonbahar</strong>ın bu geçici sıcaklığı, doğanın bize sunduğu tatlı bir aldatmacadır.",
-                "en": "Sometimes in November, the weather suddenly warms up; the sun shines and you feel as if summer has returned. This is called 'Indian Summer'. This is the last gift before the bitter cold of winter. This transient warmth of <strong>autumn</strong> is a sweet deception nature offers us."
+                "tr": "Bazen Kasım ayında hava aniden ısınır; güneş parlar ve sanki yaz geri gelmiş gibi hissedersiniz. Buna 'Pastırma Yazı' (Indian Summer) denir. Bu, kışın acı soğuğundan önceki son hediyedir. <strong>Sonbahar</strong>ın bu geçici sıcaklığı, doğanın bize sunduğu tatlı bir aldatmacadır. Ağaçların 'yaprak örtüsü' (foliage) en canlı renklerine bu dönemde ulaşır.",
+                "en": "Sometimes in November, the weather suddenly warms up; the sun shines and you feel as if summer has returned. This is called 'Indian Summer'. This is the last gift before the bitter cold of winter. This transient warmth of <strong>autumn</strong> is a sweet deception nature offers us. The 'foliage' of the trees reaches its most vibrant colors during this period."
             },
             "C2": {
                 "tr": "Edebiyatta <strong>sonbahar</strong>, genellikle melankoli ve olgunluk metaforu olarak kullanılır. John Keats, ünlü şiirinde onu 'sisler ve meyve dolu bereket mevsimi' olarak tanımlar. Gençliğin baharı bitmiştir, ama kışın ölümü henüz gelmemiştir. Bu, hayatın 'altın çağı'dır; tecrübenin hasat edildiği, dingin bir kabul dönemidir.",
-                "en": "In literature, <strong>autumn</strong> is often used as a metaphor for melancholy and maturity. John Keats, in his famous ode, defines it as the 'season of mists and mellow fruitfulness'. Due spring of youth is over, but the death of winter has not yet arrived. This is the 'golden age' of life; a period of serene acceptance where experience is harvested."
+                "en": "In literature, <strong>autumn</strong> is often used as a metaphor for melancholy and maturity. John Keats, in his famous ode, defines it as the 'season of mists and mellow fruitfulness'. The spring of youth is over, but the death of winter has not yet arrived. This is the 'golden age' of life; a period of serene acceptance where experience is harvested."
             }
         }
     }

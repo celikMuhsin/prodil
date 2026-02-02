@@ -136,8 +136,8 @@ class VocabCard {
                 scaleHtml = `
                 <div class="nuance-group theme-green">
                     <div class="nuance-header" style="justify-content: space-between; align-items: center; display: flex;">
-                        <span><i class="fa-solid fa-check"></i> EŞ ANLAM</span>
-                        <span style="font-size:0.75rem; color:#718096; font-weight:normal;">${nuance.synonym_scale.turkishConcept || ''}</span>
+                        <span><i class="fa-solid fa-check" style="margin-right: 8px;"></i> EŞ ANLAM</span>
+                        <span style="font-size:0.75rem; color:#718096; font-weight:normal; margin-right: 12px;">${nuance.synonym_scale.turkishConcept || ''}</span>
                     </div>
                     <div class="nuance-scale">
                         ${nuance.synonym_scale.scale.map(s => {
@@ -146,14 +146,17 @@ class VocabCard {
                             <div class="scale-item" style="display:flex; flex-direction: column; align-items: flex-start; gap: 4px;">
                                 <div style="display:flex; justify-content:space-between; align-items:center; width:100%">
                                     <span><strong style="color: #1a202c; font-size: 1.1rem;">${s.word}</strong> <span style="font-size:0.8em; font-weight:normal; color: #4a5568;">(${s.turkish || ''})</span></span>
-                                    <div style="display:flex; align-items:center; gap:6px;">
+                                    <div style="display:flex; align-items:center; gap:1px;">
                                         <div style="width:50px; height:8px; background:#e2e8f0; border-radius:4px; overflow:hidden;">
                                             <div style="width:${percent}%; height:100%; background:#38a169; border-radius:4px;"></div>
                                         </div>
                                         <span style="font-size:0.85em; font-weight:bold; color:#2d3748; min-width:30px; text-align:right;">%${percent}</span>
                                     </div>
                                 </div>
-                                <div style="font-size:0.75em; font-style:italic; color:#2d3748;">${s.usage || s.note || ''}</div>
+                                <div style="font-size:0.85em; color:#4a5568; margin-top:2px;">
+                                    ${s.description_tr ? `${s.description_tr}` : (s.usage ? `${s.usage}` : '')}
+                                    ${s.example_en ? ` "${s.example_en}" ${s.example_tr ? `(${s.example_tr})` : ''}` : ''}
+                                </div>
                             </div>
                         `;
                 }).join('')}
@@ -178,14 +181,17 @@ class VocabCard {
                                     <span class="antonym-word" style="color: #c53030; font-weight: 700; font-size: 1.1rem;">${a.word}</span>
                                     <span style="font-size:0.8em; font-weight:normal; color: #4a5568;">(${a.turkish || ''})</span>
                                 </span>
-                                <div style="display:flex; align-items:center; gap:6px;">
+                                <div style="display:flex; align-items:center; gap:1px;">
                                     <div style="width:50px; height:8px; background:#e2e8f0; border-radius:4px; overflow:hidden;">
                                         <div style="width:${100 - percent}%; height:100%; background:#e53e3e; border-radius:4px;"></div>
                                     </div>
                                     <span style="font-size:0.85em; font-weight:bold; color:#2d3748; min-width:30px; text-align:right;">%${percent}</span>
                                 </div>
                             </div>
-                            ${a.note ? `<div class="antonym-note" style="color:#718096; font-style:italic; font-size: 0.75em; margin-top:2px;">${a.note}</div>` : ''}
+                            <div style="font-size:0.85em; color:#4a5568; margin-top:2px;">
+                                ${a.description_tr ? `${a.description_tr}` : (a.note ? `${a.note}` : '')}
+                                ${a.example_en ? ` "${a.example_en}" ${a.example_tr ? `(${a.example_tr})` : ''}` : ''}
+                            </div>
                             ${a.warning ? `<div class="antonym-warning" style="color:#e53e3e; font-weight:bold; font-size: 0.7em;">⚠️ ${a.warning}</div>` : ''}
                         </div>
                     `;
@@ -201,7 +207,7 @@ class VocabCard {
                 antonymsHtml = `
                     <div class="nuance-group theme-red">
                         <div class="nuance-header">
-                            <i class="fa-solid fa-xmark"></i> ZIT ANLAM
+                            <i class="fa-solid fa-xmark" style="margin-right: 4px;"></i> ZIT ANLAM
                         </div>
                         <div class="antonym-list">
                             ${antonymItems}
@@ -354,8 +360,12 @@ class VocabCard {
                                     <h4 class="collo-header">Nasıl Kullanılır? (Zarflar)</h4>
                                     ${mods.map(m => `
                                         <div class="collo-item">
-                                            <span class="collo-word">${m.word}</span>
-                                            <span class="collo-example">"${m.example}"</span>
+                                            <span class="collo-word">
+                                                ${m.word} 
+                                                ${m.turkish ? `<span style="font-size:0.8em; font-weight:normal; color:#718096; margin-left:4px;">(${m.turkish})</span>` : ''}
+                                            </span>
+                                            <span class="collo-example">${m.example}</span>
+                                            ${m.example_tr ? `<div style="font-size:0.85em; color:#718096; margin-top:2px; font-style:italic;">${m.example_tr}</div>` : ''}
                                         </div>
                                     `).join('')}
                                 </div>
@@ -365,8 +375,12 @@ class VocabCard {
                                     <h4 class="collo-header">Hangi Fiillerle?</h4>
                                     ${verbs.map(v => `
                                         <div class="collo-item">
-                                            <span class="collo-word">${v.word}</span>
-                                            <span class="collo-example">"${v.example}"</span>
+                                            <span class="collo-word">
+                                                ${v.word}
+                                                 ${v.turkish ? `<span style="font-size:0.8em; font-weight:normal; color:#718096; margin-left:4px;">(${v.turkish})</span>` : ''}
+                                            </span>
+                                            <span class="collo-example">${v.example}</span>
+                                            ${v.example_tr ? `<div style="font-size:0.85em; color:#718096; margin-top:2px; font-style:italic;">${v.example_tr}</div>` : ''}
                                         </div>
                                     `).join('')}
                                 </div>
@@ -385,24 +399,173 @@ class VocabCard {
                     <h3 class="section-title">Deyimler & İfadeler</h3>
                     <div class="idiom-list">
                         ${item.pragmatics.idioms_and_phrases.map(idm => `
-                            <div class="idiom-card">
-                                <div class="idiom-phrase">${idm.phrase}</div>
-                                <div class="idiom-meaning">${idm.meaning_tr}</div>
+                            <div class="idiom-card" style="display: flex; flex-direction: column; gap: 4px;">
+                                <div class="idiom-phrase">
+                                    ${idm.phrase}
+                                    <span style="font-size:0.8em; font-weight:normal; color:#718096; margin-left:4px;">(${idm.meaning_tr})</span>
+                                </div>
+                                ${idm.example ? `<div style="font-size:0.8rem; color:#718096;">${idm.example}</div>` : ''}
+                                ${idm.example_tr ? `<div style="font-size:0.85em; color:#718096; font-style:italic;">${idm.example_tr}</div>` : ''}
                             </div>
                         `).join('')}
                     </div>
-                    ${item.pragmatics.sociolinguistics ? `
-                        <div class="note-box">
-                            <strong>💡 Sosyo-Kültürel Not:</strong> ${item.pragmatics.sociolinguistics.note_tr}
-                        </div>
-                    `: ''}
                 </div>
              `;
             pragmaticsHtml = wrapSection('sec-idioms', 'Deyimler', content);
         }
 
+        let cultureHtml = '';
+        if (item.cultural_context) {
+            const ctx = item.cultural_context;
+            const content = `
+                <div class="study-block">
+                    <h3 class="section-title">Sosyo - Kültürel</h3>
+                    <div class="culture-grid">
+                        ${ctx.register ? `
+                            <div class="context-card register-card">
+                                <div class="card-content">
+                                    <h4 class="context-title">
+                                        <span class="inline-icon" style="color:#3182ce;">🗣️</span> 
+                                        Kullanım Tonu (Register)
+                                        <div class="reg-level ${ctx.register.level}" style="margin-left:auto;">${ctx.register.level.toUpperCase()}</div>
+                                    </h4>
+                                    <div class="register-bar">
+                                        <span class="reg-desc">${ctx.register.description}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ` : ''}
 
+                        ${ctx.inclusive_language ? `
+                            <div class="context-card inclusive-card">
+                                <div class="card-content">
+                                    <h4 class="context-title">
+                                        <span class="inline-icon">⚠️</span> 
+                                        ${ctx.inclusive_language.title}
+                                    </h4>
+                                    <p>${ctx.inclusive_language.content}</p>
+                                </div>
+                            </div>
+                        ` : ''}
 
+                        ${ctx.grammar_nuance ? `
+                            <div class="context-card nuance-card">
+                                <div class="card-content">
+                                    <h4 class="context-title">
+                                        <span class="inline-icon">⚖️</span> 
+                                        ${ctx.grammar_nuance.title}
+                                    </h4>
+                                    <p>${ctx.grammar_nuance.content}</p>
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        ${ctx.business_english ? `
+                            <div class="context-card business-card">
+                                <div class="card-content">
+                                    <h4 class="context-title">
+                                        <span class="inline-icon">💼</span> 
+                                        ${ctx.business_english.title}
+                                    </h4>
+                                    <p>${ctx.business_english.content}</p>
+                                    ${ctx.business_english.keywords ? `
+                                        <div class="keyword-tags">
+                                            ${ctx.business_english.keywords.map(k => `<span>${k}</span>`).join('')}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        ${ctx.trivia ? `
+                            <div class="context-card trivia-card">
+                                <div class="card-content">
+                                    <h4 class="context-title">
+                                        <span class="inline-icon">💡</span> 
+                                        ${ctx.trivia.title}
+                                    </h4>
+                                    <p>${ctx.trivia.content}</p>
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+            cultureHtml = wrapSection('sec-culture', 'Sosyo - Kültürel', content);
+        }
+
+        let examHtml = '';
+        if (item.exam_strategies) {
+            const ex = item.exam_strategies;
+            const content = `
+                <div class="study-block">
+                    <h3 class="section-title">ÖSYM Stratejileri</h3>
+                    
+                    ${ex.frequency ? `
+                        <div class="exam-dashboard">
+                            <h4 class="dashboard-title">Sınavda Karşılaşma Olasılığı</h4>
+                            <div class="all-meters">
+                                <div class="meter-group">
+                                    <span class="exam-name">YDS</span>
+                                    <div class="progress-bg"><div class="progress-fill" style="width:${ex.frequency.yds}%"></div></div>
+                                    <span class="exam-score">%${ex.frequency.yds}</span>
+                                </div>
+                                <div class="meter-group">
+                                    <span class="exam-name">YÖKDİL</span>
+                                    <div class="progress-bg"><div class="progress-fill" style="width:${ex.frequency.yokdil}%"></div></div>
+                                    <span class="exam-score">%${ex.frequency.yokdil}</span>
+                                </div>
+                                <div class="meter-group">
+                                    <span class="exam-name">YDT</span>
+                                    <div class="progress-bg"><div class="progress-fill" style="width:${ex.frequency.ydt}%"></div></div>
+                                    <span class="exam-score">%${ex.frequency.ydt}</span>
+                                </div>
+                            </div>
+                            <div class="dashboard-desc">${ex.frequency.description}</div>
+                        </div>
+                    ` : ''}
+
+                    <div class="exam-grid">
+                        ${ex.vocabulary ? `
+                            <div class="exam-category">
+                                <h4 class="category-header"><span class="cat-icon">🧠</span> Kelime Bilgisi</h4>
+                                ${ex.vocabulary.map(strat => `
+                                    <div class="exam-card vocab-strat">
+                                        <div class="strat-title">${strat.title}</div>
+                                        <div class="strat-content">${strat.content}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+
+                        ${ex.grammar ? `
+                            <div class="exam-category">
+                                <h4 class="category-header"><span class="cat-icon">🛑</span> Gramer Tuzakları</h4>
+                                ${ex.grammar.map(strat => `
+                                    <div class="exam-card grammar-strat">
+                                        <div class="strat-title">${strat.title}</div>
+                                        <div class="strat-content">${strat.content}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+
+                        ${ex.reading ? `
+                            <div class="exam-category">
+                                <h4 class="category-header"><span class="cat-icon">📖</span> Okuma & Çeviri</h4>
+                                ${ex.reading.map(strat => `
+                                    <div class="exam-card reading-strat">
+                                        <div class="strat-title">${strat.title}</div>
+                                        <div class="strat-content">${strat.content}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+            examHtml = wrapSection('sec-exam', 'ÖSYM Stratejileri', content);
+        }
 
 
         let hintHtml = '';
@@ -483,6 +646,32 @@ class VocabCard {
 
         const rawIpa = phonetics.ipa_us || '';
         const cleanIpa = rawIpa.replace(/\//g, '');
+
+        // --- SECTION ORDERING LOGIC ---
+        const preferredOrder = [
+            'sec-definitions',
+            'sec-nuance',
+            'sec-derivatives',
+            'sec-exam',
+            'sec-collocations',
+            'sec-idioms',
+            'sec-grammar',
+            'sec-progression',
+            'sec-errors',     // Sık Hatalar
+            'sec-history',    // Köken & Tarihçe
+            'sec-hint',       // Türkçe İpucu
+            'sec-culture',    // Sosyo - Kültürel
+            'sec-stories-main'
+        ];
+
+        availableSections.sort((a, b) => {
+            const indexA = preferredOrder.indexOf(a.id);
+            const indexB = preferredOrder.indexOf(b.id);
+            // Items not in list go to end
+            const safeIndexA = indexA === -1 ? 999 : indexA;
+            const safeIndexB = indexB === -1 ? 999 : indexB;
+            return safeIndexA - safeIndexB;
+        });
 
         const dropdownItemsHtml = availableSections.map(s => `
             <div class="dropdown-item" data-section="${s.id}">
@@ -575,12 +764,14 @@ class VocabCard {
                         </div>
                         ${nuanceHtml}
                         ${derivativesHtml}
+                        ${examHtml}
+                        ${collocationsHtml}
+                        ${pragmaticsHtml}
                         ${grammarHtml}
                         ${progressionHtml}
                         ${pedagogyHtml}
                         ${combinedHistoryHtml}
-                        ${collocationsHtml}
-                        ${pragmaticsHtml}
+                        ${cultureHtml}
                         ${storiesHtml}
                     </div>
                 </div>
