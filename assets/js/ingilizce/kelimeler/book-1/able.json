@@ -1,0 +1,438 @@
+{
+    "id": "able",
+    "meta": {
+        "cefr_level": "A2",
+        "frequency_band": "High Frequency",
+        "part_of_speech": [
+            "adjective"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/ˈeɪ.bəl/",
+        "syllabification": [
+            "a",
+            "ble"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "having the ability, power, or skill to do something",
+            "core_meaning_tr": "bir şeyi yapabilen, muktedir, gücü yeten",
+            "context_tags": [
+                "general",
+                "capability"
+            ],
+            "grammar_pattern": "be able to + infinitive",
+            "example": {
+                "sentence": "Will you be able to come to the meeting?",
+                "translation": "Toplantıya gelebilecek misin?"
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "clever, skillful, and capable",
+            "core_meaning_tr": "yetenekli, becerikli, zeki",
+            "context_tags": [
+                "formal",
+                "academic"
+            ],
+            "grammar_pattern": "attributive adjective (before noun)",
+            "example": {
+                "sentence": "She is one of the most able students in the class.",
+                "translation": "Sınıftaki en yetenekli öğrencilerden biridir."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "be able to + V1",
+                "usage_level": "Core",
+                "notes_tr": "Tüm zamanlarda (Tenses) çekimlenebilir (is able to, was able to, will be able to)."
+            },
+            {
+                "pattern": "seem/feel + able to + V1",
+                "usage_level": "Advanced",
+                "notes_tr": "Genellikle his veya görünüş bildiren fiillerle kullanılır."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Can modal'ının eksik olduğu zamanlar (Future, Perfect Tenses) için zorunludur.",
+            "critical_comparison": {
+                "context": "Past Specific Achievement",
+                "rule": "Geçmişte zor bir durumda 'başarma' anlamı varsa 'could' yerine 'was/were able to' tercih edilir.",
+                "example_wrong": "The fire spread quickly, but everyone could escape. (Yanlış)",
+                "example_right": "The fire spread quickly, but everyone was able to escape. (Doğru)"
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Kelimenin seviyelere göre kullanım karmaşıklığı",
+        "levels": [
+            {
+                "cefr": "A2",
+                "en": "He is able to read English very well.",
+                "tr": "O, İngilizceyi çok iyi okuyabilir.",
+                "grammar_focus": "Present Tense / General Ability"
+            },
+            {
+                "cefr": "B1",
+                "en": "After fixing the engine, we were able to continue our journey.",
+                "tr": "Motoru tamir ettikten sonra yolculuğumuza devam edebildik.",
+                "grammar_focus": "Past Tense / Specific Achievement"
+            },
+            {
+                "cefr": "B2",
+                "en": "With this new funding, the company will be able to expand into new markets.",
+                "tr": "Bu yeni fonla birlikte şirket yeni pazarlara açılabilecek.",
+                "grammar_focus": "Future Tense / Possibility"
+            },
+            {
+                "cefr": "C1",
+                "en": "Being able to adapt to changing circumstances is a vital skill.",
+                "tr": "Değişen koşullara uyum sağlayabilmek hayati bir beceridir.",
+                "grammar_focus": "Gerund Form (Subject position)"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "tamamen, fazlasıyla",
+                "strength": "strong",
+                "example": "I am perfectly able to look after myself.",
+                "example_tr": "Kendime bakabilecek durumdayım."
+            },
+            {
+                "turkish": "ancak, güçbela",
+                "strength": "weak",
+                "example": "He was barely able to stand.",
+                "example_tr": "Ayakta zor durabiliyordu."
+            },
+            {
+                "turkish": "fiziksel olarak",
+                "strength": "neutral",
+                "example": "Is he physically able to travel?",
+                "example_tr": "Seyahat edebilecek fiziksel güce sahip mi?"
+            },
+            {
+                "turkish": "maddi açıdan",
+                "strength": "neutral",
+                "example": "We are not financially able to buy a house.",
+                "example_tr": "Bir ev alacak maddi gücümüz yok."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "görünmek",
+                "example": "They seem able to cope.",
+                "example_tr": "Başa çıkabiliyor gibi görünüyorlar."
+            },
+            {
+                "turkish": "hissetmek",
+                "example": "I don't feel able to drive right now.",
+                "example_tr": "Şu an araba kullanabilecek gibi hissetmiyorum."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Capability Intensity",
+            "turkishConcept": "Yetenek Yoğunluğu",
+            "description": "Yeterlilik bildiren kelimelerin güç sıralaması",
+            "scale": [
+                {
+                    "value": 3,
+                    "turkish": "yapabilmek",
+                    "note": "En temel, gündelik",
+                    "usage": "Günlük konuşma: 'I can swim.'",
+                    "description_tr": "Günlük konuşma dilinde, en temel yetenek ifadesidir.",
+                    "example_en": "I can swim very fast.",
+                    "example_tr": "Çok hızlı yüzebilirim.",
+                    "example": "I can speak basic English.",
+                    "strength": "Düşük"
+                },
+                {
+                    "value": 6,
+                    "turkish": "muktedir, yapabilen",
+                    "note": "Daha resmi, eylem odaklı",
+                    "usage": "İş/akademik: 'She is able to lead the team.'",
+                    "description_tr": "Daha resmi, bir işi yapmaya gücü yetme veya muktedir olma durumudur.",
+                    "example_en": "She is able to lead the team to success.",
+                    "example_tr": "Ekibi başarıya götürebilecek yetkinliktedir.",
+                    "example": "He is able to solve complex problems.",
+                    "strength": "Orta"
+                },
+                {
+                    "value": 8,
+                    "turkish": "yetenekli, kapasiteli",
+                    "note": "Potansiyel ve kapasite vurgusu",
+                    "usage": "Potansiyel: 'He's capable of great things.'",
+                    "description_tr": "Potansiyel, kapasite ve doğal yetenek vurgusu taşır.",
+                    "example_en": "He's capable of achieving great things.",
+                    "example_tr": "Harika şeyler başarabilecek kapasitededir.",
+                    "example": "She is capable of learning quickly.",
+                    "strength": "Yüksek"
+                },
+                {
+                    "value": 10,
+                    "turkish": "ustalık derecesinde, yetkin",
+                    "note": "Uzmanlık derecesinde yetkinlik",
+                    "usage": "Teknik/uzmanlık: 'She is proficient in Python.'",
+                    "description_tr": "Bir konuda uzmanlık, ustalık ve ileri düzey beceri belirtir.",
+                    "example_en": "She is proficient in three languages.",
+                    "example_tr": "Üç dilde uzmanlık derecesinde yetkindir.",
+                    "example": "He is proficient in three languages.",
+                    "strength": "En Üst"
+                }
+            ]
+        },
+        "antonyms": [
+            {
+                "value": 2,
+                "turkish": "yapamaz, aciz",
+                "note": "Geçici veya durumsal yapamama",
+                "description_tr": "Genellikle geçici veya o ana özgü yapamama durumunu anlatır.",
+                "example_en": "I am unable to attend the meeting today.",
+                "example_tr": "Bugün toplantıya katılamıyorum.",
+                "example": "I'm unable to attend the meeting."
+            },
+            {
+                "value": 1,
+                "turkish": "yetersiz, yeteneksiz",
+                "note": "Kalıcı veya yapısal yetersizlik",
+                "description_tr": "Kalıcı yetersizlik veya bir şeyi yapacak yapıda (kapasitede) olmama durumudur.",
+                "example_en": "He is incapable of hurting a fly.",
+                "example_tr": "O, bir karıncayı bile incitebilecek yapıda değildir.",
+                "example": "He's incapable of understanding the problem."
+            },
+            {
+                "value": 0,
+                "turkish": "beceriksiz, acemi",
+                "note": "Beceriksiz, sakar, tamamen uyumsuz",
+                "description_tr": "Beceriksiz, sakar veya işe yatkın olmayan demektir.",
+                "example_en": "His inept handling of the situation caused problems.",
+                "example_tr": "Durumu beceriksizce yönetmesi sorunlara yol açtı.",
+                "example": "His inept handling made things worse.",
+                "warning": "Hakaret içerebilir, dikkatli kullanın!"
+            }
+        ]
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "ready, willing, and able",
+                "meaning_tr": "dünden razı, her şeye hazır ve nazır",
+                "register": "cliché/idiomatic",
+                "example": "I am ready, willing, and able to work.",
+                "example_tr": "Çalışmaya dünden razıyım."
+            },
+            {
+                "phrase": "able-bodied",
+                "meaning_tr": "eli ayağı tutan, fiziksel engeli olmayan",
+                "register": "neutral",
+                "example": "Every able-bodied man was called to fight.",
+                "example_tr": "Eli ayağı tutan her erkek savaşmaya çağrıldı."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Inclusive Language",
+            "note_en": "In modern contexts, be mindful of ableist language. 'Disabled' is generally preferred over euphemisms like 'differently abled' by the community.",
+            "note_tr": "Modern İngilizcede engellilik bağlamında dil kullanımına dikkat edilmelidir."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "formal",
+            "description": "Günlük konuşmada genellikle 'can' tercih edilirken, 'able' daha çok yazılı, resmi veya akademik dilde yetkinliği vurgulamak için kullanılır."
+        },
+        "inclusive_language": {
+            "title": "Kapsayıcı Dil (Inclusive Language)",
+            "content": "Modern İngilizcede 'disabled' (engelli) kelimesi yerine bazen 'differently abled' gibi terimler tartışılsa da, 'able-bodied' (fiziksel engeli olmayan) terimi hukuki ve tıbbi metinlerde hala yaygındır ancak günlük dilde dikkatli kullanılmalıdır."
+        },
+        "grammar_nuance": {
+            "title": "Able vs Capable Farkı",
+            "content": "'Able' genellikle o anki, geçici bir yapabilme durumunu (örn: toplantıya gelebilmek) anlatırken; 'Capable' daha kalıcı, potansiyel bir yeteneği (örn: cinayet işleyebilecek kapasitede olmak) ifade eder."
+        },
+        "business_english": {
+            "title": "İş Dünyası & CV",
+            "content": "İş ilanlarında 'able to work under pressure' (baskı altında çalışabilen) veya 'problem-solving ability' kalıpları çok sık geçer. Bu kelime profesyonel yetkinlik (competence) sinyali verir.",
+            "keywords": [
+                "able to work under pressure",
+                "problem-solving ability"
+            ]
+        },
+        "trivia": {
+            "title": "Biliyor muydunuz?",
+            "content": "'Ready, willing, and able' kalıbı Amerikan hukuk dilinden günlük dile yerleşmiş, bir şeyi yapmaya hem hazır hem istekli hem de muktedir olmayı anlatan meşhur bir üçlemedir."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 85,
+            "yokdil": 90,
+            "ydt": 70,
+            "description": "ÖSYM havuzunda en sık geçen ilk 500 kelime arasındadır."
+        },
+        "vocabulary": [
+            {
+                "title": "Edat Farkı (Prepositions)",
+                "content": "Sınavlarda 'able <b>TO</b> do' ile 'capable <b>OF</b> doing' ayrımı sıkça sorulur. Boşluktan sonra 'to V1' varsa 'able', 'of Ving' varsa 'capable' seçin."
+            },
+            {
+                "title": "Kelime Türetme",
+                "content": "Şıklarda 'able' (sıfat) ve 'enable' (fiil) birlikte verilebilir. Cümle fiil arıyorsa (örn: 'This law ___ us to...') 'enable' tercih edilmelidir."
+            },
+            {
+                "title": "Suffix Analizi (-able)",
+                "content": "-able eki eklendiği fiile 'yapılabilir' anlamı katar (readable, doable). Bilmediğiniz kelimelerde bu mantığı kurun."
+            },
+            {
+                "title": "Eşdizim (Collocations)",
+                "content": "Cloze testlerde 'perfectly able' veya 'barely able' ikilileri yaygındır. 'Able' öncesi boşlukta zarf arayın."
+            }
+        ],
+        "grammar": [
+            {
+                "title": "Gramer Tuzağı: Geçmiş Yetenek",
+                "content": "Geçmişte tek seferlik zor bir başarı anlatılıyorsa 'could' yerine 'was able to' veya 'managed to' kullanılır. (e.g. He was able to escape the fire)."
+            },
+            {
+                "title": "Pasif Yapı (Passive)",
+                "content": "Modalların pasif hali kafa karıştırabilir. 'It must be able to be done' (Yapılabilmesi gerekir) gibi yapılar YÖKDİL metinlerinde çıkar."
+            }
+        ],
+        "reading": [
+            {
+                "title": "Akademik Çeviri",
+                "content": "'Able to' ifadesini 'muktedir olmak' diye değil, '-ebilmek' veya 'kapasitesine sahip olmak' şeklinde çevirin. Örn: 'Technologies able to reduce emissions'."
+            },
+            {
+                "title": "Paraphrase (Zıt Anlam)",
+                "content": "Soruda 'unable' görüyorsanız, cevapta 'failed to', 'could not' veya 'lacked the ability' gibi yapılar arayın."
+            },
+            {
+                "title": "Alan Bağlamı (YÖKDİL)",
+                "content": "Sağlıkta 'disabled' (engelli), Fende 'viable' (yaşayabilir/able to survive), Sosyalde 'enable' (yetkilendirmek/empower) sık çıkar."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "habilis (Latin)",
+        "family_members": [
+            {
+                "pos": "adj",
+                "level": "A2",
+                "note": "yapabilecek, yetkin, becerikli, yetenekli"
+            },
+            {
+                "pos": "adj",
+                "level": "B1",
+                "prefix": "un-",
+                "note": "yapamayan, aciz, gücü yetmeyen"
+            },
+            {
+                "pos": "n",
+                "level": "A2",
+                "suffix": "-ity",
+                "note": "yetenek, kabiliyet, beceri, yapma yeteneği"
+            },
+            {
+                "pos": "v",
+                "level": "B2",
+                "prefix": "en-",
+                "note": "mümkün kılmak, yetki vermek"
+            },
+            {
+                "pos": "v",
+                "level": "B2",
+                "prefix": "dis-",
+                "note": "engellemek, devre dışı bırakmak, yetki almak"
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_modal_double",
+                "incorrect": "I can able to do it.",
+                "correction": "I am able to do it.",
+                "explanation": "'Can' ve 'be able to' aynı cümlede yan yana gelmez."
+            },
+            {
+                "error_id": "err_verb_be",
+                "incorrect": "I able to swim.",
+                "correction": "I am able to swim.",
+                "explanation": "'Be' fiili (am/is/are/was/were) unutulmamalıdır."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Grammatical Range",
+            "tip": "Speaking Part 2 veya Writing Task 1'de sürekli 'can' demek yerine 'was able to' veya 'have been able to' yapılarını kullanmak puanınızı artırır.",
+            "keywords": [
+                "capability",
+                "achievement"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "gap_fill",
+            "question": "Despite the heavy rain, they ___ able to reach the summit.",
+            "answer": "were",
+            "distractors": [
+                "can",
+                "did",
+                "are"
+            ]
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Latin",
+                "meaning": "handy, manageable"
+            },
+            {
+                "era": "Old French",
+                "meaning": "capable"
+            },
+            {
+                "era": "Modern English",
+                "meaning": "having the power to do"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Conceptual",
+            "story": "İngilizce 'capable' ve 'able' kelimeleri ile Türkçedeki 'kabiliyet' (Arapça kökenli olsa da) benzer tını ve anlama sahiptir. Bilimsel (etimolojik) olarak doğrudan akraba değillerdir, ancak anlam mantığı ve ses benzerliği %100 örtüşmektedir.",
+            "example": "Bu iki kelime farklı dil ailelerinden gelir, yani 'kardeş' değil, 'benzer giyinen iki yabancı' gibidirler.",
+            "example2": "Able / Capable (İngilizce): Kökeni Latince \"Capere\" (tutmak, kavramak, içine almak) fiiline dayanır. Hint-Avrupa dil ailesindendir. (Buradan türeyen diğer kelimeler: Capture, Capacity, Capsule).",
+            "example3": "Kabiliyet (Türkçe < Arapça): Kökeni Arapça \"Kabul\" (k-b-l kökü: almak, kabul etmek, önünde olmak) kelimesine dayanır. Hami-Sami dil ailesindendir. (Buradan türeyen kelimeler: Kıble, İkbal, Kabul)."
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Ben Ela. Birçok şeyi <strong>yapabiliyorum</strong>. Koşabiliyorum ve şarkı söyleyebiliyorum. Ama <strong>uçamıyorum</strong>, bu benim <strong>yetenek</strong>im değil. Öğretmenim bana yardım ediyor. Bu yardım öğrenmemi kolaylaştırıyor. Çok çalışıyorum. Yarın daha iyi <strong>olacağım</strong>.",
+            "en": "I am Ela. I <strong>am able</strong> to do many things. I <strong>am able</strong> to run and sing. But I <strong>am unable</strong> to fly, that is not my <strong>ability</strong>. My teacher helps me. This help <strong>enables</strong> my learning. I work hard. Tomorrow I <strong>will be</strong> better."
+        },
+        "A2": {
+            "tr": "Ahmet İngilizce öğreniyor. Dün sınavda bazı soruları <strong>cevaplayamadı</strong>. Çok üzüldü. Ama öğretmeni ona yardım etti. Bu yardım sayesinde daha iyi oldu. Şimdi Ahmet İngilizce <strong>konuşabiliyor</strong>. Onun <strong>yetenek</strong>i arttı. Öğretmeni ona 'Artık kitap <strong>okuyabilirsin</strong>' dedi. Ahmet çok mutlu. Gelecek sınavda tüm soruları <strong>cevaplayabilecek</strong>.",
+            "en": "Ahmet is learning English. Yesterday in the exam, he <strong>was unable</strong> to answer some questions. He was sad. But his teacher helped him. This help <strong>enabled</strong> him to improve. Now Ahmet <strong>is able</strong> to speak English. His <strong>ability</strong> increased. His teacher said, 'You <strong>are able</strong> to read a book now.' Ahmet is very happy. In the next exam, he <strong>will be able</strong> to answer all questions."
+        },
+        "B1": {
+            "tr": "Mühendis Can, önemli bir sunum hazırlıyordu. Ancak sunum programı aniden <strong>bozuldu</strong>. Bu sorun onun sunum yapmasını <strong>engelledi</strong>. Can bu sorunu hemen <strong>çözebildi</strong> mi? Evet! Onun hızlı düşünme <strong>yetenek</strong>leri işe yaradı. Teknik bilgisi sorunu çözmesini <strong>mümkün kıldı</strong>. Sunumu zamanında yapmayı <strong>başardı</strong>. Patronu, 'Bu sorunun üstesinden <strong>gelebildiğin</strong> için tebrikler' dedi. Can'ın bu <strong>becerisi</strong> tüm ekibi güçlendirdi.",
+            "en": "Engineer Can was preparing an important presentation. However, the presentation software suddenly <strong>became disabled</strong>. This problem <strong>disabled</strong> his presentation. <strong>Was</strong> Can <strong>able</strong> to fix it immediately? Yes! His quick-thinking <strong>abilities</strong> worked. His technical knowledge <strong>enabled</strong> him to solve the problem. He <strong>was able</strong> to present on time. His boss said, 'Congratulations for <strong>being able</strong> to overcome this problem.' Can's <strong>ability</strong> strengthened the whole team."
+        },
+        "B2": {
+            "tr": "Girişimci Deniz, projesi için finansal destek arıyordu. Başlangıçta yatırımcıları <strong>ikna edemedi</strong>. Bu durum projesini <strong>durdurma</strong> tehlikesi yarattı. Ancak pes etmedi ve yeni bir strateji <strong>geliştirmeyi başardı</strong>. Detaylı planı yatırımcıların potansiyeli görmesini <strong>sağladı</strong>. Sonunda gerekli fonu <strong>temin edebildi</strong>. Bu başarı hem kişisel <strong>yetkinliğ</strong>inden hem de azminden kaynaklandı. Şimdi ekibinin yenilik yapmasına <strong>imkan tanıyor</strong>. Gelecekte daha büyük zorlukların üstesinden <strong>gelebilecekler</strong>ine inanıyor.",
+            "en": "Entrepreneur Deniz needed financial support for his project. Initially, he <strong>was unable</strong> to persuade investors. This situation created a <strong>disabling</strong> threat to his project. However, he didn't give up and <strong>was able</strong> to develop a new strategy. His detailed plan <strong>enabled</strong> investors to see the potential. Finally, he <strong>was able</strong> to secure the necessary funds. This success came from both his personal <strong>ability</strong> and determination. Now he <strong>is enabling</strong> his team to innovate. He believes they <strong>will be able</strong> to overcome greater challenges in the future."
+        },
+        "C1": {
+            "tr": "Dilbilimci Profesör İdil, yetişkin dil edinimindeki sınırlamaları inceliyordu. Geleneksel görüş, yetişkin beyninin dil inceliklerini öğrenmekten <strong>yoksun</strong> olduğunu savunuyordu. İdil bu <strong>sınırlayıcı</strong> bakış açısını yetersiz buluyordu. Araştırması, bilişsel esnekliği artıran yöntemlerin bu görünürdeki <strong>yetersizliği</strong> nasıl <strong>ortadan kaldırabileceğini</strong> gösterdi. Doğru yaklaşımlar yetişkin öğrencilerin akıcılığa ulaşmalarını <strong>mümkün kılıyor</strong>du. '<strong>Yetenek</strong> statik değil, geliştirilebilir bir kapasitedir' diye savundu. Bir konferansta, 'Eski bir sistemi <strong>devre dışı bırakmak</strong>, daha kapsayıcı yeni sistemler inşa etmemizi <strong>sağlar</strong>' açıklamasını yaptı. Çalışması eğitim yöntemlerini yeniden şekillendirme <strong>potansiyeli</strong> taşıyordu.",
+            "en": "Linguist Professor İdil was researching limitations in adult language acquisition. The traditional view claimed the adult brain was inherently <strong>unable</strong> to acquire linguistic subtleties. Idil found this <strong>disabling</strong> perspective inadequate. Her research showed how methods increasing cognitive flexibility could <strong>disable</strong> this apparent <strong>inability</strong>. Correct approaches <strong>enabled</strong> adult learners to achieve fluency. She argued, '<strong>Ability</strong> is not static but an expandable capacity.' At a conference, she stated, '<strong>Disabling</strong> an old system <strong>enables</strong> us to build more inclusive ones.' Her work <strong>had the ability</strong> to reshape educational methodologies."
+        },
+        "C2": {
+            "tr": "Nörobilimci Dr. Alp, travma sonrası rehabilitasyonun sinirsel mekanizmalarını araştırıyordu. Hastası Efe, bir kaza sonrası yürüme <strong>yetisini</strong> kaybetmişti. Alp'ın ekibi, geliştirdikleri nöro-arayüzün beynin hasarlı bölgelerini atlatmasını <strong>sağlayabileceğini</strong> düşünüyordu. Ancak eski sinir yollarını tamamen <strong>devre dışı bırakmak</strong> riskliydi. Temel soru şuydu: Beynin uyum kapasitesi yeni bağlantılar oluşturmasına ne derece <strong>imkan tanıyacaktı</strong>? Terapi ilerledikçe, Efe bacaklarına minimal sinyaller <strong>gönderebildi</strong>. Bu küçük başarı, sistemin işlevselliğini kaybetmeden uyum <strong>sağlayabildiğinin</strong> kanıtıydı. Nihai hedef Efe'nin bağımsız yürüyebilmesini tamamen <strong>mümkün kılmaktı</strong>. Alp şöyle özetledi: '<strong>Yapabilmenin</strong> özü biyolojik bir lütuf değil, nöral plastisitenin ürünüdür. Bir <strong>yetersizliği etkisiz hale getirmek</strong>, mevcut potansiyeli <strong>kullanılabilir kılmaktır</strong>.' Bu çalışma, <strong>yetenek</strong> ve <strong>imkan tanıma</strong> kavramlarının sınırlarını yeniden tanımlıyordu.",
+            "en": "Neuroscientist Dr. Alp was studying the neural mechanisms of post-trauma rehabilitation. His patient Efe had lost the <strong>ability</strong> to walk after an accident. Alp's team theorized their neuro-interface <strong>might be able to enable</strong> the brain to bypass damaged areas. However, <strong>to completely disable</strong> the old neural pathways was risky. The fundamental question was: To what extent would the brain's adaptive capacity <strong>enable</strong> it to form new connections? As therapy progressed, Efe <strong>was able</strong> to send minimal signals to his legs. This minor success proved the system <strong>was able</strong> to adapt without <strong>disabling</strong> its functionality. The ultimate goal was <strong>to fully enable</strong> Efe to walk independently. Alp concluded: 'The essence of <strong>being able</strong> is not biological grace but a product of neural plasticity. <strong>To disable a disability is to enable</strong> the existing potential.' This work was redefining the boundaries of <strong>ability</strong> and <strong>enabling</strong>."
+        }
+    }
+}

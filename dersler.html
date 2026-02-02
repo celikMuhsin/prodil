@@ -5,18 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PRODİL - Profesyonel Dil Kursu - Sakarya İngilizce | YKS-TYT-AYT-YDT Üniversite Sınavlarına Hazırlık</title>
+
+    <title>YDT & YDS İngilizce Kelime Hazinesi, Online Test ve Egzersizler | Prodil Dersler</title>
+
     <meta name="description"
-        content="Sakarya'nın en köklü dil okulu Prodil ile İngilizce öğrenin. YKS-TYT-AYT-YDT üniversite sınavlarına hazırlık. Ücretsiz seviye tespiti için tıklayın.">
+        content="YDT, YDS ve YÖKDİL sınavlarına yönelik 4000+ kelimelik dev arşiv. Kelime kökenleri (etimoloji), eş anlamlılar, interaktif egzersizler ve yeni nesil deneme sınavları ile Sakarya Prodil kalitesiyle online çalışın.">
+
     <meta name="keywords"
-        content="sakarya ingilizce kursu, sakarya dil kursu, ydt hazırlık sakarya, yks hazırlık sakarya, ayt hazırlık sakarya, tyt hazırlık sakarya, yds hazırlık sakarya, yökdil hazırlık sakarya, sakarya ingilizce kursu, prodil, sakarya ingilizce sınav teknikleri merkezi, sınav teknikleri, ingilizce dersane, sınav ingilizcesi, ingilizce soru çözümü">
+        content="ydt kelime listesi, yds kelime çalışma, ingilizce etimoloji dersleri, online ydt deneme, ingilizce test çöz, yökdil kelime kartları, ingilizce eş anlamlılar, prodil ders notları, sınav stratejileri, sakarya ingilizce özel ders materyalleri">
+
     <meta name="author" content="Muhsin Çelik">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Prodil - Sakarya'nın Dil Okulu">
+
+    <meta property="og:title" content="YDT ve YDS İçin İngilizce Kelime Laboratuvarı">
     <meta property="og:description"
-        content="İngilizceyi ezberleyerek değil, yaşayarak öğrenin. Sakarya merkezde profesyonel eğitim.">
-    <meta property="og:image" content="https://prodil.net/assets/logo.png">
-    <meta property="og:url" content="https://prodil.net">
+        content="Sadece kelime ezberlemeyin; kökenini, hikayesini ve sınavdaki tuzağını öğrenin. Prodil'in interaktif ders modülleri yayında.">
+    <meta property="og:image" content="https://prodil.net/assets/dersler-preview.png">
+    <meta property="og:url" content="https://prodil.net/dersler.html">
+
 
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
@@ -118,28 +124,39 @@
 
         /* Exam Grid Styles */
         .exam-card {
-            @apply bg-white p-3 md:p-4 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-all cursor-pointer group h-full;
-            /* Layout - Default (Mobile/Tablet) -> Row */
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f3f4f6;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            height: 100%;
+            /* Enforce Flex Row */
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
             gap: 1rem;
-            /* gap-4 equivalent */
             text-align: left;
         }
 
         /* Desktop -> Column */
         @media (min-width: 1024px) {
             .exam-card {
-                flex-direction: column;
-                justify-content: center;
-                text-align: center;
+                flex-direction: column !important;
+                justify-content: center !important;
+                text-align: center !important;
             }
         }
 
-        .exam-card:hover {
-            @apply border-primary-900 transform -translate-y-1;
+        /* Only allow hover effects on devices that support hover (prevents ghost selection on mobile) */
+        @media (hover: hover) {
+            .exam-card:hover {
+                border-color: #003366;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                transform: translateY(-0.25rem);
+            }
         }
 
         /* Exam Interface */
@@ -148,11 +165,25 @@
         }
 
         .btn {
-            @apply px-4 py-2 rounded-lg font-semibold transition-colors shadow-sm;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s, color 0.2s;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         }
 
         .btn-outline {
-            @apply px-4 py-2 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 transition-colors w-full text-left;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            background-color: white;
+            transition: background-color 0.2s;
+            width: 100%;
+            text-align: left;
+        }
+
+        .btn-outline:hover {
+            background-color: #f9fafb;
         }
 
         /* Variables expected by Exam Engine if not provided by CSS */
@@ -403,7 +434,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-20">
+    <main class="flex-grow pt-20 pb-24">
 
         <!-- Page Header -->
         <div class="h-4"></div>

@@ -1,6 +1,9 @@
+// Global Cache
+const kelimeCache = {};
+
 class VocabCard {
     constructor(data) {
-        this.data = data;
+        this.data = data || [];
         this.currentIndex = 0;
         this.container = document.getElementById('vocabulary-wrapper');
 
@@ -8,8 +11,6 @@ class VocabCard {
             console.warn('Kelime verisi bulunamadı.');
             return;
         }
-
-        this.init();
 
         this.init();
 
@@ -29,7 +30,7 @@ class VocabCard {
         this.addEventListeners();
     }
 
-    renderCard() {
+    async renderCard() {
         try {
             // Ensure no lingering artifacts
             this.container.innerHTML = '';
@@ -37,7 +38,62 @@ class VocabCard {
             const item = this.data[this.currentIndex];
             if (!item) return;
 
+            // --- 1. Check Cache / Fetch Logic ---
+            if (item.path && !item.grammar_profile) {
+                // Check Cache using ID
+                if (kelimeCache[item.id]) {
+                    // Cache HIT: Inflate directly
+                    Object.assign(item, kelimeCache[item.id]);
+                } else {
+                    // Cache MISS: Show Global Preloader
+                    const preloader = document.getElementById('preloader');
+                    if (preloader) {
+                        preloader.classList.remove('hidden');
+                        preloader.style.opacity = '1';
+                        preloader.style.visibility = 'visible';
+                    }
+
+                    try {
+                        const response = await fetch(item.path);
+                        if (!response.ok) throw new Error("Veri yüklenemedi: " + response.status);
+                        const fullJson = await response.json();
+
+                        // Update Cache & Item
+                        kelimeCache[item.id] = fullJson;
+                        Object.assign(item, fullJson);
+
+                    } catch (err) {
+                        console.error("Fetch error", err);
+                        // Hide Preloader on error
+                        if (preloader) {
+                            preloader.style.opacity = '';
+                            preloader.style.visibility = '';
+                            preloader.classList.add('hidden');
+                        }
+
+                        this.container.innerHTML = `<div style="color:red; padding:20px; text-align:center;">
+                            <h3>Hata</h3>
+                            <p>${err.message}</p>
+                         </div>`;
+                        return;
+                    } finally {
+                        // Hide Preloader
+                        if (preloader) {
+                            setTimeout(() => {
+                                preloader.style.opacity = '';
+                                preloader.style.visibility = '';
+                                preloader.classList.add('hidden');
+                            }, 300); // Short delay for smooth transition
+                        }
+                    }
+                }
+            }
+
+            // --- 2. Render ---
             this.container.innerHTML = this.generateCardHTML(item, this.currentIndex);
+
+            // --- 3. Prefetch Neighbors (Sliding Window: Next 2) ---
+            this.prefetchNeighbors(this.currentIndex);
 
             // Defer measurement to ensure rendering is complete
             requestAnimationFrame(() => {
@@ -49,6 +105,27 @@ class VocabCard {
             console.error(error);
             this.container.innerHTML = `<div style="color:red; padding:20px;">Hata oluştu: ${error.message}</div>`;
         }
+    }
+
+    async prefetchNeighbors(index) {
+        // Fetch Next 2
+        for (let i = 1; i <= 2; i++) {
+            const nextIndex = (index + i) % this.data.length;
+            this.fetchToCache(this.data[nextIndex]);
+        }
+    }
+
+    async fetchToCache(item) {
+        if (!item || !item.path || item.grammar_profile || kelimeCache[item.id]) return;
+
+        try {
+            const res = await fetch(item.path);
+            if (res.ok) {
+                const json = await res.json();
+                kelimeCache[item.id] = json;
+                Object.assign(item, json);
+            }
+        } catch (e) { /* Ignore background fetch errors */ }
     }
 
     generateCardHTML(item, index) {
@@ -526,7 +603,7 @@ class VocabCard {
                     ` : ''}
 
                     <div class="exam-grid">
-                        ${ex.vocabulary ? `
+                        ${ex.vocabulary && ex.vocabulary.length > 0 ? `
                             <div class="exam-category">
                                 <h4 class="category-header"><span class="cat-icon">🧠</span> Kelime Bilgisi</h4>
                                 ${ex.vocabulary.map(strat => `
@@ -538,7 +615,7 @@ class VocabCard {
                             </div>
                         ` : ''}
 
-                        ${ex.grammar ? `
+                        ${ex.grammar && ex.grammar.length > 0 ? `
                             <div class="exam-category">
                                 <h4 class="category-header"><span class="cat-icon">🛑</span> Gramer Tuzakları</h4>
                                 ${ex.grammar.map(strat => `
@@ -550,7 +627,7 @@ class VocabCard {
                             </div>
                         ` : ''}
 
-                        ${ex.reading ? `
+                        ${ex.reading && ex.reading.length > 0 ? `
                             <div class="exam-category">
                                 <h4 class="category-header"><span class="cat-icon">📖</span> Okuma & Çeviri</h4>
                                 ${ex.reading.map(strat => `
@@ -644,7 +721,7 @@ class VocabCard {
             }
         }
 
-        const rawIpa = phonetics.ipa_us || '';
+        const rawIpa = phonetics.ipa || '';
         const cleanIpa = rawIpa.replace(/\//g, '');
 
         // --- SECTION ORDERING LOGIC ---
@@ -855,6 +932,14 @@ class VocabCard {
         if (index !== -1) {
             this.currentIndex = index;
             this.renderCard();
+
+            // Prefetch Neighbors for Jump (Prev 2 + Next 2)
+            // Note: renderCard handles Next 2. Here we ensure surrounding are loaded.
+            for (let i = 1; i <= 2; i++) {
+                const prev = (index - i + this.data.length) % this.data.length;
+                this.fetchToCache(this.data[prev]);
+            }
+
             // Scroll to top to see tabs and header
             window.scrollTo({ top: 0, behavior: 'smooth' });
             // Ensure sticky state is correct after jump

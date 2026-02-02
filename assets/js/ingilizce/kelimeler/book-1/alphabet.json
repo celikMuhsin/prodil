@@ -1,0 +1,372 @@
+{
+    "id": "alphabet",
+    "meta": {
+        "cefr_level": "A2",
+        "frequency_band": "Medium Frequency",
+        "part_of_speech": [
+            "noun"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/ˈæl.fə.bet/",
+        "syllabification": [
+            "al",
+            "pha",
+            "bet"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "a set of letters arranged in a fixed order",
+            "core_meaning_tr": "alfabe, abece",
+            "context_tags": [
+                "language",
+                "writing"
+            ],
+            "example": {
+                "sentence": "The English alphabet has 26 letters.",
+                "translation": "İngiliz alfabesinde 26 harf vardır."
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "the basic elements of any subject (rudiments)",
+            "core_meaning_tr": "temel ilkeler, alfabe (mecazi)",
+            "context_tags": [
+                "figurative"
+            ],
+            "example": {
+                "sentence": "The alphabet of genetics.",
+                "translation": "Genetiğin alfabesi (temelleri)."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "in alphabetical order",
+                "usage_level": "Core",
+                "notes_tr": "En sık kullanılan kalıptır: 'Alfabetik sırayla' (e.g., The books are arranged in alphabetical order)."
+            },
+            {
+                "pattern": "the [Language] alphabet",
+                "usage_level": "Intermediate",
+                "notes_tr": "Belirli bir dilin alfabesinden bahsederken 'the' kullanılır (the Greek alphabet)."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Bir sistem veya sıralama bütünü olarak.",
+            "critical_comparison": {
+                "context": "Alphabet vs Letter",
+                "rule": "'Letter' tek bir harftir (A, B, C). 'Alphabet' ise bu harflerin oluşturduğu setin tamamıdır.",
+                "example_wrong": "I learned the alphabets A and B. (Yanlış - harfler öğrenilir, alfabe bir bütündür)",
+                "example_right": "I learned the letters A and B. (Doğru)"
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Kelimenin seviyelere göre kullanım karmaşıklığı",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "A is the first letter of the alphabet.",
+                "tr": "A, alfabenin ilk harfidir.",
+                "grammar_focus": "Superlative (first)"
+            },
+            {
+                "cefr": "A2",
+                "en": "Can you say the alphabet backwards?",
+                "tr": "Alfabeyi tersten sayabilir misin?",
+                "grammar_focus": "Adverb (backwards)"
+            },
+            {
+                "cefr": "B1",
+                "en": "Please arrange these files in alphabetical order.",
+                "tr": "Lütfen bu dosyaları alfabetik sıraya göre düzenleyin.",
+                "grammar_focus": "Imperative + Collocation"
+            },
+            {
+                "cefr": "B2",
+                "en": "The Cyrillic alphabet is used in Russia and Bulgaria.",
+                "tr": "Kiril alfabesi Rusya ve Bulgaristan'da kullanılır.",
+                "grammar_focus": "Passive Voice"
+            },
+            {
+                "cefr": "C1",
+                "en": "The phonetic alphabet is crucial for clear communication in aviation.",
+                "tr": "Fonetik alfabe, havacılıkta net iletişim için hayati önem taşır.",
+                "grammar_focus": "Specific Terminology"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "fonetik/sesçil",
+                "strength": "technical",
+                "example": "NATO phonetic alphabet (NATO fonetik alfabesi - Alpha, Bravo...)",
+                "example_tr": "Havacılıkta NATO fonetik alfabesi kullanılır."
+            },
+            {
+                "turkish": "Latin",
+                "strength": "standard",
+                "example": "Turkish uses the Latin alphabet.",
+                "example_tr": "Türkçe Latin alfabesini kullanır."
+            },
+            {
+                "turkish": "Kiril",
+                "strength": "specific",
+                "example": "Russian is written in the Cyrillic alphabet.",
+                "example_tr": "Rusça Kiril alfabesiyle yazılır."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "ezbere okumak",
+                "example": "The child can recite the alphabet.",
+                "example_tr": "Çocuk alfabeyi ezbere sayabiliyor."
+            },
+            {
+                "turkish": "icat etmek/tasarlamak",
+                "example": "He devised a new alphabet for the language.",
+                "example_tr": "Dil için yeni bir alfabe tasarladı."
+            },
+            {
+                "turkish": "harf çevirisi yapmak",
+                "example": "Names are transliterated into the Latin alphabet.",
+                "example_tr": "İsimler Latin alfabesine çevrilir (harf harf)."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Writing Systems",
+            "turkishConcept": "Yazı Sistemleri",
+            "scale": [
+                {
+                    "value": 5,
+                    "turkish": "alfabe/abece",
+                    "note": "Harflerden oluşan ses temelli set (A, B, C)",
+                    "description_tr": "Her sesin bir harfle karşılandığı standart yazı sistemidir.",
+                    "example_en": "The Greek alphabet is thousands of years old.",
+                    "example_tr": "Yunan alfabesi binlerce yıllıktır.",
+                    "strength": "Fonetik"
+                },
+                {
+                    "value": 6,
+                    "turkish": "yazı sistemi/hat",
+                    "note": "Bir dilin yazım şekli (Arabic Script, cursive script)",
+                    "description_tr": "Bir dilin karakterlerinin el yazısı veya basılı özgün biçimidir.",
+                    "example_en": "Urdu is written in the Arabic script.",
+                    "example_tr": "Urduca Arap yazısıyla (hattıyla) yazılır.",
+                    "strength": "Teknik"
+                },
+                {
+                    "value": 9,
+                    "turkish": "karakter seti",
+                    "note": "Dijital ortamdaki sembollerin tamamı (ASCII, Unicode)",
+                    "description_tr": "Bilgisayar sistemlerinde kullanılan tüm harf ve sembollerin listesidir.",
+                    "example_en": "UTF-8 covers almost every character set.",
+                    "example_tr": "UTF-8 neredeyse tüm karakter setlerini kapsar.",
+                    "strength": "Dijital"
+                },
+                {
+                    "value": 8,
+                    "turkish": "hiyeroglif",
+                    "note": "Resim yazısı (harf değil sembol)",
+                    "description_tr": "Antik Mısır'da kullanılan resim temelli yazı sistemidir.",
+                    "example_en": "They deciphered the hieroglyphics on the wall.",
+                    "example_tr": "Duvardaki hiyeroglifleri çözdüler.",
+                    "strength": "Tarihi"
+                }
+            ]
+        },
+        "antonyms": [
+            {
+                "value": 1,
+                "turkish": "cahillik / okuma yazma bilmeme",
+                "note": "Alfabeye hakim olmama durumu",
+                "description_tr": "Okuma yazma becerisinin olmaması durumudur.",
+                "example_en": "They started a campaign to fight illiteracy.",
+                "example_tr": "Cahillikle (okuma yazma bilmemekle) savaşmak için kampanya başlattılar."
+            }
+        ]
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "alphabet soup",
+                "meaning_tr": "kısaltma çorbası (çok fazla kısaltma içeren metin)",
+                "register": "humorous",
+                "example": "The report was a veritable alphabet soup of government agencies.",
+                "example_tr": "Rapor, devlet kurumlarının kısaltmalarıyla dolu bir çorbaya dönmüştü."
+            },
+            {
+                "phrase": "the ABCs of something",
+                "meaning_tr": "bir işin alfabesi (temel kuralları)",
+                "register": "idiomatic",
+                "example": "He taught me the ABCs of investing.",
+                "example_tr": "Bana yatırım yapmanın alfabesini (temelini) öğretti."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Code Names",
+            "note_en": "Government agencies often use 'Alphabet Agencies' (FBI, CIA, NSA) as a term. It refers to organizations known by their acronyms.",
+            "note_tr": "FBI, CIA gibi kurumlar 'Alphabet Agencies' olarak bilinir."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Akademik ve günlük dilde ortaktır."
+        },
+        "inclusive_language": null,
+        "grammar_nuance": {
+            "title": "Alphabet vs Letters",
+            "content": "İngilizcede 26 'harf' (letters) vardır, 26 'alfabe' değil. 'Alphabet' tekil bir setin adıdır. 'Do you know your alphabets?' sorusu yanlıştır, 'Do you know your letters?' denir."
+        },
+        "business_english": {
+            "title": "Alphabet Inc.",
+            "content": "Google'ın çatı şirketi 'Alphabet Inc.'dir. Bu isim, dilin temeli (alfabe) ve yatırım getirisi (Alpha-bet) kelime oyununa dayanır."
+        },
+        "trivia": {
+            "title": "& (Ampersand)",
+            "content": "Eskiden '&' işareti alfabenin 27. harfi sayılırdı ve 'and, per se, and' olarak okunurdu. Zamanla 'Ampersand' ismini aldı."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 30,
+            "yokdil": 50,
+            "ydt": 40,
+            "description": "Linguistics (Dilbilim) ve Tarih metinlerinde (Fenikeliler vb.) çıkar."
+        },
+        "vocabulary": [
+            {
+                "title": "Acronym vs Initialism",
+                "content": "NATO (okunur) bir 'Acronym', FBI (harf harf okunur) bir 'Initialism'dir. Her ikisi de alfabe temellidir."
+            },
+            {
+                "title": "Vowel & Consonant",
+                "content": "Sınavda 'vowel' (ünlü) ve 'consonant' (ünsüz) terimleri 'alphabet' ile bağlantılı sorulabilir."
+            }
+        ],
+        "grammar": [],
+        "reading": [
+            {
+                "title": "Tarihsel Metinler",
+                "content": "Parçada 'cuneiform' (çivi yazısı) veya 'hieroglyph' geçiyorsa, konu muhtemelen alfabenin evrimi ve yazı tarihidir."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "Alpha + Beta (Greek)",
+        "family_members": [
+            {
+                "pos": "n",
+                "level": "A2",
+                "note": "alfabe"
+            },
+            {
+                "pos": "adj",
+                "level": "B1",
+                "suffix": "-ical",
+                "note": "alfabetik, abecesel"
+            },
+            {
+                "pos": "v",
+                "level": "C1",
+                "suffix": "-ize",
+                "note": "alfabetik sıraya koymak"
+            },
+            {
+                "pos": "n",
+                "level": "B2",
+                "note": "okuryazarlık (alfabe bilgisi)"
+            },
+            {
+                "pos": "adj",
+                "level": "B2",
+                "note": "okuma yazma bilmeyen"
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_plural_count",
+                "incorrect": "English contains 26 alphabets.",
+                "correction": "English contains 26 letters.",
+                "explanation": "İngilizcede 1 alfabe (set), 26 harf (parça) vardır. 'Alphabets' derseniz birden fazla dil sistemi (Yunan, Latin, Arap vb.) kastedersiniz."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Linguistics",
+            "tip": "Reading parçalarında 'literacy rate' (okuryazarlık oranı) konusu geçtiğinde 'alphabet equivalent' veya 'script' kelimelerine dikkat edin.",
+            "keywords": [
+                "phoneme",
+                "grapheme",
+                "transliteration"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "sequence",
+            "question": "Which comes first in alphabetical order?",
+            "answer": "Abacus",
+            "distractors": [
+                "Abandon",
+                "Ability",
+                "Abroad"
+            ],
+            "explanation": "Abacus (A-B-A), Abandon (A-B-A-N)... C, N'den önce gelir."
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Phoenician",
+                "meaning": "ox + house (first two letters)"
+            },
+            {
+                "era": "Greek",
+                "meaning": "first two letters of Greek alphabet"
+            },
+            {
+                "era": "Latin",
+                "meaning": "list of letters"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Direct Loan",
+            "story": "Türkçedeki 'Alfabe' ile İngilizce 'Alphabet' %100 aynı kökten gelir: Yunan alfabesinin ilk iki harfi 'Alpha' (A) ve 'Beta' (B). Nasıl ki biz eskiden 'Elif-Ba' (Arap alfabesinin ilk iki harfi) diyorsak, batı dilleri de 'Alpha-Beta' demiştir.",
+            "example": "Alpha (A) + Beta (B) = Alphabet."
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Okulda <strong>alfabe</strong>yi öğreniyoruz. Öğretmenimiz tahtaya 'A, B, C' yazıyor. Biz şarkı söylüyoruz. 'A elma (apple) için, B top (ball) için.' <strong>Alfabe</strong> şarkısını çok seviyorum. Tüm harfleri biliyorum.",
+            "en": "We are learning the <strong>alphabet</strong> at school. Our teacher writes 'A, B, C' on the board. We sing a song. 'A is for apple, B is for ball.' I love the <strong>alphabet</strong> song. I know all the letters."
+        },
+        "A2": {
+            "tr": "Kütüphanede kitap bulmak kolaydır. Çünkü kitaplar <strong>alfabetik</strong> sıraya (alphabetical order) göredir. Yazarın adını biliyorsan, kitabı bulabilirsin. 'Z' harfindeki bir kitabı arıyorsan, en sona bakmalısın. <strong>Alfabe</strong> bize düzen sağlar.",
+            "en": "Finding a book in the library is easy. Because books are in <strong>alphabetical order</strong>. If you know the author's name, you can find the book. If you are looking for a book at the letter 'Z', you must look at the very end. The <strong>alphabet</strong> provides us order."
+        },
+        "B1": {
+            "tr": "Tarihte ilk gerçek <strong>alfabe</strong>yi Fenikeliler icat etti. Onlar tüccardı ve hızlı yazmaları gerekiyordu. Mısırlıların hiyeroglifleri (resim yazısı) çok zordu. Fenikeliler her ses için bir sembol yaptı. Bu sistem çok basitti. Yunanlılar bunu alıp geliştirdiler ve bugünkü <strong>alfabe</strong>mizin temelini attılar.",
+            "en": "In history, the Phoenicians invented the first real <strong>alphabet</strong>. They were merchants and needed to write quickly. Egyptian hieroglyphs (picture writing) were too difficult. Phoenicians made one symbol for each sound. This system was very simple. The Greeks took this and improved it, laying the foundation of our current <strong>alphabet</strong>."
+        },
+        "B2": {
+            "tr": "Uluslararası uçuşlarda pilotlar ve kuleler NATO Fonetik <strong>Alfabe</strong>sini kullanır. Bir harfi yanlış anlamak felakete yol açabilir. Bu yüzden 'B' demezler, 'Bravo' derler. 'M' ve 'N' telefonda çok karışır, bu yüzden 'Mike' ve 'November' kullanılır. Bu standartlaştırılmış <strong>alfabe</strong>, dünya çapında havacılık güvenliğini sağlar.",
+            "en": "On international flights, pilots and towers use the NATO Phonetic <strong>Alphabet</strong>. Misunderstanding a letter can lead to disaster. That's why they don't say 'B', they say 'Bravo'. 'M' and 'N' get confused easily on the phone, so 'Mike' and 'November' are used. This standardized <strong>alphabet</strong> ensures aviation safety worldwide."
+        },
+        "C1": {
+            "tr": "Türkiye Cumhuriyeti'nin kuruluşuyla birlikte yapılan en büyük devrimlerden biri Harf Devrimi'ydi. 1928'de Arap alfabesinden Latin <strong>alfabe</strong>sine geçildi. Bu sadece bir sembol değişikliği (transliterasyon) değildi; kültürel bir yön değişimiydi. Yeni <strong>alfabe</strong>, Türkçenin sesli harf yapısına (vokal uyumu) daha uygundu ve okuryazarlık oranının hızla artmasını sağladı.",
+            "en": "One of the greatest revolutions following the foundation of the Turkish Republic was the Letter Revolution. In 1928, there was a shift from the Arabic script to the Latin <strong>alphabet</strong>. This was not merely a change of symbols (transliteration); it was a cultural reorientation. The new <strong>alphabet</strong> was more suitable for the vowel structure of Turkish and facilitated a rapid increase in the literacy rate."
+        },
+        "C2": {
+            "tr": "Medeniyet tarihçileri, <strong>alfabe</strong>nin icadını insan zihninin en büyük soyutlama başarısı olarak görür. Somut bir resmi (bir öküz başı) alıp onu soyut bir sesi (/a/) temsil eden bir çizgiye indirgemek, bilişsel bir sıçramadır. Bu 'demokratik' teknoloji, bilgiyi elit rahiplerin tekelinden çıkarıp sıradan insana sunmuştur. Marshall McLuhan'ın dediği gibi, 'Fonetik <strong>alfabe</strong>, gözü kulağa tercih eden, rasyonel ve çizgisel düşünen modern insanı yaratmıştır.'",
+            "en": "Historians of civilization view the invention of the <strong>alphabet</strong> as the human mind's greatest feat of abstraction. Taking a concrete image (an ox head) and reducing it to a line representing an abstract sound (/a/) is a cognitive leap. This 'democratic' technology took knowledge out of the monopoly of elite priests and offered it to the common man. As Marshall McLuhan said, 'The phonetic <strong>alphabet</strong> created the modern man who prefers the eye to the ear and thinks rationally and linearly.'"
+        }
+    }
+}

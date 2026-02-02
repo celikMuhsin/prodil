@@ -1,0 +1,384 @@
+{
+    "id": "all-right",
+    "meta": {
+        "cefr_level": "A1",
+        "frequency_band": "High Frequency",
+        "part_of_speech": [
+            "adjective",
+            "adverb",
+            "interjection"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/ˌɑːl ˈraɪt/",
+        "syllabification": [
+            "all",
+            "right"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "satisfactory, safe, or well",
+            "core_meaning_tr": "iyi, yolunda, sorunsuz",
+            "context_tags": [
+                "state",
+                "health"
+            ],
+            "example": {
+                "sentence": "Is everything all right?",
+                "translation": "Her şey yolunda mı?"
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "used to ask someone or agree to a suggestion",
+            "core_meaning_tr": "tamam, pekala, olur",
+            "context_tags": [
+                "agreement",
+                "discourse"
+            ],
+            "example": {
+                "sentence": "'Let's go.' 'All right.'",
+                "translation": "'Gidelim.' 'Tamam/Olur.'"
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "predicate adjective",
+                "usage_level": "Core",
+                "notes_tr": "Genellikle 'be' fiilinden sonra gelir (The car is all right). İsimden önce (attributive) pek kullanılmaz ('an all right car' nadirdir)."
+            },
+            {
+                "pattern": "discourse marker",
+                "usage_level": "Intermediate",
+                "notes_tr": "Konuşmada yeni bir konuya geçerken 'Pekala...' anlamında cümlenin başında kullanılır (All right, let's start)."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Durum bildirmek veya onay vermek için.",
+            "critical_comparison": {
+                "context": "All right vs Alright",
+                "rule": "'All right' (iki kelime) tek resmi ve doğru kabul edilen yazılıştır. 'Alright' (bitişik) çok yaygın olsa da resmiyette (akademik/iş) hala yanlış veya gayriresmi kabul edilir.",
+                "example_wrong": "The essay was alright. (Akademik olarak eksi puan alır)",
+                "example_right": "The essay was all right. (Doğru)"
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Kelimenin seviyelere göre kullanım karmaşıklığı",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "I am all right, thank you.",
+                "tr": "İyiyim, teşekkür ederim.",
+                "grammar_focus": "Subject + Be + Adjective"
+            },
+            {
+                "cefr": "A2",
+                "en": "Everything will be all right.",
+                "tr": "Her şey yoluna girecek (iyi olacak).",
+                "grammar_focus": "Future Simple (Prediction)"
+            },
+            {
+                "cefr": "B1",
+                "en": "Did you get home all right last night?",
+                "tr": "Dün gece eve sağ salim (sorunsuz) vardın mı?",
+                "grammar_focus": "Adverbial Usage"
+            },
+            {
+                "cefr": "B2",
+                "en": "All right, I admit I was wrong.",
+                "tr": "Pekala, haksız olduğumu kabul ediyorum.",
+                "grammar_focus": "Discourse Marker (Concession)"
+            },
+            {
+                "cefr": "C1",
+                "en": "The performance was strictly all right, nothing spectacular.",
+                "tr": "Performans sadece 'eh işte' (vasat) idi, muhteşem bir şey değildi.",
+                "grammar_focus": "Nuance describing mediocrity"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "gayet/oldukça",
+                "strength": "strong",
+                "example": "It's quite all right to be nervous.",
+                "example_tr": "Gergin olmak gayet normaldir (sorun değildir)."
+            },
+            {
+                "turkish": "tamamen/fazlasıyla",
+                "strength": "strong",
+                "example": "The car runs perfectly all right.",
+                "example_tr": "Araba (mekanik olarak) tamamen sorunsuz çalışıyor."
+            },
+            {
+                "turkish": "görünmek",
+                "example": "Does this size seem all right to you?",
+                "example_tr": "Bu beden sana uygun görünüyor mu?"
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "sonuçlanmak",
+                "example": "Everything turned out all right in the end.",
+                "example_tr": "Sonunda her şey tatlıya (iyiye) bağlandı."
+            },
+            {
+                "turkish": "hissetmek",
+                "example": "I don't feel quite all right today.",
+                "example_tr": "Bugün kendimi pek iyi hissetmiyorum."
+            },
+            {
+                "turkish": "düzeltmek/telafi etmek",
+                "example": "I want to make everything all right again.",
+                "example_tr": "Her şeyi tekrar düzeltmek (yoluna koymak) istiyorum."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Levels of Wellness/Agreement",
+            "turkishConcept": "İyilik/Onay Seviyeleri",
+            "description": "Nötr'den pozitife doğru iyilik durumları",
+            "scale": [
+                {
+                    "value": 3,
+                    "turkish": "şöyle böyle",
+                    "note": "Ne iyi ne kötü",
+                    "usage": "I'm feeling so-so.",
+                    "description_tr": "Durumun ne iyi ne kötü, vasat olduğunu belirtir.",
+                    "example_en": "How was the movie? It was so-so.",
+                    "example_tr": "Film nasıldı? Şöyle böyleydi.",
+                    "strength": "Nötr-Negatif"
+                },
+                {
+                    "value": 5,
+                    "turkish": "iyi/yolunda",
+                    "note": "Yeterli, sorunsuz, tatmin edici",
+                    "usage": "The movie was all right.",
+                    "description_tr": "Her şeyin yolunda olduğunu veya bir şeyin kabul edilebilir seviyede olduğunu anlatır.",
+                    "example_en": "Is everything all right here?",
+                    "example_tr": "Burada her şey yolunda mı?",
+                    "strength": "Nötr-Pozitif"
+                },
+                {
+                    "value": 6,
+                    "turkish": "iyi/hoş",
+                    "note": "Standart iyi, bazen 'peki' (isteksiz) anlamında",
+                    "usage": "I'm fine, thanks.",
+                    "description_tr": "Genel iyilik halidir, bazen konuyu kapatmak için de kullanılır.",
+                    "example_en": "Just do whatever you want, it's fine.",
+                    "example_tr": "Ne istiyorsan yap, sorun değil (iyi).",
+                    "strength": "Pozitif"
+                },
+                {
+                    "value": 9,
+                    "turkish": "harika",
+                    "note": "Beklenenden iyi",
+                    "usage": "I feel great!",
+                    "description_tr": "Durumun standarttan çok daha iyi olduğunu vurgular.",
+                    "example_en": "You look great today!",
+                    "example_tr": "Bugün harika görünüyorsun!",
+                    "strength": "Güçlü"
+                }
+            ]
+        },
+        "antonyms": [
+            {
+                "value": 1,
+                "turkish": "ters/yanlış",
+                "note": "'Something is wrong' (Bir terslik var)",
+                "description_tr": "İşlerin yolunda gitmediğini, bir terslik olduğunu belirtir.",
+                "example_en": "Something feels wrong about this deal.",
+                "example_tr": "Bu anlaşmada ters gelen bir şeyler var."
+            },
+            {
+                "value": 0,
+                "turkish": "kabul edilemez",
+                "note": "Onay vermeme durumu",
+                "description_tr": "Bir durumun kesinlikle uygun olmadığını ifade eder.",
+                "example_en": "This behavior is unacceptable.",
+                "example_tr": "Bu davranış kabul edilemez."
+            }
+        ]
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "Are you all right?",
+                "meaning_tr": "Naber? / İyi misin?",
+                "register": "British English",
+                "example": "Alright mate? (Naber dostum?)",
+                "example_tr": "İngiltere'de selamlaşma kalıbıdır, sağlık sorusu değildir."
+            },
+            {
+                "phrase": "It'll be all right on the night",
+                "meaning_tr": "Kervan yolda düzülür (son anda işler yoluna girer)",
+                "register": "idiomatic",
+                "example": "Rehearsals were chaotic, but it'll be all right on the night.",
+                "example_tr": "Provalar kaotikti ama gösteri zamanı her şey düzelir."
+            },
+            {
+                "phrase": "That's quite all right",
+                "meaning_tr": "Hiç önemli değil / Rica ederim",
+                "register": "polite/formal",
+                "example": "Use this phrase to accept an apology graciously.",
+                "example_tr": "Bir özrü nazikçe kabul etmek için kullanılır."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Signposting (Konuşma Yönlendirme)",
+            "note_en": "In spoken English, 'All right' is often used to signal a change of topic or to close a conversation. (e.g., 'All right then, see you later.')",
+            "note_tr": "Konuşmada 'All right' demek, genellikle 'Peki o zaman...' diyerek konuyu değiştirme veya vedalaşma işaretidir."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Hem resmi hem günlük dilde kullanılır. Yazımda 'Alright' kullanmaktan kaçının."
+        },
+        "inclusive_language": null,
+        "grammar_nuance": {
+            "title": "Predicate Adjective",
+            "content": "'All right' genellikle fiilden sonra gelir (Results are all right). İsimden önce (an all right movie) kullanımı daha nadirdir ve gayriresmidir."
+        },
+        "business_english": {
+            "title": "Closing Deals",
+            "content": "Toplantı sonunda 'Is that all right with everyone?' demek, 'Herkes mutabık mı/Onaylıyor mu?' demektir ve anlaşmayı mühürler."
+        },
+        "trivia": {
+            "title": "Spelling War: Alright vs All Right",
+            "content": "'Alright' kelimesi 'Already' ve 'Altogether' gibi analoji ile türetilmiştir ancak hala (yüzyıllardır) dilbilgisi otoriteleri tarafından 'standart dışı' kabul edilir. Sınavda asla 'Alright' yazmayın."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 40,
+            "yokdil": 30,
+            "ydt": 80,
+            "description": "Diyalog sorularında (YDT) ve dinleme bölümlerinde (IELTS/TOEFL) frekansı çok yüksektir."
+        },
+        "vocabulary": [
+            {
+                "title": "Diyalog İpuçları",
+                "content": "Bir konuşmacı 'All right...' diyorsa, muhtemelen yeni bir konuya geçiyor veya bir teklifi kabul ediyordur. Tonlamaya dikkat edin."
+            },
+            {
+                "title": "Yazım Hatası Tuzağı",
+                "content": "Şıklarda 'Alright' ve 'All right' varsa, her zaman ayrı yazılan 'All right' seçeneği gramer açısından güvenlidir."
+            }
+        ],
+        "grammar": [],
+        "reading": [
+            {
+                "title": "Understatement (Hafife Alma)",
+                "content": "İngilizler çok iyi bir şeye bile sadece 'It was all right' diyebilirler. Bağlama göre bu 'eh işte' veya 'muhteşemdi' anlamına gelebilir (British Understatement)."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "eall + riht (Old English)",
+        "family_members": [
+            {
+                "pos": "adj/adv",
+                "level": "A1",
+                "note": "tamamen doğru -> tamam/iyi"
+            },
+            {
+                "pos": "adj",
+                "level": "A1",
+                "note": "doğru, haklı"
+            },
+            {
+                "pos": "det",
+                "level": "A1",
+                "note": "bütün, hepsi"
+            },
+            {
+                "pos": "adj/adv",
+                "level": "A2",
+                "note": "gayriresmi yazılış (günlük kullanım için, sınavda kullanmayın)"
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_spelling_alright",
+                "incorrect": "The movie was alright.",
+                "correction": "The movie was all right.",
+                "explanation": "'Alright' yazımı mesajlaşmada kabul görse de, sınavlarda ve resmi yazılarda hala hata sayılır. Her zaman iki kelime olarak yazın."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Listening",
+            "tip": "Dinleme sınavında konuşmacı bir konuyu kapatıp diğerine geçerken ses tonunu yükseltip 'All right...' der. Bu bir 'işaret'tir (signpost).",
+            "keywords": [
+                "signposting",
+                "transition"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "multiple_choice",
+            "question": "Which spelling is formally correct?",
+            "answer": "All right",
+            "distractors": [
+                "Alright",
+                "Allright",
+                "Al-right"
+            ]
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Old English",
+                "meaning": "completely just/correct"
+            },
+            {
+                "era": "Middle English",
+                "meaning": "properly, safely"
+            },
+            {
+                "era": "19th Century",
+                "meaning": "disputed spelling emerges (analogy to already)"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Distant Conceptual",
+            "story": "'Right' (doğru/sağ) kelimesi 'düz gitmek' kökünden gelir. Türkçedeki 'Ray' (tren rayı) kelimesiyle uzaktan akrabadır. 'All Right' demek, her şeyin 'rayında' olması, düzgün gitmesi demektir.",
+            "example": "All right -> Her şey rayında."
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Ali parkta düştü. Ben koştum. 'İyi misin?' diye sordum. Ali kalktı. Üstünü temizledi. 'Evet, ben <strong>iyiyim</strong> (all right)' dedi. Biz oyun oynamaya devam ettik. Her şey <strong>yolunda</strong>ydı.",
+            "en": "Ali fell in the park. I ran. 'Are you <strong>all right</strong>?' I asked. Ali got up. He cleaned his clothes. 'Yes, I am <strong>all right</strong>,' he said. We continued to play. Everything was <strong>all right</strong>."
+        },
+        "A2": {
+            "tr": "Öğretmenim, 'Ödevini yaptın mı?' diye sordu. Ben, 'Üzgünüm, unuttum' dedim. Öğretmen gülümsedi. '<strong>Sorun değil</strong> (That's all right), yarın getirirsin' dedi. Çok mutlu oldum. '<strong>Tamam</strong> (All right), söz veriyorum' dedim.",
+            "en": "My teacher asked, 'Did you do your homework?' I said, 'Sorry, I forgot.' The teacher smiled. 'That is <strong>all right</strong>, bring it tomorrow,' she said. I was very happy. '<strong>All right</strong>, I promise,' I said."
+        },
+        "B1": {
+            "tr": "Dün geceki fırtına çok korkutucuydu. Elektrikler kesildi. Annemi aradım, ulaşamadım. Çok endişelendim. Sabah olunca nihayet telefonu açtı. 'Merak etme, biz <strong>iyiyiz</strong> (all right)' dedi. O cümleyi duymak beni rahatlattı. Sonunda her şeyin <strong>yoluna girdiğini</strong> bilmek güzeldi.",
+            "en": "The storm last night was very scary. The electricity went out. I called my mom but couldn't reach her. I was very worried. In the morning, she finally answered. 'Don't worry, we are <strong>all right</strong>,' she said. Hearing that sentence relieved me. It was good to know that everything turned out <strong>all right</strong>."
+        },
+        "B2": {
+            "tr": "Bir iş görüşmesindeydim. Görüşme biraz gergin başladı. Sonra, '<strong>Pekala</strong> (All right), şimdi deneyimlerinizden konuşalım' dedi müdür. Bu ifade (all right), konuşmanın resmiyet seviyesini düşürdü ve daha rahat bir aşamaya geçtiğimizi işaret etti. Görüşmenin geri kalanı gayet <strong>iyi</strong> (all right) geçti, ne harikaydı ne de kötü.",
+            "en": "I was at a job interview. It started a bit tense. Then, '<strong>All right</strong>, let's talk about your experience now,' said the manager. This phrase signaled a shift to a more comfortable stage. The rest of the interview went quite <strong>all right</strong>; it wasn't amazing, but not bad either."
+        },
+        "C1": {
+            "tr": "Dilbilimciler arasında 'alright' kelimesinin yazımı üzerine bitmeyen bir tartışma vardır. Gelenekselciler bunun tembel bir yazım hatası olduğunu savunur. Ancak, 'already' ve 'altogether' gibi kelimelerin dilde kabul görmesi, 'alright'ın da zamanla meşrulaşacağının sinyalini veriyor. Yazar, 'Eğer anlam açıksa, yazım biçimi <strong>sorun olmamalı</strong> (should be all right)' diyerek betimleyici (descriptive) bir tavır takındı.",
+            "en": "There is an endless debate among linguists regarding the spelling of 'alright'. Traditionalists argue it is a lazy spelling error. However, the acceptance of words like 'already' and 'altogether' signals that 'alright' will also be legitimized in time. The author took a descriptive stance, implying that 'If the meaning is clear, the spelling should be <strong>all right</strong>.'"
+        },
+        "C2": {
+            "tr": "Varoluşsal bir krizin ortasında, insan her şeyin kaotik olduğunu düşünme eğilimindedir. Ancak Stoacı felsefe, evrenin doğası gereği mükemmel ve <strong>yerli yerinde</strong> (all right) olduğunu savunur. Olanı olduğu gibi kabul etmek, 'her şey <strong>yolunda</strong>' diyebilen bir zihin yapısına ulaşmaktır. Bu, pasif bir boyun eğme değil, kozmik düzene (Order) aktif bir uyumdur. Bob Marley'in dediği gibi: 'Her küçük şey <strong>yoluna girecek</strong>.'",
+            "en": "In the midst of an existential crisis, one tends to think everything is chaotic. However, Stoic philosophy argues that the universe is inherently perfect and <strong>all right</strong>. Accepting what is, implies reaching a mindset that can say 'everything is <strong>all right</strong>.' This is not passive submission, but active attunement to the cosmic Order. As Bob Marley said: 'Every little thing is gonna be <strong>all right</strong>.'"
+        }
+    }
+}

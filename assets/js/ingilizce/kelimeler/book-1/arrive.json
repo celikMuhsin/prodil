@@ -1,0 +1,376 @@
+{
+    "id": "arrive",
+    "meta": {
+        "cefr_level": "A1",
+        "frequency_band": "High Frequency",
+        "part_of_speech": [
+            "verb"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/əˈraɪv/",
+        "syllabification": [
+            "ar",
+            "rive"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "to reach a place, especially at the end of a journey",
+            "core_meaning_tr": "varmak, ulaşmak, gelmek",
+            "context_tags": [
+                "travel",
+                "movement"
+            ],
+            "grammar_pattern": "arrive at/in [place]",
+            "example": {
+                "sentence": "We arrived in London at 6 p.m.",
+                "translation": "Saat 18:00'de Londra'ya vardık."
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "to happen or start to exist",
+            "core_meaning_tr": "gelip çatmak (zaman/olay)",
+            "context_tags": [
+                "time",
+                "abstract"
+            ],
+            "example": {
+                "sentence": "The moment of truth has arrived.",
+                "translation": "Gerçek anı (dananın kuyruğunun koptuğu an) gelip çattı."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "arrive AT (small place)",
+                "usage_level": "Core",
+                "notes_tr": "Havalimanı, istasyon, parti, otel gibi 'nokta' kabul edilen yerler için 'AT' kullanılır (arrive at the airport)."
+            },
+            {
+                "pattern": "arrive IN (large place)",
+                "usage_level": "Core",
+                "notes_tr": "Şehir, ülke veya kıta gibi 'alan' bildiren yerler için 'IN' kullanılır (arrive in Turkey, arrive in Paris)."
+            },
+            {
+                "pattern": "arrive home",
+                "usage_level": "Core",
+                "notes_tr": "'Home' kelimesi 'to/at/in' almaz. Direkt 'arrive home' denir."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Hareket ve varış bildirmek için.",
+            "critical_comparison": {
+                "context": "Arrive vs Reach vs Get to",
+                "rule": "'Arrive' asla 'to' almaz (arrive to London YANLIŞTIR). 'Get' her zaman 'to' alır (get to London). 'Reach' hiç edat almaz (reach London).",
+                "example_wrong": "I arrived to the school. (Yanlış)",
+                "example_right": "I arrived at the school. (Doğru)"
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Kelimenin seviyelere göre kullanım karmaşıklığı",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "The train arrives at 5 o'clock.",
+                "tr": "Tren saat 5'te varır.",
+                "grammar_focus": "Present Simple (Schedule)"
+            },
+            {
+                "cefr": "A2",
+                "en": "She arrived home late last night.",
+                "tr": "Dün gece eve geç geldi.",
+                "grammar_focus": "Arrive + Home (No preposition)"
+            },
+            {
+                "cefr": "B1",
+                "en": "We were waiting for the guests to arrive.",
+                "tr": "Misafirlerin gelmesini bekliyorduk.",
+                "grammar_focus": "Infinitive Usage"
+            },
+            {
+                "cefr": "B2",
+                "en": "The police arrived on the scene within minutes.",
+                "tr": "Polis dakikalar içinde olay yerine intikal etti.",
+                "grammar_focus": "Phrase (arrive on the scene)"
+            },
+            {
+                "cefr": "C1",
+                "en": "They finally arrived at a decision after hours of debate.",
+                "tr": "Saatler süren tartışmanın ardından nihayet bir karara vardılar.",
+                "grammar_focus": "Abstract Usage (Decision)"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "sağ salim",
+                "strength": "idiomatic",
+                "example": "They arrived safe and sound.",
+                "example_tr": "Sağ salim vardılar."
+            },
+            {
+                "turkish": "tam zamanında",
+                "strength": "strong",
+                "example": "The package arrived right on time.",
+                "example_tr": "Paket tam zamanında ulaştı."
+            },
+            {
+                "turkish": "habersiz",
+                "strength": "standard",
+                "example": "He arrived unannounced.",
+                "example_tr": "Habersiz (çat kapı) geldi."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "beklemek",
+                "example": "We are waiting for the bus to arrive.",
+                "example_tr": "Otobüsün gelmesini bekliyoruz."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Arrival Words",
+            "turkishConcept": "Varış Kelimeleri",
+            "scale": [
+                {
+                    "value": 3,
+                    "turkish": "gelmek (come)",
+                    "note": "Hareket odaklı",
+                    "usage": "Come here.",
+                    "description_tr": "Konuşmacıya doğru hareketi anlatır, varış anını vurgulamaz.",
+                    "example_en": "Please come to my party.",
+                    "example_tr": "Lütfen partime gel.",
+                    "strength": "Temel"
+                },
+                {
+                    "value": 6,
+                    "turkish": "ulaşmak (get to)",
+                    "note": "Süreç ve zorluk içerebilir",
+                    "usage": "How do I get to the station?",
+                    "description_tr": "'Arrive'ın en yaygın günlük (informal) karşılığıdır.",
+                    "example_en": "I got to work late.",
+                    "example_tr": "İşe geç kaldım (ulaştım).",
+                    "strength": "Günlük"
+                },
+                {
+                    "value": 8,
+                    "turkish": "varmak (arrive)",
+                    "note": "Nötr ve Resmi",
+                    "usage": "The flight has arrived.",
+                    "description_tr": "Varış anını net bir şekilde bildiren standart kelimedir edat (at/in) gerektirir.",
+                    "example_en": "We arrived in Rome.",
+                    "example_tr": "Roma'ya vardık.",
+                    "strength": "Standart"
+                },
+                {
+                    "value": 9,
+                    "turkish": "erişmek (reach)",
+                    "note": "Çaba sonucu varma, edatsız kullanılır",
+                    "usage": "We reached the summit.",
+                    "description_tr": "Genellikle bir hedefe, zirveye veya sonuca ulaşmayı anlatır, edat almaz.",
+                    "example_en": "They reached an agreement.",
+                    "example_tr": "Bir anlaşmaya vardılar (eriştiler).",
+                    "strength": "Sonuç Odaklı"
+                }
+            ]
+        },
+        "antonyms": [
+            {
+                "value": 1,
+                "turkish": "ayrılmak (depart)",
+                "note": "Resmi ayrılış",
+                "description_tr": "Bir yerden (resmi olarak) yola çıkmak.",
+                "example_en": "The train departs at noon.",
+                "example_tr": "Tren öğlen kalkıyor."
+            },
+            {
+                "value": 1,
+                "turkish": "terk etmek (leave)",
+                "note": "Genel ayrılış",
+                "description_tr": "Bir yerden gitmek, çıkmak.",
+                "example_en": "I left the house early.",
+                "example_tr": "Evden erken çıktım."
+            }
+        ]
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "arrive at a conclusion",
+                "meaning_tr": "bir sonuca varmak",
+                "register": "academic/formal",
+                "example": "How did you arrive at that conclusion?",
+                "example_tr": "O sonuca nasıl vardın?"
+            },
+            {
+                "phrase": "new arrival",
+                "meaning_tr": "yeni gelen (özellikle yeni doğan bebek)",
+                "register": "social",
+                "example": "They are celebrating their new arrival.",
+                "example_tr": "Yeni bebeklerini (aileye yeni katılanı) kutluyorlar."
+            }
+        ],
+        "sociolinguistics": null
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Her seviyede kullanılır."
+        },
+        "inclusive_language": null,
+        "grammar_nuance": {
+            "title": "Arrive TO Yoktur!",
+            "content": "Türk öğrencilerin en sık yaptığı hata 'arrive to' demektir. Çünkü Türkçede '-e varmak' yönelme eki vardır. İngilizcede ise 'bir yerde bulunma' (at/in) mantığı vardır. Arrive = Be at a place finally."
+        },
+        "business_english": {
+            "title": "Estimated Time of Arrival (ETA)",
+            "content": "Lojistik ve iş dünyasında 'ETA' kısaltması hayati önem taşır. 'What is your ETA?' (Tahmini varış saatin nedir?) günlük konuşmaya da girmiştir.",
+            "keywords": [
+                "ETA",
+                "arrival time"
+            ]
+        },
+        "trivia": {
+            "title": "Kıyıya Varmak",
+            "content": "'Arrive' kelimesinin kökü Latince 'ad-ripa' (kıyıya doğru) kelimesinden gelir. Eskiden sadece deniz yolculuğu sonunda karaya ayak basmak için kullanılırdı."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 70,
+            "yokdil": 70,
+            "ydt": 85,
+            "description": "Preposition (edat) sorularının vazgeçilmezidir."
+        },
+        "vocabulary": [
+            {
+                "title": "Edat Tuzağı",
+                "content": "Boşluktan sonra şehir/ülke varsa 'IN', bina/istasyon varsa 'AT' seçin. Asla 'TO' seçmeyin."
+            }
+        ],
+        "grammar": [
+            {
+                "title": "Here/There/Home İstisnası",
+                "content": "'Arrive here', 'arrive there', 'arrive home' yapılarında edat (at/in) KULLANILMAZ."
+            }
+        ],
+        "reading": [
+            {
+                "title": "Zaman Çizelgeleri",
+                "content": "Reading parçalarında tren/uçak saatleri anlatılırken 'arrival' ve 'departure' zıtlığı üzerinden sorular sorulur."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "ad (to) + ripa (shore) -> Latin",
+        "family_members": [
+            {
+                "pos": "v",
+                "level": "A1",
+                "note": "varmak"
+            },
+            {
+                "pos": "n",
+                "level": "A2",
+                "suffix": "-al",
+                "note": "varış, geliş (arrival)"
+            },
+            {
+                "pos": "n",
+                "level": "B2",
+                "note": "yeni gelen kimse (new arrival)"
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_prep_to",
+                "incorrect": "I arrived to Istanbul.",
+                "correction": "I arrived in Istanbul.",
+                "explanation": "Arrive fiili yönelme (to) bildirmez, varılan yerde olma (in/at) bildirir."
+            },
+            {
+                "error_id": "err_home_at",
+                "incorrect": "I arrived at home.",
+                "correction": "I arrived home.",
+                "explanation": "'Home' kelimesi yer-yön zarfı olarak kullanıldığında edat almaz."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Travel / Transport",
+            "tip": "'Get to' çok basit kaçabilir. Writing task'te 'reach my destination' veya 'arrive at the venue' demek daha profesyoneldir.",
+            "keywords": [
+                "destination",
+                "punctual",
+                "delay"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "gap_fill",
+            "question": "The Queen arrived ___ the hotel ___ London.",
+            "answer": "at / in",
+            "distractors": [
+                "to / in",
+                "in / at",
+                "at / at"
+            ],
+            "explanation": "Otel (küçük yer) -> at, Londra (şehir) -> in."
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Latin",
+                "meaning": "to the shore (ad ripa)"
+            },
+            {
+                "era": "Old French",
+                "meaning": "to come to land"
+            },
+            {
+                "era": "Modern English",
+                "meaning": "to reach a destination"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Mnemonic",
+            "story": "'Arrive' kelimesindeki 'Arr-' sesi ile Türkçedeki 'Araç' kelimesini bağdaştırabiliriz. Araçla bir yere varılır. Ayrıca 'River' (Nehir) kelimesi de 'Ripa' (Kıyı) kökünden gelir. Nehir kıyısına varmak.",
+            "example": "River -> Ar-rive (Nehirden kıyıya varmak)."
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Okul otobüsü saat 8'de <strong>varır</strong>. Ben otobüsü beklerim. Otobüs okula <strong>varınca</strong> (arrives at school) kapılar açılır. Biz içeri gireriz. Eve geri <strong>dönüşüm</strong> (arrival home) saat 4'tedir. Annem beni bekler.",
+            "en": "The school bus <strong>arrives</strong> at 8 o'clock. I wait for the bus. When the bus <strong>arrives</strong> at school, the doors open. We go inside. My <strong>arrival</strong> home is at 4 o'clock. My mother waits for me."
+        },
+        "A2": {
+            "tr": "Geçen yaz tatil için İtalya'ya gittik. Uçağımız Roma'ya (in Rome) sabah <strong>vardı</strong>. Çok heyecanlıydık. Sonra otelimize (at the hotel) taksiyle gittik. Otele <strong>vardığımızda</strong> odamız hazır değildi. Bavullarımızı bıraktık ve şehri gezmeye başladık.",
+            "en": "Last summer we went to Italy for vacation. Our plane <strong>arrived</strong> in Rome in the morning. We were very excited. Then we went to our hotel by taxi. When we <strong>arrived</strong> at the hotel, our room was not ready. We left our calmness (luggage - note: story says calmness/bavul, assumig luggage) and started to tour the city."
+        },
+        "B1": {
+            "tr": "Tren istasyonuna <strong>vardığımda</strong> (at the station) tren çoktan gitmişti. Geç kalmıştım. Bir sonraki treni beklemek zorundaydım. Arkadaşımı aradım ve 'Üzgünüm, partiye geç <strong>varacağım</strong>' dedim. O da 'Sorun değil, sağ salim gel yeter' dedi. Sonunda oraya <strong>ulaştığımda</strong> (got there) herkes eğleniyordu.",
+            "en": "When I <strong>arrived</strong> at the train station, the train had already left. I was late. I had to wait for the next train. I called my friend and said, 'Sorry, I will <strong>arrive</strong> at the party late.' He said, 'No problem, just arrive safe and sound.' When I finally <strong>got there</strong>, everyone was having fun."
+        },
+        "B2": {
+            "tr": "Kasırga uyarısı yapıldıktan sonra yardım ekipleri bölgeye <strong>intikal etti</strong> (arrived on the scene). Ancak yollar kapalı olduğu için köylere <strong>ulaşmak</strong> (reach) zordu. Helikopterler erzak getirmek için geldi. Yardımların zamanında <strong>varması</strong> hayati önem taşıyordu. Yerel halk, kurtarma ekipleri <strong>geldiğinde</strong> alkışlamaya başladı.",
+            "en": "After the hurricane warning, aid teams <strong>arrived</strong> on the scene. However, since the roads were closed, it was difficult to <strong>reach</strong> the villages. Helicopters arrived to bring supplies. It was vital for the aid to <strong>arrive</strong> on time. The local people started clapping when the rescue teams <strong>arrived</strong>."
+        },
+        "C1": {
+            "tr": "Bilim insanları yıllarca süren araştırmaların ardından şaşırtıcı bir sonuca <strong>vardılar</strong> (arrived at a conclusion). İklim değişikliği tahmin edilenden daha hızlı ilerliyordu. Bu dönüm noktası (turning point) <strong>gelip çattığında</strong>, dünya liderleri acil bir zirve için toplandı. Artık harekete geçme zamanı <strong>gelmişti</strong>. Gelecek nesillerin kaderi bu karara bağlıydı.",
+            "en": "After years of research, scientists <strong>arrived</strong> at a surprising conclusion. Climate change was progressing faster than estimated. When this turning point <strong>arrived</strong>, world leaders gathered for an emergency summit. The time to act had <strong>arrived</strong>. The fate of future generations depended on this decision."
+        },
+        "C2": {
+            "tr": "Başarıya giden yolculukta, asıl mesele hedefe <strong>varmak</strong> değil, o süreçte kim olduğunuzdur. Birçok insan varış noktasına (destination) odaklanarak anı kaçırır. Oysa Taoizm'de söylendiği gibi, 'İyi bir gezginin sabit planları yoktur ve <strong>varmaya</strong> niyeti yoktur.' Mükemmel bir aydınlanma anının <strong>gelmesini</strong> beklemek yerine, her adımın değerini bilmek gerekir.",
+            "en": "In the journey to success, the main issue is not <strong>arriving</strong> at the goal, but who you become in that process. Many people miss the moment by focusing on the destination. However, as said in Taoism, 'A good traveler has no fixed plans and is not intent on <strong>arriving</strong>.' Instead of waiting for a perfect moment of enlightenment to <strong>arrive</strong>, one needs to appreciate the value of every step."
+        }
+    }
+}

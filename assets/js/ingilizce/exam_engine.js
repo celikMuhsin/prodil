@@ -7,6 +7,7 @@ const EnglishExam = {
     init: function () {
         // Load data if available
         if (window.vocabularyData) {
+            // Reference global data directly to share cache/state
             this.currentData = window.vocabularyData;
         }
     },
@@ -24,10 +25,10 @@ const EnglishExam = {
 
     close: function () {
         document.getElementById('eng-exam-interface').style.display = 'none';
-        document.getElementById('eng-exam-grid').style.display = 'grid'; // Grid is default for .grid class usually but verify if flex needed
+        document.getElementById('eng-exam-grid').style.display = 'grid';
     },
 
-    nextQuestion: function () {
+    nextQuestion: async function () {
         const qArea = document.getElementById('eng-exam-question-area');
         const feedback = document.getElementById('eng-exam-feedback');
         feedback.innerText = '';
@@ -38,9 +39,27 @@ const EnglishExam = {
             return;
         }
 
+        // Show Loading
+        qArea.innerHTML = '<div style="text-align:center; padding:40px;"><i class="fa-solid fa-spinner fa-spin" style="font-size:2rem; color:#ddd;"></i></div>';
+
         // Pick random item
         const randIndex = Math.floor(Math.random() * this.currentData.length);
         const item = this.currentData[randIndex];
+
+        // --- Async Fetch if Data Missing ---
+        if (item.path && !item.grammar_profile) {
+            try {
+                const res = await fetch(item.path);
+                if (!res.ok) throw new Error("Load failed");
+                const json = await res.json();
+                Object.assign(item, json); // Cache in place
+            } catch (e) {
+                console.error(e);
+                qArea.innerHTML = `<div style="text-align:center;">Veri yüklenemedi (${item.word}).<br>Sonraki soruya geçiliyor...</div>`;
+                setTimeout(() => this.nextQuestion(), 1000);
+                return;
+            }
+        }
 
         // RENDER BASED ON TYPE
         if (this.currentType === 'meaning') {

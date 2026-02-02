@@ -1,0 +1,427 @@
+{
+    "id": "age",
+    "meta": {
+        "cefr_level": "A1",
+        "frequency_band": "High Frequency",
+        "part_of_speech": [
+            "noun",
+            "verb"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/eɪdʒ/",
+        "syllabification": [
+            "age"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "the length of time that a person has lived or a thing has existed",
+            "core_meaning_tr": "yaş, var olma süresi",
+            "context_tags": [
+                "general"
+            ],
+            "grammar_pattern": "at the age of [number]",
+            "example": {
+                "sentence": "He left home at the age of 18.",
+                "translation": "18 yaşında evden ayrıldı."
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "a particular period of history",
+            "core_meaning_tr": "çağ, devir, dönem",
+            "context_tags": [
+                "history",
+                "academic"
+            ],
+            "example": {
+                "sentence": "We live in the digital age.",
+                "translation": "Dijital çağda yaşıyoruz."
+            }
+        },
+        {
+            "sense_id": "def_3",
+            "core_meaning_en": "to become older",
+            "core_meaning_tr": "yaşlanmak, yıllanmak",
+            "context_tags": [
+                "verb"
+            ],
+            "example": {
+                "sentence": "Stress ages you faster.",
+                "translation": "Stres seni daha hızlı yaşlandırır."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "at the age of X",
+                "usage_level": "Core",
+                "notes_tr": "Kesin bir yaştan bahsederken kullanılır. Sık yapılan hata: 'in the age of' (yanlış)."
+            },
+            {
+                "pattern": "act your age",
+                "usage_level": "Intermediate",
+                "notes_tr": "Emir kipi olarak: 'Yaşına göre davran (çocuklaşma)' anlamında."
+            },
+            {
+                "pattern": "age gracefully",
+                "usage_level": "Advanced",
+                "notes_tr": "Genelde 'iyi yaşlanmak', 'zamanla güzelleşmek' için kullanılan kalıptır."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Hem durum (noun) hem de süreç (verb) bildirebilir.",
+            "critical_comparison": {
+                "context": "Age vs Grow up",
+                "rule": "'Age' biyolojik yaşlanmayı (hücresel) veya nesnelerin eskimini/yıllanmasını anlatır. 'Grow up' ise çocukluktan yetişkinliğe geçiş (büyümek) anlamındadır.",
+                "example_wrong": "My son is aging fast. (Çocuk büyüyor demek isterken yanlış)",
+                "example_right": "My son is growing up fast. (Doğru)"
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Kelimenin seviyelere göre kullanım karmaşıklığı",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "What is your age?",
+                "tr": "Yaşınız kaç?",
+                "grammar_focus": "Basic Question"
+            },
+            {
+                "cefr": "A2",
+                "en": "People usually retire at the age of 65.",
+                "tr": "İnsanlar genellikle 65 yaşında emekli olur.",
+                "grammar_focus": "Preposition Phrase (at the age of)"
+            },
+            {
+                "cefr": "B1",
+                "en": "Wine usually improves as it ages.",
+                "tr": "Şarap genellikle yaşlandıkça (yıllandıkça) güzelleşir.",
+                "grammar_focus": "Verb Usage (aging)"
+            },
+            {
+                "cefr": "B2",
+                "en": "We are living in an age of rapid technological change.",
+                "tr": "Hızlı bir teknolojik değişim çağında yaşıyoruz.",
+                "grammar_focus": "Abstract Noun Usage (Era/Period)"
+            },
+            {
+                "cefr": "C1",
+                "en": "His face had aged visibly since the accident.",
+                "tr": "Kazadan beri yüzü gözle görülür şekilde yaşlanmıştı.",
+                "grammar_focus": "Past Perfect + Adverb"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "ileri",
+                "strength": "strong",
+                "example": "He died at an advanced age.",
+                "example_tr": "İleri bir yaşta vefat etti."
+            },
+            {
+                "turkish": "erken",
+                "strength": "neutral",
+                "example": "She started reading at an early age.",
+                "example_tr": "Erken yaşta okumaya başladı."
+            },
+            {
+                "turkish": "henüz çok genç",
+                "strength": "literary",
+                "example": "He left home at the tender age of 14.",
+                "example_tr": "14 gibi henüz çok genç (körpe) bir yaşta evden ayrıldı."
+            },
+            {
+                "turkish": "orta",
+                "strength": "neutral",
+                "example": "Men in middle age often buy sports cars.",
+                "example_tr": "Orta yaştaki erkekler genelde spor araba alır."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "ulaşmak, basmak",
+                "example": "When you reach the age of 18, you can vote.",
+                "example_tr": "18 yaşına bastığında oy kullanabilirsin."
+            },
+            {
+                "turkish": "göstermek",
+                "example": "She doesn't look her age at all.",
+                "example_tr": "Hiç yaşını göstermiyor."
+            },
+            {
+                "turkish": "hissetmek",
+                "example": "I'm starting to feel my age.",
+                "example_tr": "Yaşlandığımı (yaşımı) hissetmeye başlıyorum."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Time Period / Era",
+            "turkishConcept": "Zaman Dilimi / Çağ",
+            "description": "Zaman dilimlerini ifade eden kelimelerin kapsam sıralaması",
+            "scale": [
+                {
+                    "value": 3,
+                    "turkish": "dönem",
+                    "note": "Belirli bir süre",
+                    "usage": "General: 'a difficult period'",
+                    "description_tr": "Kısa veya uzun, başlangıcı ve sonu olan herhangi bir zaman dilimi.",
+                    "example_en": "The post-war period was difficult.",
+                    "example_tr": "Savaş sonrası dönem zordu.",
+                    "example": "a short period of time",
+                    "strength": "Genel"
+                },
+                {
+                    "value": 6,
+                    "turkish": "çağ",
+                    "note": "Kültürel/Tarihi bütünlük",
+                    "usage": "Historical: 'The Iron Age'",
+                    "description_tr": "Belirgin karakteristik özellikleri (teknoloji, kültür vb.) olan uzun tarihsel dönem.",
+                    "example_en": "We live in the information age.",
+                    "example_tr": "Bilgi çağında yaşıyoruz.",
+                    "example": "The Bronze Age",
+                    "strength": "Orta"
+                },
+                {
+                    "value": 8,
+                    "turkish": "devir",
+                    "note": "Köklü değişimle başlayan dönem",
+                    "usage": "Grand: 'A new era of exploration'",
+                    "description_tr": "Genellikle önemli bir olay, kişi veya değişimle başlayan yeni ve farklı bir düzen.",
+                    "example_en": "The fall of the wall marked the end of an era.",
+                    "example_tr": "Duvarın yıkılışı bir devrin sonunu işaret ediyordu.",
+                    "example": "The Victorian Era",
+                    "strength": "Güçlü"
+                },
+                {
+                    "value": 10,
+                    "turkish": "epok",
+                    "note": "Jeolojik/Evrensel dönem",
+                    "usage": "Scientific: 'The Holocene Epoch'",
+                    "description_tr": "Jeolojide veya tarihte çok köklü, geri döndürülemez değişimlerin olduğu çok uzun dönem.",
+                    "example_en": "This discovery marked a new epoch in medicine.",
+                    "example_tr": "Bu keşif tıpta yeni bir çığır (epok) açtı.",
+                    "example": "A new epoch in history",
+                    "strength": "Akademik"
+                }
+            ]
+        },
+        "antonyms": [
+            {
+                "value": 8,
+                "turkish": "gençlik",
+                "note": "Yaşlılığın karşıtı",
+                "description_tr": "Gençlik dönemi, tazelik.",
+                "example_en": "She wants to recapture her youth.",
+                "example_tr": "Gençliğini yeniden yakalamak istiyor."
+            },
+            {
+                "value": 6,
+                "turkish": "çocukluk",
+                "note": "Yetişkinliğin karşıtı",
+                "description_tr": "Çocuk olma evresi.",
+                "example_en": "He had a happy childhood.",
+                "example_tr": "Mutlu bir çocukluğu vardı."
+            }
+        ]
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "act your age",
+                "meaning_tr": "yaşına göre davran, çocuklaşma",
+                "register": "informal/command",
+                "example": "Stop crying and act your age!",
+                "example_tr": "Ağlamayı kes ve yaşına göre davran!"
+            },
+            {
+                "phrase": "come of age",
+                "meaning_tr": "reşit olmak, rüştünü ispatlamak",
+                "register": "neutral",
+                "example": "The movie is a coming-of-age story.",
+                "example_tr": "Film, bir olgunlaşma (büyüme) hikayesidir."
+            },
+            {
+                "phrase": "age is just a number",
+                "meaning_tr": "yaş sadece bir sayıdır",
+                "register": "cliché",
+                "example": "She started running at 70; age is just a number.",
+                "example_tr": "70'inde koşmaya başladı; yaş sadece bir sayıdır."
+            }
+        ],
+        "sociolinguistics": null
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "'Age' kelimesi nötrdür. Ancak insanlardan bahsederken 'old' demek yerine 'elderly' veya 'senior' demek nezaket gereğidir."
+        },
+        "inclusive_language": {
+            "title": "Yaş Ayrımcılığı (Ageism)",
+            "content": "Batı kültüründe, özellikle kadınlara 'How old are you?' diye sormak kabalık (rude) sayılabilir. Bunun yerine dolaylı yollar tercih edilir veya konu açılmaz."
+        },
+        "grammar_nuance": {
+            "title": "Age vs Grow",
+            "content": "'Aging' biyolojik yıpranmayı veya şarap gibi olgunlaşmayı ifade eder. 'Growing up' ise çocukluktan yetişkinliğe geçişi (büyümeyi) anlatır."
+        },
+        "business_english": {
+            "title": "İş Dünyası Terimleri",
+            "content": "'Retirement age' (emeklilik yaşı) ve 'working-age population' (çalışma çağındaki nüfus) ekonomi haberlerinin vazgeçilmez terimleridir.",
+            "keywords": [
+                "retirement age",
+                "working-age"
+            ]
+        },
+        "trivia": {
+            "title": "Middle Age Değişimi",
+            "content": "Eskiden 40 yaş 'middle age' (orta yaş) kabul edilirken, insan ömrü uzadığı için artık 50'ler hatta 60'lar 'new middle age' olarak anılmaktadır."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 90,
+            "yokdil": 95,
+            "ydt": 85,
+            "description": "ÖSYM sınavlarında hem okuma parçalarında (tarihsel çağlar) hem kelime sorularında (insan yaşı) çok sık çıkar."
+        },
+        "vocabulary": [
+            {
+                "title": "Edat (Preposition): AT",
+                "content": "Bir eylemin kaç yaşında yapıldığını anlatırken '<b>AT</b> the age of...' kalıbı kullanılır. 'In the age' bu bağlamda hatalıdır."
+            },
+            {
+                "title": "Kelime Ayrımı: Era vs Age",
+                "content": "Soruda jeolojik veya çok uzun bir dönemden (Buzul çağı gibi) bahsediyorsa 'Age' veya 'Epoch' uygundur. Politik veya kültürel bir dönemse 'Era' (Reagan Era) seçilebilir."
+            }
+        ],
+        "grammar": [
+            {
+                "title": "Fiil Olarak Age",
+                "content": "Parçada 'The population is aging' (Nüfus yaşlanıyor) cümlesindeki 'aging' fiildir. Genellikle continuous tense ile kullanılır."
+            },
+            {
+                "title": "Sıfat Tamlaması Kuralı",
+                "content": "'A five-year-old child' yapısında 'years' kelimesi çoğul eki (-s) ALMAZ. Bu klasik bir gramer tuzağıdır."
+            }
+        ],
+        "reading": [
+            {
+                "title": "Demografi Metinleri",
+                "content": "YÖKDİL Sosyal ve Sağlık metinlerinde 'Aging population' (Yaşlanan nüfus) konusu çok popülerdir. 'Silver economy' (Gümüş/Yaşlı ekonomisi) terimine aşina olun."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "aetatem (Latin)",
+        "family_members": [
+            {
+                "pos": "n/v",
+                "level": "A1",
+                "note": "yaş, çağ; yaşlanmak"
+            },
+            {
+                "pos": "adj",
+                "level": "B1",
+                "note": "yaşlı, ... yaşındaki (middle-aged)"
+            },
+            {
+                "pos": "n/adj",
+                "level": "B2",
+                "note": "yaşlanma, yaşlanan nüfus"
+            },
+            {
+                "pos": "adj",
+                "level": "C1",
+                "suffix": "-less",
+                "note": "yaşsız, ebedi, hiç yaşlanmayan"
+            },
+            {
+                "pos": "n",
+                "level": "C2",
+                "suffix": "-ism",
+                "note": "yaş ayrımcılığı"
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_have_age",
+                "incorrect": "I have 25 years.",
+                "correction": "I am 25 years old.",
+                "explanation": "Türkçe mantığıyla 'sahip olmak' (have) kullanılmaz, 'olmak' (be) kullanılır."
+            },
+            {
+                "error_id": "err_noun_adj",
+                "incorrect": "a twenty-years-old man",
+                "correction": "a twenty-year-old man",
+                "explanation": "Sıfat tamlaması yaparken araya tire girince 'year' -s eki almaz."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Vocabulary",
+            "tip": "Writing Task 2'de 'old people' yerine 'people of advanced age' veya 'the elderly' kullanmak daha akademik görünür.",
+            "keywords": [
+                "elderly",
+                "senior citizens",
+                "adolescent"
+            ]
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Latin",
+                "meaning": "period of life, age"
+            },
+            {
+                "era": "Old French",
+                "meaning": "age, life"
+            },
+            {
+                "era": "Middle English",
+                "meaning": "time of life"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Distant Conceptual",
+            "story": "İngilizce 'Age' (Çağ/Yaş) kelimesinin kökü Latince 'aevum' (çağ) kelimesine dayanır. 'Age of Empires' oyunundaki çağ atlama mantığını düşünebilirsiniz. Ayrıca 'Ağaç' kelimesindeki **A-G-Ç** sesleri ile 'Age' kelimesi arasında kodlama yapabilirsiniz: Ağaçların yaşı halkalarla sayılır.",
+            "example": "Ağaç -> Age (Yaş/Çağ)",
+            "example2": "Age of Empires -> Çağlar"
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Benim adım Ali. Ben 10 <strong>yaşındayım</strong>. Babam 40 <strong>yaşında</strong>. O çok <strong>yaşlı</strong> değil. Bizim evimiz eski. Onun <strong>yaş</strong>ı 100. Ben okulu seviyorum. Okulda benimle aynı <strong>yaş</strong>ta çok arkadaşım var.",
+            "en": "My name is Ali. I am 10 years of <strong>age</strong> (old). My father is 40 years of <strong>age</strong>. He is not very <strong>old</strong>. Our house is old. Its <strong>age</strong> is 100. I love school. I have many friends of the same <strong>age</strong> at school."
+        },
+        "A2": {
+            "tr": "Dedemlerin köyünde büyük bir ağaç var. Kimse onun tam <strong>yaşını</strong> bilmiyor. Babam, 'Bu ağaç benimle aynı <strong>yaşta</strong>' diyor. Ama ağaç çok daha büyük görünüyor. Köydeki insanlar uzun zaman önce bu ağacın altında toplanırmış. O zamanlar farklı bir <strong>çağ</strong>dı. Teknoloji yoktu ama insanlar mutluydu.",
+            "en": "There is a big tree in my grandfather's village. Nobody knows its exact <strong>age</strong>. My father says, 'This tree is the same <strong>age</strong> as me.' But the tree looks much bigger. People in the village used to gather under this tree long ago. That was a different <strong>age</strong>. There was no technology, but people were happy."
+        },
+        "B1": {
+            "tr": "Orta <strong>yaşa</strong> gelmek ilginç bir deneyim. Annem her zaman '<strong>Yaş</strong> sadece bir sayıdır' der. Ama geçen yıl cildinin <strong>yaşlandığını</strong> fark etmeye başladı. Aynaya baktı ve 'Sanırım yaşlanıyorum' dedi. Ben ona 'Harika görünüyorsun, <strong>yaşlanmak</strong> doğal bir süreç' dedim. Önemli olan kaç yaşında olduğun değil, nasıl hissettiğindir.",
+            "en": "Reaching middle <strong>age</strong> is an interesting experience. My mother always says, '<strong>Age</strong> is just a number.' But last year, she started to notice her skin <strong>aging</strong>. She looked in the mirror and said, 'I think I am getting old.' I told her, 'You look great, <strong>aging</strong> is a natural process.' What matters is not what <strong>age</strong> you are, but how you feel."
+        },
+        "B2": {
+            "tr": "Modern tıp sayesinde ortalama yaşam süresi artıyor. Artık insanlar çok ileri bir <strong>yaşa</strong> kadar aktif kalabiliyorlar. Ancak, toplumumuzda hala <strong>yaş ayrımcılığı</strong> var. Bazı şirketler belirli bir <strong>yaşın</strong> üzerindeki insanları işe almak istemiyor. Bu adil değil. Deneyim <strong>yaşla</strong> gelir. <strong>Bilgi çağı</strong>nda, deneyimli insanların bilgeliğine her zamankinden daha çok ihtiyacımız var.",
+            "en": "Thanks to modern medicine, life expectancy is increasing. Now people can remain active until a very advanced <strong>age</strong>. However, there is still <strong>ageism</strong> in our society. Some companies do not want to hire people over a certain <strong>age</strong>. This is not fair. Experience comes with <strong>age</strong>. In the <strong>information age</strong>, we need the wisdom of experienced people more than ever."
+        },
+        "C1": {
+            "tr": "Şarap uzmanı, mahzeni gezdirirken yıllanma sürecini anlattı. 'Bu şarap,' dedi, 'meşe fıçılarda zarafetle <strong>yaşlandı</strong>.' Şarabın <strong>yaşlanma</strong> potansiyeli, üzümün kalitesine bağlıdır. Bazı şaraplar gençken içilmelidir, bazıları ise olgunlaşmak için zamana ihtiyaç duyar. Tıpkı insanlar gibi, bazı karakterler zamanla, yani <strong>yaşla</strong> birlikte derinleşir ve karmaşıklaşır. Bu <strong>zamansız</strong> (ageless) bir gerçektir.",
+            "en": "The wine expert explained the maturation process while touring the cellar. 'This wine,' he said, 'has <strong>aged</strong> gracefully in oak barrels.' The <strong>aging</strong> potential of a wine depends on the quality of the grape. Some wines should be drunk young, while others need time to mature. Just like people, some characters deepen and become complex with time, that is, with <strong>age</strong>. This is an <strong>ageless</strong> truth."
+        },
+        "C2": {
+            "tr": "Antropoloji profesörü, insanlık tarihini 'Masumiyet <strong>Çağı</strong>' ve 'Deneyim <strong>Çağı</strong>' olarak ikiye ayırdı. Medeniyetimizin teknolojik olarak <strong>reşit olduğunu</strong> (came of age), ancak ahlaki olarak hala emekleme döneminde olduğunu savundu. 'Nükleer <strong>çağ</strong>,' diye uyardı, 'çocukça dürtülerle yönetilemeyecek kadar tehlikeli.' Ona göre, türümüzün hayatta kalması, bilgeliğimizin teknolojimizle aynı hızda <strong>olgunlaşması</strong>na (maturing/aging) bağlıydı. Aksi takdirde, kendi yarattığımız bu <strong>çağın</strong> kurbanı olabiliriz.",
+            "en": "The anthropology professor divided human history into the '<strong>Age</strong> of Innocence' and the '<strong>Age</strong> of Experience.' He argued that our civilization technically <strong>came of age</strong>, but morally remains in infancy. 'The nuclear <strong>age</strong>,' he warned, 'is too dangerous to be governed by childish impulses.' According to him, the survival of our species depends on our wisdom <strong>aging</strong> (maturing) at the same pace as our technology. Otherwise, we might become victims of this very <strong>age</strong> we created."
+        }
+    }
+}

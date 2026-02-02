@@ -1,0 +1,353 @@
+{
+    "id": "ambulance",
+    "meta": {
+        "cefr_level": "A2",
+        "frequency_band": "Medium Frequency",
+        "part_of_speech": [
+            "noun"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/ˈæm.bjə.ləns/",
+        "syllabification": [
+            "am",
+            "bu",
+            "lance"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "a special vehicle used to take sick or injured people to hospital",
+            "core_meaning_tr": "ambulans, cankurtaran",
+            "context_tags": [
+                "medical",
+                "emergency"
+            ],
+            "example": {
+                "sentence": "The ambulance arrived within ten minutes.",
+                "translation": "Ambulans on dakika içinde geldi."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "call an ambulance",
+                "usage_level": "Core",
+                "notes_tr": "En hayati kalıptır. 'Phone' veya 'ring' yerine genellikle 'call' kullanılır."
+            },
+            {
+                "pattern": "go by ambulance / in an ambulance",
+                "usage_level": "Intermediate",
+                "notes_tr": "Ulaşım aracı olarak: 'He was taken to hospital by ambulance.'"
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Acil durum aracı olarak.",
+            "critical_comparison": {
+                "context": "Ambulance vs Paramedic",
+                "rule": "'Ambulance' araçtır. 'Paramedic' veya 'EMT' ise o aracın içindeki sağlık personelidir.",
+                "example_wrong": "The ambulance treated me. (Yanlış - Araç tedavi etmez)",
+                "example_right": "The paramedics in the ambulance treated me. (Doğru)"
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Kelimenin seviyelere göre kullanım karmaşıklığı",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "Look, an ambulance!",
+                "tr": "Bak, bir ambulans!",
+                "grammar_focus": "Exclamation / Noun"
+            },
+            {
+                "cefr": "A2",
+                "en": "We need to call an ambulance immediately.",
+                "tr": "Hemen bir ambulans çağırmalıyız.",
+                "grammar_focus": "Modal (need to) + Adverb"
+            },
+            {
+                "cefr": "B1",
+                "en": "The ambulance siren was very loud.",
+                "tr": "Ambulans sireni çok gürültülüydü.",
+                "grammar_focus": "Past Tense Description"
+            },
+            {
+                "cefr": "B2",
+                "en": "Drivers must pull over to let the ambulance pass.",
+                "tr": "Sürücüler ambulansın geçmesi için kenara çekilmelidir.",
+                "grammar_focus": "Phrasal Verb (pull over) + Purpose Clause"
+            },
+            {
+                "cefr": "C1",
+                "en": "He was rushed to the hospital in an ambulance.",
+                "tr": "Hastaneye ambulansla aceleyle yetiştirildi.",
+                "grammar_focus": "Passive Voice + Idiomatic Verb (rush)"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "hava ambulansı (helikopter)",
+                "strength": "specific",
+                "example": "The injured hiker was evacuated by air ambulance.",
+                "example_tr": "Yaralı yürüyüşçü hava ambulansı ile tahliye edildi."
+            },
+            {
+                "turkish": "özel",
+                "strength": "standard",
+                "example": "Private ambulance services charge a fee.",
+                "example_tr": "Özel ambulans servisleri ücret talep eder."
+            },
+            {
+                "turkish": "tepe lambalı (acil giden)",
+                "strength": "idiomatic",
+                "example": "It was a blue-light run to the hospital.",
+                "example_tr": "Hastaneye (sirenler açık) acil bir sürüş yapıldı."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "çağırmak (telefonda)",
+                "example": "Call an ambulance immediately!",
+                "example_tr": "Derhal bir ambulans çağırın!"
+            },
+            {
+                "turkish": "sevk etmek (merkezden)",
+                "example": "The operator dispatched two ambulances to the scene.",
+                "example_tr": "Operatör olay yerine iki ambulans sevk etti."
+            },
+            {
+                "turkish": "aceleyle yetiştirmek",
+                "example": "He was rushed to hospital by ambulance.",
+                "example_tr": "Ambulansla hastaneye yetiştirildi."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Emergency Transport",
+            "turkishConcept": "Acil Taşıtlar",
+            "scale": [
+                {
+                    "value": 5,
+                    "turkish": "ambulans",
+                    "note": "Standart acil durum aracı",
+                    "description_tr": "Hasta ve yaralı taşımak için donatılmış standart araçtır.",
+                    "example_en": "The ambulance rushed to the scene.",
+                    "example_tr": "Ambulans olay yerine hızla gitti.",
+                    "strength": "Genel"
+                },
+                {
+                    "value": 7,
+                    "turkish": "ilk yardım birimi",
+                    "note": "Daha teknik, personeli ve tıbbi müdahaleyi vurgular",
+                    "description_tr": "İçinde ileri yaşam desteği sunabilen uzman personelin bulunduğu birimdir.",
+                    "example_en": "A paramedic unit was dispatched immediately.",
+                    "example_tr": "Derhal bir ilk yardım birimi sevk edildi.",
+                    "strength": "Teknik"
+                },
+                {
+                    "value": 9,
+                    "turkish": "tıbbi tahliye aracı",
+                    "note": "Genellikle askeri veya helikopterle tahliye (Medical Evacuation)",
+                    "description_tr": "Genellikle helikopter veya uçakla yapılan acil tıbbi tahliyedir.",
+                    "example_en": "The soldier was airlifted by medevac.",
+                    "example_tr": "Asker, tıbbi tahliye aracıyla (helikopterle) hava yoluyla taşındı.",
+                    "strength": "Askeri/Kritik"
+                },
+                {
+                    "value": 4,
+                    "turkish": "ilk müdahale aracı",
+                    "note": "Olay yerine ambulansdan önce varan polis/itfaiye aracı",
+                    "description_tr": "Olay yerine ilk varan polis, itfaiye veya gönüllü sağlık ekibi aracıdır.",
+                    "example_en": "First responder vehicles are smaller and faster.",
+                    "example_tr": "İlk müdahale araçları daha küçük ve daha hızlıdır.",
+                    "strength": "Hızlı"
+                }
+            ]
+        },
+        "antonyms": []
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "ambulance chaser",
+                "meaning_tr": "kazaları kovalayan çıkarcı avukat",
+                "register": "derogatory",
+                "example": "He's just an ambulance chaser looking for a lawsuit.",
+                "example_tr": "O sadece dava açmak için fırsat kollayan çıkarcı bir avukat."
+            },
+            {
+                "phrase": "monitor situation",
+                "meaning_tr": "durumu izlemek (sirenler kapalı)",
+                "register": "police/medical",
+                "example": "We are monitoring the patient in the ambulance.",
+                "example_tr": "Ambulansın içinde hastayı izliyoruz (takip ediyoruz)."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Siren Etiquette",
+            "note_en": "In Western countries, 'pulling over' (moving to the side) for an ambulance is a strict legal and moral duty. Drivers create an 'emergency corridor'.",
+            "note_tr": "Batı ülkelerinde siren çalan ambulansa yol vermek (kenara çekilmek) katı bir yasal ve ahlaki görevdir."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Her seviyede kullanılır."
+        },
+        "inclusive_language": null,
+        "grammar_nuance": {
+            "title": "Vehicle Prepositions",
+            "content": "Ambulansın 'içinde' tedavi oluyorsanız 'in the ambulance', ulaşım aracı olarak bahsediyorsanız 'by ambulance' kullanılır."
+        },
+        "business_english": {
+            "title": "Private Medical Transport",
+            "content": "Sigorta şirketleri 'Patient Transport Service' (PTS) terimini kullanır. Bu, acil olmayan (non-emergency) hasta nakil ambulansıdır.",
+            "keywords": [
+                "PTS",
+                "medical repatriation"
+            ]
+        },
+        "trivia": {
+            "title": "Star of Life",
+            "content": "Ambulansların üzerindeki mavi, altı uçlu yıldız ve yılanlı asa sembolüne 'Star of Life' denir. Yılanlı asa, tıbbın sembolü 'Asclepius'un asası'dır."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 55,
+            "yokdil": 75,
+            "ydt": 50,
+            "description": "Sağlık bilimleri (YÖKDİL) ve trafik kazası haberlerinde (YDS) sık geçer."
+        },
+        "vocabulary": [
+            {
+                "title": "İlgili Terimler",
+                "content": "'Stretcher' (sedye), 'Siren' (siren), 'Resuscitate' (hayata döndürmek/kalp masajı) kelimeleri ambulans bağlamında sık sorulur."
+            },
+            {
+                "title": "Passive Voice",
+                "content": "'He was taken to hospital' cümlesinde 'by ambulance' gizli özne gibidir, çoğu zaman yazılmaz ama ima edilir."
+            }
+        ],
+        "grammar": [],
+        "reading": [
+            {
+                "title": "Afet Yönetimi (Triage)",
+                "content": "Parçada 'triage' (seçme/ayırma) geçiyorsa, ambulansların hastaları aciliyet sırasına göre taşıdığı bir afet senaryosu anlatılıyordur."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "ambulare (Latin 'to walk')",
+        "family_members": [
+            {
+                "pos": "n",
+                "level": "A2",
+                "note": "yürüyen hastane -> ambulans"
+            },
+            {
+                "pos": "v",
+                "level": "C2",
+                "note": "gezinmek, yürümek (tıbbi)"
+            },
+            {
+                "pos": "adj",
+                "level": "C2",
+                "note": "ayakta tedavi edilen, yürüyebilen"
+            },
+            {
+                "pos": "n",
+                "level": "C2",
+                "prefix": "somn-",
+                "note": "uyurgezer"
+            },
+            {
+                "pos": "n",
+                "level": "B2",
+                "note": "perambulator kısaltması (bebek arabası)"
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_wrong_prep",
+                "incorrect": "She went to hospital with ambulance.",
+                "correction": "She went to hospital by ambulance.",
+                "explanation": "Taşıt araçlarıyla ulaşım belirtirken 'by' kullanılır. 'With' (ile) birliktelik bildirir, araç bildirmez."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Health / Emergencies",
+            "tip": "Acil durum senaryosu anlatılırken 'The ambulance arrived' yerine 'Paramedics arrived promptly via ambulance' demek kelime çeşitliliğini gösterir.",
+            "keywords": [
+                "critical condition",
+                "stabilize",
+                "paramedics"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "sequence",
+            "question": "Order the emergency response stages:",
+            "answer": "Call -> Dispatch -> Arrival -> Transport",
+            "distractors": [
+                "Transport -> Call -> Dispatch",
+                "Arrival -> Dispatch -> Call"
+            ],
+            "explanation": "Önce aranır (Call), merkez aracı yollar (Dispatch), araç varır (Arrival), hasta taşınır (Transport)."
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Latin",
+                "meaning": "to walk"
+            },
+            {
+                "era": "French",
+                "meaning": "walking (mobile) hospital (Napoleon Era)"
+            },
+            {
+                "era": "Modern English",
+                "meaning": "vehicle for transporting sick"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Loanword",
+            "story": "Ambulans kelimesi 'Ambul-' (yürümek) kökünden gelir. Napolyon zamanında savaşta yaralanan askerlere giden seyyar hastanelere 'Hôpital Ambulant' (Yürüyen Hastane) denirdi. Zamanla sadece sondaki 'Ambulant/Ambulance' kaldı. Ayrıca 'Somnambulist' (Uyurgezer) kelimesinde de aynı 'ambul' (yürüme) kökü vardır.",
+            "example": "Som (Uyku) + Ambul (Yürü) = Uyurgezer."
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Caddede yüksek bir ses var. 'Vi-vu, vi-vu!' Bu bir <strong>ambulans</strong>. Kırmızı ışıkları yanıp sönüyor. Arabalar duruyor. <strong>Ambulans</strong> hızlı gidiyor. İçinde hasta bir insan var. Doktorlar ona yardım edecek.",
+            "en": "There is a loud noise on the street. 'Wee-woo, wee-woo!' It is an <strong>ambulance</strong>. Its red lights are flashing. Cars stop. The <strong>ambulance</strong> is going fast. There is a sick person inside. Doctors will help him."
+        },
+        "A2": {
+            "tr": "Dün okulda Ali merdivenlerden düştü. Bacağı çok acıyordu. Öğretmenimiz '112'yi arayın!' dedi. Bir <strong>ambulans</strong> çağırdık. Beş dakika sonra geldiler. Sağlık görevlileri (paramedics) çok nazikti. Ali'yi <strong>ambulans</strong>a koyup hastaneye götürdüler.",
+            "en": "Yesterday at school, Ali fell down the stairs. His leg hurt a lot. Our teacher said, 'Call 112!' We called an <strong>ambulance</strong>. They arrived after five minutes. The paramedics were very kind. They put Ali in the <strong>ambulance</strong> and took him to the hospital."
+        },
+        "B1": {
+            "tr": "Trafik çok sıkışıktı ama arkadan bir siren sesi duyduk. Herkes sağa çekildi ve bir koridor (şerit) açtı. <strong>Ambulans</strong> bu güvenlik şeridinden hızla geçti. Bir hayat kurtarmak için saniyeler önemlidir. Sürücülerin <strong>ambulans</strong>a yol vermesi hayati bir kuraldır.",
+            "en": "The traffic was very heavy but we heard a siren from behind. Everyone pulled over to the right and opened a corridor (lane). The <strong>ambulance</strong> passed quickly through this emergency lane. Seconds are important to save a life. It is a vital rule for drivers to yield to the <strong>ambulance</strong>."
+        },
+        "B2": {
+            "tr": "Paramedikler sadece şoför değildir; onlar hareket halindeki bir acil servistir. <strong>Ambulans</strong>ın içinde, hastayı stabilize etmek için gelişmiş ekipmanlar bulunur. Kalp krizi geçiren bir hastaya hastaneye varmadan önce müdahale edebilirler. Modern tıpta <strong>ambulans</strong>, tedavinin başladığı yerdir, sadece bir taksi değildir.",
+            "en": "Paramedics are not just drivers; they are an emergency room in motion. Inside the <strong>ambulance</strong>, there is advanced equipment to stabilize the patient. They can intervene with a patient having a heart attack before reaching the hospital. In modern medicine, the <strong>ambulance</strong> is where treatment begins, it is not just a taxi."
+        },
+        "C1": {
+            "tr": "Acil tıpta 'Altın Saat' (Golden Hour) kavramı vardır. Travma sonrası ilk bir saat hayatta kalma şansı için kritiktir. Hava <strong>ambulans</strong>ları (helikopterler) bu yüzden çok önemlidir. Trafiğin olmadığı gökyüzünde, uzak bölgelerdeki hastaları dakikalar içinde travma merkezine ulaştırabilirler. Bu hızlı tahliye (medevac) yeteneği, ölüm oranlarını ciddi şekilde düşürür.",
+            "en": "In emergency medicine, there is the concept of the 'Golden Hour'. The first hour after trauma is critical for survival chances. That is why air <strong>ambulances</strong> (helicopters) are so important. In the sky where there is no traffic, they can transport patients in remote areas to a trauma center within minutes. This rapid evacuation (medevac) capability significantly reduces mortality rates."
+        },
+        "C2": {
+            "tr": "Afet yönetiminde, kaynakların tahsisi etik bir ikilem yaratır: Sınırlı sayıdaki <strong>ambulans</strong> kime gönderilecek? Triyaj (seçme/ayırma) sistemi bu noktada devreye girer. En ağır yaralılar değil, kurtarılma şansı en yüksek olanlar önceliklendirilebilir. Bu soğukkanlı rasyonellik, kaos anında duygusal tepkilerin önüne geçmelidir. Bir <strong>ambulans</strong>ın rotası sadece bir harita sorunu değil, aynı zamanda bir ahlak felsefesi sorunudur.",
+            "en": "In disaster management, resource allocation creates an ethical dilemma: To whom will the limited number of <strong>ambulances</strong> be sent? The triage system comes into play at this point. Not the most severely injured, but those with the highest chance of survival might be prioritized. This cold-blooded rationality must override emotional reactions during chaos. The route of an <strong>ambulance</strong> is not just a map problem, but also a problem of moral philosophy."
+        }
+    }
+}

@@ -1,0 +1,344 @@
+{
+    "id": "album",
+    "meta": {
+        "cefr_level": "A2",
+        "frequency_band": "Medium Frequency",
+        "part_of_speech": [
+            "noun"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/ˈæl.bəm/",
+        "syllabification": [
+            "al",
+            "bum"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "a collection of recorded music",
+            "core_meaning_tr": "müzik albümü",
+            "context_tags": [
+                "music",
+                "entertainment"
+            ],
+            "example": {
+                "sentence": "Have you heard their new album?",
+                "translation": "Onların yeni albümünü duydun mu?"
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "a book for keeping photographs or stamps",
+            "core_meaning_tr": "fotoğraf/pul albümü",
+            "context_tags": [
+                "hobby",
+                "memory"
+            ],
+            "example": {
+                "sentence": "I keep all my family photos in an album.",
+                "translation": "Tüm aile fotoğraflarımı bir albümde saklarım."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "release an album",
+                "usage_level": "Core",
+                "notes_tr": "Müzisyenlerin albüm 'çıkarması' (yayınlaması) için kullanılır."
+            },
+            {
+                "pattern": "photo album",
+                "usage_level": "Core",
+                "notes_tr": "En sık kullanılan tamlamadır."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Somut bir nesne (kitap) veya bir eser (müzik) için.",
+            "critical_comparison": {
+                "context": "Album vs Record",
+                "rule": "'Album' bir koleksiyon/bütünlük ifade eder (dijital de olabilir). 'Record' ise genellikle fiziksel plak veya tek bir kayıt (single) anlamına gelebilir.",
+                "example_wrong": "I bought a Spotify record. (Yanlış)",
+                "example_right": "I streamed the album on Spotify. (Doğru)"
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Kelimenin seviyelere göre kullanım karmaşıklığı",
+        "levels": [
+            {
+                "cefr": "A2",
+                "en": "This is my wedding album.",
+                "tr": "Bu benim düğün albümüm.",
+                "grammar_focus": "Possessive Adjective"
+            },
+            {
+                "cefr": "B1",
+                "en": "The band will record a new album next month.",
+                "tr": "Grup gelecek ay yeni bir albüm kaydedecek.",
+                "grammar_focus": "Future Tense"
+            },
+            {
+                "cefr": "B2",
+                "en": "Their debut album was a huge success.",
+                "tr": "İlk (çıkış) albümleri büyük bir başarıydı.",
+                "grammar_focus": "Adjective (debut)"
+            },
+            {
+                "cefr": "C1",
+                "en": "The album features a collaboration with a famous jazz pianist.",
+                "tr": "Albüm, ünlü bir caz piyanistiyle yapılan bir işbirliğini içeriyor.",
+                "grammar_focus": "Verb (features) + Noun Phrase"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "çıkış/ilk",
+                "strength": "strong",
+                "example": "The debut album sold millions.",
+                "example_tr": "İlk albüm milyonlar sattı."
+            },
+            {
+                "turkish": "solo",
+                "strength": "strong",
+                "example": "He released his first solo album.",
+                "example_tr": "İlk solo albümünü çıkardı."
+            },
+            {
+                "turkish": "canlı",
+                "strength": "standard",
+                "example": "They recorded a live album in London.",
+                "example_tr": "Londra'da canlı bir albüm kaydettiler."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "çıkarmak/yayınlamak",
+                "example": "The singer released a new album.",
+                "example_tr": "Şarkıcı yeni bir albüm çıkardı."
+            },
+            {
+                "turkish": "kaydetmek",
+                "example": "They are recording an album in the studio.",
+                "example_tr": "Stüdyoda albüm kaydediyorlar."
+            },
+            {
+                "turkish": "imzalamak",
+                "example": "He signed my album after the concert.",
+                "example_tr": "Konserden sonra albümümü imzaladı."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Music Collections",
+            "turkishConcept": "Müzik Koleksiyonları",
+            "description": "Müzik yayın formatlarının kapsamı",
+            "scale": [
+                {
+                    "value": 2,
+                    "turkish": "single (tekli)",
+                    "note": "Tek bir şarkı",
+                    "usage": "Radio hit",
+                    "description_tr": "Genellikle tanıtım amaçlı yayınlanan tek bir şarkıdır.",
+                    "example_en": "Their new single is catchy.",
+                    "example_tr": "Yeni teklileri (single'ları) akılda kalıcı.",
+                    "strength": "Minimal"
+                },
+                {
+                    "value": 4,
+                    "turkish": "EP (Extended Play)",
+                    "note": "Mini albüm (3-5 şarkı)",
+                    "usage": "Band demo",
+                    "description_tr": "Single'dan uzun, albümden kısa (genelde 4-5 şarkılık) kayıttır.",
+                    "example_en": "They released an EP before the full album.",
+                    "example_tr": "Tam albümden önce bir EP yayınladılar.",
+                    "strength": "Orta"
+                },
+                {
+                    "value": 8,
+                    "turkish": "albüm (LP)",
+                    "note": "Tam uzunlukta (Long Play - 10+ şarkı)",
+                    "usage": "Full work",
+                    "description_tr": "Sanatçının tam kapsamlı, genellikle 10-15 şarkıdan oluşan çalışmasıdır.",
+                    "example_en": "The album has 12 tracks.",
+                    "example_tr": "Albümde 12 parça var.",
+                    "strength": "Tam"
+                },
+                {
+                    "value": 10,
+                    "turkish": "antoloji / diskografi",
+                    "note": "Tüm eserlerin toplamı",
+                    "usage": "Career compilation",
+                    "description_tr": "Bir sanatçının kariyeri boyunca yaptığı tüm albümlerin bütünüdür.",
+                    "example_en": "Beatles anthology is massive.",
+                    "example_tr": "Beatles antolojisi devasadır.",
+                    "strength": "Kapsamlı"
+                }
+            ]
+        },
+        "antonyms": []
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "concept album",
+                "meaning_tr": "tematik albüm (tüm şarkıların bir hikaye anlattığı)",
+                "register": "music terminology",
+                "example": "'The Wall' is a famous concept album.",
+                "example_tr": "'The Wall' ünlü bir konsept albümdür."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Digital Age",
+            "note_en": "The word 'album' persists even in the streaming era (Spotify/Apple Music), even though there is no physical 'book' or 'disc'.",
+            "note_tr": "Fiziksel bir 'kitap' veya 'disk' olmamasına rağmen 'albüm' kelimesi dijital çağda da (Spotify vb.) kullanılmaya devam etmektedir."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Her seviyede kullanılır."
+        },
+        "inclusive_language": null,
+        "grammar_nuance": null,
+        "business_english": {
+            "title": "Music Industry",
+            "content": "'Go platinum' (platin plak kazanmak), bir albümün 1 milyon (ülkeye göre değişir) satması demektir. Başarı ölçütüdür.",
+            "keywords": [
+                "go platinum",
+                "go gold",
+                "sales figures"
+            ]
+        },
+        "trivia": {
+            "title": "Album ne demek?",
+            "content": "Latince 'albus' (beyaz) kelimesinden gelir. Roma'da üzerine ilanların yazıldığı 'beyaz tablet' demekti. Sonra 'beyaz sayfalı defter' (fotoğraf albümü) ve en son 'plak/kaset kabı' anlamını kazandı."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 30,
+            "yokdil": 20,
+            "ydt": 40,
+            "description": "Genellikle hobi, sanat ve biyografi metinlerinde geçer."
+        },
+        "vocabulary": [
+            {
+                "title": "Track vs Song",
+                "content": "Albümdeki şarkılara 'track' denir. 'The third track of the album' (Albümün üçüncü parçası)."
+            }
+        ],
+        "grammar": [],
+        "reading": [
+            {
+                "title": "Biyografi Soruları",
+                "content": "Sanatçı biyografilerinde 'released/launched his album' ifadeleri kronolojik sıralama sorularında ipucudur."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "albus (Latince - Beyaz)",
+        "family_members": [
+            {
+                "pos": "n",
+                "level": "A2",
+                "note": "albüm (beyaz defter -> koleksiyon)"
+            },
+            {
+                "pos": "n",
+                "level": "C2",
+                "note": "albino (beyaz pigment eksikliği)"
+            },
+            {
+                "pos": "n",
+                "level": "medical",
+                "note": "albumen (yumurta akı)"
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_prep_on",
+                "incorrect": "in the album (for music)",
+                "correction": "on the album",
+                "explanation": "Müzik albümünden bahsederken 'on' kullanılır (song on the album). Fotoğraf albümü için 'in' kullanılır (photo in the album)."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Arts & Media",
+            "tip": "Müzik zevkinizden bahsederken 'album' yerine 'compilation', 'soundtrack' veya 'EP' gibi terimler kullanmak kelime çeşitliliği (lexical resource) puanını artırır.",
+            "keywords": [
+                "genre",
+                "lyrics",
+                "melody"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "association",
+            "question": "Which one belongs to a stamp collection?",
+            "answer": "Album",
+            "distractors": [
+                "Playlist",
+                "Folder",
+                "Gallery"
+            ]
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Latin",
+                "meaning": "white tablet"
+            },
+            {
+                "era": "17th Century",
+                "meaning": "blank book for autographs"
+            },
+            {
+                "era": "19th Century",
+                "meaning": "book for photos/stamps"
+            },
+            {
+                "era": "20th Century",
+                "meaning": "set of phonograph records (music)"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Direct Loan",
+            "story": "Türkçedeki 'Albüm' kelimesi doğrudan Fransızca/İngilizceden alınmıştır. Ve o da Latince 'Albus' (Beyaz) kökünden gelir. Harry Potter'daki 'Albus Dumbledore' (Beyaz saçlı büyücü) isminden aklınıza gelebilir.",
+            "example": "Albus (Beyaz) -> Albüm (Beyaz Sayfalı Defter)."
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Bu benim fotoğraf <strong>albüm</strong>üm. Bak, bu bebeklik fotoğrafım. Annem ve babam gülüyor. <strong>Albüm</strong>de çok güzel anılar var. Ben sayfaları çevirmeyi seviyorum.",
+            "en": "This is my photo <strong>album</strong>. Look, this is my baby photo. My mom and dad are smiling. There are many beautiful memories in the <strong>album</strong>. I like turning the pages."
+        },
+        "A2": {
+            "tr": "En sevdiğim şarkıcı yeni bir <strong>albüm</strong> çıkardı. <strong>Albüm</strong>ün adı 'Mavi Gökyüzü'. İçinde on şarkı var. Tüm şarkıları her gün dinliyorum. Doğum günümde arkadaşım bana bu <strong>albüm</strong>ü hediye etti.",
+            "en": "My favorite singer released a new <strong>album</strong>. The name of the <strong>album</strong> is 'Blue Sky'. There are ten songs in it. I listen to all the songs every day. On my birthday, my friend gifted me this <strong>album</strong>."
+        },
+        "B1": {
+            "tr": "Eskiden insanlar pul (stamp) biriktirirdi. Dedemin büyük bir pul <strong>albüm</strong>ü var. İçinde dünyanın her yerinden pullar var. Bana 'Her pul bir hikaye anlatır' derdi. Şimdi o <strong>albüm</strong> bana kaldı. Ona baktığımda dedemi hatırlıyorum.",
+            "en": "In the past, people used to collect stamps. My grandfather has a big stamp <strong>album</strong>. It has stamps from all over the world. He used to tell me 'Every stamp tells a story.' Now I have that <strong>album</strong>. When I look at it, I remember my grandfather."
+        },
+        "B2": {
+            "tr": "Müzik grubu stüdyoya girdi. Üçüncü stüdyo <strong>albüm</strong>lerini kaydetmek istiyorlardı. Ancak grup üyeleri arasında anlaşmazlık çıktı. Şarkıcı daha rock bir tarz isterken, gitarist pop istiyordu. Bu gerginlik <strong>albüm</strong>ün çıkışını geciktirdi. Sonunda anlaştılar ve ortaya harika bir iş çıktı.",
+            "en": "The band entered the studio. They wanted to record their third studio <strong>album</strong>. However, a disagreement arose among the band members. The singer wanted a more rock style, while the guitarist wanted pop. This tension delayed the release of the <strong>album</strong>. Finally, they agreed, and a great work emerged."
+        },
+        "C1": {
+            "tr": "Dijital çağda 'albüm' kavramı değişiyor. Eskiden bir <strong>albüm</strong>, sanatçının anlattığı bütünsel bir hikayeydi. Şimdi ise insanlar sadece tekli şarkıları (singles) dinliyor. Sanatçılar artık bütün bir <strong>albüm</strong> yapmak yerine, ayda bir şarkı yayınlamayı tercih ediyor. Müzik eleştirmenleri, bu durumun müziğin derinliğini öldürdüğünü, 'konsept <strong>albüm</strong>' devrinin bittiğini söylüyor.",
+            "en": "In the digital age, the concept of the 'album' is changing. In the past, an <strong>album</strong> was a holistic story told by the artist. Now, people just listen to singles. Artists now prefer releasing one song a month instead of making a whole <strong>album</strong>. Music critics say this situation kills the depth of music and that the era of the 'concept <strong>album</strong>' is over."
+        },
+        "C2": {
+            "tr": "Bir fotoğraf <strong>albüm</strong>üne bakmak, zaman tünelinde yolculuk yapmak gibidir. Sadece görüntüleri değil, o anki duyguları da dondurur. Sayfalar arasında gezinirken, geçmiş benliğinizle karşılaşırsınız. Bu, melankolik ama terapötik bir süreçtir. Dijital galeriler binlerce fotoğraf saklayabilir, ancak fiziksel bir <strong>albüm</strong>ün sayfalarına dokunmanın yarattığı duygusal rezonansı asla veremez.",
+            "en": "Looking at a photo <strong>album</strong> is like traveling through a time tunnel. It freezes not just images, but also the emotions of that moment. As you flip through the pages, you encounter your past self. This is a melancholic yet therapeutic process. Digital galleries store thousands of photos, but they can never provide the emotional resonance created by touching the pages of a physical <strong>album</strong>."
+        }
+    }
+}

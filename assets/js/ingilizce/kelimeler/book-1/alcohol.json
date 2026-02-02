@@ -1,0 +1,362 @@
+{
+    "id": "alcohol",
+    "meta": {
+        "cefr_level": "A2",
+        "frequency_band": "High Frequency",
+        "part_of_speech": [
+            "noun"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/ˈæl.kə.hɑːl/",
+        "syllabification": [
+            "al",
+            "co",
+            "hol"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "drinks such as wine and beer that can make people drunk",
+            "core_meaning_tr": "alkol, içki",
+            "context_tags": [
+                "beverage",
+                "general"
+            ],
+            "example": {
+                "sentence": "He doesn't drink alcohol.",
+                "translation": "O alkol (içki) kullanmaz."
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "a chemical substance used in medicines and cleaning products",
+            "core_meaning_tr": "ispirto, etil alkol (kimyasal)",
+            "context_tags": [
+                "chemistry",
+                "medical"
+            ],
+            "example": {
+                "sentence": "This gel contains 70% alcohol.",
+                "translation": "Bu jel %70 alkol içerir."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "drink alcohol",
+                "usage_level": "Core",
+                "notes_tr": "İçki içmek eylemi için en standart ifadedir."
+            },
+            {
+                "pattern": "alcohol-free",
+                "usage_level": "Intermediate",
+                "notes_tr": "Sıfat olarak: 'Alkolsüz' (alcohol-free beer)."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Madde veya içecek adı olarak (Uncountable).",
+            "critical_comparison": {
+                "context": "Alcohol vs Liquor vs Spirits",
+                "rule": "'Alcohol' genel terimdir (bira dahil). 'Liquor' ve 'Spirits' ise sadece yüksek alkollü sert içkiler (viski, votka vb.) için kullanılır.",
+                "example_wrong": "Beer is a liquor. (Yanlış)",
+                "example_right": "Beer is an alcoholic drink. Whiskey is a liquor. (Doğru)"
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Kelimenin seviyelere göre kullanım karmaşıklığı",
+        "levels": [
+            {
+                "cefr": "A2",
+                "en": "Do you serve alcohol here?",
+                "tr": "Burada alkol servisi var mı?",
+                "grammar_focus": "Present Simple Question"
+            },
+            {
+                "cefr": "B1",
+                "en": "He decided to give up alcohol for health reasons.",
+                "tr": "Sağlık nedenleriyle alkolü bırakmaya karar verdi.",
+                "grammar_focus": "Phrasal Verb (give up)"
+            },
+            {
+                "cefr": "B2",
+                "en": "The consumption of alcohol is prohibited in public places.",
+                "tr": "Halka açık yerlerde alkol tüketimi yasaktır.",
+                "grammar_focus": "Formal Subject (consumption)"
+            },
+            {
+                "cefr": "C1",
+                "en": "Alcohol abuse can lead to severe liver damage.",
+                "tr": "Alkol kötüye kullanımı (bağımlılığı) ciddi karaciğer hasarına yol açabilir.",
+                "grammar_focus": "Compound Noun (abuse)"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "saf",
+                "strength": "medical",
+                "example": "Pure alcohol is used for sterilization.",
+                "example_tr": "Saf alkol sterilizasyon için kullanılır."
+            },
+            {
+                "turkish": "aşırı (tüketim)",
+                "strength": "negative",
+                "example": "Excessive alcohol consumption is dangerous.",
+                "example_tr": "Aşırı alkol tüketimi tehlikelidir."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "tüketmek/içmek",
+                "example": "He consumes too much alcohol.",
+                "example_tr": "O çok fazla alkol tüketiyor."
+            },
+            {
+                "turkish": "bırakmak",
+                "example": "It's hard to give up alcohol.",
+                "example_tr": "Alkolü bırakmak zordur."
+            },
+            {
+                "turkish": "kısıtlamak",
+                "example": "Doctors advised him to restrict his alcohol intake.",
+                "example_tr": "Doktorlar ona alkol alımını kısıtlamasını tavsiye etti."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Intoxicating Beverages",
+            "turkishConcept": "Sarhoş Edici İçecekler",
+            "scale": [
+                {
+                    "value": 3,
+                    "turkish": "içki (drink)",
+                    "note": "Günlük kullanım",
+                    "usage": "Social: 'Let's have a drink.'",
+                    "description_tr": "Genellikle sosyal bağlamda bir kadeh alkollü içeceği kasteder.",
+                    "example_en": "Do you want a drink?",
+                    "example_tr": "Bir içki ister misin?",
+                    "strength": "Hafif"
+                },
+                {
+                    "value": 5,
+                    "turkish": "alkol",
+                    "note": "Nötr / Teknik",
+                    "usage": "General: 'Contains alcohol.'",
+                    "description_tr": "Maddenin kimyasal veya genel adıdır.",
+                    "example_en": "This product contains alcohol.",
+                    "example_tr": "Bu ürün alkol içerir.",
+                    "strength": "Nötr"
+                },
+                {
+                    "value": 7,
+                    "turkish": "sert içki (liquor/spirits)",
+                    "note": "Yüksek alkollü",
+                    "usage": "Bar context: 'Hard liquor'",
+                    "description_tr": "Viski, votka gibi damıtılmış yüksek alkollü içkileri ifade eder.",
+                    "example_en": "He prefers hard liquor.",
+                    "example_tr": "Sert içki tercih eder.",
+                    "strength": "Güçlü"
+                },
+                {
+                    "value": 9,
+                    "turkish": "içki alemi (booze)",
+                    "note": "Argo / Kaba",
+                    "usage": "Slang: 'Bring some booze.'",
+                    "description_tr": "Argo tabirle içki, zıkkım.",
+                    "example_en": "They bought a lot of booze for the party.",
+                    "example_tr": "Parti için bir sürü içki (booze) aldılar.",
+                    "strength": "Argo"
+                }
+            ]
+        },
+        "antonyms": [
+            {
+                "value": 0,
+                "turkish": "ayık (sober)",
+                "note": "Alkol almamış durumu",
+                "description_tr": "Alkol etkisinde olmama veya hiç içmeme durumu.",
+                "example_en": "He has been sober for ten years.",
+                "example_tr": "On yıldır ayık (içki içmiyor)."
+            },
+            {
+                "value": 1,
+                "turkish": "alkolsüz (non-alcoholic/soft drink)",
+                "note": "İçecek türü",
+                "description_tr": "İçinde alkol bulunmayan meşrubat.",
+                "example_en": "I'll have a soft drink.",
+                "example_tr": "Ben bir meşrubat (alkolsüz) alayım."
+            }
+        ]
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "under the influence",
+                "meaning_tr": "alkol etkisi altında (sarhoş)",
+                "register": "legal/formal",
+                "example": "Driving under the influence (DUI) is a crime.",
+                "example_tr": "Alkollü araç kullanmak suçtur."
+            },
+            {
+                "phrase": "Dutch courage",
+                "meaning_tr": "cesaret hapı (içkiden gelen yapay cesaret)",
+                "register": "idiomatic",
+                "example": "He needed some Dutch courage before talking to her.",
+                "example_tr": "Onunla konuşmadan önce biraz cesaret hapına (içkiye) ihtiyacı vardı."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Social Drinking",
+            "note_en": "In many Western cultures, 'going for a drink' is the standard way to socialize, even for business. Declining can be tricky; saying 'I don't drink' is respected more than making excuses.",
+            "note_tr": "Batı kültüründe 'bir şeyler içmeye gitmek' sosyalleşmenin standardıdır."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Bilimsel ve günlük dilde kullanılır."
+        },
+        "inclusive_language": null,
+        "grammar_nuance": {
+            "title": "Countable vs Uncountable",
+            "content": "'Alcohol' sayılamayan (uncountable) bir isimdir. 'Alcohols' sadece kimyada (farklı alkol türleri) kullanılır. Günlük hayatta 'Two alcohols please' denmez, 'Two beers' veya 'Two drinks' denir."
+        },
+        "business_english": {
+            "title": "Regulations",
+            "content": "İş ilanlarında veya sözleşmelerde 'drug and alcohol-free workplace' (uyuşturucu ve alkolün yasak olduğu iş yeri) tabiri standarttır.",
+            "keywords": [
+                "zero tolerance",
+                "sobriety"
+            ]
+        },
+        "trivia": {
+            "title": "Arapça Köken",
+            "content": "'Alcohol' kelimesi Arapça 'Al-Kuhl' (Göz sürmesi/tozu) kelimesinden gelir. Eskiden kimyada 'öz/esans' anlamına gelirdi (distilasyon). Zamanla sadece 'şarabın özü' (ethanol) için kullanıldı."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 45,
+            "yokdil": 60,
+            "ydt": 30,
+            "description": "Sağlık metinlerinde (bağımlılık, karaciğer) ve trafik kazası haberlerinde sık geçer."
+        },
+        "vocabulary": [
+            {
+                "title": "Synonyms in Context",
+                "content": "Sınavda 'alcohol' yerine 'beverage' (içecek), 'intoxicant' (uyuşturucu madde) veya 'spirits' (sert içki) kelimeleri kullanılabilir."
+            }
+        ],
+        "grammar": [],
+        "reading": [
+            {
+                "title": "Medical Texts",
+                "content": "'Alcohol abuse' (kötüye kullanım), 'addiction' (bağımlılık) ve 'withdrawal' (yoksunluk) terimleri bir arada test edilir."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "Al-Kuhl (Arabic)",
+        "family_members": [
+            {
+                "pos": "n",
+                "level": "A2",
+                "note": "alkol"
+            },
+            {
+                "pos": "adj",
+                "level": "B1",
+                "suffix": "-ic",
+                "note": "alkollü / alkolik (kişi)"
+            },
+            {
+                "pos": "n",
+                "level": "B2",
+                "note": "alkolizm (bağımlılık)"
+            },
+            {
+                "pos": "adj",
+                "level": "B1",
+                "note": "alkolsüz (non-alcoholic)"
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_spelling_h",
+                "incorrect": "alchol / alchohol",
+                "correction": "alcohol",
+                "explanation": "Yazım hatası çok yaygındır. 'co' ve 'hol' hecelerine dikkat edin."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Health / Society",
+            "tip": "'Binge drinking' (kısa sürede aşırı içmek) batı toplumlarında büyük bir sorundur ve Speaking sınavlarında 'Social Problems' başlığı altında sorulabilir.",
+            "keywords": [
+                "binge drinking",
+                "prohibition",
+                "taxation"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "true_false",
+            "question": "Is 'Alcohol' a countable noun in general English?",
+            "answer": "False",
+            "explanation": "Sayılamaz (Uncountable). 'Bir alkol ver' denmez, 'bir içki ver' denir."
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Arabic",
+                "meaning": "fine powder (antimony) for eyes"
+            },
+            {
+                "era": "Medieval Latin",
+                "meaning": "purified essence"
+            },
+            {
+                "era": "18th Century",
+                "meaning": "intoxicating ingredient in liquor"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Direct Loan",
+            "story": "Hem Türkçe hem İngilizce bu kelimeyi Arapçadan almıştır. 'Al-Kuhl' (Sürme). Kimyada 'bir şeyin en ince/saf hali' demektir. Damıtma işlemiyle elde edilen 'ruh/öz' fikrinden içkiye geçmiştir.",
+            "example": "Al-Kuhl -> Alkol."
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Babam <strong>alkol</strong> içmez. O sadece su ve meyve suyu sever. Bazı insanlar partilerde <strong>alkol</strong> içerler. <strong>Alkol</strong> çocuklar için kötüdür. Doktorlar 'Çok <strong>alkol</strong> içmeyin' diyor.",
+            "en": "My father does not drink <strong>alcohol</strong>. He only likes water and fruit juice. Some people drink <strong>alcohol</strong> at parties. <strong>Alcohol</strong> is bad for children. Doctors say 'Do not drink too much <strong>alcohol</strong>.'"
+        },
+        "A2": {
+            "tr": "Markete gittik. Bir şişe kolonya aldık. Şişenin üzerinde '%80 <strong>Alkol</strong>' yazıyordu. Bu içmek için değil, temizlik içindir. <strong>Alkol</strong> mikropları öldürür. Ellerimizi temiz tutmak için <strong>alkol</strong>lü jel kullandık.",
+            "en": "We went to the market. We bought a bottle of cologne. It said '80% <strong>Alcohol</strong>' on the bottle. This is not for drinking, it is for cleaning. <strong>Alcohol</strong> kills germs. We used <strong>alcohol</strong> gel to keep our hands clean."
+        },
+        "B1": {
+            "tr": "Bazı ülkelerde 18 yaşından küçüklere <strong>alkol</strong> satmak yasaktır. Bu bir kanundur. Gençlerin beyinleri hala gelişmektedir ve <strong>alkol</strong> onlara zarar verebilir. Bir restoranda garson kimliğinizi sorabilir. Eğer yaşınız tutmuyorsa, size <strong>alkol</strong> servis etmezler.",
+            "en": "In some countries, it is forbidden to sell <strong>alcohol</strong> to people under 18. This is a law. Teenagers' brains are still developing and <strong>alcohol</strong> can harm them. In a restaurant, the waiter might ask for your ID. If you are not old enough, they won't serve you <strong>alcohol</strong>."
+        },
+        "B2": {
+            "tr": "Trafik kazalarının büyük bir kısmı <strong>alkol</strong>ün etkisi altında araç kullanmaktan kaynaklanır. Hükümetler buna karşı sıkı önlemler almaktadır. 'Alkollü araç kullanma' (Drunk driving) ciddi bir suçtur. Bir partideysen ve <strong>alkol</strong> aldıysan, eve taksiyle gitmelisin. Asla direksiyon başına geçmemelisin.",
+            "en": "A large portion of traffic accidents are caused by driving under the influence of <strong>alcohol</strong>. Governments are taking strict measures against this. 'Drunk driving' is a serious crime. If you are at a party and had <strong>alcohol</strong>, you should go home by taxi. You should never get behind the wheel."
+        },
+        "C1": {
+            "tr": "Tarih boyunca 'Yasak Dönemi' (Prohibition Era) gibi zamanlarda <strong>alkol</strong> üretimi ve satışı yasa dışı ilan edildi. Ancak bu yasaklar genellikle ters tepti ve karaborsayı (black market) doğurdu. İnsanlar gizli barlarda (speakeasies) <strong>alkol</strong> tüketmeye devam etti. Bu tarihsel deneyim, <strong>alkol</strong>ü tamamen yasaklamanın, onu düzenlemekten ve vergilendirmekten daha zor olduğunu gösterdi.",
+            "en": "Throughout history, during times like the 'Prohibition Era', the production and sale of <strong>alcohol</strong> were declared illegal. However, these bans usually backfired and created a black market. People continued to consume <strong>alcohol</strong> in secret bars (speakeasies). This historical experience showed that banning <strong>alcohol</strong> completely is harder than regulating and taxing it."
+        },
+        "C2": {
+            "tr": "Biyokimyasal açıdan <strong>alkol</strong> (etanol), merkezi sinir sistemi üzerinde depresan (baskılayıcı) etki yapar. Başlangıçta verdiği öfori (mutluluk) hissi yanıltıcıdır; aslında beyin fonksiyonlarını yavaşlatır. Kronik <strong>alkolizm</strong>, sadece bireyin sağlığını değil, sosyal dokuyu da yıpratır. Toplumlar, bireysel özgürlük ile halk sağlığı arasındaki hassas dengeyi kurmak için <strong>alkol</strong> politikalarını sürekli revize etmektedir.",
+            "en": "Biochemically, <strong>alcohol</strong> (ethanol) acts as a depressant on the central nervous system. The initial feeling of euphoria is misleading; it actually slows down brain functions. Chronic <strong>alcoholism</strong> erodes not only the individual's health but also the social fabric. Societies constantly revise their <strong>alcohol</strong> policies to establish a delicate balance between individual liberty and public health."
+        }
+    }
+}

@@ -1,0 +1,294 @@
+{
+    "id": "autumn",
+    "meta": {
+        "cefr_level": "A1",
+        "frequency_band": "High Frequency",
+        "part_of_speech": [
+            "noun"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/ˈɔː.təm/",
+        "syllabification": [
+            "au",
+            "tumn"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "the season between summer and winter",
+            "core_meaning_tr": "sonbahar, güz",
+            "context_tags": [
+                "season",
+                "nature"
+            ],
+            "example": {
+                "sentence": "The leaves turn brown in autumn.",
+                "translation": "Sonbaharda yapraklar kahverengiye döner."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "in (the) autumn",
+                "usage_level": "Core",
+                "notes_tr": "Mevsimlerden önce 'in' kullanılır. 'The' kullanımı opsiyoneldir ama yaygındır (in the autumn)."
+            },
+            {
+                "pattern": "autumn leaves / colours",
+                "usage_level": "Intermediate",
+                "notes_tr": "Sıfat tamlaması olarak kullanımı sıktır (sonbahar renkleri)."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "4 mevsimden biri.",
+            "critical_comparison": {
+                "context": "Autumn vs Fall",
+                "rule": "'Autumn' İngiliz İngilizcesidir (British). 'Fall' Amerikan İngilizcesidir (American). Her ikisi de %100 doğrudur, sadece bölge farkı vardır.",
+                "example_wrong": "Yoktur, tercih meselesidir.",
+                "example_right": "British: Autumn / American: Fall"
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Kelimenin seviyelere göre kullanım karmaşıklığı",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "I like autumn.",
+                "tr": "Sonbaharı severim.",
+                "grammar_focus": "Present Simple"
+            },
+            {
+                "cefr": "A2",
+                "en": "It rains a lot in autumn.",
+                "tr": "Sonbaharda çok yağmur yağar.",
+                "grammar_focus": "Preposition (in)"
+            },
+            {
+                "cefr": "B1",
+                "en": "We are planning to visit Japan this autumn.",
+                "tr": "Bu sonbahar Japonya'yı ziyaret etmeyi planlıyoruz.",
+                "grammar_focus": "Demonstrative (this)"
+            },
+            {
+                "cefr": "B2",
+                "en": "The autumn equinox marks the beginning of the season.",
+                "tr": "Sonbahar ekinoksu mevsimin başlangıcını işaret eder.",
+                "grammar_focus": "Specific Vocabulary (equinox)"
+            },
+            {
+                "cefr": "C1",
+                "en": "He is in the autumn of his life.",
+                "tr": "Hayatının sonbaharında (yaşlılık döneminde).",
+                "grammar_focus": "Metaphorical Usage"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "altın (rengi)",
+                "strength": "literary",
+                "example": "golden autumn days",
+                "example_tr": "altın sarısı sonbahar günleri"
+            },
+            {
+                "turkish": "geç",
+                "strength": "standard",
+                "example": "in late autumn",
+                "example_tr": "sonbaharın sonlarında (geç sonbaharda)"
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "gelmek",
+                "example": "Autumn has arrived.",
+                "example_tr": "Sonbahar geldi."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Fall Season",
+            "turkishConcept": "Güz Mevsimi",
+            "scale": [
+                {
+                    "value": 5,
+                    "turkish": "güz (fall)",
+                    "note": "Amerikan İngilizcesi / Daha sade",
+                    "usage": "USA: 'Fall semester'",
+                    "description_tr": "Amerikan İngilizcesinde standarttır. 'Yaprakların düşmesi' (falling leaves) eyleminden gelir.",
+                    "example_en": "School starts in the fall.",
+                    "example_tr": "Okul güzün (sonbaharda) başlar.",
+                    "strength": "Bölgesel"
+                },
+                {
+                    "value": 8,
+                    "turkish": "sonbahar (autumn)",
+                    "note": "İngiliz İngilizcesi / Daha şiirsel",
+                    "usage": "UK/Arts: 'Autumn collection'",
+                    "description_tr": "İngiltere'de standarttır. Latince kökenli olduğu için biraz daha sofistike tınlayabilir.",
+                    "example_en": "The autumn breeze is cold.",
+                    "example_tr": "Sonbahar meltemi soğuktur.",
+                    "strength": "Standart"
+                }
+            ]
+        },
+        "antonyms": []
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "autumn years",
+                "meaning_tr": "yaşlılık yılları (ömrün sonbaharı)",
+                "register": "literary/polite",
+                "example": "He is enjoying his autumn years in retirement.",
+                "example_tr": "Emeklilikte ömrünün sonbaharının (yaşlılığın) tadını çıkarıyor."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Academic Calendar",
+            "note_en": "Universities use 'Autumn Semester' (UK) or 'Fall Semester' (US).",
+            "note_tr": "Üniversitelerde 'Güz Dönemi' için kullanıcılır."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Her seviyede kullanılır."
+        },
+        "inclusive_language": null,
+        "grammar_nuance": {
+            "title": "Silent 'N'",
+            "content": "'Autumn' kelimesinin sonundaki 'N' harfi okunmaz. /ɔː.təm/ diye biter. Ancak türevlerinde (autumnal) 'N' okunur (/ɔːˈtʌm.nəl/)."
+        },
+        "business_english": {
+            "title": "Fashion Industry",
+            "content": "Moda dünyasında 'Autumn/Winter Collection' (Sonbahar/Kış Koleksiyonu) standart bir terimdir.",
+            "keywords": [
+                "AW collection",
+                "seasonal sales"
+            ]
+        },
+        "trivia": {
+            "title": "Fall kelimesi",
+            "content": "Amerikalıların kullandığı 'Fall', aslında eski bir İngiliz deyimi olan 'fall of the leaf' (yaprak dökümü) ifadesinin kısaltmasıdır. İngilizler bunu unuttu, Amerikalılar yaşattı."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 20,
+            "yokdil": 20,
+            "ydt": 30,
+            "description": "Mevsimler temel kelimelerdir ama çeldirici olarak çıkmaz."
+        },
+        "vocabulary": [
+            {
+                "title": "Silent Letters",
+                "content": "Telaffuz sorularında (artık YDS'de yok ama mülakatlarda önemli) sondaki 'n' harfinin okunmaması kritiktir."
+            }
+        ],
+        "grammar": [],
+        "reading": [
+            {
+                "title": "Metaphorical Meaning",
+                "content": "Edebiyat parçalarında 'autumn' hüzün, olgunluk veya sona yaklaşma metaforu olarak kullanılır."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "autumnus (Latin)",
+        "family_members": [
+            {
+                "pos": "n",
+                "level": "A1",
+                "note": "sonbahar"
+            },
+            {
+                "pos": "adj",
+                "level": "C2",
+                "suffix": "-al",
+                "note": "sonbahara özgü (autumnal) - Burada 'N' okunur!"
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_pronunciation",
+                "incorrect": "Pronouncing the 'n'",
+                "correction": "Silent N",
+                "explanation": "Kelime 'otım' gibi okunur, sondaki 'n' yutulur. 'Kolon' (Column) kelimesinde de aynı kural vardır."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Seasonal Activities",
+            "tip": "'What is your favourite season?' sorusuna 'I prefer autumn because of the mild weather and colourful scenery' gibi detaylı cevap vermek puan kazandırır.",
+            "keywords": [
+                "foliage",
+                "cool",
+                "harvest"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "association",
+            "question": "Which holiday is in Autumn?",
+            "answer": "Halloween (October)",
+            "distractors": [
+                "Christmas (Winter)",
+                "Easter (Spring)",
+                "Independence Day (Summer)"
+            ]
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Latin",
+                "meaning": "autumnus (increase/harvest)"
+            },
+            {
+                "era": "Old French",
+                "meaning": "autompne"
+            },
+            {
+                "era": "Modern English",
+                "meaning": "season before winter"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "None",
+            "story": "Türkçe ile doğrudan bir bağı yoktur. Ancak 'Atom' kelimesine ses olarak benzer. 'Sonbaharda yapraklar atomlarına ayrılır (çürür)' diye kodlanabilir.",
+            "example": "Au-tumn -> Atom."
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "<strong>Sonbahar</strong> güzel bir mevsimdir. Hava ne sıcak ne soğuktur. Ağaçlar sarı ve kırmızı olur. Okullar <strong>sonbahar</strong>da açılır. Biz parkta yürürüz. Yerde çok yaprak vardır.",
+            "en": "<strong>Autumn</strong> is a beautiful season. The weather is neither hot nor cold. Trees become yellow and red. Schools open in <strong>autumn</strong>. We walk in the park. There are many leaves on the ground."
+        },
+        "A2": {
+            "tr": "Yaz bitti ve <strong>sonbahar</strong> geldi. Günler kısalmaya başladı. Kuşlar sıcak ülkelere uçuyor. Annem kışlık kıyafetleri çıkardı. <strong>Sonbahar</strong>da sıcak çikolata içmeyi severim. Yağmur yağarken evde oturmak huzurludur.",
+            "en": "Summer is over and <strong>autumn</strong> has arrived. The days started to get shorter. Birds are flying to warm countries. My mother took out the winter clothes. I like drinking hot chocolate in <strong>autumn</strong>. Sitting at home while it rains is peaceful."
+        },
+        "B1": {
+            "tr": "Amerikalılar bu mevsime 'Fall' derler, ama biz İngiliz İngilizcesinde '<strong>Autumn</strong>' deriz. Ekim ayında Cadılar Bayramı (Halloween) kutlanır. Çiftçiler için <strong>sonbahar</strong> hasat zamanıdır (harvest time). Tüm meyve ve sebzeler toplanır. Doğa kış uykusuna hazırlanır.",
+            "en": "Americans call this season 'Fall', but we say '<strong>Autumn</strong>' in British English. Halloween is celebrated in October. For farmers, <strong>autumn</strong> is harvest time. All fruits and vegetables are gathered. Nature prepares for winter sleep (hibernation)."
+        },
+        "B2": {
+            "tr": "Fotoğrafçılar için <strong>sonbahar</strong> en iyi zamandır. 'Altın saat' dedikleri ışık ve renkli yapraklar harika manzaralar oluşturur. Ormanda yürüyüş yapmak (hiking) çok popülerdir. Ancak <strong>sonbahar</strong> hüznü (autumn blues) diye bir gerçek de vardır. Güneş ışığının azalması bazı insanları mutsuz edebilir.",
+            "en": "For photographers, <strong>autumn</strong> is the best time. The light they call 'golden hour' and the colourful leaves create wonderful landscapes. Hiking in the forest is very popular. However, there is also a reality called '<strong>autumn</strong> blues'. The decrease in sunlight can make some people unhappy."
+        },
+        "C1": {
+            "tr": "Edebiyatta <strong>sonbahar</strong> genellikle olgunluğu ve kaçınılmaz sonu simgeler. Gençliğin heyecanlı yazı bitmiş, yaşlılığın soğuk kışı henüz gelmemiştir. Bu bir geçiş ve tefekkür (reflection) dönemidir. Şair Keats, 'Ode to <strong>Autumn</strong>' şiirinde bu mevsimi 'sislerin ve olgun bereketin mevsimi' olarak tanımlar.",
+            "en": "In literature, <strong>autumn</strong> usually symbolizes maturity and the inevitable end. The exciting summer of youth is over, the cold winter of old age has not yet arrived. This is a period of transition and reflection. The poet Keats, in his 'Ode to <strong>Autumn</strong>', describes this season as the 'season of mists and mellow fruitfulness'."
+        },
+        "C2": {
+            "tr": "İklim değişikliği nedeniyle mevsimlerin döngüsü (cycle) bozuluyor. Artık 'gerçek' bir <strong>sonbahar</strong> yaşamıyoruz; yazdan kışa ani geçişler oluyor. <strong>Sonbahar</strong>a özgü flora (bitki örtüsü), bu ısı değişimlerine adapte olamıyor. Yaprakların renk değiştirmesi (foliage) bile gecikiyor. Bu ekolojik sapma, kış uykusuna yatan hayvanların biyolojik saatini de karıştırıyor.",
+            "en": "Due to climate change, the cycle of seasons is disrupted. We no longer experience a 'real' <strong>autumn</strong>; there are sudden transitions from summer to winter. The flora specific to <strong>autumn</strong> cannot adapt to these temperature shifts. Even the changing of leaf colours (foliage) is delayed. This ecological deviation also confuses the biological clock of hibernating animals."
+        }
+    }
+}

@@ -1,0 +1,361 @@
+{
+    "id": "aquarium",
+    "meta": {
+        "cefr_level": "A2",
+        "frequency_band": "Low Frequency",
+        "part_of_speech": [
+            "noun"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/əˈkwer.i.əm/",
+        "syllabification": [
+            "a",
+            "quar",
+            "i",
+            "um"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "a glass container for keeping fish and water animals",
+            "core_meaning_tr": "akvaryum (ev tipi)",
+            "context_tags": [
+                "hobby",
+                "home"
+            ],
+            "example": {
+                "sentence": "I have a goldfish in my aquarium.",
+                "translation": "Akvaryumumda bir japon balığım var."
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "a building where people go to see sea animals",
+            "core_meaning_tr": "dev akvaryum binası / su canlıları müzesi",
+            "context_tags": [
+                "tourism",
+                "education"
+            ],
+            "example": {
+                "sentence": "We visited the Antalya Aquarium yesterday.",
+                "translation": "Dün Antalya Akvaryumu'nu ziyaret ettik."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "visit the aquarium",
+                "usage_level": "Core",
+                "notes_tr": "Müze/bina anlamında kullanıldığında genellikle 'the' alır."
+            },
+            {
+                "pattern": "setup an aquarium",
+                "usage_level": "Intermediate",
+                "notes_tr": "Akvaryum kurmak için 'set up' fiili kullanılır."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Latince kökenli kelime.",
+            "critical_comparison": {
+                "context": "Plural: Aquariums vs Aquaria",
+                "rule": "İngilizcede her ikisi de doğrudur. 'Aquariums' günlük dilde daha yaygındır. 'Aquaria' ise daha bilimsel/teknik metinlerde geçer.",
+                "example_wrong": "The museum has two big aquaria. (Doğru ama çok resmi)",
+                "example_right": "The museum has two big aquariums. (Daha yaygın)"
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Kelimenin seviyelere göre kullanım karmaşıklığı",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "The fish in the aquarium are orange.",
+                "tr": "Akvaryumdaki balıklar turuncudur.",
+                "grammar_focus": "Preposition Phrase (in the...)"
+            },
+            {
+                "cefr": "A2",
+                "en": "We saw a shark at the aquarium.",
+                "tr": "Akvaryumda (dev akvaryum binası) bir köpekbalığı gördük.",
+                "grammar_focus": "Past Simple"
+            },
+            {
+                "cefr": "B1",
+                "en": "Keeping an aquarium requires patience and regular cleaning.",
+                "tr": "Akvaryum beslemek (bakmak), sabır ve düzenli temizlik gerektirir.",
+                "grammar_focus": "Gerund Subject"
+            },
+            {
+                "cefr": "B2",
+                "en": "The marine biologist works at the city aquarium.",
+                "tr": "Deniz biyoloğu şehir akvaryumunda çalışıyor.",
+                "grammar_focus": "Professional Vocabulary"
+            },
+            {
+                "cefr": "C1",
+                "en": "Public aquariums play a vital role in the conservation of endangered species.",
+                "tr": "Halka açık akvaryumlar, nesli tükenmekte olan türlerin korunmasında hayati bir rol oynar.",
+                "grammar_focus": "Academic (conservation, endangered)"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "tuzlu su",
+                "strength": "specific",
+                "example": "Saltwater aquariums are harder to maintain.",
+                "example_tr": "Tuzlu su akvaryumlarının bakımı daha zordur."
+            },
+            {
+                "turkish": "tatlı su",
+                "strength": "specific",
+                "example": "Goldfish live in freshwater aquariums.",
+                "example_tr": "Japon balıkları tatlı su akvaryumlarında yaşar."
+            },
+            {
+                "turkish": "halka açık (dev)",
+                "strength": "standard",
+                "example": "We visited the public aquarium downtown.",
+                "example_tr": "Şehir merkezindeki halka açık akvaryumu ziyaret ettik."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "bakımını yapmak",
+                "example": "It takes time to maintain a large aquarium.",
+                "example_tr": "Büyük bir akvaryumun bakımını yapmak zaman alır."
+            },
+            {
+                "turkish": "kurmak",
+                "example": "I want to set up a tropical aquarium.",
+                "example_tr": "Tropikal bir akvaryum kurmak istiyorum."
+            },
+            {
+                "turkish": "balıkla doldurmak",
+                "example": "He stocked the aquarium with neon tetras.",
+                "example_tr": "Akvaryumu neon tetra balıklarıyla doldurdu."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Enclosures for Aquatic Life",
+            "turkishConcept": "Su Canlıları Alanları",
+            "scale": [
+                {
+                    "value": 2,
+                    "turkish": "fanus",
+                    "note": "Küçük, yuvarlak, filtresiz cam kap (genellikle Japon balığı için)",
+                    "description_tr": "Genellikle tek bir balık için kullanılan küçük, yuvarlak cam kap.",
+                    "example_en": "You shouldn't keep a goldfish in a small bowl.",
+                    "example_tr": "Bir japon balığını küçük bir fanusta beslememelisin.",
+                    "strength": "Basit"
+                },
+                {
+                    "value": 5,
+                    "turkish": "balık tankı",
+                    "note": "Ev tipi, genellikle dikdörtgen cam sistem",
+                    "description_tr": "Evde balık beslemek için kullanılan standart dikdörtgen cam prizmadır.",
+                    "example_en": "He cleaned the algae off the fish tank.",
+                    "example_tr": "Balık tankındaki yosunları temizledi.",
+                    "strength": "Standart"
+                },
+                {
+                    "value": 8,
+                    "turkish": "akvaryum",
+                    "note": "Hem evdeki tank hem de devasa turistik tesis",
+                    "description_tr": "Hem ev tipi tankı hem de içinde gezilebilen büyük su canlıları müzesini ifade eder.",
+                    "example_en": "The city aquarium has a shark tunnel.",
+                    "example_tr": "Şehir akvaryumunda bir köpekbalığı tüneli var.",
+                    "strength": "Kapsamlı"
+                },
+                {
+                    "value": 10,
+                    "turkish": "okyanus akvaryumu",
+                    "note": "Açık denize bağlı veya devasa deniz parkı (SeaWorld vb.)",
+                    "description_tr": "Okyanus canlılarını büyük ölçekte barındıran devasa tesistir.",
+                    "example_en": "The oceanarium houses whales and dolphins.",
+                    "example_tr": "Okyanus akvaryumu balinalara ve yunuslara ev sahipliği yapıyor.",
+                    "strength": "Devasa"
+                }
+            ]
+        },
+        "antonyms": []
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "living in a fishbowl",
+                "meaning_tr": "kendi halinde/göz önünde yaşamak (gizlisi saklısı olmamak)",
+                "register": "idiomatic",
+                "example": "Celebrities often feel like they are living in a fishbowl.",
+                "example_tr": "Ünlüler genellikle fanusta yaşıyormuş gibi hissederler (her an izleniyorlar)."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Conservation",
+            "note_en": "Modern aquariumsbrand themselves as 'conservation centers' rather than zoos to emphasize their role in saving endangered species.",
+            "note_tr": "Modern akvaryumlar kendilerini hayvanat bahçesi olarak değil, 'koruma merkezi' olarak tanıtır."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Bilimsel ve günlük dilde kullanılır."
+        },
+        "inclusive_language": null,
+        "grammar_nuance": {
+            "title": "Plural: Aquariums vs Aquaria",
+            "content": "Latince kökenli olduğu için çoğulu 'Aquaria' olabilir ama modern İngilizcede %95 oranında 'Aquariums' kullanılır. 'Aquaria' aşırı teknik kaçar."
+        },
+        "business_english": {
+            "title": "Aquascape",
+            "content": "Akvaryum peyzajı mimarlığına 'Aquascaping' denir. Bu, niş bir iş koludur ve sanat dalı olarak kabul edilir.",
+            "keywords": [
+                "hardscape",
+                "substrate",
+                "flora"
+            ]
+        },
+        "trivia": {
+            "title": "Feng Shui",
+            "content": "Asya kültüründe ve Feng Shui felsefesinde akvaryumlar zenginlik ve bereket getirdiğine inanıldığı için iş yerlerinde çok yaygındır."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 20,
+            "yokdil": 30,
+            "ydt": 25,
+            "description": "Çevre ve Biyoloji metinlerinde (Environment/Biology) nadiren çıkar."
+        },
+        "vocabulary": [
+            {
+                "title": "Tank",
+                "content": "Sınavda 'aquarium' yerine 'tank' veya 'vessel' kelimeleri eş anlamlı olarak kullanılabilir."
+            },
+            {
+                "title": "Marine vs Aquatic",
+                "content": "'Marine' (deniz/tuzlu su) ve 'Aquatic' (sucul/genel) ayrımına dikkat edin. Akvaryumlar her ikisini de barındırabilir."
+            }
+        ],
+        "grammar": [],
+        "reading": [
+            {
+                "title": "Esaret Tartışması",
+                "content": "Parçada 'captivity' (esaret) ve 'conservation' (koruma) zıtlığı varsa, konu hayvanat bahçeleri veya akvaryumların etiğidir."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "Aqua (Water) + -arium (Place)",
+        "family_members": [
+            {
+                "pos": "n",
+                "level": "A2",
+                "note": "su yeri -> akvaryum"
+            },
+            {
+                "pos": "adj",
+                "level": "B2",
+                "note": "suda yaşayan, suyla ilgili"
+            },
+            {
+                "pos": "n",
+                "level": "C1",
+                "note": "kova burcu (su taşıyıcı)"
+            },
+            {
+                "pos": "n",
+                "level": "C1",
+                "note": "kara canlıları için cam kafes (terra: toprak)"
+            },
+            {
+                "pos": "n",
+                "level": "C2",
+                "note": "canlılar için yaşam alanı (genel terim)"
+            },
+            {
+                "pos": "n",
+                "level": "B2",
+                "note": "gökevi (gezegen yeri)"
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_spelling_agua",
+                "incorrect": "aguarium",
+                "correction": "aquarium",
+                "explanation": "İspanyolcadaki 'agua' ile karıştırılıp 'g' ile yazılmamalıdır. Latince 'aqua' (q) köküdür."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Environment",
+            "tip": "Speaking sınavında hobilerinizden bahsederken 'aquascaping' (su altı peyzajı) terimini kullanmak çok etkileyici ve ileri seviye bir kelimedir.",
+            "keywords": [
+                "ecosystem",
+                "marine life",
+                "coral reef"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "analogy",
+            "question": "Bird is to Cage as Fish is to _____",
+            "answer": "Aquarium (or Tank)",
+            "distractors": [
+                "Pool",
+                "Sea",
+                "Net"
+            ]
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Latin",
+                "meaning": "watering place for cattle"
+            },
+            {
+                "era": "19th Century",
+                "meaning": "vessel for aquatic plants/animals (vivarium derivative)"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Suffix Pattern",
+            "story": "İngilizcede ve Türkçede sonu '-arium' veya '-aryum' ile biten kelimeler hep 'bir şeyin yapıldığı YER' anlamına gelir. \n- Aquarium: Aqua (Su) + Arium (Yer) = Su yeri.\n- Solarium: Solar (Güneş) + Arium (Yer) = Güneşlenme yeri.\n- Terrarium: Terra (Toprak) + Arium (Yer) = Toprak yeri (sürüngenler için).\n- Planetarium: Planet (Gezegen) + Arium (Yer) = Gezegen evi.",
+            "example": "Aqua -> Akvaryum."
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Odamda küçük bir <strong>akvaryum</strong> var. İçinde üç balık var. İsimleri Mavi, Kırmızı ve Sarı. Onları izlemeyi seviyorum. Suda yüzüyorlar. Ben onlara her sabah yem veriyorum. <strong>Akvaryum</strong> benim için televizyondan daha güzel.",
+            "en": "There is a small <strong>aquarium</strong> in my room. There are three fish inside. Their names are Blue, Red, and Yellow. I like watching them. They swim in the water. I give them food every morning. The <strong>aquarium</strong> is better than television for me."
+        },
+        "A2": {
+            "tr": "Sınıf gezisinde büyük bir <strong>akvaryum</strong>a gittik. Dev bir tünel vardı. Başımızın üstünde köpekbalıkları yüzüyordu. Çok heyecan vericiydi. Rehber bize deniz kaplumbağalarını gösterdi. <strong>Akvaryum</strong>da flaşlı fotoğraf çekmek yasaktı çünkü balıklar korkabilir.",
+            "en": "On a class trip, we went to a big <strong>aquarium</strong>. There was a giant tunnel. Sharks were swimming above our heads. It was very exciting. The guide showed us the sea turtles. Taking photos with flash was forbidden in the <strong>aquarium</strong> because fish can get scared."
+        },
+        "B1": {
+            "tr": "Ağabeyim geçen hafta eve tuzlu su <strong>akvaryum</strong>u kurmaya karar verdi. Bu, normal bir akvaryumdan çok daha zor. Suyun tuz oranını ve sıcaklığını sürekli kontrol etmesi gerekiyor. Ayrıca özel ışıklar ve mercanlar (corals) satın aldı. <strong>Akvaryum</strong> hobisi (aquarium keeping) pahalı ama rahatlatıcı bir uğraş.",
+            "en": "My brother decided to set up a saltwater <strong>aquarium</strong> at home last week. This is much harder than a normal aquarium. He needs to check the water salinity and temperature constantly. He also bought special lights and corals. <strong>Aquarium</strong> keeping is an expensive but relaxing hobby."
+        },
+        "B2": {
+            "tr": "Bir <strong>akvaryum</strong> sadece su dolu bir cam kutu değildir; o kapalı bir ekosistemdir. Balıkların atıkları suyu kirletir, ancak yararlı bakteriler bu atığı temizler. Eğer bu denge bozulursa, balıklar ölür. Başarılı bir <strong>akvaryum</strong> sahibi olmak için biraz kimya, biraz biyoloji bilmek gerekir. Doğanın döngüsünü taklit etmek büyüleyicidir.",
+            "en": "An <strong>aquarium</strong> is not just a glass box full of water; it is a closed ecosystem. Fish waste pollutes the water, but beneficial bacteria clean this waste. If this balance is disturbed, the fish die. To be a successful <strong>aquarium</strong> owner, one needs to know a little chemistry and biology. Mimicking nature's cycle is fascinating."
+        },
+        "C1": {
+            "tr": "Modern şehir <strong>akvaryum</strong>ları artık sadece eğlence merkezi değil, aynı zamanda araştırma enstitüleridir. Birçok deniz canlısı, okyanus kirliliği ve iklim değişikliği nedeniyle tehdit altındadır. <strong>Akvaryum</strong>lar, bu türler için güvenli üreme programları yürütür. Eleştirmenler hayvanların hapsedilmesine karşı çıksa da, destekçiler bu tesislerin eğitim ve farkındalık yarattığını savunuyor.",
+            "en": "Modern city <strong>aquariums</strong> are no longer just entertainment centers, but also research institutes. Many marine creatures are threatened by ocean pollution and climate change. <strong>Aquariums</strong> conduct safe breeding programs for these species. While critics oppose the confinement of animals, supporters argue that these facilities create education and awareness."
+        },
+        "C2": {
+            "tr": "Filozoflar bazen insanlık durumunu bir <strong>akvaryum</strong>a benzetir. Görünmez cam duvarlarla (kültürel normlar, dil, algı sınırları) çevriliyizdir ve içinde yüzdüğümüz suyun farkında değilizdir. Platon'un mağarası gibi, <strong>akvaryum</strong>daki balık da dış dünyayı sadece camdaki yansımalardan ibaret sanır. Özgürlük, belki de o camı kırmak değil, suyun (içinde yaşadığımız gerçekliğin) doğasını anlamaktır.",
+            "en": "Philosophers sometimes compare the human condition to an <strong>aquarium</strong>. We are surrounded by invisible glass walls (cultural norms, language, perceptual limits) and are unaware of the water we swim in. Like Plato's cave, the fish in the <strong>aquarium</strong> thinks the outside world consists only of reflections on the glass. Freedom is perhaps not breaking that glass, but understanding the nature of the water (the reality we live in)."
+        }
+    }
+}
