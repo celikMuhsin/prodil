@@ -98,18 +98,21 @@
         "modifiers_adverbs": [
             {
                 "turkish": "çıkış/ilk",
+                "word": "debut",
                 "strength": "strong",
                 "example": "The debut album sold millions.",
                 "example_tr": "İlk albüm milyonlar sattı."
             },
             {
                 "turkish": "solo",
+                "word": "solo",
                 "strength": "strong",
                 "example": "He released his first solo album.",
                 "example_tr": "İlk solo albümünü çıkardı."
             },
             {
                 "turkish": "canlı",
+                "word": "live",
                 "strength": "standard",
                 "example": "They recorded a live album in London.",
                 "example_tr": "Londra'da canlı bir albüm kaydettiler."
@@ -118,16 +121,19 @@
         "verbs_preceding": [
             {
                 "turkish": "çıkarmak/yayınlamak",
+                "word": "release",
                 "example": "The singer released a new album.",
                 "example_tr": "Şarkıcı yeni bir albüm çıkardı."
             },
             {
                 "turkish": "kaydetmek",
+                "word": "record",
                 "example": "They are recording an album in the studio.",
                 "example_tr": "Stüdyoda albüm kaydediyorlar."
             },
             {
                 "turkish": "imzalamak",
+                "word": "sign",
                 "example": "He signed my album after the concert.",
                 "example_tr": "Konserden sonra albümümü imzaladı."
             }
@@ -141,6 +147,7 @@
             "scale": [
                 {
                     "value": 2,
+                    "word": "single",
                     "turkish": "single (tekli)",
                     "note": "Tek bir şarkı",
                     "usage": "Radio hit",
@@ -151,6 +158,7 @@
                 },
                 {
                     "value": 4,
+                    "word": "EP",
                     "turkish": "EP (Extended Play)",
                     "note": "Mini albüm (3-5 şarkı)",
                     "usage": "Band demo",
@@ -161,6 +169,7 @@
                 },
                 {
                     "value": 8,
+                    "word": "album",
                     "turkish": "albüm (LP)",
                     "note": "Tam uzunlukta (Long Play - 10+ şarkı)",
                     "usage": "Full work",
@@ -171,6 +180,7 @@
                 },
                 {
                     "value": 10,
+                    "word": "anthology",
                     "turkish": "antoloji / diskografi",
                     "note": "Tüm eserlerin toplamı",
                     "usage": "Career compilation",
@@ -246,16 +256,19 @@
         "family_members": [
             {
                 "pos": "n",
+                "word": "album",
                 "level": "A2",
                 "note": "albüm (beyaz defter -> koleksiyon)"
             },
             {
                 "pos": "n",
+                "word": "albino",
                 "level": "C2",
                 "note": "albino (beyaz pigment eksikliği)"
             },
             {
                 "pos": "n",
+                "word": "albumen",
                 "level": "medical",
                 "note": "albumen (yumurta akı)"
             }
@@ -294,18 +307,22 @@
         "timeline": [
             {
                 "era": "Latin",
+                "word": "albus",
                 "meaning": "white tablet"
             },
             {
                 "era": "17th Century",
+                "word": "album",
                 "meaning": "blank book for autographs"
             },
             {
                 "era": "19th Century",
+                "word": "album",
                 "meaning": "book for photos/stamps"
             },
             {
                 "era": "20th Century",
+                "word": "album",
                 "meaning": "set of phonograph records (music)"
             }
         ],

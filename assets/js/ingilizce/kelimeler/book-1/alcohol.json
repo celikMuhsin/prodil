@@ -99,12 +99,14 @@
         "modifiers_adverbs": [
             {
                 "turkish": "saf",
+                "word": "pure",
                 "strength": "medical",
                 "example": "Pure alcohol is used for sterilization.",
                 "example_tr": "Saf alkol sterilizasyon için kullanılır."
             },
             {
                 "turkish": "aşırı (tüketim)",
+                "word": "excessive",
                 "strength": "negative",
                 "example": "Excessive alcohol consumption is dangerous.",
                 "example_tr": "Aşırı alkol tüketimi tehlikelidir."
@@ -113,16 +115,19 @@
         "verbs_preceding": [
             {
                 "turkish": "tüketmek/içmek",
+                "word": "consume",
                 "example": "He consumes too much alcohol.",
                 "example_tr": "O çok fazla alkol tüketiyor."
             },
             {
                 "turkish": "bırakmak",
+                "word": "give up",
                 "example": "It's hard to give up alcohol.",
                 "example_tr": "Alkolü bırakmak zordur."
             },
             {
                 "turkish": "kısıtlamak",
+                "word": "restrict",
                 "example": "Doctors advised him to restrict his alcohol intake.",
                 "example_tr": "Doktorlar ona alkol alımını kısıtlamasını tavsiye etti."
             }
@@ -135,6 +140,7 @@
             "scale": [
                 {
                     "value": 3,
+                    "word": "drink",
                     "turkish": "içki (drink)",
                     "note": "Günlük kullanım",
                     "usage": "Social: 'Let's have a drink.'",
@@ -145,6 +151,7 @@
                 },
                 {
                     "value": 5,
+                    "word": "alcohol",
                     "turkish": "alkol",
                     "note": "Nötr / Teknik",
                     "usage": "General: 'Contains alcohol.'",
@@ -155,6 +162,7 @@
                 },
                 {
                     "value": 7,
+                    "word": "liquor",
                     "turkish": "sert içki (liquor/spirits)",
                     "note": "Yüksek alkollü",
                     "usage": "Bar context: 'Hard liquor'",
@@ -165,6 +173,7 @@
                 },
                 {
                     "value": 9,
+                    "word": "booze",
                     "turkish": "içki alemi (booze)",
                     "note": "Argo / Kaba",
                     "usage": "Slang: 'Bring some booze.'",
@@ -178,6 +187,7 @@
         "antonyms": [
             {
                 "value": 0,
+                "word": "sober",
                 "turkish": "ayık (sober)",
                 "note": "Alkol almamış durumu",
                 "description_tr": "Alkol etkisinde olmama veya hiç içmeme durumu.",
@@ -186,6 +196,7 @@
             },
             {
                 "value": 1,
+                "word": "non-alcoholic",
                 "turkish": "alkolsüz (non-alcoholic/soft drink)",
                 "note": "İçecek türü",
                 "description_tr": "İçinde alkol bulunmayan meşrubat.",
@@ -266,22 +277,26 @@
         "family_members": [
             {
                 "pos": "n",
+                "word": "alcohol",
                 "level": "A2",
                 "note": "alkol"
             },
             {
                 "pos": "adj",
+                "word": "alcoholic",
                 "level": "B1",
                 "suffix": "-ic",
                 "note": "alkollü / alkolik (kişi)"
             },
             {
                 "pos": "n",
+                "word": "alcoholism",
                 "level": "B2",
                 "note": "alkolizm (bağımlılık)"
             },
             {
                 "pos": "adj",
+                "word": "non-alcoholic",
                 "level": "B1",
                 "note": "alkolsüz (non-alcoholic)"
             }
@@ -316,14 +331,17 @@
         "timeline": [
             {
                 "era": "Arabic",
+                "word": "Al-Kuhl",
                 "meaning": "fine powder (antimony) for eyes"
             },
             {
                 "era": "Medieval Latin",
+                "word": "alcohol",
                 "meaning": "purified essence"
             },
             {
                 "era": "18th Century",
+                "word": "alcohol",
                 "meaning": "intoxicating ingredient in liquor"
             }
         ],

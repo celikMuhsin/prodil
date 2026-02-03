@@ -47,7 +47,7 @@
             "critical_comparison": {
                 "context": "Autumn vs Fall",
                 "rule": "'Autumn' İngiliz İngilizcesidir (British). 'Fall' Amerikan İngilizcesidir (American). Her ikisi de %100 doğrudur, sadece bölge farkı vardır.",
-                "example_wrong": "Yoktur, tercih meselesidir.",
+                "example_wrong": "",
                 "example_right": "British: Autumn / American: Fall"
             }
         }
@@ -97,6 +97,7 @@
             },
             {
                 "turkish": "geç",
+                "word": "late",
                 "strength": "standard",
                 "example": "in late autumn",
                 "example_tr": "sonbaharın sonlarında (geç sonbaharda)"
@@ -105,6 +106,7 @@
         "verbs_preceding": [
             {
                 "turkish": "gelmek",
+                "word": "arrive",
                 "example": "Autumn has arrived.",
                 "example_tr": "Sonbahar geldi."
             }
@@ -117,6 +119,7 @@
             "scale": [
                 {
                     "value": 5,
+                    "word": "fall",
                     "turkish": "güz (fall)",
                     "note": "Amerikan İngilizcesi / Daha sade",
                     "usage": "USA: 'Fall semester'",
@@ -127,6 +130,7 @@
                 },
                 {
                     "value": 8,
+                    "word": "autumn",
                     "turkish": "sonbahar (autumn)",
                     "note": "İngiliz İngilizcesi / Daha şiirsel",
                     "usage": "UK/Arts: 'Autumn collection'",
@@ -204,11 +208,13 @@
         "family_members": [
             {
                 "pos": "n",
+                "word": "autumn",
                 "level": "A1",
                 "note": "sonbahar"
             },
             {
                 "pos": "adj",
+                "word": "autumnal",
                 "level": "C2",
                 "suffix": "-al",
                 "note": "sonbahara özgü (autumnal) - Burada 'N' okunur!"
@@ -248,14 +254,17 @@
         "timeline": [
             {
                 "era": "Latin",
+                "word": "autumnus",
                 "meaning": "autumnus (increase/harvest)"
             },
             {
                 "era": "Old French",
+                "word": "autompne",
                 "meaning": "autompne"
             },
             {
                 "era": "Modern English",
+                "word": "autumn",
                 "meaning": "season before winter"
             }
         ],

@@ -104,18 +104,21 @@
         "modifiers_adverbs": [
             {
                 "turkish": "fonetik/sesçil",
+                "word": "phonetic",
                 "strength": "technical",
                 "example": "NATO phonetic alphabet (NATO fonetik alfabesi - Alpha, Bravo...)",
                 "example_tr": "Havacılıkta NATO fonetik alfabesi kullanılır."
             },
             {
                 "turkish": "Latin",
+                "word": "Latin",
                 "strength": "standard",
                 "example": "Turkish uses the Latin alphabet.",
                 "example_tr": "Türkçe Latin alfabesini kullanır."
             },
             {
                 "turkish": "Kiril",
+                "word": "Cyrillic",
                 "strength": "specific",
                 "example": "Russian is written in the Cyrillic alphabet.",
                 "example_tr": "Rusça Kiril alfabesiyle yazılır."
@@ -124,16 +127,19 @@
         "verbs_preceding": [
             {
                 "turkish": "ezbere okumak",
+                "word": "recite",
                 "example": "The child can recite the alphabet.",
                 "example_tr": "Çocuk alfabeyi ezbere sayabiliyor."
             },
             {
                 "turkish": "icat etmek/tasarlamak",
+                "word": "devise",
                 "example": "He devised a new alphabet for the language.",
                 "example_tr": "Dil için yeni bir alfabe tasarladı."
             },
             {
                 "turkish": "harf çevirisi yapmak",
+                "word": "transliterate",
                 "example": "Names are transliterated into the Latin alphabet.",
                 "example_tr": "İsimler Latin alfabesine çevrilir (harf harf)."
             }
@@ -146,6 +152,7 @@
             "scale": [
                 {
                     "value": 5,
+                    "word": "alphabet",
                     "turkish": "alfabe/abece",
                     "note": "Harflerden oluşan ses temelli set (A, B, C)",
                     "description_tr": "Her sesin bir harfle karşılandığı standart yazı sistemidir.",
@@ -155,6 +162,7 @@
                 },
                 {
                     "value": 6,
+                    "word": "script",
                     "turkish": "yazı sistemi/hat",
                     "note": "Bir dilin yazım şekli (Arabic Script, cursive script)",
                     "description_tr": "Bir dilin karakterlerinin el yazısı veya basılı özgün biçimidir.",
@@ -164,6 +172,7 @@
                 },
                 {
                     "value": 9,
+                    "word": "character set",
                     "turkish": "karakter seti",
                     "note": "Dijital ortamdaki sembollerin tamamı (ASCII, Unicode)",
                     "description_tr": "Bilgisayar sistemlerinde kullanılan tüm harf ve sembollerin listesidir.",
@@ -173,6 +182,7 @@
                 },
                 {
                     "value": 8,
+                    "word": "hieroglyphics",
                     "turkish": "hiyeroglif",
                     "note": "Resim yazısı (harf değil sembol)",
                     "description_tr": "Antik Mısır'da kullanılan resim temelli yazı sistemidir.",
@@ -185,6 +195,7 @@
         "antonyms": [
             {
                 "value": 1,
+                "word": "illiteracy",
                 "turkish": "cahillik / okuma yazma bilmeme",
                 "note": "Alfabeye hakim olmama durumu",
                 "description_tr": "Okuma yazma becerisinin olmaması durumudur.",
@@ -265,28 +276,33 @@
         "family_members": [
             {
                 "pos": "n",
+                "word": "alphabet",
                 "level": "A2",
                 "note": "alfabe"
             },
             {
                 "pos": "adj",
+                "word": "alphabetical",
                 "level": "B1",
                 "suffix": "-ical",
                 "note": "alfabetik, abecesel"
             },
             {
                 "pos": "v",
+                "word": "alphabetize",
                 "level": "C1",
                 "suffix": "-ize",
                 "note": "alfabetik sıraya koymak"
             },
             {
                 "pos": "n",
+                "word": "literacy",
                 "level": "B2",
                 "note": "okuryazarlık (alfabe bilgisi)"
             },
             {
                 "pos": "adj",
+                "word": "illiterate",
                 "level": "B2",
                 "note": "okuma yazma bilmeyen"
             }
@@ -326,14 +342,17 @@
         "timeline": [
             {
                 "era": "Phoenician",
+                "word": "aleph + beth",
                 "meaning": "ox + house (first two letters)"
             },
             {
                 "era": "Greek",
+                "word": "alpha + beta",
                 "meaning": "first two letters of Greek alphabet"
             },
             {
                 "era": "Latin",
+                "word": "alphabetum",
                 "meaning": "list of letters"
             }
         ],

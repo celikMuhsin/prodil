@@ -106,18 +106,21 @@
         "modifiers_adverbs": [
             {
                 "turkish": "tuzlu su",
+                "word": "saltwater",
                 "strength": "specific",
                 "example": "Saltwater aquariums are harder to maintain.",
                 "example_tr": "Tuzlu su akvaryumlarının bakımı daha zordur."
             },
             {
                 "turkish": "tatlı su",
+                "word": "freshwater",
                 "strength": "specific",
                 "example": "Goldfish live in freshwater aquariums.",
                 "example_tr": "Japon balıkları tatlı su akvaryumlarında yaşar."
             },
             {
                 "turkish": "halka açık (dev)",
+                "word": "public",
                 "strength": "standard",
                 "example": "We visited the public aquarium downtown.",
                 "example_tr": "Şehir merkezindeki halka açık akvaryumu ziyaret ettik."
@@ -126,16 +129,19 @@
         "verbs_preceding": [
             {
                 "turkish": "bakımını yapmak",
+                "word": "maintain",
                 "example": "It takes time to maintain a large aquarium.",
                 "example_tr": "Büyük bir akvaryumun bakımını yapmak zaman alır."
             },
             {
                 "turkish": "kurmak",
+                "word": "set up",
                 "example": "I want to set up a tropical aquarium.",
                 "example_tr": "Tropikal bir akvaryum kurmak istiyorum."
             },
             {
                 "turkish": "balıkla doldurmak",
+                "word": "stock",
                 "example": "He stocked the aquarium with neon tetras.",
                 "example_tr": "Akvaryumu neon tetra balıklarıyla doldurdu."
             }
@@ -148,6 +154,7 @@
             "scale": [
                 {
                     "value": 2,
+                    "word": "fishbowl",
                     "turkish": "fanus",
                     "note": "Küçük, yuvarlak, filtresiz cam kap (genellikle Japon balığı için)",
                     "description_tr": "Genellikle tek bir balık için kullanılan küçük, yuvarlak cam kap.",
@@ -157,6 +164,7 @@
                 },
                 {
                     "value": 5,
+                    "word": "fish tank",
                     "turkish": "balık tankı",
                     "note": "Ev tipi, genellikle dikdörtgen cam sistem",
                     "description_tr": "Evde balık beslemek için kullanılan standart dikdörtgen cam prizmadır.",
@@ -166,6 +174,7 @@
                 },
                 {
                     "value": 8,
+                    "word": "aquarium",
                     "turkish": "akvaryum",
                     "note": "Hem evdeki tank hem de devasa turistik tesis",
                     "description_tr": "Hem ev tipi tankı hem de içinde gezilebilen büyük su canlıları müzesini ifade eder.",
@@ -175,6 +184,7 @@
                 },
                 {
                     "value": 10,
+                    "word": "oceanarium",
                     "turkish": "okyanus akvaryumu",
                     "note": "Açık denize bağlı veya devasa deniz parkı (SeaWorld vb.)",
                     "description_tr": "Okyanus canlılarını büyük ölçekte barındıran devasa tesistir.",
@@ -256,31 +266,37 @@
         "family_members": [
             {
                 "pos": "n",
+                "word": "aquarium",
                 "level": "A2",
                 "note": "su yeri -> akvaryum"
             },
             {
                 "pos": "adj",
+                "word": "aquatic",
                 "level": "B2",
                 "note": "suda yaşayan, suyla ilgili"
             },
             {
                 "pos": "n",
+                "word": "Aquarius",
                 "level": "C1",
                 "note": "kova burcu (su taşıyıcı)"
             },
             {
                 "pos": "n",
+                "word": "terrarium",
                 "level": "C1",
                 "note": "kara canlıları için cam kafes (terra: toprak)"
             },
             {
                 "pos": "n",
+                "word": "vivarium",
                 "level": "C2",
                 "note": "canlılar için yaşam alanı (genel terim)"
             },
             {
                 "pos": "n",
+                "word": "planetarium",
                 "level": "B2",
                 "note": "gökevi (gezegen yeri)"
             }
@@ -319,10 +335,12 @@
         "timeline": [
             {
                 "era": "Latin",
+                "word": "aquarium",
                 "meaning": "watering place for cattle"
             },
             {
                 "era": "19th Century",
+                "word": "aquarium",
                 "meaning": "vessel for aquatic plants/animals (vivarium derivative)"
             }
         ],

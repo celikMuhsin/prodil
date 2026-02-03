@@ -775,7 +775,7 @@ html {
     color: var(--text-main);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
 }
 
 .accordion-icon {
@@ -795,11 +795,121 @@ html {
     background: #fff;
 }
 
+
+/* Restore Missing Accordion Open State */
 .section-wrapper.open>.accordion-content {
     max-height: 15000px;
     /* Arbitrary large height */
     padding: 15px 20px 5px 20px;
 }
+
+/* --- Header Responsive Layout --- */
+
+/* 1. Mobile Controls (Top Row) - Default Visible */
+.mobile-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px 15px;
+    margin-bottom: 0;
+}
+
+/* 2. Desktop Elements - Default Hidden */
+.desktop-only-flex {
+    display: none !important;
+}
+
+/* 3. Metadata Row (Tags + Desktop Nav + Desktop Audio) */
+.word-meta-row {
+    padding: 8px 15px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    /* For absolute centering */
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* Tags Container */
+.meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+}
+
+/* Desktop Media Query */
+@media (min-width: 1024px) {
+
+    /* Hide Old Top Row */
+    .mobile-controls {
+        display: none !important;
+    }
+
+    /* Show Desktop Elements */
+    .desktop-only-flex {
+        display: flex !important;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Desktop Row Layout */
+    .word-meta-row {
+        justify-content: space-between;
+    }
+
+    /* Absolute Center Navigation */
+    .desktop-nav-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Right Side Audio */
+    .desktop-audio-right {
+        margin-left: auto;
+        /* Push to right if not using space-between */
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Shift Content Right (Desktop Only) */
+    .sticky-header-wrapper,
+    .word-meta-row {
+        padding-left: 33px !important;
+        padding-right: 33px !important;
+        /* Slight right shift for desktop */
+    }
+}
+
+@media (max-width: 1023px) {
+    .word-meta-row {
+        display: flex;
+        /* Changed from block to flex for alignment */
+        align-items: center;
+        /* Vertically center */
+        flex-wrap: wrap;
+        /* Allow wrapping */
+        padding-bottom: 0px;
+        padding-top: 0px !important;
+        /* Zero top padding */
+        /* Reduce bottom padding */
+        /* Stack tags nicely on mobile */
+    }
+
+    .desktop-nav-center,
+    .desktop-audio-right {
+        display: none !important;
+    }
+}
+
+
 
 /* Hide original section titles since we use accordion headers now */
 .accordion-content .section-title {
@@ -1918,6 +2028,8 @@ html {
     gap: 5px;
     align-items: flex-start !important;
     text-align: left !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
 }
 
 .exam-card:last-child {
@@ -1929,12 +2041,18 @@ html {
     font-weight: 700;
     color: #2d3748;
     margin-bottom: 4px;
+    text-align: left !important;
+    width: 100% !important;
+    display: block !important;
 }
 
 .strat-content {
     font-size: 0.85rem;
     color: #4a5568;
     line-height: 1.5;
+    text-align: left !important;
+    width: 100% !important;
+    display: block !important;
 }
 
 /* Category Specific Styles */
@@ -1948,4 +2066,53 @@ html {
 
 .reading-strat {
     border-left: 4px solid #ed8936;
+}
+
+/* --- Section Toggle Icon (+ / -) --- */
+.section-toggle-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 0.75em;
+    /* Reduced size */
+    font-weight: normal;
+    color: inherit;
+    margin-right: 2px;
+    margin-left: -5px;
+    /* Shift slightly left */
+    opacity: 0.7;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Smooth spin */
+}
+
+.section-toggle-icon::before {
+    content: '➕';
+}
+
+/* Open State */
+.section-wrapper.open>.accordion-header .section-toggle-icon {
+    transform: rotate(180deg);
+    /* Rotate when open */
+}
+
+.section-wrapper.open>.accordion-header .section-toggle-icon::before {
+    content: '➖';
+    font-size: 1em;
+}
+
+/* --- Desktop Specific Icon Adjustments --- */
+@media (min-width: 1024px) {
+    .section-toggle-icon {
+        font-size: 0.65em;
+        /* Smaller on desktop */
+        margin-right: 8px;
+        /* More space on desktop */
+    }
+
+    .accordion-title {
+        gap: 8px;
+        /* More gap on desktop */
+    }
 }

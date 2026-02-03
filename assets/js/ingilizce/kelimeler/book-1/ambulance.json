@@ -92,18 +92,21 @@
         "modifiers_adverbs": [
             {
                 "turkish": "hava ambulansı (helikopter)",
+                "word": "air",
                 "strength": "specific",
                 "example": "The injured hiker was evacuated by air ambulance.",
                 "example_tr": "Yaralı yürüyüşçü hava ambulansı ile tahliye edildi."
             },
             {
                 "turkish": "özel",
+                "word": "private",
                 "strength": "standard",
                 "example": "Private ambulance services charge a fee.",
                 "example_tr": "Özel ambulans servisleri ücret talep eder."
             },
             {
                 "turkish": "tepe lambalı (acil giden)",
+                "word": "blue-light",
                 "strength": "idiomatic",
                 "example": "It was a blue-light run to the hospital.",
                 "example_tr": "Hastaneye (sirenler açık) acil bir sürüş yapıldı."
@@ -112,16 +115,19 @@
         "verbs_preceding": [
             {
                 "turkish": "çağırmak (telefonda)",
+                "word": "call",
                 "example": "Call an ambulance immediately!",
                 "example_tr": "Derhal bir ambulans çağırın!"
             },
             {
                 "turkish": "sevk etmek (merkezden)",
+                "word": "dispatch",
                 "example": "The operator dispatched two ambulances to the scene.",
                 "example_tr": "Operatör olay yerine iki ambulans sevk etti."
             },
             {
                 "turkish": "aceleyle yetiştirmek",
+                "word": "rush",
                 "example": "He was rushed to hospital by ambulance.",
                 "example_tr": "Ambulansla hastaneye yetiştirildi."
             }
@@ -134,6 +140,7 @@
             "scale": [
                 {
                     "value": 5,
+                    "word": "ambulance",
                     "turkish": "ambulans",
                     "note": "Standart acil durum aracı",
                     "description_tr": "Hasta ve yaralı taşımak için donatılmış standart araçtır.",
@@ -143,6 +150,7 @@
                 },
                 {
                     "value": 7,
+                    "word": "paramedic unit",
                     "turkish": "ilk yardım birimi",
                     "note": "Daha teknik, personeli ve tıbbi müdahaleyi vurgular",
                     "description_tr": "İçinde ileri yaşam desteği sunabilen uzman personelin bulunduğu birimdir.",
@@ -152,6 +160,7 @@
                 },
                 {
                     "value": 9,
+                    "word": "medevac",
                     "turkish": "tıbbi tahliye aracı",
                     "note": "Genellikle askeri veya helikopterle tahliye (Medical Evacuation)",
                     "description_tr": "Genellikle helikopter veya uçakla yapılan acil tıbbi tahliyedir.",
@@ -161,6 +170,7 @@
                 },
                 {
                     "value": 4,
+                    "word": "first responder",
                     "turkish": "ilk müdahale aracı",
                     "note": "Olay yerine ambulansdan önce varan polis/itfaiye aracı",
                     "description_tr": "Olay yerine ilk varan polis, itfaiye veya gönüllü sağlık ekibi aracıdır.",
@@ -248,27 +258,32 @@
         "family_members": [
             {
                 "pos": "n",
+                "word": "ambulance",
                 "level": "A2",
                 "note": "yürüyen hastane -> ambulans"
             },
             {
                 "pos": "v",
+                "word": "ambulate",
                 "level": "C2",
                 "note": "gezinmek, yürümek (tıbbi)"
             },
             {
                 "pos": "adj",
+                "word": "ambulatory",
                 "level": "C2",
                 "note": "ayakta tedavi edilen, yürüyebilen"
             },
             {
                 "pos": "n",
+                "word": "somnambulist",
                 "level": "C2",
                 "prefix": "somn-",
                 "note": "uyurgezer"
             },
             {
                 "pos": "n",
+                "word": "pram",
                 "level": "B2",
                 "note": "perambulator kısaltması (bebek arabası)"
             }
@@ -307,14 +322,17 @@
         "timeline": [
             {
                 "era": "Latin",
+                "word": "ambulare",
                 "meaning": "to walk"
             },
             {
                 "era": "French",
+                "word": "ambulance",
                 "meaning": "walking (mobile) hospital (Napoleon Era)"
             },
             {
                 "era": "Modern English",
+                "word": "ambulance",
                 "meaning": "vehicle for transporting sick"
             }
         ],

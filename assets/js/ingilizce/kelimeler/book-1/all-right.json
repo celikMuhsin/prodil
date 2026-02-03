@@ -106,18 +106,21 @@
         "modifiers_adverbs": [
             {
                 "turkish": "gayet/oldukça",
+                "word": "quite",
                 "strength": "strong",
                 "example": "It's quite all right to be nervous.",
                 "example_tr": "Gergin olmak gayet normaldir (sorun değildir)."
             },
             {
                 "turkish": "tamamen/fazlasıyla",
+                "word": "perfectly",
                 "strength": "strong",
                 "example": "The car runs perfectly all right.",
                 "example_tr": "Araba (mekanik olarak) tamamen sorunsuz çalışıyor."
             },
             {
                 "turkish": "görünmek",
+                "word": "seem",
                 "example": "Does this size seem all right to you?",
                 "example_tr": "Bu beden sana uygun görünüyor mu?"
             }
@@ -125,16 +128,19 @@
         "verbs_preceding": [
             {
                 "turkish": "sonuçlanmak",
+                "word": "turn out",
                 "example": "Everything turned out all right in the end.",
                 "example_tr": "Sonunda her şey tatlıya (iyiye) bağlandı."
             },
             {
                 "turkish": "hissetmek",
+                "word": "feel",
                 "example": "I don't feel quite all right today.",
                 "example_tr": "Bugün kendimi pek iyi hissetmiyorum."
             },
             {
                 "turkish": "düzeltmek/telafi etmek",
+                "word": "make",
                 "example": "I want to make everything all right again.",
                 "example_tr": "Her şeyi tekrar düzeltmek (yoluna koymak) istiyorum."
             }
@@ -148,6 +154,7 @@
             "scale": [
                 {
                     "value": 3,
+                    "word": "so-so",
                     "turkish": "şöyle böyle",
                     "note": "Ne iyi ne kötü",
                     "usage": "I'm feeling so-so.",
@@ -158,6 +165,7 @@
                 },
                 {
                     "value": 5,
+                    "word": "all right",
                     "turkish": "iyi/yolunda",
                     "note": "Yeterli, sorunsuz, tatmin edici",
                     "usage": "The movie was all right.",
@@ -168,6 +176,7 @@
                 },
                 {
                     "value": 6,
+                    "word": "fine",
                     "turkish": "iyi/hoş",
                     "note": "Standart iyi, bazen 'peki' (isteksiz) anlamında",
                     "usage": "I'm fine, thanks.",
@@ -178,6 +187,7 @@
                 },
                 {
                     "value": 9,
+                    "word": "great",
                     "turkish": "harika",
                     "note": "Beklenenden iyi",
                     "usage": "I feel great!",
@@ -191,6 +201,7 @@
         "antonyms": [
             {
                 "value": 1,
+                "word": "wrong",
                 "turkish": "ters/yanlış",
                 "note": "'Something is wrong' (Bir terslik var)",
                 "description_tr": "İşlerin yolunda gitmediğini, bir terslik olduğunu belirtir.",
@@ -199,6 +210,7 @@
             },
             {
                 "value": 0,
+                "word": "unacceptable",
                 "turkish": "kabul edilemez",
                 "note": "Onay vermeme durumu",
                 "description_tr": "Bir durumun kesinlikle uygun olmadığını ifade eder.",
@@ -286,21 +298,25 @@
         "family_members": [
             {
                 "pos": "adj/adv",
+                "word": "all right",
                 "level": "A1",
                 "note": "tamamen doğru -> tamam/iyi"
             },
             {
                 "pos": "adj",
+                "word": "right",
                 "level": "A1",
                 "note": "doğru, haklı"
             },
             {
                 "pos": "det",
+                "word": "all",
                 "level": "A1",
                 "note": "bütün, hepsi"
             },
             {
                 "pos": "adj/adv",
+                "word": "alright",
                 "level": "A2",
                 "note": "gayriresmi yazılış (günlük kullanım için, sınavda kullanmayın)"
             }
@@ -338,14 +354,17 @@
         "timeline": [
             {
                 "era": "Old English",
+                "word": "eall riht",
                 "meaning": "completely just/correct"
             },
             {
                 "era": "Middle English",
+                "word": "all right",
                 "meaning": "properly, safely"
             },
             {
                 "era": "19th Century",
+                "word": "alright",
                 "meaning": "disputed spelling emerges (analogy to already)"
             }
         ],

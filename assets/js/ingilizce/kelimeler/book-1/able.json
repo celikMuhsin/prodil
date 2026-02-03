@@ -100,24 +100,28 @@
         "modifiers_adverbs": [
             {
                 "turkish": "tamamen, fazlasıyla",
+                "word": "perfectly",
                 "strength": "strong",
                 "example": "I am perfectly able to look after myself.",
                 "example_tr": "Kendime bakabilecek durumdayım."
             },
             {
                 "turkish": "ancak, güçbela",
+                "word": "barely",
                 "strength": "weak",
                 "example": "He was barely able to stand.",
                 "example_tr": "Ayakta zor durabiliyordu."
             },
             {
                 "turkish": "fiziksel olarak",
+                "word": "physically",
                 "strength": "neutral",
                 "example": "Is he physically able to travel?",
                 "example_tr": "Seyahat edebilecek fiziksel güce sahip mi?"
             },
             {
                 "turkish": "maddi açıdan",
+                "word": "financially",
                 "strength": "neutral",
                 "example": "We are not financially able to buy a house.",
                 "example_tr": "Bir ev alacak maddi gücümüz yok."
@@ -126,11 +130,13 @@
         "verbs_preceding": [
             {
                 "turkish": "görünmek",
+                "word": "seem",
                 "example": "They seem able to cope.",
                 "example_tr": "Başa çıkabiliyor gibi görünüyorlar."
             },
             {
                 "turkish": "hissetmek",
+                "word": "feel",
                 "example": "I don't feel able to drive right now.",
                 "example_tr": "Şu an araba kullanabilecek gibi hissetmiyorum."
             }
@@ -144,6 +150,7 @@
             "scale": [
                 {
                     "value": 3,
+                    "word": "can",
                     "turkish": "yapabilmek",
                     "note": "En temel, gündelik",
                     "usage": "Günlük konuşma: 'I can swim.'",
@@ -155,6 +162,7 @@
                 },
                 {
                     "value": 6,
+                    "word": "able",
                     "turkish": "muktedir, yapabilen",
                     "note": "Daha resmi, eylem odaklı",
                     "usage": "İş/akademik: 'She is able to lead the team.'",
@@ -166,6 +174,7 @@
                 },
                 {
                     "value": 8,
+                    "word": "capable",
                     "turkish": "yetenekli, kapasiteli",
                     "note": "Potansiyel ve kapasite vurgusu",
                     "usage": "Potansiyel: 'He's capable of great things.'",
@@ -177,6 +186,7 @@
                 },
                 {
                     "value": 10,
+                    "word": "proficient",
                     "turkish": "ustalık derecesinde, yetkin",
                     "note": "Uzmanlık derecesinde yetkinlik",
                     "usage": "Teknik/uzmanlık: 'She is proficient in Python.'",
@@ -191,6 +201,7 @@
         "antonyms": [
             {
                 "value": 2,
+                "word": "unable",
                 "turkish": "yapamaz, aciz",
                 "note": "Geçici veya durumsal yapamama",
                 "description_tr": "Genellikle geçici veya o ana özgü yapamama durumunu anlatır.",
@@ -200,6 +211,7 @@
             },
             {
                 "value": 1,
+                "word": "incapable",
                 "turkish": "yetersiz, yeteneksiz",
                 "note": "Kalıcı veya yapısal yetersizlik",
                 "description_tr": "Kalıcı yetersizlik veya bir şeyi yapacak yapıda (kapasitede) olmama durumudur.",
@@ -209,6 +221,7 @@
             },
             {
                 "value": 0,
+                "word": "inept",
                 "turkish": "beceriksiz, acemi",
                 "note": "Beceriksiz, sakar, tamamen uyumsuz",
                 "description_tr": "Beceriksiz, sakar veya işe yatkın olmayan demektir.",
@@ -323,29 +336,34 @@
         "family_members": [
             {
                 "pos": "adj",
+                "word": "able",
                 "level": "A2",
                 "note": "yapabilecek, yetkin, becerikli, yetenekli"
             },
             {
                 "pos": "adj",
+                "word": "unable",
                 "level": "B1",
                 "prefix": "un-",
                 "note": "yapamayan, aciz, gücü yetmeyen"
             },
             {
                 "pos": "n",
+                "word": "ability",
                 "level": "A2",
                 "suffix": "-ity",
                 "note": "yetenek, kabiliyet, beceri, yapma yeteneği"
             },
             {
                 "pos": "v",
+                "word": "enable",
                 "level": "B2",
                 "prefix": "en-",
                 "note": "mümkün kılmak, yetki vermek"
             },
             {
                 "pos": "v",
+                "word": "disable",
                 "level": "B2",
                 "prefix": "dis-",
                 "note": "engellemek, devre dışı bırakmak, yetki almak"
@@ -390,14 +408,17 @@
         "timeline": [
             {
                 "era": "Latin",
+                "word": "habilis",
                 "meaning": "handy, manageable"
             },
             {
                 "era": "Old French",
+                "word": "able",
                 "meaning": "capable"
             },
             {
                 "era": "Modern English",
+                "word": "able",
                 "meaning": "having the power to do"
             }
         ],

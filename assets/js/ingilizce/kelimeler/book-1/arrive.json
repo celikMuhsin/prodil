@@ -110,18 +110,21 @@
         "modifiers_adverbs": [
             {
                 "turkish": "sağ salim",
+                "word": "safe and sound",
                 "strength": "idiomatic",
                 "example": "They arrived safe and sound.",
                 "example_tr": "Sağ salim vardılar."
             },
             {
                 "turkish": "tam zamanında",
+                "word": "right on time",
                 "strength": "strong",
                 "example": "The package arrived right on time.",
                 "example_tr": "Paket tam zamanında ulaştı."
             },
             {
                 "turkish": "habersiz",
+                "word": "unannounced",
                 "strength": "standard",
                 "example": "He arrived unannounced.",
                 "example_tr": "Habersiz (çat kapı) geldi."
@@ -130,6 +133,7 @@
         "verbs_preceding": [
             {
                 "turkish": "beklemek",
+                "word": "wait for",
                 "example": "We are waiting for the bus to arrive.",
                 "example_tr": "Otobüsün gelmesini bekliyoruz."
             }
@@ -142,6 +146,7 @@
             "scale": [
                 {
                     "value": 3,
+                    "word": "come",
                     "turkish": "gelmek (come)",
                     "note": "Hareket odaklı",
                     "usage": "Come here.",
@@ -152,6 +157,7 @@
                 },
                 {
                     "value": 6,
+                    "word": "get to",
                     "turkish": "ulaşmak (get to)",
                     "note": "Süreç ve zorluk içerebilir",
                     "usage": "How do I get to the station?",
@@ -162,6 +168,7 @@
                 },
                 {
                     "value": 8,
+                    "word": "arrive",
                     "turkish": "varmak (arrive)",
                     "note": "Nötr ve Resmi",
                     "usage": "The flight has arrived.",
@@ -172,6 +179,7 @@
                 },
                 {
                     "value": 9,
+                    "word": "reach",
                     "turkish": "erişmek (reach)",
                     "note": "Çaba sonucu varma, edatsız kullanılır",
                     "usage": "We reached the summit.",
@@ -185,6 +193,7 @@
         "antonyms": [
             {
                 "value": 1,
+                "word": "depart",
                 "turkish": "ayrılmak (depart)",
                 "note": "Resmi ayrılış",
                 "description_tr": "Bir yerden (resmi olarak) yola çıkmak.",
@@ -193,6 +202,7 @@
             },
             {
                 "value": 1,
+                "word": "leave",
                 "turkish": "terk etmek (leave)",
                 "note": "Genel ayrılış",
                 "description_tr": "Bir yerden gitmek, çıkmak.",
@@ -274,17 +284,20 @@
         "family_members": [
             {
                 "pos": "v",
+                "word": "arrive",
                 "level": "A1",
                 "note": "varmak"
             },
             {
                 "pos": "n",
+                "word": "arrival",
                 "level": "A2",
                 "suffix": "-al",
                 "note": "varış, geliş (arrival)"
             },
             {
                 "pos": "n",
+                "word": "new arrival",
                 "level": "B2",
                 "note": "yeni gelen kimse (new arrival)"
             }
@@ -330,14 +343,17 @@
         "timeline": [
             {
                 "era": "Latin",
+                "word": "ad ripa",
                 "meaning": "to the shore (ad ripa)"
             },
             {
                 "era": "Old French",
+                "word": "ariver",
                 "meaning": "to come to land"
             },
             {
                 "era": "Modern English",
+                "word": "arrive",
                 "meaning": "to reach a destination"
             }
         ],

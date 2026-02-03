@@ -121,24 +121,28 @@
         "modifiers_adverbs": [
             {
                 "turkish": "ileri",
+                "word": "advanced",
                 "strength": "strong",
                 "example": "He died at an advanced age.",
                 "example_tr": "İleri bir yaşta vefat etti."
             },
             {
                 "turkish": "erken",
+                "word": "early",
                 "strength": "neutral",
                 "example": "She started reading at an early age.",
                 "example_tr": "Erken yaşta okumaya başladı."
             },
             {
                 "turkish": "henüz çok genç",
+                "word": "tender",
                 "strength": "literary",
                 "example": "He left home at the tender age of 14.",
                 "example_tr": "14 gibi henüz çok genç (körpe) bir yaşta evden ayrıldı."
             },
             {
                 "turkish": "orta",
+                "word": "middle",
                 "strength": "neutral",
                 "example": "Men in middle age often buy sports cars.",
                 "example_tr": "Orta yaştaki erkekler genelde spor araba alır."
@@ -147,16 +151,19 @@
         "verbs_preceding": [
             {
                 "turkish": "ulaşmak, basmak",
+                "word": "reach",
                 "example": "When you reach the age of 18, you can vote.",
                 "example_tr": "18 yaşına bastığında oy kullanabilirsin."
             },
             {
                 "turkish": "göstermek",
+                "word": "look",
                 "example": "She doesn't look her age at all.",
                 "example_tr": "Hiç yaşını göstermiyor."
             },
             {
                 "turkish": "hissetmek",
+                "word": "feel",
                 "example": "I'm starting to feel my age.",
                 "example_tr": "Yaşlandığımı (yaşımı) hissetmeye başlıyorum."
             }
@@ -170,6 +177,7 @@
             "scale": [
                 {
                     "value": 3,
+                    "word": "period",
                     "turkish": "dönem",
                     "note": "Belirli bir süre",
                     "usage": "General: 'a difficult period'",
@@ -181,6 +189,7 @@
                 },
                 {
                     "value": 6,
+                    "word": "age",
                     "turkish": "çağ",
                     "note": "Kültürel/Tarihi bütünlük",
                     "usage": "Historical: 'The Iron Age'",
@@ -192,6 +201,7 @@
                 },
                 {
                     "value": 8,
+                    "word": "era",
                     "turkish": "devir",
                     "note": "Köklü değişimle başlayan dönem",
                     "usage": "Grand: 'A new era of exploration'",
@@ -203,6 +213,7 @@
                 },
                 {
                     "value": 10,
+                    "word": "epoch",
                     "turkish": "epok",
                     "note": "Jeolojik/Evrensel dönem",
                     "usage": "Scientific: 'The Holocene Epoch'",
@@ -217,6 +228,7 @@
         "antonyms": [
             {
                 "value": 8,
+                "word": "youth",
                 "turkish": "gençlik",
                 "note": "Yaşlılığın karşıtı",
                 "description_tr": "Gençlik dönemi, tazelik.",
@@ -225,6 +237,7 @@
             },
             {
                 "value": 6,
+                "word": "childhood",
                 "turkish": "çocukluk",
                 "note": "Yetişkinliğin karşıtı",
                 "description_tr": "Çocuk olma evresi.",
@@ -247,7 +260,7 @@
                 "meaning_tr": "reşit olmak, rüştünü ispatlamak",
                 "register": "neutral",
                 "example": "The movie is a coming-of-age story.",
-                "example_tr": "Film, bir olgunlaşma (büyüme) hikayesidir."
+                "translation": "Film, bir olgunlaşma (büyüme) hikayesidir."
             },
             {
                 "phrase": "age is just a number",
@@ -324,27 +337,32 @@
         "family_members": [
             {
                 "pos": "n/v",
+                "word": "age",
                 "level": "A1",
                 "note": "yaş, çağ; yaşlanmak"
             },
             {
                 "pos": "adj",
+                "word": "aged",
                 "level": "B1",
                 "note": "yaşlı, ... yaşındaki (middle-aged)"
             },
             {
                 "pos": "n/adj",
+                "word": "aging",
                 "level": "B2",
                 "note": "yaşlanma, yaşlanan nüfus"
             },
             {
                 "pos": "adj",
+                "word": "ageless",
                 "level": "C1",
                 "suffix": "-less",
                 "note": "yaşsız, ebedi, hiç yaşlanmayan"
             },
             {
                 "pos": "n",
+                "word": "ageism",
                 "level": "C2",
                 "suffix": "-ism",
                 "note": "yaş ayrımcılığı"
@@ -380,14 +398,17 @@
         "timeline": [
             {
                 "era": "Latin",
+                "word": "aetatem",
                 "meaning": "period of life, age"
             },
             {
                 "era": "Old French",
+                "word": "eage",
                 "meaning": "age, life"
             },
             {
                 "era": "Middle English",
+                "word": "age",
                 "meaning": "time of life"
             }
         ],

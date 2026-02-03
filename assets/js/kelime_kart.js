@@ -169,7 +169,7 @@ class VocabCard {
                 <div id="${id}" class="section-wrapper ${activeClass}">
                     <div class="accordion-header">
                         <div class="accordion-title">
-                            <span style="font-size:0.8em; color:var(--accent); opacity:0.7;">●</span> ${title}
+                            <span class="section-toggle-icon"></span> ${title}
                         </div>
                         <div class="accordion-icon"><i class="fa-solid ${iconClass}"></i></div>
                     </div>
@@ -332,7 +332,7 @@ class VocabCard {
                         <div class="logic-compare">
                             <strong>Kritik Ayrım:</strong> ${grammar.tense_logic.critical_comparison.rule}
                             <div class="logic-examples">
-                                <div class="wrong">❌ ${grammar.tense_logic.critical_comparison.example_wrong}</div>
+                                ${grammar.tense_logic.critical_comparison.example_wrong ? `<div class="wrong">❌ ${grammar.tense_logic.critical_comparison.example_wrong}</div>` : ''}
                                 <div class="right">✅ ${grammar.tense_logic.critical_comparison.example_right}</div>
                             </div>
                         </div>
@@ -758,8 +758,8 @@ class VocabCard {
 
         // Compact Header Redesign
         const headerHtml = `
-        <!-- Top Row: Controls (Not Sticky) -->
-        <div style="display:flex; justify-content:space-between; align-items:center; width:100%; border-bottom:1px solid #f0f0f0; padding:10px 15px; margin-bottom:0;">
+        <!-- Top Row: Controls (MOBILE ONLY) -->
+        <div class="mobile-controls">
             <!-- Left: Nav -->
             <div style="display:flex; align-items:center; gap:5px;">
                  <button onclick="vocabCard.prevCard()" class="nav-btn-small hover:bg-gray-50 text-gray-400" ${index === 0 ? 'disabled' : ''}>
@@ -789,10 +789,23 @@ class VocabCard {
         <!-- Sticky Wrapper (Only Word Line) -->
         <div class="sticky-header-wrapper">
             <!-- Bottom Row: Word & Dropdown (Ultra Compact) -->
-            <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+            <div style="display:flex; justify-content:space-between; align-items:center; width:100%; position:relative;">
                 <h1 style="font-size:2.0rem; font-weight:800; color:var(--text-main); margin:0; line-height:1; letter-spacing:-0.5px;">
                     ${item.word}
                 </h1>
+
+                <!-- CENTER: Navigation (DESKTOP ONLY) - MOVED HERE -->
+                <div class="desktop-nav-center desktop-only-flex">
+                     <button onclick="vocabCard.prevCard()" class="nav-btn-small hover:bg-gray-50 text-gray-400" ${index === 0 ? 'disabled' : ''}>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <span style="font-size:1.0rem; color:#718096; font-weight:600; min-width:50px; text-align:center;">
+                        ${index + 1} / ${this.data.length}
+                    </span>
+                    <button onclick="vocabCard.nextCard()" class="nav-btn-small hover:bg-gray-50 text-gray-600">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
                 
                 <div class="custom-dropdown-container">
                     <div class="dropdown-trigger">
@@ -812,10 +825,12 @@ class VocabCard {
         `;
 
         const tagsHtml = `
-            <div class="word-meta" style="padding: 8px 15px; border-bottom: 1px solid var(--border); display:flex; flex-wrap:wrap; gap:5px;">
-                <span class="meta-chip" style="background:${this.getLevelColor(meta.cefr_level)}; color:white; border:none;">${meta.cefr_level || 'A1'}</span>
-                <span class="meta-chip">${translate(meta.frequency_band) || 'Genel'}</span>
-                ${(() => {
+            <div class="word-meta-row">
+                <!-- 1. LEFT: Tags -->
+                <div class="meta-tags">
+                    <span class="meta-chip" style="background:${this.getLevelColor(meta.cefr_level)}; color:white; border:none;">${meta.cefr_level || 'A1'}</span>
+                    <span class="meta-chip">${translate(meta.frequency_band) || 'Genel'}</span>
+                    ${(() => {
                 const posRaw = meta.part_of_speech;
                 let posArray = [];
                 if (Array.isArray(posRaw)) {
@@ -827,6 +842,19 @@ class VocabCard {
                 }
                 return posArray.map(p => `<span class="meta-chip">${translate(p)}</span>`).join('');
             })()}
+                </div>
+
+                <!-- 2. CENTER: Navigation REMOVED FROM HERE -->
+
+                <!-- 3. RIGHT: Audio (DESKTOP ONLY) -->
+                <div class="desktop-audio-right desktop-only-flex">
+                     <span style="font-family:'Courier New'; font-size:1.1rem; color:#4a5568; margin-right:5px;">
+                        ${cleanIpa}
+                    </span>
+                     <button onclick="vocabCard.playGoogleAudio('${item.word}')" class="nav-btn-small rounded-full text-blue-600 bg-blue-50 border-transparent" style="width:36px; height:36px; font-size:1.1rem;">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                </div>
             </div>
         `;
 
