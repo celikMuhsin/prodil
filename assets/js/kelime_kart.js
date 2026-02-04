@@ -310,14 +310,22 @@ class VocabCard {
                     <ul class="derivative-list">
                         ${morph.family_members.map(fam => `
                             <li class="derivative-item" onclick="vocabCard.searchAndGo('${fam.word}')">
-                                <div>
-                                    <span class="der-word">${fam.word}</span>
-                                    <span class="der-pos">${fam.pos}</span>
+                                <div class="der-main-info">
+                                    <div class="der-word-line">
+                                        <span class="der-word">${fam.word}</span>
+                                        <span class="der-pos">${fam.pos}</span>
+                                    </div>
+                                    <div class="der-note">${fam.note || ''}</div>
                                 </div>
-                                <div class="der-note">${fam.note || ''}</div>
+                                ${fam.example ? `
+                                    <div class="der-example-container">
+                                        <div class="der-ex-en">${fam.example}</div>
+                                        ${fam.example_tr ? `<div class="der-ex-tr">${fam.example_tr}</div>` : ''}
+                                    </div>
+                                ` : ''}
                             </li>
                         `).join('')}
-                    </ul>
+                        </ul>
                 </div>
             `;
             derivativesHtml = wrapSection('sec-derivatives', 'Türevler', content);
@@ -332,8 +340,21 @@ class VocabCard {
                         <div class="logic-compare">
                             <strong>Kritik Ayrım:</strong> ${grammar.tense_logic.critical_comparison.rule}
                             <div class="logic-examples">
-                                ${grammar.tense_logic.critical_comparison.example_wrong ? `<div class="wrong">❌ ${grammar.tense_logic.critical_comparison.example_wrong}</div>` : ''}
-                                <div class="right">✅ ${grammar.tense_logic.critical_comparison.example_right}</div>
+                                ${grammar.tense_logic.critical_comparison.example_wrong ? `
+                                    <div class="wrong">
+                                        <span class="icon">✘</span>
+                                        <div class="ex-content">
+                                            <div class="ex-text">${grammar.tense_logic.critical_comparison.example_wrong.replace(/\(Yanlış\)/g, '').trim()}</div>
+                                            ${grammar.tense_logic.critical_comparison.example_wrong_tr ? `<div class="ex-tr">${grammar.tense_logic.critical_comparison.example_wrong_tr}</div>` : ''}
+                                        </div>
+                                    </div>` : ''}
+                                <div class="right">
+                                    <span class="icon">✔</span>
+                                    <div class="ex-content">
+                                        <div class="ex-text">${grammar.tense_logic.critical_comparison.example_right.replace(/\(Doğru\)/g, '').trim()}</div>
+                                        ${grammar.tense_logic.critical_comparison.example_right_tr ? `<div class="ex-tr">${grammar.tense_logic.critical_comparison.example_right_tr}</div>` : ''}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ` : ''}
@@ -347,6 +368,12 @@ class VocabCard {
                     <div class="grammar-item">
                         <div class="grammar-pattern">${st.pattern}</div>
                         <div class="grammar-note">${st.notes_tr}</div>
+                        ${st.example ? `
+                            <div class="grammar-example">
+                                <div class="en">${st.example}</div>
+                                ${st.example_tr ? `<div class="tr">${st.example_tr}</div>` : ''}
+                            </div>
+                        ` : ''}
                     </div>
                 `).join('')}
              </div>
@@ -392,10 +419,16 @@ class VocabCard {
                 <div class="study-block">
                     <h3 class="section-title" style="color:#e53e3e;">⚠️ Sık Yapılan Hatalar</h3>
                     ${pedagogy.common_errors.map(err => `
-                        <div class="alert-box">
-                            <span class="alert-wrong">❌ ${err.incorrect}</span>
-                            <span class="alert-correct">✅ ${err.correction}</span>
-                            <div style="margin-top:5px; font-size:0.85rem; color:#4a5568;">${err.explanation}</div>
+                        <div class="error-card">
+                            <div class="error-wrong">
+                                <span class="icon">✘</span>
+                                <span class="text">${err.incorrect}</span>
+                            </div>
+                            <div class="error-correct">
+                                <span class="icon">✔</span>
+                                <span class="text">${err.correction}</span>
+                            </div>
+                            <div class="error-explanation">${err.explanation}</div>
                         </div>
                     `).join('')}
                 </div>
@@ -610,6 +643,12 @@ class VocabCard {
                                     <div class="exam-card vocab-strat">
                                         <div class="strat-title">${strat.title}</div>
                                         <div class="strat-content">${strat.content}</div>
+                                        ${strat.example ? `
+                                            <div class="strat-example-box">
+                                                <div class="strat-ex-en">${strat.example}</div>
+                                                ${strat.example_tr ? `<div class="strat-ex-tr">${strat.example_tr}</div>` : ''}
+                                            </div>
+                                        ` : ''}
                                     </div>
                                 `).join('')}
                             </div>
@@ -622,6 +661,12 @@ class VocabCard {
                                     <div class="exam-card grammar-strat">
                                         <div class="strat-title">${strat.title}</div>
                                         <div class="strat-content">${strat.content}</div>
+                                        ${strat.example ? `
+                                            <div class="strat-example-box">
+                                                <div class="strat-ex-en">${strat.example}</div>
+                                                ${strat.example_tr ? `<div class="strat-ex-tr">${strat.example_tr}</div>` : ''}
+                                            </div>
+                                        ` : ''}
                                     </div>
                                 `).join('')}
                             </div>
@@ -634,6 +679,12 @@ class VocabCard {
                                     <div class="exam-card reading-strat">
                                         <div class="strat-title">${strat.title}</div>
                                         <div class="strat-content">${strat.content}</div>
+                                        ${strat.example ? `
+                                            <div class="strat-example-box">
+                                                <div class="strat-ex-en">${strat.example}</div>
+                                                ${strat.example_tr ? `<div class="strat-ex-tr">${strat.example_tr}</div>` : ''}
+                                            </div>
+                                        ` : ''}
                                     </div>
                                 `).join('')}
                             </div>

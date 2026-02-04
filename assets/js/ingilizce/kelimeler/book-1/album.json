@@ -47,12 +47,16 @@
             {
                 "pattern": "release an album",
                 "usage_level": "Core",
-                "notes_tr": "Müzisyenlerin albüm 'çıkarması' (yayınlaması) için kullanılır."
+                "notes_tr": "Müzisyenlerin albüm 'çıkarması' (yayınlaması) için kullanılır.",
+                "example": "The band will release a new album soon.",
+                "example_tr": "Grup yakında yeni bir albüm çıkaracak."
             },
             {
                 "pattern": "photo album",
                 "usage_level": "Core",
-                "notes_tr": "En sık kullanılan tamlamadır."
+                "notes_tr": "En sık kullanılan tamlamadır.",
+                "example": "She showed me her childhood photo album.",
+                "example_tr": "Bana çocukluk fotoğraf albümünü gösterdi."
             }
         ],
         "tense_logic": {
@@ -60,8 +64,10 @@
             "critical_comparison": {
                 "context": "Album vs Record",
                 "rule": "'Album' bir koleksiyon/bütünlük ifade eder (dijital de olabilir). 'Record' ise genellikle fiziksel plak veya tek bir kayıt (single) anlamına gelebilir.",
-                "example_wrong": "I bought a Spotify record. (Yanlış)",
-                "example_right": "I streamed the album on Spotify. (Doğru)"
+                "example_wrong": "I bought a Spotify record.",
+                "example_wrong_tr": "Spotify plağı aldım. (Modern bağlamda hatalı)",
+                "example_right": "I streamed the album on Spotify.",
+                "example_right_tr": "Albümü Spotify'dan dinledim. (Doğru kullanım)"
             }
         }
     },
@@ -240,14 +246,18 @@
         "vocabulary": [
             {
                 "title": "Track vs Song",
-                "content": "Albümdeki şarkılara 'track' denir. 'The third track of the album' (Albümün üçüncü parçası)."
+                "content": "Albümdeki şarkılara 'track' denir. 'The third track of the album' (Albümün üçüncü parçası).",
+                "example": "My favorite <b>track</b> on the album is the first one.",
+                "example_tr": "Albümdeki favori parçam ilki."
             }
         ],
         "grammar": [],
         "reading": [
             {
                 "title": "Biyografi Soruları",
-                "content": "Sanatçı biyografilerinde 'released/launched his album' ifadeleri kronolojik sıralama sorularında ipucudur."
+                "content": "Sanatçı biyografilerinde 'released/launched his album' ifadeleri kronolojik sıralama sorularında ipucudur.",
+                "example": "He <b>launched his debut album</b> in 2005.",
+                "example_tr": "İlk albümünü 2005 yılında piyasaya sürdü."
             }
         ]
     },
@@ -258,19 +268,25 @@
                 "pos": "n",
                 "word": "album",
                 "level": "A2",
-                "note": "albüm (beyaz defter -> koleksiyon)"
+                "note": "albüm (beyaz defter -> koleksiyon)",
+                "example": "I bought their new <b>album</b> yesterday.",
+                "example_tr": "Dün yeni albümlerini aldım."
             },
             {
                 "pos": "n",
                 "word": "albino",
                 "level": "C2",
-                "note": "albino (beyaz pigment eksikliği)"
+                "note": "albino (beyaz pigment eksikliği)",
+                "example": "The white rabbit is an <b>albino</b>.",
+                "example_tr": "Beyaz tavşan bir albino."
             },
             {
                 "pos": "n",
                 "word": "albumen",
                 "level": "medical",
-                "note": "albumen (yumurta akı)"
+                "note": "albumen (yumurta akı)",
+                "example": "Egg white is known as <b>albumen</b>.",
+                "example_tr": "Yumurta akı albumen olarak bilinir."
             }
         ]
     },

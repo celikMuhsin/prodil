@@ -49,12 +49,16 @@
             {
                 "pattern": "predicate adjective",
                 "usage_level": "Core",
-                "notes_tr": "Genellikle 'be' fiilinden sonra gelir (The car is all right). İsimden önce (attributive) pek kullanılmaz ('an all right car' nadirdir)."
+                "notes_tr": "Genellikle 'be' fiilinden sonra gelir (The car is all right). İsimden önce (attributive) pek kullanılmaz ('an all right car' nadirdir).",
+                "example": "Don't worry, the car is all right.",
+                "example_tr": "Endişelenme, araba gayet iyi (sorunsuz)."
             },
             {
                 "pattern": "discourse marker",
                 "usage_level": "Intermediate",
-                "notes_tr": "Konuşmada yeni bir konuya geçerken 'Pekala...' anlamında cümlenin başında kullanılır (All right, let's start)."
+                "notes_tr": "Konuşmada yeni bir konuya geçerken 'Pekala...' anlamında cümlenin başında kullanılır (All right, let's start).",
+                "example": "All right, let's begin the meeting.",
+                "example_tr": "Pekala, toplantıya başlayalım."
             }
         ],
         "tense_logic": {
@@ -62,8 +66,10 @@
             "critical_comparison": {
                 "context": "All right vs Alright",
                 "rule": "'All right' (iki kelime) tek resmi ve doğru kabul edilen yazılıştır. 'Alright' (bitişik) çok yaygın olsa da resmiyette (akademik/iş) hala yanlış veya gayriresmi kabul edilir.",
-                "example_wrong": "The essay was alright. (Akademik olarak eksi puan alır)",
-                "example_right": "The essay was all right. (Doğru)"
+                "example_wrong": "The essay was alright.",
+                "example_wrong_tr": "Makale fena değildi. (Akademik olarak eksi puan alır)",
+                "example_right": "The essay was all right.",
+                "example_right_tr": "Makale fena değildi. (Doğru kullanım)"
             }
         }
     },
@@ -278,18 +284,24 @@
         "vocabulary": [
             {
                 "title": "Diyalog İpuçları",
-                "content": "Bir konuşmacı 'All right...' diyorsa, muhtemelen yeni bir konuya geçiyor veya bir teklifi kabul ediyordur. Tonlamaya dikkat edin."
+                "content": "Bir konuşmacı 'All right...' diyorsa, muhtemelen yeni bir konuya geçiyor veya bir teklifi kabul ediyordur. Tonlamaya dikkat edin.",
+                "example": "<b>All right</b>, let's start the meeting.",
+                "example_tr": "Pekala, toplantıyı başlatalım. (Geçiş ifadesi)"
             },
             {
                 "title": "Yazım Hatası Tuzağı",
-                "content": "Şıklarda 'Alright' ve 'All right' varsa, her zaman ayrı yazılan 'All right' seçeneği gramer açısından güvenlidir."
+                "content": "Şıklarda 'Alright' ve 'All right' varsa, her zaman ayrı yazılan 'All right' seçeneği gramer açısından güvenlidir.",
+                "example": "Is it <b>all right</b> if I leave early?",
+                "example_tr": "Erken çıkmamın bir sakıncası var mı? (Her zaman 'All right')"
             }
         ],
         "grammar": [],
         "reading": [
             {
                 "title": "Understatement (Hafife Alma)",
-                "content": "İngilizler çok iyi bir şeye bile sadece 'It was all right' diyebilirler. Bağlama göre bu 'eh işte' veya 'muhteşemdi' anlamına gelebilir (British Understatement)."
+                "content": "İngilizler çok iyi bir şeye bile sadece 'It was all right' diyebilirler. Bağlama göre bu 'eh işte' veya 'muhteşemdi' anlamına gelebilir (British Understatement).",
+                "example": "\"How was the concert?\" \"It was <b>all right</b>.\"",
+                "example_tr": "Konser nasıldı? Fena değildi (Aslında iyiydi)."
             }
         ]
     },
@@ -300,25 +312,33 @@
                 "pos": "adj/adv",
                 "word": "all right",
                 "level": "A1",
-                "note": "tamamen doğru -> tamam/iyi"
+                "note": "tamamen doğru -> tamam/iyi",
+                "example": "Is everything <b>all right</b>?",
+                "example_tr": "Her şey yolunda mı?"
             },
             {
                 "pos": "adj",
                 "word": "right",
                 "level": "A1",
-                "note": "doğru, haklı"
+                "note": "doğru, haklı",
+                "example": "You are <b>right</b> about that.",
+                "example_tr": "O konuda haklısın."
             },
             {
                 "pos": "det",
                 "word": "all",
                 "level": "A1",
-                "note": "bütün, hepsi"
+                "note": "bütün, hepsi",
+                "example": "<b>All</b> students passed the exam.",
+                "example_tr": "Bütün öğrenciler sınavı geçti."
             },
             {
                 "pos": "adj/adv",
                 "word": "alright",
                 "level": "A2",
-                "note": "gayriresmi yazılış (günlük kullanım için, sınavda kullanmayın)"
+                "note": "gayriresmi yazılış (günlük kullanım için, sınavda kullanmayın)",
+                "example": "It was <b>alright</b>, I guess.",
+                "example_tr": "İdare ederdi sanırım (Gayriresmi)."
             }
         ]
     },

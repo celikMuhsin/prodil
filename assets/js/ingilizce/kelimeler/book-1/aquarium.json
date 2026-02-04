@@ -49,12 +49,16 @@
             {
                 "pattern": "visit the aquarium",
                 "usage_level": "Core",
-                "notes_tr": "Müze/bina anlamında kullanıldığında genellikle 'the' alır."
+                "notes_tr": "Müze/bina anlamında kullanıldığında genellikle 'the' alır.",
+                "example": "We are going to visit the aquarium this weekend.",
+                "example_tr": "Bu hafta sonu akvaryumu ziyaret edeceğiz."
             },
             {
                 "pattern": "setup an aquarium",
                 "usage_level": "Intermediate",
-                "notes_tr": "Akvaryum kurmak için 'set up' fiili kullanılır."
+                "notes_tr": "Akvaryum kurmak için 'set up' fiili kullanılır.",
+                "example": "He wants to set up a saltwater aquarium.",
+                "example_tr": "Tuzlu su akvaryumu kurmak istiyor."
             }
         ],
         "tense_logic": {
@@ -62,8 +66,10 @@
             "critical_comparison": {
                 "context": "Plural: Aquariums vs Aquaria",
                 "rule": "İngilizcede her ikisi de doğrudur. 'Aquariums' günlük dilde daha yaygındır. 'Aquaria' ise daha bilimsel/teknik metinlerde geçer.",
-                "example_wrong": "The museum has two big aquaria. (Doğru ama çok resmi)",
-                "example_right": "The museum has two big aquariums. (Daha yaygın)"
+                "example_wrong": "The museum has two big aquaria.",
+                "example_wrong_tr": "Müzenin iki büyük akvaryumu var. (Doğru ama çok resmi/eski)",
+                "example_right": "The museum has two big aquariums.",
+                "example_right_tr": "Müzenin iki büyük akvaryumu var. (Daha yaygın ve doğal)"
             }
         }
     },
@@ -246,18 +252,24 @@
         "vocabulary": [
             {
                 "title": "Tank",
-                "content": "Sınavda 'aquarium' yerine 'tank' veya 'vessel' kelimeleri eş anlamlı olarak kullanılabilir."
+                "content": "Sınavda 'aquarium' yerine 'tank' veya 'vessel' kelimeleri eş anlamlı olarak kullanılabilir.",
+                "example": "Always clean the fish <b>tank</b> regularly.",
+                "example_tr": "Balık tankını (akvaryumu) her zaman düzenli temizleyin."
             },
             {
                 "title": "Marine vs Aquatic",
-                "content": "'Marine' (deniz/tuzlu su) ve 'Aquatic' (sucul/genel) ayrımına dikkat edin. Akvaryumlar her ikisini de barındırabilir."
+                "content": "'Marine' (deniz/tuzlu su) ve 'Aquatic' (sucul/genel) ayrımına dikkat edin. Akvaryumlar her ikisini de barındırabilir.",
+                "example": "This aquarium houses both <b>marine</b> and freshwater species.",
+                "example_tr": "Bu akvaryum hem deniz hem de tatlı su türlerini barındırır."
             }
         ],
         "grammar": [],
         "reading": [
             {
                 "title": "Esaret Tartışması",
-                "content": "Parçada 'captivity' (esaret) ve 'conservation' (koruma) zıtlığı varsa, konu hayvanat bahçeleri veya akvaryumların etiğidir."
+                "content": "Parçada 'captivity' (esaret) ve 'conservation' (koruma) zıtlığı varsa, konu hayvanat bahçeleri veya akvaryumların etiğidir.",
+                "example": "Some argue that keeping whales in <b>captivity</b> is cruel.",
+                "example_tr": "Bazıları balinaları esaret altında tutmanın zalimce olduğunu savunur."
             }
         ]
     },
@@ -268,25 +280,33 @@
                 "pos": "n",
                 "word": "aquarium",
                 "level": "A2",
-                "note": "su yeri -> akvaryum"
+                "note": "su yeri -> akvaryum",
+                "example": "The <b>aquarium</b> has many exotic fish.",
+                "example_tr": "Akvaryumda birçok egzotik balık var."
             },
             {
                 "pos": "adj",
                 "word": "aquatic",
                 "level": "B2",
-                "note": "suda yaşayan, suyla ilgili"
+                "note": "suda yaşayan, suyla ilgili",
+                "example": "<b>Aquatic</b> plants grow in water.",
+                "example_tr": "Sucul bitkiler suda büyür."
             },
             {
                 "pos": "n",
                 "word": "Aquarius",
                 "level": "C1",
-                "note": "kova burcu (su taşıyıcı)"
+                "note": "kova burcu (su taşıyıcı)",
+                "example": "She was born under the sign of <b>Aquarius</b>.",
+                "example_tr": "Kova burcunda doğdu."
             },
             {
                 "pos": "n",
                 "word": "terrarium",
                 "level": "C1",
-                "note": "kara canlıları için cam kafes (terra: toprak)"
+                "note": "kara canlıları için cam kafes (terra: toprak)",
+                "example": "He keeps a lizard in a <b>terrarium</b>.",
+                "example_tr": "Bir kertenkeleyi teraryumda besliyor."
             },
             {
                 "pos": "n",

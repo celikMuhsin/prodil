@@ -47,12 +47,16 @@
             {
                 "pattern": "in alphabetical order",
                 "usage_level": "Core",
-                "notes_tr": "En sık kullanılan kalıptır: 'Alfabetik sırayla' (e.g., The books are arranged in alphabetical order)."
+                "notes_tr": "En sık kullanılan kalıptır: 'Alfabetik sırayla' (e.g., The books are arranged in alphabetical order).",
+                "example": "The names are listed in alphabetical order.",
+                "example_tr": "İsimler alfabetik sırayla listelenmiştir."
             },
             {
                 "pattern": "the [Language] alphabet",
                 "usage_level": "Intermediate",
-                "notes_tr": "Belirli bir dilin alfabesinden bahsederken 'the' kullanılır (the Greek alphabet)."
+                "notes_tr": "Belirli bir dilin alfabesinden bahsederken 'the' kullanılır (the Greek alphabet).",
+                "example": "The Cyrillic alphabet can be difficult to learn.",
+                "example_tr": "Kiril alfabesini öğrenmek zor olabilir."
             }
         ],
         "tense_logic": {
@@ -60,8 +64,10 @@
             "critical_comparison": {
                 "context": "Alphabet vs Letter",
                 "rule": "'Letter' tek bir harftir (A, B, C). 'Alphabet' ise bu harflerin oluşturduğu setin tamamıdır.",
-                "example_wrong": "I learned the alphabets A and B. (Yanlış - harfler öğrenilir, alfabe bir bütündür)",
-                "example_right": "I learned the letters A and B. (Doğru)"
+                "example_wrong": "I learned the alphabets A and B.",
+                "example_wrong_tr": "A ve B alfabelerini öğrendim. (Hatalı - harfler öğrenilir, alfabe bir bütündür)",
+                "example_right": "I learned the letters A and B.",
+                "example_right_tr": "A ve B harflerini öğrendim. (Doğru)"
             }
         }
     },
@@ -256,18 +262,24 @@
         "vocabulary": [
             {
                 "title": "Acronym vs Initialism",
-                "content": "NATO (okunur) bir 'Acronym', FBI (harf harf okunur) bir 'Initialism'dir. Her ikisi de alfabe temellidir."
+                "content": "NATO (okunur) bir 'Acronym', FBI (harf harf okunur) bir 'Initialism'dir. Her ikisi de alfabe temellidir.",
+                "example": "NASA is an acronym, but FBI is an initialism.",
+                "example_tr": "NASA bir kısaltmadır (kelime gibi okunur), FBI ise baş harflerdir (harf harf okunur)."
             },
             {
                 "title": "Vowel & Consonant",
-                "content": "Sınavda 'vowel' (ünlü) ve 'consonant' (ünsüz) terimleri 'alphabet' ile bağlantılı sorulabilir."
+                "content": "Sınavda 'vowel' (ünlü) ve 'consonant' (ünsüz) terimleri 'alphabet' ile bağlantılı sorulabilir.",
+                "example": "There are 5 vowels in the English <b>alphabet</b>.",
+                "example_tr": "İngiliz alfabesinde 5 sesli harf vardır."
             }
         ],
         "grammar": [],
         "reading": [
             {
                 "title": "Tarihsel Metinler",
-                "content": "Parçada 'cuneiform' (çivi yazısı) veya 'hieroglyph' geçiyorsa, konu muhtemelen alfabenin evrimi ve yazı tarihidir."
+                "content": "Parçada 'cuneiform' (çivi yazısı) veya 'hieroglyph' geçiyorsa, konu muhtemelen alfabenin evrimi ve yazı tarihidir.",
+                "example": "Ancient Egyptians used hieroglyphs before the <b>alphabet</b>.",
+                "example_tr": "Antik Mısırlılar alfabeden önce hiyeroglif kullanırdı."
             }
         ]
     },
@@ -278,33 +290,43 @@
                 "pos": "n",
                 "word": "alphabet",
                 "level": "A2",
-                "note": "alfabe"
+                "note": "alfabe",
+                "example": "He learned the <b>alphabet</b> in school.",
+                "example_tr": "Okulda alfabeyi öğrendi."
             },
             {
                 "pos": "adj",
                 "word": "alphabetical",
                 "level": "B1",
                 "suffix": "-ical",
-                "note": "alfabetik, abecesel"
+                "note": "alfabetik, abecesel",
+                "example": "The names are in <b>alphabetical</b> order.",
+                "example_tr": "İsimler alfabetik sıradadır."
             },
             {
                 "pos": "v",
                 "word": "alphabetize",
                 "level": "C1",
                 "suffix": "-ize",
-                "note": "alfabetik sıraya koymak"
+                "note": "alfabetik sıraya koymak",
+                "example": "Please <b>alphabetize</b> these files.",
+                "example_tr": "Lütfen bu dosyaları alfabetik sıraya diz."
             },
             {
                 "pos": "n",
                 "word": "literacy",
                 "level": "B2",
-                "note": "okuryazarlık (alfabe bilgisi)"
+                "note": "okuryazarlık (alfabe bilgisi)",
+                "example": "<b>Literacy</b> rates have increased.",
+                "example_tr": "Okuryazarlık oranları arttı."
             },
             {
                 "pos": "adj",
                 "word": "illiterate",
                 "level": "B2",
-                "note": "okuma yazma bilmeyen"
+                "note": "okuma yazma bilmeyen",
+                "example": "He remained <b>illiterate</b> all his life.",
+                "example_tr": "Tüm hayatı boyunca okuma yazma bilmeden yaşadı."
             }
         ]
     },

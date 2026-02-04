@@ -48,17 +48,23 @@
             {
                 "pattern": "arrive AT (small place)",
                 "usage_level": "Core",
-                "notes_tr": "Havalimanı, istasyon, parti, otel gibi 'nokta' kabul edilen yerler için 'AT' kullanılır (arrive at the airport)."
+                "notes_tr": "Havalimanı, istasyon, parti, otel gibi 'nokta' kabul edilen yerler için 'AT' kullanılır (arrive at the airport).",
+                "example": "We arrived at the hotel just in time for dinner.",
+                "example_tr": "Otele akşam yemeği için tam zamanında vardık."
             },
             {
                 "pattern": "arrive IN (large place)",
                 "usage_level": "Core",
-                "notes_tr": "Şehir, ülke veya kıta gibi 'alan' bildiren yerler için 'IN' kullanılır (arrive in Turkey, arrive in Paris)."
+                "notes_tr": "Şehir, ülke veya kıta gibi 'alan' bildiren yerler için 'IN' kullanılır (arrive in Turkey, arrive in Paris).",
+                "example": "They arrived in Istanbul yesterday.",
+                "example_tr": "Dün İstanbul'a vardılar."
             },
             {
                 "pattern": "arrive home",
                 "usage_level": "Core",
-                "notes_tr": "'Home' kelimesi 'to/at/in' almaz. Direkt 'arrive home' denir."
+                "notes_tr": "'Home' kelimesi 'to/at/in' almaz. Direkt 'arrive home' denir.",
+                "example": "Call me when you arrive home.",
+                "example_tr": "Eve varınca beni ara."
             }
         ],
         "tense_logic": {
@@ -66,8 +72,10 @@
             "critical_comparison": {
                 "context": "Arrive vs Reach vs Get to",
                 "rule": "'Arrive' asla 'to' almaz (arrive to London YANLIŞTIR). 'Get' her zaman 'to' alır (get to London). 'Reach' hiç edat almaz (reach London).",
-                "example_wrong": "I arrived to the school. (Yanlış)",
-                "example_right": "I arrived at the school. (Doğru)"
+                "example_wrong": "I arrived to the school.",
+                "example_wrong_tr": "Okula vardım. (Hatalı edat kullanımı - to)",
+                "example_right": "I arrived at the school.",
+                "example_right_tr": "Okula vardım. (Doğru edat kullanımı - at)"
             }
         }
     },
@@ -263,19 +271,25 @@
         "vocabulary": [
             {
                 "title": "Edat Tuzağı",
-                "content": "Boşluktan sonra şehir/ülke varsa 'IN', bina/istasyon varsa 'AT' seçin. Asla 'TO' seçmeyin."
+                "content": "Boşluktan sonra şehir/ülke varsa 'IN', bina/istasyon varsa 'AT' seçin. Asla 'TO' seçmeyin.",
+                "example": "He arrived <b>at the hotel</b> late.",
+                "example_tr": "Otele geç vardı (Bina - AT)."
             }
         ],
         "grammar": [
             {
                 "title": "Here/There/Home İstisnası",
-                "content": "'Arrive here', 'arrive there', 'arrive home' yapılarında edat (at/in) KULLANILMAZ."
+                "content": "'Arrive here', 'arrive there', 'arrive home' yapılarında edat (at/in) KULLANILMAZ.",
+                "example": "What time did you <b>arrive home</b>?",
+                "example_tr": "Eve ne zaman vardın? (Edat yok)"
             }
         ],
         "reading": [
             {
                 "title": "Zaman Çizelgeleri",
-                "content": "Reading parçalarında tren/uçak saatleri anlatılırken 'arrival' ve 'departure' zıtlığı üzerinden sorular sorulur."
+                "content": "Reading parçalarında tren/uçak saatleri anlatılırken 'arrival' ve 'departure' zıtlığı üzerinden sorular sorulur.",
+                "example": "The train's <b>arrival</b> time is 10:30.",
+                "example_tr": "Trenin varış saati 10:30."
             }
         ]
     },
@@ -286,20 +300,26 @@
                 "pos": "v",
                 "word": "arrive",
                 "level": "A1",
-                "note": "varmak"
+                "note": "varmak",
+                "example": "We <b>arrived</b> in London at noon.",
+                "example_tr": "Öğlen Londra'ya vardık."
             },
             {
                 "pos": "n",
                 "word": "arrival",
                 "level": "A2",
                 "suffix": "-al",
-                "note": "varış, geliş (arrival)"
+                "note": "varış, geliş (arrival)",
+                "example": "Their <b>arrival</b> was delayed.",
+                "example_tr": "Varışları gecikti."
             },
             {
                 "pos": "n",
                 "word": "new arrival",
                 "level": "B2",
-                "note": "yeni gelen kimse (new arrival)"
+                "note": "yeni gelen kimse (new arrival)",
+                "example": "They welcomed the <b>new arrival</b> to the team.",
+                "example_tr": "Ekibe yeni katılanı karşıladılar."
             }
         ]
     },

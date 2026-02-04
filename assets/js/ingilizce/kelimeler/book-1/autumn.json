@@ -34,12 +34,16 @@
             {
                 "pattern": "in (the) autumn",
                 "usage_level": "Core",
-                "notes_tr": "Mevsimlerden önce 'in' kullanılır. 'The' kullanımı opsiyoneldir ama yaygındır (in the autumn)."
+                "notes_tr": "Mevsimlerden önce 'in' kullanılır. 'The' kullanımı opsiyoneldir ama yaygındır (in the autumn).",
+                "example": "Trees look beautiful in the autumn.",
+                "example_tr": "Ağaçlar sonbaharda güzel görünür."
             },
             {
                 "pattern": "autumn leaves / colours",
                 "usage_level": "Intermediate",
-                "notes_tr": "Sıfat tamlaması olarak kullanımı sıktır (sonbahar renkleri)."
+                "notes_tr": "Sıfat tamlaması olarak kullanımı sıktır (sonbahar renkleri).",
+                "example": "I love the warm autumn colours.",
+                "example_tr": "Sıcak sonbahar renklerini seviyorum."
             }
         ],
         "tense_logic": {
@@ -48,7 +52,9 @@
                 "context": "Autumn vs Fall",
                 "rule": "'Autumn' İngiliz İngilizcesidir (British). 'Fall' Amerikan İngilizcesidir (American). Her ikisi de %100 doğrudur, sadece bölge farkı vardır.",
                 "example_wrong": "",
-                "example_right": "British: Autumn / American: Fall"
+                "example_wrong_tr": "",
+                "example_right": "British: Autumn / American: Fall",
+                "example_right_tr": "İngiliz: Autumn / Amerikan: Fall (İkisi de doğrudur)"
             }
         }
     },
@@ -192,14 +198,18 @@
         "vocabulary": [
             {
                 "title": "Silent Letters",
-                "content": "Telaffuz sorularında (artık YDS'de yok ama mülakatlarda önemli) sondaki 'n' harfinin okunmaması kritiktir."
+                "content": "Telaffuz sorularında (artık YDS'de yok ama mülakatlarda önemli) sondaki 'n' harfinin okunmaması kritiktir.",
+                "example": "The word 'Autum<b>n</b>' ends with a silent 'n'.",
+                "example_tr": "'Autumn' kelimesinin sonundaki 'n' harfi okunmaz."
             }
         ],
         "grammar": [],
         "reading": [
             {
                 "title": "Metaphorical Meaning",
-                "content": "Edebiyat parçalarında 'autumn' hüzün, olgunluk veya sona yaklaşma metaforu olarak kullanılır."
+                "content": "Edebiyat parçalarında 'autumn' hüzün, olgunluk veya sona yaklaşma metaforu olarak kullanılır.",
+                "example": "He is in the <b>autumn</b> of his career.",
+                "example_tr": "Kariyerinin sonbaharında (son dönemlerinde)."
             }
         ]
     },
@@ -210,14 +220,18 @@
                 "pos": "n",
                 "word": "autumn",
                 "level": "A1",
-                "note": "sonbahar"
+                "note": "sonbahar",
+                "example": "The trees are colorful in <b>autumn</b>.",
+                "example_tr": "Sonbaharda ağaçlar renklidir."
             },
             {
                 "pos": "adj",
                 "word": "autumnal",
                 "level": "C2",
                 "suffix": "-al",
-                "note": "sonbahara özgü (autumnal) - Burada 'N' okunur!"
+                "note": "sonbahara özgü (autumnal) - Burada 'N' okunur!",
+                "example": "She loves the <b>autumnal</b> breeze.",
+                "example_tr": "Sonbahar esintisini sever."
             }
         ]
     },

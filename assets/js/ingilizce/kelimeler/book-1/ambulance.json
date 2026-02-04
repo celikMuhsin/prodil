@@ -35,12 +35,16 @@
             {
                 "pattern": "call an ambulance",
                 "usage_level": "Core",
-                "notes_tr": "En hayati kalıptır. 'Phone' veya 'ring' yerine genellikle 'call' kullanılır."
+                "notes_tr": "En hayati kalıptır. 'Phone' veya 'ring' yerine genellikle 'call' kullanılır.",
+                "example": "Please call an ambulance immediately!",
+                "example_tr": "Lütfen hemen bir ambulans çağırın!"
             },
             {
                 "pattern": "go by ambulance / in an ambulance",
                 "usage_level": "Intermediate",
-                "notes_tr": "Ulaşım aracı olarak: 'He was taken to hospital by ambulance.'"
+                "notes_tr": "Ulaşım aracı olarak: 'He was taken to hospital by ambulance.'",
+                "example": "She had to go to the hospital by ambulance.",
+                "example_tr": "Hastaneye ambulansla gitmek zorunda kaldı."
             }
         ],
         "tense_logic": {
@@ -48,8 +52,10 @@
             "critical_comparison": {
                 "context": "Ambulance vs Paramedic",
                 "rule": "'Ambulance' araçtır. 'Paramedic' veya 'EMT' ise o aracın içindeki sağlık personelidir.",
-                "example_wrong": "The ambulance treated me. (Yanlış - Araç tedavi etmez)",
-                "example_right": "The paramedics in the ambulance treated me. (Doğru)"
+                "example_wrong": "The ambulance treated me.",
+                "example_wrong_tr": "Ambulans beni tedavi etti. (Hatalı - Araç tedavi etmez)",
+                "example_right": "The paramedics in the ambulance treated me.",
+                "example_right_tr": "Ambulanstaki sağlık görevlileri beni tedavi etti. (Doğru)"
             }
         }
     },
@@ -238,18 +244,24 @@
         "vocabulary": [
             {
                 "title": "İlgili Terimler",
-                "content": "'Stretcher' (sedye), 'Siren' (siren), 'Resuscitate' (hayata döndürmek/kalp masajı) kelimeleri ambulans bağlamında sık sorulur."
+                "content": "'Stretcher' (sedye), 'Siren' (siren), 'Resuscitate' (hayata döndürmek/kalp masajı) kelimeleri ambulans bağlamında sık sorulur.",
+                "example": "They lifted the patient onto the <b>stretcher</b> before putting him in the ambulance.",
+                "example_tr": "Onu ambulansa koymadan önce sedyeye kaldırdılar."
             },
             {
                 "title": "Passive Voice",
-                "content": "'He was taken to hospital' cümlesinde 'by ambulance' gizli özne gibidir, çoğu zaman yazılmaz ama ima edilir."
+                "content": "'He was taken to hospital' cümlesinde 'by ambulance' gizli özne gibidir, çoğu zaman yazılmaz ama ima edilir.",
+                "example": "The victims <b>were taken to hospital</b> immediately.",
+                "example_tr": "Kurbanlar derhal (ambulansla) hastaneye götürüldü."
             }
         ],
         "grammar": [],
         "reading": [
             {
                 "title": "Afet Yönetimi (Triage)",
-                "content": "Parçada 'triage' (seçme/ayırma) geçiyorsa, ambulansların hastaları aciliyet sırasına göre taşıdığı bir afet senaryosu anlatılıyordur."
+                "content": "Parçada 'triage' (seçme/ayırma) geçiyorsa, ambulansların hastaları aciliyet sırasına göre taşıdığı bir afet senaryosu anlatılıyordur.",
+                "example": "Ambulances waited at the <b>triage</b> area.",
+                "example_tr": "Ambulanslar triyaj (seçme/ayırma) alanında bekledi."
             }
         ]
     },
@@ -260,32 +272,42 @@
                 "pos": "n",
                 "word": "ambulance",
                 "level": "A2",
-                "note": "yürüyen hastane -> ambulans"
+                "note": "yürüyen hastane -> ambulans",
+                "example": "Call an <b>ambulance</b> immediately!",
+                "example_tr": "Derhal bir ambulans çağırın!"
             },
             {
                 "pos": "v",
                 "word": "ambulate",
                 "level": "C2",
-                "note": "gezinmek, yürümek (tıbbi)"
+                "note": "gezinmek, yürümek (tıbbi)",
+                "example": "The patient began to <b>ambulate</b>.",
+                "example_tr": "Hasta yürümeye (gezinmeye) başladı."
             },
             {
                 "pos": "adj",
                 "word": "ambulatory",
                 "level": "C2",
-                "note": "ayakta tedavi edilen, yürüyebilen"
+                "note": "ayakta tedavi edilen, yürüyebilen",
+                "example": "She is an <b>ambulatory</b> patient.",
+                "example_tr": "O ayakta tedavi gören (yürüyebilen) bir hasta."
             },
             {
                 "pos": "n",
                 "word": "somnambulist",
                 "level": "C2",
                 "prefix": "somn-",
-                "note": "uyurgezer"
+                "note": "uyurgezer",
+                "example": "A <b>somnambulist</b> walks while sleeping.",
+                "example_tr": "Bir uyurgezer uyurken yürür."
             },
             {
                 "pos": "n",
                 "word": "pram",
                 "level": "B2",
-                "note": "perambulator kısaltması (bebek arabası)"
+                "note": "perambulator kısaltması (bebek arabası)",
+                "example": "The baby is sleeping in the <b>pram</b>.",
+                "example_tr": "Bebek pusetinde (bebek arabasında) uyuyor."
             }
         ]
     },

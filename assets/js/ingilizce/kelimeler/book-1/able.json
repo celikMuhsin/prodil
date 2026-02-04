@@ -49,12 +49,16 @@
             {
                 "pattern": "be able to + V1",
                 "usage_level": "Core",
-                "notes_tr": "Tüm zamanlarda (Tenses) çekimlenebilir (is able to, was able to, will be able to)."
+                "notes_tr": "Tüm zamanlarda (Tenses) çekimlenebilir (is able to, was able to, will be able to).",
+                "example": "I will be able to join you later.",
+                "example_tr": "Sana daha sonra katılabileceğim."
             },
             {
                 "pattern": "seem/feel + able to + V1",
                 "usage_level": "Advanced",
-                "notes_tr": "Genellikle his veya görünüş bildiren fiillerle kullanılır."
+                "notes_tr": "Genellikle his veya görünüş bildiren fiillerle kullanılır.",
+                "example": "He didn't seem able to understand the situation.",
+                "example_tr": "Durumu anlayabilecek gibi görünmüyordu."
             }
         ],
         "tense_logic": {
@@ -62,8 +66,10 @@
             "critical_comparison": {
                 "context": "Past Specific Achievement",
                 "rule": "Geçmişte zor bir durumda 'başarma' anlamı varsa 'could' yerine 'was/were able to' tercih edilir.",
-                "example_wrong": "The fire spread quickly, but everyone could escape. (Yanlış)",
-                "example_right": "The fire spread quickly, but everyone was able to escape. (Doğru)"
+                "example_wrong": "The fire spread quickly, but everyone could escape.",
+                "example_wrong_tr": "Yangın hızla yayıldı ama herkes kaçabildi. (Hatalı kullanım)",
+                "example_right": "The fire spread quickly, but everyone was able to escape.",
+                "example_right_tr": "Yangın hızla yayıldı ama herkes kaçmayı başardı. (Doğru kullanım)"
             }
         }
     },
@@ -291,43 +297,61 @@
         "vocabulary": [
             {
                 "title": "Edat Farkı (Prepositions)",
-                "content": "Sınavlarda 'able <b>TO</b> do' ile 'capable <b>OF</b> doing' ayrımı sıkça sorulur. Boşluktan sonra 'to V1' varsa 'able', 'of Ving' varsa 'capable' seçin."
+                "content": "Sınavlarda 'able <b>TO</b> do' ile 'capable <b>OF</b> doing' ayrımı sıkça sorulur. Boşluktan sonra 'to V1' varsa 'able', 'of Ving' varsa 'capable' seçin.",
+                "example": "He is <b>able to</b> solve the problem.",
+                "example_tr": "Sorunu çözebilecek güçte. (Eylem odaklı)"
             },
             {
                 "title": "Kelime Türetme",
-                "content": "Şıklarda 'able' (sıfat) ve 'enable' (fiil) birlikte verilebilir. Cümle fiil arıyorsa (örn: 'This law ___ us to...') 'enable' tercih edilmelidir."
+                "content": "Şıklarda 'able' (sıfat) ve 'enable' (fiil) birlikte verilebilir. Cümle fiil arıyorsa (örn: 'This law ___ us to...') 'enable' tercih edilmelidir.",
+                "example": "This tool <b>enables</b> us to work faster.",
+                "example_tr": "Bu araç daha hızlı çalışmamızı sağlar (mümkün kılar)."
             },
             {
                 "title": "Suffix Analizi (-able)",
-                "content": "-able eki eklendiği fiile 'yapılabilir' anlamı katar (readable, doable). Bilmediğiniz kelimelerde bu mantığı kurun."
+                "content": "-able eki eklendiği fiile 'yapılabilir' anlamı katar (readable, doable). Bilmediğiniz kelimelerde bu mantığı kurun.",
+                "example": "Doable (Do + able)",
+                "example_tr": "Yapılabilir, başarılabilir."
             },
             {
                 "title": "Eşdizim (Collocations)",
-                "content": "Cloze testlerde 'perfectly able' veya 'barely able' ikilileri yaygındır. 'Able' öncesi boşlukta zarf arayın."
+                "content": "Cloze testlerde 'perfectly able' veya 'barely able' ikilileri yaygındır. 'Able' öncesi boşlukta zarf arayın.",
+                "example": "I am <b>perfectly able</b> to drive.",
+                "example_tr": "Araba kullanabilecek durumdayım (Sorunum yok)."
             }
         ],
         "grammar": [
             {
                 "title": "Gramer Tuzağı: Geçmiş Yetenek",
-                "content": "Geçmişte tek seferlik zor bir başarı anlatılıyorsa 'could' yerine 'was able to' veya 'managed to' kullanılır. (e.g. He was able to escape the fire)."
+                "content": "Geçmişte tek seferlik zor bir başarı anlatılıyorsa 'could' yerine 'was able to' veya 'managed to' kullanılır. (e.g. He was able to escape the fire).",
+                "example": "He <b>was able to</b> unlock the door.",
+                "example_tr": "Kapıyı açmayı başardı (Zor bir durumdu, açabildi)."
             },
             {
                 "title": "Pasif Yapı (Passive)",
-                "content": "Modalların pasif hali kafa karıştırabilir. 'It must be able to be done' (Yapılabilmesi gerekir) gibi yapılar YÖKDİL metinlerinde çıkar."
+                "content": "Modalların pasif hali kafa karıştırabilir. 'It must be able to be done' (Yapılabilmesi gerekir) gibi yapılar YÖKDİL metinlerinde çıkar.",
+                "example": "The problem <b>seems to be able to be solved</b>.",
+                "example_tr": "Sorun çözülebilir gibi görünüyor."
             }
         ],
         "reading": [
             {
                 "title": "Akademik Çeviri",
-                "content": "'Able to' ifadesini 'muktedir olmak' diye değil, '-ebilmek' veya 'kapasitesine sahip olmak' şeklinde çevirin. Örn: 'Technologies able to reduce emissions'."
+                "content": "'Able to' ifadesini 'muktedir olmak' diye değil, '-ebilmek' veya 'kapasitesine sahip olmak' şeklinde çevirin. Örn: 'Technologies able to reduce emissions'.",
+                "example": "Technologies <b>able to</b> reduce emissions...",
+                "example_tr": "Emisyonları azaltabilen teknolojiler..."
             },
             {
                 "title": "Paraphrase (Zıt Anlam)",
-                "content": "Soruda 'unable' görüyorsanız, cevapta 'failed to', 'could not' veya 'lacked the ability' gibi yapılar arayın."
+                "content": "Soruda 'unable' görüyorsanız, cevapta 'failed to', 'could not' veya 'lacked the ability' gibi yapılar arayın.",
+                "example": "He was <b>unable</b> to find the keys -> He <b>could not</b> find the keys.",
+                "example_tr": "Anahtarları bulamadı (Unable = Could not)."
             },
             {
                 "title": "Alan Bağlamı (YÖKDİL)",
-                "content": "Sağlıkta 'disabled' (engelli), Fende 'viable' (yaşayabilir/able to survive), Sosyalde 'enable' (yetkilendirmek/empower) sık çıkar."
+                "content": "Sağlıkta 'disabled' (engelli), Fende 'viable' (yaşayabilir/able to survive), Sosyalde 'enable' (yetkilendirmek/empower) sık çıkar.",
+                "example": "A <b>viable</b> solution for the environment.",
+                "example_tr": "Çevre için uygulanabilir (yaşayabilir) bir çözüm."
             }
         ]
     },
@@ -338,35 +362,45 @@
                 "pos": "adj",
                 "word": "able",
                 "level": "A2",
-                "note": "yapabilecek, yetkin, becerikli, yetenekli"
+                "note": "yapabilecek, yetkin, becerikli, yetenekli",
+                "example": "He is <b>able</b> to solve complex problems.",
+                "example_tr": "Karmaşık problemleri çözebilir (yetkindir)."
             },
             {
                 "pos": "adj",
                 "word": "unable",
                 "level": "B1",
                 "prefix": "un-",
-                "note": "yapamayan, aciz, gücü yetmeyen"
+                "note": "yapamayan, aciz, gücü yetmeyen",
+                "example": "I was <b>unable</b> to attend the meeting.",
+                "example_tr": "Toplantıya katılamadım (imkanım olmadı)."
             },
             {
                 "pos": "n",
                 "word": "ability",
                 "level": "A2",
                 "suffix": "-ity",
-                "note": "yetenek, kabiliyet, beceri, yapma yeteneği"
+                "note": "yetenek, kabiliyet, beceri, yapma yeteneği",
+                "example": "Her <b>ability</b> to learn languages is impressive.",
+                "example_tr": "Dil öğrenme yeteneği etkileyici."
             },
             {
                 "pos": "v",
                 "word": "enable",
                 "level": "B2",
                 "prefix": "en-",
-                "note": "mümkün kılmak, yetki vermek"
+                "note": "mümkün kılmak, yetki vermek",
+                "example": "This tool <b>enables</b> us to work faster.",
+                "example_tr": "Bu araç daha hızlı çalışmamızı mümkün kılar."
             },
             {
                 "pos": "v",
                 "word": "disable",
                 "level": "B2",
                 "prefix": "dis-",
-                "note": "engellemek, devre dışı bırakmak, yetki almak"
+                "note": "engellemek, devre dışı bırakmak, yetki almak",
+                "example": "Please <b>disable</b> the alarm.",
+                "example_tr": "Lütfen alarmı devre dışı bırakın."
             }
         ]
     },

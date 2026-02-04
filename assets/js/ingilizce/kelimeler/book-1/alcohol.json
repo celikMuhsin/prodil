@@ -48,12 +48,16 @@
             {
                 "pattern": "drink alcohol",
                 "usage_level": "Core",
-                "notes_tr": "İçki içmek eylemi için en standart ifadedir."
+                "notes_tr": "İçki içmek eylemi için en standart ifadedir.",
+                "example": "He doesn't drink alcohol due to religious reasons.",
+                "example_tr": "Dini sebeplerden dolayı alkol kullanmaz."
             },
             {
                 "pattern": "alcohol-free",
                 "usage_level": "Intermediate",
-                "notes_tr": "Sıfat olarak: 'Alkolsüz' (alcohol-free beer)."
+                "notes_tr": "Sıfat olarak: 'Alkolsüz' (alcohol-free beer).",
+                "example": "Do you have alcohol-free beer?",
+                "example_tr": "Alkolsüz biranız var mı?"
             }
         ],
         "tense_logic": {
@@ -61,8 +65,10 @@
             "critical_comparison": {
                 "context": "Alcohol vs Liquor vs Spirits",
                 "rule": "'Alcohol' genel terimdir (bira dahil). 'Liquor' ve 'Spirits' ise sadece yüksek alkollü sert içkiler (viski, votka vb.) için kullanılır.",
-                "example_wrong": "Beer is a liquor. (Yanlış)",
-                "example_right": "Beer is an alcoholic drink. Whiskey is a liquor. (Doğru)"
+                "example_wrong": "Beer is a liquor.",
+                "example_wrong_tr": "Bira bir likördür/sert içkidir. (Hatalı sınıflandırma)",
+                "example_right": "Beer is an alcoholic drink. Whiskey is a liquor.",
+                "example_right_tr": "Bira alkollü bir içecektir. Viski sert bir içkidir. (Doğru ayrım)"
             }
         }
     },
@@ -261,14 +267,18 @@
         "vocabulary": [
             {
                 "title": "Synonyms in Context",
-                "content": "Sınavda 'alcohol' yerine 'beverage' (içecek), 'intoxicant' (uyuşturucu madde) veya 'spirits' (sert içki) kelimeleri kullanılabilir."
+                "content": "Sınavda 'alcohol' yerine 'beverage' (içecek), 'intoxicant' (uyuşturucu madde) veya 'spirits' (sert içki) kelimeleri kullanılabilir.",
+                "example": "Hotels serve alcoholic <b>beverages</b> to guests.",
+                "example_tr": "Oteller misafirlere alkollü içecekler servis eder."
             }
         ],
         "grammar": [],
         "reading": [
             {
                 "title": "Medical Texts",
-                "content": "'Alcohol abuse' (kötüye kullanım), 'addiction' (bağımlılık) ve 'withdrawal' (yoksunluk) terimleri bir arada test edilir."
+                "content": "'Alcohol abuse' (kötüye kullanım), 'addiction' (bağımlılık) ve 'withdrawal' (yoksunluk) terimleri bir arada test edilir.",
+                "example": "Treating <b>alcohol addiction</b> requires professional help.",
+                "example_tr": "Alkol bağımlılığını tedavi etmek profesyonel yardım gerektirir."
             }
         ]
     },
@@ -279,26 +289,34 @@
                 "pos": "n",
                 "word": "alcohol",
                 "level": "A2",
-                "note": "alkol"
+                "note": "alkol",
+                "example": "Drinking too much <b>alcohol</b> is harmful.",
+                "example_tr": "Çok fazla alkol içmek zararlıdır."
             },
             {
                 "pos": "adj",
                 "word": "alcoholic",
                 "level": "B1",
                 "suffix": "-ic",
-                "note": "alkollü / alkolik (kişi)"
+                "note": "alkollü / alkolik (kişi)",
+                "example": "He bought an <b>alcoholic</b> drink.",
+                "example_tr": "Alkollü bir içecek aldı."
             },
             {
                 "pos": "n",
                 "word": "alcoholism",
                 "level": "B2",
-                "note": "alkolizm (bağımlılık)"
+                "note": "alkolizm (bağımlılık)",
+                "example": "<b>Alcoholism</b> is a treatable disease.",
+                "example_tr": "Alkolizm tedavi edilebilir bir hastalıktır."
             },
             {
                 "pos": "adj",
                 "word": "non-alcoholic",
                 "level": "B1",
-                "note": "alkolsüz (non-alcoholic)"
+                "note": "alkolsüz (non-alcoholic)",
+                "example": "This beer is <b>non-alcoholic</b>.",
+                "example_tr": "Bu bira alkolsüzdür."
             }
         ]
     },

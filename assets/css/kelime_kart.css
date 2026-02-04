@@ -337,7 +337,7 @@ html {
     min-width: 0;
     max-width: none;
     padding: 4px 8px;
-    font-size: 0.85rem;
+    font-size: 0.6rem;
     border: 1px solid var(--border);
     border-radius: 6px;
     background: #f8fafc;
@@ -907,6 +907,24 @@ html {
     .desktop-audio-right {
         display: none !important;
     }
+
+    /* Mobile specific adjustments to reduce height */
+    .word-meta-row {
+        min-height: 28px;
+        /* Further reduced from 40px */
+        padding-bottom: 2px !important;
+        padding-top: 2px !important;
+    }
+
+    .meta-chip {
+        padding: 1px 5px;
+        /* Further reduced padding */
+        font-size: 0.0rem;
+        /* User asked about font sizes, adjusting slightly for compactness */
+        line-height: 1.2;
+        height: auto;
+        /* Ensure it doesn't force height */
+    }
 }
 
 
@@ -1434,8 +1452,8 @@ html {
 /* Grammar Logic */
 .logic-box {
     margin-top: 15px;
-    background: #fffaf0;
-    /* Light orange */
+    background: transparent;
+    /* Removed cream background */
     padding: 12px 12px 15px 12px;
     border-radius: 6px;
     border: 1px dashed #ed8936;
@@ -1449,22 +1467,66 @@ html {
 }
 
 .logic-compare {
-    background: #fff;
-    padding: 8px;
-    border-radius: 4px;
+    background: transparent !important;
+    /* Force transparent */
+    padding: 0;
+    margin-top: 8px;
     font-size: 0.9rem;
+    border: none !important;
+    /* Ensure no border */
 }
 
-.logic-examples .wrong {
-    color: #e53e3e;
-    font-size: 0.85rem;
-    margin-top: 4px;
+.logic-examples {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
+.logic-examples .wrong,
 .logic-examples .right {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    /* Reduced gap to bring text closer to icon */
+    font-size: 0.85rem;
+}
+
+.logic-examples .wrong .icon,
+.logic-examples .right .icon {
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-weight: bold;
+    width: 20px;
+    text-align: center;
+    display: inline-block;
+    margin-left: -5px;
+    /* Shift icons slightly left */
+}
+
+.logic-examples .wrong .icon {
+    color: #e53e3e;
+}
+
+.logic-examples .right .icon {
+    color: #38a169;
+}
+
+.logic-examples .wrong .ex-text {
+    color: #e53e3e;
+}
+
+.logic-examples .right .ex-text {
     color: #38a169;
     font-weight: 600;
-    font-size: 0.85rem;
+}
+
+.logic-examples .ex-tr {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 1px;
+    font-style: italic;
+    font-weight: normal;
 }
 
 /* Lexical Nuance */
@@ -2023,13 +2085,24 @@ html {
     margin-bottom: 10px;
     position: relative;
     padding-left: 14px;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 5px;
-    align-items: flex-start !important;
+    /* Force Block to Guarantee Stacking (Single Column) */
+    display: block !important;
     text-align: left !important;
     width: 100% !important;
-    flex-wrap: nowrap !important;
+}
+
+/* Force Block on Mobile to Guarantee Stacking */
+@media (max-width: 768px) {
+    .exam-card {
+        display: block !important;
+    }
+
+    .strat-title,
+    .strat-content {
+        width: 100% !important;
+        display: block !important;
+        margin-bottom: 4px;
+    }
 }
 
 .exam-card:last-child {
@@ -2037,7 +2110,7 @@ html {
 }
 
 .strat-title {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #2d3748;
     margin-bottom: 4px;
@@ -2046,6 +2119,7 @@ html {
     display: block !important;
 }
 
+/* Strategy Content */
 .strat-content {
     font-size: 0.85rem;
     color: #4a5568;
@@ -2053,6 +2127,31 @@ html {
     text-align: left !important;
     width: 100% !important;
     display: block !important;
+}
+
+/* Strategy Example Box */
+.strat-example-box {
+    margin-top: 8px;
+    padding: 8px;
+    background: #f8fafc;
+    border-radius: 4px;
+    border-left: 3px solid #cbd5e0;
+    width: 100% !important;
+    display: block !important;
+}
+
+.strat-ex-en {
+    font-size: 0.85rem;
+    /* Matched to strat-content */
+    color: #2d3748;
+    font-style: italic;
+    margin-bottom: 2px;
+}
+
+.strat-ex-tr {
+    font-size: 0.85rem;
+    /* Matched to strat-content */
+    color: #718096;
 }
 
 /* Category Specific Styles */
@@ -2115,4 +2214,187 @@ html {
         gap: 8px;
         /* More gap on desktop */
     }
+}
+
+
+
+
+/* Derivative Example Styles */
+.der-main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.der-word-line {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.der-note {
+    text-align: right;
+    flex: 1;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: #3182ce;
+    /* Blue Color Requested */
+    font-style: italic;
+}
+
+.der-example-container {
+    margin-top: -4px;
+    /* Aggressively reduced spacing */
+    text-align: right;
+    width: 100%;
+    padding-top: 0;
+    /* Removed Padding */
+    border-top: none;
+    /* Removed Dashed Line */
+}
+
+.der-ex-en {
+    font-size: 0.85rem;
+    color: #4a5568;
+    font-style: italic;
+    margin-bottom: 0;
+    /* Removed bottom margin */
+    line-height: 1.2;
+    /* Tighter line height */
+}
+
+
+.der-ex-tr {
+    font-size: 0.8rem;
+    color: #718096;
+    font-style: italic;
+    /* Added Italic */
+}
+
+.derivative-item {
+    display: flex;
+    flex-direction: column;
+    /* Force vertical stacking */
+    gap: 4px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f7fafc;
+    cursor: pointer;
+}
+
+.derivative-item:last-child {
+    border-bottom: none;
+}
+
+/* Grammar Structure Styles */
+.grammar-pattern {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    color: #2f855a;
+    /* Green text */
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+.grammar-note {
+    color: #4a5568;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.grammar-example {
+    margin-top: 4px;
+    padding-left: 0;
+    border-left: none;
+}
+
+.grammar-example .en {
+    color: #2d3748;
+    font-weight: 500;
+    margin-bottom: 2px;
+    font-size: 0.9rem;
+    /* Same as grammar-pattern */
+}
+
+.grammar-example .tr {
+    color: #718096;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+/* Chic Error Card Styles */
+.error-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    /* Subtle shadow */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.error-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.error-wrong,
+.error-correct {
+    display: flex;
+    align-items: center;
+    /* Center icon with text */
+    gap: 10px;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.error-wrong .icon {
+    color: #e53e3e;
+    /* Red icon */
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.error-wrong .text {
+    color: #e53e3e;
+    /* Red text */
+    text-decoration: none;
+    /* NO STRIKETHROUGH */
+    font-weight: 500;
+}
+
+.error-correct .icon {
+    color: #38a169;
+    /* Green icon */
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.error-correct .text {
+    color: #2f855a;
+    /* Darker green text */
+    font-weight: 700;
+}
+
+.error-explanation {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed #edf2f7;
+    /* Separator */
+    font-size: 0.85rem;
+    color: #718096;
+    font-style: italic;
+    padding-left: 30px;
+    /* Align with text */
 }
