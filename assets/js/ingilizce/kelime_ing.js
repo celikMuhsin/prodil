@@ -58,6 +58,36 @@
         word: "autumn",
         path: "assets/js/ingilizce/kelimeler/book-1/autumn.json",
         definitions: [{ core_meaning_tr: "sonbahar, güz" }]
+    },
+    {
+        id: "backgammon",
+        word: "backgammon",
+        path: "assets/js/ingilizce/kelimeler/book-1/backgammon.json",
+        definitions: [{ core_meaning_tr: "tavla" }]
+    },
+    {
+        id: "bake",
+        word: "bake",
+        path: "assets/js/ingilizce/kelimeler/book-1/bake.json",
+        definitions: [{ core_meaning_tr: "fırında pişirmek" }]
+    },
+    {
+        id: "ball",
+        word: "ball",
+        path: "assets/js/ingilizce/kelimeler/book-1/ball.json",
+        definitions: [{ core_meaning_tr: "top, balo" }]
+    },
+    {
+        id: "bank",
+        word: "bank",
+        path: "assets/js/ingilizce/kelimeler/book-1/bank.json",
+        definitions: [{ core_meaning_tr: "banka, nehir kıyısı" }]
+    },
+    {
+        id: "be",
+        word: "be",
+        path: "assets/js/ingilizce/kelimeler/book-1/be.json",
+        definitions: [{ core_meaning_tr: "olmak, var olmak" }]
     }
 ];
 

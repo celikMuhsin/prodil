@@ -2095,6 +2095,8 @@ html {
 @media (max-width: 768px) {
     .exam-card {
         display: block !important;
+        margin-bottom: 15px;
+        width: 100% !important;
     }
 
     .strat-title,
@@ -2102,6 +2104,29 @@ html {
         width: 100% !important;
         display: block !important;
         margin-bottom: 4px;
+        text-align: left !important;
+    }
+
+    /* Fix for 3-Column Issue on Mobile (Exam Frequency Meters) */
+    .all-meters {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: flex-start !important;
+    }
+
+    .meter-group {
+        width: 100% !important;
+        flex: none !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .exam-score {
+        text-align: left !important; /* Force left alignment */
+        margin-top: 4px;
+        float: none;
     }
 }
 

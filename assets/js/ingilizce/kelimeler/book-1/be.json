@@ -1,0 +1,404 @@
+{
+    "id": "be",
+    "meta": {
+        "cefr_level": "A1",
+        "frequency_band": "High Frequency",
+        "part_of_speech": [
+            "verb",
+            "auxiliary verb"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/biː/",
+        "syllabification": [
+            "be"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "to exist, live, or occur",
+            "core_meaning_tr": "olmak, var olmak, bulunmak",
+            "context_tags": [
+                "general",
+                "philosophical"
+            ],
+            "grammar_pattern": "be + adjective / noun / preposition",
+            "example": {
+                "sentence": "I am a student.",
+                "translation": "Ben bir öğrenciyim."
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "used as an auxiliary verb for continuous tenses and passive voice",
+            "core_meaning_tr": "(yardımcı fiil olarak) -yor olmak, edilgen çatı kurmak",
+            "context_tags": [
+                "grammar",
+                "auxiliary"
+            ],
+            "grammar_pattern": "be + V-ing / be + V3",
+            "example": {
+                "sentence": "He is running. / The car was washed.",
+                "translation": "Koşuyor. / Araba yıkandı."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "There + be (is/are)",
+                "usage_level": "Core",
+                "notes_tr": "Bir şeyin varlığını belirtmek için kullanılır. Özne 'There' değil, fiilden sonra gelen kelimedir.",
+                "example": "There is a cat. / There are cats.",
+                "example_tr": "Bir kedi var. / Kediler var."
+            },
+            {
+                "pattern": "be + to + infinitive",
+                "usage_level": "Advanced",
+                "notes_tr": "Resmi plan, emir veya kader anlatır.",
+                "example": "The President is to visit Turkey next week.",
+                "example_tr": "Başkanın gelecek hafta Türkiye'yi ziyaret etmesi planlanıyor/bekleniyor."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "İngilizcenin en düzensiz ve temel fiilidir. Zamana ve şahsa göre tamamen değişir (am, is, are, was, were).",
+            "critical_comparison": {
+                "context": "Be vs Become",
+                "rule": "'Be' bir durumu (state), 'Become' ise bir değişimi (process) anlatır.",
+                "example_wrong": "When he grew up, he was a doctor. (Eğer değişim vurgulanıyorsa)",
+                "example_wrong_tr": "Büyüyünce doktor oldu (burada süreç var, 'was' zayıf kalır).",
+                "example_right": "When he grew up, he became a doctor.",
+                "example_right_tr": "Büyüyünce doktor oldu (hal değiştirdi)."
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "En temel kimlik cümlesinden karmaşık edilgen ve kiþisel yapılara geçiş.",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "I am happy.",
+                "tr": "Mutluyum.",
+                "grammar_focus": "Present Simple (am/is/are)"
+            },
+            {
+                "cefr": "A2",
+                "en": "Where were you yesterday?",
+                "tr": "Dün neredeydin?",
+                "grammar_focus": "Past Simple (was/were)"
+            },
+            {
+                "cefr": "B1",
+                "en": "Have you ever been to London?",
+                "tr": "Hiç Londra'da bulundun mu?",
+                "grammar_focus": "Present Perfect (been)"
+            },
+            {
+                "cefr": "B2",
+                "en": "The problem is being solved by the team.",
+                "tr": "Sorun ekip tarafından çözülüyor.",
+                "grammar_focus": "Passive Voice (Continuous)"
+            },
+            {
+                "cefr": "C1",
+                "en": "Had I been there, I would have helped.",
+                "tr": "Orada olsaydım, yardım ederdim.",
+                "grammar_focus": "Inversion (Conditionals Type 3)"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "her zaman",
+                "word": "always",
+                "strength": "strong",
+                "example": "He is always late.",
+                "example_tr": "O her zaman geç kalır."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "istemek",
+                "word": "want to",
+                "example": "I want to be a pilot.",
+                "example_tr": "Pilot olmak istiyorum."
+            },
+            {
+                "turkish": "gibi görünmek",
+                "word": "seem to",
+                "example": "It seems to be broken.",
+                "example_tr": "Kırık gibi görünüyor."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Existence/State",
+            "turkishConcept": "Varoluş ve Durum",
+            "description": "Olmak eyleminin çeşitleri",
+            "scale": [
+                {
+                    "value": 5,
+                    "word": "be",
+                    "turkish": "olmak",
+                    "note": "En genel durum",
+                    "usage": "He is tired.",
+                    "description_tr": "Bir durumu veya kimliği belirtir.",
+                    "example_en": "She is a teacher.",
+                    "example_tr": "O bir öğretmendir.",
+                    "strength": "Basic"
+                },
+                {
+                    "value": 6,
+                    "word": "exist",
+                    "turkish": "var olmak",
+                    "note": "Felsefi veya fiziksel varlık",
+                    "usage": "Do ghosts exist?",
+                    "description_tr": "Fiziksel veya kavramsal olarak evrende yer kaplamak.",
+                    "example_en": "Does life exist on Mars?",
+                    "example_tr": "Mars'ta yaşam var mı?",
+                    "strength": "Specific"
+                },
+                {
+                    "value": 7,
+                    "word": "become",
+                    "turkish": "olmak (haline gelmek)",
+                    "note": "Değişim süreci",
+                    "usage": "The weather became cold.",
+                    "description_tr": "Bir durumdan diğerine geçiş.",
+                    "example_en": "He became angry.",
+                    "example_tr": "Kızdı (Kızgın hale geldi).",
+                    "strength": "Process"
+                }
+            ]
+        },
+        "antonyms": []
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "let it be",
+                "meaning_tr": "bırak öyle kalsın, boşver, akışına bırak",
+                "register": "neutral",
+                "example": "There is nothing you can do, so let it be.",
+                "example_tr": "Yapabileceğin bir şey yok, o yüzden akışına bırak."
+            },
+            {
+                "phrase": "to be or not to be",
+                "meaning_tr": "olmak ya da olmamak (varoluşsal ikilem)",
+                "register": "literary",
+                "example": "To be or not to be, that is the question.",
+                "example_tr": "Olmak ya da olmamak, işte bütün mesele bu."
+            },
+            {
+                "phrase": "be off",
+                "meaning_tr": "ayrılmak, gitmek; bozuk olmak (yiyecek)",
+                "register": "informal",
+                "example": "I'm off now, see you later.",
+                "example_tr": "Ben kaçtım (gidiyorum), sonra görüşürüz."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Contractions (Kısaltmalar)",
+            "note_en": "In spoken English, 'be' is almost always contracted (I'm, You're, He's). Using full forms (I am) sounds emphatic or formal.",
+            "note_tr": "Konuşma dilinde neredeyse her zaman kısaltılır (I'm, He's). Kısaltmadan 'I AM' demek, vurgu veya resmiyet katar (Gerçekten öyleyim!)."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "İngilizcenin en sık kullanılan kelimesidir."
+        },
+        "inclusive_language": {
+            "title": "N/A",
+            "content": "Nötr."
+        },
+        "grammar_nuance": {
+            "title": "Being (Noun)",
+            "content": "'Being' isim olarak 'varlık' demektir (Human being - İnsan varlığı/İnsanoğlu)."
+        },
+        "business_english": {
+            "title": "Formal Future",
+            "content": "Resmi duyurularda 'is to / are to' yapısı gelecek zaman bildirir: 'The meeting is to be held on Monday' (Toplantının Pazartesi yapılması kararlaştırılmıştır).",
+            "keywords": [
+                "is to be",
+                "are to be"
+            ]
+        },
+        "trivia": {
+            "title": "Düzensizlik Kralı",
+            "content": "Eski İngilizcede 'be', 'wes', 'eom' gibi farklı köklerden gelen kelimeler zamanla birleşerek bugünkü 'be, am, is, are, was, were' karmaşasını oluşturmuştur. Bu yüzden bu kadar düzensizdir."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 100,
+            "yokdil": 100,
+            "ydt": 100,
+            "description": "Her cümlenin yapıtaşıdır."
+        },
+        "vocabulary": [
+            {
+                "title": "Be + Prep Phrases",
+                "content": "'Be about to' (üzere olmak), 'Be up to' (bir işler çevirmek / bağlı olmak), 'Be out of' (bitmek) gibi öbekler sınavda çok çıkar.",
+                "example": "He is <b>about to</b> leave.",
+                "example_tr": "Ayrılmak üzere."
+            }
+        ],
+        "grammar": [
+            {
+                "title": "Subject-Verb Agreement",
+                "content": "Özne ile fiil uyumu (Concord) sınavların temelidir. 'Everyone IS', 'The police ARE'. Bu istisnalara dikkat edin.",
+                "example": "The news <b>is</b> good.",
+                "example_tr": "Haberler iyi. (News tekil kabul edilir)"
+            }
+        ],
+        "reading": [
+            {
+                "title": "Passive Voice Tespiti",
+                "content": "Metinde 'be' türevlerinden sonra V3 (fiilin 3. hali) görüyorsanız, cümleyi 'yapıldı, edildi' diye çevirin.",
+                "example": "It <b>was written</b> by Ali.",
+                "example_tr": "Ali tarafından yazıldı."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "bheu (PIE - to grow/exist) & es (to be)",
+        "family_members": [
+            {
+                "pos": "verb",
+                "word": "be",
+                "level": "A1",
+                "suffix": "N/A",
+                "note": "olmak (kök)",
+                "example": "Be nice.",
+                "example_tr": "Kibar ol."
+            },
+            {
+                "pos": "verb",
+                "word": "being",
+                "level": "B1",
+                "suffix": "-ing",
+                "note": "olma durumu / varlık",
+                "example": "Stop <b>being</b> rude.",
+                "example_tr": "Kaba olmayı bırak."
+            },
+            {
+                "pos": "verb",
+                "word": "been",
+                "level": "A2",
+                "suffix": "V3",
+                "note": "olmuş / bulunmuş (Perfect Tense)",
+                "example": "I have <b>been</b> there.",
+                "example_tr": "Orada bulundum."
+            },
+            {
+                "pos": "noun",
+                "word": "well-being",
+                "level": "B2",
+                "suffix": "compound",
+                "note": "esenlik, refah, sağlık durumu",
+                "example": "Physical <b>well-being</b>.",
+                "example_tr": "Fiziksel sağlık/esenlik."
+            },
+            {
+                "pos": "noun",
+                "word": "being",
+                "level": "B2",
+                "suffix": "noun usage",
+                "note": "varlık, canlı",
+                "example": "Human <b>beings</b>.",
+                "example_tr": "İnsan canlısı (insanoğlu)."
+            },
+            {
+                "pos": "verb",
+                "word": "maybe",
+                "level": "A1",
+                "suffix": "compound",
+                "note": "belki (may + be)",
+                "example": "<b>Maybe</b> he will come.",
+                "example_tr": "Belki gelir."
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_missing_be",
+                "incorrect": "She happy. / I working.",
+                "correction": "She IS happy. / I AM working.",
+                "explanation": "Türkçedeki 'dır/dir' eki bazen düşebilir ama İngilizcede fiil (am/is/are) asla atılamaz."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Grammar Accuracy",
+            "tip": "Speaking sınavında 'There is/are' yapısını doğru kullanmak temel kriterdir. Çoğul isimlerde 'There is' derseniz puan kaybedersiniz.",
+            "keywords": [
+                "agreement",
+                "auxiliary"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "gap_fill",
+            "question": "If I ___ you, I would study harder.",
+            "answer": "were",
+            "distractors": [
+                "was",
+                "am",
+                "be"
+            ]
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Proto-Indo-European",
+                "word": "bheu",
+                "meaning": "to become, grow"
+            },
+            {
+                "era": "Old English",
+                "word": "beon",
+                "meaning": "be, become"
+            },
+            {
+                "era": "Modern English",
+                "word": "be",
+                "meaning": "exist"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "None Direct",
+            "story": "Türkçede de 'Ben' (Benim) kelimesi ile İngilizce 'Been' (Olmuş/Bulunmuş) sesi benzerdir ama anlam farklıdır. İngilizcedeki 'am, is, are, was, were' kelimelerinin hepsinin annesi **'BE'**dir. Onlar 'BE' ailesinin çocuklarıdır.",
+            "example": "Mother: BE -> Kids: Am, Is, Are, Was, Were"
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Benim adım Ali. Ben bir öğrenci<strong>yim</strong> (I am). O Ayşe. O benim arkadaşım. Biz okulda<strong>yız</strong> (We are). Bugün hava çok güzel. Herkes mutlu.",
+            "en": "My name <strong>is</strong> Ali. I <strong>am</strong> a student. She <strong>is</strong> Ayşe. She <strong>is</strong> my friend. We <strong>are</strong> at school. The weather <strong>is</strong> very nice today. Everyone <strong>is</strong> happy."
+        },
+        "A2": {
+            "tr": "Dün Pazar<strong>dı</strong> (was). Ben evde<strong>ydim</strong> (was). Ama arkadaşlarım parkta<strong>ydı</strong> (were). Onlar futbol oynuyorlardı. Hava soğuk değil<strong>di</strong> (was not). Ben biraz hasta<strong>ydım</strong> (was). Bu yüzden dışarıda <strong>değildim</strong>.",
+            "en": "Yesterday <strong>was</strong> Sunday. I <strong>was</strong> at home. But my friends <strong>were</strong> in the park. They <strong>were</strong> playing football. The weather <strong>was</strong> not cold. I <strong>was</strong> a little sick. That <strong>is</strong> why I <strong>was</strong> not outside."
+        },
+        "B1": {
+            "tr": "Hiç İtalya'da <strong>bulundun mu</strong> (Have you been)? Ben iki kez orada <strong>bulundum</strong> (have been). Yemekler harika<strong>ydı</strong>. Orada <strong>olmak</strong> (to be) rüya gibiydi. Gelecek yıl tekrar gitmek istiyorum. Belki sen de benimle orada <strong>olabilirsin</strong>.",
+            "en": "Have you ever <strong>been</strong> to Italy? I have <strong>been</strong> there twice. The food <strong>was</strong> great. <strong>To be</strong> there <strong>was</strong> like a dream. I want <strong>to be</strong> there again next year. <strong>Maybe</strong> you can <strong>be</strong> there with me too."
+        },
+        "B2": {
+            "tr": "Sağlıklı <strong>olmak</strong> (being healthy) sadece spor yapmak değildir. Zihinsel <strong>esenlik</strong> (well-being) de önemlidir. Eğer sürekli stres altında<strong>ysan</strong>, mutlu <strong>olamazsın</strong> (cannot be). Doktorlar doğada zaman geçirmenin iyi <strong>olduğunu</strong> söylüyor. İnsanlar doğanın bir parçasıdır, ondan ayrı <strong>değildir</strong>.",
+            "en": "<strong>Being</strong> healthy <strong>is</strong> not just doing sports. Mental <strong>well-being</strong> <strong>is</strong> also important. If you <strong>are</strong> constantly under stress, you cannot <strong>be</strong> happy. Doctors say that spending time in nature <strong>is</strong> good. Human <strong>beings</strong> <strong>are</strong> part of nature, they <strong>are</strong> not separate from it."
+        },
+        "C1": {
+            "tr": "Toplantının yarın yapılması <strong>planlanıyor</strong> (is to be held). Alınacak kararlar şirketin geleceği için hayati önem taşıyor. Eğer CEO orada <strong>olsaydı</strong> (Had the CEO been), kriz daha kolay çözülebilirdi. Ancak, mevcut yönetim tarafından (by the management which <strong>is</strong> present) yeni stratejiler geliştiriliyor. Başarılı <strong>olup olmayacağımız</strong> (Whether we will be) zamanla görülecek.",
+            "en": "The meeting <strong>is to be</strong> held tomorrow. The decisions <strong>to be</strong> taken <strong>are</strong> vital for the company's future. Had the CEO <strong>been</strong> there, the crisis could have <strong>been</strong> solved more easily. However, new strategies <strong>are being</strong> developed by the present management. Whether we will <strong>be</strong> successful remains <strong>to be</strong> seen."
+        },
+        "C2": {
+            "tr": "Varoluşsal felsefede, '<strong>olmak</strong>' (to be) sadece hayatta kalmak değil, bilinçli bir farkındalık halidir. Hamlet'in '<strong>Olmak</strong> ya da <strong>olmamak</strong>' (To be or not to be) tiradı, insan <strong>varlığının</strong> (human being) özüne dair ebedi bir sorgulamadır. Gerçeklik algımız, olduğumuz hal (state of <strong>being</strong>) ile şekillenir. Düşünüyorum, öyleyse <strong>varım</strong> (I think, therefore I am). Bu basit cümle, tüm modern felsefenin temeli <strong>olmuştur</strong> (has been).",
+            "en": "In existential philosophy, '<strong>to be</strong>' <strong>is</strong> not merely surviving, but a state of conscious awareness. Hamlet's soliloquy '<strong>To be</strong> or not <strong>to be</strong>' <strong>is</strong> an eternal questioning of the essence of the human <strong>being</strong>. Our perception of reality <strong>is</strong> shaped by our state of <strong>being</strong>. I think, therefore I <strong>am</strong>. This simple sentence has <strong>been</strong> the foundation of all modern philosophy."
+        }
+    }
+}

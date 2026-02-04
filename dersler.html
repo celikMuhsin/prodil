@@ -747,12 +747,12 @@
 
                     if (!query || query.length === 0) {
                         // Show first 10 items if query is empty
-                        results = window.vocabularyData.slice(0, 10);
+                        results = window.vocabularyData.slice(0, 20);
                     } else {
                         // Filter Logic (Starts With)
                         results = window.vocabularyData.filter(item =>
                             item.word.toLowerCase().startsWith(query)
-                        ).slice(0, 10); // Limit to 10 results
+                        ).slice(0, 20); // Limit to 20 results
                     }
 
                     if (results.length > 0) {

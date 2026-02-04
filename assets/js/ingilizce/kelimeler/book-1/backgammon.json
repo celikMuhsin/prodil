@@ -1,0 +1,349 @@
+{
+    "id": "backgammon",
+    "meta": {
+        "cefr_level": "B1",
+        "frequency_band": "Low Frequency",
+        "part_of_speech": [
+            "noun"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/ˈbækˌɡæm.ən/",
+        "syllabification": [
+            "back",
+            "gam",
+            "mon"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "a board game for two players played with dice and counters",
+            "core_meaning_tr": "tavla (iki kişilik, zar ve pullarla oynanan tahta oyunu)",
+            "context_tags": [
+                "games",
+                "hobbies"
+            ],
+            "grammar_pattern": "uncountable noun",
+            "example": {
+                "sentence": "Old men love playing backgammon in the teahouse.",
+                "translation": "Yaşlı adamlar çay ocağında tavla oynamayı severler."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "play backgammon",
+                "usage_level": "Core",
+                "notes_tr": "Spor ve oyunlarda 'play' fiili doğrudan oyunun adıyla kullanılır (Play football, Play chess). 'Play game of backgammon' demek yaygın değildir, direkt 'play backgammon' denir.",
+                "example": "Do you know how to play backgammon?",
+                "example_tr": "Tavla oynamayı biliyor musun?"
+            },
+            {
+                "pattern": "a game of backgammon",
+                "usage_level": "Advanced",
+                "notes_tr": "Tek bir maçtan veya seriden bahsederken 'a game of...' kalıbı kullanılır.",
+                "example": "Let's have a game of backgammon.",
+                "example_tr": "Hadi bir el (oyun) tavla atalım."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Genel bir hobi olduğu için Geniş Zaman (Simple Present) ile, oyun anı anlatılırken Şimdiki Zaman (Continuous) ile sık kullanılır.",
+            "critical_comparison": {
+                "context": "Backgammon vs Tavla",
+                "rule": "İngilizce 'Backgammon' ile Türk 'Tavlası' arasında kural farkları vardır. Batı'daki Backgammon'da 'Doubling Cube' (Katlama Küpü) vardır ve strateji daha karmaşıktır. Tavla ise daha gelenekseldir.",
+                "example_wrong": "Let's play Tavla.",
+                "example_wrong_tr": "Yabancılar 'Tavla' kelimesini bilmez, kültürel bir öge olarak açıklanmadıkça 'Backgammon' denmelidir.",
+                "example_right": "Let's play Backgammon.",
+                "example_right_tr": "Hadi tavla oynayalım."
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Basit oyun eyleminden stratejik ve kültürel analizlere geçiş.",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "I like backgammon.",
+                "tr": "Tavlayı severim.",
+                "grammar_focus": "Present Simple"
+            },
+            {
+                "cefr": "A2",
+                "en": "We played backgammon all night.",
+                "tr": "Tüm gece tavla oynadık.",
+                "grammar_focus": "Past Simple + Time Expression"
+            },
+            {
+                "cefr": "B1",
+                "en": "Backgammon is one of the oldest games in history.",
+                "tr": "Tavla, tarihteki en eski oyunlardan biridir.",
+                "grammar_focus": "Superlatives"
+            },
+            {
+                "cefr": "B2",
+                "en": "If you throw double sixes, you will probably win the game.",
+                "tr": "Eğer düşeş (çift altı) atarsan, muhtemelen oyunu kazanırsın.",
+                "grammar_focus": "Conditionals (Type 1)"
+            },
+            {
+                "cefr": "C1",
+                "en": "Despite being largely based on luck, backgammon requires significant strategic foresight.",
+                "tr": "Büyük ölçüde şansa dayalı olmasına rağmen, tavla önemli bir stratejik öngörü gerektirir.",
+                "grammar_focus": "Concession (Despite + Gerund)"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "ateşli, çekişmeli",
+                "word": "heated",
+                "strength": "medium",
+                "example": "A heated backgammon match.",
+                "example_tr": "Çekişmeli (ateşli) bir tavla maçı."
+            },
+            {
+                "turkish": "geleneksel",
+                "word": "traditional",
+                "strength": "medium",
+                "example": "Traditional backgammon rules.",
+                "example_tr": "Geleneksel tavla kuralları."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "zar atmak",
+                "word": "roll the dice",
+                "example": "It is your turn to roll the dice.",
+                "example_tr": "Zar atma sırası sende."
+            },
+            {
+                "turkish": "pul kırmak",
+                "word": "hit the checker",
+                "example": "He hit my checker and sent it to the bar.",
+                "example_tr": "Pulumu kırdı ve bara (kenara) gönderdi."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Tabletop Games",
+            "turkishConcept": "Masaüstü Oyunları",
+            "description": "Benzer masa oyunlarının karşılaştırması",
+            "scale": [
+                {
+                    "value": 2,
+                    "word": "checkers / draughts",
+                    "turkish": "dama",
+                    "note": "Basit strateji",
+                    "usage": "Simple board game",
+                    "description_tr": "Zarsız, sadece taş hareketine dayalı basit oyun.",
+                    "example_en": "Playing checkers.",
+                    "example_tr": "Dama oynamak.",
+                    "strength": "Simple"
+                },
+                {
+                    "value": 5,
+                    "word": "backgammon",
+                    "turkish": "tavla",
+                    "note": "Şans + Strateji",
+                    "usage": "Dice game",
+                    "description_tr": "Zar şansı ve hareket stratejisinin birleşimi.",
+                    "example_en": "Rolling dice in backgammon.",
+                    "example_tr": "Tavlada zar atmak.",
+                    "strength": "Medium"
+                },
+                {
+                    "value": 8,
+                    "word": "chess",
+                    "turkish": "satranç",
+                    "note": "Saf strateji, sıfır şans",
+                    "usage": "Mind sport",
+                    "description_tr": "Şans faktörü olmayan, tamamen zekaya dayalı oyun.",
+                    "example_en": "Grandmaster of chess.",
+                    "example_tr": "Satranç büyükustası.",
+                    "strength": "Complex"
+                }
+            ]
+        },
+        "antonyms": []
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "backgammon board",
+                "meaning_tr": "tavla tahtası",
+                "register": "neutral",
+                "example": "Open the backgammon board.",
+                "example_tr": "Tavla tahtasını aç."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Social Bonding",
+            "note_en": "In Turkey and the Middle East, backgammon is a primary social bonding activity, especially among men in cafes. The sound of dice hitting the wood is culturally iconic.",
+            "note_tr": "Orta Doğu ve Türkiye'de birincil sosyalleşme aracıdır. Zarın tahtaya vurma sesi kültürel bir koddur."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Günlük dilde yaygın kullanılır."
+        },
+        "inclusive_language": {
+            "title": "N/A",
+            "content": "Nötr."
+        },
+        "grammar_nuance": {
+            "title": "Uncountable",
+            "content": "Oyun isimleri sayılmaz (uncountable). 'A backgammon' değil, 'A game of backgammon' denir."
+        },
+        "business_english": {
+            "title": "N/A",
+            "content": "İş İngilizcesinde doğrudan bir terim karşılığı yoktur."
+        },
+        "trivia": {
+            "title": "Tarihi",
+            "content": "5000 yıldan daha eskidir. Antik İran ve Mezopotamya'da ortaya çıkmıştır. Dünyanın en eski oyunlarından biridir."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 10,
+            "yokdil": 5,
+            "ydt": 20,
+            "description": "Akademik sınavlarda nadir çıkar, ancak kültür veya tarih okuma parçalarında geçebilir."
+        },
+        "vocabulary": [
+            {
+                "title": "Game Terminology",
+                "content": "Parçada 'dice' (zar), 'board' (tahta), 'checker' (pul/taş) geçiyorsa konu muhtemelen masa oyunlarıdır.",
+                "example": "He rolled the dice.",
+                "example_tr": "Zarı attı."
+            }
+        ],
+        "grammar": [
+            {
+                "title": "Play + Game",
+                "content": "'Play' fiilinden sonra 'the' gelmez. 'Play the backgammon' YANLIŞTIR. 'Play backgammon' DOĞRUDUR (Müzik aletlerinde 'the' gelir: play the guitar).",
+                "example": "I play backgammon. (Correct)",
+                "example_tr": "Tavla oynarım."
+            }
+        ],
+        "reading": [
+            {
+                "title": "Kültürel Çıkarım",
+                "content": "Metinde 'Middle East', 'Teahouse', 'Old men' geçiyorsa ve bir oyun anlatılıyorsa, cevap 'Backgammon' olabilir.",
+                "example": "Men sipping tea and playing...",
+                "example_tr": "Çayını yudumlayıp ... oynayan adamlar."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "Back + Gammon (Middle English)",
+        "family_members": [
+            {
+                "pos": "noun",
+                "word": "backgammon",
+                "level": "B1",
+                "suffix": "compound",
+                "note": "tavla oyunu",
+                "example": "Backgammon requires luck.",
+                "example_tr": "Tavla şans gerektirir."
+            },
+            {
+                "pos": "noun",
+                "word": "gammon",
+                "level": "C2",
+                "suffix": "N/A",
+                "note": "Tavlada 'mars' etmek (oyunu 2 kat puanla kazanmak)",
+                "example": "It was a gammon.",
+                "example_tr": "Oyun mars oldu."
+            },
+            {
+                "pos": "noun",
+                "word": "backgame",
+                "level": "C2",
+                "suffix": "compound",
+                "note": "geriden gelme stratejisi (tavlada)",
+                "example": "He is playing a backgame strategy.",
+                "example_tr": "Geriden gelme stratejisi oynuyor."
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_play_the",
+                "incorrect": "I play the backgammon.",
+                "correction": "I play backgammon.",
+                "explanation": "Spor ve oyun isimlerinden önce 'the' kullanılmaz."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Hobbies and Interests",
+            "tip": "Speaking sınavında hobileriniz sorulursa 'backgammon' demek ilginç ve kültürel bir cevap olabilir, examiner ile diyalog başlatabilir.",
+            "keywords": [
+                "strategy",
+                "luck",
+                "socialize"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "multiple_choice",
+            "question": "Which game is played with dice and checkers on a board with triangles?",
+            "answer": "Backgammon",
+            "distractors": [
+                "Chess",
+                "Poker",
+                "Scrabble"
+            ]
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "1640s",
+                "word": "baggamon",
+                "meaning": "back game"
+            },
+            {
+                "era": "Modern English",
+                "word": "backgammon",
+                "meaning": "The board game"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Mnemonic (Kelime Analizi)",
+            "story": "Kelime iki parçadan oluşur: **BACK** (Geri) + **GAMMON** (Eski İngilizce 'Game'/Oyun). Yani 'Geri Oyunu' veya 'Geri Gelme Oyunu'. Tavlada kırılan taşlar en başa (geriye) gider veya geride kalan taşları toplamak önemlidir. Aklınıza 'Taşların **Geri (Back)** gittiği Oyun' olarak kodlayabilirsiniz.",
+            "example": "Back (Geri) + Gammon (Game) = Backgammon"
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Dedem <strong>tavla</strong>yı çok seviyor. Her pazar parkta oynuyor. Arkadaşı ile oynuyor. Onların bir <strong>tavla</strong> tahtası var. Zar atıyorlar. Dedem kazandığında çok mutlu oluyor.",
+            "en": "My grandfather loves <strong>backgammon</strong> very much. He plays in the park every Sunday. He plays with his friend. They have a <strong>backgammon</strong> board. They roll the dice. When my grandfather wins, he becomes very happy."
+        },
+        "A2": {
+            "tr": "Tatile gittiğimizde sahilde <strong>tavla</strong> oynadık. Babam bana oyunu öğretti. Kurallar kolaydı. Taşları (pulları) hareket ettirmek için zar atıyorsun. Babam beni yendi ama eğlenceliydi. Oynamayı (play <strong>backgammon</strong>) seviyorum.",
+            "en": "When we went on holiday, we played <strong>backgammon</strong> on the beach. My father taught me the game. The rules were easy. You roll the dice to move the checkers. My dad beat me, but it was fun. I like playing <strong>backgammon</strong>."
+        },
+        "B1": {
+            "tr": "Çay bahçesinde otururken, yan masadan yüksek bir ses duyduk. İki adam heyecanlı bir <strong>tavla</strong> oyunu (game of <strong>backgammon</strong>) oynuyordu. Biri zarları attı ve bağırdı. Diğeri ise sakindi. Türkiye'de bu oyun sadece bir oyun değil, bir kültürdür. İnsanlar sohbet etmek ve çay içmek için <strong>tavla</strong> oynarlar.",
+            "en": "While sitting in the tea garden, we heard a loud noise from the table next to us. Two men were playing an exciting game of <strong>backgammon</strong>. One rolled the dice and shouted. The other was calm. In Turkey, this game is not just a game, it is a culture. People play <strong>backgammon</strong> to chat and drink tea."
+        },
+        "B2": {
+            "tr": "Pek çok insan <strong>tavla</strong>nın sadece şans olduğunu düşünür, ama yanılıyorlar. Evet, zarlar şanstır, ama o şansı nasıl kullandığınız stratejidir. İyi bir <strong>tavla</strong> oyuncusu olasılıkları hesaplar. Eğer rakibiniz sizi 'mars' (<strong>gammon</strong>) etmek üzereyse, savunma yapmalısınız. Riske girmek ile güvenli oynamak arasındaki dengeyi bulmak gerekir.",
+            "en": "Many people think <strong>backgammon</strong> is just luck, but they are wrong. Yes, dice are luck, but how you use that luck is strategy. A good <strong>backgammon</strong> player calculates probabilities. If your opponent is about to <strong>gammon</strong> you, you must defend. It is necessary to find the balance between taking risks and playing safe."
+        },
+        "C1": {
+            "tr": "Usta oyuncular genellikle 'geriden gelme oyunu' (<strong>backgame</strong>) stratejisini kullanırlar. Bu, geride savunmasız taşlar (açıklar) bırakarak rakibi tuzağa düşürme taktiğidir. Bu riskli bir hamledir; eğer başarısız olursanız, rakibiniz sizi kolayca yenebilir. Ancak başarılı olursanız, kaybedilen bir <strong>tavla</strong> maçını muhteşem bir zaferle çevirebilirsiniz. Bu karmaşıklık, <strong>tavla</strong>yı satranç kadar derin olmasa da, basit bir zar oyunundan çok daha fazlası yapar.",
+            "en": "Master players often use the **backgame** strategy. This is a tactic of leaving vulnerable checkers (blots) behind to trap the opponent. It is a risky move; if you fail, your opponent can easily defeat you. However, if you succeed, you can turn a lost <strong>backgammon</strong> match into a magnificent victory. This complexity makes <strong>backgammon</strong> much more than a simple dice game, even if not as deep as chess."
+        },
+        "C2": {
+            "tr": "Hayat <strong>tavla</strong> gibidir, satranç gibi değil. Satrançta her şey açık ve belirgindir; şans faktörü yoktur. Ancak <strong>tavla</strong>da, en iyi hamleyi yapsanız bile, kader (zarlar) planlarınızı bozabilir. Önemli olan, gelen zarlara (şartlara) en iyi şekilde uyum sağlamaktır. Bazen geri adım atmanız, bazen savunmada kalmanız gerekir. İyi bir oyuncu, şanssızlığı yönetebilen kişidir. <strong>Tavla</strong> bize, kontrol edemediğimiz kaos içinde rasyonel kararlar alma sanatını öğretir.",
+            "en": "Life is like <strong>backgammon</strong>, not chess. In chess, everything is open and determined; there is no luck factor. However, in <strong>backgammon</strong>, even if you make the best move, fate (the dice) can ruin your plans. The important thing is to adapt to the dice (circumstances) in the best way. Sometimes you need to step back, sometimes stay in defense. A good player is one who can manage bad luck. <strong>Backgammon</strong> teaches us the art of making rational decisions within chaos we cannot control."
+        }
+    }
+}

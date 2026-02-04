@@ -1,0 +1,436 @@
+{
+    "id": "bake",
+    "meta": {
+        "cefr_level": "A1",
+        "frequency_band": "High Frequency",
+        "part_of_speech": [
+            "verb",
+            "noun"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/beɪk/",
+        "syllabification": [
+            "bake"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "to cook food in an oven without extra fat or liquid",
+            "core_meaning_tr": "fırında pişirmek (ekmek, kek, börek vb.)",
+            "context_tags": [
+                "cooking",
+                "food",
+                "general"
+            ],
+            "grammar_pattern": "bake + object",
+            "example": {
+                "sentence": "I bake fresh bread every morning.",
+                "translation": "Her sabah taze ekmek pişiririm."
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "to become hard or dry by heat",
+            "core_meaning_tr": "(ısı veya güneş ile) sertleşmek, kurumak, kavrulmak",
+            "context_tags": [
+                "nature",
+                "science"
+            ],
+            "grammar_pattern": "intransitive",
+            "example": {
+                "sentence": "The ground baked in the hot sun.",
+                "translation": "Toprak sıcak güneşin altında kavruldu (sertleşti)."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "bake (someone) (something) / bake (something) for (someone)",
+                "usage_level": "Core",
+                "notes_tr": "İki nesne alabilen (Double Object) fiillerdendir. Kime yapıldığı belirtilirken ya nesne hemen fiilden sonra gelir ya da 'for' edatı kullanılır. 'To' kullanılmaz.",
+                "example": "She baked him a cake. / She baked a cake for him.",
+                "example_tr": "Ona bir kek pişirdi."
+            },
+            {
+                "pattern": "GET + baked (Passive Voice)",
+                "usage_level": "Advanced",
+                "notes_tr": "Ettirgen veya pasif anlamda, 'pişirilmek' veya argo anlamda (sarhoş olmak vb.) kullanılır.",
+                "example": "The clay gets baked at high temperatures.",
+                "example_tr": "Kil yüksek sıcaklıklarda fırınlanır (sertleştirilir)."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "'Bake' bir süreç (process) bildirdiği için Continuous (Süreklilik) zamanlarda sıkça kullanılır: 'is baking', 'was baking'.",
+            "critical_comparison": {
+                "context": "Cook vs Bake vs Roast",
+                "rule": "'Cook' genel bir terimdir. 'Bake' hamur işleri (unlu mamuller) için kuru sıcaklıkta kullanılır. 'Roast' ise et veya sebzeler için yine fırında/ateşte kullanılır ama genellikle yağ eklenir.",
+                "example_wrong": "I am roasting a chocolate cake.",
+                "example_wrong_tr": "Çikolatalı kek kızartıyorum. (Yanlış: Kek fırınlanır).",
+                "example_right": "I am baking a chocolate cake.",
+                "example_right_tr": "Çikolatalı kek pişiriyorum."
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Seviyelere göre fiilin kullanımı ve bağlam değişimi.",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "Can you bake cookies?",
+                "tr": "Kurabiye pişirebilir misin?",
+                "grammar_focus": "Modals (Can)"
+            },
+            {
+                "cefr": "A2",
+                "en": "My grandmother baked a delicious apple pie yesterday.",
+                "tr": "Büyükannem dün lezzetli bir elmalı turta pişirdi.",
+                "grammar_focus": "Past Simple"
+            },
+            {
+                "cefr": "B1",
+                "en": "If we had an oven, we could bake our own pizza.",
+                "tr": "Eğer fırınımız olsaydı, kendi pizzamızı pişirebilirdik.",
+                "grammar_focus": "Conditionals (Type 2)"
+            },
+            {
+                "cefr": "B2",
+                "en": "The potatoes are being baked in the oven right now.",
+                "tr": "Patatesler şu anda fırında pişiriliyor.",
+                "grammar_focus": "Passive Voice (Continuous)"
+            },
+            {
+                "cefr": "C1",
+                "en": "Not having baked for years, she struggled with the complex recipe.",
+                "tr": "Yıllardır fırında pişirme yapmadığı için karmaşık tarifte zorlandı.",
+                "grammar_focus": "Participle Clauses"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "taze, yeni",
+                "word": "freshly",
+                "strength": "strong",
+                "example": "The smell of freshly baked bread is amazing.",
+                "example_tr": "Taze pişmiş ekmeğin kokusu harika."
+            },
+            {
+                "turkish": "tamamen, iyice",
+                "word": "thoroughly",
+                "strength": "medium",
+                "example": "Bake the mixture thoroughly.",
+                "example_tr": "Karışımı iyice pişirin."
+            },
+            {
+                "turkish": "hafifçe",
+                "word": "lightly",
+                "strength": "medium",
+                "example": "Sprinkle sugar over the lightly baked crust.",
+                "example_tr": "Hafifçe pişmiş kabuğun üzerine şeker serpin."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "öğrenmek",
+                "word": "learn to",
+                "example": "Kids should learn to bake.",
+                "example_tr": "Çocuklar fırında pişirmeyi öğrenmeli."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Cooking Methods (Heat Treatment)",
+            "turkishConcept": "Isıl İşlemle Pişirme Yöntemleri",
+            "description": "Farklı pişirme yöntemlerinin karşılaştırması",
+            "scale": [
+                {
+                    "value": 1,
+                    "word": "cook",
+                    "turkish": "pişirmek",
+                    "note": "En genel terim",
+                    "usage": "General cooking",
+                    "description_tr": "Her türlü yemek yapma eylemini kapsar.",
+                    "example_en": "I cook dinner every day.",
+                    "example_tr": "Her gün akşam yemeği pişiririm.",
+                    "strength": "Low (General)"
+                },
+                {
+                    "value": 5,
+                    "word": "bake",
+                    "turkish": "fırınlamak (hamur)",
+                    "note": "Kuru ısı, fırın",
+                    "usage": "Cakes, breads, pastries",
+                    "description_tr": "Genellikle hamur işleri için fırın kullanılarak yapılan pişirme.",
+                    "example_en": "Bake the cake for 30 mins.",
+                    "example_tr": "Keki 30 dakika pişirin.",
+                    "strength": "Medium (Specific)"
+                },
+                {
+                    "value": 6,
+                    "word": "roast",
+                    "turkish": "fırınlamak/kızartmak (et/sebze)",
+                    "note": "Kuru ısı, yüksek sıcaklık, genellikle yağlı",
+                    "usage": "Meat, vegetables",
+                    "description_tr": "Et veya sebzelerin fırında pişirilmesi, yüzeyin kızarması amaçlanır.",
+                    "example_en": "Roast the chicken.",
+                    "example_tr": "Tavuğu fırınla (kızart).",
+                    "strength": "Medium (Specific)"
+                },
+                {
+                    "value": 8,
+                    "word": "broil / grill",
+                    "turkish": "ızgara yapmak",
+                    "note": "Doğrudan ateş/ısı kaynağı",
+                    "usage": "Steaks, fish",
+                    "description_tr": "Doğrudan ısı kaynağına yakın tutarak hızlı pişirme.",
+                    "example_en": "Grill the steaks.",
+                    "example_tr": "Biftekleri ızgara yap.",
+                    "strength": "High (Direct Heat)"
+                }
+            ]
+        },
+        "antonyms": [
+            {
+                "value": 0,
+                "word": "freeze",
+                "turkish": "dondurmak",
+                "note": "Isı işleminin tam zıttı",
+                "description_tr": "Pişirmek yerine soğutarak dondurmak.",
+                "example_en": "Freeze the dough instead of baking it.",
+                "example_tr": "Hamuru pişirmek yerine dondur."
+            }
+        ]
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "half-baked",
+                "meaning_tr": "iyi düşünülmemiş, ham, saçma (fikir/plan)",
+                "register": "informal",
+                "example": "That's a half-baked scheme that will never work.",
+                "example_tr": "Bu asla işe yaramayacak, yarım yamalak bir plan."
+            },
+            {
+                "phrase": "baker's dozen",
+                "meaning_tr": "on üç (fazladan bir tane verme geleneği)",
+                "register": "idiomatic",
+                "example": "He gave us a baker's dozen of donuts.",
+                "example_tr": "Bize on üç tane (bir düzine + 1) donat verdi."
+            },
+            {
+                "phrase": "bake sale",
+                "meaning_tr": "kermes (genellikle hayır amaçlı yiyecek satışı)",
+                "register": "neutral",
+                "example": "The school acts hold a bake sale every year.",
+                "example_tr": "Okul her yıl kermes düzenler."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Cultural Tradition",
+            "note_en": "Baking is culturally associated with home warmth and hospitality in Western culture ('comfort food').",
+            "note_tr": "Batı kültüründe fırıncılık/pişirme, ev sıcaklığı ve misafirperverlik ile güçlü bir bağa sahiptir."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Hem günlük hayatta hem de profesyonel mutfak dilinde (Culinary Arts) kullanılır."
+        },
+        "inclusive_language": {
+            "title": "N/A",
+            "content": "Cinsiyet belirtmeyen, nötr bir kelimedir."
+        },
+        "grammar_nuance": {
+            "title": "Geçişli/Geçişsiz Kullanım",
+            "content": "'The cake is baking' (Kek pişiyor - Geçişsiz) ve 'I am baking a cake' (Kek pişiriyorum - Geçişli) şeklinde her iki kullanım da yaygındır."
+        },
+        "business_english": {
+            "title": "Bakery Business",
+            "content": "Gıda sektöründe üretim süreçleri anlatılırken kullanılır.",
+            "keywords": [
+                "batch baking",
+                "commercial bakery",
+                "par-baked bread"
+            ]
+        },
+        "trivia": {
+            "title": "Baker's Dozen Tarihi",
+            "content": "Ortaçağ İngilteresi'nde ekmeğin gramajını eksik satan fırıncılara çok ağır cezalar verilirdi. Fırıncılar da hata payından korktukları için 12 ekmek isteyene cezadan kaçmak için 13 tane verirlerdi."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 40,
+            "yokdil": 30,
+            "ydt": 50,
+            "description": "Özellikle günlük yaşam diyaloglarında ve süreç anlatan paragraflarda çıkabilir."
+        },
+        "vocabulary": [
+            {
+                "title": "Karıştırılan Kelimeler",
+                "content": "'Cook' vs 'Bake'. Her 'Bake' bir 'Cook' işlemidir ama her 'Cook' bir 'Bake' değildir. Boşluk doldurmada 'bread, cake, cookies' nesneleri varsa cevap kesinlikle 'bake'tir.",
+                "example": "She loves to ___ cupcakes.",
+                "example_tr": "Cupcake (kek) pişirmeyi sever. (Cevap: Bake)"
+            }
+        ],
+        "grammar": [
+            {
+                "title": "Edat Kullanımı (For)",
+                "content": "'Bake' fiili birisi için yapıldığında 'to' değil 'for' alır. Bu 'Benefactive' (yararlanma) durumudur.",
+                "example": "I baked a cake <b>for</b> my mom. (NOT: to my mom)",
+                "example_tr": "Annem <b>için</b> kek yaptım."
+            }
+        ],
+        "reading": [
+            {
+                "title": "Bağlam İpuçları",
+                "content": "Metinde 'oven' (fırın), 'dough' (hamur), 'flour' (un) kelimeleri geçiyorsa, fiil sorusunda 'bake' güçlü bir çeldirici veya doğru cevaptır.",
+                "example": "He put the tray into the <b>oven</b> to ___.",
+                "example_tr": "Tepsiyi ___ için fırına koydu. (Cevap: bake)"
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "bacan (Old English) - 'to cook by dry heat'",
+        "family_members": [
+            {
+                "pos": "verb",
+                "word": "bake",
+                "level": "A1",
+                "suffix": "N/A",
+                "note": "fırında pişirmek",
+                "example": "I bake bread.",
+                "example_tr": "Ekmek pişiririm."
+            },
+            {
+                "pos": "noun",
+                "word": "baker",
+                "level": "A1",
+                "suffix": "-er",
+                "note": "fırıncı (kişi)",
+                "example": "The <b>baker</b> is making fresh rolls.",
+                "example_tr": "Fırıncı taze rulo ekmekler yapıyor."
+            },
+            {
+                "pos": "noun",
+                "word": "bakery",
+                "level": "A2",
+                "suffix": "-ery",
+                "note": "fırın (yer/dükkan)",
+                "example": "We bought this at the <b>bakery</b>.",
+                "example_tr": "Bunu fırından aldık."
+            },
+            {
+                "pos": "noun",
+                "word": "baking",
+                "level": "B1",
+                "suffix": "-ing",
+                "note": "pişirme işlemi / hamur işi",
+                "example": "I love home <b>baking</b>.",
+                "example_tr": "Ev yapımı hamur işlerini severim."
+            },
+            {
+                "pos": "adjective",
+                "word": "unbaked",
+                "level": "C1",
+                "prefix": "un-",
+                "note": "pişmemiş, çiğ",
+                "example": "Do not eat <b>unbaked</b> dough.",
+                "example_tr": "Pişmemiş hamuru yeme."
+            },
+            {
+                "pos": "adjective",
+                "word": "half-baked",
+                "level": "C2",
+                "suffix": "idiom",
+                "note": "yarım, eksik, iyi planlanmamış",
+                "example": "A <b>half-baked</b> plan.",
+                "example_tr": "Yarım yamalak bir plan."
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_cook_usage",
+                "incorrect": "I cooked a cake.",
+                "correction": "I baked a cake.",
+                "explanation": "Türkçedeki 'yemek pişirmek' mantığıyla her şeye 'cook' denilebilir, ancak İngilizcede kek/ekmek gibi hamur işleri için mutlaka 'bake' kullanılır."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Describe a Process",
+            "tip": "Writing Task 1'de bir üretim süreci anlatılırken 'The bread is then baked at 200 degrees...' gibi Passive yapılar kullanmak puan kazandırır.",
+            "keywords": [
+                "oven",
+                "heat",
+                "temperature"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "gap_fill",
+            "question": "For the charity event, the students organized a ___ sale.",
+            "answer": "bake",
+            "distractors": [
+                "cook",
+                "roast",
+                "chef"
+            ]
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Proto-Germanic",
+                "word": "bakab",
+                "meaning": "to bake"
+            },
+            {
+                "era": "Old English",
+                "word": "bacan",
+                "meaning": "to cook by dry heat"
+            },
+            {
+                "era": "Modern English",
+                "word": "bake",
+                "meaning": "Current usage"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Mnemonic (Çağrışım)",
+            "story": "Türkçedeki **'Baklava'** kelimesini düşünün. Baklava nerede yapılır? Fırında. **BAK**lava -> **BAK**e. İkisi de 'BAK' sesiyle başlar ve ikisi de fırında pişer.",
+            "example": "Can you **BAK**e a **BAK**lava?"
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Annem bir <strong>fırıncı</strong>. Harika ekmekler <strong>pişirir</strong>. Her sabah <strong>fırın</strong>a gider. Ben kek severim. O benim için kek <strong>pişirir</strong>. Biz mutluyuz.",
+            "en": "My mom is a <strong>baker</strong>. She <strong>bakes</strong> great bread. She goes to the <strong>bakery</strong> every morning. I like cake. She <strong>bakes</strong> cake for me. We are happy."
+        },
+        "A2": {
+            "tr": "Dün bir doğum günü partimiz vardı. Babam büyük bir pasta <strong>pişirmeye</strong> karar verdi. Markete gittik ama un almayı unuttuk! Evde <strong>pişirme</strong> yapamadık. Bu yüzden <strong>fırın</strong>dan hazır bir pasta aldık. <strong>Fırıncı</strong> bize taze kurabiyeler de verdi.",
+            "en": "Yesterday we had a birthday party. My dad decided to <strong>bake</strong> a big cake. We went to the market but forgot to buy flour! We could not do any <strong>baking</strong> at home. So, we bought a ready cake from the <strong>bakery</strong>. The <strong>baker</strong> gave us fresh cookies too."
+        },
+        "B1": {
+            "tr": "Kendi ekmeğini <strong>pişirmeyi</strong> hiç denedin mi? Başlangıçta zor görünebilir. Doğru malzemelere ve iyi bir fırına ihtiyacın vardır. Geçen hafta ilk ekmeğimi <strong>pişirdim</strong>. Biraz sertti ama lezzetliydi. <strong>Pişmemiş</strong> hamurla çalışmak eğlenceliydi. Şimdi daha sık <strong>pişirme</strong> yapacağım.",
+            "en": "Have you ever tried <strong>baking</strong> your own bread? It might seem hard at first. You need the right ingredients and a good oven. Last week, I <strong>baked</strong> my first bread. It was a bit hard but delicious. Working with <strong>unbaked</strong> dough was fun. Now I will do more <strong>baking</strong> often."
+        },
+        "B2": {
+            "tr": "Yerel <strong>fırın</strong>ımız bir yarışma düzenliyor. En iyi amatör <strong>fırıncı</strong> bir ödül kazanacak. Katılmak istiyorum ama tarifimden emin değilim. Arkadaşlarım kekimin biraz 'kuru' olduğunu söylüyor. Belki de çok uzun süre <strong>pişiriyorum</strong>. Yarışma gününe kadar pratik yapmalıyım. Umarım <strong>yarım yamalak</strong> (half-baked) bir pasta ile oraya gitmem.",
+            "en": "Our local <strong>bakery</strong> is holding a competition. The best amateur <strong>baker</strong> will win a prize. I want to join, but I am not sure about my recipe. My friends say my cake is a bit dry. Maybe I am <strong>baking</strong> it for too long. I must practice until the competition day. I hope I won't go there with a <strong>half-baked</strong> cake."
+        },
+        "C1": {
+            "tr": "Endüstriyel <strong>pişirme</strong> (fırıncılık), ev yapımı yöntemlerden çok farklıdır. Büyük <strong>fırınlar</strong>da, binlerce somun ekmek aynı anda üretilir. Süreç tamamen otomatiktir; <strong>pişmemiş</strong> hamur bir taraftan girer ve diğer taraftan mükemmel şekilde kızarmış olarak çıkar. Ancak, çoğu insan hala yerel, el yapımı (artisan) <strong>fırıncı</strong>ların ürünlerini tercih ediyor. Çünkü seri üretim, o özel ev yapımı tadı asla yakalayamaz.",
+            "en": "Industrial <strong>baking</strong> is very different from homemade methods. In large <strong>bakeries</strong>, thousands of loaves are produced simultaneously. The process is fully automated; <strong>unbaked</strong> dough enters from one side and comes out perfectly browned from the other. However, most people still prefer products from local artisan <strong>bakers</strong>. Because mass production can never capture that special homemade taste."
+        },
+        "C2": {
+            "tr": "Mecazi anlamda, yeni bir projeyi 'fırınlamak' (olgunlaştırmak) zaman alır. Eğer bir fikri, tüm detaylarıyla düşünmeden piyasaya sürerseniz, bu <strong>yarım yamalak</strong> (half-baked) bir girişim olur ve muhtemelen başarısızlıkla sonuçlanır. Tıpkı usta bir <strong>fırıncı</strong>nın mayalanma süreci için sabırla beklemesi gibi, bir girişimci de stratejisinin olgunlaşmasını beklemelidir. Aceleye getirilen bir süreç, potansiyel başarıyı <strong>pişmemiş</strong> ve hazımsız bırakır.",
+            "en": "Metaphorically, '<strong>baking</strong>' a new project takes time. If you launch an idea without thinking through all the details, it becomes a <strong>half-baked</strong> venture and will likely fail. Just as a master <strong>baker</strong> waits patiently for the fermentation process, an entrepreneur must wait for their strategy to mature. A rushed process leaves potential success <strong>unbaked</strong> and indigestible."
+        }
+    }
+}

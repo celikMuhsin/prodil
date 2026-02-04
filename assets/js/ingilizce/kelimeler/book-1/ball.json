@@ -1,0 +1,443 @@
+{
+    "id": "ball",
+    "meta": {
+        "cefr_level": "A1",
+        "frequency_band": "High Frequency",
+        "part_of_speech": [
+            "noun",
+            "verb"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/bɔːl/",
+        "syllabification": [
+            "ball"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "a round object used in games and sports",
+            "core_meaning_tr": "top (oyun veya spor için yuvarlak nesne)",
+            "context_tags": [
+                "sports",
+                "games"
+            ],
+            "grammar_pattern": "countable noun",
+            "example": {
+                "sentence": "The children are playing with a ball in the park.",
+                "translation": "Çocuklar parkta topla oynuyorlar."
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "a large formal party with dancing",
+            "core_meaning_tr": "balo (resmi danslı parti)",
+            "context_tags": [
+                "social",
+                "formal"
+            ],
+            "grammar_pattern": "countable noun",
+            "example": {
+                "sentence": "Cinderella lost her shoe at the ball.",
+                "translation": "Külkedisi ayakkabısını baloda kaybetti."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "Noun + Noun (Compound Nouns)",
+                "usage_level": "Core",
+                "notes_tr": "'Ball' kelimesi diğer isimlerle birleşerek yeni spor adları veya nesneler oluşturur.",
+                "example": "Football, Basketball, Snowball, Eyeball",
+                "example_tr": "Futbol, Basketbol, Kar topu, Göz küresi"
+            },
+            {
+                "pattern": "curl up into a ball",
+                "usage_level": "Advanced",
+                "notes_tr": "Vücut pozisyonunu anlatmak için kullanılan betimleyici bir yapıdır (top gibi kıvrılmak).",
+                "example": "The hedgehog curled up into a ball.",
+                "example_tr": "Kirpi top gibi kıvrıldı (yumak oldu)."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Genellikle fiziksel eylemlerle (atmak, tutmak, vurmak) birlikte kullanıldığı için bu fiillerin zaman çekimlerine dikkat edilmelidir.",
+            "critical_comparison": {
+                "context": "Ball (Balo) vs Party",
+                "rule": "Her 'Ball' bir partidir ama her 'Party' bir 'Ball' değildir. 'Ball' çok resmi, özel kıyafetli ve danslıdır.",
+                "example_wrong": "We had a ball at the pub.",
+                "example_wrong_tr": "Barda bir balomuz vardı. (Yanlış - Barda parti olur, balo olmaz)",
+                "example_right": "We had a party at the pub.",
+                "example_right_tr": "Barda bir parti verdik."
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Basit fiziksel nesneden mecazi ve deyimsel kullanımlara geçiş.",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "Kick the ball.",
+                "tr": "Topa vur.",
+                "grammar_focus": "Imperatives (Emir Kipi)"
+            },
+            {
+                "cefr": "A2",
+                "en": "He threw the ball to his dog.",
+                "tr": "Topu köpeğine attı.",
+                "grammar_focus": "Past Simple + Prepositions"
+            },
+            {
+                "cefr": "B1",
+                "en": "I have never been to a masquerade ball before.",
+                "tr": "Daha önce hiç maskeli baloya gitmedim.",
+                "grammar_focus": "Present Perfect Tense"
+            },
+            {
+                "cefr": "B2",
+                "en": "If you don't keep your eye on the ball, you will lose the game.",
+                "tr": "Gözünü toptan (hedeften) ayırırsan, oyunu kaybedersin.",
+                "grammar_focus": "Idiomatic Conditionals"
+            },
+            {
+                "cefr": "C1",
+                "en": "Having dropped the ball on the project, the manager had to apologize.",
+                "tr": "Projeyi yüzüne gözüne bulaştırdığı (hata yaptığı) için müdür özür dilemek zorunda kaldı.",
+                "grammar_focus": "Perfect Participle + Idiom"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "zıplayan",
+                "word": "bouncy",
+                "strength": "strong",
+                "example": "A bouncy ball.",
+                "example_tr": "Zıp zıp (zıplayan) top."
+            },
+            {
+                "turkish": "şişme",
+                "word": "inflatable",
+                "strength": "medium",
+                "example": "An inflatable beach ball.",
+                "example_tr": "Şişme plaj topu."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "sektirmek",
+                "word": "bounce",
+                "example": "He bounced the ball against the wall.",
+                "example_tr": "Topu duvarda sektirdi."
+            },
+            {
+                "turkish": "yakalamak",
+                "word": "catch",
+                "example": "Try to catch the ball!",
+                "example_tr": "Topu yakalamaya çalış!"
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Round Objects",
+            "turkishConcept": "Yuvarlak Nesneler",
+            "description": "Küresel formların boyut ve kullanım farkları",
+            "scale": [
+                {
+                    "value": 1,
+                    "word": "bead",
+                    "turkish": "boncuk",
+                    "note": "Çok küçük, delikli",
+                    "usage": "Necklace",
+                    "description_tr": "Genellikle takı yapımında kullanılan çok küçük küre.",
+                    "example_en": "Glass beads.",
+                    "example_tr": "Cam boncuklar.",
+                    "strength": "Tiny"
+                },
+                {
+                    "value": 3,
+                    "word": "marble",
+                    "turkish": "bilye",
+                    "note": "Küçük, cam/taş",
+                    "usage": "Games",
+                    "description_tr": "Çocukların oynadığı küçük cam küre.",
+                    "example_en": "Playing marbles.",
+                    "example_tr": "Bilye oynamak.",
+                    "strength": "Small"
+                },
+                {
+                    "value": 5,
+                    "word": "ball",
+                    "turkish": "top",
+                    "note": "Standart oyun aracı",
+                    "usage": "Sports",
+                    "description_tr": "Spor ve oyunlarda kullanılan genel yuvarlak nesne.",
+                    "example_en": "Tennis ball.",
+                    "example_tr": "Tenis topu.",
+                    "strength": "Standard"
+                },
+                {
+                    "value": 8,
+                    "word": "sphere",
+                    "turkish": "küre",
+                    "note": "Geometrik/Bilimsel terim",
+                    "usage": "Math, Science",
+                    "description_tr": "Mükemmel yuvarlak 3 boyutlu şekil (Matematiksel).",
+                    "example_en": "The earth is a sphere.",
+                    "example_tr": "Dünya bir küredir.",
+                    "strength": "Scientific"
+                },
+                {
+                    "value": 10,
+                    "word": "globe",
+                    "turkish": "yer küre / dünya modeli",
+                    "note": "Dünya haritası modeli",
+                    "usage": "Geography",
+                    "description_tr": "Dünya haritasını gösteren küre maketi.",
+                    "example_en": "Spin the globe.",
+                    "example_tr": "Küreyi döndür.",
+                    "strength": "Specific"
+                }
+            ]
+        },
+        "antonyms": [
+            {
+                "value": 0,
+                "word": "cube",
+                "turkish": "küp",
+                "note": "Şekil zıtlığı",
+                "description_tr": "Köşeli, yuvarlak olmayan 3 boyutlu şekil.",
+                "example_en": "Current design is a cube, not a ball.",
+                "example_tr": "Mevcut tasarım bir küp, top değil."
+            }
+        ]
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "have a ball",
+                "meaning_tr": "çok eğlenmek, gününü gün etmek",
+                "register": "informal",
+                "example": "We had a ball at the concert last night.",
+                "example_tr": "Dün gece konserde çok eğlendik."
+            },
+            {
+                "phrase": "the ball is in your court",
+                "meaning_tr": "sıra sende, top sende (karar verme sırası)",
+                "register": "idiomatic",
+                "example": "I made my offer. Now the ball is in your court.",
+                "example_tr": "Teklifimi yaptım. Artık top sende."
+            },
+            {
+                "phrase": "drop the ball",
+                "meaning_tr": "hata yapmak, çuvallamak, işi batırmak",
+                "register": "business/informal",
+                "example": "He really dropped the ball on this deal.",
+                "example_tr": "Bu anlaşmada gerçekten çuvalladı."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Sports Metaphors",
+            "note_en": "English is heavily influenced by sports metaphors (especially baseball and football). Many business idioms come from 'ball' games.",
+            "note_tr": "İngilizce, özellikle iş hayatında spor metaforlarını çok kullanır. 'Ball game', 'Strike', 'Home run' gibi terimler günlük dile yerleşmiştir."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Hem en basit çocuk oyunlarında (top oynama) hem de en resmi davetlerde (balo) kullanılır."
+        },
+        "inclusive_language": {
+            "title": "N/A",
+            "content": "Cinsiyet belirtmez."
+        },
+        "grammar_nuance": {
+            "title": "Fiil Olarak Kullanımı",
+            "content": "'To ball up' (top haline getirmek, kağıdı buruşturmak) şeklinde fiilleşebilir."
+        },
+        "business_english": {
+            "title": "Business Idioms",
+            "content": "İş dünyasında sorumluluk ve inisiyatif anlatmak için kullanılır.",
+            "keywords": [
+                "keep your eye on the ball",
+                "ballpark figure (tahmini rakam)"
+            ]
+        },
+        "trivia": {
+            "title": "Ball (Balo) Kelimesinin Kökeni",
+            "content": "İlginçtir ki 'top' olan 'ball' (Germanic) ile 'danslı parti' olan 'ball' (French/Latin 'ballare' - dans etmek) tamamen farklı köklerden gelir. Sadece yazılışları benzerdir (Homonym)."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 25,
+            "yokdil": 20,
+            "ydt": 35,
+            "description": "Kelime olarak çok basittir ancak deyimleri (idioms) YDS/YÖKDİL'de ayırt edici soru olarak gelir."
+        },
+        "vocabulary": [
+            {
+                "title": "Deyim Tespiti",
+                "content": "Paragrafta 'drop the ball' geçiyorsa, fiziksel bir top düşürmeyi değil, bir hatayı veya başarısızlığı anlattığını anlamalısınız.",
+                "example": "Since the CEO dropped the ball...",
+                "example_tr": "CEO hata yaptığından beri..."
+            }
+        ],
+        "grammar": [
+            {
+                "title": "Compound Nouns (Birleşik İsimler)",
+                "content": "İngilizcede spor dalları genellikle 'ball' ile biter. Kelime türetme sorularında bu yapı ipucudur.",
+                "example": "Foot + ball, Basket + ball, Base + ball",
+                "example_tr": "Futbol, Basketbol, Beyzbol"
+            }
+        ],
+        "reading": [
+            {
+                "title": "Eş Seslilik (Homonymy)",
+                "content": "Okuduğunuz metinde 'She wore a beautiful dress to the ball' cümlesini görürseniz, buradaki 'ball' top değil balodur. Bağlam (kıyafet, müzik, dans) bunu belirler.",
+                "example": "Cinderella went to the ball.",
+                "example_tr": "Külkedisi baloya gitti."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "bal (Old Norse/Germanic) & ballare (Latin - for dance meaning)",
+        "family_members": [
+            {
+                "pos": "noun",
+                "word": "ball",
+                "level": "A1",
+                "suffix": "N/A",
+                "note": "top",
+                "example": "Give me the ball.",
+                "example_tr": "Topu bana ver."
+            },
+            {
+                "pos": "noun",
+                "word": "balloon",
+                "level": "A1",
+                "suffix": "-oon",
+                "note": "balon",
+                "example": "Red balloons.",
+                "example_tr": "Kırmızı balonlar."
+            },
+            {
+                "pos": "noun",
+                "word": "ballroom",
+                "level": "B2",
+                "suffix": "-room",
+                "note": "balo salonu",
+                "example": "They danced in the ballroom.",
+                "example_tr": "Balo salonunda dans ettiler."
+            },
+            {
+                "pos": "noun",
+                "word": "snowball",
+                "level": "A2",
+                "suffix": "compound",
+                "note": "kar topu",
+                "example": "Snowball fight.",
+                "example_tr": "Kar topu savaşı."
+            },
+            {
+                "pos": "noun",
+                "word": "eyeball",
+                "level": "B2",
+                "suffix": "compound",
+                "note": "göz küresi",
+                "example": "He rolled his eyeballs.",
+                "example_tr": "Gözlerini devirdi."
+            },
+            {
+                "pos": "noun",
+                "word": "baller",
+                "level": "C1",
+                "suffix": "-er",
+                "note": "basketbolcu (argo: zengin/havalı)",
+                "example": "He is a baller.",
+                "example_tr": "O sıkı bir topçu (veya zengin)."
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_wrong_verb",
+                "incorrect": "He played ball in the garden. (Eğer top oynadı anlamındaysa 'played with a ball' veya 'played football' daha doğrudur)",
+                "correction": "He played with a ball.",
+                "explanation": "'Play ball' deyimsel olarak 'işbirliği yapmak' anlamına da gelebilir. Fiziksel oyun için 'play with a ball' veya oyunun adı kullanılır."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Lexical Resource",
+            "tip": "'Ballpark figure' (tahmini rakam) deyimini Speaking Part 3'te (iş/ekonomi soruları) kullanarak kelime bilginizi gösterebilirsiniz.",
+            "keywords": [
+                "estimate",
+                "approximately"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "gap_fill",
+            "question": "The offer wasn't perfect, but at least it's in the right ___park.",
+            "answer": "ball",
+            "distractors": [
+                "car",
+                "theme",
+                "city"
+            ]
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Old Norse",
+                "word": "bollr",
+                "meaning": "round object"
+            },
+            {
+                "era": "Middle English",
+                "word": "bal",
+                "meaning": "sphere"
+            },
+            {
+                "era": "Modern English",
+                "word": "ball",
+                "meaning": "round object for play"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "Mnemonic & Direct Loan",
+            "story": "Türkçedeki **BasketBOL**, **FutBOL**, **VoleyBOL**, **HentBOL** kelimelerinin sonundaki 'BOL' aslında İngilizcedeki 'BALL'dur. Yani 'Basket Topu', 'Ayak Topu' demektir. **BOL = BALL (TOP)** bağlantısını buradan kurabilirsiniz.",
+            "example": "Fut (Ayak) + Bol (Top) = Football"
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Ali parkta. Onun bir <strong>top</strong>u var. Kırmızı bir <strong>balon</strong> da görüyor. Ali <strong>top</strong>u atıyor. Köpek <strong>top</strong>u yakalıyor. <strong>Top</strong> oynamak çok eğlenceli.",
+            "en": "Ali is in the park. He has a <strong>ball</strong>. He sees a red <strong>balloon</strong> too. Ali throws the <strong>ball</strong>. The dog catches the <strong>ball</strong>. Playing with a <strong>ball</strong> is very fun."
+        },
+        "A2": {
+            "tr": "Kış geldi ve her yer karla kaplandı. Çocuklar bahçede. Bir <strong>kartopu</strong> savaşı yapıyorlar. Ahmet büyük bir <strong>kartopu</strong> yaptı. Arkadaşına attı. Sonra eve gittiler ve sıcak çikolata içtiler. harika bir gün geçirdiler (had a <strong>ball</strong>).",
+            "en": "Winter came, and everywhere was covered with snow. The children are in the garden. They are having a <strong>snowball</strong> fight. Ahmet made a big <strong>snowball</strong>. He threw it at his friend. Then they went home and drank hot chocolate. They had a <strong>ball</strong>."
+        },
+        "B1": {
+            "tr": "Okul yıl sonunda büyük bir <strong>balo</strong> (dans partisi) düzenliyor. <strong>Balo salonu</strong> çok büyük ve güzel olacak. Herkes en güzel kıyafetlerini giyecek. Ben dans etmeyi bilmiyorum ama müziği severim. Belki orada dans etmeyi öğrenirim.",
+            "en": "The school is organizing a big <strong>ball</strong> at the end of the year. The <strong>ballroom</strong> will be very big and beautiful. Everyone will wear their best clothes. I don't know how to dance, but I like music. Maybe I will learn to dance there."
+        },
+        "B2": {
+            "tr": "Tenis sadece bir <strong>top</strong>a vurmak değildir. Strateji ve hız gerektirir. Oyuncu <strong>top</strong>u (gözünü) dikkatle izlemelidir (keep eye on the <strong>ball</strong>). Küçük bir hata maçı kaybettirebilir. Profesyonel tenisçiler (tenis <strong>baller</strong>s) her gün saatlerce antrenman yapar. Onların konsantrasyonu inanılmazdır.",
+            "en": "Tennis is not just about hitting a <strong>ball</strong>. It requires strategy and speed. The player must keep their eye on the <strong>ball</strong> carefully. A small mistake can lose the match. Professional tennis <strong>ballers</strong> (players) practice for hours every day. Their concentration is incredible."
+        },
+        "C1": {
+            "tr": "Proje yöneticisi ekibini topladı. 'Arkadaşlar, bu projede hata yaptık (dropped the <strong>ball</strong>)' dedi. 'Şartları yanlış tahmin ettik (<strong>ballpark</strong> figure was wrong).' Şimdi durumu düzeltmek için çok çalışmalıyız. Müşteri bir açıklama bekliyor. Top artık bizim sahamızda (<strong>ball</strong> is in our court). Sorumluluğu almalı ve çözümü bulmalıyız.",
+            "en": "The project manager gathered his team. 'Friends, we dropped the <strong>ball</strong> on this project,' he said. 'Our <strong>ballpark</strong> figure regarding the conditions was wrong.' Now we must work hard to fix the situation. The client expects an explanation. The <strong>ball</strong> is in our court now. We must take responsibility and find the solution."
+        },
+        "C2": {
+            "tr": "Göz küresinin (<strong>eyeball</strong>) anatomisi, evrimin bir harikasıdır. Işığı yakalayan ve beyne ileten bu mükemmel küre (<strong>sphere</strong>), dünyayı algılamamızı sağlar. Doktorlar, göz küresinin şeklindeki en ufak bir bozulmanın görme yetisini nasıl etkilediğini açıklıyor. Tıp öğrencileri, bu karmaşık organı anlamak için maket küreler üzerinde çalışıyorlar. Göz, vücudun en küçük ama en işlevsel '<strong>top</strong>'udur.",
+            "en": "The anatomy of the <strong>eyeball</strong> is a marvel of evolution. This perfect <strong>sphere</strong>, catching light and transmitting it to the brain, allows us to perceive the world. Doctors explain how the slightest distortion in the shape of the <strong>eyeball</strong> affects vision. Medical students study on model spheres to understand this complex organ. The eye is the body's smallest but most functional '<strong>ball</strong>'."
+        }
+    }
+}

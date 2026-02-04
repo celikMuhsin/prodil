@@ -1,0 +1,420 @@
+{
+    "id": "bank",
+    "meta": {
+        "cefr_level": "A1",
+        "frequency_band": "High Frequency",
+        "part_of_speech": [
+            "noun",
+            "verb"
+        ]
+    },
+    "phonetics": {
+        "ipa": "/bæŋk/",
+        "syllabification": [
+            "bank"
+        ]
+    },
+    "definitions": [
+        {
+            "sense_id": "def_1",
+            "core_meaning_en": "an organization where people and businesses can keep, lend, or borrow money",
+            "core_meaning_tr": "banka (para işlerinin yapıldığı kurum)",
+            "context_tags": [
+                "finance",
+                "business"
+            ],
+            "grammar_pattern": "countable noun",
+            "example": {
+                "sentence": "I need to go to the bank to withdraw some money.",
+                "translation": "Biraz para çekmek için bankaya gitmem lazım."
+            }
+        },
+        {
+            "sense_id": "def_2",
+            "core_meaning_en": "sloping land (sides) along a river",
+            "core_meaning_tr": "nehir kıyısı, nehir kenarındaki set",
+            "context_tags": [
+                "geography",
+                "nature"
+            ],
+            "grammar_pattern": "countable noun",
+            "example": {
+                "sentence": "They sat on the river bank and fished.",
+                "translation": "Nehir kıyısında oturup balık tuttular."
+            }
+        },
+        {
+            "sense_id": "def_3",
+            "core_meaning_en": "to tilt an aircraft to one side when turning",
+            "core_meaning_tr": "(uçak vb.) yana yatmak, viraj almak için eğilmek",
+            "context_tags": [
+                "aviation",
+                "movement"
+            ],
+            "grammar_pattern": "intransitive verb",
+            "example": {
+                "sentence": "The plane banked steeply to the left.",
+                "translation": "Uçak sola doğru sertçe yattı (döndü)."
+            }
+        }
+    ],
+    "grammar_profile": {
+        "structures": [
+            {
+                "pattern": "bank of (river/cloud)",
+                "usage_level": "Core",
+                "notes_tr": "Sadece para için değil, birikinti veya set anlamında da kullanılır.",
+                "example": "A huge bank of clouds appeared.",
+                "example_tr": "Devasa bir bulut kümesi (yığını) belirdi."
+            },
+            {
+                "pattern": "bank with (institution)",
+                "usage_level": "Core",
+                "notes_tr": "Hangi bankayla çalıştığınızı söylerken 'use' yerine 'bank with' fiili tercih edilir.",
+                "example": "I bank with Chase.",
+                "example_tr": "Bankacılık işlemlerimi Chase ile yapıyorum (Chase müşterisiyim)."
+            }
+        ],
+        "tense_logic": {
+            "why_use_it": "Durum bildirdiği için (yer) Geniş Zaman; eylem bildirdiği için (para yatırmak veya güvenmek) Şimdiki Zaman ile kullanılabilir.",
+            "critical_comparison": {
+                "context": "Bank vs Shore vs Coast",
+                "rule": "'Bank' nehir (river/canal) kenarıdır. 'Shore' göl veya deniz kenarıdır. 'Coast' ülkenin denize kıyısı olan bölgesidir (sahil şeridi).",
+                "example_wrong": "We walked along the sea bank.",
+                "example_wrong_tr": "Deniz seddi/kıyısı (Yanlış: 'Sea shore' veya 'Coast' denmeli).",
+                "example_right": "We walked along the river bank.",
+                "example_right_tr": "Nehir kıyısında yürüdük."
+            }
+        }
+    },
+    "sentence_progression": {
+        "description": "Temel finans kurumundan soyut 'güvenme' anlamına geçiş.",
+        "levels": [
+            {
+                "cefr": "A1",
+                "en": "Is there a bank near here?",
+                "tr": "Buralarda bir banka var mı?",
+                "grammar_focus": "There is / There are"
+            },
+            {
+                "cefr": "A2",
+                "en": "I put my money in the bank to keep it safe.",
+                "tr": "Paramı güvende tutmak için bankaya koydum.",
+                "grammar_focus": "Infinitives of Purpose"
+            },
+            {
+                "cefr": "B1",
+                "en": "The plane banked to the right before landing.",
+                "tr": "Uçak inişten önce sağa yattı.",
+                "grammar_focus": "Past Simple (Verb usage)"
+            },
+            {
+                "cefr": "B2",
+                "en": "Don't bank on him helping you; he is very unreliable.",
+                "tr": "Onun sana yardım edeceğine bel bağlama; çok güvenilmezdir.",
+                "grammar_focus": "Phrasal Verbs (Bank on)"
+            },
+            {
+                "cefr": "C1",
+                "en": "The central bank intervened to stabilize the currency.",
+                "tr": "Merkez bankası para birimini istikrara kavuşturmak için müdahale etti.",
+                "grammar_focus": "Economic Terminology"
+            }
+        ]
+    },
+    "collocations": {
+        "modifiers_adverbs": [
+            {
+                "turkish": "dik, sarp",
+                "word": "steep",
+                "strength": "medium",
+                "example": "A steep river bank.",
+                "example_tr": "Sarp (dik) bir nehir kıyısı."
+            },
+            {
+                "turkish": "merkez",
+                "word": "central",
+                "strength": "strong",
+                "example": "The Central Bank raised interest rates.",
+                "example_tr": "Merkez Bankası faiz oranlarını artırdı."
+            }
+        ],
+        "verbs_preceding": [
+            {
+                "turkish": "para yatırmak",
+                "word": "deposit",
+                "example": "I need to deposit this check at the bank.",
+                "example_tr": "Bu çeki bankaya yatırmam lazım."
+            },
+            {
+                "turkish": "soymak",
+                "word": "rob",
+                "example": "They planned to rob a bank.",
+                "example_tr": "Banka soymayı planladılar."
+            }
+        ]
+    },
+    "lexical_nuance": {
+        "synonym_scale": {
+            "concept": "Financial Institutions",
+            "turkishConcept": "Finans Kurumları",
+            "description": "Para yönetilen yerler",
+            "scale": [
+                {
+                    "value": 5,
+                    "word": "bank",
+                    "turkish": "banka",
+                    "note": "Genel ticari kurum",
+                    "usage": "General public",
+                    "description_tr": "Bireysel ve ticari işlemlerin yapıldığı standart kurum.",
+                    "example_en": "Open a bank account.",
+                    "example_tr": "Banka hesabı açmak.",
+                    "strength": "Standard"
+                },
+                {
+                    "value": 7,
+                    "word": "credit union",
+                    "turkish": "kredi birliği (kooperatif)",
+                    "note": "Üye odaklı, kar amacı gütmeyen",
+                    "usage": "Members only",
+                    "description_tr": "Genellikle belirli bir grubun (ör: öğretmenler) üye olduğu, kar amacı gütmeyen finans kuruluşu.",
+                    "example_en": "Join a credit union.",
+                    "example_tr": "Kredi birliğine katılmak.",
+                    "strength": "Specific"
+                },
+                {
+                    "value": 9,
+                    "word": "treasury",
+                    "turkish": "hazine",
+                    "note": "Devletin kasası",
+                    "usage": "Government",
+                    "description_tr": "Devletin mali işlerini yöneten en üst kurum.",
+                    "example_en": "US Treasury Department.",
+                    "example_tr": "ABD Hazine Bakanlığı.",
+                    "strength": "Highest Authority"
+                }
+            ]
+        },
+        "antonyms": []
+    },
+    "pragmatics": {
+        "idioms_and_phrases": [
+            {
+                "phrase": "break the bank",
+                "meaning_tr": "çok pahalı olmak, cep yakmak (olumsuz cümlede: bütçeyi sarsmak)",
+                "register": "informal",
+                "example": "Buying a new car won't break the bank.",
+                "example_tr": "Yeni bir araba almak bütçeyi sarsmaz (çok da pahalı değil). "
+            },
+            {
+                "phrase": "bank on (someone/something)",
+                "meaning_tr": "bel bağlamak, kesin gözüyle bakmak, güvenmek",
+                "register": "idiomatic",
+                "example": "I'm banking on your support.",
+                "example_tr": "Desteğine güveniyorum (bel bağlıyorum)."
+            }
+        ],
+        "sociolinguistics": {
+            "topic": "Polysemy (Çok Anlamlılık)",
+            "note_en": "'Bank' is a classic example of polysemy. Context is key. 'Meeting at the bank' could mean a financial meeting or a picnic by the river.",
+            "note_tr": "'Bank' kelimesi bağlama göre çok değişir. 'Bankada buluşalım' cümlesi para çekmek için de olabilir, nehir kenarında piknik yapmak için de."
+        }
+    },
+    "cultural_context": {
+        "register": {
+            "level": "neutral",
+            "description": "Her alanda kullanılır."
+        },
+        "inclusive_language": {
+            "title": "N/A",
+            "content": "Nötr."
+        },
+        "grammar_nuance": {
+            "title": "Bank Holiday",
+            "content": "İngiltere'de (UK) resmi tatillere 'Bank Holiday' denir, çünkü bankalar kapalıdır. ABD'de 'Federal Holiday' denir."
+        },
+        "business_english": {
+            "title": "Banking Terminology",
+            "content": "Finans dünyasında 'Investment Banking', 'Central Banking', 'Online Banking' gibi onlarca alt dal vardır.",
+            "keywords": [
+                "overdraft",
+                "interest rate",
+                "teller"
+            ]
+        },
+        "trivia": {
+            "title": "Kelime Kökeni (Masa)",
+            "content": "Bank kelimesi İtalyanca 'banca' (masa/dizüstü tezgah) kelimesinden gelir. Eskiden tefeciler/bankerler işlemlerini pazar yerlerinde bir bank/masa üzerinde yaparlardı. İflas edenlerin masası kırılırdı (Banca Rotta -> Bankrupt)."
+        }
+    },
+    "exam_strategies": {
+        "frequency": {
+            "yds": 60,
+            "yokdil": 50,
+            "ydt": 55,
+            "description": "Ekonomi metinlerinde birincil anlamıyla, doğa metinlerinde ikincil anlamıyla (nehir kıyısı) sıkça çıkar."
+        },
+        "vocabulary": [
+            {
+                "title": "Çeldirici Anlam",
+                "content": "Sınavda bir ekoloji parçası okuyorsanız ve 'They destroyed the banks' diyorsa, bankaları soymadılar, nehir kıyılarını tahrip ettiler demektir. Bağlama dikkat edin.",
+                "example": "Erosion of the river <b>banks</b>.",
+                "example_tr": "Nehir kıyılarının erozyonu."
+            }
+        ],
+        "grammar": [
+            {
+                "title": "Phrasal Verb (Bank on)",
+                "content": "'Rely on', 'Count on', 'Depend on' ve 'Bank on' eş anlamlıdır. Hepsi 'on' edatı alır ve güvenmek/bel bağlamak demektir.",
+                "example": "You can <b>bank on</b> it.",
+                "example_tr": "Buna güvenebilirsin."
+            }
+        ],
+        "reading": [
+            {
+                "title": "Kelime Oyunu",
+                "content": "'Food Bank' (Gıda Bankası) veya 'Blood Bank' (Kan Bankası) terimlerinde para değil, 'biriktirme ve dağıtma merkezi' anlamı vardır.",
+                "example": "Donating to the food bank.",
+                "example_tr": "Gıda bankasına bağış yapmak."
+            }
+        ]
+    },
+    "morphology_tree": {
+        "root": "Banca (Italian - bench/table)",
+        "family_members": [
+            {
+                "pos": "noun",
+                "word": "bank",
+                "level": "A1",
+                "suffix": "N/A",
+                "note": "banka veya kıyı",
+                "example": "Where is the bank?",
+                "example_tr": "Banka nerede?"
+            },
+            {
+                "pos": "noun",
+                "word": "banker",
+                "level": "B1",
+                "suffix": "-er",
+                "note": "bankacı",
+                "example": "He works as a banker.",
+                "example_tr": "Bankacı olarak çalışıyor."
+            },
+            {
+                "pos": "noun",
+                "word": "banking",
+                "level": "B2",
+                "suffix": "-ing",
+                "note": "bankacılık sektörü/işlemleri",
+                "example": "Online banking is fast.",
+                "example_tr": "İnternet bankacılığı hızlıdır."
+            },
+            {
+                "pos": "noun",
+                "word": "banknote",
+                "level": "B1",
+                "suffix": "compound",
+                "note": "kağıt para",
+                "example": "A 10-dollar banknote.",
+                "example_tr": "10 dolarlık banknot."
+            },
+            {
+                "pos": "adjective",
+                "word": "bankrupt",
+                "level": "B2",
+                "suffix": "etymology",
+                "note": "iflas etmiş (kırık masa)",
+                "example": "The company went bankrupt.",
+                "example_tr": "Şirket iflas etti."
+            },
+            {
+                "pos": "noun",
+                "word": "embankment",
+                "level": "C2",
+                "prefix": "em-",
+                "note": "sed, set, dolgu (nehir kenarına yapılan)",
+                "example": "They built an embankment to stop floods.",
+                "example_tr": "Selleri durdurmak için set yaptılar."
+            }
+        ]
+    },
+    "pedagogy_engine": {
+        "common_errors": [
+            {
+                "error_id": "err_bench_confusion",
+                "incorrect": "I sat on the bank in the park. (Eğer oturma sırası kastediliyorsa yanlıştır)",
+                "correction": "I sat on the bench.",
+                "explanation": "Türkçedeki 'Parktaki Bank' (oturma yeri), İngilizcede 'Bench'tir. İngilizce 'Bank' finans kurumu veya nehir kıyısıdır."
+            }
+        ],
+        "exam_prep": {
+            "ielts_tag": "Finance & Economy",
+            "tip": "Writing Task 2'de ekonomi konularında 'financial institution' yerine çeşitlilik (variety) olsun diye ara sıra 'banking sector' veya 'lenders' kullanın.",
+            "keywords": [
+                "loan",
+                "interest",
+                "currency"
+            ]
+        },
+        "gamification": {
+            "challenge_type": "gap_fill",
+            "question": "The company went ___ after losing all its customers.",
+            "answer": "bankrupt",
+            "distractors": [
+                "banking",
+                "banker",
+                "broke"
+            ]
+        }
+    },
+    "word_journey": {
+        "timeline": [
+            {
+                "era": "Germanic",
+                "word": "bank",
+                "meaning": "heap, earthwork (river bank origin)"
+            },
+            {
+                "era": "Italian",
+                "word": "banca",
+                "meaning": "table, bench (money bank origin)"
+            },
+            {
+                "era": "Modern English",
+                "word": "bank",
+                "meaning": "Merged meaning"
+            }
+        ],
+        "turkish_cognate_hint": {
+            "connection_type": "False Friend Warning",
+            "story": "⚠️ **DİKKAT:** Türkçedeki 'Parktaki Bank' (oturulan yer) İngilizcede **'BENCH'**tir. İngilizce **'BANK'** ise ya para çekilen yerdir ya da nehir kenarıdır. 'Bankta oturdum' derken 'Sat on the bank' derseniz, İngilizler nehir kenarında çimlerde oturduğunuzu sanır.",
+            "example": "Park Bankı = BENCH | Para Bankası = BANK"
+        }
+    },
+    "stories": {
+        "A1": {
+            "tr": "Bay Green bir <strong>bankacı</strong>. O büyük bir <strong>banka</strong>da çalışıyor. İnsanlar oraya para getiriyor. O çok meşgul. Öğle yemeğini nehir <strong>kıyısı</strong>nda yiyor. Orası çok sessiz.",
+            "en": "Mr. Green is a <strong>banker</strong>. He works in a big <strong>bank</strong>. People bring money there. He is very busy. He eats his lunch on the river <strong>bank</strong>. It is very quiet there."
+        },
+        "A2": {
+            "tr": "Dün <strong>banka</strong>ya gittim çünkü hiç <strong>banknot</strong>um (kağıt param) yoktu. <strong>Bankacı</strong> bana gülümsedi. Paramı çektim. Sonra parktaki nehir <strong>kıyısı</strong>na doğru yürüdüm. Orada ördekler vardı. Hafta sonu resmi tatil (<strong>bank holiday</strong>) olduğu için her yer kalabalıktı.",
+            "en": "Yesterday I went to the <strong>bank</strong> because I had no <strong>banknotes</strong>. The <strong>banker</strong> smiled at me. I withdrew my money. Then I walked to the river <strong>bank</strong> in the park. There were ducks. Because it was a <strong>bank holiday</strong>, everywhere was crowded."
+        },
+        "B1": {
+            "tr": "Büyükbabam eskiden nehir <strong>kıyısı</strong>ndaki bir evi almak istiyordu. Ama yeterli parası yoktu. Bu yüzden <strong>bankacılık</strong> uygulamasını kullandı ve kredi başvurusunda bulundu. <strong>Banka</strong> ona güvendi (<strong>banked on</strong> him) ve parayı verdi. Şimdi o evde yaşıyor ve nehirdeki gemileri izliyor.",
+            "en": "My grandfather used to want to buy a house on the river <strong>bank</strong>. But he didn't have enough money. So he used a <strong>banking</strong> app and applied for a loan. The <strong>bank banked on</strong> him and gave the money. Now he lives in that house and watches the ships on the river."
+        },
+        "B2": {
+            "tr": "Ekonomik kriz sırasında birçok şirket <strong>iflas</strong> etti (went <strong>bankrupt</strong>). İnsanlar <strong>banka</strong>lara koştu ama paralarını alamadılar. Bu kaosun ortasında, nehir <strong>seddi</strong> (<strong>embankment</strong>) üzerinde yürüyen yaşlı bir adam gördüm. O, paraya <strong>bel bağlama</strong>nın (<strong>banking on</strong> money) yanlış olduğunu söylüyordu. Gerçek zenginlik huzurdu.",
+            "en": "During the economic crisis, many companies went <strong>bankrupt</strong>. People ran to the <strong>banks</strong> but couldn't get their money. In the middle of this chaos, I saw an old man walking on the river <strong>embankment</strong>. He was saying that <strong>banking on</strong> money was wrong. Real wealth was peace."
+        },
+        "C1": {
+            "tr": "Londra'daki Thames Nehri'nin güney <strong>kıyısı</strong> (South <strong>Bank</strong>), bir kültür merkezidir. Eskiden burası sadece depolarla doluydu, ancak kentsel dönüşüm bölgeyi canlandırdı. Şimdi orada modern sanat galerileri var. Hükümet bu projeye büyük yatırım yaptı, yani başarısına kesin gözüyle bakıyorlardı (they were <strong>banking on</strong> its success). Ancak, nehir seviyesinin yükselmesi riskine karşı <strong>setler</strong>i (<strong>embankment</strong>s) güçlendirmeleri gerekiyor.",
+            "en": "The South <strong>Bank</strong> of the River Thames in London is a cultural hub. Formerly it was full of warehouses, but urban regeneration revived the area. Now there are modern art galleries there. The government invested heavily in this project, meaning they were <strong>banking on</strong> its success. However, they need to reinforce the <strong>embankments</strong> against the risk of rising river levels."
+        },
+        "C2": {
+            "tr": "Modern <strong>bankacılık</strong> sistemi, güven üzerine kuruludur. Eğer herkes aynı anda sistemden çıkmak isterse, en güçlü kurumlar bile <strong>iflas</strong>ın (<strong>bankruptcy</strong>) eşiğine gelir. Bu, nehir <strong>kıyısındaki</strong> kumdan kalelere benzer; güçlü görünürler ama bir dalgayla yıkılabilirler. Yatırımcılar, merkez <strong>banka</strong>larının piyasayı dengeleyeceğine <strong>bel bağlarlar</strong> (<strong>bank on</strong>). Ancak tarih, hiçbir finansal <strong>setin</strong> (<strong>embankment</strong>) spekülasyon selini sonsuza dek tutamayacağını göstermiştir.",
+            "en": "The modern <strong>banking</strong> system is built on trust. If everyone wanted to exit the system simultaneously, even the strongest institutions would come to the verge of <strong>bankruptcy</strong>. This is akin to sandcastles on a river <strong>bank</strong>; they look strong but can be destroyed by a wave. Investors <strong>bank on</strong> central <strong>banks</strong> to stabilize the market. However, history has shown that no financial <strong>embankment</strong> can hold back the flood of speculation forever."
+        }
+    }
+}
