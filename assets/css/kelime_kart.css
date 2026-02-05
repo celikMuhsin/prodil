@@ -957,8 +957,16 @@ html {
 /* İçteki akordeonun başlığı */
 .accordion-content .section-wrapper .accordion-header {
     background: #fff;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    /* Her seviye Content'ten gelen girintiye ek olarak başlık girintisi */
+    padding-right: 15px;
+    border-left: 2px solid #e2e8f0;
+}
+
+/* 3. Seviye (Level) Akordeon Başlığı */
+.accordion-content .accordion-content .section-wrapper .accordion-header {
+    padding-left: 25px;
+    background-color: #fafbfc;
 }
 
 
@@ -999,8 +1007,10 @@ html {
 }
 
 .accordion-content .section-wrapper.open>.accordion-content {
-    padding: 0;
-    /* Kenarlara yapışsın istendiği için padding azaltıldı */
+    padding-left: 15px;
+    /* Alt seviye içeriğe girinti ekle */
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 /* Mobilde ana akordeon padding'ini de azaltalım ki yer kazanalım */
@@ -2432,4 +2442,86 @@ html {
     font-style: italic;
     padding-left: 30px;
     /* Align with text */
+}
+
+/* --- Level Tabs (Beginner, Intermediate, Advanced) --- */
+.level-tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.level-tab-btn {
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #718096;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.level-tab-btn:hover {
+    transform: translateY(-2px);
+    color: #2d3748;
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.level-tab-btn.active {
+    background-color: #4a5568;
+    /* Koyu gri/lacivert tonu */
+    color: white;
+    border-color: #4a5568;
+    box-shadow: 0 8px 15px -4px rgba(74, 85, 104, 0.4);
+}
+
+/* Seviye Bazlı Özel Renkler (İsterseniz) */
+.level-tab-btn[data-level="beginner"].active {
+    background-color: #48bb78;
+    /* Yeşil */
+    border-color: #48bb78;
+    box-shadow: 0 8px 15px -4px rgba(72, 187, 120, 0.4);
+}
+
+.level-tab-btn[data-level="intermediate"].active {
+    background-color: #4299e1;
+    /* Mavi */
+    border-color: #4299e1;
+    box-shadow: 0 8px 15px -4px rgba(66, 153, 225, 0.4);
+}
+
+.level-tab-btn[data-level="advanced"].active {
+    background-color: #e53e3e;
+    /* Kırmızı */
+    border-color: #e53e3e;
+    box-shadow: 0 8px 15px -4px rgba(229, 62, 62, 0.4);
+}
+
+.level-content {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.level-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

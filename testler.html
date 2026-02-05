@@ -1,0 +1,1747 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>YDT & YDS Ä°ngilizce Kelime Hazinesi, Online Test ve Egzersizler | Prodil Dersler</title>
+
+    <meta name="description"
+        content="YDT, YDS ve YÃ–KDÄ°L sÄ±navlarÄ±na yÃ¶nelik 4000+ kelimelik dev arÅŸiv. Kelime kÃ¶kenleri (etimoloji), eÅŸ anlamlÄ±lar, interaktif egzersizler ve yeni nesil deneme sÄ±navlarÄ± ile Sakarya Prodil kalitesiyle online Ã§alÄ±ÅŸÄ±n.">
+
+    <meta name="keywords"
+        content="ydt kelime listesi, yds kelime Ã§alÄ±ÅŸma, ingilizce etimoloji dersleri,ingilizce egzersiz, online ydt deneme, ingilizce test Ã§Ã¶z, yÃ¶kdil kelime kartlarÄ±, ingilizce eÅŸ anlamlÄ±lar, prodil ders notlarÄ±, sÄ±nav stratejileri, sakarya ingilizce Ã¶zel ders materyalleri">
+
+    <meta name="author" content="Muhsin Ã‡elik">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="YDT ve YDS Ä°Ã§in Ä°ngilizce Kelime LaboratuvarÄ±">
+    <meta property="og:description"
+        content="Sadece kelime ezberlemeyin; kÃ¶kenini, hikayesini ve sÄ±navdaki tuzaÄŸÄ±nÄ± Ã¶ÄŸrenin. Prodil'in interaktif ders modÃ¼lleri yayÄ±nda.">
+    <meta property="og:image" content="https://prodil.net/assets/dersler-preview.png">
+    <meta property="og:url" content="https://prodil.net/dersler.html">
+
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            900: '#003366', // Prodil Blue
+                            800: '#002244',
+                            700: '#004080',
+                        },
+                        accent: {
+                            500: '#D9232E', // Prodil Red
+                            600: '#b91c1c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Style from UzmanMatematik -->
+    <link rel="stylesheet" href="assets/css/kelime_kart.css">
+
+    <style>
+        /* Desktop Navigation Arrows & Card Width Adjustments */
+        @media (min-width: 1024px) {
+            .vocab-card {
+                max-width: 950px !important;
+                /* Reduced by ~30% from 1400px */
+            }
+
+            .desktop-nav-arrow {
+                display: flex !important;
+                position: fixed !important;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 50px;
+                height: 50px;
+                background: white;
+                border: 1px solid #e2e8f0;
+                border-radius: 50%;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+                /* Standart gÃ¶lge */
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                z-index: 900;
+                font-size: 1.2rem;
+                color: #a0aec0;
+                transition: all 0.3s ease;
+            }
+
+            /* Hover Efekti: Sadece renk ve glow deÄŸiÅŸimi. Hareket YOK. */
+            .desktop-nav-arrow:hover {
+                color: #003366;
+                border-color: #3182ce;
+                box-shadow: 0 0 15px rgba(49, 130, 206, 0.4);
+                background-color: #fff;
+                transform: translateY(-50%) scale(1.0);
+                /* Scale YOK, sadece glow */
+            }
+
+            /* Active (TÄ±klama) Efekti: Basma hissi ve DÃ¶nme */
+            .desktop-nav-arrow:active {
+                transform: translateY(-50%) scale(0.95);
+                /* HafifÃ§e iÃ§e gÃ¶Ã§me (Basma hissi) */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                /* GÃ¶lge azalÄ±r */
+                transition: transform 0.1s;
+            }
+
+            /* TÄ±klayÄ±nca iÃ§indeki ikonun dÃ¶nmesi */
+            .desktop-nav-arrow:active i {
+                transform: rotate(360deg);
+                transition: transform 0.4s ease-out;
+            }
+
+            /* KONUMLANDIRMA: Karttan 38px (~1cm) uzaklÄ±kta
+               Kart GeniÅŸliÄŸi: 950px, KartÄ±n YarÄ±sÄ±: 475px
+               Okun GeniÅŸliÄŸi: 50px
+               Left = Merkez(50%) - KartYarÄ±sÄ±(475) - BoÅŸluk(38) - Ok(50)
+            */
+            .arrow-left {
+                left: calc(50% - 475px - 38px - 50px);
+            }
+
+            .arrow-right {
+                right: calc(50% - 475px - 38px - 50px);
+                /* SaÄŸ tarafta da aynÄ± mantÄ±k (right ile) */
+            }
+
+            @media (max-width: 1250px) {
+                .arrow-left {
+                    left: 20px !important;
+                }
+
+                .arrow-right {
+                    right: 20px !important;
+                }
+            }
+        }
+
+        .desktop-nav-arrow {
+            display: none;
+        }
+
+        /* Custom Styles for Exams & Page Layout */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Tab Styles */
+        .tab-btn {
+            position: relative;
+            padding: 0.4rem 1rem;
+            /* Increased to match search input */
+            font-weight: 700;
+            font-size: 0.85rem;
+            /* Increased to match search input */
+            color: #718096;
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            /* Bouncy spring */
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            overflow: hidden;
+            letter-spacing: 0.025em;
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            color: #2d3748;
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* Active State - Blue (Vocab) */
+        #tab-vocab.active {
+            background-color: #003366;
+            color: white;
+            border-color: #003366;
+            box-shadow: 0 8px 15px -4px rgba(0, 51, 102, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* Active State - Red (Exam) */
+        #tab-exam.active {
+            background-color: #D9232E;
+            color: white;
+            border-color: #D9232E;
+            box-shadow: 0 8px 15px -4px rgba(217, 35, 46, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* Active State - Purple (Test) */
+        #tab-test.active {
+            background-color: #6366f1;
+            color: white;
+            border-color: #6366f1;
+            box-shadow: 0 8px 15px -4px rgba(99, 102, 241, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* Exam Grid Styles */
+        #eng-exam-grid .exam-card {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f3f4f6;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            height: 100%;
+            /* Enforce Flex Row */
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            gap: 1rem;
+            text-align: left;
+        }
+
+        /* Desktop -> Column */
+        @media (min-width: 1024px) {
+            #eng-exam-grid .exam-card {
+                flex-direction: column !important;
+                justify-content: center !important;
+                text-align: center !important;
+            }
+        }
+
+        /* Only allow hover effects on devices that support hover (prevents ghost selection on mobile) */
+        @media (hover: hover) {
+            #eng-exam-grid .exam-card:hover {
+                border-color: #003366;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                transform: translateY(-0.25rem);
+            }
+        }
+
+        /* Exam Interface */
+        #eng-exam-interface {
+            display: none;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s, color 0.2s;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-outline {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            background-color: white;
+            transition: background-color 0.2s;
+            width: 100%;
+            text-align: left;
+        }
+
+        .btn-outline:hover {
+            background-color: #f9fafb;
+        }
+
+        /* Variables expected by Exam Engine if not provided by CSS */
+        :root {
+            --accent-color: #D9232E;
+        }
+
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-container {
+            position: relative;
+            width: 12rem;
+            /* Increased from 10rem */
+            height: 12rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid rgba(0, 51, 102, 0.1);
+            border-top-color: #003366;
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-logo {
+            width: 8rem;
+            /* Increased from 6rem */
+            height: 8rem;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0.9);
+                opacity: 0.8;
+            }
+        }
+
+        /* Search Box Styles */
+        .search-wrapper {
+            position: relative;
+            width: 100px;
+            /* Reduced from 200px */
+            z-index: 60;
+            /* Higher than content below */
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.4rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            color: #4a5568;
+            outline: none;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+
+        .search-input:focus {
+            border-color: #003366;
+            box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+        }
+
+        .search-input::placeholder {
+            color: #a0aec0;
+            font-weight: 500;
+        }
+
+        /* Mobile Adjustments for Search Box */
+        @media (max-width: 640px) {
+            .search-wrapper {
+                width: 60px;
+                /* Reduced width (approx half of desktop/tablet visual usually, or just smaller) */
+            }
+
+            .search-input {
+                padding-top: 0.6rem;
+                /* Increased height */
+                padding-bottom: 0.6rem;
+            }
+        }
+
+        .search-dropdown {
+            position: absolute;
+            top: 110%;
+            right: 0;
+            right: 0;
+            width: max-content;
+            min-width: 200px;
+            max-width: 300px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 10000;
+            /* significantly higher just in case */
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .search-dropdown.show {
+            display: block;
+        }
+
+        .search-item {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+            color: #2d3748;
+            cursor: pointer;
+            border-bottom: 1px solid #f7fafc;
+            transition: background 0.1s;
+        }
+
+        .search-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-item:hover {
+            background-color: #f7fafc;
+            color: #003366;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-700 bg-gray-50 antialiased flex flex-col min-h-screen">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-container">
+            <div class="loader-circle"></div>
+            <img src="assets/favicon.png" alt="YÃ¼kleniyor..." class="loader-logo">
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-[9999]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Area -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="assets/logo.png" alt="Prodil Logo" class="h-14 md:h-12 w-auto object-contain">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Anasayfa</a>
+                    <a href="index.html#about"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Kurumsal</a>
+                    <a href="index.html#features"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Ã–zellikler</a>
+                    <div class="relative group">
+                        <button class="flex items-center gap-1.5 text-primary-900 font-bold transition-colors py-2">
+                            <span>Ã‡alÄ±ÅŸma OdasÄ±</span>
+                            <i
+                                class="fa-solid fa-chevron-down text-[10px] opacity-70 group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <!-- Dropdown Menu Wrapper with Hover Bridge -->
+                        <div
+                            class="absolute left-0 top-full w-48 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-[100]">
+                            <div class="bg-white border border-gray-100 rounded-xl shadow-xl overflow-hidden py-2">
+                                <a href="dersler.html"
+                                    class="flex items-center gap-2 pl-2 pr-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-900 transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+                                        <i class="fa-solid fa-book-open"></i>
+                                    </div>
+                                    <span class="font-semibold">Kelime Ã‡alÄ±ÅŸmasÄ±</span>
+                                </a>
+                                <a href="egzersiz.html"
+                                    class="flex items-center gap-2 pl-2 pr-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent-500 transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-accent-500">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </div>
+                                    <span class="font-semibold">Egzersizler</span>
+                                </a>
+                                <a href="testler.html"
+                                    class="flex items-center gap-2 pl-2 pr-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600">
+                                        <i class="fa-solid fa-vial"></i>
+                                    </div>
+                                    <span class="font-semibold">Testler</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="index.html#contact"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Ä°letiÅŸim</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="index.html#contact"
+                        class="bg-primary-900 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary-800 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Bilgi Al / KayÄ±t Ol
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none"
+                        onclick="toggleMobileMenu()">
+                        <i class="fa-solid fa-bars text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-20 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-[9999] rounded-b-3xl">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html"
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:text-primary-900 hover:bg-gray-50 transition-colors">
+                    Anasayfa
+                </a>
+                <a href="index.html#about"
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:text-primary-900 hover:bg-gray-50 transition-colors">
+                    Kurumsal
+                </a>
+                <a href="index.html#features"
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:text-primary-900 hover:bg-gray-50 transition-colors">
+                    Ã–zellikler
+                </a>
+                <div class="py-1">
+                    <div class="px-4 py-2 text-base font-semibold text-gray-700">Ã‡alÄ±ÅŸma OdasÄ±</div>
+                    <div class="space-y-0 border-l-2 border-gray-100 ml-8 py-0">
+                        <a href="dersler.html"
+                            class="group flex items-center px-4 py-2 rounded-r-2xl text-base font-semibold text-gray-700 hover:text-primary-900 hover:bg-gray-50 transition-all"
+                            onclick="toggleMobileMenu()">
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-primary-900 group-hover:scale-125 transition-all mr-3"></span>
+                            Kelime Ã‡alÄ±ÅŸmasÄ±
+                        </a>
+                        <a href="egzersiz.html"
+                            class="group flex items-center px-4 py-2 rounded-r-2xl text-base font-semibold text-gray-700 hover:text-primary-900 hover:bg-gray-50 transition-all"
+                            onclick="toggleMobileMenu()">
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-primary-900 group-hover:scale-125 transition-all mr-3"></span>
+                            Egzersizler
+                        </a>
+                        <a href="testler.html"
+                            class="group flex items-center px-4 py-2 rounded-r-2xl text-base font-bold text-indigo-600 bg-indigo-50 transition-all"
+                            onclick="toggleMobileMenu()">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 scale-125 mr-3"></span>
+                            Testler
+                        </a>
+                    </div>
+                </div>
+                <a href="index.html#contact"
+                    class="block px-4 py-3 rounded-xl text-base font-semibold text-gray-700 hover:text-primary-900 hover:bg-gray-50 transition-colors">
+                    Ä°letiÅŸim
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-20 pb-24">
+
+        <!-- Page Header -->
+        <div class="h-4"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
+
+            <!-- Tabs aligned with content (max-w-900px) -->
+            <div class="w-full max-w-[900px] mx-auto mb-5 flex justify-between items-end relative z-[2000]">
+                <div class="flex justify-start gap-4">
+                    <a href="dersler.html" id="tab-vocab" class="tab-btn">
+                        <i class="fa-solid fa-book-open text-lg"></i>
+                        <span>Kelime</span>
+                    </a>
+                    <a href="egzersiz.html" id="tab-exam" class="tab-btn">
+                        <i class="fa-solid fa-pen-to-square text-lg"></i>
+                        <span>Egzersiz</span>
+                    </a>
+                    <a href="testler.html" id="tab-test" class="tab-btn active">
+                        <i class="fa-solid fa-vial text-lg"></i>
+                        <span>Testler</span>
+                    </a>
+                </div>
+
+                <!-- Search Box -->
+                <div class="search-wrapper">
+                    <input type="text" id="vocab-search" class="search-input" placeholder="ARA...">
+                    <div id="search-dropdown" class="search-dropdown">
+                        <!-- Results will be injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level Tabs (Centered below main tabs) -->
+            <div class="level-tabs-container mb-8">
+                <button class="level-tab-btn active" data-level="beginner" onclick="switchLevel('beginner')">
+                    <i class="fa-solid fa-seedling"></i>
+                    <span>Beginner</span>
+                </button>
+                <button class="level-tab-btn" data-level="intermediate" onclick="switchLevel('intermediate')">
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <span>Intermediate</span>
+                </button>
+                <button class="level-tab-btn" data-level="advanced" onclick="switchLevel('advanced')">
+                    <i class="fa-solid fa-crown"></i>
+                    <span>Advanced</span>
+                </button>
+            </div>
+
+            <!-- Content Area - Accordion Structure -->
+<div id="vocabulary-wrapper" class="max-w-[900px] mx-auto"><div id="content-beginner" class="level-content active">
+    <!-- Main Category: Grammar -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Grammar</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <!-- Tenses -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Tenses</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modals Verbs -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Modals Verbs</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Active and Passive Voice -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Active and Passive Voice</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Adjectives and Adverbs -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Adjectives and Adverbs</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Conditional & Wish Clauses -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Conditional & Wish Clauses</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Relative Clauses -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Relative Clauses</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Conjunctions -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Conjunctions</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gerunds and Infinitives -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Gerunds and Infinitives</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Category: Vocabulary -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Vocabulary</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <div class="space-y-2 p-2">
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                    <span class="font-medium text-gray-700">Test 1</span>
+                    <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Category: Reading -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Reading</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <div class="space-y-2 p-2">
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                    <span class="font-medium text-gray-700">Test 1</span>
+                    <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Category: Skills -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Skills</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <!-- Sentence Completion -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Sentence Completion</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Dialogue -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Dialogue</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Irrelevant Sentence -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Irrelevant Sentence</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Paragraph Completion -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Paragraph Completion</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Situational Expression -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Situational Expression</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Restatement -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Restatement</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Translation (Turkish-English) -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Translation (Turkish-English)</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Translation (English-Turkish) -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Translation (English-Turkish)</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cloze Test -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Cloze Test</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="content-intermediate" class="level-content ">
+    <!-- Main Category: Grammar -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Grammar</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <!-- Tenses -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Tenses</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modals Verbs -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Modals Verbs</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Active and Passive Voice -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Active and Passive Voice</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Adjectives and Adverbs -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Adjectives and Adverbs</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Conditional & Wish Clauses -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Conditional & Wish Clauses</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Relative Clauses -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Relative Clauses</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Conjunctions -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Conjunctions</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gerunds and Infinitives -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Gerunds and Infinitives</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Category: Vocabulary -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Vocabulary</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <div class="space-y-2 p-2">
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                    <span class="font-medium text-gray-700">Test 1</span>
+                    <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Category: Reading -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Reading</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <div class="space-y-2 p-2">
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                    <span class="font-medium text-gray-700">Test 1</span>
+                    <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Category: Skills -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Skills</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <!-- Sentence Completion -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Sentence Completion</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Dialogue -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Dialogue</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Irrelevant Sentence -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Irrelevant Sentence</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Paragraph Completion -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Paragraph Completion</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Situational Expression -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Situational Expression</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Restatement -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Restatement</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Translation (Turkish-English) -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Translation (Turkish-English)</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Translation (English-Turkish) -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Translation (English-Turkish)</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cloze Test -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Cloze Test</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div id="content-advanced" class="level-content ">
+    <!-- Main Category: Grammar -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Grammar</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <!-- Tenses -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Tenses</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modals Verbs -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Modals Verbs</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Active and Passive Voice -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Active and Passive Voice</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Adjectives and Adverbs -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Adjectives and Adverbs</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Conditional & Wish Clauses -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Conditional & Wish Clauses</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Relative Clauses -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Relative Clauses</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Conjunctions -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Conjunctions</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gerunds and Infinitives -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Gerunds and Infinitives</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Category: Vocabulary -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Vocabulary</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <div class="space-y-2 p-2">
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                    <span class="font-medium text-gray-700">Test 1</span>
+                    <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Category: Reading -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Reading</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <div class="space-y-2 p-2">
+                <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                    <span class="font-medium text-gray-700">Test 1</span>
+                    <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Category: Skills -->
+    <div class="section-wrapper">
+        <div class="accordion-header">
+            <div class="accordion-title"><span class="section-toggle-icon"></span> Skills</div>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="accordion-content hidden">
+            <!-- Sentence Completion -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Sentence Completion</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Dialogue -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Dialogue</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Irrelevant Sentence -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Irrelevant Sentence</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Paragraph Completion -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Paragraph Completion</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Situational Expression -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Situational Expression</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Restatement -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Restatement</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Translation (Turkish-English) -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Translation (Turkish-English)</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Translation (English-Turkish) -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Translation (English-Turkish)</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cloze Test -->
+            <div class="section-wrapper">
+                <div class="accordion-header">
+                    <div class="accordion-title"><span class="section-toggle-icon"></span> Cloze Test</div>
+                    <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="accordion-content hidden">
+                    <div class="space-y-2 p-2">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
+                            <span class="font-medium text-gray-700">Test 1</span>
+                            <a href="#" class="px-3 py-1 bg-primary-600 text-white text-xs rounded hover:bg-primary-700 transition-colors">Başlat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-gray-500">
+                &copy; 2026 Prodil Language Center. TÃ¼m haklarÄ± saklÄ±dÄ±r.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }, 600);
+
+            // Search Functionality
+            const searchInput = document.getElementById('vocab-search');
+            const searchDropdown = document.getElementById('search-dropdown');
+
+            if (searchInput && searchDropdown) {
+
+                const updateDropdown = (query) => {
+                    let results = [];
+
+                    if (!query || query.length === 0) {
+                        // Show first 10 items if query is empty
+                        results = window.vocabularyData.slice(0, 20);
+                    } else {
+                        // Filter Logic (Starts With)
+                        results = window.vocabularyData.filter(item =>
+                            item.word.toLowerCase().startsWith(query)
+                        ).slice(0, 20); // Limit to 20 results
+                    }
+
+                    if (results.length > 0) {
+                        searchDropdown.innerHTML = results.map(item => `
+                            <div class="search-item" onclick="selectWord('${item.word}')">
+                                <strong>${item.word}</strong> <span style="font-size:0.8em; color:#718096; margin-left:5px;">(${item.definitions[0]?.core_meaning_tr || ''})</span>
+                            </div>
+                        `).join('');
+                        searchDropdown.classList.add('show');
+                    } else {
+                        searchDropdown.classList.remove('show');
+                    }
+                };
+
+                // Trigger on input with Debounce (300ms)
+                let searchTimeout;
+                searchInput.addEventListener('input', (e) => {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        const query = e.target.value.toLowerCase().trim();
+                        updateDropdown(query);
+                    }, 300);
+                });
+
+                // Trigger on focus (show list immediately)
+                searchInput.addEventListener('focus', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    updateDropdown(query);
+                });
+
+                // Close dropdown on click outside
+                document.addEventListener('click', (e) => {
+                    if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+                        searchDropdown.classList.remove('show');
+                        searchInput.value = ''; // Clear input on outcome click
+                    }
+                });
+
+                // Close dropdown on scroll
+                window.addEventListener('scroll', () => {
+                    if (searchDropdown.classList.contains('show')) {
+                        searchDropdown.classList.remove('show');
+                        searchInput.value = ''; // Clear input on scroll
+                        if (document.activeElement === searchInput) {
+                            searchInput.blur();
+                        }
+                    }
+                });
+            }
+        });
+
+        // Search Select Logic
+        function selectWord(word) {
+            window.location.href = 'dersler.html?word=' + encodeURIComponent(word);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('-translate-x-full')) {
+                menu.classList.remove('-translate-x-full');
+            } else {
+                menu.classList.add('-translate-x-full');
+            }
+        }
+
+        // Close Mobile Menu on Click Outside
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+
+            // If menu is open (doesn't have -translate-x-full) and click is NOT on menu or button
+            if (!menu.classList.contains('-translate-x-full') && !menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.classList.add('-translate-x-full');
+            }
+        });
+
+        // Close Mobile Menu on Scroll
+        window.addEventListener('scroll', () => {
+            const menu = document.getElementById('mobile-menu');
+            if (!menu.classList.contains('-translate-x-full')) {
+                menu.classList.add('-translate-x-full');
+            }
+        }, { passive: true });
+
+        function switchTab(tabId) {
+            // Sadece buton aktifliÄŸini deÄŸiÅŸtir
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            const btn = document.getElementById('tab-' + tabId);
+            if (btn) btn.classList.add('active');
+        }
+
+        // Accordion Toggle Logic
+        document.addEventListener('click', (e) => {
+            const header = e.target.closest('.accordion-header');
+            if (header) {
+                const wrapper = header.closest('.section-wrapper');
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+
+                if (wrapper) {
+                    wrapper.classList.toggle('open');
+                    const isOpen = wrapper.classList.contains('open');
+
+                    if (isOpen) {
+                        content.classList.remove('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-chevron-down');
+                            icon.classList.add('fa-chevron-up');
+                        }
+                    } else {
+                        content.classList.add('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-chevron-up');
+                            icon.classList.add('fa-chevron-down');
+                        }
+                    }
+                }
+            }
+        });
+
+        function startExam(type) {
+            EnglishExam.start(type);
+        }
+
+        function switchLevel(level) {
+            // Update Tab Buttons
+            document.querySelectorAll('.level-tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-level') === level) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Update Content
+            document.querySelectorAll('.level-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            const activeContent = document.getElementById('content-' + level);
+            if (activeContent) {
+                activeContent.classList.add('active');
+            }
+        }
+    </script>
+
+    <!-- Project Data & Logic -->
+    <script src="assets/js/ingilizce/kelime_ing.js"></script>
+
+</body>
+
+</html>
+

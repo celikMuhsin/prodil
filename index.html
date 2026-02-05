@@ -169,8 +169,44 @@
                         class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Kurumsal</a>
                     <a href="#features"
                         class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Özellikler</a>
-                    <a href="dersler.html"
-                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Çalışma Odası</a>
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1.5 text-gray-600 hover:text-primary-900 font-medium transition-colors py-2">
+                            <span>Çalışma Odası</span>
+                            <i
+                                class="fa-solid fa-chevron-down text-[10px] opacity-70 group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <!-- Dropdown Menu Wrapper with Hover Bridge -->
+                        <div
+                            class="absolute left-0 top-full w-48 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-[100]">
+                            <div class="bg-white border border-gray-100 rounded-xl shadow-xl overflow-hidden py-2">
+                                <a href="dersler.html"
+                                    class="flex items-center gap-2 pl-2 pr-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-900 transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+                                        <i class="fa-solid fa-book-open"></i>
+                                    </div>
+                                    <span class="font-semibold">Kelime Çalışması</span>
+                                </a>
+                                <a href="egzersiz.html"
+                                    class="flex items-center gap-2 pl-2 pr-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent-500 transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-accent-500">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </div>
+                                    <span class="font-semibold">Egzersizler</span>
+                                </a>
+                                <a href="testler.html"
+                                    class="flex items-center gap-2 pl-2 pr-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600">
+                                        <i class="fa-solid fa-vial"></i>
+                                    </div>
+                                    <span class="font-semibold">Testler</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="#contact"
                         class="text-gray-600 hover:text-primary-900 font-medium transition-colors">İletişim</a>
                 </nav>
@@ -206,9 +242,32 @@
                 <a href="#features"
                     class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50"
                     onclick="toggleMobileMenu()">Özellikler</a>
-                <a href="dersler.html"
-                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50"
-                    onclick="toggleMobileMenu()">Çalışma Odası</a>
+                <div class="py-1">
+                    <div class="px-3 py-2 text-base font-medium text-gray-700">Çalışma Odası</div>
+                    <div class="space-y-0 border-l-2 border-gray-100 ml-6 py-0">
+                        <a href="dersler.html"
+                            class="group flex items-center px-4 py-1.5 rounded-r-xl text-sm font-semibold text-gray-700 hover:text-primary-900 hover:bg-blue-50 transition-all"
+                            onclick="toggleMobileMenu()">
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-primary-900 group-hover:scale-125 transition-all mr-3"></span>
+                            Kelime Çalışması
+                        </a>
+                        <a href="egzersiz.html"
+                            class="group flex items-center px-4 py-1.5 rounded-r-xl text-sm font-semibold text-gray-700 hover:text-primary-900 hover:bg-blue-50 transition-all"
+                            onclick="toggleMobileMenu()">
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-primary-900 group-hover:scale-125 transition-all mr-3"></span>
+                            Egzersizler
+                        </a>
+                        <a href="testler.html"
+                            class="group flex items-center px-4 py-1.5 rounded-r-xl text-sm font-semibold text-gray-700 hover:text-primary-900 hover:bg-blue-50 transition-all"
+                            onclick="toggleMobileMenu()">
+                            <span
+                                class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-primary-900 group-hover:scale-125 transition-all mr-3"></span>
+                            Testler
+                        </a>
+                    </div>
+                </div>
                 <a href="#contact"
                     class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50"
                     onclick="toggleMobileMenu()">İletişim</a>
