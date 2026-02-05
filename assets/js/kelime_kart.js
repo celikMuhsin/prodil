@@ -1195,15 +1195,16 @@ class VocabCard {
 
         const el = document.getElementById(id);
         if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
             // Helper to open a section
             const openSection = (sectionElement) => {
                 if (!sectionElement.classList.contains('open')) {
                     sectionElement.classList.add('open');
                     const content = sectionElement.querySelector('.accordion-content');
                     const icon = sectionElement.querySelector('.accordion-icon i');
-                    if (content) content.classList.remove('hidden');
+                    if (content) {
+                        content.classList.remove('hidden');
+                        content.style.maxHeight = 'none';
+                    }
                     if (icon) {
                         icon.classList.remove('fa-chevron-down');
                         icon.classList.add('fa-chevron-up');
@@ -1211,23 +1212,37 @@ class VocabCard {
                 }
             };
 
-            // Open target
+            // ÖZEL DURUM: Sadece A1 hikayesi için ana bölüme kaydır (Header altında kalmaması için)
+            let scrollTarget = el;
+            if (id === 'sec-story-A1') {
+                const mainStoriesSection = document.getElementById('sec-stories-main');
+                if (mainStoriesSection) {
+                    openSection(mainStoriesSection);
+                    scrollTarget = mainStoriesSection;
+                }
+            }
+
+            // Hedef bölümü (A1 hikayesi gibi) aç
             openSection(el);
 
-            // Recursively open all parent accordions
+            // Üstteki ebeveynleri de aç
             let currentEl = el.parentElement;
             while (currentEl) {
-                // Find closest parent section-wrapper
                 const parentSection = currentEl.closest('.section-wrapper');
                 if (parentSection) {
                     openSection(parentSection);
-                    // Continue searching up from the parent's parent
                     currentEl = parentSection.parentElement;
                 } else {
-                    // No more sections found up the tree
                     break;
                 }
             }
+
+            // Kaydırma işlemini ana hedefe (veya hikayeler için ana bölüme) yap
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 50);
+            });
         }
     }
 

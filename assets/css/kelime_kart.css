@@ -121,13 +121,19 @@ html {
     }
 }
 
-/* Sticky Header Offset Fix */
+/* Sticky Header Offset Fix (Bölüme Git sekmesine basınca açılan sekmelerin ekrandaki konumu)*/
 [id^="sec-"] {
-    scroll-margin-top: 180px;
-    /* Increased for larger sticky header */
+    scroll-margin-top: 146px;
+    /* Masaüstü (Tarayıcı) Modu Ayarı */
 }
 
 @media (max-width: 768px) {
+
+    /* Mobil Scroll Ayarı */
+    [id^="sec-"] {
+        scroll-margin-top: 112px;
+    }
+
     .vocab-card {
         border-radius: 0;
         border: none;

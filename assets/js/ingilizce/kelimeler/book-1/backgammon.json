@@ -316,7 +316,7 @@
         ],
         "turkish_cognate_hint": {
             "connection_type": "Mnemonic (Kelime Analizi)",
-            "story": "Kelime iki parçadan oluşur: **BACK** (Geri) + **GAMMON** (Eski İngilizce 'Game'/Oyun). Yani 'Geri Oyunu' veya 'Geri Gelme Oyunu'. Tavlada kırılan taşlar en başa (geriye) gider veya geride kalan taşları toplamak önemlidir. Aklınıza 'Taşların **Geri (Back)** gittiği Oyun' olarak kodlayabilirsiniz.",
+            "story": "Kelime iki parçadan oluşur: BACK (Geri) + GAMMON (Eski İngilizce 'Game'/Oyun). Yani 'Geri Oyunu' veya 'Geri Gelme Oyunu'. Tavlada kırılan taşlar en başa (geriye) gider veya geride kalan taşları toplamak önemlidir. Aklınıza 'Taşların Geri (Back) gittiği Oyun' olarak kodlayabilirsiniz.",
             "example": "Back (Geri) + Gammon (Game) = Backgammon"
         }
     },

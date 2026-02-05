@@ -204,6 +204,15 @@
             transform: translateY(-1px);
         }
 
+        /* Active State - Purple (Test) */
+        #tab-test.active {
+            background-color: #6366f1;
+            color: white;
+            border-color: #6366f1;
+            box-shadow: 0 8px 15px -4px rgba(99, 102, 241, 0.4);
+            transform: translateY(-1px);
+        }
+
         /* Exam Grid Styles */
         #eng-exam-grid .exam-card {
             background-color: white;
@@ -534,6 +543,10 @@
                         <i class="fa-solid fa-pen-to-square text-lg"></i>
                         <span>Egzersiz</span>
                     </button>
+                    <button onclick="switchTab('test')" id="tab-test" class="tab-btn">
+                        <i class="fa-solid fa-vial text-lg"></i>
+                        <span>Testler</span>
+                    </button>
                 </div>
 
                 <!-- Search Box -->
@@ -711,6 +724,18 @@
 
                 </div>
 
+                <!-- 3. Test Section -->
+                <div id="content-test" class="hidden fade-in">
+                    <div class="max-w-4xl mx-auto text-center py-12">
+                        <div class="bg-indigo-50 rounded-2xl p-8 border-2 border-dashed border-indigo-200">
+                            <i class="fa-solid fa-hourglass-start text-5xl text-indigo-400 mb-4"></i>
+                            <h2 class="text-2xl font-bold text-indigo-900 mb-2">Test Modülü Çok Yakında!</h2>
+                            <p class="text-gray-600">Bu bölümde daha kapsamlı ve zaman ayarlı testler yer alacaktır.
+                                Geliştirmeler devam etmektedir.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -861,6 +886,7 @@
             // Content
             document.getElementById('content-vocab').classList.add('hidden');
             document.getElementById('content-exam').classList.add('hidden');
+            document.getElementById('content-test').classList.add('hidden');
             document.getElementById('content-' + tabId).classList.remove('hidden');
         }
 
