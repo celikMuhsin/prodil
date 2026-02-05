@@ -2029,6 +2029,8 @@ html {
     background: #edf2f7;
     border-radius: 4px;
     overflow: hidden;
+    width: 100%;
+    /* Ensure visibility */
 }
 
 .progress-fill {
@@ -2120,11 +2122,13 @@ html {
         flex: none !important;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        /* Stretch to fill width */
     }
 
     .exam-score {
-        text-align: left !important; /* Force left alignment */
+        text-align: right !important;
+        /* Keep score on the right */
         margin-top: 4px;
         float: none;
     }
