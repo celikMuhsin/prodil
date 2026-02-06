@@ -67,10 +67,6 @@ html {
 
 /* --- Navigation Header (Controls) --- */
 /* --- Sticky Wrapper --- */
-/* --- Navigation Header (Controls) --- */
-/* --- Sticky Wrapper --- */
-/* --- Navigation Header (Controls) --- */
-/* --- Sticky Wrapper --- */
 .sticky-header-wrapper {
     position: -webkit-sticky;
     /* iOS Safari */
@@ -160,6 +156,7 @@ html {
     }
 }
 
+/* section-wrapper definition moved here to consolidate */
 .section-wrapper {
     margin-bottom: 12px;
     background: #fff;
@@ -373,7 +370,6 @@ html {
 }
 
 /* --- Sol Ana Panel --- */
-/* --- Sol Ana Panel --- */
 .main-content {
     padding: 20px 30px 30px 30px;
     border-right: none;
@@ -400,22 +396,13 @@ html {
 }
 
 /* Başlık Bloğu */
-/* Başlık Bloğu */
+/* word-header definition moved here */
 .word-header {
     margin-bottom: 0px;
     padding: 15px 30px;
-    /* Balanced top/bottom padding for vertical centering */
     background: #fff;
 }
 
-.word-title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    /* Mobilde taşarsa aşağı insin */
-    gap: 15px;
-}
 
 .word-left-group {
     display: flex;
@@ -425,57 +412,7 @@ html {
 
 /* ... existing code ... */
 
-/* Antonym Cards - Improved */
-.antonym-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.antonym-card {
-    background: #fff;
-    border: 1px solid #fed7d7;
-    border-left: 6px solid #f56565;
-    padding: 10px 14px;
-    border-radius: 6px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
-}
-
-.antonym-card:hover {
-    transform: translateX(2px);
-}
-
-.antonym-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 6px;
-    border-bottom: 1px dashed #fed7d7;
-    padding-bottom: 4px;
-}
-
-.antonym-word {
-    font-weight: 700;
-    color: #c53030;
-    font-size: 1rem;
-}
-
-.antonym-val {
-    font-size: 0.75rem;
-    color: #fff;
-    background: #edf2f7;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-.der-note {
-    font-size: 0.8rem;
-    color: #718096;
-    font-style: italic;
-    margin-top: 2px;
-}
+/* Antonym list will use the updated styles later in the file */
 
 
 
@@ -577,22 +514,7 @@ html {
     animation: slideInLeft 0.4s ease-in-out forwards;
 }
 
-.antonym-note {
-    font-size: 0.8rem;
-    color: #718096;
-    font-style: italic;
-}
 
-.antonym-warning {
-    font-size: 0.75rem;
-    color: #9b2c2c;
-    background: #fff5f5;
-    padding: 4px;
-    border-radius: 4px;
-    margin-top: 6px;
-    display: inline-block;
-    border: 1px solid #feb2b2;
-}
 
 .word-title-row {
     display: flex;
@@ -601,15 +523,7 @@ html {
     flex-wrap: wrap;
 }
 
-.main-word {
-    font-size: 1.8rem;
-    /* Reduced font size */
-    font-weight: 800;
-    color: #1a202c;
-    margin: 0;
-    font-family: var(--font-heading);
-    letter-spacing: -0.02em;
-}
+/* main-word definition is moved later in the file */
 
 .phonetics-row {
     display: flex;
@@ -741,14 +655,7 @@ html {
 }
 
 /* --- Accordion / Collapsible Styles --- */
-.section-wrapper {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
-}
+/* section-wrapper consolidated above */
 
 .accordion-header {
     background: #f8fafc;
@@ -1047,28 +954,7 @@ html {
 }
 
 
-.grammar-item {
-    border: 1px solid var(--border);
-    padding: 12px;
-    border-radius: 6px;
-}
-
-.grammar-pattern {
-    font-family: monospace;
-    font-weight: bold;
-    color: #d53f8c;
-    font-size: 0.9rem;
-    background: #fff5f7;
-    padding: 2px 6px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 6px;
-}
-
-.grammar-note {
-    font-size: 0.85rem;
-    color: var(--text-main);
-}
+/* Grammar items will use the updated styles later in the file */
 
 
 /* --- Grammar Ozel Bosluk Ayari --- */
@@ -1100,54 +986,7 @@ html {
     }
 }
 
-.side-block {
-    margin-bottom: 25px;
-    font-size: 0.9rem;
-}
-
-/* Türevler Listesi */
-.derivative-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.derivative-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border);
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.derivative-item:hover {
-    background: #f0f4f8;
-    padding-left: 5px;
-    /* Hover efekti */
-}
-
-.der-word {
-    font-weight: 600;
-    color: var(--text-main);
-}
-
-.der-pos {
-    font-size: 0.75rem;
-    color: var(--text-light);
-    background: #edf2f7;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-right: 6px;
-}
-
-.der-note {
-    font-size: 0.85rem;
-    color: var(--accent);
-    text-align: right;
-    flex-grow: 1;
-}
+/* side-panel is deprecated/hidden */
 
 /* İlerleme Tablosu */
 .progression-table {
@@ -1589,12 +1428,6 @@ html {
     padding: 0;
 }
 
-.hint-title {
-    font-weight: 700;
-    color: #2f855a;
-    margin-bottom: 4px;
-    font-size: 0.9rem;
-}
 
 /* Antonym Cards */
 .antonym-list {
@@ -1649,9 +1482,7 @@ html {
     margin-top: 4px;
 }
 
-/* Cognate Hint Box - Comparison Design */
-/* Cognate Hint Box - Clean & Open Design */
-/* Cognate Hint Box - Boxed Design */
+/* Mükerrer blok silindi */
 /* Mükerrer blok silindi */
 
 .hint-title {
@@ -1794,24 +1625,15 @@ html {
     padding-bottom: 5px !important;
 }
 
-/* --- Diğer Tüm Bölümler İçin Ortak Ayar (Idioms, Nuance, Cognate, Errors, History, Collocations) --- */
-#sec-idioms .study-block,
-#sec-nuance .side-block,
-#sec-nuance .nuance-scale,
-#sec-cognate .hint-box,
-#sec-errors .study-block,
-#sec-history .side-block,
-#sec-collocations .study-block {
+/* --- Common Spacing for All Sections (Idioms, Nuance, Cognate, Errors, History, Collocations) --- */
+[id^="sec-"] .study-block,
+[id^="sec-"] .side-block,
+[id^="sec-"] .nuance-scale,
+[id^="sec-"] .hint-box {
     margin-top: 10px;
 }
 
-/* Alt boşlukları kısalım */
-#sec-idioms.open .accordion-content,
-#sec-nuance.open .accordion-content,
-#sec-cognate.open .accordion-content,
-#sec-errors.open .accordion-content,
-#sec-history.open .accordion-content,
-#sec-collocations.open .accordion-content {
+[id^="sec-"].open .accordion-content {
     padding-bottom: 5px !important;
 }
 
@@ -2215,49 +2037,45 @@ html {
 /* --- Section Toggle Icon (+ / -) --- */
 .section-toggle-icon {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
     text-align: center;
-    font-size: 0.75em;
-    /* Reduced size */
-    font-weight: normal;
-    color: inherit;
+    font-size: 1.5rem;
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    color: #4a5568;
+    /* Koyu Gri - Was #003366 */
     margin-right: 2px;
     margin-left: -5px;
-    /* Shift slightly left */
-    opacity: 0.7;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Smooth spin */
+    opacity: 0.8;
+    transition: all 0.3s ease;
 }
 
 .section-toggle-icon::before {
-    content: '➕';
+    content: '+';
 }
 
 /* Open State */
 .section-wrapper.open>.accordion-header .section-toggle-icon {
     transform: rotate(180deg);
-    /* Rotate when open */
 }
 
 .section-wrapper.open>.accordion-header .section-toggle-icon::before {
-    content: '➖';
-    font-size: 1em;
+    content: '−';
+    /* Unicode eksi işareti */
 }
 
 /* --- Desktop Specific Icon Adjustments --- */
 @media (min-width: 1024px) {
     .section-toggle-icon {
-        font-size: 0.65em;
-        /* Smaller on desktop */
-        margin-right: 8px;
-        /* More space on desktop */
+        font-size: 1.4rem;
+        /* Desktopta küçük kalmaması için büyütüldü */
+        margin-right: 12px;
     }
 
     .accordion-title {
-        gap: 8px;
-        /* More gap on desktop */
+        gap: 12px;
     }
 }
 
@@ -2454,7 +2272,7 @@ html {
 }
 
 .level-tab-btn {
-    padding: 0.5rem 1.5rem;
+    padding: 0.6rem 1.5rem;
     font-weight: 700;
     font-size: 0.9rem;
     color: #718096;
@@ -2523,5 +2341,139 @@ html {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* --- Beginner Section Specific Style --- */
+#content-beginner .section-toggle-icon {
+    color: #16a34a !important;
+    /* Daha koyu ve canlı yeşil */
+    font-weight: 900 !important;
+    opacity: 1 !important;
+}
+
+/* --- Intermediate Section Specific Style --- */
+#content-intermediate .section-toggle-icon {
+    color: #4299e1 !important;
+    /* Buton rengi ile aynı mavi */
+    font-weight: 900 !important;
+    opacity: 1 !important;
+}
+
+/* --- Advanced Section Specific Style --- */
+#content-advanced .section-toggle-icon {
+    color: #dc2626 !important;
+    /* Canlı kırmızı */
+    font-weight: 900 !important;
+    opacity: 1 !important;
+}
+
+/* --- Test Grid & Chip Styles --- */
+.test-grid {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    /* Tarayıcıda (Desktop) 15 tane yan yana */
+    gap: 8px;
+    /* Boşlukları biraz azalttım */
+    padding: 10px;
+    width: 100%;
+}
+
+.test-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    /* Daha küçük buton için radius'u azalttım */
+    font-weight: 800;
+    font-size: 1rem;
+    /* 15'li dizilim için puntoyu ideal boyuta çektim */
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.test-chip:hover {
+    transform: scale(1.15) translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.test-chip:active {
+    transform: scale(0.95);
+}
+
+/* Seviye Renkleri ile Uyumlu Tasarımlar */
+#content-beginner .test-chip {
+    background: linear-gradient(145deg, #ffffff, #f0fff4);
+    border-color: #dbfce7;
+    color: #38a169;
+    /* Yeşil geri geldi */
+}
+
+#content-beginner .test-chip:hover {
+    background: #48bb78;
+    color: white;
+    border-color: #48bb78;
+    box-shadow: 0 10px 20px rgba(72, 187, 120, 0.2);
+}
+
+#content-intermediate .test-chip {
+    background: linear-gradient(145deg, #ffffff, #ebf8ff);
+    border-color: #bee3f8;
+    color: #3182ce;
+    /* Mavi geri geldi */
+}
+
+#content-intermediate .test-chip:hover {
+    background: #4299e1;
+    color: white;
+    border-color: #4299e1;
+    box-shadow: 0 10px 20px rgba(66, 153, 225, 0.2);
+}
+
+#content-advanced .test-chip {
+    background: linear-gradient(145deg, #ffffff, #fff5f5);
+    border-color: #fed7d7;
+    color: #e53e3e;
+    /* Kırmızı geri geldi */
+}
+
+#content-advanced .test-chip:hover {
+    background: #f56565;
+    color: white;
+    border-color: #f56565;
+    box-shadow: 0 10px 20px rgba(229, 62, 62, 0.2);
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+    .test-grid {
+        grid-template-columns: repeat(8, 1fr);
+        gap: 8px;
+        padding: 5px;
+    }
+
+    .test-chip {
+        font-size: 1.1rem;
+        /* Mobilde de fark edilecek kadar büyütüldü */
+        border-radius: 8px;
+        border-width: 2px;
+    }
+}
+
+@media (max-width: 400px) {
+    .test-grid {
+        grid-template-columns: repeat(8, 1fr);
+        gap: 5px;
+    }
+
+    .test-chip {
+        font-size: 1rem;
+        /* Çok küçük ekranda bile okunaklı */
     }
 }
