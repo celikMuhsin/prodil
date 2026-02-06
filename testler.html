@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <title>YDT & YDS İngilizce Kelime Hazinesi, Online Test ve Egzersizler | Prodil Dersler</title>
+    <title>A1-C2 İngilizce Konu Tarama Testleri, YDT & YDS Deneme Sınavları | Prodil Test Merkezi</title>
 
     <meta name="description"
-        content="YDT, YDS ve YÖKDİL sınavlarına yönelik 4000+ kelimelik dev arşiv. Kelime kökenleri (etimoloji), eş anlamlılar, interaktif egzersizler ve yeni nesil deneme sınavları ile Sakarya Prodil kalitesiyle online çalışın.">
+        content="Başlangıçtan ileri seviyeye (A1-C2) kapsamlı İngilizce test arşivi. Tense, Modals, Passive Voice gramer testleri; Paragraf, Çeviri ve Cloze Test soruları ile sınavlara hazırlanın.">
 
     <meta name="keywords"
-        content="ydt kelime listesi, yds kelime çalışma, ingilizce etimoloji dersleri,ingilizce egzersiz, online ydt deneme, ingilizce test çöz, yökdil kelime kartları, ingilizce eş anlamlılar, prodil ders notları, sınav stratejileri, sakarya ingilizce özel ders materyalleri">
+        content="ingilizce seviye tespit sınavı, tense testleri çöz, ydt deneme sınavı, yds paragraf soruları, ingilizce çeviri testleri, cloze test çöz, a1 a2 ingilizce test, b1 b2 gramer testleri, relative clauses soruları, ingilizce konu tarama testleri, sakarya ydt hazırlık">
 
     <meta name="author" content="Muhsin Çelik">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:title" content="YDT ve YDS İçin İngilizce Kelime Laboratuvarı">
+    <meta property="og:title" content="Binlerce Soruluk Dev İngilizce Test Arşivi">
     <meta property="og:description"
-        content="Sadece kelime ezberlemeyin; kökenini, hikayesini ve sınavdaki tuzağını öğrenin. Prodil'in interaktif ders modülleri yayında.">
-    <meta property="og:image" content="https://prodil.net/assets/dersler-preview.png">
-    <meta property="og:url" content="https://prodil.net/dersler.html">
+        content="Tüm gramer konuları, okuma parçaları ve sınav stratejileri tek platformda. Seviyeni seç, teste başla.">
+    <meta property="og:image" content="https://prodil.net/assets/img/png_arsiv/testler-preview.png">
+    <meta property="og:url" content="https://prodil.net/testler.html">
 
 
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/png_arsiv/favicon.png">
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,6 +64,8 @@
 
     <!-- Custom Style from UzmanMatematik -->
     <link rel="stylesheet" href="assets/css/kelime_kart.css">
+    <link rel="stylesheet" href="assets/css/test.css">
+
 
     <style>
         /* Desktop Navigation Arrows & Card Width Adjustments */
@@ -448,7 +450,7 @@
     <div id="preloader">
         <div class="loader-container">
             <div class="loader-circle"></div>
-            <img src="assets/favicon.png" alt="Yükleniyor..." class="loader-logo">
+            <img src="assets/img/png_arsiv/favicon.png" alt="Yükleniyor..." class="loader-logo">
         </div>
     </div>
 
@@ -459,7 +461,8 @@
                 <!-- Logo Area -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html" class="flex items-center gap-2">
-                        <img src="assets/logo.png" alt="Prodil Logo" class="h-14 md:h-12 w-auto object-contain">
+                        <img src="assets/img/png_arsiv/logo.png" alt="Prodil Logo"
+                            class="h-14 md:h-12 w-auto object-contain">
                     </a>
                 </div>
 
@@ -631,6 +634,9 @@
 
             <!-- Content Area - Switchable Container -->
             <div id="testler-content-area" class="max-w-[900px] mx-auto min-h-[400px]">
+
+                <!-- Exam Container (Initially Hidden) -->
+                <div id="prodil-exam-container" style="display: none;"></div>
 
                 <!-- 1. Accordion List (Main View) -->
                 <div id="accordion-main-container">
@@ -1767,43 +1773,50 @@
 
         // --- NEW: Test Interface & Back Logic ---
         function openTest(testId) {
-            const listContainer = document.getElementById('accordion-main-container');
-            const examInterface = document.getElementById('test-exam-interface');
-            const testTitle = document.getElementById('current-test-title');
-
-            if (listContainer && examInterface) {
-                // Update UI
-                testTitle.innerText = testId + " Yakında...";
-                listContainer.classList.add('hidden');
-                examInterface.classList.remove('hidden');
-
-                // Browser History Push (Geri tuşu için)
-                history.pushState({ view: 'exam', testId: testId }, '');
+            // Prevent page reload/navigation
+            if (window.event) {
+                window.event.preventDefault();
+                window.event.stopPropagation();
             }
-        }
 
-        function closeTest() {
+            // "Test 1" -> "Test 1" (Dosya adı)
+
             const listContainer = document.getElementById('accordion-main-container');
-            const examInterface = document.getElementById('test-exam-interface');
+            const levelTabs = document.querySelector('.level-tabs-container');
+            // Container is handled by exam engine ("prodil-exam-container")
 
-            if (listContainer && examInterface) {
-                listContainer.classList.remove('hidden');
-                examInterface.classList.add('hidden');
+            // Build Path (Hardcoded for beta)
+            // assets/js/ingilizce/testler/1. Beginner/1.1. Grammar/1.1.1. Tenses/Test 1.json
+            const jsonPath = `assets/js/ingilizce/testler/1. Beginner/1.1. Grammar/1.1.1. Tenses/${testId}.json`;
+
+            if (window.ProdilExam) {
+                ProdilExam.startTest(jsonPath);
+            } else {
+                console.error("ProdilExam not loaded");
+                alert("Sınav modülü yüklenemedi. Lütfen sayfayı yenileyiniz.");
             }
         }
 
         // Monitor Browser "Back" Button
         window.onpopstate = function (event) {
-            const examInterface = document.getElementById('test-exam-interface');
-            // Eğer sınav açıksa ve geri tuşuna basıldıysa kapat
-            if (examInterface && !examInterface.classList.contains('hidden')) {
-                closeTest();
+            const container = document.getElementById('prodil-exam-container');
+            if (container && container.style.display !== 'none') {
+                ProdilExam.closeUI();
             }
         };
     </script>
 
     <!-- Project Data & Logic -->
     <script src="assets/js/ingilizce/kelime_ing.js"></script>
+    <script src="assets/js/test/test.js"></script>
+
+    <!-- Exam Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <!-- New Exam Engine -->
+    <script src="assets/js/test/exam_engine.js"></script>
+
 
 </body>
 

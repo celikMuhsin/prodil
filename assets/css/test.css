@@ -1,0 +1,163 @@
+.exam-container {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.exam-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f0f0f0;
+}
+
+/* Header */
+.exam-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.timer-box {
+    font-weight: 700;
+    color: #4a5568;
+    font-size: 1.1rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.stats-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-val {
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.stat-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: #a0aec0;
+}
+
+.stat-correct { color: #38a169; }
+.stat-wrong { color: #e53e3e; }
+
+/* Question Area */
+.question-area {
+    padding: 30px;
+    min-height: 250px;
+}
+
+.question-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.options-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.option-btn {
+    padding: 15px 20px;
+    border: 2px solid #edf2f7;
+    border-radius: 12px;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.option-btn:hover:not(:disabled) {
+    border-color: #cbd5e0;
+    background: #f7fafc;
+}
+
+.option-btn.selected {
+    border-color: #4299e1;
+    background: #ebf8ff;
+}
+
+.option-btn.correct {
+    border-color: #48bb78;
+    background: #f0fff4;
+    color: #22543d;
+}
+
+.option-btn.wrong {
+    border-color: #f56565;
+    background: #fff5f5;
+    color: #742a2a;
+}
+
+.option-label {
+    font-weight: 800;
+    margin-right: 15px;
+    color: #4a5568;
+}
+
+/* Footer Control */
+.exam-footer {
+    padding: 20px;
+    background: #fafafa;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-ctrl {
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.btn-prev { background: #edf2f7; color: #4a5568; }
+.btn-next { background: #3182ce; color: white; }
+.btn-hint { background: #feebc8; color: #7b341e; }
+
+.btn-ctrl:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Hint Box */
+.hint-container {
+    padding: 0 30px;
+    margin-bottom: 20px;
+}
+
+.hint-box {
+    background: #ebf8ff;
+    color: #2c5282;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: none;
+}
