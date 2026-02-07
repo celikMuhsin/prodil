@@ -1,0 +1,270 @@
+{
+    "test_info": {
+        "level": "BEGINNER (A1-A2)",
+        "topic": "Grammar - Tenses",
+        "test_no": 5,
+        "description": "Past Continuous Tense: 'Was/Were doing', 'When/While' bağlaçları ve Simple Past ile kullanımı."
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "At 8 o'clock yesterday evening, I _____ TV.",
+            "options": {
+                "A": "watch",
+                "B": "watched",
+                "C": "was watching",
+                "D": "am watching",
+                "E": "watching"
+            },
+            "correct_option": "C",
+            "hint": "Geçmişte belli bir saatte (At 8 o'clock) devam etmekte olan bir eylemden bahsediyoruz."
+        },
+        {
+            "id": 2,
+            "text": "The children _____ playing in the garden when it started to rain.",
+            "options": {
+                "A": "was",
+                "B": "were",
+                "C": "are",
+                "D": "did",
+                "E": "had"
+            },
+            "correct_option": "B",
+            "hint": "Çoğul özne (Children) ve geçmişte devam eden bir eylem. 'To be' fiilinin geçmiş çoğul hali nedir?"
+        },
+        {
+            "id": 3,
+            "text": "What _____ you doing when I called you?",
+            "options": {
+                "A": "are",
+                "B": "did",
+                "C": "were",
+                "D": "was",
+                "E": "do"
+            },
+            "correct_option": "C",
+            "hint": "Sen aradığında ne 'yapıyordun'? Geçmişte süren eylemi soruyoruz."
+        },
+        {
+            "id": 4,
+            "text": "While she _____ dinner, she cut her finger.",
+            "options": {
+                "A": "cooked",
+                "B": "was cooking",
+                "C": "cooks",
+                "D": "is cooking",
+                "E": "cook"
+            },
+            "correct_option": "B",
+            "hint": "'While' (iken) bağlacından sonra genellikle Past Continuous Tense (was/were V-ing) gelir."
+        },
+        {
+            "id": 5,
+            "text": "He _____ sleeping when the thief entered the house.",
+            "options": {
+                "A": "was",
+                "B": "were",
+                "C": "is",
+                "D": "did",
+                "E": "has"
+            },
+            "correct_option": "A",
+            "hint": "Özne tekil (He). Olay geçmişte yaşanıyor."
+        },
+        {
+            "id": 6,
+            "text": "I saw Ali yesterday. He _____ a red jacket.",
+            "options": {
+                "A": "wear",
+                "B": "wore",
+                "C": "was wearing",
+                "D": "is wearing",
+                "E": "wears"
+            },
+            "correct_option": "C",
+            "hint": "Onu gördüğüm o anda üzerinde kırmızı ceket vardı (giyiyordu)."
+        },
+        {
+            "id": 7,
+            "text": "_____ it raining when you left home?",
+            "options": {
+                "A": "Did",
+                "B": "Was",
+                "C": "Is",
+                "D": "Were",
+                "E": "Does"
+            },
+            "correct_option": "B",
+            "hint": "'Rain' burada fiil olarak 'raining' şeklinde kullanılmış. Hava durumu tekil olduğu için 'Was' kullanılır."
+        },
+        {
+            "id": 8,
+            "text": "My computer broke down while I _____ my homework.",
+            "options": {
+                "A": "did",
+                "B": "am doing",
+                "C": "was doing",
+                "D": "do",
+                "E": "done"
+            },
+            "correct_option": "C",
+            "hint": "Bilgisayar bozulduğunda ben ödevimi 'yapıyordum'. Süreklilik bildiren kısım burasıdır."
+        },
+        {
+            "id": 9,
+            "text": "They _____ listening to the teacher. They were talking.",
+            "options": {
+                "A": "weren't",
+                "B": "wasn't",
+                "C": "didn't",
+                "D": "aren't",
+                "E": "don't"
+            },
+            "correct_option": "A",
+            "hint": "Olumsuz bir durum. Öğretmeni dinlemiyorlardı, konuşuyorlardı."
+        },
+        {
+            "id": 10,
+            "text": "When the teacher _____ into the class, the students were making noise.",
+            "options": {
+                "A": "come",
+                "B": "coming",
+                "C": "came",
+                "D": "was coming",
+                "E": "comes"
+            },
+            "correct_option": "C",
+            "hint": "'When' cümlesi genellikle kısa ve kesici eylemi (Simple Past) anlatır. Öğretmen sınıfa 'girdi'."
+        },
+        {
+            "id": 11,
+            "text": "While my mother was reading a book, my father _____ TV.",
+            "options": {
+                "A": "watched",
+                "B": "was watching",
+                "C": "watches",
+                "D": "is watching",
+                "E": "watch"
+            },
+            "correct_option": "B",
+            "hint": "İki eylem geçmişte aynı anda paralel olarak devam ediyorsa, her iki tarafta da Past Continuous kullanılabilir."
+        },
+        {
+            "id": 12,
+            "text": "I _____ fast when the accident happened.",
+            "options": {
+                "A": "didn't drive",
+                "B": "not driving",
+                "C": "wasn't driving",
+                "D": "don't drive",
+                "E": "am not driving"
+            },
+            "correct_option": "C",
+            "hint": "Kaza olduğunda hızlı 'sürmüyordum'. Past Continuous Olumsuz yapı."
+        },
+        {
+            "id": 13,
+            "text": "Who _____ you talking to when I saw you?",
+            "options": {
+                "A": "did",
+                "B": "were",
+                "C": "was",
+                "D": "are",
+                "E": "do"
+            },
+            "correct_option": "B",
+            "hint": "Soru kalıbı: Who were you...?"
+        },
+        {
+            "id": 14,
+            "text": "The electricity went off while we _____ the match.",
+            "options": {
+                "A": "watched",
+                "B": "were watching",
+                "C": "are watching",
+                "D": "watch",
+                "E": "watching"
+            },
+            "correct_option": "B",
+            "hint": "Elektrik kesildiğinde biz maçı 'izliyorduk'."
+        },
+        {
+            "id": 15,
+            "text": "She fell down while she _____ for the bus.",
+            "options": {
+                "A": "runs",
+                "B": "ran",
+                "C": "was running",
+                "D": "run",
+                "E": "is running"
+            },
+            "correct_option": "C",
+            "hint": "Düşme eylemi anlıktır, koşma eylemi ise süreçtir. Süreç bildiren kısım 'While' ile kullanılır."
+        },
+        {
+            "id": 16,
+            "text": "It was a beautiful day. The sun _____ and the birds _____.",
+            "options": {
+                "A": "shone / sang",
+                "B": "was shining / were singing",
+                "C": "is shining / are singing",
+                "D": "shines / sing",
+                "E": "was shining / sang"
+            },
+            "correct_option": "B",
+            "hint": "Hikaye anlatımında arka planı tasvir ederken (atmosfer) Past Continuous kullanılır."
+        },
+        {
+            "id": 17,
+            "text": "I _____ hear the phone because I _____ to music.",
+            "options": {
+                "A": "didn't / was listening",
+                "B": "don't / listen",
+                "C": "wasn't / listened",
+                "D": "am not / listening",
+                "E": "didn't / listened"
+            },
+            "correct_option": "A",
+            "hint": "Telefonu duymadım (kısa eylem/sonuç), çünkü o sırada müzik dinliyordum (süreç)."
+        },
+        {
+            "id": 18,
+            "text": "When we arrived at the party, everyone _____.",
+            "options": {
+                "A": "dance",
+                "B": "danced",
+                "C": "was dancing",
+                "D": "is dancing",
+                "E": "are dancing"
+            },
+            "correct_option": "C",
+            "hint": "Biz vardığımızda eylem hali hazırda devam ediyordu."
+        },
+        {
+            "id": 19,
+            "text": "While I was studying, my friends _____ gaming.",
+            "options": {
+                "A": "were",
+                "B": "did",
+                "C": "was",
+                "D": "are",
+                "E": "had"
+            },
+            "correct_option": "A",
+            "hint": "Onlar oyun 'oynuyorlardı'. Ana fiil 'gaming' olarak verilmiş, yardımcı fiil eksik."
+        },
+        {
+            "id": 20,
+            "text": "He _____ like the food, so he didn't eat it.",
+            "options": {
+                "A": "wasn't",
+                "B": "didn't",
+                "C": "isn't",
+                "D": "weren't",
+                "E": "doesn't"
+            },
+            "correct_option": "B",
+            "hint": "DİKKAT! 'Like' durum bildiren bir fiildir (Stative Verb). Asla 'was liking' şeklinde kullanılmaz. Simple Past olmalı."
+        }
+    ]
+}

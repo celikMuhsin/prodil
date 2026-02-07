@@ -1,0 +1,270 @@
+{
+    "test_info": {
+        "level": "BEGINNER (A1-A2)",
+        "topic": "Grammar - Tenses",
+        "test_no": 4,
+        "description": "Present Perfect Tense: 'Have/Has + V3', 'Since/For', 'Just/Already/Yet' kullanımı ve Past Simple ayrımı."
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "I _____ finished my homework. Can I go out now?",
+            "options": {
+                "A": "has",
+                "B": "have",
+                "C": "am",
+                "D": "did",
+                "E": "was"
+            },
+            "correct_option": "B",
+            "hint": "Present Perfect Tense'de 'I' öznesi ile hangi yardımcı fiil kullanılır?"
+        },
+        {
+            "id": 2,
+            "text": "She _____ visited London twice.",
+            "options": {
+                "A": "have",
+                "B": "having",
+                "C": "has",
+                "D": "is",
+                "E": "did"
+            },
+            "correct_option": "C",
+            "hint": "Üçüncü tekil şahıs (She) için Present Perfect yardımcı fiili nedir?"
+        },
+        {
+            "id": 3,
+            "text": "We _____ cleaned the house. It is dirty.",
+            "options": {
+                "A": "haven't",
+                "B": "hasn't",
+                "C": "didn't",
+                "D": "don't",
+                "E": "aren't"
+            },
+            "correct_option": "A",
+            "hint": "Cümlenin ikinci kısmı evin kirli olduğunu söylüyor. Demek ki temizleme eylemi yapılmamış."
+        },
+        {
+            "id": 4,
+            "text": "_____ you ever eaten Sushi?",
+            "options": {
+                "A": "Do",
+                "B": "Did",
+                "C": "Has",
+                "D": "Are",
+                "E": "Have"
+            },
+            "correct_option": "E",
+            "hint": "Bir tecrübeyi sorarken 'Ever' kullanılmış. Bu yapı 'Have you...?' kalıbıdır."
+        },
+        {
+            "id": 5,
+            "text": "He has _____ his keys. He can't open the door.",
+            "options": {
+                "A": "lose",
+                "B": "lost",
+                "C": "losing",
+                "D": "losed",
+                "E": "loses"
+            },
+            "correct_option": "B",
+            "hint": "Present Perfect Tense'de fiilin 3. hali (V3) kullanılır. 'Lose' düzensiz bir fiildir."
+        },
+        {
+            "id": 6,
+            "text": "I have lived in Sakarya _____ 2010.",
+            "options": {
+                "A": "for",
+                "B": "since",
+                "C": "ago",
+                "D": "in",
+                "E": "at"
+            },
+            "correct_option": "B",
+            "hint": "Eylemin başlangıç noktası (tarih/yıl) verildiğinde 'since' kullanılır."
+        },
+        {
+            "id": 7,
+            "text": "They have been married _____ ten years.",
+            "options": {
+                "A": "since",
+                "B": "from",
+                "C": "for",
+                "D": "ago",
+                "E": "in"
+            },
+            "correct_option": "C",
+            "hint": "Bir süreç veya zaman dilimi (on yıl) belirtiliyorsa 'for' kullanılır."
+        },
+        {
+            "id": 8,
+            "text": "Have you called your mother _____?",
+            "options": {
+                "A": "just",
+                "B": "already",
+                "C": "yet",
+                "D": "never",
+                "E": "since"
+            },
+            "correct_option": "C",
+            "hint": "Soru cümlelerinin ve olumsuz cümlelerin sonunda 'henüz' anlamında kullanılan kelime hangisidir?"
+        },
+        {
+            "id": 9,
+            "text": "I have _____ seen that movie. It was great.",
+            "options": {
+                "A": "yet",
+                "B": "already",
+                "C": "ever",
+                "D": "since",
+                "E": "for"
+            },
+            "correct_option": "B",
+            "hint": "Eylemin beklenenden önce yapıldığını veya tamamlandığını belirtmek için 'already' kullanılır."
+        },
+        {
+            "id": 10,
+            "text": "She has _____ been to Italy.",
+            "options": {
+                "A": "ever",
+                "B": "yet",
+                "C": "never",
+                "D": "since",
+                "E": "didn't"
+            },
+            "correct_option": "C",
+            "hint": "Cümle yapıca olumlu ama anlamca olumsuz. 'Hiç bulunmadı' demek istiyoruz."
+        },
+        {
+            "id": 11,
+            "text": "Where is Ali? He _____ to the market.",
+            "options": {
+                "A": "has gone",
+                "B": "has been",
+                "C": "have gone",
+                "D": "did go",
+                "E": "was going"
+            },
+            "correct_option": "A",
+            "hint": "Ali şu an burada değil, markete gitmiş ve henüz dönmemiş. (Gone vs Been ayrımı)."
+        },
+        {
+            "id": 12,
+            "text": "My father _____ just _____ home.",
+            "options": {
+                "A": "have / come",
+                "B": "has / came",
+                "C": "has / come",
+                "D": "did / come",
+                "E": "is / coming"
+            },
+            "correct_option": "C",
+            "hint": "'Just' (az önce), Present Perfect ile kullanılır. 'Come' fiilinin 3. hali yine 'come'dır."
+        },
+        {
+            "id": 13,
+            "text": "I _____ him yesterday, but I _____ him today.",
+            "options": {
+                "A": "have seen / haven't seen",
+                "B": "saw / haven't seen",
+                "C": "saw / didn't see",
+                "D": "have seen / didn't see",
+                "E": "see / saw"
+            },
+            "correct_option": "B",
+            "hint": "'Yesterday' kesin bir geçmiş zamandır (Simple Past). 'Today' ise henüz bitmemiş bir zamandır (Present Perfect)."
+        },
+        {
+            "id": 14,
+            "text": "_____ you finish the report yet?",
+            "options": {
+                "A": "Did",
+                "B": "Have",
+                "C": "Are",
+                "D": "Do",
+                "E": "Has"
+            },
+            "correct_option": "B",
+            "hint": "Cümle sonunda 'yet' var. Bu Present Perfect bir sorudur."
+        },
+        {
+            "id": 15,
+            "text": "We _____ in this house for 20 years, and we still live here.",
+            "options": {
+                "A": "lived",
+                "B": "have lived",
+                "C": "live",
+                "D": "are living",
+                "E": "were living"
+            },
+            "correct_option": "B",
+            "hint": "Geçmişte başlayıp günümüzde hala devam eden eylemler için Present Perfect kullanılır."
+        },
+        {
+            "id": 16,
+            "text": "Shakespeare _____ many plays.",
+            "options": {
+                "A": "has written",
+                "B": "wrote",
+                "C": "writes",
+                "D": "is writing",
+                "E": "has wrote"
+            },
+            "correct_option": "B",
+            "hint": "Shakespeare hayatta değil. Eylemleri geçmişte kaldı ve bitti. Bu yüzden Simple Past kullanılır."
+        },
+        {
+            "id": 17,
+            "text": "Ow! I _____ my finger.",
+            "options": {
+                "A": "cut",
+                "B": "have cut",
+                "C": "cutting",
+                "D": "was cut",
+                "E": "did cut"
+            },
+            "correct_option": "B",
+            "hint": "Olay yeni oldu ve acısı/etkisi hala devam ediyor. Zaman belirtilmemiş."
+        },
+        {
+            "id": 18,
+            "text": "_____ she _____ her homework?",
+            "options": {
+                "A": "Did / finished",
+                "B": "Has / finished",
+                "C": "Has / finish",
+                "D": "Have / finished",
+                "E": "Is / finishing"
+            },
+            "correct_option": "B",
+            "hint": "Present Perfect soru cümlesi. 'Finish' düzenli bir fiildir, '-ed' alır."
+        },
+        {
+            "id": 19,
+            "text": "I am not hungry. I have _____ had lunch.",
+            "options": {
+                "A": "yet",
+                "B": "ever",
+                "C": "just",
+                "D": "since",
+                "E": "ago"
+            },
+            "correct_option": "C",
+            "hint": "Tokum çünkü yemeği 'az önce' yedim."
+        },
+        {
+            "id": 20,
+            "text": "When _____ you _____ to learn English?",
+            "options": {
+                "A": "have / started",
+                "B": "did / start",
+                "C": "did / started",
+                "D": "have / start",
+                "E": "were / start"
+            },
+            "correct_option": "B",
+            "hint": "'When' (Ne zaman) sorusu kesin bir zamanı sorar. Present Perfect ile 'When' sorusu sorulmaz, Simple Past kullanılır."
+        }
+    ]
+}

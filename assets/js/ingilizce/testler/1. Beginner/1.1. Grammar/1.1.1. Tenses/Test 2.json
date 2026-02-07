@@ -1,0 +1,270 @@
+{
+    "test_info": {
+        "level": "BEGINNER (A1-A2)",
+        "topic": "Grammar - Tenses",
+        "test_no": 2,
+        "description": "Simple Past Tense (Geçmiş Zaman): Düzenli/Düzensiz fiiller, 'Was/Were' ve 'Did' kullanımı."
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "I _____ at home yesterday. I was very tired.",
+            "options": {
+                "A": "am",
+                "B": "is",
+                "C": "was",
+                "D": "were",
+                "E": "be"
+            },
+            "correct_option": "C",
+            "hint": "'Yesterday' (dün) geçmiş zamanı işaret eder. 'I' öznesi için 'to be' fiilinin geçmiş zaman hali nedir?"
+        },
+        {
+            "id": 2,
+            "text": "We _____ football in the park last weekend.",
+            "options": {
+                "A": "play",
+                "B": "played",
+                "C": "plays",
+                "D": "playing",
+                "E": "are playing"
+            },
+            "correct_option": "B",
+            "hint": "'Last weekend' (geçen hafta sonu) geçmişte kalmış bir zamandır. Düzenli fiiller geçmiş zamanda '-ed' takısı alır."
+        },
+        {
+            "id": 3,
+            "text": "They _____ happy with the exam results.",
+            "options": {
+                "A": "wasn't",
+                "B": "isn't",
+                "C": "aren't",
+                "D": "weren't",
+                "E": "didn't"
+            },
+            "correct_option": "D",
+            "hint": "Özne çoğul (They) ve zaman geçmiş. Durum cümlesi olduğu için 'be' fiilinin geçmiş zaman çoğul halini kullanmalısın."
+        },
+        {
+            "id": 4,
+            "text": "She _____ to the cinema two days ago.",
+            "options": {
+                "A": "go",
+                "B": "goes",
+                "C": "going",
+                "D": "went",
+                "E": "gone"
+            },
+            "correct_option": "D",
+            "hint": "'Go' (gitmek) düzensiz bir fiildir. Geçmiş zamanda tamamen değişerek farklı bir kelimeye dönüşür."
+        },
+        {
+            "id": 5,
+            "text": "My brother _____ his homework last night.",
+            "options": {
+                "A": "didn't do",
+                "B": "didn't",
+                "C": "not do",
+                "D": "doesn't do",
+                "E": "don't do"
+            },
+            "correct_option": "A",
+            "hint": "Geçmiş zamanda olumsuz cümle kurarken yardımcı fiil (didn't) ve ana fiilin yalın hali (do) birlikte kullanılır."
+        },
+        {
+            "id": 6,
+            "text": "_____ you visit your grandparents last summer?",
+            "options": {
+                "A": "Do",
+                "B": "Are",
+                "C": "Were",
+                "D": "Did",
+                "E": "Does"
+            },
+            "correct_option": "D",
+            "hint": "Geçmiş zamanda (Simple Past) fiil cümlelerinde soru sormak için hangi yardımcı fiil başa gelir?"
+        },
+        {
+            "id": 7,
+            "text": "He _____ a new car last month.",
+            "options": {
+                "A": "buy",
+                "B": "buys",
+                "C": "bought",
+                "D": "buying",
+                "E": "buyed"
+            },
+            "correct_option": "C",
+            "hint": "'Buy' (satın almak) düzensiz bir fiildir. '-ed' takısı almaz, ikinci hali (V2) farklıdır."
+        },
+        {
+            "id": 8,
+            "text": "Where _____ you born?",
+            "options": {
+                "A": "did",
+                "B": "was",
+                "C": "are",
+                "D": "were",
+                "E": "do"
+            },
+            "correct_option": "D",
+            "hint": "Doğum yeri ve tarihi sorulurken her zaman 'to be' fiilinin geçmiş zaman hali (was/were) kullanılır."
+        },
+        {
+            "id": 9,
+            "text": "I _____ see him at the party. Was he there?",
+            "options": {
+                "A": "wasn't",
+                "B": "didn't",
+                "C": "don't",
+                "D": "not",
+                "E": "am not"
+            },
+            "correct_option": "B",
+            "hint": "Fiil cümlesini (see) geçmiş zamanda olumsuz yapmak için 'did not' yapısı kullanılır."
+        },
+        {
+            "id": 10,
+            "text": "The students _____ a difficult exam yesterday morning.",
+            "options": {
+                "A": "have",
+                "B": "has",
+                "C": "having",
+                "D": "had",
+                "E": "haved"
+            },
+            "correct_option": "D",
+            "hint": "'Have' fiilinin geçmiş zaman hali düzensizdir."
+        },
+        {
+            "id": 11,
+            "text": "When _____ they _____ to Istanbul?",
+            "options": {
+                "A": "did / move",
+                "B": "did / moved",
+                "C": "do / move",
+                "D": "were / move",
+                "E": "did / moves"
+            },
+            "correct_option": "A",
+            "hint": "Soru cümlelerinde 'Did' kullanıldığında ana fiil her zaman yalın (V1) halde kalır."
+        },
+        {
+            "id": 12,
+            "text": "It _____ rain yesterday, so we went for a walk.",
+            "options": {
+                "A": "wasn't",
+                "B": "isn't",
+                "C": "didn't",
+                "D": "not",
+                "E": "doesn't"
+            },
+            "correct_option": "C",
+            "hint": "'Rain' burada fiil olarak kullanılmıştır. Geçmiş zamanda fiili olumsuz yapmak için ne kullanılır?"
+        },
+        {
+            "id": 13,
+            "text": "Who _____ the window?",
+            "options": {
+                "A": "break",
+                "B": "broke",
+                "C": "did break",
+                "D": "breaking",
+                "E": "broken"
+            },
+            "correct_option": "B",
+            "hint": "Özneyi soran (Who) sorularda, eğer olumlu cümle ise 'did' kullanılmaz, direkt fiilin ikinci hali gelir."
+        },
+        {
+            "id": 14,
+            "text": "She _____ very busy, so she _____ call me.",
+            "options": {
+                "A": "was / didn't",
+                "B": "is / doesn't",
+                "C": "were / didn't",
+                "D": "was / wasn't",
+                "E": "did / didn't"
+            },
+            "correct_option": "A",
+            "hint": "İlk kısım durum (to be), ikinci kısım eylem (call) cümlesidir. Özne 'She' olduğuna dikkat et."
+        },
+        {
+            "id": 15,
+            "text": "We _____ late because we _____ the bus.",
+            "options": {
+                "A": "are / miss",
+                "B": "were / missed",
+                "C": "was / missed",
+                "D": "were / miss",
+                "E": "did / missed"
+            },
+            "correct_option": "B",
+            "hint": "Geçmişte yaşanan bir olay. 'Late' bir sıfat olduğu için 'were', 'miss' düzenli bir fiil olduğu için '-ed' alır."
+        },
+        {
+            "id": 16,
+            "text": "What _____ you _____ for dinner last night?",
+            "options": {
+                "A": "did / ate",
+                "B": "were / eat",
+                "C": "did / eat",
+                "D": "do / eat",
+                "E": "are / eating"
+            },
+            "correct_option": "C",
+            "hint": "Geçmiş zaman soru cümlesinde fiil yalın halde (V1) kullanılır."
+        },
+        {
+            "id": 17,
+            "text": "I _____ the answer, but I _____ quiet.",
+            "options": {
+                "A": "know / keep",
+                "B": "knew / kept",
+                "C": "knowed / keeped",
+                "D": "knew / keeped",
+                "E": "known / kept"
+            },
+            "correct_option": "B",
+            "hint": "Hem 'know' hem de 'keep' düzensiz fiillerdir. İkinci hallerini hatırlamalısın."
+        },
+        {
+            "id": 18,
+            "text": "The film _____ very boring, so we _____ leave early.",
+            "options": {
+                "A": "was / left",
+                "B": "is / leave",
+                "C": "was / leaving",
+                "D": "were / left",
+                "E": "was / leaved"
+            },
+            "correct_option": "A",
+            "hint": "Film tekildir (was). 'Leave' düzensiz bir fiildir (left)."
+        },
+        {
+            "id": 19,
+            "text": "He _____ up early, _____ a shower, and _____ out.",
+            "options": {
+                "A": "get / have / go",
+                "B": "got / had / went",
+                "C": "got / has / goes",
+                "D": "gotted / had / went",
+                "E": "get / had / went"
+            },
+            "correct_option": "B",
+            "hint": "Peş peşe yapılan geçmiş eylemler anlatılıyor. Tüm fiillerin ikinci halini (V2) kullanmalısın."
+        },
+        {
+            "id": 20,
+            "text": "_____ she at school yesterday? No, she _____.",
+            "options": {
+                "A": "Did / didn't",
+                "B": "Was / wasn't",
+                "C": "Is / isn't",
+                "D": "Were / weren't",
+                "E": "Was / didn't"
+            },
+            "correct_option": "B",
+            "hint": "Okulda olmak bir durumdur, eylem değildir. Bu yüzden 'Was/Were' kullanılır."
+        }
+    ]
+}

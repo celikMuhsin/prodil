@@ -11,6 +11,7 @@ window.ProdilExam = {
     currentLevel: "beginner", // info only
     timer: 0,
     timerInterval: null,
+    currentJsonPath: null, // Track current test path for switching
 
     correctCount: 0,
     wrongCount: 0,
@@ -45,6 +46,9 @@ window.ProdilExam = {
             // But usually browsers handle it. 
             // jsonPath is passed from HTML.
 
+            // Store current path for switching logic
+            this.currentJsonPath = jsonPath;
+
             const response = await fetch(jsonPath);
             if (!response.ok) throw new Error("Test dosyasina erisilemedi: " + response.status + " " + response.statusText);
 
@@ -61,6 +65,7 @@ window.ProdilExam = {
 
             // Initialize UI
             this.openUI();
+            this.syncSelector(); // Sync the dropdown value
             this.nextQuestion();
             this.startTimer();
 
@@ -84,6 +89,31 @@ window.ProdilExam = {
             l.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.95); z-index:99999; display:none; flex-direction:column; justify-content:center; align-items:center;';
             l.innerHTML = '<div style="font-size:2rem; font-weight:bold; color:#003366; margin-bottom:10px;">Prodil Exam</div><div style="font-size:1rem; color:#666;">Sınav Hazırlanıyor...</div>';
             document.body.appendChild(l);
+        }
+    },
+
+    /**
+     * Switches between tests (Test 1, Test 2, etc.) within the same category
+     * @param {string} testName - Name of the test (e.g. "Test 2")
+     */
+    switchTest: function (testName) {
+        if (!this.currentJsonPath) return;
+
+        // Current path example: assets/js/.../Test 1.json
+        // We replace "Test X.json" with the new test name
+        const parts = this.currentJsonPath.split('/');
+        parts[parts.length - 1] = testName + ".json";
+        const newPath = parts.join('/');
+
+        this.startTest(newPath);
+    },
+
+    syncSelector: function () {
+        if (!this.currentJsonPath) return;
+        const selector = document.getElementById('test-selector');
+        if (selector) {
+            const fileName = this.currentJsonPath.split('/').pop().replace('.json', '');
+            selector.value = fileName;
         }
     },
 
@@ -143,6 +173,9 @@ window.ProdilExam = {
         container.style.display = 'block';
         container.innerHTML = this.getHtmlTemplate();
 
+        // Scroll to the very top so everything (logo, tabs, exam) is visible and not covered by fixed header
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
         // Initialize Canvas
         setTimeout(() => this.initCanvas(), 100);
     },
@@ -157,37 +190,47 @@ window.ProdilExam = {
         document.getElementById('accordion-main-container').style.display = 'block';
         document.querySelector('.level-tabs-container').style.display = 'flex';
 
-        // Scroll to top of list
-        document.getElementById('testler-content-area').scrollIntoView({ behavior: 'smooth' });
+        // Scroll to the very top so everything (logo, tabs) is visible
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     },
 
     getHtmlTemplate: function () {
         return `
             <div class="exam-card">
-                <!-- Header -->
-                <div class="exam-header">
-                    <div class="header-left">
-                        <span id="exam-timer" class="timer-text">00:00</span>
-                        <div id="scratchpad-controls" style="display:flex; align-items:center; margin-left:8px; gap: 2px;">
-                             <button id="btn-pen" onclick="ProdilExam.toggleDrawingMode()" class="header-tool-btn" title="Karalama Modu">✎</button>
-                             <div id="extra-tools" style="display:none; align-items:center; gap:2px;">
-                                  <button id="btn-eraser" onclick="ProdilExam.toggleEraser()" class="header-tool-btn small-icon" title="Silgi">🧼</button>
-                                  <button id="btn-clear" onclick="ProdilExam.clearCanvas()" class="header-tool-btn small-icon" title="Temizle">🗑️</button>
-                             </div>
+                <!-- Heading Group (Header + Speed Panel) -->
+                <div class="exam-heading-group">
+                    <!-- Header -->
+                    <div class="exam-header">
+                        <div class="header-left">
+                            <span id="exam-timer" class="timer-text">00:00</span>
+                             <div id="scratchpad-controls" style="display:flex; align-items:center; margin-left:8px; gap: 8px;"> <!-- Increased gap to match extra-tools -->
+                                 <button id="btn-pen" onclick="ProdilExam.toggleDrawingMode()" class="header-tool-btn" title="Karalama Modu">✎</button>
+                                 <div id="extra-tools" style="display:none; align-items:center; gap:8px;"> <!-- Increased gap -->
+                                      <button id="btn-eraser" onclick="ProdilExam.toggleEraser()" class="header-tool-btn small-icon" title="Silgi">🧼</button>
+                                      <button id="btn-clear" onclick="ProdilExam.clearCanvas()" class="header-tool-btn small-icon" title="Temizle">🗑️</button>
+                                 </div>
+                            </div>
+                        </div>
+    
+                        <div class="header-center">
+                            <button onclick="ProdilExam.toggleSpeedPanel()" class="speed-toggle-btn">
+                                HIZ <i class="fa-solid fa-chevron-down ml-1" id="speed-toggle-icon"></i>
+                            </button>
+                        </div>
+                       
+                         <div class="header-right" style="display:flex; align-items:center; gap:8px;">                    
+                             <span class="timer-text" id="correct-box" style="color:#4ade80;" title="Doğru">0</span> 
+                             <span class="timer-text" id="wrong-box" style="color:#f87171;" title="Yanlış">0</span> 
+                             <span class="timer-text" id="empty-box" style="color:#9ca3af;" title="Boş">0</span>
+                             <button id="btn-close" onclick="ProdilExam.finishTestConfirm()" class="close-btn" title="Testi Bitir">✕</button>
                         </div>
                     </div>
-
-                    <div class="header-center">
-                        <div id="exam-speed" class="timer-text" style="display:flex; align-items:center; justify-content:center;">
-                             <!-- Speed metrics injected by update wrapper -->
-                             <span class="speed-unit">Hazırlanıyor...</span>
+    
+                    <!-- Speed Panel (Hidden by default) -->
+                    <div id="speed-panel" class="speed-panel" style="display:none;">
+                        <div id="exam-speed" style="display:flex; align-items:center; justify-content:center; width:100%;">
+                             <span class="speed-unit">Veriler toplanıyor...</span>
                         </div>
-                    </div>
-                    
-                     <div class="header-right">
-                         <div class="score-box score-correct" id="correct-box" style="display:none">0</div>
-                         <div class="score-box score-wrong" id="wrong-box" style="display:none">0</div>
-                         <button id="btn-close" onclick="ProdilExam.finishTestConfirm()" class="close-btn" title="Testi Bitir">✕</button>
                     </div>
                 </div>
 
@@ -196,9 +239,6 @@ window.ProdilExam = {
                     <div id="soru-alani" class="question-area"></div>
                     <canvas id="drawing-canvas"></canvas>
                 </div>
-
-                <!-- Hint -->
-                <div id="ipucu-metni" class="hint-box" style="display:none;"></div>
 
                 <!-- Footer -->
                 <div id="kontrol-paneli" class="control-panel">
@@ -211,12 +251,15 @@ window.ProdilExam = {
                     </button>
 
                     <div class="level-selector">
-                        <select style="padding:4px 8px; border-radius:6px; border:1px solid #d1d5db; background:#f9fafb; font-size:0.8rem; font-weight:600; color:#374151; cursor:pointer;">
-                            <option value="1">Seviye 1</option>
-                            <option value="2">Seviye 2</option>
-                            <option value="3">Seviye 3</option>
-                            <option value="4">Seviye 4</option>
-                            <option value="5">Seviye 5</option>
+                        <select id="test-selector" 
+                                onfocus="this.classList.add('btn-active')" 
+                                onblur="this.classList.remove('btn-active')"
+                                onchange="ProdilExam.switchTest(this.value)">
+                            <option value="Test 1">Test 1</option>
+                            <option value="Test 2">Test 2</option>
+                            <option value="Test 3">Test 3</option>
+                            <option value="Test 4">Test 4</option>
+                            <option value="Test 5">Test 5</option>
                         </select>
                     </div>
 
@@ -224,6 +267,9 @@ window.ProdilExam = {
                         İleri <i class="fa-solid fa-chevron-right ml-2"></i>
                     </button>
                 </div>
+
+                <!-- Hint (Moved below buttons) -->
+                <div id="ipucu-metni" class="hint-box" style="display:none;"></div>
             </div>
         `;
     },
@@ -232,6 +278,7 @@ window.ProdilExam = {
 
     nextQuestion: function () {
         this.saveCurrentState();
+
         if (this.currentIndex < this.currentQuestions.length - 1) {
             this.currentIndex++;
             this.renderQuestion(this.currentQuestions[this.currentIndex]);
@@ -245,6 +292,15 @@ window.ProdilExam = {
 
     prevQuestion: function () {
         this.saveCurrentState();
+
+        // Flash "Back" button specifically
+        const prevBtn = document.getElementById('btn-prev');
+        if (prevBtn) {
+            prevBtn.classList.remove('flash-btn');
+            void prevBtn.offsetWidth; // Trigger reflow
+            prevBtn.classList.add('flash-btn');
+        }
+
         if (this.currentIndex > 0) {
             this.currentIndex--;
             this.renderQuestion(this.currentQuestions[this.currentIndex]);
@@ -259,6 +315,12 @@ window.ProdilExam = {
         // Hide hint
         const hintBox = document.getElementById('ipucu-metni');
         if (hintBox) hintBox.style.display = 'none';
+
+        const hintBtn = document.getElementById('btn-hint');
+        if (hintBtn) {
+            hintBtn.innerHTML = 'İpucu';
+            hintBtn.classList.remove('btn-active');
+        }
 
         // Load Canvas
         this.loadCanvasState(q);
@@ -290,7 +352,7 @@ window.ProdilExam = {
 
             html += `
                 <button class="option-btn ${extraClass}" onclick="ProdilExam.checkAnswer(this, ${idx})" ${disabled}>
-                    <span class="option-label">${letter}</span>
+                    <span class="option-label">${letter})</span>
                     <span>${opt.text}</span>
                 </button>
             `;
@@ -315,6 +377,8 @@ window.ProdilExam = {
         if (isCorrect) {
             this.correctCount++;
             btn.classList.add('correct');
+            // Flash 0.5s before moving to next question (at 1000ms)
+            setTimeout(() => this.flashNextButton(), 500);
             setTimeout(() => this.nextQuestion(), 1000);
         } else {
             this.wrongCount++;
@@ -324,6 +388,8 @@ window.ProdilExam = {
             q.siklar.forEach((opt, i) => {
                 if (opt.dogruMu) btns[i].classList.add('correct');
             });
+            // Flash 0.5s before moving to next question (at 2000ms)
+            setTimeout(() => this.flashNextButton(), 1500);
             setTimeout(() => this.nextQuestion(), 2000);
         }
 
@@ -334,14 +400,51 @@ window.ProdilExam = {
         this.updateStatsUI();
     },
 
+    flashNextButton: function () {
+        const nextBtn = document.getElementById('btn-next');
+        if (nextBtn) {
+            nextBtn.classList.remove('flash-btn');
+            void nextBtn.offsetWidth; // Trigger reflow
+            nextBtn.classList.add('flash-btn');
+        }
+    },
+
     toggleHint: function () {
         const box = document.getElementById('ipucu-metni');
-        if (this.activeHint) {
-            box.innerHTML = this.activeHint;
-            box.style.display = box.style.display === 'none' ? 'block' : 'none';
+        const btn = document.getElementById('btn-hint');
+        if (!box || !btn) return;
+
+        const isVisible = box.style.display !== 'none';
+
+        if (isVisible) {
+            box.style.display = 'none';
+            btn.innerHTML = 'İpucu';
+            btn.classList.remove('btn-active');
         } else {
-            box.innerHTML = "Bu soru için ipucu bulunmuyor.";
+            if (this.activeHint) {
+                box.innerHTML = this.activeHint;
+            } else {
+                box.innerHTML = "Bu soru için ipucu bulunmuyor.";
+            }
             box.style.display = 'block';
+            btn.classList.add('btn-active');
+            const isMobile = window.innerWidth < 768;
+            btn.innerHTML = isMobile ? 'Kapat' : 'İpucunu Kapat';
+        }
+    },
+
+    toggleSpeedPanel: function () {
+        const panel = document.getElementById('speed-panel');
+        const icon = document.getElementById('speed-toggle-icon');
+        if (panel.style.display === 'none') {
+            panel.style.display = 'flex';
+            if (icon) icon.className = "fa-solid fa-chevron-up ml-1";
+            // Resize canvas if needed when layout changes
+            setTimeout(() => this.initCanvas(), 50);
+        } else {
+            panel.style.display = 'none';
+            if (icon) icon.className = "fa-solid fa-chevron-down ml-1";
+            setTimeout(() => this.initCanvas(), 50);
         }
     },
 
@@ -493,20 +596,35 @@ window.ProdilExam = {
 
     updateStatsUI: function () {
         const total = this.currentQuestions.length;
-        const seen = this.currentIndex + 1; // Assuming linear progression
-        const empty = Math.max(0, seen - this.correctCount - this.wrongCount); // Calculates empty among seen ones
+
+        // Calculate 'seen' based on whether current question is answered or not
+        // This prevents the empty count from flickering when answering a question
+        let seen = this.currentIndex;
+        if (this.currentQuestions[this.currentIndex] && this.currentQuestions[this.currentIndex].cozulduMu) {
+            seen += 1;
+        }
+
+        // Logic: Empty is (Questions Accounted For) - (Correct + Wrong)
+        // If current is answered, it's accounted for. If not, it's not (it's pending).
+        // Skipped questions from previous indices differ from pending current question.
+        const empty = Math.max(0, seen - this.correctCount - this.wrongCount);
 
         // Update boxes
         const cBox = document.getElementById('correct-box');
         const wBox = document.getElementById('wrong-box');
+        const eBox = document.getElementById('empty-box');
 
         if (cBox) {
             cBox.innerText = this.correctCount;
-            cBox.style.display = this.correctCount > 0 ? 'flex' : 'none';
+            cBox.style.display = this.correctCount > 0 ? 'inline' : 'none';
         }
         if (wBox) {
             wBox.innerText = this.wrongCount;
-            wBox.style.display = this.wrongCount > 0 ? 'flex' : 'none';
+            wBox.style.display = this.wrongCount > 0 ? 'inline' : 'none';
+        }
+        if (eBox) {
+            eBox.innerText = empty;
+            eBox.style.display = empty > 0 ? 'inline' : 'none';
         }
 
         // Speed Metrics
@@ -518,13 +636,13 @@ window.ProdilExam = {
             const emptyPerHour = Math.round((empty / this.timer) * 3600);
 
             speedEl.innerHTML = `
-                <div class="speed-metric"><span class="speed-value">${qsPerHour}</span><span class="speed-unit">so/sa</span></div>
+                <div class="speed-metric"><span class="speed-value">${Math.max(0, qsPerHour)}</span><span class="speed-unit">so/sa</span></div>
                 <span class="speed-divider">|</span>
-                <div class="speed-metric speed-correct"><span class="speed-value">${correctPerHour}</span><span class="speed-unit">do/sa</span></div>
+                <div class="speed-metric speed-correct"><span class="speed-value">${Math.max(0, correctPerHour)}</span><span class="speed-unit">do/sa</span></div>
                 <span class="speed-divider">|</span>
-                <div class="speed-metric speed-wrong"><span class="speed-value">${wrongPerHour}</span><span class="speed-unit">ya/sa</span></div>
+                <div class="speed-metric speed-wrong"><span class="speed-value">${Math.max(0, wrongPerHour)}</span><span class="speed-unit">ya/sa</span></div>
                 <span class="speed-divider">|</span>
-                <div class="speed-metric speed-empty" style="color:#ca8a04"><span class="speed-value">${emptyPerHour}</span><span class="speed-unit">bo/sa</span></div>
+                <div class="speed-metric speed-empty"><span class="speed-value">${Math.max(0, emptyPerHour)}</span><span class="speed-unit">bo/sa</span></div>
             `;
         }
     },
@@ -548,9 +666,7 @@ window.ProdilExam = {
 
     // --- FINISH & REPORT ---
     finishTestConfirm: function () {
-        if (confirm("Testi bitirmek istediğine emin misin?")) {
-            this.showReport();
-        }
+        this.showReport();
     },
 
     showReport: function () {
@@ -641,27 +757,28 @@ window.ProdilExam = {
                         </div>
                     </div>
 
-                    <!-- STATS GRID -->
-                    <div class="report-stats-grid">
-                        <div class="stat-card" style="border-left: 4px solid #16a34a;">
-                            <div class="val" style="color:#16a34a">${correct}</div>
-                            <div class="lbl">Doğru</div>
-                        </div>
-                        <div class="stat-card" style="border-left: 4px solid #dc2626;">
-                            <div class="val" style="color:#dc2626">${wrong}</div>
-                            <div class="lbl">Yanlış</div>
-                        </div>
-                        <div class="stat-card" style="border-left: 4px solid #9ca3af;">
-                            <div class="val" style="color:#9ca3af">${empty}</div>
-                            <div class="lbl">Boş</div>
-                        </div>
-                         <div class="stat-card" style="border-left: 4px solid #3b82f6;">
-                            <div class="val" style="color:#3b82f6;">${net.toFixed(2)}</div>
-                            <div class="lbl">Net</div>
-                        </div>
-                    </div>
-                    
-                    <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.8rem; color: #4b5563; background:#f9fafb; padding:10px; border-radius:8px;">
+                    <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;">
+
+                    <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.9rem; color: #4b5563; background:#f9fafb; padding:15px; border-radius:8px;">
+                        <!-- Updated Stats List -->
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#16a34a; border-radius:50%; margin-right:8px;"></span>Doğru:</span> 
+                            <strong style="color:#16a34a;">${correct}</strong>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#dc2626; border-radius:50%; margin-right:8px;"></span>Yanlış:</span> 
+                            <strong style="color:#dc2626;">${wrong}</strong>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#9ca3af; border-radius:50%; margin-right:8px;"></span>Boş:</span> 
+                            <strong style="color:#6b7280;">${empty}</strong>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px;">
+                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#3b82f6; border-radius:50%; margin-right:8px;"></span>Net:</span> 
+                            <strong style="color:#3b82f6;">${net.toFixed(2)}</strong>
+                        </li>
+
+                        <!-- Timing Stats -->
                         <li style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Süre:</span> <strong>${Math.floor(durationMin)} dk ${durationSec % 60} sn</strong></li>
                         <li style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Soru Hızı:</span> <strong>${speed} soru/sa</strong></li>
                         <li style="display: flex; justify-content: space-between;"><span>Net Hızı:</span> <strong>${netSpeed} net/sa</strong></li>
@@ -780,91 +897,139 @@ window.ProdilExam = {
         style.innerHTML = `
             /* Container Injection */
             #prodil-exam-container {
-                max-width: 800px;
+                max-width: 100%;
                 margin: 0 auto;
-                background: transparent;
-                min-height: 500px;
+                background: white;
+                min-height: 100vh;
             }
             
             /* Copied & Adapted CSS */
             .exam-card { 
                 background: white; 
-                border-radius: 16px; 
-                border: 1px solid #f3f4f6;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+                border-radius: 0; 
+                border: none;
+                box-shadow: none; 
                 overflow: hidden;
                 display: flex;
                 flex-direction: column;
-                min-height: 500px;
+                min-height: 100vh;
                 position: relative;
+            }
+
+            .exam-heading-group {
+                background: #fff;
+                /* border-bottom: 1px solid #e2e8f0; Removed here, moved to speed panel bottom if needed, or keep both? User said "line below it match line above it". Assuming line above came from this. */
+                border-bottom: 1px solid #e2e8f0; 
+                display: flex;
+                flex-direction: column;
             }
 
             .exam-header {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 12px 20px;
-                background: #fff;
-                border-bottom: 2px solid #f3f4f6;
-                height: 50px;
+                padding: 0 2px; /* Minimal padding to align with content border */
+                background: transparent;
+                height: 28px; /* Extremely compact mobile */
+                position: relative;
+                z-index: 2;
+                transition: all 0.3s ease;
             }
+            
+            @media (min-width: 768px) {
+                .exam-header {
+                    height: 50px; /* Expanded for desktop */
+                    padding: 0 20px; /* Better spacing */
+                }
+            }
+            
+            .header-left { display: flex; align-items: center; margin-left: -2px; } /* Reset from -10px to align with content below */
             
             .header-left, .header-right { flex: 1; display: flex; align-items: center; }
             .header-right { justify-content: flex-end; gap: 5px; }
-            .header-center { flex: 2; display: flex; justify-content: center; }
+            /* Center absolutely positioned to not be pushed by dynamic left/right content */
+            .header-center { 
+                position: absolute; 
+                left: 50%; 
+                transform: translateX(-50%);
+                display: flex; 
+                justify-content: center; 
+                width: auto;
+                z-index: 10;
+            }
 
             .timer-text {
                 font-size: 1.1rem;
-                font-weight: 700;
+                font-weight: 500; /* Reduced from 700 to look less bold but readable */
                 color: #374151;
-                font-features: tabular-nums;
+                color: #374151;
+                font-variant-numeric: tabular-nums;
             }
-            
-            .speed-metric {
-                font-size: 0.75rem;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                line-height: 1;
-                margin: 0 5px;
+            .header-left .timer-text { 
+                width: 38px; /* Fixed width to prevent jitter */
+                text-align: right; /* Align right towards the icon */
+                padding-right: 4px; /* Small gap to icon */
+                padding-left: 0;
+            } 
+
+            /* Desktop Overrides */
+            @media (min-width: 768px) {
+                .header-left .timer-text { 
+                    width: 50px; /* Wider but left aligned */
+                    text-align: left; 
+                }
+                .exam-header {
+                    height: 50px; /* Expanded for desktop */
+                    padding: 0 5px; /* Slight desktop offset */
+                }
             }
-            .speed-value { font-weight: 800; font-size: 1rem; }
-            .speed-unit { font-size: 0.6rem; color: #9ca3af; text-transform: uppercase; }
-             .speed-correct .speed-value { color: #16a34a; }
-             .speed-wrong .speed-value { color: #dc2626; }
+            .header-right .timer-text {
+                font-size: 1.0rem; 
+            }
+            /* Speed Stats Styling */
+            .speed-metric { font-size: 0.75rem; display:flex; flex-direction:column; align-items:center; line-height: 1; margin: 0 5px; color: #64748b; } /* Default soft color */
+            .speed-value { font-weight: 800; font-size: 0.85rem; margin-bottom: 2px; color: inherit; } /* Reduced from 1rem, inherit color */
+            .speed-unit { font-size: 0.65rem; color: inherit; } /* Inherit color from parent */
             
-            .speed-divider { color: #e5e7eb; font-size: 1.2rem; font-weight: 300; }
+            .speed-correct { color: #4ade80 !important; }
+            .speed-wrong { color: #f87171 !important; }
+            .speed-empty { color: #9ca3af !important; }
+            
+            .speed-divider { color: #f1f5f9; font-weight: 300; font-size: 1.2rem; margin: 0 2px; }
 
             .close-btn {
-                background: none; border: none; font-size: 1.2rem; color: #9ca3af; cursor: pointer;
+                background: none; border: none; font-size: 1.2rem; color: #000000; cursor: pointer;
+                font-weight: 800; /* Made bolder as requested */
+                margin-left: 5px; /* Added spacing from counters */
             }
             .close-btn:hover { color: #ef4444; }
 
             /* Question Area */
             .question-area {
-                padding: 30px;
+                padding: 10px 5px 5px 2px; /* Shift left: Top Right Bottom Left */
                 font-size: 1.1rem;
             }
             
             .math-text {
-                margin-bottom: 25px;
+                margin-top: 8px; /* Push question down slightly */
+                margin-bottom: 8px; /* Pull options up closer to question */
                 color: #1f2937;
                 font-weight: 500;
-                line-height: 1.6;
+                line-height: 1.5;
                 display: flex;
             }
-            .question-prefix { font-weight: 800; margin-right: 8px; color: #003366; }
+            .question-prefix { font-weight: 800; margin-right: 8px; color: #000000; }
 
             .options-grid {
                 display: grid;
-                gap: 12px;
+                gap: 2px; /* Super tight gap on mobile */
             }
             
             .option-btn {
-                padding: 16px 20px;
-                border: 2px solid #f3f4f6;
-                border-radius: 12px;
-                background: white;
+                padding: 4px 15px; /* Minimal padding */
+                border: 1px solid transparent; /* Remove visible border by default, keep layout */
+                border-radius: 8px; /* Slightly sharper radius */
+                background: transparent; /* Remove background */
                 text-align: left;
                 cursor: pointer;
                 font-size: 1rem;
@@ -892,49 +1057,184 @@ window.ProdilExam = {
             }
             
             .option-label {
-                font-weight: 800;
-                margin-right: 15px;
-                color: #6b7280;
-                width: 25px;
+                font-weight: 700;
+                margin-right: 2px; /* Set to ~1 char space on mobile */
+                color: #000000;
+                width: 15px; /* Reduced width for tight mobile layout */
+                flex-shrink: 0;
             }
             .option-btn.correct .option-label { color: #14532d; }
             .option-btn.wrong .option-label { color: #7f1d1d; }
 
-            /* Footer */
+            /* Desktop Overrides for Better Spacing */
+            @media (min-width: 768px) {
+                 .exam-header {
+                    height: 40px; /* Reduced from 50px */
+                    padding: 0 15px; /* Slightly reduced padding */
+                }
+                .timer-text {
+                    font-size: 1.0rem; /* Slightly reduced */
+                    line-height: 40px; /* Match new header height */
+                }
+                .header-right .timer-text {
+                    font-size: 1.0rem; /* Keep them consistent */
+                }
+                .speed-toggle-btn {
+                    height: 28px;
+                    padding: 0 12px;
+                    font-size: 0.85rem;
+                }
+                .header-tool-btn {
+                    font-size: 1.0rem; /* Slightly reduced */
+                    padding: 5px;
+                }
+                .option-label {
+                    margin-right: 8px; /* Standard spacing on desktop */
+                    width: 20px;
+                }
+                .question-area { padding: 20px; font-size: 1.1rem; } /* Restore padding but smaller than 30px */
+                .options-grid { gap: 8px; } /* Restore gap on desktop */
+                .option-btn { padding: 8px 15px; } /* Restore padding but smaller than 10px */
+            }
+
+            /* Footer Controls */
             .control-panel {
-                padding: 15px 20px;
-                background: #f9fafb;
-                border-top: 1px solid #f3f4f6;
+                padding: 16px 20px;
+                background: #fff;
+                border-top: 1px solid #e2e8f0;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                gap: 12px;
             }
             
-            .btn-action {
-                padding: 10px 20px;
-                border-radius: 8px;
-                font-weight: 600;
-                border: none;
+            .btn-action, .level-selector {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                min-width: 0; /* Prevent flex blowouts */
+            }
+
+            .btn-action, .level-selector select {
+                width: 100%;
+                height: 48px; /* Restored to original browser height */
+                border-radius: 12px; /* Restored to original radius */
+                font-family: 'Inter', sans-serif;
+                font-weight: 600; /* Restored to original weight */
+                font-size: 0.95rem; /* Restored to original size */
                 cursor: pointer;
+                transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
                 display: flex;
                 align-items: center;
+                justify-content: center;
+                gap: 8px;
+                border: 2px solid #e2e8f0; /* Matching .tab-btn border */
+                letter-spacing: 0.025em;
+                outline: none; /* Remove default orange browser focus ring */
+            }
+
+            /* Secondary Buttons (Back, Hint) */
+            .btn-secondary { 
+                background: #f8fafc; 
+                border: 1px solid #e2e8f0;
+                color: #475569; 
+            }
+            .btn-secondary:hover:not(:disabled) { 
+                background: #fff; 
+                border-color: #cbd5e1;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             }
             
-            .btn-secondary { background: #e5e7eb; color: #374151; }
-            .btn-secondary:hover:not(:disabled) { background: #d1d5db; }
+            /* Active State (for Hint etc.) */
+            .btn-active {
+                background: #003366 !important;
+                color: white !important;
+                border-color: #003366 !important;
+                box-shadow: 0 4px 6px rgba(0, 51, 102, 0.2);
+            }
             
-            .btn-primary { background: #003366; color: white; }
-            .btn-primary:hover { background: #002244; }
+            /* Primary Button (Next) - Initially Neutral, Blue on Hover/Press */
+            .btn-primary { 
+                background: #f8fafc; 
+                color: #475569; 
+                border-color: #e2e8f0 !important;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+            .btn-primary:hover:not(:disabled), .btn-primary:active:not(:disabled) { 
+                background: #003366 !important; 
+                color: white !important;
+                border-color: #003366 !important;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 15px -4px rgba(0, 51, 102, 0.4);
+            }
             
-            .btn-action:disabled { opacity: 0.5; cursor: not-allowed; }
+            /* Flash Animation for Auto-Next */
+            .flash-btn {
+                animation: flashBlue 0.5s ease-in-out;
+            }
+            @keyframes flashBlue {
+                0% { background: #f8fafc; color: #475569; }
+                50% { background: #003366; color: white; border-color: #003366; }
+                100% { background: #f8fafc; color: #475569; }
+            }
             
-            /* Tools */
-            .header-tool-btn {
-                background: transparent;
-                border: none;
-                font-size: 1.1rem;
-                color: #9ca3af;
-                cursor: pointer;
+            /* Level Selector Styling as Button */
+            .level-selector select {
+                appearance: none;
+                -webkit-appearance: none;
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                color: #475569;
+                padding: 0 30px 0 15px; /* Right padding for custom arrow */
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 12px center;
+                background-size: 16px;
+                text-align-last: center; /* Center text but handle arrow */
+            }
+            .level-selector select:hover {
+                background-color: #fff;
+                border-color: #cbd5e1;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            }
+            .level-selector select option {
+                background: #ffffff !important;
+                color: #334155 !important;
+            }
+
+            /* Responsive Adjustments for Mobile Footer */
+            @media (max-width: 767px) {
+                .control-panel {
+                    padding: 8px 6px;
+                    gap: 6px;
+                }
+                .btn-action, .level-selector select {
+                    height: 30px; /* Isolated compact height for mobile only */
+                    border-radius: 8px;
+                    font-weight: 700;
+                    font-size: 0.9rem;
+                    padding: 0 2px;
+                }
+                .level-selector select {
+                    padding: 0 24px 0 8px;
+                    background-position: right 8px center;
+                }
+                .btn-action i {
+                    margin: 0 !important;
+                    font-size: 0.85rem;
+                }
+            }
+            
+            .btn-action:disabled { 
+                opacity: 0.6; 
+                cursor: not-allowed; 
+                transform: none !important;
+                box-shadow: none !important;
+            }
                 border-radius: 4px;
                 padding: 4px;
                 margin: 0 2px;
@@ -959,7 +1259,7 @@ window.ProdilExam = {
                 border: 1px solid #dbeafe;
                 color: #1e40af;
                 padding: 15px;
-                margin: 0 20px 20px;
+                margin: 15px 0 0 0; /* Changed to top margin for beneath buttons spacing */
                 border-radius: 8px;
                 font-size: 0.95rem;
                 line-height: 1.5;
@@ -1042,6 +1342,60 @@ window.ProdilExam = {
                 }
                 .control-panel, .close-btn { display: none !important; }
             }
+            .speed-toggle-btn {
+                background: #f1f5f9;
+                border: 1px solid #e2e8f0;
+                color: #64748b;
+                padding: 0 8px; /* Minimal side padding */
+                border-radius: 6px;
+                font-size: 0.75rem;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.2s;
+                height: 20px; /* Thinner button */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .speed-toggle-btn:hover {
+                background: #e2e8f0;
+                color: #475569;
+            }
+
+            .speed-panel {
+                background: #f8fafc;
+                border-bottom: 1px solid #e2e8f0; /* Match top border color */
+                padding: 20px 0; /* Significantly increased vertical padding */
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                animation: slideDown 0.3s ease-out;
+                position: relative;
+                z-index: 1;
+            }
+
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            /* Unified Font Style for Numbers */
+            .timer-text {
+                font-family: 'Inter', sans-serif !important;
+                font-weight: 500 !important; /* Reduced from 700 */
+                font-size: 1.15rem; /* Mobile size */
+                font-variant-numeric: tabular-nums;
+                letter-spacing: -0.5px;
+                line-height: 28px; /* Mobile line-height */
+                color: #334155;
+                margin-left: 0;
+                display: flex; 
+                align-items: center;
+                height: 100%;
+                transition: all 0.3s ease;
+            }
+
+            /* .counter-text class removed as we use timer-text now */
         `;
         document.head.appendChild(style);
     },
@@ -1134,25 +1488,31 @@ window.ProdilExam = {
                         </div>
                     </div>
 
-                    <!-- STATS GRID -->
-                    <div class="report-stats-grid">
-                        <div class="stat-card correct">
-                            <div class="val">${correct}</div>
-                            <div class="lbl">Doğru</div>
-                        </div>
-                        <div class="stat-card wrong">
-                            <div class="val">${wrong}</div>
-                            <div class="lbl">Yanlış</div>
-                        </div>
-                        <div class="stat-card empty">
-                            <div class="val">${empty}</div>
-                            <div class="lbl">Boş</div>
-                        </div>
-                         <div class="stat-card time">
-                            <div class="val" style="color:#3b82f6;">${Math.floor(durationMin)}dk</div>
-                            <div class="lbl">Süre</div>
-                        </div>
-                    </div>
+                    <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;">
+
+                    <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.9rem; color: #4b5563; background:#f9fafb; padding:15px; border-radius:8px;">
+                        <!-- Updated Stats List -->
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#16a34a; border-radius:50%; margin-right:8px;"></span>Doğru:</span> 
+                            <strong style="color:#16a34a;">${correct}</strong>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#dc2626; border-radius:50%; margin-right:8px;"></span>Yanlış:</span> 
+                            <strong style="color:#dc2626;">${wrong}</strong>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#9ca3af; border-radius:50%; margin-right:8px;"></span>Boş:</span> 
+                            <strong style="color:#6b7280;">${empty}</strong>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px;">
+                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#3b82f6; border-radius:50%; margin-right:8px;"></span>Net:</span> 
+                            <strong style="color:#3b82f6;">${net.toFixed(2)}</strong>
+                        </li>
+                        
+                         <!-- Timing Stats (Merged here for consistency in this function too or keep separate if preferred, but user asked for "like the duration line") -->
+                        <li style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Süre:</span> <strong>${Math.floor(durationMin)} dk ${durationSec % 60} sn</strong></li>
+                        <!-- Note: Speed/NetSpeed were not explicitly in the grid block in this function originally, but if they were omitted I should add them if they exist in variables. They are calculated above. -->
+                    </ul>
 
                     <!-- SKERA ANALYSIS -->
                     <div class="report-analysis-box" style="background:#eff6ff; border-color:#dbeafe;">
