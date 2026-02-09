@@ -683,8 +683,9 @@ window.ProdilExam = {
         const durationSec = this.timer;
         const durationMin = durationSec / 60;
 
-        // Speed
-        const speed = durationSec > 0 ? Math.round((total / durationSec) * 3600) : 0;
+        // Speed: Based on SEEN questions (currentIndex + 1), not TOTAL (20) if finished early.
+        const visited = this.currentIndex + 1;
+        const speed = durationSec > 0 ? Math.round((visited / durationSec) * 3600) : 0;
         const netSpeed = durationSec > 0 ? Math.round((net / durationMin) * 60) : 0;
 
         // --- SCORES ---
@@ -701,7 +702,9 @@ window.ProdilExam = {
         const finalScore = Math.min(100, Math.round(rawScore + speedBonus));
 
         // SKERA (Mental)
-        const accuracy = (correct / (correct + wrong)) || 0;
+        // SKERA (Mental)
+        // Accuracy based on TOTAL (20 questions), so empty/unseen questions reduce accuracy.
+        const accuracy = (correct / total) || 0;
         let skeraScore = -2;
         if (accuracy > 0.9) skeraScore = 8;
         else if (accuracy > 0.7) skeraScore = 5;
@@ -712,16 +715,16 @@ window.ProdilExam = {
 
         // Performance (Physical)
         let perfLevel = 3;
-        if (speed > 100 && accuracy > 0.6) perfLevel = 8;
-        else if (speed > 60) perfLevel = 6;
+        if (speed > 180 && accuracy > 0.6) perfLevel = 8; // Harder threshold: > 180 q/h and > 60% accuracy
+        else if (speed > 120) perfLevel = 6; // Harder threshold: > 120 q/h (2 q/min) for Dynamic
         let perfColor = perfLevel >= 7 ? "#16a34a" : "#ca8a04";
 
         // Messages
         const skeraTitle = skeraScore > 5 ? "Zihinsel Durum: Mükemmel" : "Zihinsel Durum: Geliştirilmeli";
         const skeraMsg = skeraScore > 5 ? "Soruları çözerken odağını çok iyi korudun." : "Dikkat dağınıklığı yaşamış olabilirsin.";
 
-        const perfTitle = perfLevel > 5 ? "Fiziksel Durum: Dinamik" : "Fiziksel Durum: Yorgun";
-        const perfMsg = perfLevel > 5 ? "Hızın ve ritmin gayet yerinde." : "Biraz daha tempoyu artırabilirsin.";
+        const perfTitle = perfLevel >= 6 ? "Fiziksel Durum: Dinamik" : "Fiziksel Durum: Yorgun";
+        const perfMsg = perfLevel >= 6 ? "Hızın ve ritmin gayet yerinde." : "Biraz daha tempoyu artırabilirsin.";
 
         const container = document.getElementById('prodil-exam-container');
         if (!container) return;
@@ -737,12 +740,11 @@ window.ProdilExam = {
                     
                     <!-- SUMMARY HEADER -->
                     <div style="text-align: center; margin-bottom: 25px;">
-                        <div class="total-score-box">
-                             <span class="score-val">${finalScore}</span>
-                             <div class="score-lbl">TOPLAM PUAN</div>
-                        </div>
-                        <div style="margin-top: 10px; font-size: 0.9rem; color: #666;">
-                            (Maksimum 100 Puan)
+                        <div class="total-score-box" style="padding: 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 5px;">
+                             <i class="fa-solid fa-trophy" style="font-size: 1.4rem; color: #f59e0b;"></i>
+                             <div class="score-lbl" style="font-size: 1.2rem; margin:0; color: #374151; font-weight:600;">Toplam Puan :</div>
+                             <span class="score-val" style="font-size: 1.8rem; font-weight:800; color:#111827;">${finalScore}</span>
+                             <span style="font-size: 0.9rem; color: #9ca3af; margin-top:4px;">(Max 100)</span>
                         </div>
                          <div style="margin-top: 10px; display: flex; justify-content: center; gap: 8px; font-size: 0.8rem;">
                              <div style="background: #f9fafb; padding: 4px 8px; border-radius: 6px; border: 1px solid #e5e7eb; color: #4b5563;">
@@ -759,48 +761,61 @@ window.ProdilExam = {
 
                     <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;">
 
-                    <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.9rem; color: #4b5563; background:#f9fafb; padding:15px; border-radius:8px;">
-                        <!-- Updated Stats List -->
-                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
-                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#16a34a; border-radius:50%; margin-right:8px;"></span>Doğru:</span> 
-                            <strong style="color:#16a34a;">${correct}</strong>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
-                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#dc2626; border-radius:50%; margin-right:8px;"></span>Yanlış:</span> 
-                            <strong style="color:#dc2626;">${wrong}</strong>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
-                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#9ca3af; border-radius:50%; margin-right:8px;"></span>Boş:</span> 
-                            <strong style="color:#6b7280;">${empty}</strong>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px;">
-                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#3b82f6; border-radius:50%; margin-right:8px;"></span>Net:</span> 
-                            <strong style="color:#3b82f6;">${net.toFixed(2)}</strong>
-                        </li>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; background:#f9fafb; padding:10px; border-radius:8px; margin-bottom: 20px;">
+                        <!-- Left Column: Basic Stats -->
+                        <ul style="flex: 1; list-style: none; padding: 0; margin: 0; min-width: 130px;">
+                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#16a34a; border-radius:50%; margin-right:6px;"></span>Doğru:</span> 
+                                <span style="color:#16a34a; font-size: 0.9rem;">${correct}</span>
+                            </li>
+                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#dc2626; border-radius:50%; margin-right:6px;"></span>Yanlış:</span> 
+                                <span style="color:#dc2626; font-size: 0.9rem;">${wrong}</span>
+                            </li>
+                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#9ca3af; border-radius:50%; margin-right:6px;"></span>Boş:</span> 
+                                <span style="color:#6b7280; font-size: 0.9rem;">${empty}</span>
+                            </li>
+                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 4px; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#3b82f6; border-radius:50%; margin-right:6px;"></span>Net:</span> 
+                                <span style="color:#3b82f6; font-size: 0.9rem;">${net.toFixed(2)}</span>
+                            </li>
+                        </ul>
 
-                        <!-- Timing Stats -->
-                        <li style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Süre:</span> <strong>${Math.floor(durationMin)} dk ${durationSec % 60} sn</strong></li>
-                        <li style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Soru Hızı:</span> <strong>${speed} soru/sa</strong></li>
-                        <li style="display: flex; justify-content: space-between;"><span>Net Hızı:</span> <strong>${netSpeed} net/sa</strong></li>
-                    </ul>
+                        <!-- Right Column: Time & Speed Stats -->
+                        <ul style="flex: 1; list-style: none; padding: 0; margin: 0; min-width: 130px;">
+                            <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; font-weight: bold;"><i class="fa-regular fa-clock" style="margin-right:6px; color:#64748b; font-size: 0.9em;"></i>Süre:</span> 
+                                <span style="color:#1e293b; font-size: 0.9rem;">${Math.floor(durationMin)} dk ${durationSec % 60} sn</span>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; font-weight: bold;"><i class="fa-solid fa-bolt" style="margin-right:6px; color:#f59e0b; font-size: 0.9em;"></i>Hız:</span> 
+                                <span style="color:#1e293b; font-size: 0.9rem;">${speed} soru/saat</span>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; margin-bottom: 4px; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; font-weight: bold;"><i class="fa-solid fa-chart-line" style="margin-right:6px; color:#8b5cf6; font-size: 0.9em;"></i>Net Hız:</span> 
+                                <span style="color:#1e293b; font-size: 0.9rem;">${netSpeed} net/saat</span>
+                            </li>
+                        </ul>
+                    </div>
 
                     <!-- PERFORMANCE ANALYSIS -->
-                    <div class="report-analysis-box" style="background:#fffbeb; border-color:#fde68a;">
-                        <h4 style="color:#d97706; display:flex; justify-content:space-between;">
+                    <div class="report-analysis-box" style="background:#fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                        <h4 style="color:#d97706; display:flex; justify-content:space-between; font-weight: 800;">
                             Performans Analizi (Fiziksel)
-                            <span style="background:${perfColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem;">Seviye ${perfLevel}/10</span>
+                            <span style="background:${perfColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem; font-weight: 500;">Seviye ${perfLevel}/10</span>
                         </h4>
-                        <div style="font-weight:bold; color:#78350f; margin-bottom:5px;">${perfTitle}</div>
+                        <div style="font-weight:500; color:#78350f; margin-bottom:5px;">${perfTitle}</div>
                         <p style="margin:0; font-size:0.9rem; color:#92400e;">${perfMsg}</p>
                     </div>
 
                     <!-- SKERA ANALYSIS -->
-                    <div class="report-analysis-box" style="background:#eff6ff; border-color:#dbeafe;">
-                        <h4 style="color:#1e40af; display:flex; justify-content:space-between;">
+                    <div class="report-analysis-box" style="background:#fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                        <h4 style="color:#1e40af; display:flex; justify-content:space-between; font-weight: 800;">
                             SKERA Analizi (Zihinsel)
-                            <span style="background:${skeraColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem;">Puan: ${skeraScore > 0 ? '+' + skeraScore : skeraScore}</span>
+                            <span style="background:${skeraColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem; font-weight: 500;">Puan: ${skeraScore > 0 ? '+' + skeraScore : skeraScore}</span>
                         </h4>
-                        <div style="font-weight:bold; color:#1e3a8a; margin-bottom:5px;">${skeraTitle}</div>
+                        <div style="font-weight:500; color:#1e3a8a; margin-bottom:5px;">${skeraTitle}</div>
                         <p style="margin:0; font-size:0.9rem; color:#1e3a8a;">${skeraMsg}</p>
                         <div style="margin-top:10px; background:rgba(255,255,255,0.5); height:6px; border-radius:3px;">
                             <div style="width:${skeraPercent}%; background:${skeraColor}; height:100%; border-radius:3px;"></div>
@@ -808,8 +823,8 @@ window.ProdilExam = {
                     </div>
 
                     <!-- CONDITION CHART -->
-                    <div class="report-analysis-box" style="background:#f5f3ff; border-color:#ede9fe;">
-                        <h4 style="color:#7c3aed;">Kondisyon Analizi</h4>
+                    <div class="report-analysis-box" style="background:transparent; border:none; padding:0; margin-bottom:20px; box-shadow:none;">
+                        <h4 style="color:#7c3aed; font-weight: 800;">Kondisyon Analizi</h4>
                         <div style="height: 200px;">
                             <canvas id="kondisyonChart"></canvas>
                         </div>
@@ -1007,7 +1022,7 @@ window.ProdilExam = {
             /* Question Area */
             .question-area {
                 padding: 10px 5px 5px 2px; /* Shift left: Top Right Bottom Left */
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             
             .math-text {
@@ -1032,7 +1047,7 @@ window.ProdilExam = {
                 background: transparent; /* Remove background */
                 text-align: left;
                 cursor: pointer;
-                font-size: 1rem;
+                font-size: 1.2rem;
                 color: #374151;
                 transition: all 0.2s;
                 display: flex;
@@ -1222,6 +1237,7 @@ window.ProdilExam = {
                 .level-selector select {
                     padding: 0 24px 0 8px;
                     background-position: right 8px center;
+                    background-size: 12px; /* Reduced to match btn icon size */
                 }
                 .btn-action i {
                     margin: 0 !important;
@@ -1442,8 +1458,8 @@ window.ProdilExam = {
         const finalScore = Math.min(100, Math.round(rawScore + speedBonus));
 
         // SKERA (Mental) - Consistency
-        // Fake it based on accuracy
-        const accuracy = (correct / (correct + wrong)) || 0;
+        // Fake it based on accuracy of TOTAL exam
+        const accuracy = (correct / total) || 0;
         let skeraScore = -2;
         if (accuracy > 0.9) skeraScore = 8;
         else if (accuracy > 0.7) skeraScore = 5;
@@ -1454,8 +1470,8 @@ window.ProdilExam = {
 
         // Performance (Physical) - Speed/Efficiency
         let perfLevel = 3;
-        if (speed > 100 && accuracy > 0.6) perfLevel = 8;
-        else if (speed > 60) perfLevel = 6;
+        if (speed > 180 && accuracy > 0.6) perfLevel = 8; // Harder threshold
+        else if (speed > 120) perfLevel = 6; // Harder threshold
 
         let perfColor = perfLevel >= 7 ? "#16a34a" : "#ca8a04";
 
@@ -1463,8 +1479,8 @@ window.ProdilExam = {
         const skeraTitle = skeraScore > 5 ? "Zihinsel Durum: Mükemmel" : "Zihinsel Durum: Geliştirilmeli";
         const skeraMsg = skeraScore > 5 ? "Soruları çözerken odağını çok iyi korudun." : "Dikkat dağınıklığı yaşamış olabilirsin.";
 
-        const perfTitle = perfLevel > 5 ? "Fiziksel Durum: Dinamik" : "Fiziksel Durum: Yorgun";
-        const perfMsg = perfLevel > 5 ? "Hızın ve ritmin gayet yerinde." : "Biraz daha tempoyu artırabilirsin.";
+        const perfTitle = perfLevel >= 6 ? "Fiziksel Durum: Dinamik" : "Fiziksel Durum: Yorgun";
+        const perfMsg = perfLevel >= 6 ? "Hızın ve ritmin gayet yerinde." : "Biraz daha tempoyu artırabilirsin.";
 
         // --- RENDER HTML ---
         const container = document.getElementById('prodil-exam-container');
@@ -1479,9 +1495,11 @@ window.ProdilExam = {
                     
                     <!-- SUMMARY HEADER -->
                     <div style="text-align: center; margin-bottom: 25px;">
-                        <div class="total-score-box">
-                             <span class="score-val">${finalScore}</span>
-                             <div class="score-lbl">TOPLAM PUAN</div>
+                        <div class="total-score-box" style="padding: 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 5px;">
+                             <i class="fa-solid fa-trophy" style="font-size: 1.4rem; color: #f59e0b;"></i>
+                             <div class="score-lbl" style="font-size: 1.2rem; margin:0; color: #374151; font-weight:600;">Toplam Puan :</div>
+                             <span class="score-val" style="font-size: 1.8rem; font-weight:800; color:#111827;">${finalScore}</span>
+                             <span style="font-size: 0.9rem; color: #9ca3af; margin-top:4px;">(Max 100)</span>
                         </div>
                         <div style="margin-top: 10px; font-size: 0.9rem; color: #666;">
                             Net: <b>${net.toFixed(2)}</b> | Hız Bonusu: <b>+${speedBonus}</b>
@@ -1490,37 +1508,51 @@ window.ProdilExam = {
 
                     <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;">
 
-                    <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.9rem; color: #4b5563; background:#f9fafb; padding:15px; border-radius:8px;">
-                        <!-- Updated Stats List -->
-                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
-                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#16a34a; border-radius:50%; margin-right:8px;"></span>Doğru:</span> 
-                            <strong style="color:#16a34a;">${correct}</strong>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
-                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#dc2626; border-radius:50%; margin-right:8px;"></span>Yanlış:</span> 
-                            <strong style="color:#dc2626;">${wrong}</strong>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
-                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#9ca3af; border-radius:50%; margin-right:8px;"></span>Boş:</span> 
-                            <strong style="color:#6b7280;">${empty}</strong>
-                        </li>
-                        <li style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px;">
-                            <span style="display:flex; align-items:center;"><span style="width:8px; height:8px; background:#3b82f6; border-radius:50%; margin-right:8px;"></span>Net:</span> 
-                            <strong style="color:#3b82f6;">${net.toFixed(2)}</strong>
-                        </li>
-                        
-                         <!-- Timing Stats (Merged here for consistency in this function too or keep separate if preferred, but user asked for "like the duration line") -->
-                        <li style="display: flex; justify-content: space-between; margin-bottom: 4px;"><span>Süre:</span> <strong>${Math.floor(durationMin)} dk ${durationSec % 60} sn</strong></li>
-                        <!-- Note: Speed/NetSpeed were not explicitly in the grid block in this function originally, but if they were omitted I should add them if they exist in variables. They are calculated above. -->
-                    </ul>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; background:#f9fafb; padding:10px; border-radius:8px; margin-bottom: 20px;">
+                        <!-- Left Column: Basic Stats -->
+                        <ul style="flex: 1; list-style: none; padding: 0; margin: 0; min-width: 130px;">
+                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#16a34a; border-radius:50%; margin-right:6px;"></span>Doğru:</span> 
+                                <span style="color:#16a34a; font-size: 0.9rem;">${correct}</span>
+                            </li>
+                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#dc2626; border-radius:50%; margin-right:6px;"></span>Yanlış:</span> 
+                                <span style="color:#dc2626; font-size: 0.9rem;">${wrong}</span>
+                            </li>
+                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#9ca3af; border-radius:50%; margin-right:6px;"></span>Boş:</span> 
+                                <span style="color:#6b7280; font-size: 0.9rem;">${empty}</span>
+                            </li>
+                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 4px; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#3b82f6; border-radius:50%; margin-right:6px;"></span>Net:</span> 
+                                <span style="color:#3b82f6; font-size: 0.9rem;">${net.toFixed(2)}</span>
+                            </li>
+                        </ul>
+
+                        <!-- Right Column: Time & Speed Stats -->
+                        <ul style="flex: 1; list-style: none; padding: 0; margin: 0; min-width: 130px;">
+                            <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; font-weight: bold;"><i class="fa-regular fa-clock" style="margin-right:6px; color:#64748b; font-size: 0.9em;"></i>Süre:</span> 
+                                <span style="color:#1e293b; font-size: 0.9rem;">${Math.floor(durationMin)} dk ${durationSec % 60} sn</span>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; font-weight: bold;"><i class="fa-solid fa-bolt" style="margin-right:6px; color:#f59e0b; font-size: 0.9em;"></i>Hız:</span> 
+                                <span style="color:#1e293b; font-size: 0.9rem;">${speed} soru/saat</span>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; margin-bottom: 4px; padding-bottom: 4px;">
+                                <span style="display:flex; align-items:center; font-size: 0.85rem; font-weight: bold;"><i class="fa-solid fa-chart-line" style="margin-right:6px; color:#8b5cf6; font-size: 0.9em;"></i>Net Hız:</span> 
+                                <span style="color:#1e293b; font-size: 0.9rem;">${netSpeed} net/saat</span>
+                            </li>
+                        </ul>
+                    </div>
 
                     <!-- SKERA ANALYSIS -->
-                    <div class="report-analysis-box" style="background:#eff6ff; border-color:#dbeafe;">
-                        <h4 style="color:#1e40af; display:flex; justify-content:space-between;">
+                    <div class="report-analysis-box" style="background:#fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                        <h4 style="color:#1e40af; display:flex; justify-content:space-between; font-weight: 800;">
                             SKERA Analizi (Zihinsel)
-                            <span style="background:${skeraColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem;">Puan: ${skeraScore}</span>
+                            <span style="background:${skeraColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem; font-weight: 500;">Puan: ${skeraScore}</span>
                         </h4>
-                        <div style="font-weight:bold; color:#1e3a8a; margin-bottom:5px;">${skeraTitle}</div>
+                        <div style="font-weight:500; color:#1e3a8a; margin-bottom:5px;">${skeraTitle}</div>
                         <p style="margin:0; font-size:0.9rem; color:#1e3a8a;">${skeraMsg}</p>
                         <div style="margin-top:10px; background:rgba(255,255,255,0.5); height:6px; border-radius:3px;">
                             <div style="width:${skeraPercent}%; background:${skeraColor}; height:100%; border-radius:3px;"></div>
@@ -1528,18 +1560,18 @@ window.ProdilExam = {
                     </div>
 
                     <!-- PERFORMANCE ANALYSIS -->
-                    <div class="report-analysis-box" style="background:#fffbeb; border-color:#fde68a;">
-                        <h4 style="color:#d97706; display:flex; justify-content:space-between;">
+                    <div class="report-analysis-box" style="background:#fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                        <h4 style="color:#d97706; display:flex; justify-content:space-between; font-weight: 800;">
                             Performans Analizi (Fiziksel)
-                            <span style="background:${perfColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem;">Seviye ${perfLevel}/10</span>
+                            <span style="background:${perfColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem; font-weight: 500;">Seviye ${perfLevel}/10</span>
                         </h4>
-                        <div style="font-weight:bold; color:#78350f; margin-bottom:5px;">${perfTitle}</div>
+                        <div style="font-weight:500; color:#78350f; margin-bottom:5px;">${perfTitle}</div>
                         <p style="margin:0; font-size:0.9rem; color:#92400e;">${perfMsg}</p>
                     </div>
 
                     <!-- CONDITION CHART -->
-                    <div class="report-analysis-box" style="background:#f5f3ff; border-color:#ede9fe;">
-                        <h4 style="color:#7c3aed;">Kondisyon Analizi</h4>
+                    <div class="report-analysis-box" style="background:transparent; border:none; padding:0; margin-bottom:20px; box-shadow:none;">
+                        <h4 style="color:#7c3aed; font-weight: 800;">Kondisyon Analizi</h4>
                         <div style="height: 200px;">
                             <canvas id="kondisyonChart"></canvas>
                         </div>
