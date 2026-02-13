@@ -1,270 +1,310 @@
-{
-    "test_info": {
-        "level": "BEGINNER (A1-A2)",
-        "topic": "Grammar - Tenses",
-        "test_no": 3,
-        "description": "Future Tenses: 'Will', 'Be Going To' ve gelecek zaman ifadeleri."
-    },
-    "questions": [
-        {
-            "id": 1,
-            "text": "I think it _____ rain tomorrow.",
-            "options": {
-                "A": "is",
-                "B": "will",
-                "C": "going to",
-                "D": "are",
-                "E": "do"
-            },
-            "correct_option": "B",
-            "hint": "'I think' (bence) ifadesi genellikle kişisel bir tahmin belirtir ve 'will' ile kullanılır."
-        },
-        {
-            "id": 2,
-            "text": "We _____ visit our grandparents next week. It is our plan.",
-            "options": {
-                "A": "will",
-                "B": "are going to",
-                "C": "go to",
-                "D": "are going",
-                "E": "will be"
-            },
-            "correct_option": "B",
-            "hint": "Önceden yapılmış bir plandan (plan) bahsederken 'be going to' yapısı tercih edilir."
-        },
-        {
-            "id": 3,
-            "text": "A: The phone is ringing. B: Okay, I _____ answer it.",
-            "options": {
-                "A": "am going to",
-                "B": "answer",
-                "C": "will",
-                "D": "am answering",
-                "E": "answers"
-            },
-            "correct_option": "C",
-            "hint": "Konuşma anında verilen anlık kararlar (spontaneous decisions) için 'will' kullanılır."
-        },
-        {
-            "id": 4,
-            "text": "She _____ be 18 years old next month.",
-            "options": {
-                "A": "is going",
-                "B": "will",
-                "C": "shall",
-                "D": "is",
-                "E": "does"
-            },
-            "correct_option": "B",
-            "hint": "Gelecekle ilgili değiştirilemez gerçekler (yaş gibi) için 'will' kullanılır."
-        },
-        {
-            "id": 5,
-            "text": "Look at those black clouds! It _____ rain.",
-            "options": {
-                "A": "will",
-                "B": "is going to",
-                "C": "goes to",
-                "D": "is raining",
-                "E": "rain"
-            },
-            "correct_option": "B",
-            "hint": "Ortada fiziksel bir kanıt (black clouds) varsa, tahminden öteye geçer ve 'be going to' kullanılır."
-        },
-        {
-            "id": 6,
-            "text": "_____ you come to the party tonight?",
-            "options": {
-                "A": "Are",
-                "B": "Do",
-                "C": "Will",
-                "D": "Did",
-                "E": "Does"
-            },
-            "correct_option": "C",
-            "hint": "Gelecek zaman soru cümlesi. 'Tonight' (bu gece) gelecek zamanı işaret ediyor."
-        },
-        {
-            "id": 7,
-            "text": "I promise I _____ tell anyone your secret.",
-            "options": {
-                "A": "don't",
-                "B": "won't",
-                "C": "am not going to",
-                "D": "didn't",
-                "E": "not"
-            },
-            "correct_option": "B",
-            "hint": "Söz verirken (promise) 'will' veya olumsuz hali 'won't' kullanılır."
-        },
-        {
-            "id": 8,
-            "text": "What are your plans for the summer? I _____ to Antalya.",
-            "options": {
-                "A": "travel",
-                "B": "will travel",
-                "C": "am going to travel",
-                "D": "traveled",
-                "E": "travels"
-            },
-            "correct_option": "C",
-            "hint": "Soruda 'plans' (planlar) kelimesi geçiyor. Planlanmış eylemler için 'be going to' kullanılır."
-        },
-        {
-            "id": 9,
-            "text": "I hope she _____ pass the exam.",
-            "options": {
-                "A": "is going to",
-                "B": "will",
-                "C": "is",
-                "D": "does",
-                "E": "has"
-            },
-            "correct_option": "B",
-            "hint": "'Hope' (ummak), 'think', 'believe' gibi fiillerden sonra genellikle 'will' gelir."
-        },
-        {
-            "id": 10,
-            "text": "We don't have any bread. Really? I _____ go and buy some.",
-            "options": {
-                "A": "am going to",
-                "B": "will",
-                "C": "am going",
-                "D": "go",
-                "E": "went"
-            },
-            "correct_option": "B",
-            "hint": "Durumu o anda öğrendiniz ve markete gitmeye o an karar verdiniz (anlık karar)."
-        },
-        {
-            "id": 11,
-            "text": "Where _____ they _____ stay in London?",
-            "options": {
-                "A": "will / staying",
-                "B": "are / going to",
-                "C": "do / stay",
-                "D": "will / stays",
-                "E": "did / stay"
-            },
-            "correct_option": "B",
-            "hint": "Plan soruluyor. 'Going to' yapısında yardımcı fiil 'are', ana fiil 'stay' yalın haldedir."
-        },
-        {
-            "id": 12,
-            "text": "Ali _____ probably be late for work.",
-            "options": {
-                "A": "is going to",
-                "B": "is",
-                "C": "will",
-                "D": "does",
-                "E": "has"
-            },
-            "correct_option": "C",
-            "hint": "'Probably' (muhtemelen) gibi olasılık zarfları genellikle 'will' ile kullanılır."
-        },
-        {
-            "id": 13,
-            "text": "Watch out! You _____ fall.",
-            "options": {
-                "A": "will",
-                "B": "are going to",
-                "C": "fall",
-                "D": "falling",
-                "E": "are falling"
-            },
-            "correct_option": "B",
-            "hint": "Olayın gerçekleşmek üzere olduğu bariz durumlarda (Watch out!) 'be going to' kullanılır."
-        },
-        {
-            "id": 14,
-            "text": "Next year, technology _____ be much more advanced.",
-            "options": {
-                "A": "is going to",
-                "B": "will",
-                "C": "is",
-                "D": "was",
-                "E": "has"
-            },
-            "correct_option": "B",
-            "hint": "Gelecekle ilgili genel bir öngörü veya tahminde bulunuluyor."
-        },
-        {
-            "id": 15,
-            "text": "_____ you help me with these heavy bags?",
-            "options": {
-                "A": "Are you going to",
-                "B": "Do",
-                "C": "Will",
-                "D": "Have",
-                "E": "Did"
-            },
-            "correct_option": "C",
-            "hint": "Birinden rica ederken (request) veya teklifte bulunurken 'Will' kullanılır."
-        },
-        {
-            "id": 16,
-            "text": "My parents _____ buy a new house soon. They are saving money.",
-            "options": {
-                "A": "will",
-                "B": "are going to",
-                "C": "buy",
-                "D": "buying",
-                "E": "bought"
-            },
-            "correct_option": "B",
-            "hint": "Para biriktirmeleri (saving money) bunun bir niyet ve plan olduğunu gösterir."
-        },
-        {
-            "id": 17,
-            "text": "Maybe I _____ stay at home tonight.",
-            "options": {
-                "A": "am going to",
-                "B": "am",
-                "C": "will",
-                "D": "do",
-                "E": "have"
-            },
-            "correct_option": "C",
-            "hint": "'Maybe' (belki) belirsizlik ifade eder, bu yüzden 'will' daha uygundur."
-        },
-        {
-            "id": 18,
-            "text": "They have bought the tickets. They _____ fly to Paris tomorrow.",
-            "options": {
-                "A": "will",
-                "B": "are going to",
-                "C": "fly",
-                "D": "flew",
-                "E": "flown"
-            },
-            "correct_option": "B",
-            "hint": "Biletlerin alınmış olması kesin bir hazırlık yapıldığını gösterir (arrangement)."
-        },
-        {
-            "id": 19,
-            "text": "I'm sure you _____ enjoy the film.",
-            "options": {
-                "A": "are going to",
-                "B": "will",
-                "C": "do",
-                "D": "are",
-                "E": "have"
-            },
-            "correct_option": "B",
-            "hint": "'I'm sure' (eminim) ifadesi kişisel bir görüş/güven belirtir, genellikle 'will' alır."
-        },
-        {
-            "id": 20,
-            "text": "Don't worry, I _____ forget to call you.",
-            "options": {
-                "A": "don't",
-                "B": "not going to",
-                "C": "won't",
-                "D": "didn't",
-                "E": "am not"
-            },
-            "correct_option": "C",
-            "hint": "Gelecek zamanın olumsuzu (will not) kısaltılarak 'won't' olur."
-        }
-    ]
+﻿{
+    "test_info":  {
+                      "level":  "BEGINNER (A1-A2)",
+                      "topic":  "Grammar - Tenses",
+                      "test_no":  3,
+                      "description":  "Future Tenses: \u0027Will\u0027, \u0027Be Going To\u0027 ve gelecek zaman ifadeleri."
+                  },
+    "questions":  [
+                      {
+                          "i":  1,
+                          "t":  "I think it _____ rain tomorrow.",
+                          "o":  {
+                                    "A":  "is",
+                                    "B":  "will",
+                                    "C":  "going to",
+                                    "D":  "are",
+                                    "E":  "do"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "\u0027I think\u0027 (bence) ifadesi genellikle kişisel bir tahmin belirtir ve \u0027will\u0027 ile kullanılır."
+                      },
+                      {
+                          "i":  2,
+                          "t":  "We _____ visit our grandparents next week. It is our plan.",
+                          "o":  {
+                                    "A":  "will",
+                                    "B":  "are going to",
+                                    "C":  "go to",
+                                    "D":  "are going",
+                                    "E":  "will be"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Önceden yapılmış bir plandan (plan) bahsederken \u0027be going to\u0027 yapısı tercih edilir."
+                      },
+                      {
+                          "i":  3,
+                          "t":  "A: The phone is ringing. B: Okay, I _____ answer it.",
+                          "o":  {
+                                    "A":  "am going to",
+                                    "B":  "answer",
+                                    "C":  "will",
+                                    "D":  "am answering",
+                                    "E":  "answers"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Konuşma anında verilen anlık kararlar (spontaneous decisions) için \u0027will\u0027 kullanılır."
+                      },
+                      {
+                          "i":  4,
+                          "t":  "She _____ be 18 years old next month.",
+                          "o":  {
+                                    "A":  "is going",
+                                    "B":  "will",
+                                    "C":  "shall",
+                                    "D":  "is",
+                                    "E":  "does"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Gelecekle ilgili değiştirilemez gerçekler (yaş gibi) için \u0027will\u0027 kullanılır."
+                      },
+                      {
+                          "i":  5,
+                          "t":  "Look at those black clouds! It _____ rain.",
+                          "o":  {
+                                    "A":  "will",
+                                    "B":  "is going to",
+                                    "C":  "goes to",
+                                    "D":  "is raining",
+                                    "E":  "rain"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Ortada fiziksel bir kanıt (black clouds) varsa, tahminden öteye geçer ve \u0027be going to\u0027 kullanılır."
+                      },
+                      {
+                          "i":  6,
+                          "t":  "_____ you come to the party tonight?",
+                          "o":  {
+                                    "A":  "Are",
+                                    "B":  "Do",
+                                    "C":  "Will",
+                                    "D":  "Did",
+                                    "E":  "Does"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Gelecek zaman soru cümlesi. \u0027Tonight\u0027 (bu gece) gelecek zamanı işaret ediyor."
+                      },
+                      {
+                          "i":  7,
+                          "t":  "I promise I _____ tell anyone your secret.",
+                          "o":  {
+                                    "A":  "don\u0027t",
+                                    "B":  "won\u0027t",
+                                    "C":  "am not going to",
+                                    "D":  "didn\u0027t",
+                                    "E":  "not"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Söz verirken (promise) \u0027will\u0027 veya olumsuz hali \u0027won\u0027t\u0027 kullanılır."
+                      },
+                      {
+                          "i":  8,
+                          "t":  "What are your plans for the summer? I _____ to Antalya.",
+                          "o":  {
+                                    "A":  "travel",
+                                    "B":  "will travel",
+                                    "C":  "am going to travel",
+                                    "D":  "traveled",
+                                    "E":  "travels"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Soruda \u0027plans\u0027 (planlar) kelimesi geçiyor. Planlanmış eylemler için \u0027be going to\u0027 kullanılır."
+                      },
+                      {
+                          "i":  9,
+                          "t":  "I hope she _____ pass the exam.",
+                          "o":  {
+                                    "A":  "is going to",
+                                    "B":  "will",
+                                    "C":  "is",
+                                    "D":  "does",
+                                    "E":  "has"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "\u0027Hope\u0027 (ummak), \u0027think\u0027, \u0027believe\u0027 gibi fiillerden sonra genellikle \u0027will\u0027 gelir."
+                      },
+                      {
+                          "i":  10,
+                          "t":  "We don\u0027t have any bread. Really? I _____ go and buy some.",
+                          "o":  {
+                                    "A":  "am going to",
+                                    "B":  "will",
+                                    "C":  "am going",
+                                    "D":  "go",
+                                    "E":  "went"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Durumu o anda öğrendiniz ve markete gitmeye o an karar verdiniz (anlık karar)."
+                      },
+                      {
+                          "i":  11,
+                          "t":  "Where _____ they _____ stay in London?",
+                          "o":  {
+                                    "A":  "will / staying",
+                                    "B":  "are / going to",
+                                    "C":  "do / stay",
+                                    "D":  "will / stays",
+                                    "E":  "did / stay"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Plan soruluyor. \u0027Going to\u0027 yapısında yardımcı fiil \u0027are\u0027, ana fiil \u0027stay\u0027 yalın haldedir."
+                      },
+                      {
+                          "i":  12,
+                          "t":  "Ali _____ probably be late for work.",
+                          "o":  {
+                                    "A":  "is going to",
+                                    "B":  "is",
+                                    "C":  "will",
+                                    "D":  "does",
+                                    "E":  "has"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "\u0027Probably\u0027 (muhtemelen) gibi olasılık zarfları genellikle \u0027will\u0027 ile kullanılır."
+                      },
+                      {
+                          "i":  13,
+                          "t":  "Watch out! You _____ fall.",
+                          "o":  {
+                                    "A":  "will",
+                                    "B":  "are going to",
+                                    "C":  "fall",
+                                    "D":  "falling",
+                                    "E":  "are falling"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Olayın gerçekleşmek üzere olduğu bariz durumlarda (Watch out!) \u0027be going to\u0027 kullanılır."
+                      },
+                      {
+                          "i":  14,
+                          "t":  "Next year, technology _____ be much more advanced.",
+                          "o":  {
+                                    "A":  "is going to",
+                                    "B":  "will",
+                                    "C":  "is",
+                                    "D":  "was",
+                                    "E":  "has"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Gelecekle ilgili genel bir öngörü veya tahminde bulunuluyor."
+                      },
+                      {
+                          "i":  15,
+                          "t":  "_____ you help me with these heavy bags?",
+                          "o":  {
+                                    "A":  "Are you going to",
+                                    "B":  "Do",
+                                    "C":  "Will",
+                                    "D":  "Have",
+                                    "E":  "Did"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Birinden rica ederken (request) veya teklifte bulunurken \u0027Will\u0027 kullanılır."
+                      },
+                      {
+                          "i":  16,
+                          "t":  "My parents _____ buy a new house soon. They are saving money.",
+                          "o":  {
+                                    "A":  "will",
+                                    "B":  "are going to",
+                                    "C":  "buy",
+                                    "D":  "buying",
+                                    "E":  "bought"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Para biriktirmeleri (saving money) bunun bir niyet ve plan olduğunu gösterir."
+                      },
+                      {
+                          "i":  17,
+                          "t":  "Maybe I _____ stay at home tonight.",
+                          "o":  {
+                                    "A":  "am going to",
+                                    "B":  "am",
+                                    "C":  "will",
+                                    "D":  "do",
+                                    "E":  "have"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "\u0027Maybe\u0027 (belki) belirsizlik ifade eder, bu yüzden \u0027will\u0027 daha uygundur."
+                      },
+                      {
+                          "i":  18,
+                          "t":  "They have bought the tickets. They _____ fly to Paris tomorrow.",
+                          "o":  {
+                                    "A":  "will",
+                                    "B":  "are going to",
+                                    "C":  "fly",
+                                    "D":  "flew",
+                                    "E":  "flown"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Biletlerin alınmış olması kesin bir hazırlık yapıldığını gösterir (arrangement)."
+                      },
+                      {
+                          "i":  19,
+                          "t":  "I\u0027m sure you _____ enjoy the film.",
+                          "o":  {
+                                    "A":  "are going to",
+                                    "B":  "will",
+                                    "C":  "do",
+                                    "D":  "are",
+                                    "E":  "have"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "\u0027I\u0027m sure\u0027 (eminim) ifadesi kişisel bir görüş/güven belirtir, genellikle \u0027will\u0027 alır."
+                      },
+                      {
+                          "i":  20,
+                          "t":  "Don\u0027t worry, I _____ forget to call you.",
+                          "o":  {
+                                    "A":  "don\u0027t",
+                                    "B":  "not going to",
+                                    "C":  "won\u0027t",
+                                    "D":  "didn\u0027t",
+                                    "E":  "am not"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Gelecek zamanın olumsuzu (will not) kısaltılarak \u0027won\u0027t\u0027 olur."
+                      }
+                  ]
 }

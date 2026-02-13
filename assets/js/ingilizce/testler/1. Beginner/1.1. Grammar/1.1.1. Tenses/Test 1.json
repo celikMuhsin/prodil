@@ -7,264 +7,304 @@
     },
     "questions": [
         {
-            "id": 1,
-            "text": "I _____ a student at Sakarya University.",
-            "options": {
+            "i": 1,
+            "t": "I _____ a student at Sakarya University.",
+            "o": {
                 "A": "is",
                 "B": "are",
                 "C": "am",
                 "D": "be",
                 "E": "being"
             },
-            "correct_option": "C",
-            "hint": "'I' (ben) öznesi ile şimdiki zamanda hangi yardımcı fiilin kullanıldığını hatırla."
+            "c": "C",
+            "d": 1.1,
+            "r": 15,
+            "h": "'I' (ben) öznesi ile şimdiki zamanda hangi yardımcı fiilin kullanıldığını hatırla."
         },
         {
-            "id": 2,
-            "text": "My father _____ a doctor; he works at a hospital.",
-            "options": {
+            "i": 2,
+            "t": "My father _____ a doctor; he works at a hospital.",
+            "o": {
                 "A": "are",
                 "B": "is",
                 "C": "am",
                 "D": "be",
                 "E": "do"
             },
-            "correct_option": "B",
-            "hint": "Üçüncü tekil şahıs (he/she/it) için 'to be' fiilinin çekimini düşün."
+            "c": "B",
+            "d": 1.2,
+            "r": 15,
+            "h": "Üçüncü tekil şahıs (he/she/it) için 'to be' fiilinin çekimini düşün."
         },
         {
-            "id": 3,
-            "text": "They _____ like playing football in the garden.",
-            "options": {
+            "i": 3,
+            "t": "They _____ like playing football in the garden.",
+            "o": {
                 "A": "doesn't",
                 "B": "aren't",
                 "C": "isn't",
                 "D": "don't",
                 "E": "not"
             },
-            "correct_option": "D",
-            "hint": "Geniş zamanda (Present Simple) çoğul özneler için olumsuzluk eki hangisidir?"
+            "c": "D",
+            "d": 1.5,
+            "r": 25,
+            "h": "Geniş zamanda (Present Simple) çoğul özneler için olumsuzluk eki hangisidir?"
         },
         {
-            "id": 4,
-            "text": "She _____ English very well.",
-            "options": {
+            "i": 4,
+            "t": "She _____ English very well.",
+            "o": {
                 "A": "speak",
                 "B": "speaking",
                 "C": "speaks",
                 "D": "is speak",
                 "E": "are speaking"
             },
-            "correct_option": "C",
-            "hint": "Geniş zamanda (Present Simple) 'she' öznesi fiile nasıl bir takı getirir?"
+            "c": "C",
+            "d": 1.4,
+            "r": 20,
+            "h": "Geniş zamanda (Present Simple) 'she' öznesi fiile nasıl bir takı getirir?"
         },
         {
-            "id": 5,
-            "text": "Look! The baby _____.",
-            "options": {
+            "i": 5,
+            "t": "Look! The baby _____.",
+            "o": {
                 "A": "sleep",
                 "B": "is sleeping",
                 "C": "sleeps",
                 "D": "slept",
                 "E": "are sleeping"
             },
-            "correct_option": "B",
-            "hint": "'Look!' (Bak!) ünlemi, eylemin şu anda gerçekleştiğini gösterir. Hangi zaman kullanılmalı?"
+            "c": "B",
+            "d": 1.3,
+            "r": 20,
+            "h": "'Look!' (Bak!) ünlemi, eylemin şu anda gerçekleştiğini gösterir. Hangi zaman kullanılmalı?"
         },
         {
-            "id": 6,
-            "text": "_____ you go to school by bus every day?",
-            "options": {
+            "i": 6,
+            "t": "_____ you go to school by bus every day?",
+            "o": {
                 "A": "Are",
                 "B": "Is",
                 "C": "Do",
                 "D": "Does",
                 "E": "Have"
             },
-            "correct_option": "C",
-            "hint": "Geniş zamanda (Present Simple) soru sorarken 'you' öznesi ile hangi yardımcı fiil başa gelir?"
+            "c": "C",
+            "d": 1.5,
+            "r": 25,
+            "h": "Geniş zamanda (Present Simple) soru sorarken 'you' öznesi ile hangi yardımcı fiil başa gelir?"
         },
         {
-            "id": 7,
-            "text": "We _____ watching TV right now. We are studying.",
-            "options": {
+            "i": 7,
+            "t": "We _____ watching TV right now. We are studying.",
+            "o": {
                 "A": "don't",
                 "B": "aren't",
                 "C": "isn't",
                 "D": "not",
                 "E": "doesn't"
             },
-            "correct_option": "B",
-            "hint": "Şimdiki zamanda (Present Continuous) 'we' öznesi için olumsuz yardımcı fiil nedir?"
+            "c": "B",
+            "d": 1.6,
+            "r": 25,
+            "h": "Şimdiki zamanda (Present Continuous) 'we' öznesi için olumsuz yardımcı fiil nedir?"
         },
         {
-            "id": 8,
-            "text": "Where _____ Ali live?",
-            "options": {
+            "i": 8,
+            "t": "Where _____ Ali live?",
+            "o": {
                 "A": "do",
                 "B": "is",
                 "C": "are",
                 "D": "does",
                 "E": "doing"
             },
-            "correct_option": "D",
-            "hint": "Ali (he) üçüncü tekil şahıstır. Geniş zaman soru cümlesinde hangi yardımcı fiil kullanılır?"
+            "c": "D",
+            "d": 1.5,
+            "r": 25,
+            "h": "Ali (he) üçüncü tekil şahıstır. Geniş zaman soru cümlesinde hangi yardımcı fiil kullanılır?"
         },
         {
-            "id": 9,
-            "text": "The sun _____ in the east.",
-            "options": {
+            "i": 9,
+            "t": "The sun _____ in the east.",
+            "o": {
                 "A": "rise",
                 "B": "rising",
                 "C": "is rise",
                 "D": "rises",
                 "E": "are rising"
             },
-            "correct_option": "D",
-            "hint": "Genel doğrular ve bilimsel gerçekler için hangi zaman kullanılır?"
+            "c": "D",
+            "d": 1.8,
+            "r": 30,
+            "h": "Genel doğrular ve bilimsel gerçekler için hangi zaman kullanılır?"
         },
         {
-            "id": 10,
-            "text": "I usually _____ coffee for breakfast, but today I _____ tea.",
-            "options": {
+            "i": 10,
+            "t": "I usually _____ coffee for breakfast, but today I _____ tea.",
+            "o": {
                 "A": "drink / am drinking",
                 "B": "am drinking / drink",
                 "C": "drinks / drink",
                 "D": "drinking / am drinking",
                 "E": "drink / drinking"
             },
-            "correct_option": "A",
-            "hint": "İlk kısım bir alışkanlığı (usually), ikinci kısım ise şu anki geçici bir durumu (today) anlatıyor."
+            "c": "A",
+            "d": 2.5,
+            "r": 45,
+            "h": "İlk kısım bir alışkanlığı (usually), ikinci kısım ise şu anki geçici bir durumu (today) anlatıyor."
         },
         {
-            "id": 11,
-            "text": "Please be quiet! The students _____ an exam.",
-            "options": {
+            "i": 11,
+            "t": "Please be quiet! The students _____ an exam.",
+            "o": {
                 "A": "take",
                 "B": "taking",
                 "C": "takes",
                 "D": "are taking",
                 "E": "do take"
             },
-            "correct_option": "D",
-            "hint": "Konuşma anında gerçekleşen bir eylemden bahsediyoruz."
+            "c": "D",
+            "d": 1.4,
+            "r": 20,
+            "h": "Konuşma anında gerçekleşen bir eylemden bahsediyoruz."
         },
         {
-            "id": 12,
-            "text": "What time _____ the train leave?",
-            "options": {
+            "i": 12,
+            "t": "What time _____ the train leave?",
+            "o": {
                 "A": "is",
                 "B": "do",
                 "C": "does",
                 "D": "are",
                 "E": "doing"
             },
-            "correct_option": "C",
-            "hint": "Tarifeli seferler (tren, otobüs saatleri) gelecek zaman olsa bile geniş zaman ile sorulur."
+            "c": "C",
+            "d": 2.2,
+            "r": 35,
+            "h": "Tarifeli seferler (tren, otobüs saatleri) gelecek zaman olsa bile geniş zaman ile sorulur."
         },
         {
-            "id": 13,
-            "text": "They _____ never late for class.",
-            "options": {
+            "i": 13,
+            "t": "They _____ never late for class.",
+            "o": {
                 "A": "are",
                 "B": "do",
                 "C": "does",
                 "D": "have",
                 "E": "is"
             },
-            "correct_option": "A",
-            "hint": "'Late' bir sıfattır, fiil değildir. Sıfatlardan önce hangi yardımcı fiil gelir?"
+            "c": "A",
+            "d": 1.9,
+            "r": 30,
+            "h": "'Late' bir sıfattır, fiil değildir. Sıfatlardan önce hangi yardımcı fiil gelir?"
         },
         {
-            "id": 14,
-            "text": "How often _____ you visit your grandparents?",
-            "options": {
+            "i": 14,
+            "t": "How often _____ you visit your grandparents?",
+            "o": {
                 "A": "are",
                 "B": "do",
                 "C": "does",
                 "D": "is",
                 "E": "doing"
             },
-            "correct_option": "B",
-            "hint": "Sıklık bildiren sorular (How often) genellikle geniş zaman ile sorulur."
+            "c": "B",
+            "d": 1.6,
+            "r": 25,
+            "h": "Sıklık bildiren sorular (How often) genellikle geniş zaman ile sorulur."
         },
         {
-            "id": 15,
-            "text": "My brother and I _____ want to go out tonight.",
-            "options": {
+            "i": 15,
+            "t": "My brother and I _____ want to go out tonight.",
+            "o": {
                 "A": "doesn't",
                 "B": "aren't",
                 "C": "don't",
                 "D": "isn't",
                 "E": "not"
             },
-            "correct_option": "C",
-            "hint": "Özne 'My brother and I' yani 'We' (biz). Geniş zamanda olumsuzluk nasıl yapılır?"
+            "c": "C",
+            "d": 1.8,
+            "r": 30,
+            "h": "Özne 'My brother and I' yani 'We' (biz). Geniş zamanda olumsuzluk nasıl yapılır?"
         },
         {
-            "id": 16,
-            "text": "Currently, the company _____ a new project.",
-            "options": {
+            "i": 16,
+            "t": "Currently, the company _____ a new project.",
+            "o": {
                 "A": "develops",
                 "B": "is developing",
                 "C": "develop",
                 "D": "developing",
                 "E": "are developing"
             },
-            "correct_option": "B",
-            "hint": "'Currently' (şu anda) zarfı, şimdiki zamanı işaret eder. 'Company' tekil bir öznedir."
+            "c": "B",
+            "d": 1.5,
+            "r": 25,
+            "h": "'Currently' (şu anda) zarfı, şimdiki zamanı işaret eder. 'Company' tekil bir öznedir."
         },
         {
-            "id": 17,
-            "text": "Water _____ at 100 degrees Celsius.",
-            "options": {
+            "i": 17,
+            "t": "Water _____ at 100 degrees Celsius.",
+            "o": {
                 "A": "boil",
                 "B": "is boiling",
                 "C": "boiling",
                 "D": "are boiling",
                 "E": "boils"
             },
-            "correct_option": "E",
-            "hint": "Bilimsel bir gerçekten bahsederken geniş zaman kullanılır."
+            "c": "E",
+            "d": 1.7,
+            "r": 25,
+            "h": "Bilimsel bir gerçekten bahsederken geniş zaman kullanılır."
         },
         {
-            "id": 18,
-            "text": "Why _____ she crying?",
-            "options": {
+            "i": 18,
+            "t": "Why _____ she crying?",
+            "o": {
                 "A": "do",
                 "B": "does",
                 "C": "is",
                 "D": "are",
                 "E": "has"
             },
-            "correct_option": "C",
-            "hint": "Cümlede fiil '-ing' almış (crying). Bu şimdiki zamandır."
+            "c": "C",
+            "d": 1.6,
+            "r": 25,
+            "h": "Cümlede fiil '-ing' almış (crying). Bu şimdiki zamandır."
         },
         {
-            "id": 19,
-            "text": "I _____ agree with your opinion.",
-            "options": {
+            "i": 19,
+            "t": "I _____ agree with your opinion.",
+            "o": {
                 "A": "am not",
                 "B": "don't",
                 "C": "doesn't",
                 "D": "not",
                 "E": "isn't"
             },
-            "correct_option": "B",
-            "hint": "'Agree' (katılmak) durum bildiren bir fiildir (stative verb) ve genellikle geniş zamanla kullanılır."
+            "c": "B",
+            "d": 2.3,
+            "r": 40,
+            "h": "'Agree' (katılmak) durum bildiren bir fiildir (stative verb) ve genellikle geniş zamanla kullanılır."
         },
         {
-            "id": 20,
-            "text": "Listen to the birds! They _____ so beautifully.",
-            "options": {
+            "i": 20,
+            "t": "Listen to the birds! They _____ so beautifully.",
+            "o": {
                 "A": "sing",
                 "B": "sings",
                 "C": "are singing",
                 "D": "is singing",
                 "E": "sang"
             },
-            "correct_option": "C",
-            "hint": "'Listen!' (Dinle!) anlık bir durumu belirtir. Özne 'They' olduğu için uygun yardımcı fiili seç."
+            "c": "C",
+            "d": 1.4,
+            "r": 20,
+            "h": "'Listen!' (Dinle!) anlık bir durumu belirtir. Özne 'They' olduğu için uygun yardımcı fiili seç."
         }
     ]
 }

@@ -1,270 +1,310 @@
-{
-    "test_info": {
-        "level": "BEGINNER (A1-A2)",
-        "topic": "Grammar - Modals Verbs",
-        "test_no": 7,
-        "description": "Temel Modallar: Can, Could, Should, Must, Have to kullanımı."
-    },
-    "questions": [
-        {
-            "id": 1,
-            "text": "I _____ swim very well. Look at me!",
-            "options": {
-                "A": "can",
-                "B": "should",
-                "C": "must",
-                "D": "need",
-                "E": "have"
-            },
-            "correct_option": "A",
-            "hint": "Yetenek (ability) bildiren ve 'yapabilmek' anlamına gelen modal hangisidir?"
-        },
-        {
-            "id": 2,
-            "text": "It is raining outside. You _____ take your umbrella.",
-            "options": {
-                "A": "can",
-                "B": "should",
-                "C": "mustn't",
-                "D": "couldn't",
-                "E": "are"
-            },
-            "correct_option": "B",
-            "hint": "Birine tavsiye (advice) verirken 'yapmalısın' anlamında hangi yapı kullanılır?"
-        },
-        {
-            "id": 3,
-            "text": "You _____ smoke in the hospital. It is forbidden.",
-            "options": {
-                "A": "don't have to",
-                "B": "should",
-                "C": "mustn't",
-                "D": "can",
-                "E": "could"
-            },
-            "correct_option": "C",
-            "hint": "Yasaklama (prohibition) bildirirken 'yapmamalısın/yasak' anlamında ne kullanılır?"
-        },
-        {
-            "id": 4,
-            "text": "I _____ play the guitar when I was five years old.",
-            "options": {
-                "A": "can",
-                "B": "must",
-                "C": "should",
-                "D": "could",
-                "E": "may"
-            },
-            "correct_option": "D",
-            "hint": "Geçmişteki bir yetenekten (was five years old) bahsediyoruz. 'Can' modalının geçmiş hali nedir?"
-        },
-        {
-            "id": 5,
-            "text": "_____ I open the window? It is very hot inside.",
-            "options": {
-                "A": "Must",
-                "B": "Can",
-                "C": "Have to",
-                "D": "Am",
-                "E": "Do"
-            },
-            "correct_option": "B",
-            "hint": "İzin isterken veya ricada bulunurken kullanılan en yaygın modal hangisidir?"
-        },
-        {
-            "id": 6,
-            "text": "Students _____ wear a uniform at this school. It is a rule.",
-            "options": {
-                "A": "can",
-                "B": "could",
-                "C": "have to",
-                "D": "shouldn't",
-                "E": "may"
-            },
-            "correct_option": "C",
-            "hint": "Dışarıdan gelen bir zorunluluk (okul kuralı) varsa 'have to' tercih edilir."
-        },
-        {
-            "id": 7,
-            "text": "I have a toothache. I _____ go to the dentist.",
-            "options": {
-                "A": "must",
-                "B": "can",
-                "C": "could",
-                "D": "might",
-                "E": "may"
-            },
-            "correct_option": "A",
-            "hint": "Kişinin kendisinin hissettiği güçlü bir gereklilik veya zorunluluk (must) durumudur."
-        },
-        {
-            "id": 8,
-            "text": "_____ you pass me the salt, please?",
-            "options": {
-                "A": "Should",
-                "B": "Must",
-                "C": "Could",
-                "D": "Are",
-                "E": "Have"
-            },
-            "correct_option": "C",
-            "hint": "Kibarca bir şey isterken (polite request) 'Can' yerine daha nazik olan 'Could' kullanılabilir."
-        },
-        {
-            "id": 9,
-            "text": "We _____ go to school tomorrow. It is Sunday!",
-            "options": {
-                "A": "mustn't",
-                "B": "don't have to",
-                "C": "can't",
-                "D": "shouldn't",
-                "E": "couldn't"
-            },
-            "correct_option": "B",
-            "hint": "Zorunluluk yok (lack of necessity). 'Gitmek yasak değil ama gitmek zorunda da değiliz' anlamı."
-        },
-        {
-            "id": 10,
-            "text": "Ali is very strong. He _____ lift that heavy box.",
-            "options": {
-                "A": "can",
-                "B": "should",
-                "C": "must",
-                "D": "have to",
-                "E": "need"
-            },
-            "correct_option": "A",
-            "hint": "Fiziksel güç ve yetenek belirtiliyor."
-        },
-        {
-            "id": 11,
-            "text": "The traffic is terrible. You _____ be late for work.",
-            "options": {
-                "A": "can",
-                "B": "might",
-                "C": "should",
-                "D": "must",
-                "E": "have to"
-            },
-            "correct_option": "B",
-            "hint": "Düşük bir ihtimalden (possibility) bahsederken 'might' kullanılabilir."
-        },
-        {
-            "id": 12,
-            "text": "You _____ eat too much chocolate. It is not healthy.",
-            "options": {
-                "A": "don't have to",
-                "B": "shouldn't",
-                "C": "couldn't",
-                "D": "might not",
-                "E": "cannot"
-            },
-            "correct_option": "B",
-            "hint": "Olumsuz bir tavsiye veriliyor. 'Yapmamalısın'."
-        },
-        {
-            "id": 13,
-            "text": "Drivers _____ stop at the red light.",
-            "options": {
-                "A": "must",
-                "B": "can",
-                "C": "could",
-                "D": "might",
-                "E": "may"
-            },
-            "correct_option": "A",
-            "hint": "Trafik kuralları gibi kesin ve katı zorunluluklar için 'must' kullanılır."
-        },
-        {
-            "id": 14,
-            "text": "I didn't have any money, so I _____ buy the ticket.",
-            "options": {
-                "A": "can't",
-                "B": "mustn't",
-                "C": "shouldn't",
-                "D": "couldn't",
-                "E": "don't have to"
-            },
-            "correct_option": "D",
-            "hint": "Geçmişte bir şeyi yapamama durumu (past inability)."
-        },
-        {
-            "id": 15,
-            "text": "_____ I use your phone? Mine is dead.",
-            "options": {
-                "A": "Must",
-                "B": "Should",
-                "C": "May",
-                "D": "Have to",
-                "E": "Need"
-            },
-            "correct_option": "C",
-            "hint": "Resmi ve nazik bir şekilde izin isterken 'May' kullanılır."
-        },
-        {
-            "id": 16,
-            "text": "If you want to lose weight, you _____ do exercise.",
-            "options": {
-                "A": "could",
-                "B": "may",
-                "C": "should",
-                "D": "might",
-                "E": "can"
-            },
-            "correct_option": "C",
-            "hint": "Bir amaca ulaşmak için verilen tavsiye."
-        },
-        {
-            "id": 17,
-            "text": "My father is a pilot. He _____ fly airplanes.",
-            "options": {
-                "A": "can",
-                "B": "must",
-                "C": "should",
-                "D": "has to",
-                "E": "needs"
-            },
-            "correct_option": "A",
-            "hint": "Mesleki bir beceri/yetenek."
-        },
-        {
-            "id": 18,
-            "text": "You _____ touch the paintings in the museum.",
-            "options": {
-                "A": "don't have to",
-                "B": "mustn't",
-                "C": "couldn't",
-                "D": "should",
-                "E": "needn't"
-            },
-            "correct_option": "B",
-            "hint": "Kesin yasak! Müze kuralı."
-        },
-        {
-            "id": 19,
-            "text": "This is a secret. You _____ tell anyone.",
-            "options": {
-                "A": "don't have to",
-                "B": "couldn't",
-                "C": "mustn't",
-                "D": "might not",
-                "E": "cannot"
-            },
-            "correct_option": "C",
-            "hint": "Yapılmaması gereken çok önemli bir zorunluluk/yasak."
-        },
-        {
-            "id": 20,
-            "text": "I _____ get up early tomorrow because I have a meeting at 8:00.",
-            "options": {
-                "A": "can",
-                "B": "may",
-                "C": "have to",
-                "D": "could",
-                "E": "should"
-            },
-            "correct_option": "C",
-            "hint": "Toplantı saati gibi dış etkenlerden kaynaklanan bir zorunluluk."
-        }
-    ]
+﻿{
+    "test_info":  {
+                      "level":  "BEGINNER (A1-A2)",
+                      "topic":  "Grammar - Modals Verbs",
+                      "test_no":  7,
+                      "description":  "Temel Modallar: Can, Could, Should, Must, Have to kullanımı."
+                  },
+    "questions":  [
+                      {
+                          "i":  1,
+                          "t":  "I _____ swim very well. Look at me!",
+                          "o":  {
+                                    "A":  "can",
+                                    "B":  "should",
+                                    "C":  "must",
+                                    "D":  "need",
+                                    "E":  "have"
+                                },
+                          "c":  "A",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Yetenek (ability) bildiren ve \u0027yapabilmek\u0027 anlamına gelen modal hangisidir?"
+                      },
+                      {
+                          "i":  2,
+                          "t":  "It is raining outside. You _____ take your umbrella.",
+                          "o":  {
+                                    "A":  "can",
+                                    "B":  "should",
+                                    "C":  "mustn\u0027t",
+                                    "D":  "couldn\u0027t",
+                                    "E":  "are"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Birine tavsiye (advice) verirken \u0027yapmalısın\u0027 anlamında hangi yapı kullanılır?"
+                      },
+                      {
+                          "i":  3,
+                          "t":  "You _____ smoke in the hospital. It is forbidden.",
+                          "o":  {
+                                    "A":  "don\u0027t have to",
+                                    "B":  "should",
+                                    "C":  "mustn\u0027t",
+                                    "D":  "can",
+                                    "E":  "could"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Yasaklama (prohibition) bildirirken \u0027yapmamalısın/yasak\u0027 anlamında ne kullanılır?"
+                      },
+                      {
+                          "i":  4,
+                          "t":  "I _____ play the guitar when I was five years old.",
+                          "o":  {
+                                    "A":  "can",
+                                    "B":  "must",
+                                    "C":  "should",
+                                    "D":  "could",
+                                    "E":  "may"
+                                },
+                          "c":  "D",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Geçmişteki bir yetenekten (was five years old) bahsediyoruz. \u0027Can\u0027 modalının geçmiş hali nedir?"
+                      },
+                      {
+                          "i":  5,
+                          "t":  "_____ I open the window? It is very hot inside.",
+                          "o":  {
+                                    "A":  "Must",
+                                    "B":  "Can",
+                                    "C":  "Have to",
+                                    "D":  "Am",
+                                    "E":  "Do"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "İzin isterken veya ricada bulunurken kullanılan en yaygın modal hangisidir?"
+                      },
+                      {
+                          "i":  6,
+                          "t":  "Students _____ wear a uniform at this school. It is a rule.",
+                          "o":  {
+                                    "A":  "can",
+                                    "B":  "could",
+                                    "C":  "have to",
+                                    "D":  "shouldn\u0027t",
+                                    "E":  "may"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Dışarıdan gelen bir zorunluluk (okul kuralı) varsa \u0027have to\u0027 tercih edilir."
+                      },
+                      {
+                          "i":  7,
+                          "t":  "I have a toothache. I _____ go to the dentist.",
+                          "o":  {
+                                    "A":  "must",
+                                    "B":  "can",
+                                    "C":  "could",
+                                    "D":  "might",
+                                    "E":  "may"
+                                },
+                          "c":  "A",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Kişinin kendisinin hissettiği güçlü bir gereklilik veya zorunluluk (must) durumudur."
+                      },
+                      {
+                          "i":  8,
+                          "t":  "_____ you pass me the salt, please?",
+                          "o":  {
+                                    "A":  "Should",
+                                    "B":  "Must",
+                                    "C":  "Could",
+                                    "D":  "Are",
+                                    "E":  "Have"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Kibarca bir şey isterken (polite request) \u0027Can\u0027 yerine daha nazik olan \u0027Could\u0027 kullanılabilir."
+                      },
+                      {
+                          "i":  9,
+                          "t":  "We _____ go to school tomorrow. It is Sunday!",
+                          "o":  {
+                                    "A":  "mustn\u0027t",
+                                    "B":  "don\u0027t have to",
+                                    "C":  "can\u0027t",
+                                    "D":  "shouldn\u0027t",
+                                    "E":  "couldn\u0027t"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Zorunluluk yok (lack of necessity). \u0027Gitmek yasak değil ama gitmek zorunda da değiliz\u0027 anlamı."
+                      },
+                      {
+                          "i":  10,
+                          "t":  "Ali is very strong. He _____ lift that heavy box.",
+                          "o":  {
+                                    "A":  "can",
+                                    "B":  "should",
+                                    "C":  "must",
+                                    "D":  "have to",
+                                    "E":  "need"
+                                },
+                          "c":  "A",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Fiziksel güç ve yetenek belirtiliyor."
+                      },
+                      {
+                          "i":  11,
+                          "t":  "The traffic is terrible. You _____ be late for work.",
+                          "o":  {
+                                    "A":  "can",
+                                    "B":  "might",
+                                    "C":  "should",
+                                    "D":  "must",
+                                    "E":  "have to"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Düşük bir ihtimalden (possibility) bahsederken \u0027might\u0027 kullanılabilir."
+                      },
+                      {
+                          "i":  12,
+                          "t":  "You _____ eat too much chocolate. It is not healthy.",
+                          "o":  {
+                                    "A":  "don\u0027t have to",
+                                    "B":  "shouldn\u0027t",
+                                    "C":  "couldn\u0027t",
+                                    "D":  "might not",
+                                    "E":  "cannot"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Olumsuz bir tavsiye veriliyor. \u0027Yapmamalısın\u0027."
+                      },
+                      {
+                          "i":  13,
+                          "t":  "Drivers _____ stop at the red light.",
+                          "o":  {
+                                    "A":  "must",
+                                    "B":  "can",
+                                    "C":  "could",
+                                    "D":  "might",
+                                    "E":  "may"
+                                },
+                          "c":  "A",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Trafik kuralları gibi kesin ve katı zorunluluklar için \u0027must\u0027 kullanılır."
+                      },
+                      {
+                          "i":  14,
+                          "t":  "I didn\u0027t have any money, so I _____ buy the ticket.",
+                          "o":  {
+                                    "A":  "can\u0027t",
+                                    "B":  "mustn\u0027t",
+                                    "C":  "shouldn\u0027t",
+                                    "D":  "couldn\u0027t",
+                                    "E":  "don\u0027t have to"
+                                },
+                          "c":  "D",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Geçmişte bir şeyi yapamama durumu (past inability)."
+                      },
+                      {
+                          "i":  15,
+                          "t":  "_____ I use your phone? Mine is dead.",
+                          "o":  {
+                                    "A":  "Must",
+                                    "B":  "Should",
+                                    "C":  "May",
+                                    "D":  "Have to",
+                                    "E":  "Need"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Resmi ve nazik bir şekilde izin isterken \u0027May\u0027 kullanılır."
+                      },
+                      {
+                          "i":  16,
+                          "t":  "If you want to lose weight, you _____ do exercise.",
+                          "o":  {
+                                    "A":  "could",
+                                    "B":  "may",
+                                    "C":  "should",
+                                    "D":  "might",
+                                    "E":  "can"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Bir amaca ulaşmak için verilen tavsiye."
+                      },
+                      {
+                          "i":  17,
+                          "t":  "My father is a pilot. He _____ fly airplanes.",
+                          "o":  {
+                                    "A":  "can",
+                                    "B":  "must",
+                                    "C":  "should",
+                                    "D":  "has to",
+                                    "E":  "needs"
+                                },
+                          "c":  "A",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Mesleki bir beceri/yetenek."
+                      },
+                      {
+                          "i":  18,
+                          "t":  "You _____ touch the paintings in the museum.",
+                          "o":  {
+                                    "A":  "don\u0027t have to",
+                                    "B":  "mustn\u0027t",
+                                    "C":  "couldn\u0027t",
+                                    "D":  "should",
+                                    "E":  "needn\u0027t"
+                                },
+                          "c":  "B",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Kesin yasak! Müze kuralı."
+                      },
+                      {
+                          "i":  19,
+                          "t":  "This is a secret. You _____ tell anyone.",
+                          "o":  {
+                                    "A":  "don\u0027t have to",
+                                    "B":  "couldn\u0027t",
+                                    "C":  "mustn\u0027t",
+                                    "D":  "might not",
+                                    "E":  "cannot"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Yapılmaması gereken çok önemli bir zorunluluk/yasak."
+                      },
+                      {
+                          "i":  20,
+                          "t":  "I _____ get up early tomorrow because I have a meeting at 8:00.",
+                          "o":  {
+                                    "A":  "can",
+                                    "B":  "may",
+                                    "C":  "have to",
+                                    "D":  "could",
+                                    "E":  "should"
+                                },
+                          "c":  "C",
+                          "d":  1.2,
+                          "r":  30,
+                          "h":  "Toplantı saati gibi dış etkenlerden kaynaklanan bir zorunluluk."
+                      }
+                  ]
 }

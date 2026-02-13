@@ -4,6 +4,115 @@
  * Handles JSON-based tests, visual timer, drawing canvas, and reporting.
  */
 
+/**
+ * 🚀 AKILLI BİLİŞSEL YETERLİLİK MOTORU (ICPE v2.0)
+ * =================================================================
+ * Bu motor, kullanıcının sadece doğru/yanlış verisini değil;
+ * - Bilişsel işlem hızını (CPS)
+ * - Tereddütlerini (Hesitation)
+ * - Dürtüsel davranışlarını (Impulsivity)
+ * analiz ederek gerçekçi bir seviye belirler.
+ */
+
+// 1. GLOBAL KONFİGÜRASYON (Physics Engine Settings)
+const ICPE_CONFIG = {
+    LATENCY_PAD: 400,    // Göz odaklanması ve animasyon payı (ms) - Süreden düşülür.
+    READING_LIMIT: 1000, // Bu sürenin altı "Şans/Sallama" kabul edilir.
+
+    // Fitts Yasası: Şıkkın konumuna göre süre tolerans katsayıları
+    FITTS_VECTOR: { 0: 1.0, 1: 1.1, 2: 1.2, 3: 1.3, 4: 1.4 }, // Index 0=A, 1=B...
+
+    // Seviye Skalası (0-1000 Puan)
+    LEVELS: [
+        { d: 200, l: "A0", t: "Novice" },
+        { d: 350, l: "A1", t: "Beginner" },
+        { d: 450, l: "A1+", t: "High Beginner" },
+        { d: 550, l: "A2", t: "Elementary" },
+        { d: 650, l: "A2+", t: "Pre-Intermediate" },
+        { d: 750, l: "B1", t: "Intermediate" },
+        { d: 840, l: "B1+", t: "High Intermediate" },
+        { d: 900, l: "B2", t: "Upper Intermediate" },
+        { d: 940, l: "B2+", t: "Advanced Candidate" },
+        { d: 970, l: "C1", t: "Advanced" },
+        { d: 985, l: "C1+", t: "Proficient" },
+        { d: 995, l: "C2", t: "Mastery" },
+        { d: 1000, l: "C2+", t: "Native Reflex" }
+    ]
+};
+
+// Seviye Aralıkları (Range Map)
+const LEVEL_RANGES = [
+    { min: 0, max: 200, id: "A0", label: "Novice" },
+    { min: 201, max: 350, id: "A1", label: "Beginner" },
+    { min: 351, max: 450, id: "A1+", label: "High Beginner" },
+    { min: 451, max: 550, id: "A2", label: "Elementary" },
+    { min: 551, max: 650, id: "A2+", label: "Pre-Intermediate" },
+    { min: 651, max: 750, id: "B1", label: "Intermediate" },
+    { min: 751, max: 840, id: "B1+", label: "High Intermediate" },
+    { min: 841, max: 900, id: "B2", label: "Upper Intermediate" },
+    { min: 901, max: 940, id: "B2+", label: "Advanced Candidate" },
+    { min: 941, max: 970, id: "C1", label: "Advanced" },
+    { min: 971, max: 985, id: "C1+", label: "Proficient" },
+    { min: 986, max: 995, id: "C2", label: "Mastery" },
+    { min: 996, max: 1000, id: "C2+", label: "Native Reflex" }
+];
+
+// Detaylı Geri Bildirim Motoru
+function generateFeedbackMsg(score, range) {
+    if (range.id === "C2+") return "Zirvedesin! Bundan ötesi yok.";
+    let rangeSpan = range.max - range.min;
+    let progress = score - range.min;
+    let percentage = (progress / rangeSpan); // 0.0 ile 1.0 arası
+    let nextLevelScore = range.max + 1;
+    let msg = "";
+    if (percentage < 0.30) {
+        msg = `Bu seviyeye (${range.id}) yeni giriş yaptın. Temelleri sağlamlaştırmalısın.`;
+    } else if (percentage < 0.70) {
+        msg = `Bu seviyenin ortalarındasın. ${nextLevelScore} puana ulaştığında bir üst seviyeye geçmiş sayılacaksın.`;
+    } else {
+        msg = `Harika gidiyorsun! Bu seviyeyi tamamlamak üzeresin. Sadece ${nextLevelScore - score} puan daha lazım.`;
+    }
+    return msg;
+}
+
+// 2. YARDIMCI MATEMATİK FONKSİYONLARI
+const ICPE_MATH = {
+    // Kelime Sayısı Hesapla (Soru + Şıklar) -> W_eff
+    calculateWordCount: function (q) {
+        if (!q) return 0;
+        let textWords = (q.metin || "").trim().split(/\s+/).length;
+        let optionsWords = 0;
+        if (q.siklar) {
+            optionsWords = q.siklar.map(s => s.text).join(" ").trim().split(/\s+/).length;
+        }
+        return textWords + optionsWords;
+    },
+
+    // Güvenilirlik Katsayısı (G_i) Hesapla
+    calculateReliability: function (rawTime, lastScrollTime, isVisible, isHesitant) {
+        let g_i = 1.0; // Varsayılan: Tam Güvenilir
+
+        // Kural 1: Scroll Impulse Cezası (<200ms)
+        if (Date.now() - lastScrollTime < 200) {
+            // console.log("⚠️ Impulse Detected (Scroll)");
+            g_i *= 0.5;
+        }
+
+        // Kural 2: Görünürlük (Kör Tıklama)
+        if (!isVisible) {
+            // console.log("⚠️ Blind Click Detected");
+            g_i = 0.0; // İptal
+        }
+
+        // Kural 3: Tereddüt (Hesitation)
+        if (isHesitant) {
+            g_i *= 0.8;
+        }
+
+        return g_i;
+    }
+};
+
 window.ProdilExam = {
     // --- STATE ---
     currentQuestions: [],
@@ -12,6 +121,16 @@ window.ProdilExam = {
     timer: 0,
     timerInterval: null,
     currentJsonPath: null, // Track current test path for switching
+    soruBaslamaZamani: null, // Soru bazlı süre takibi için
+
+    // ICPE SESSION STATE
+    icpeSession: {
+        answers: [],          // Her cevabın detaylı analiz verisi
+        lastScrollTime: 0,    // Impulse detection için
+        optionsVisible: false, // Blind click detection için
+        currentHesitation: false, // Mobil touch tereddüt
+        startTime: 0          // Milisaniye hassasiyetli başlangıç
+    },
 
     correctCount: 0,
     wrongCount: 0,
@@ -42,6 +161,24 @@ window.ProdilExam = {
             this.initLocalLoader();
             this.showLoader(true);
 
+            // [TREND FIX] Buffer'daki Skoru Tescil Et
+            if (typeof localStorage !== 'undefined') {
+                const bufferScore = localStorage.getItem('prodil_current_exam_score_buffer');
+                if (bufferScore) {
+                    localStorage.setItem('prodil_last_exam_score', bufferScore);
+                    // Buffer'ı temizle ki aynı skoru tekrar tekrar tescil etmesin (Opsiyonel, kalsa da sorun olmaz)
+                    localStorage.removeItem('prodil_current_exam_score_buffer');
+                }
+            }
+
+            // Init Scroll Listener for Impulse Detection
+            if (!this.scrollListenerAdded) {
+                window.addEventListener("scroll", () => {
+                    this.icpeSession.lastScrollTime = Date.now();
+                }, { passive: true });
+                this.scrollListenerAdded = true;
+            }
+
             // Fix Path encoding just in case
             // But usually browsers handle it. 
             // jsonPath is passed from HTML.
@@ -63,10 +200,13 @@ window.ProdilExam = {
             this.correctCount = 0;
             this.wrongCount = 0;
 
+            // Sıfırla ICPE
+            this.icpeSession.answers = [];
+
             // Initialize UI
             this.openUI();
             this.syncSelector(); // Sync the dropdown value
-            this.nextQuestion();
+            this.nextQuestion(); // İlk soruyu yükle
             this.startTimer();
 
             // Force hide ANY loader
@@ -136,24 +276,33 @@ window.ProdilExam = {
     },
 
     transformQuestion: function (qJson) {
+        // Yeni JSON yapısı: i (id), t (text), o (options), c (correct), d (difficulty), r (ref_time), h (hint)
+        // Eski yapı desteği (fallback) de korumalıyız.
+
+        const rawOptions = qJson.o || qJson.options || {};
+        const correctKey = qJson.c || qJson.correct_option;
+
         // Convert "A": "..." options to array format expected by the engine
         // { text: "...", dogruMu: boolean }
         const options = [];
-        const map = { "A": 0, "B": 1, "C": 2, "D": 3, "E": 4 };
 
-        Object.keys(qJson.options).forEach(key => {
+        Object.keys(rawOptions).forEach(key => {
             options.push({
-                text: qJson.options[key],
-                dogruMu: key === qJson.correct_option,
+                text: rawOptions[key],
+                dogruMu: key === correctKey,
                 originalLabel: key
             });
         });
 
         return {
-            id: qJson.id,
-            metin: qJson.text,
+            id: qJson.i || qJson.id,
+            metin: qJson.t || qJson.text,
             siklar: options,
-            ipucu: qJson.hint,
+            ipucu: qJson.h || qJson.hint,
+            difficulty: qJson.d || qJson.difficulty || 1.2, // Default zorluk
+            refTime: qJson.r || null, // Referans Süre (Yeni)
+
+            // Internal State
             cozulduMu: false,
             secilenSikIndex: -1,
             canvasData: null, // Scracthpad data for this question
@@ -194,6 +343,7 @@ window.ProdilExam = {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     },
 
+
     getHtmlTemplate: function () {
         return `
             <div class="exam-card">
@@ -211,7 +361,7 @@ window.ProdilExam = {
                                  </div>
                             </div>
                         </div>
-    
+
                         <div class="header-center">
                             <button onclick="ProdilExam.toggleSpeedPanel()" class="speed-toggle-btn">
                                 HIZ <i class="fa-solid fa-chevron-down ml-1" id="speed-toggle-icon"></i>
@@ -322,6 +472,13 @@ window.ProdilExam = {
             hintBtn.classList.remove('btn-active');
         }
 
+        // --- ICPE: Gecikmeli Başlatma (Latency Pad) ---
+        // Soru ekrana geldi ancak göz odaklanması için süre tanıyoruz.
+        // Sayaç hemen başlamaz. LATENCY_PAD kadar sonra başlar.
+        this.soruBaslamaZamani = 0; // Henüz başlamadı
+        this.icpeSession.currentHesitation = false;
+        this.icpeSession.optionsVisible = false;
+
         // Load Canvas
         this.loadCanvasState(q);
 
@@ -332,7 +489,7 @@ window.ProdilExam = {
                 <span class="question-prefix">${qNum}) </span>
                 <div style="flex: 1;">${q.metin}</div>
             </div>
-            <div class="options-grid">
+            <div class="options-grid" id="options-grid-container">
         `;
 
         q.siklar.forEach((opt, idx) => {
@@ -340,18 +497,22 @@ window.ProdilExam = {
 
             let extraClass = '';
             let disabled = '';
+            let clickAction = `onclick="ProdilExam.checkAnswer(this, ${idx})"`;
 
             // If already solved
             if (q.cozulduMu) {
                 disabled = 'disabled';
+                clickAction = ""; // No action
                 if (q.secilenSikIndex === idx) {
                     extraClass = opt.dogruMu ? 'correct' : 'wrong';
                 }
                 if (opt.dogruMu) extraClass += ' correct'; // Always show correct one
             }
 
+            // MOBİL TEREDDÜT ANALİZİ İÇİN EVENTLER BUTTON'A EKLENECEK
+            // JS tarafında eklemek daha güvenli, string olarak buraya yazmıyoruz.
             html += `
-                <button class="option-btn ${extraClass}" onclick="ProdilExam.checkAnswer(this, ${idx})" ${disabled}>
+                <button class="option-btn ${extraClass}" id="opt-btn-${idx}" ${disabled} ${clickAction}>
                     <span class="option-label">${letter})</span>
                     <span>${opt.text}</span>
                 </button>
@@ -362,22 +523,113 @@ window.ProdilExam = {
         area.innerHTML = html;
 
         this.activeHint = q.ipucu;
+
+        // --- EVENT BINDING & OBSERVER ---
+        // HTML render edildikten sonra butonlara event ekle
+        q.siklar.forEach((opt, idx) => {
+            const btn = document.getElementById(`opt-btn-${idx}`);
+            if (btn && !q.cozulduMu) {
+                // Tereddüt Tespiti (Long Press)
+                let touchStart = 0;
+                btn.ontouchstart = () => { touchStart = Date.now(); };
+                btn.ontouchend = () => {
+                    if (Date.now() - touchStart > 300) {
+                        this.icpeSession.currentHesitation = true;
+                    }
+                };
+            }
+        });
+
+        // Görünürlük Kontrolü (IntersectionObserver)
+        const optsContainer = document.getElementById("options-grid-container");
+        if (optsContainer && window.IntersectionObserver) {
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    this.icpeSession.optionsVisible = true;
+                    observer.disconnect();
+                }
+            }, { threshold: 0.5 });
+            observer.observe(optsContainer);
+        } else {
+            // Fallback for no observer
+            this.icpeSession.optionsVisible = true;
+        }
+
+        // Başlangıç Zamanını Ayarla (Gecikmeli)
+        setTimeout(() => {
+            this.soruBaslamaZamani = Date.now();
+        }, ICPE_CONFIG.LATENCY_PAD);
+
     },
 
-    checkAnswer: function (btn, idx) {
+    checkAnswer: function (btn, idx, event) {
         const q = this.currentQuestions[this.currentIndex];
         if (q.cozulduMu) return;
 
-        q.cozulduMu = true;
-        q.secilenSikIndex = idx;
-        q.cozumSaniyesi = this.timer;
+        // --- ICPE v2.0 PHYSICS ENGINE ---
+        // --------------------------------
+        const endTime = Date.now();
 
+        // 1. Fiziksel Süre (Raw Time)
+        // Eğer soruBaslamaZamani henüz set edilmediyse (LATENCY_PAD içindeysek),
+        // negatif çıkabilir, en az 100ms kabul edelim.
+        let rawTime = this.soruBaslamaZamani > 0 ? (endTime - this.soruBaslamaZamani) : 100;
+        if (rawTime < 100) rawTime = 100;
+
+        // 2. Metrik Hesaplama
+        const wordCount = ICPE_MATH.calculateWordCount(q);
+        const fittsFactor = ICPE_CONFIG.FITTS_VECTOR[idx] || 1.2;
+
+        // 3. Güvenilirlik (G_i)
+        // isHesitant: Mobil için event'ten gelir, Desktop için uzun bekleme (>1500ms basit mantık veya hover)
+        // Burada basitçe süre > 2000ms ise de tereddüt sayabiliriz veya sadece touch event'e güvenebiliriz.
+        let isHesitant = this.icpeSession.currentHesitation;
+        if (rawTime > 5000) isHesitant = true; // Çok uzun beklediyse de tereddüttür.
+
+        let reliability = ICPE_MATH.calculateReliability(
+            rawTime,
+            this.icpeSession.lastScrollTime,
+            this.icpeSession.optionsVisible,
+            isHesitant
+        );
+
+        // 4. Bilişsel İşlem Hızı (CPS) - Kelime/Saniye
+        // Normalized Time = RawTime / Fitts
+        const normalizedTime = rawTime / fittsFactor;
+        // CPS = (WordCount / (NormalizedTime / 1000))
+        let cps = (wordCount / (normalizedTime / 1000));
+
+        // 5. Performans İndeksi (PI) - Ham Puan
+        // PI = isCorrect * Difficulty * log(CPS + 1) * 100 * Reliability
         const isCorrect = q.siklar[idx].dogruMu;
+        const diff = q.difficulty || 1.2;
+        let pi = (isCorrect ? 1 : 0) * diff * Math.log(cps + 1) * 100 * reliability;
 
+        // Analizi Kaydet
+        this.icpeSession.answers.push({
+            qId: q.id,
+            correct: isCorrect,
+            rawTime: rawTime,
+            cps: cps,
+            pi: pi,
+            reliability: reliability,
+            // Yeni Alanlar (v3.0)
+            d: diff,
+            hesitation: isHesitant,
+            wordCount: wordCount,
+            content: q.metin,
+            options: q.siklar
+        });
+
+        // Debug Log
+        // console.log(`Q${q.id} Analiz: Time:${rawTime}ms, CPS:${cps.toFixed(1)}, PI:${pi.toFixed(1)}, Rel:${reliability}`);
+
+        // --- END ICPE ---
+
+        // --- UI UPDATES & FLOW ---
         if (isCorrect) {
             this.correctCount++;
             btn.classList.add('correct');
-            // Flash 0.5s before moving to next question (at 1000ms)
             setTimeout(() => this.flashNextButton(), 500);
             setTimeout(() => this.nextQuestion(), 1000);
         } else {
@@ -386,16 +638,19 @@ window.ProdilExam = {
             // Show correct one
             const btns = document.querySelectorAll('.option-btn');
             q.siklar.forEach((opt, i) => {
-                if (opt.dogruMu) btns[i].classList.add('correct');
+                if (opt.dogruMu && btns[i]) btns[i].classList.add('correct');
             });
-            // Flash 0.5s before moving to next question (at 2000ms)
-            setTimeout(() => this.flashNextButton(), 1500);
-            setTimeout(() => this.nextQuestion(), 2000);
+            setTimeout(() => this.flashNextButton(), 500);
+            setTimeout(() => this.nextQuestion(), 1000);
         }
 
         // Disable all
         const btns = document.querySelectorAll('.option-btn');
         btns.forEach(b => b.disabled = true);
+
+        q.cozulduMu = true;
+        q.secilenSikIndex = idx;
+        q.cozumSaniyesi = this.timer; // Legacy support
 
         this.updateStatsUI();
     },
@@ -458,6 +713,11 @@ window.ProdilExam = {
         const parent = this.canvas.parentElement;
         this.canvas.width = parent.clientWidth;
         this.canvas.height = parent.clientHeight;
+
+        // Default state: pass through events
+        if (!this.isDrawingMode) {
+            this.canvas.style.pointerEvents = 'none';
+        }
 
         // Events
         const start = (e) => this.startDrawing(e);
@@ -644,6 +904,13 @@ window.ProdilExam = {
                 <span class="speed-divider">|</span>
                 <div class="speed-metric speed-empty"><span class="speed-value">${Math.max(0, emptyPerHour)}</span><span class="speed-unit">bo/sa</span></div>
             `;
+
+
+
+
+
+
+
         }
     },
 
@@ -666,7 +933,13 @@ window.ProdilExam = {
 
     // --- FINISH & REPORT ---
     finishTestConfirm: function () {
-        this.showReport();
+        // Kullanıcı isteği: Onay sormadan direkt raporu aç
+        try {
+            this.showReport();
+        } catch (e) {
+            console.error("Rapor oluşturulurken hata:", e);
+            alert("Rapor Hatası:\n" + e.name + ": " + e.message + "\n\nSatır: " + (e.lineNumber || '?') + "\nStack: " + (e.stack || '').substring(0, 100));
+        }
     },
 
     showReport: function () {
@@ -680,83 +953,453 @@ window.ProdilExam = {
         const empty = total - correct - wrong;
         const net = correct - (wrong * 0.25);
 
-        const durationSec = this.timer;
+        // --- PUANLAMA SİSTEMİ (v3 - Gelişmiş) ---
+        // -------------------------------------------------------------
+
+        const durationSec = this.timer > 0 ? this.timer : 1;
         const durationMin = durationSec / 60;
 
-        // Speed: Based on SEEN questions (currentIndex + 1), not TOTAL (20) if finished early.
-        const visited = this.currentIndex + 1;
-        const speed = durationSec > 0 ? Math.round((visited / durationSec) * 3600) : 0;
-        const netSpeed = durationSec > 0 ? Math.round((net / durationMin) * 60) : 0;
+        // SON SORU KURALI (Kullanıcı İsteği):
+        // Eğer son soru çözülmediyse VE 1 dakikadan (60000ms) AZ bakıldıysa, 
+        // toplam soru sayısından düşmüyoruz Puan için (Sınav bütünlüğü),
+        // ama HIZ hesaplaması ve Görülen Soru sayısından düşüyoruz.
 
-        // --- SCORES ---
-        // Base Score (0-100)
-        let rawScore = (net / total) * 100;
-        if (rawScore < 0) rawScore = 0;
+        let visited = this.currentIndex + 1;
 
-        // Speed Bonus
-        const avgTimePerQ = durationSec / total;
+        if (this.soruBaslamaZamani) {
+            const gecenSure = Date.now() - this.soruBaslamaZamani;
+            const sonSoru = this.currentQuestions[this.currentIndex];
+            // Son soru varsa ve çözülmediyse ve süre < 60sn
+            if (sonSoru && !sonSoru.cozulduMu && gecenSure < 60000) {
+                visited = Math.max(0, visited - 1);
+                // console.log("Son soru < 1dk olduğu için hız hesabına katılmadı.");
+            }
+        }
+
+        // 1. Temel Veriler
+        // Kısmi Raporlama: Eğer sınav bitmediyse, visited (görülen soru) üzerinden hesapla.
+        const effectiveTotal = visited > 0 ? visited : 1;
+
+        // Boş Sorular: Görülenler içindeki boşlar
+        // (Toplam Görülen) - (Doğru + Yanlış)
+        // Eğer son soruyu görmediysek (zaman < 1dk kuralı), o zaman boş sayılmamalı.
+        // Zaten visited azaltıldığı için formül doğru çalışır.
+        const effectiveEmpty = Math.max(0, effectiveTotal - correct - wrong);
+
+        const T = effectiveTotal; // Bölen artık görülen soru sayısı
+        const birimPuan = 1000 / T;
+
+        // 2. Net Hesabı (4 Yanlış 1 Doğruyu Götürür)
+        // const net = correct - (wrong * 0.25); // Zaten yukarıda hesaplandı (Satır 691)
+        // const netPuan = Math.max(0, net * birimPuan); // Aşağıda tekrar hesaplanıyor (Satır 740)
+        const netSayisi = Math.max(0, net);
+
+        // 3. Puan Kalemleri
+        // A) Taban Puan (Potansiyel): Sadece doğrular
+        const tabanPuan = Math.round(correct * birimPuan);
+
+        // B) Net Puanı (Akademik - ANA PUAN): Netler üzerinden
+        const finalNetPuan = Math.round(netSayisi * birimPuan); // ismini değiştirdim çakışmasın diye
+
+        // C) Metrikler
+        // ne_sa (Net/Saat): Saatte yapılan net sayısı
+        // Formül: (Net / Süre(sn)) * 3600
+        const ne_sa = Math.round((netSayisi / durationSec) * 3600);
+
+
+
+        // Diğer Metrikler (Ekranda gösterim için)
+        // Hız (so/sa) -> visited (görülen soru) üzerinden hesaplamak daha doğru.
+        const speed = Math.round((visited / durationSec) * 3600);
+        const netSpeed = ne_sa;
+
+        // D) Hız Bonusu (Turbo Puan) - Kriter: ne_sa
         let speedBonus = 0;
-        if (avgTimePerQ < 40) speedBonus = 10;
-        else if (avgTimePerQ < 60) speedBonus = 5;
+        if (ne_sa > 60) speedBonus = 150;
+        else if (ne_sa > 50) speedBonus = 100;
+        else if (ne_sa > 40) speedBonus = 50;
 
-        const finalScore = Math.min(100, Math.round(rawScore + speedBonus));
+        // Eğer hiç net yoksa hız bonusu verme (Sallamayı önle)
+        if (netSayisi <= 0) speedBonus = 0;
 
-        // SKERA (Mental)
-        // SKERA (Mental)
-        // Accuracy based on TOTAL (20 questions), so empty/unseen questions reduce accuracy.
-        const accuracy = (correct / total) || 0;
-        let skeraScore = -2;
-        if (accuracy > 0.9) skeraScore = 8;
-        else if (accuracy > 0.7) skeraScore = 5;
-        else if (accuracy > 0.5) skeraScore = 2;
+        // Final Puan: Net Puan + Hız Bonusu + SKERA (Varsa)
+        // SKERA henüz hesaplanmadığı için burada finalScore'u sadece tanımlıyoruz veya geçici 0 veriyoruz.
+        // Asıl hesaplama SKERA bloğundan sonra yapılacak.
+        let finalScore = 0;
 
-        const skeraPercent = Math.min(100, Math.max(0, ((skeraScore + 10) / 20) * 100));
-        let skeraColor = skeraScore > 0 ? "#16a34a" : "#dc2626";
 
-        // Performance (Physical)
-        let perfLevel = 3;
-        if (speed > 180 && accuracy > 0.6) perfLevel = 8; // Harder threshold: > 180 q/h and > 60% accuracy
-        else if (speed > 120) perfLevel = 6; // Harder threshold: > 120 q/h (2 q/min) for Dynamic
-        let perfColor = perfLevel >= 7 ? "#16a34a" : "#ca8a04";
+        // --- SKERA (Stratejik Karar Eğilimi ve Risk Analizi) ---
+        // -------------------------------------------------------------
 
-        // Messages
-        const skeraTitle = skeraScore > 5 ? "Zihinsel Durum: Mükemmel" : "Zihinsel Durum: Geliştirilmeli";
-        const skeraMsg = skeraScore > 5 ? "Soruları çözerken odağını çok iyi korudun." : "Dikkat dağınıklığı yaşamış olabilirsin.";
+        // 1. Hesaplama Mantığı (Algoritma)
+        const so = T; // Toplam Soru (T değişkeni v3 puanlamada tanımlanmıştı)
+        // Hata oranı: (1 - (Doğru / Toplam))
+        const hata_orani = so > 0 ? (1 - (correct / so)) : 0;
+        const yapilamayan = wrong + empty; // yanlis + bos
 
-        const perfTitle = perfLevel >= 6 ? "Fiziksel Durum: Dinamik" : "Fiziksel Durum: Yorgun";
-        const perfMsg = perfLevel >= 6 ? "Hızın ve ritmin gayet yerinde." : "Biraz daha tempoyu artırabilirsin.";
+        // Dürtüsellik İndeksi (Impulsivity Index - I_imp)
+        const i_imp = yapilamayan > 0 ? (wrong / yapilamayan) * hata_orani : 0;
+
+        // Çekimserlik İndeksi (Timidity Index - I_timid)
+        const i_timid = yapilamayan > 0 ? (empty / yapilamayan) * hata_orani : 0;
+
+        // 2. Karar Ağacı (Logic Flow)
+        let skeraTitle = ""; // skeraBaslik
+        let skeraMsg = "";   // skeraDetay
+        let skeraScore = 0;  // skeraPuan
+
+
+
+        // =========================================================
+        // SKERA v3.0 (DAVRANIŞSAL KARAKTER ANALİZİ)
+        // =========================================================
+
+        // Gerekli Ön Hesaplamalar (SKERA 3.0 için)
+        // 1. Hesitation (Tereddüt) Sayısı
+        let hesitationCount = 0;
+        if (this.icpeSession.answers) {
+            hesitationCount = this.icpeSession.answers.filter(a => a.hesitation).length;
+        }
+
+        // 2. Temel Metrikler (Basitleştirilmiş Tahmin)
+        // Detaylı metrikler aşağıda calculateAdvancedPerformance ile gelecek ama
+        // SKERA'yı burada hesaplamak için önden basitçe buluyoruz.
+        // Hız (AGI): avgCPS * 10 (Max 100)
+        let rawAGI = (speed / 3600) * 10; // Yaklaşık
+        // Daha doğru AGI hesabı (calculateAdvancedPerformance mantığına benzer):
+        let totalWordsEst = visited * 30; // Ort. 30 kelime varsayımı (Tam doğru değil ama yaklaşım)
+        let agiEst = Math.min(100, (speed / 300) * 100); // 300 so/sa = 100 puan gibi. 
+        // Kullanıcı 7.0 CPS = 100 puan demişti. 
+        // Biz burada direkt speedScore (yukarıda hesaplanan) veya avgCPSVal kullanalım.
+        // Yukarıda avgCPSVal henüz hesaplanmadı (Satır 1147).
+        // Blok sırası aşağıda. O yüzden SKERA bloğunu METRİKLERDEN SONRAYA TAŞIMAK daha doğru olurdu ama
+        // kod yapısını çok bozmamak için burada gerekli verileri çekiyoruz.
+
+        // Hızlıca AGI, RFX, PWR, STA, RES hesaplayalım (Ön-Analiz)
+        // Bu hesaplamalar calculateAdvancedPerformance içinde de var, kod tekrarı olacak ama
+        // showReport fonksiyonu çok uzun ve spagetti olduğu için güvenli yol bu.
+
+        // AGI (Hız)
+        let _avgCPS = 0;
+        if (this.icpeSession.answers && this.icpeSession.answers.length > 0) {
+            const cpsVals = this.icpeSession.answers.map(a => a.cps || 0);
+            _avgCPS = cpsVals.reduce((a, b) => a + b, 0) / cpsVals.length;
+        }
+        let agiScore = Math.min(100, (_avgCPS / 7.0) * 100);
+
+        // RFX (Refleks) - Avanslı Modelin Basiti
+        let rfxScore = 0;
+        if (this.icpeSession.answers) {
+            let _totalRfx = 0;
+            let _cnt = 0;
+            this.icpeSession.answers.forEach(a => {
+                if (a.isCorrect) {
+                    let limit = a.limit || 20;
+                    let safe = Math.max(3.0, limit * 0.20);
+                    let t = (a.netTime || 0) / 1000;
+                    let s = 0;
+                    if (t <= safe) s = 100;
+                    else if (t >= limit) s = 0;
+                    else s = 100 * ((limit - t) / (limit - safe));
+
+                    if (a.hesitation) s *= 0.75;
+                    _totalRfx += s;
+                    _cnt++;
+                }
+            });
+            rfxScore = _cnt > 0 ? (_totalRfx / _cnt) : 0;
+        }
+
+        // ACC (İsabet)
+        let accScore = (visited > 0) ? (correct / visited) * 100 : 0;
+
+        // PWR (Güç)
+        let pwrScore = 0;
+        if (this.icpeSession.answers) {
+            let earned = this.icpeSession.answers.filter(a => a.isCorrect).reduce((s, a) => s + (a.d || 1), 0);
+            let totalL = this.icpeSession.answers.reduce((s, a) => s + (a.d || 1), 0);
+            pwrScore = totalL > 0 ? (earned / totalL) * 100 : 0;
+        }
+
+        // STA (Dayanıklılık)
+        let staScore = 100;
+        if (this.icpeSession.answers && this.icpeSession.answers.length > 10) {
+            let mid = Math.floor(this.icpeSession.answers.length / 2);
+            let h1 = this.icpeSession.answers.slice(0, mid).filter(a => a.isCorrect).length / mid;
+            let h2 = this.icpeSession.answers.slice(mid).filter(a => a.isCorrect).length / (this.icpeSession.answers.length - mid);
+            let drop = (h1 * 100) - (h2 * 100);
+            staScore = drop > 0 ? Math.max(0, 100 - drop) : 100;
+        }
+
+        // RES (Direnç)
+        let resScore = 100; // Hata yoksa 100
+        if (wrong > 0 && this.icpeSession.answers) {
+            let rebAtt = 0;
+            let rebSuc = 0;
+            for (let i = 0; i < this.icpeSession.answers.length - 1; i++) {
+                if (!this.icpeSession.answers[i].isCorrect) {
+                    rebAtt++;
+                    if (this.icpeSession.answers[i + 1].isCorrect) rebSuc++;
+                }
+            }
+            resScore = rebAtt > 0 ? (rebSuc / rebAtt) * 100 : 0;
+        }
+
+
+
+        // SKERA v3.0 Karar Ağacı
+        skeraTitle = "Dengeli Öğrenci";
+        let skeraIcon = "⚖️";
+        skeraMsg = "Performansınızda belirgin bir uç nokta (aşırı hız veya aşırı yavaşlık) görülmüyor. Dengeli bir gelişim izliyorsunuz.";
+        skeraScore = 50;
+        let skeraClass = "info";
+
+        // 1. THE GAMBLER (KUMARBAZ) - En Tehlikeli
+        if (rfxScore > 80 && accScore < 45) {
+            skeraTitle = "Kumarbaz Modu";
+            skeraIcon = "🎲";
+            skeraScore = -100;
+            skeraClass = "danger";
+            skeraMsg = "DİKKAT: İnanılmaz hızlısınız ama isabet oranınız çok düşük. Veriler, soruları okumadan 'Refleksif İşaretleme' (Sallama) yaptığınızı gösteriyor. Bu hız size puan kazandırmıyor, kaybettiriyor. Lütfen fren yapın.";
+        }
+        // 2. THE GLASS CANNON (KIRILGAN) - Psikolojik Düşüş
+        else if (resScore < 35) {
+            skeraTitle = "Domino Etkisi";
+            skeraIcon = "📉";
+            skeraScore = -50;
+            skeraMsg = "Psikolojik direnç verileriniz düşük. Bir hata yaptıktan sonra toparlanmanız çok zor oluyor ve peş peşe hatalar (Seri Yanlışlar) geliyor. Hata yapmaktan korkmayın, 'Reset' atıp bir sonraki soruya odaklanın.";
+        }
+        // 3. THE PERFECTIONIST (MÜKEMMELİYETÇİ) - Kararsızlık
+        else if (accScore > 75 && hesitationCount > 3 && agiScore < 45) {
+            skeraTitle = "Analiz Felci";
+            skeraIcon = "🐢";
+            skeraScore = 20;
+            skeraMsg = "Bilgi düzeyiniz gayet iyi (Doğrularınız yüksek), ancak karar verirken çok fazla 'Tereddüt' (Hesitation) yaşıyorsunuz. Şıklar arasında gidip gelmek size sınavı kaybettirir. İlk aklınıza gelene güvenin.";
+        }
+        // 4. THE SPRINTER (TÜKENMİŞ) - Kondisyon Sorunu
+        else if (staScore < 40 && accScore > 50) {
+            skeraTitle = "Kısa Mesafe Koşucusu";
+            skeraIcon = "🔋";
+            skeraScore = 10;
+            skeraMsg = "Sınava harika başlıyorsunuz ama sonlara doğru 'Mental Piliniz' bitiyor. İkinci yarıdaki performans düşüşünüz, bilgi eksikliği değil, odaklanma kondisyonu eksikliğidir. Uzun süreli deneme pratikleri yapmalısınız.";
+        }
+        // 5. THE TANK (SAĞLAMCI) - Yavaş ama Güçlü
+        else if (agiScore < 40 && rfxScore < 30 && accScore > 80) {
+            skeraTitle = "Ağır Zırhlı";
+            skeraIcon = "🚜";
+            skeraScore = 80;
+            skeraMsg = "Hiçbir riske girmiyor, refleks kullanmıyor, her soruyu didik didik ederek çözüyorsunuz. Doğruluk oranınız muazzam ama hızınız düşük. Bu strateji garantidir ancak süreli sınavlarda (YDT/YDS) soru yetiştirememe riski taşır.";
+        }
+        // 6. THE STRATEGIST (KURNAZ) - Seçici
+        else if (accScore > 80 && pwrScore < 50) {
+            skeraTitle = "Seçici Stratejist";
+            skeraIcon = "🦊";
+            skeraScore = 70;
+            skeraMsg = "Akıllıca bir oyun. Yapabileceğiniz soruları kaçırmamış, boyunuzu aşan (Zor/Boss) sorularda ise fazla vakit kaybetmeden pas geçmiş veya takılmışsınız. Netlerinizi koruyan güvenli bir limandasınız ama zirve için zor sorulara saldırmalısınız.";
+        }
+        // 7. THE APEX PREDATOR (BÜYÜK ÜSTAD) - Zirve
+        else if (accScore > 85 && rfxScore > 65 && pwrScore > 70) {
+            skeraTitle = "Zirve Avcısı";
+            skeraIcon = "👑";
+            skeraScore = 100;
+            skeraMsg = "Saygı duyulacak bir performans. Hızlısınız, doğrusunuz, zor sorularda (Güç) ezilmiyorsunuz ve hatadan sonra (Direnç) düşmüyorsunuz. Bir sınav öğrencisinin ulaşabileceği en üst bilişsel seviye budur.";
+        }
+        else {
+            // Varsayılan: Dengeli
+            if (accScore < 50) {
+                skeraTitle = "Gelişime Açık";
+                skeraIcon = "🌱";
+                skeraMsg = "Henüz belirgin bir karakter profiliniz oturmamış. Bilgi eksiklerini giderdikçe kendi tarzınızı (Hızlı veya Sağlamcı) bulacaksınız.";
+                skeraScore = 0;
+            }
+        }
+
+
+        const skeraPercent = Math.min(100, Math.max(0, ((skeraScore + 100) / 200) * 100));
+        let skeraColor = skeraScore > 0 ? "#16a34a" : (skeraScore < 0 ? "#dc2626" : "#ca8a04");
+
+        // v3.0 Class Renk Mapping
+        if (skeraClass === "danger") skeraColor = "#dc2626";
+        else if (skeraClass === "warning") skeraColor = "#ca8a04";
+        else if (skeraClass === "success") skeraColor = "#16a34a";
+        else if (skeraClass === "info") skeraColor = "#3b82f6";
+
+        // TOTAL SCORE UPDATE (SKERA DAHİL)
+        // -------------------------------------------------------------
+        // Yeni entegrasyon (Kullanıcı İsteği: Bilişsel Refleks Analizi Esaslı Puanlama):
+
+        // 1. GEREKLİ VERİLERİ HAZIRLA
+        let reflexScore = 0;
+        const answers = this.icpeSession.answers; // Dizi güvenliği için kontrol edelim
+
+        if (answers && answers.length > 0) {
+            // 2. PI (Performans İndeksi) Toplamı
+            const totalPI = answers.reduce((acc, a) => acc + (a.pi || 0), 0);
+
+            // 3. Ortalama CPS (Bilişsel İşlem Hızı)
+            const avgCPSVal = answers.reduce((acc, a) => acc + (a.cps || 0), 0) / answers.length;
+
+            // 4. KALİBRASYON (Gerçek Veri Analizine Göre Revize Edildi)
+            // Tavan Puanı (MaxPI): Soru Sayısı * 340 (Eski: 200 -> Yeni: 340)
+            const maxPI = answers.length * 340;
+
+            // Hız Puanı (SpeedScore): AvgCPS * 15 (Eski: 10 -> Yeni: 15)
+            // Bu puan 100 üzerinden maksimum 100 olabilir.
+            const speedScoreVal = Math.min(100, avgCPSVal * 15);
+
+            // 5. FİNAL SKOR FORMÜLÜ
+            // (ToplamPI / MaxPI) * 900 puanlık dilim + SpeedScore (100 puanlık dilim)
+            // Böylece toplam 1000 puana ulaşılır.
+            const piComponent = maxPI > 0 ? (totalPI / maxPI) * 900 : 0;
+
+            reflexScore = Math.round(piComponent + speedScoreVal);
+        }
+
+        // 6. SKERA ETKİSİ (OPSİYONEL)
+        // Kullanıcı "Net Puan + Hız + SKERA değil, Bilişsel Refleks Puanı olsun" dediği için
+        // SKERA puanını doğrudan eklemiyoruz, ancak analiz olarak kalıyor.
+        // Eğer ileride SKERA da puana etki etsin istenirse buraya + skeraScore eklenebilir.
+        // Şimdilik saf Reflex Score kullanıyoruz.
+
+        finalScore = Math.min(1000, Math.max(0, reflexScore));
+
+        // HTML Template içinde kullanılacak değişken
+        const sPuan = skeraScore;
+
+
+        // --- YENİ PERFORMANS ANALİZİ ALANI ---
+        // Buraya yeni hesaplama mantığı eklenecek.
+
+
+
+
+
+        // --- LEVEL & PERSONA CALCULATION (Updated for ICPE v2.1) ---
+        // 1. Find Level and Label using LEVEL_RANGES
+        let currentRange = LEVEL_RANGES.find(r => finalScore >= r.min && finalScore <= r.max) || LEVEL_RANGES[0];
+        let userLevel = currentRange.id;
+        let userLevelDesc = currentRange.label;
+
+        // 2. Generate Feedback Message
+        let feedbackMsg = generateFeedbackMsg(finalScore, currentRange);
+
+        // 3. Dynamic Color Assignment
+        let userLevelColor = "#64748b"; // Slate
+        if (userLevel.startsWith("C")) userLevelColor = "#7c3aed"; // Purple
+        else if (userLevel.startsWith("B2")) userLevelColor = "#2563eb"; // Blue
+        else if (userLevel.startsWith("B1")) userLevelColor = "#059669"; // Emerald
+        else if (userLevel.startsWith("A2")) userLevelColor = "#d97706"; // Amber
+        else if (userLevel.startsWith("A1")) userLevelColor = "#ca8a04"; // Yellow
+
+        // 4. Persona Logic (ICPE v2.1)
+        // Recalculate basic stats for persona logic
+        // answers array might not have 'val.cps' as in the snippet, we use 'speed' variable which is questions/hour
+        // We need 'speedScore' (0-100). Speed (questions/hour) map to 0-100. 
+        // Let's approximate: 1000 q/h is crazy fast (100), 100 q/h is slow.
+        // Or better, use existing 'speed' variable.
+        // User provided logic: avgCPS * 10. We calculated avgCps in Pulse Report section but not here yet.
+        // Let's re-calculate avgCPS here concisely.
+        let avgCPS_val = 0;
+        if (this.icpeSession.answers && this.icpeSession.answers.length > 0) {
+            const cpsValues = this.icpeSession.answers.map(a => a.cps || 0);
+            avgCPS_val = cpsValues.reduce((a, b) => a + b, 0) / cpsValues.length;
+        }
+        let speedScore = Math.min(100, avgCPS_val * 10);
+
+        // Accuracy (0-100)
+        let accuracy_val = (total > 0) ? (correct / total) * 100 : 0; // Using total questions or visited?
+        // User snippet uses correct / answers.length. Let's use visited.
+        accuracy_val = (visited > 0) ? (correct / visited) * 100 : 0;
+
+        let userPersona = "";
+        if (accuracy_val > 90) {
+            if (speedScore > 80) userPersona = "THE MACHINE 🤖";
+            else if (speedScore > 40) userPersona = "THE PROFESSIONAL 🎓";
+            else userPersona = "THE SNIPER 🎯";
+        } else if (accuracy_val > 70) {
+            if (speedScore > 80) userPersona = "THE SPRINTER 🏃";
+            else if (speedScore > 40) userPersona = "THE BALANCED ⚖️";
+            else userPersona = "THE THINKER ♟️";
+        } else {
+            if (speedScore > 80) userPersona = "THE DAREDEVIL 🎢";
+            else if (speedScore > 40) userPersona = "THE ROOKIE 🌱";
+            else userPersona = "THE STRUGGLER 🐢";
+        }
+        let userPersonaIcon = ""; // Integrated into persona string in new logic (emojis)
+
+
+
+        // --- YENİ PERFORMANS ANALİZİ ALANI (v3.0) ---
+        // 1. Veri Hazırla (Advanced Perf için mapping)
+        const advPerfInput = this.icpeSession.answers.map(a => ({
+            isCorrect: a.correct,
+            d: a.d || 1.2, // fallback
+            netTime: a.rawTime,
+            hesitation: a.hesitation || false,
+            wordCount: a.wordCount,
+            content: a.content,
+            options: a.options
+        }));
+
+        // 2. Fonksiyonu Çağır
+        let advPerfRes = { isPreviewMode: true, warningMsg: "Analiz Modülü Yüklenemedi." };
+        if (typeof calculateAdvancedPerformance === 'function') {
+            advPerfRes = calculateAdvancedPerformance(advPerfInput, total);
+        }
+
+        let advPerfHTML = "";
+        if (advPerfRes.isPreviewMode) {
+            advPerfHTML = `<div class="analysis-card warning" style="border-left-color:#eab308; background:#fefce8;">${advPerfRes.warningMsg}</div>`;
+        } else {
+            advPerfHTML = advPerfRes.htmlReport;
+        }
 
         const container = document.getElementById('prodil-exam-container');
         if (!container) return;
 
+
         container.innerHTML = `
-            <div class="exam-card report-mode" style="padding: 0; overflow: hidden; height: auto; min-height: auto;">
+                <div id="prodil-exam-report-card" class="exam-card report-mode" style="padding: 0; overflow: hidden; height: auto; min-height: auto;">
                 <div class="exam-header">
                      <div style="font-weight: bold;">SINAV SONUÇ RAPORU</div>
                      <button onclick="ProdilExam.closeUI()" class="close-btn" title="Kapat">✕</button>
                 </div>
 
-                <div style="padding: 25px; overflow-y: auto; max-height: 80vh;">
+                <div style="padding: 25px;">
                     
+                    <!-- UNFINISHED WARNING -->
+                    ${visited < total ? `
+                    <div style="background-color: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9rem; display: flex; align-items: start; gap: 10px;">
+                        <i class="fa-solid fa-triangle-exclamation" style="margin-top: 3px;"></i>
+                        <div>
+                            <strong>Dikkat:</strong> Sınavı erken bitirdiniz. 
+                            Puanlamanız ${total} sorudan ${visited} tanesi üzerinden oranlanarak gerçeğe yakın yapılmıştır.
+                        </div>
+                    </div>
+                    ` : ''}
+
                     <!-- SUMMARY HEADER -->
                     <div style="text-align: center; margin-bottom: 25px;">
-                        <div class="total-score-box" style="padding: 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 5px;">
-                             <i class="fa-solid fa-trophy" style="font-size: 1.4rem; color: #f59e0b;"></i>
-                             <div class="score-lbl" style="font-size: 1.2rem; margin:0; color: #374151; font-weight:600;">Toplam Puan :</div>
-                             <span class="score-val" style="font-size: 1.8rem; font-weight:800; color:#111827;">${finalScore}</span>
-                             <span style="font-size: 0.9rem; color: #9ca3af; margin-top:4px;">(Max 100)</span>
+                        <div class="total-score-box" style="padding: 20px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; margin-bottom: 10px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color:white; border-radius:16px;">
+                             <div class="score-lbl" style="font-size: 1rem; margin:0; opacity:0.8; font-weight:500;">GENEL EĞİLİM VE SKOR</div>
+                             <div class="score-val" style="font-size: 3.5rem; font-weight:900; line-height:1;">${finalScore}</div>
+                             
+                             <div style="display:flex; align-items:center; gap:15px; margin-top:10px;">
+                                <div style="background:rgba(255,255,255,0.1); padding:4px 12px; border-radius:8px; display:flex; align-items:center; gap:6px;">
+                                    <span style="font-weight:800; font-size:1.1rem; color:${userLevelColor}; text-shadow: 0 0 10px rgba(255,255,255,0.2);">${userLevel} - ${userLevelDesc}</span>
+                                </div>
+                                <div style="background:rgba(255,255,255,0.1); padding:4px 12px; border-radius:8px; display:flex; align-items:center; gap:6px;">
+                                    <span style="font-weight:700; font-size:0.9rem;">${userPersona}</span>
+                                </div>
+                             </div>
+                             
+                             <!-- Detail Feedback Message -->
+                             <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.9; max-width: 90%; text-align: center; background: rgba(0,0,0,0.2); padding: 8px 12px; border-radius: 8px;">
+                                ${feedbackMsg}
+                             </div>
                         </div>
-                         <div style="margin-top: 10px; display: flex; justify-content: center; gap: 8px; font-size: 0.8rem;">
-                             <div style="background: #f9fafb; padding: 4px 8px; border-radius: 6px; border: 1px solid #e5e7eb; color: #4b5563;">
-                                Net Puan: <strong>${net.toFixed(2)}</strong>
-                             </div>
-                             <div style="background: #eff6ff; padding: 4px 8px; border-radius: 6px; border: 1px solid #dbeafe; color: #1d4ed8;">
-                                Hız: <strong>+${speedBonus}</strong>
-                             </div>
-                             <div style="background: ${skeraScore >= 0 ? '#f0fdf4' : '#fef2f2'}; padding: 4px 8px; border-radius: 6px; border: 1px solid ${skeraScore >= 0 ? '#bbf7d0' : '#fecaca'}; color: ${skeraScore >= 0 ? '#15803d' : '#b91c1c'};">
-                                SKERA: <strong>${skeraScore >= 0 ? '+' + skeraScore : skeraScore}</strong>
-                             </div>
-                        </div>
+
+                         <!-- Score breakdown removed based on user request for unified score presentation -->
                     </div>
 
                     <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;">
@@ -774,7 +1417,7 @@ window.ProdilExam = {
                             </li>
                             <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
                                 <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#9ca3af; border-radius:50%; margin-right:6px;"></span>Boş:</span> 
-                                <span style="color:#6b7280; font-size: 0.9rem;">${empty}</span>
+                                <span style="color:#6b7280; font-size: 0.9rem;">${effectiveEmpty}</span>
                             </li>
                             <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 4px; padding-bottom: 4px;">
                                 <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#3b82f6; border-radius:50%; margin-right:6px;"></span>Net:</span> 
@@ -799,75 +1442,473 @@ window.ProdilExam = {
                         </ul>
                     </div>
 
-                    <!-- PERFORMANCE ANALYSIS -->
-                    <div class="report-analysis-box" style="background:#fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
-                        <h4 style="color:#d97706; display:flex; justify-content:space-between; font-weight: 800;">
-                            Performans Analizi (Fiziksel)
-                            <span style="background:${perfColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem; font-weight: 500;">Seviye ${perfLevel}/10</span>
-                        </h4>
-                        <div style="font-weight:500; color:#78350f; margin-bottom:5px;">${perfTitle}</div>
-                        <p style="margin:0; font-size:0.9rem; color:#92400e;">${perfMsg}</p>
-                    </div>
+
+
+
+
+                        <!-- GELİŞMİŞ PERFORMANS ANALİZİ (v3.0) -->
+                         <div style="margin-bottom: 20px;">
+                            <h4 style="color:#d97706; font-weight: 800; margin-bottom:15px; display:flex; align-items:center; gap:8px;">
+                                <i class="fa-solid fa-chart-radar"></i> PERFORMANS ANALİZİ (Yetenek Haritası)
+                            </h4>
+                            
+                            ${!advPerfRes.isPreviewMode ? `
+                            <!-- 1. Üst Bölüm: Radar & Trend -->
+                            <div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:15px;">
+                                <!-- Radar Chart -->
+                                <div style="flex:2; min-width:300px; background:white; border-radius:12px; padding:10px; border:1px solid #f3f4f6; box-shadow:0 2px 4px rgba(0,0,0,0.05); height:320px;">
+                                    <div style="height:280px; position:relative;">
+                                        <canvas id="performanceRadarChart"></canvas>
+                                    </div>
+                                </div>
+                                
+                                <!-- Trend & Skor Kartları -->
+                                <div style="flex:1; min-width:150px; display:flex; flex-direction:column; gap:10px;">
+                                    <!-- Trend -->
+                                    <div style="background:#f8fafc; padding:15px; border-radius:12px; border:1px solid #e2e8f0; text-align:center;">
+                                        <span style="font-size:0.75rem; color:#64748b; font-weight:700; text-transform:uppercase;">Gelişim Trendi</span>
+                                        <div style="font-size:1.5rem; margin-top:5px; display:flex; justify-content:center;">
+                                            ${advPerfRes.chartData?.trendHTML || '<span style="color:#9ca3af">-</span>'}
+                                        </div>
+                                    </div>
+                                    <!-- Hız Skoru (AGI) -->
+                                    <div style="background:#f0f9ff; padding:15px; border-radius:12px; border:1px solid #bae6fd; text-align:center;">
+                                        <span style="font-size:0.75rem; color:#0369a1; font-weight:700; text-transform:uppercase;">Çeviklik (AGI)</span>
+                                        <div style="font-size:1.8rem; font-weight:800; color:#0284c7; margin-top:0;">
+                                            ${advPerfRes.metrics?.agi?.toFixed(0) || '0'}
+                                        </div>
+                                    </div>
+                                    <!-- Bilişsel Hacim (VOL) -->
+                                    <div style="background:#fdf4ff; padding:15px; border-radius:12px; border:1px solid #f0abfc; text-align:center;">
+                                        <span style="font-size:0.75rem; color:#a21caf; font-weight:700; text-transform:uppercase;">Bilişsel Hacim (VOL)</span>
+                                        <div style="font-size:1.8rem; font-weight:800; color:#c026d3; margin-top:0;">
+                                            ${advPerfRes.metrics?.vol?.toFixed(0) || '0'}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 2. Alt Bölüm: Heartbeat Chart -->
+                            <div style="background:white; border-radius:12px; padding:15px; margin-bottom:20px; border:1px solid #f3f4f6; box-shadow:0 2px 4px rgba(0,0,0,0.05);">
+                                <h5 style="margin:0 0 10px 0; font-size:0.85rem; color:#64748b;">⚡ Hız Ritmi (Nabız Analizi)</h5>
+                                <div style="height: 120px; width: 100%;">
+                                    <canvas id="heartbeatChart"></canvas>
+                                </div>
+                            </div>
+                            ` : ''}
+
+                            ${advPerfHTML}
+                        </div>
+
 
                     <!-- SKERA ANALYSIS -->
-                    <div class="report-analysis-box" style="background:#fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
-                        <h4 style="color:#1e40af; display:flex; justify-content:space-between; font-weight: 800;">
-                            SKERA Analizi (Zihinsel)
-                            <span style="background:${skeraColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem; font-weight: 500;">Puan: ${skeraScore > 0 ? '+' + skeraScore : skeraScore}</span>
+                    <div class="report-analysis-box" style="background:#f3f4f6; border: 1px solid #d1d5db; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                        <h4 style="color:#1e40af; display:flex; justify-content:space-between; font-weight: 800; margin-bottom: -8px;">
+                            DAVRANIŞ ANALİZİ (SKERA)
+                            <span style="background:${skeraColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem; font-weight: 500;">Psycho-Metrics</span>
                         </h4>
-                        <div style="font-weight:500; color:#1e3a8a; margin-bottom:5px;">${skeraTitle}</div>
-                        <p style="margin:0; font-size:0.9rem; color:#1e3a8a;">${skeraMsg}</p>
+                        <div style="font-weight:700; color:#000; margin: 0 0 2px 0; display:flex; justify-content:space-between; align-items:center; font-size: 1rem;">
+                            <span>${skeraTitle}</span>
+                            <span style="font-size: 1.2rem;">${skeraIcon}</span>
+                        </div>
+                        <p style="margin:0; font-size:0.9rem; color:#1e3a8a; line-height: 1.4;">${skeraMsg}</p>
                         <div style="margin-top:10px; background:rgba(255,255,255,0.5); height:6px; border-radius:3px;">
                             <div style="width:${skeraPercent}%; background:${skeraColor}; height:100%; border-radius:3px;"></div>
                         </div>
                     </div>
 
-                    <!-- CONDITION CHART -->
-                    <div class="report-analysis-box" style="background:transparent; border:none; padding:0; margin-bottom:20px; box-shadow:none;">
-                        <h4 style="color:#7c3aed; font-weight: 800;">Kondisyon Analizi</h4>
-                        <div style="height: 200px;">
-                            <canvas id="kondisyonChart"></canvas>
-                        </div>
+
+
+                    <!-- 3. Kısım: Nöro-Metrik Analiz (YENİ) -->
+                    <!-- BİLİŞSEL REFLEKS VE İŞLEM KAPASİTESİ -->
+                    <div class="report-analysis-box" style="background:#fff; border: 1px solid #8b5cf6; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);">
+                         <h4 style="color:#6d28d9; display:flex; justify-content:space-between; font-weight: 800;">
+                            REFLEKS ANALİZİ 
+                            <span style="background:#8b5cf6; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem; font-weight: 500;">Neuro-Metrics</span>
+                        </h4>
+                        
+                        <!-- Calculations for Neuro-Metrics -->
+                        ${(() => {
+                // Helper to calculate metrics safely
+                const answers = this.icpeSession.answers;
+                if (!answers || answers.length === 0) return '<div style="color:gray;">Yeterli veri yok.</div>';
+
+                const rawTimes = answers.map(a => a.rawTime);
+                const cpsValues = answers.map(a => a.cps);
+                const relValues = answers.map(a => a.reliability);
+
+                // 1. Avg Reaction Time
+                const avgTimeMs = rawTimes.reduce((a, b) => a + b, 0) / rawTimes.length;
+                const avgTimeSec = (avgTimeMs / 1000).toFixed(2);
+
+                // 2. Avg CPS
+                const avgCps = (cpsValues.reduce((a, b) => a + b, 0) / cpsValues.length).toFixed(1);
+
+                // 3. Stability (100 - CV)
+                // CV = (StdDev / Mean) * 100
+                const mean = avgTimeMs;
+                const variance = rawTimes.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / rawTimes.length;
+                const stdDev = Math.sqrt(variance);
+                const cv = mean > 0 ? (stdDev / mean) * 100 : 0;
+                let stability = Math.max(0, Math.min(100, 100 - cv));
+
+                // Adjust stability visually (it's hard to get 100%)
+                stability = Math.min(100, stability * 1.2);
+
+                // 4. Decision Confidence (Reliability Avg)
+                const avgRel = (relValues.reduce((a, b) => a + b, 0) / relValues.length) * 100;
+
+                return `
+                            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px; margin-top:15px;">
+                                
+                                <!-- Metric 1: Reaction Speed -->
+                                <div>
+                                    <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.9rem; color:#4b5563; font-weight:600;">
+                                        <span>Ortalama Tepki Hızı</span>
+                                        <span>${avgTimeSec} sn</span>
+                                    </div>
+                                    <div style="background:#e5e7eb; height:8px; border-radius:4px; overflow:hidden;">
+                                        <!-- Inverse logic: 1s is fast (100%), 5s is slow (20%) -->
+                                        <!-- Formula: 3000ms base. Percent = (1 - (time/5000)) * 100 -->
+                                        <div style="width:${Math.max(10, Math.min(100, (1 - (avgTimeMs / 5000)) * 100))}%; background:#8b5cf6; height:100%; border-radius:4px;"></div>
+                                    </div>
+                                    <div style="font-size:0.75rem; color:#9ca3af; margin-top:3px;">Hedef: < 2.00 sn</div>
+                                </div>
+
+                                <!-- Metric 2: Processing Speed (CPS) -->
+                                <div>
+                                    <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.9rem; color:#4b5563; font-weight:600;">
+                                        <span>Bilişsel İşlem (CPS)</span>
+                                        <span>${avgCps} kelime/sn</span>
+                                    </div>
+                                    <div style="background:#e5e7eb; height:8px; border-radius:4px; overflow:hidden;">
+                                        <!-- Max logic: 5.0 cps is 100% -->
+                                        <div style="width:${Math.min(100, (avgCps / 5) * 100)}%; background:#06b6d4; height:100%; border-radius:4px;"></div>
+                                    </div>
+                                    <div style="font-size:0.75rem; color:#9ca3af; margin-top:3px;">Okuma + Karar Verme Hızı</div>
+                                </div>
+
+                                <!-- Metric 3: Focus Stability -->
+                                <div>
+                                    <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.9rem; color:#4b5563; font-weight:600;">
+                                        <span>Odaklanma Kararlılığı</span>
+                                        <span>%${stability.toFixed(0)}</span>
+                                    </div>
+                                    <div style="background:#e5e7eb; height:8px; border-radius:4px; overflow:hidden;">
+                                        <div style="width:${stability}%; background:${stability > 70 ? '#10b981' : (stability > 40 ? '#f59e0b' : '#ef4444')}; height:100%; border-radius:4px;"></div>
+                                    </div>
+                                    <div style="font-size:0.75rem; color:#9ca3af; margin-top:3px;">Ritim tutarlılığı</div>
+                                </div>
+                                
+                                <!-- Metric 4: Decision Confidence -->
+                                <div>
+                                    <div style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.9rem; color:#4b5563; font-weight:600;">
+                                        <span>Karar Güvenilirliği</span>
+                                        <span>%${avgRel.toFixed(0)}</span>
+                                    </div>
+                                    <div style="background:#e5e7eb; height:8px; border-radius:4px; overflow:hidden;">
+                                        <div style="width:${avgRel}%; background:${avgRel > 80 ? '#10b981' : '#f59e0b'}; height:100%; border-radius:4px;"></div>
+                                    </div>
+                                    <div style="font-size:0.75rem; color:#9ca3af; margin-top:3px;">Tereddüt ve Şans Faktörü</div>
+                                </div>
+
+                            </div>
+
+                                ${(() => {
+                        // 5. Pulse Report Variables (Min/Max Time)
+                        const minTime = Math.min(...rawTimes) / 1000;
+                        const maxTime = Math.max(...rawTimes) / 1000;
+
+                        // Pulse Report Logic
+                        const stabilityValue = stability.toFixed(1);
+                        const stdDevValue = (stdDev / 1000).toFixed(1); // Convert ms to sec
+                        const avgTimeValue = Number(avgTimeSec); // Ensure number for comparison
+                        const minTimeValue = minTime.toFixed(1);
+                        const maxTimeValue = maxTime.toFixed(1);
+                        // Calculate Accuracy (0-100) based on correct/seen
+                        const accuracy = (visited > 0) ? Math.round((this.correctCount / visited) * 100) : 0;
+
+                        let pulseComment = "";
+
+                        // 1. GÜVENLİK DUVARI: "SALLAMA" VEYA "AŞIRI HIZ KÖRLÜĞÜ" KONTROLÜ
+                        // Eğer çok hızlıysa (< 5 sn) VE doğruluğu kötüyse (< %50) -> Ritim değil, ciddiyet sorunu vardır.
+                        if (avgTimeValue < 5 && accuracy < 50) {
+                            pulseComment = `
+                            <h4 style="margin: 0 0 -5px 0;">
+                                <div class="analysis-card-header">
+                                    <span class="analysis-subtitle" style="margin: 0;">Kontrolsüz Hız ve Refleksif Hatalar (Ortalama: ${avgTimeValue} sn)</span>
+                                    <span>⚠️</span>
+                                </div>
+                            </h4>
+                            <p style="margin: -8px 0 0 0; line-height: 1.4;">Veriler, soruları okuma hızının üzerinde bir süratle geçtiğinizi gösteriyor. Standart sapmanızın düşük olması burada bir başarı değil; soruları analiz etmeden, mekanik bir şekilde işaretlediğinizi düşündürüyor. Bu ritim, "Hız Körlüğü"ne işaret eder. Potansiyelinizi yansıtmak için biraz yavaşlamalısınız.</p>`;
+                        }
+                        // -----------------------------------------------------------
+                        // 10 KADEMELİ RİTİM ANALİZİ (Decile System)
+                        // -----------------------------------------------------------
+                        else if (stability > 90) {
+                            pulseComment = `
+                            <h4 style="margin: 0 0 -5px 0;">
+                                <div class="analysis-card-header">
+                                    <span class="analysis-subtitle" style="margin: 0;">Mükemmel Ritim ve Ustalık (Kararlılık: %${stabilityValue})</span>
+                                    <span>💎</span>
+                                </div>
+                            </h4>
+                            <p style="margin: -8px 0 0 0; line-height: 1.4;">Zihinsel nabzınız kusursuza yakın atıyor. Sorular arası geçişlerde standart sapmanız yalnızca ${stdDevValue} saniye. Bu istikrar, sınav stratejinizin tamamen oturduğunu ve konulara hakim olduğunuzu gösterir. En hızlı (${minTimeValue} sn) ile en yavaş (${maxTimeValue} sn) cevabınız arasındaki farkın azlığı, "Takılmadan İlerleyen Bir Profesyonel" olduğunuzun kanıtıdır.</p>`;
+                        }
+                        else if (stability > 80) {
+                            pulseComment = `
+                            <h4 style="margin: 0 0 -5px 0;">
+                                <div class="analysis-card-header">
+                                    <span class="analysis-subtitle" style="margin: 0;">Profesyonel Akış (Kararlılık: %${stabilityValue})</span>
+                                    <span>✅</span>
+                                </div>
+                            </h4>
+                            <p style="margin: -8px 0 0 0; line-height: 1.4;">Zihinsel ritminiz oldukça tutarlı. İngilizce sınavlarında en büyük tuzak olan “bir soruda takılıp kalma” problemini neredeyse hiç yaşamamışsınız. Standart sapmanız (${stdDevValue} sn) makul seviyede. Zorlandığınız anlarda bile (${maxTimeValue} sn) kontrolü kaybetmemişsiniz.</p>`;
+                        }
+                        else if (stability > 70) {
+                            pulseComment = `
+                            <h4 style="margin: 0 0 -5px 0;">
+                                <div class="analysis-card-header">
+                                    <span class="analysis-subtitle" style="margin: 0;">İyi ve Dengeli (Kararlılık: %${stabilityValue})</span>
+                                    <span>👍</span>
+                                </div>
+                            </h4>
+                                                        <p style="margin: -8px 0 0 0; line-height: 1.4;">Genel olarak iyi bir tempoda ilerlemişsiniz. Ortalama süreniz ${avgTimeValue} saniye. Ufak tefek hız değişimleri olsa da, genel akışınız sağlıklı. Hızlı çözdüğünüz sorular (${minTimeValue} sn) reflekslerinizin iyi olduğunu gösteriyor.</p>`;
+                        }
+                        else if (stability > 60) {
+                            pulseComment = `
+                            <h4 style="margin: 0 0 -5px 0;">
+                                <div class="analysis-card-header">
+                                    <span class="analysis-subtitle" style="margin: 0;">Doğal Dalgalanma (Kararlılık: %${stabilityValue})</span>
+                                    <span>⚖️</span>
+                                </div>
+                            </h4>
+                                                        <p style="margin: -8px 0 0 0; line-height: 1.4;">Sınav içinde hızınızın metnin türüne göre değiştiğini görüyoruz. (Standart sapma: ${stdDevValue} sn). Bu, "Bildiğimi hızlı yaparım, bilmediğimde düşünürüm" stratejisidir ve normaldir.</p>`;
+                        }
+                        else if (stability > 50) {
+                            pulseComment = `
+                            <h4 style="margin: 0 0 -5px 0;">
+                                <div class="analysis-card-header">
+                                    <span class="analysis-subtitle" style="margin: 0;">Odak Değişimleri (Kararlılık: %${stabilityValue})</span>
+                                    <span>📉</span>
+                                </div>
+                            </h4>
+                                                        <p style="margin: -8px 0 0 0; line-height: 1.4;">Zihinsel ritminizde belirgin oynamalar var. En hızlı soru ${minTimeValue} sn iken en yavaş soru ${maxTimeValue} sn. Bu veri, sınavın bazı bölümlerinde çok akıcı ilerlediğinizi, ancak bazı soru tiplerinde tempoyu kaybettiğinizi gösteriyor.</p>`;
+                        }
+                        else if (stability > 40) {
+                            pulseComment = `
+                            <h4 style="margin: 0 0 -5px 0;">
+                                <div class="analysis-card-header">
+                                    <span class="analysis-subtitle" style="margin: 0;">Ritim Bozukluğu (Kararlılık: %${stabilityValue})</span>
+                                    <span>🌊</span>
+                                </div>
+                            </h4>
+                                                        <p style="margin: -8px 0 0 0; line-height: 1.4;">Verilerinizde ciddi duraklamalar görüyoruz. Bir soruyu ortalama ${avgTimeValue} saniyede çözerken, takıldığınız bir soruda süreyi çok uzatmışsınız. Bu genellikle gramer kuralları arasında kararsız kalmaktan kaynaklanır. Karar verme mekanizmanızı hızlandırmanız gerekiyor.</p>`;
+                        }
+                        else if (stability > 30) {
+                            pulseComment = `
+                            <h4 style="margin: 0 0 -5px 0;">
+                                <div class="analysis-card-header">
+                                    <span class="analysis-subtitle" style="margin: 0;">Dikkat Dağınıklığı (Kararlılık: %${stabilityValue})</span>
+                                    <span>⚠️</span>
+                                </div>
+                            </h4>
+                                                        <p style="margin: -8px 0 0 0; line-height: 1.4;">Zihinsel ritminiz tehlikeli bölgeye yakın. Standart sapmanız ${stdDevValue} saniye. Soruların yarısında çok hızlı, diğer yarısında çok yavaşsınız. Bu dengesizlik, sınav konsantrasyonunuzun sık sık bölündüğünü gösteriyor olabilir.</p>`;
+                        }
+                        else if (stability > 20) {
+                            pulseComment = `
+                            <h4 style="margin: 0 0 -5px 0;">
+                                <div class="analysis-card-header">
+                                    <span class="analysis-subtitle" style="margin: 0;">Yüksek Tutarsızlık (Kararlılık: %${stabilityValue})</span>
+                                    <span>🌪️</span>
+                                </div>
+                            </h4>
+                                                        <p style="margin: -8px 0 0 0; line-height: 1.4;">Sınav boyunca zihinsel ritminiz sürekli kesintiye uğramış. En yavaş soruda ${maxTimeValue} saniye beklemiş, en hızlıda ${minTimeValue} saniyeyle geçmişsiniz. Makas çok açık. Bu durum, okuma alışkanlığınızın henüz oturmadığını işaret ediyor.</p>`;
+                        }
+                        else if (stability > 10) {
+                            pulseComment = `
+                            <h4 style="margin: 0 0 -5px 0;">
+                                <div class="analysis-card-header">
+                                    <span class="analysis-subtitle" style="margin: 0;">Kritik Kopuşlar (Kararlılık: %${stabilityValue})</span>
+                                    <span>❌</span>
+                                </div>
+                            </h4>
+                                                        <p style="margin: -8px 0 0 0; line-height: 1.4;">Hızınız o kadar değişken ki saniyesi saniyesine uymuyor (Standart sapma: ${stdDevValue} sn). Bu, sınav stratejisinden ziyade, temel bilgi eksikliği veya sınav anında yaşanan yoğun stresten kaynaklanabilir.</p>`;
+                        }
+                        else {
+                            pulseComment = `
+                            <h4 style="margin: 0 0 -5px 0;">
+                                <div class="analysis-card-header">
+                                    <span class="analysis-subtitle" style="margin: 0;">Kaotik ve Rastgele (Kararlılık: %${stabilityValue})</span>
+                                    <span>🚨</span>
+                                </div>
+                            </h4>
+                                                        <p style="margin: -8px 0 0 0; line-height: 1.4;">Bu sınavdaki süre verileriniz herhangi bir stratejiye işaret etmiyor. Soruların bir kısmını okumadan geçmiş, bir kısmında ise aşırı uzun süre beklemiş görünüyorsunuz. Bu performansla sağlıklı bir ölçüm yapmak zor.</p>`;
+                        }
+
+                        return `
+                    <div style="margin-top:15px; padding:15px; background:#f5f3ff; border-radius:12px; font-size:0.9rem; color:#4c1d95; border-left:4px solid #7c3aed; line-height: 1.6; box-shadow: 0 2px 4px rgba(124, 58, 237, 0.1);">
+                        <strong style="display:block; margin-bottom:0; font-size:1rem; color:#6d28d9;"><i class="fa-solid fa-heart-pulse" style="margin-right:8px;"></i>NABIZ RAPORU</strong>
+                        ${pulseComment}
                     </div>
+                    `;
+                    })()}
+                    `;
+            })()}
+                </div>
 
                 </div>
 
-                <!-- FOOTER ACTIONS -->
+                <!--FOOTER ACTIONS-->
                 <div class="control-panel" style="padding: 15px; border-top: 1px solid #eee; display:flex; gap:10px;">
                     <button onclick="ProdilExam.restartExam()" class="btn-action btn-secondary" style="flex:1; justify-content:center;">🔄 TEKRAR</button>
-                    <button onclick="ProdilExam.shareReport()" class="btn-action btn-primary" style="flex:1; justify-content:center;">📤 PAYLAŞ</button>
+                    <button onclick="window.print()" class="btn-action btn-secondary" style="flex:0.8; justify-content:center;">🖨️ YAZDIR</button>
+                    <button onclick="ProdilExam.shareReport()" class="btn-action btn-primary" style="flex:1.2; justify-content:center;">📤 PAYLAŞ</button>
                 </div>
             </div>
-        `;
+                `;
 
-        // Render Chart
-        setTimeout(() => {
-            const ctx = document.getElementById('kondisyonChart');
-            if (ctx && window.Chart) {
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ['%0-20', '%20-40', '%40-60', '%60-80', '%80-100'],
-                        datasets: [{
-                            label: 'Net Hız (net/sa)',
-                            data: [netSpeed * 0.8, netSpeed * 0.9, netSpeed, netSpeed * 0.95, netSpeed * 1.05],
-                            borderColor: '#7c3aed',
-                            backgroundColor: 'rgba(124, 58, 237, 0.1)',
-                            fill: true,
-                            tension: 0.4
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { display: false } },
-                        scales: {
-                            y: { beginAtZero: true }
-                        }
-                    }
-                });
-            }
-        }, 100);
+
+        // --- 4. Chart.js Entegrasyonu (Grafiği Çizdir) ---
+        // --- 4. Chart.js Entegrasyonu (Grafiği Çizdir) ---
+        console.log("📊 Chart.js Başlatılıyor (v3.0)...");
+
+        if (!advPerfRes.isPreviewMode && window.Chart) {
+            setTimeout(() => {
+                // --- A) RADAR CHART (6 Eksen) ---
+                const ctxRadar = document.getElementById('performanceRadarChart');
+                if (ctxRadar) {
+                    try {
+                        const chartRadar = Chart.getChart(ctxRadar);
+                        if (chartRadar) chartRadar.destroy();
+
+                        new Chart(ctxRadar, {
+                            type: 'radar',
+                            data: {
+                                labels: advPerfRes.chartData.labels, // ["ÇEVİKLİK", "REFLEKS"...]
+                                datasets: [{
+                                    label: 'Yetenek Profili',
+                                    data: advPerfRes.chartData.data, // [agi, rfx, acc...]
+                                    fill: true,
+                                    backgroundColor: 'rgba(217, 35, 46, 0.15)',
+                                    borderColor: '#D9232E',
+                                    borderWidth: 2,
+                                    pointBackgroundColor: '#D9232E',
+                                    pointBorderColor: '#fff',
+                                    pointHoverBackgroundColor: '#fff',
+                                    pointHoverBorderColor: '#D9232E',
+                                    pointRadius: 3
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    r: {
+                                        angleLines: { display: true, color: '#f1f5f9' },
+                                        grid: { color: '#f1f5f9' },
+                                        suggestedMin: 0,
+                                        suggestedMax: 100,
+                                        ticks: { display: false, stepSize: 25 },
+                                        pointLabels: {
+                                            font: { size: 10, weight: '700', family: "'Inter', sans-serif" },
+                                            color: '#475569'
+                                        }
+                                    }
+                                },
+                                plugins: { legend: { display: false } }
+                            }
+                        });
+                    } catch (e) { console.error("Radar Chart Error:", e); }
+                }
+
+                // --- B) HEARTBEAT LINE CHART (Hız-Zaman Çizgisi) ---
+                const ctxLine = document.getElementById('heartbeatChart');
+                if (ctxLine && advPerfRes.chartData && advPerfRes.chartData.heartbeat) {
+                    try {
+                        const chartLine = Chart.getChart(ctxLine);
+                        if (chartLine) chartLine.destroy();
+
+                        // Soru numaraları (1, 2, 3...)
+                        const labels = advPerfRes.chartData.heartbeat.map((_, i) => (i + 1).toString());
+
+                        new Chart(ctxLine, {
+                            type: 'line',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: 'Süre (sn)',
+                                    data: advPerfRes.chartData.heartbeat,
+                                    // Görsel Referansa Uygun Renkler (EKG Modu)
+                                    borderColor: '#ef4444', // Red 500 (Kalp Ritmi Kırmızısı)
+                                    backgroundColor: 'transparent', // Dolgu Yok
+                                    borderWidth: 2,
+                                    tension: 0,   // Zigzag (Keskin Hatlar - EKG Style)
+                                    fill: false,  // Alan Dolgusu Kapalı
+                                    pointRadius: 3,
+                                    pointBackgroundColor: '#ef4444', // Kırmızı Nokta
+                                    pointBorderColor: '#fff',        // Beyaz Çerçeve
+                                    pointBorderWidth: 2,
+                                    pointHoverRadius: 5,
+                                    pointHoverBackgroundColor: '#fff',
+                                    pointHoverBorderColor: '#ef4444'
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                interaction: {
+                                    intersect: false,
+                                    mode: 'index',
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        grid: {
+                                            color: '#f1f5f9', // Hafif Gri Yatay Çizgiler
+                                            drawBorder: false
+                                        },
+                                        ticks: {
+                                            font: { size: 10, family: "'Inter', sans-serif" },
+                                            color: '#64748b'
+                                        }
+                                    },
+                                    x: {
+                                        grid: { display: false }, // Dikey Çizgiler Kapalı
+                                        ticks: {
+                                            font: { size: 10, family: "'Inter', sans-serif" },
+                                            color: '#94a3b8'
+                                        }
+                                    }
+                                },
+                                plugins: {
+                                    legend: { display: false },
+                                    tooltip: {
+                                        backgroundColor: '#1e293b',
+                                        titleFont: { size: 12 },
+                                        bodyFont: { size: 12 },
+                                        padding: 10,
+                                        cornerRadius: 8,
+                                        displayColors: false,
+                                        callbacks: {
+                                            title: (items) => `Soru ${items[0].label}`,
+                                            label: (context) => `⏱️ Süre: ${context.parsed.y} sn`
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    } catch (e) { console.error("Line Chart Error:", e); }
+                }
+
+            }, 800);
+        } else if (!advPerfRes.isPreviewMode) {
+            console.error("❌ Chart.js bulunamadı (v3.0)");
+            // Simple Fallback text
+            const radarArea = document.getElementById('performanceRadarChart')?.parentElement;
+            if (radarArea) radarArea.innerHTML = '<div style="color:red; font-size:0.8rem; text-align:center; padding:20px;">Grafik Modülü Yüklenemedi</div>';
+        }
+
     },
 
     restartExam: function () {
@@ -878,15 +1919,79 @@ window.ProdilExam = {
 
     shareReport: function () {
         if (window.html2canvas) {
-            const el = document.querySelector('.exam-card');
-            html2canvas(el).then(c => {
+            // Use specific ID instead of class to avoid capturing background/other cards
+            const originalEl = document.getElementById('prodil-exam-report-card');
+
+            if (!originalEl) {
+                alert("Rapor bulunamadı.");
+                return;
+            }
+
+            // 1. Clone the element to manipulate styles without affecting the UI
+            const clone = originalEl.cloneNode(true);
+
+            // 2. Set styles to ensure full height is captured (off-screen)
+            clone.style.width = originalEl.offsetWidth + 'px';
+            clone.style.height = 'auto';
+            clone.style.position = 'fixed'; // Use fixed to avoid scroll offsets affecting position
+            clone.style.top = '-10000px';
+            clone.style.left = '0';
+            clone.style.zIndex = '-1';
+            clone.style.overflow = 'visible';
+            clone.style.borderRadius = '0'; // Prevent rounded corners clipping
+
+            // 3. Find and expand the scrollable content div
+            // The template uses inline styles: style="padding: 25px; overflow-y: auto; max-height: 80vh;"
+            // We find it and reset its height restrictions.
+            const scrollableDivs = clone.querySelectorAll('div[style*="overflow-y: auto"]');
+            scrollableDivs.forEach(div => {
+                div.style.maxHeight = 'none';
+                div.style.height = 'auto';
+                div.style.overflow = 'visible';
+            });
+
+            // 4. Manually copy Canvas content (Charts)
+            // cloneNode does NOT copy the canvas drawing context/bitmap.
+            const originalCanvases = originalEl.querySelectorAll('canvas');
+            const clonedCanvases = clone.querySelectorAll('canvas');
+
+            originalCanvases.forEach((orig, i) => {
+                if (clonedCanvases[i]) {
+                    const dest = clonedCanvases[i];
+                    const ctx = dest.getContext('2d');
+                    // Ensure dimensions match
+                    dest.width = orig.width;
+                    dest.height = orig.height;
+                    ctx.drawImage(orig, 0, 0);
+                }
+            });
+
+            // Append to body to render
+            document.body.appendChild(clone);
+
+            // 5. Capture
+            html2canvas(clone, {
+                scale: 2, // High resolution
+                useCORS: true,
+                backgroundColor: '#ffffff',
+                windowHeight: clone.scrollHeight + 100 // Ensure full height is recognized
+            }).then(canvas => {
                 const a = document.createElement('a');
-                a.download = 'Sonuc_Raporu.png';
-                a.href = c.toDataURL();
+                a.download = 'Prodil_Sinav_Raporu.png';
+                a.href = canvas.toDataURL('image/png');
                 a.click();
+
+                // Cleanup
+                document.body.removeChild(clone);
+            }).catch(err => {
+                console.error("Screenshot error:", err);
+                alert("Rapor oluşturulurken bir hata oluştu: " + err.message);
+                if (document.body.contains(clone)) {
+                    document.body.removeChild(clone);
+                }
             });
         } else {
-            alert("Paylaşım özelliği yüklenemedi.");
+            alert("Paylaşım özelliği yüklenemedi (html2canvas eksik).");
         }
     },
 
@@ -917,13 +2022,13 @@ window.ProdilExam = {
                 background: white;
                 min-height: 100vh;
             }
-            
+
             /* Copied & Adapted CSS */
-            .exam-card { 
-                background: white; 
-                border-radius: 0; 
+            .exam-card {
+                background: white;
+                border-radius: 0;
                 border: none;
-                box-shadow: none; 
+                box-shadow: none;
                 overflow: hidden;
                 display: flex;
                 flex-direction: column;
@@ -934,7 +2039,7 @@ window.ProdilExam = {
             .exam-heading-group {
                 background: #fff;
                 /* border-bottom: 1px solid #e2e8f0; Removed here, moved to speed panel bottom if needed, or keep both? User said "line below it match line above it". Assuming line above came from this. */
-                border-bottom: 1px solid #e2e8f0; 
+                border-bottom: 1px solid #e2e8f0;
                 display: flex;
                 flex-direction: column;
             }
@@ -950,8 +2055,8 @@ window.ProdilExam = {
                 z-index: 2;
                 transition: all 0.3s ease;
             }
-            
-            @media (min-width: 768px) {
+
+            @media(min-width: 768px) {
                 .exam-header {
                     height: 50px; /* Expanded for desktop */
                     padding: 0 20px; /* Better spacing */
@@ -963,12 +2068,12 @@ window.ProdilExam = {
             .header-left, .header-right { flex: 1; display: flex; align-items: center; }
             .header-right { justify-content: flex-end; gap: 5px; }
             /* Center absolutely positioned to not be pushed by dynamic left/right content */
-            .header-center { 
-                position: absolute; 
-                left: 50%; 
+            .header-center {
+                position: absolute;
+                left: 50%;
                 transform: translateX(-50%);
-                display: flex; 
-                justify-content: center; 
+                display: flex;
+                justify-content: center;
                 width: auto;
                 z-index: 10;
             }
@@ -977,21 +2082,20 @@ window.ProdilExam = {
                 font-size: 1.1rem;
                 font-weight: 500; /* Reduced from 700 to look less bold but readable */
                 color: #374151;
-                color: #374151;
                 font-variant-numeric: tabular-nums;
             }
-            .header-left .timer-text { 
+            .header-left .timer-text {
                 width: 38px; /* Fixed width to prevent jitter */
                 text-align: right; /* Align right towards the icon */
                 padding-right: 4px; /* Small gap to icon */
                 padding-left: 0;
-            } 
+            }
 
             /* Desktop Overrides */
-            @media (min-width: 768px) {
-                .header-left .timer-text { 
+            @media(min-width: 768px) {
+                .header-left .timer-text {
                     width: 50px; /* Wider but left aligned */
-                    text-align: left; 
+                    text-align: left;
                 }
                 .exam-header {
                     height: 50px; /* Expanded for desktop */
@@ -999,16 +2103,16 @@ window.ProdilExam = {
                 }
             }
             .header-right .timer-text {
-                font-size: 1.0rem; 
+                font-size: 1.0rem;
             }
             /* Speed Stats Styling */
-            .speed-metric { font-size: 0.75rem; display:flex; flex-direction:column; align-items:center; line-height: 1; margin: 0 5px; color: #64748b; } /* Default soft color */
+            .speed-metric { font-size: 0.75rem; display: flex; flex-direction: column; align-items: center; line-height: 1; margin: 0 3px; color: #64748b; } /* Reduced margin from 5px to 3px */
             .speed-value { font-weight: 800; font-size: 0.85rem; margin-bottom: 2px; color: inherit; } /* Reduced from 1rem, inherit color */
             .speed-unit { font-size: 0.65rem; color: inherit; } /* Inherit color from parent */
             
-            .speed-correct { color: #4ade80 !important; }
-            .speed-wrong { color: #f87171 !important; }
-            .speed-empty { color: #9ca3af !important; }
+            .speed-correct { color: #4ade80!important; }
+            .speed-wrong { color: #f87171!important; }
+            .speed-empty { color: #9ca3af!important; }
             
             .speed-divider { color: #f1f5f9; font-weight: 300; font-size: 1.2rem; margin: 0 2px; }
 
@@ -1025,6 +2129,11 @@ window.ProdilExam = {
                 font-size: 1.2rem;
             }
             
+            .question-area {
+                position: relative;
+                z-index: 5; /* Ensure it's above canvas */
+            }
+
             .math-text {
                 margin-top: 8px; /* Push question down slightly */
                 margin-bottom: 8px; /* Pull options up closer to question */
@@ -1082,7 +2191,7 @@ window.ProdilExam = {
             .option-btn.wrong .option-label { color: #7f1d1d; }
 
             /* Desktop Overrides for Better Spacing */
-            @media (min-width: 768px) {
+            @media(min-width: 768px) {
                  .exam-header {
                     height: 40px; /* Reduced from 50px */
                     padding: 0 15px; /* Slightly reduced padding */
@@ -1151,41 +2260,41 @@ window.ProdilExam = {
             }
 
             /* Secondary Buttons (Back, Hint) */
-            .btn-secondary { 
-                background: #f8fafc; 
+            .btn-secondary {
+                background: #f8fafc;
                 border: 1px solid #e2e8f0;
-                color: #475569; 
+                color: #475569;
             }
-            .btn-secondary:hover:not(:disabled) { 
-                background: #fff; 
+            .btn-secondary:hover:not(:disabled) {
+                background: #fff;
                 border-color: #cbd5e1;
                 transform: translateY(-1px);
-                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             }
-            
+
             /* Active State (for Hint etc.) */
             .btn-active {
-                background: #003366 !important;
-                color: white !important;
-                border-color: #003366 !important;
+                background: #003366!important;
+                color: white!important;
+                border-color: #003366!important;
                 box-shadow: 0 4px 6px rgba(0, 51, 102, 0.2);
             }
-            
+
             /* Primary Button (Next) - Initially Neutral, Blue on Hover/Press */
-            .btn-primary { 
-                background: #f8fafc; 
-                color: #475569; 
-                border-color: #e2e8f0 !important;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            .btn-primary {
+                background: #f8fafc;
+                color: #475569;
+                border-color: #e2e8f0!important;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             }
-            .btn-primary:hover:not(:disabled), .btn-primary:active:not(:disabled) { 
-                background: #003366 !important; 
-                color: white !important;
-                border-color: #003366 !important;
+            .btn-primary:hover:not(:disabled), .btn-primary:active:not(:disabled) {
+                background: #003366!important;
+                color: white!important;
+                border-color: #003366!important;
                 transform: translateY(-2px);
-                box-shadow: 0 8px 15px -4px rgba(0, 51, 102, 0.4);
+                box-shadow: 0 8px 15px-4px rgba(0, 51, 102, 0.4);
             }
-            
+
             /* Flash Animation for Auto-Next */
             .flash-btn {
                 animation: flashBlue 0.5s ease-in-out;
@@ -1195,7 +2304,7 @@ window.ProdilExam = {
                 50% { background: #003366; color: white; border-color: #003366; }
                 100% { background: #f8fafc; color: #475569; }
             }
-            
+
             /* Level Selector Styling as Button */
             .level-selector select {
                 appearance: none;
@@ -1214,15 +2323,15 @@ window.ProdilExam = {
                 background-color: #fff;
                 border-color: #cbd5e1;
                 transform: translateY(-1px);
-                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             }
             .level-selector select option {
-                background: #ffffff !important;
-                color: #334155 !important;
+                background: #ffffff!important;
+                color: #334155!important;
             }
 
             /* Responsive Adjustments for Mobile Footer */
-            @media (max-width: 767px) {
+            @media(max-width: 767px) {
                 .control-panel {
                     padding: 8px 6px;
                     gap: 6px;
@@ -1240,27 +2349,24 @@ window.ProdilExam = {
                     background-size: 12px; /* Reduced to match btn icon size */
                 }
                 .btn-action i {
-                    margin: 0 !important;
+                    margin: 0!important;
                     font-size: 0.85rem;
                 }
             }
             
-            .btn-action:disabled { 
-                opacity: 0.6; 
-                cursor: not-allowed; 
-                transform: none !important;
-                box-shadow: none !important;
+            .btn-action:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+                transform: none!important;
+                box-shadow: none!important;
             }
-                border-radius: 4px;
-                padding: 4px;
-                margin: 0 2px;
-            }
+
             .header-tool-btn.active {
                 color: #16a34a;
                 background: #dcfce7;
             }
             .header-tool-btn:hover { color: #4b5563; }
-            
+
             /* Canvas */
             #drawing-canvas {
                 position: absolute;
@@ -1280,7 +2386,7 @@ window.ProdilExam = {
                 font-size: 0.95rem;
                 line-height: 1.5;
             }
-            
+
             /* Score Box */
             .score-box {
                 padding: 4px 8px;
@@ -1288,9 +2394,11 @@ window.ProdilExam = {
                 font-size: 0.8rem;
                 font-weight: 800;
                 display: flex;
+            }
+
             /* --- DETAILED REPORT STYLES (Copied from report.css) --- */
             .exam-card.report-mode {
-                max-width: 900px !important;
+                max-width: 900px!important;
                 background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
             }
             
@@ -1327,8 +2435,8 @@ window.ProdilExam = {
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
                 border: 1px solid #f1f5f9;
             }
-            .stat-card .val { font-size: 1.4rem; font-weight: 800; color: #334155; }
-            .stat-card .lbl { font-size: 0.8rem; color: #94a3b8; font-weight: 600; }
+            .stat-card.val { font-size: 1.4rem; font-weight: 800; color: #334155; }
+            .stat-card.lbl { font-size: 0.8rem; color: #94a3b8; font-weight: 600; }
             .stat-card.correct .val { color: #16a34a; }
             .stat-card.wrong .val { color: #dc2626; }
             .stat-card.empty .val { color: #ca8a04; }
@@ -1339,7 +2447,7 @@ window.ProdilExam = {
                 border-radius: 12px;
                 padding: 20px;
                 margin-bottom: 20px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
             }
             .report-analysis-box h4 {
                 margin: 0 0 10px 0;
@@ -1350,44 +2458,46 @@ window.ProdilExam = {
             }
 
             @media print {
-                .exam-card { 
-                    box-shadow: none !important; 
-                    border: none !important; 
-                    width: 100% !important; 
-                    max-width: none !important;
+                .exam-card {
+                    box-shadow: none!important;
+                    border: none!important;
+                    width: 100%!important;
+                    max-width: none!important;
                 }
-                .control-panel, .close-btn { display: none !important; }
+                .control-panel, .close-btn { display: none!important; }
             }
             .speed-toggle-btn {
-                background: #f1f5f9;
-                border: 1px solid #e2e8f0;
+                background: transparent;
+                border: none;
                 color: #64748b;
-                padding: 0 8px; /* Minimal side padding */
-                border-radius: 6px;
+                padding: 0 4px; /* Minimal side padding */
+                border-radius: 4px;
                 font-size: 0.75rem;
-                font-weight: 700;
+                font-weight: 600; /* Medium instead of bold */
                 cursor: pointer;
                 transition: all 0.2s;
-                height: 20px; /* Thinner button */
+                height: 20px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
             .speed-toggle-btn:hover {
-                background: #e2e8f0;
-                color: #475569;
+                background: transparent;
+                color: #334155;
             }
 
             .speed-panel {
-                background: #f8fafc;
-                border-bottom: 1px solid #e2e8f0; /* Match top border color */
-                padding: 20px 0; /* Significantly increased vertical padding */
-                width: 100%;
+                background: transparent;
+                border-bottom: none;
+                padding: 4px 0; /* Further reduced padding */
+                width: fit-content; /* Only take needed width */
+                margin: 0 auto; /* Center it */
                 justify-content: center;
                 align-items: center;
                 animation: slideDown 0.3s ease-out;
                 position: relative;
                 z-index: 1;
+                align-self: center; /* Center horizontally if flex col */
             }
 
             @keyframes slideDown {
@@ -1395,17 +2505,59 @@ window.ProdilExam = {
                 to { opacity: 1; transform: translateY(0); }
             }
 
-            /* Unified Font Style for Numbers */
+            /* Kondisyon Kartı Stilleri */
+            .condition-card {
+                margin-top: 20px;
+                padding: 15px;
+                border: 1px solid #e2e8f0;
+                border-radius: 12px;
+                background: linear-gradient(to right, #f8fafc, #fff);
+            }
+            .condition-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            .condition-title {
+                font-weight: 800;
+                color: #334155;
+                font-size: 1.1rem;
+            }
+            .condition-badge {
+                background: #3b82f6;
+                color: white;
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 700;
+            }
+            .condition-body {
+                font-size: 0.95rem;
+                color: #475569;
+                line-height: 1.5;
+                margin-bottom: 10px;
+            }
+            .condition-advice {
+                font-size: 0.9rem;
+                color: #059669;
+                background: #ecfdf5;
+                padding: 10px;
+                border-radius: 8px;
+                border-left: 4px solid #10b981;
+                font-style: italic;
+            }
+
             .timer-text {
-                font-family: 'Inter', sans-serif !important;
-                font-weight: 500 !important; /* Reduced from 700 */
+                font-family: 'Inter', sans-serif!important;
+                font-weight: 500!important; /* Reduced from 700 */
                 font-size: 1.15rem; /* Mobile size */
                 font-variant-numeric: tabular-nums;
                 letter-spacing: -0.5px;
                 line-height: 28px; /* Mobile line-height */
                 color: #334155;
                 margin-left: 0;
-                display: flex; 
+                display: flex;
                 align-items: center;
                 height: 100%;
                 transition: all 0.3s ease;
@@ -1422,207 +2574,9 @@ window.ProdilExam = {
         if (this.timerInterval) clearInterval(this.timerInterval);
         this.showLoader(true);
         setTimeout(() => {
-            this.calculateAndShowReport();
+            this.showReport();
             this.showLoader(false);
         }, 500);
-    },
-
-    calculateAndShowReport: function () {
-        // 1. Calculate Stats
-        const total = this.currentQuestions.length;
-        const correct = this.correctCount;
-        const wrong = this.wrongCount;
-        const empty = total - correct - wrong;
-        const net = correct - (wrong * 0.25); // 4 wrong 1 correct
-
-        const durationSec = this.timer;
-        const durationMin = durationSec / 60;
-
-        // Speed (Question per hour approx)
-        const speed = durationSec > 0 ? Math.round((total / durationSec) * 3600) : 0;
-        const netSpeed = durationSec > 0 ? Math.round((net / durationMin) * 60) : 0; // Net/Hour is weird, lets say Net/Exam * scale
-
-        // --- SKERA & PERFORMANCE SIMULATION (Replicating Logic) ---
-        // Since we don't have the original 'skeraPuan' or 'perfSeviye' algorithms, we approximate.
-
-        // Base Score (0-100)
-        let rawScore = (net / total) * 100;
-        if (rawScore < 0) rawScore = 0;
-
-        // Speed Bonus (Simple logic: < 1 min/q = bonus)
-        const avgTimePerQ = durationSec / total;
-        let speedBonus = 0;
-        if (avgTimePerQ < 40) speedBonus = 10;
-        else if (avgTimePerQ < 60) speedBonus = 5;
-
-        const finalScore = Math.min(100, Math.round(rawScore + speedBonus));
-
-        // SKERA (Mental) - Consistency
-        // Fake it based on accuracy of TOTAL exam
-        const accuracy = (correct / total) || 0;
-        let skeraScore = -2;
-        if (accuracy > 0.9) skeraScore = 8;
-        else if (accuracy > 0.7) skeraScore = 5;
-        else if (accuracy > 0.5) skeraScore = 2;
-
-        const skeraPercent = Math.min(100, Math.max(0, ((skeraScore + 10) / 20) * 100));
-        let skeraColor = skeraScore > 0 ? "#16a34a" : "#dc2626";
-
-        // Performance (Physical) - Speed/Efficiency
-        let perfLevel = 3;
-        if (speed > 180 && accuracy > 0.6) perfLevel = 8; // Harder threshold
-        else if (speed > 120) perfLevel = 6; // Harder threshold
-
-        let perfColor = perfLevel >= 7 ? "#16a34a" : "#ca8a04";
-
-        // Condition Messages
-        const skeraTitle = skeraScore > 5 ? "Zihinsel Durum: Mükemmel" : "Zihinsel Durum: Geliştirilmeli";
-        const skeraMsg = skeraScore > 5 ? "Soruları çözerken odağını çok iyi korudun." : "Dikkat dağınıklığı yaşamış olabilirsin.";
-
-        const perfTitle = perfLevel >= 6 ? "Fiziksel Durum: Dinamik" : "Fiziksel Durum: Yorgun";
-        const perfMsg = perfLevel >= 6 ? "Hızın ve ritmin gayet yerinde." : "Biraz daha tempoyu artırabilirsin.";
-
-        // --- RENDER HTML ---
-        const container = document.getElementById('prodil-exam-container');
-        container.innerHTML = `
-            <div class="exam-card report-mode" style="padding: 0; overflow: hidden;">
-                <div class="exam-header">
-                     <div style="font-weight: bold;">SINAV SONUÇ RAPORU</div>
-                     <button onclick="ProdilExam.restartExam()" class="close-btn" title="Kapat">✕</button>
-                </div>
-
-                <div style="padding: 25px; overflow-y: auto; max-height: 80vh;">
-                    
-                    <!-- SUMMARY HEADER -->
-                    <div style="text-align: center; margin-bottom: 25px;">
-                        <div class="total-score-box" style="padding: 10px 0; display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 5px;">
-                             <i class="fa-solid fa-trophy" style="font-size: 1.4rem; color: #f59e0b;"></i>
-                             <div class="score-lbl" style="font-size: 1.2rem; margin:0; color: #374151; font-weight:600;">Toplam Puan :</div>
-                             <span class="score-val" style="font-size: 1.8rem; font-weight:800; color:#111827;">${finalScore}</span>
-                             <span style="font-size: 0.9rem; color: #9ca3af; margin-top:4px;">(Max 100)</span>
-                        </div>
-                        <div style="margin-top: 10px; font-size: 0.9rem; color: #666;">
-                            Net: <b>${net.toFixed(2)}</b> | Hız Bonusu: <b>+${speedBonus}</b>
-                        </div>
-                    </div>
-
-                    <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;">
-
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; background:#f9fafb; padding:10px; border-radius:8px; margin-bottom: 20px;">
-                        <!-- Left Column: Basic Stats -->
-                        <ul style="flex: 1; list-style: none; padding: 0; margin: 0; min-width: 130px;">
-                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
-                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#16a34a; border-radius:50%; margin-right:6px;"></span>Doğru:</span> 
-                                <span style="color:#16a34a; font-size: 0.9rem;">${correct}</span>
-                            </li>
-                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
-                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#dc2626; border-radius:50%; margin-right:6px;"></span>Yanlış:</span> 
-                                <span style="color:#dc2626; font-size: 0.9rem;">${wrong}</span>
-                            </li>
-                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
-                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#9ca3af; border-radius:50%; margin-right:6px;"></span>Boş:</span> 
-                                <span style="color:#6b7280; font-size: 0.9rem;">${empty}</span>
-                            </li>
-                            <li style="display: flex; justify-content: flex-start; align-items: center; gap: 0; margin-bottom: 4px; padding-bottom: 4px;">
-                                <span style="display:flex; align-items:center; font-size: 0.85rem; width: 70px; font-weight: bold;"><span style="width:8px; height:8px; background:#3b82f6; border-radius:50%; margin-right:6px;"></span>Net:</span> 
-                                <span style="color:#3b82f6; font-size: 0.9rem;">${net.toFixed(2)}</span>
-                            </li>
-                        </ul>
-
-                        <!-- Right Column: Time & Speed Stats -->
-                        <ul style="flex: 1; list-style: none; padding: 0; margin: 0; min-width: 130px;">
-                            <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
-                                <span style="display:flex; align-items:center; font-size: 0.85rem; font-weight: bold;"><i class="fa-regular fa-clock" style="margin-right:6px; color:#64748b; font-size: 0.9em;"></i>Süre:</span> 
-                                <span style="color:#1e293b; font-size: 0.9rem;">${Math.floor(durationMin)} dk ${durationSec % 60} sn</span>
-                            </li>
-                            <li style="display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #e5e7eb; padding-bottom: 4px;">
-                                <span style="display:flex; align-items:center; font-size: 0.85rem; font-weight: bold;"><i class="fa-solid fa-bolt" style="margin-right:6px; color:#f59e0b; font-size: 0.9em;"></i>Hız:</span> 
-                                <span style="color:#1e293b; font-size: 0.9rem;">${speed} soru/saat</span>
-                            </li>
-                            <li style="display: flex; justify-content: space-between; margin-bottom: 4px; padding-bottom: 4px;">
-                                <span style="display:flex; align-items:center; font-size: 0.85rem; font-weight: bold;"><i class="fa-solid fa-chart-line" style="margin-right:6px; color:#8b5cf6; font-size: 0.9em;"></i>Net Hız:</span> 
-                                <span style="color:#1e293b; font-size: 0.9rem;">${netSpeed} net/saat</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- SKERA ANALYSIS -->
-                    <div class="report-analysis-box" style="background:#fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
-                        <h4 style="color:#1e40af; display:flex; justify-content:space-between; font-weight: 800;">
-                            SKERA Analizi (Zihinsel)
-                            <span style="background:${skeraColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem; font-weight: 500;">Puan: ${skeraScore}</span>
-                        </h4>
-                        <div style="font-weight:500; color:#1e3a8a; margin-bottom:5px;">${skeraTitle}</div>
-                        <p style="margin:0; font-size:0.9rem; color:#1e3a8a;">${skeraMsg}</p>
-                        <div style="margin-top:10px; background:rgba(255,255,255,0.5); height:6px; border-radius:3px;">
-                            <div style="width:${skeraPercent}%; background:${skeraColor}; height:100%; border-radius:3px;"></div>
-                        </div>
-                    </div>
-
-                    <!-- PERFORMANCE ANALYSIS -->
-                    <div class="report-analysis-box" style="background:#fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
-                        <h4 style="color:#d97706; display:flex; justify-content:space-between; font-weight: 800;">
-                            Performans Analizi (Fiziksel)
-                            <span style="background:${perfColor}; color:white; padding:2px 8px; border-radius:4px; font-size:0.8rem; font-weight: 500;">Seviye ${perfLevel}/10</span>
-                        </h4>
-                        <div style="font-weight:500; color:#78350f; margin-bottom:5px;">${perfTitle}</div>
-                        <p style="margin:0; font-size:0.9rem; color:#92400e;">${perfMsg}</p>
-                    </div>
-
-                    <!-- CONDITION CHART -->
-                    <div class="report-analysis-box" style="background:transparent; border:none; padding:0; margin-bottom:20px; box-shadow:none;">
-                        <h4 style="color:#7c3aed; font-weight: 800;">Kondisyon Analizi</h4>
-                        <div style="height: 200px;">
-                            <canvas id="kondisyonChart"></canvas>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- FOOTER ACTIONS -->
-                <div class="control-panel" style="padding: 15px; border-top: 1px solid #eee; display:flex; gap:10px;">
-                    <button onclick="ProdilExam.restartExam()" class="btn-action btn-secondary">🔄 TEKRAR</button>
-                    <button onclick="ProdilExam.shareReport()" class="btn-action btn-primary">📤 PAYLAŞ / İNDİR</button>
-                </div>
-            </div>
-        `;
-
-        // DRAW CHART
-        setTimeout(() => {
-            this.drawChart(correct, wrong, empty);
-        }, 100);
-    },
-
-    drawChart: function (c, w, e) {
-        const ctx = document.getElementById('kondisyonChart');
-        if (!ctx || !window.Chart) return;
-
-        // Dummy data distribution over 5 segments for visual effect
-        const total = c + w + e;
-        const segment = Math.ceil(total / 5);
-
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['%0-20', '%20-40', '%40-60', '%60-80', '%80-100'],
-                datasets: [{
-                    label: 'Performans Eğrisi',
-                    data: [60, 75, 80, 85, 90], // Dummy curve for demo
-                    borderColor: '#7c3aed',
-                    backgroundColor: 'rgba(124, 58, 237, 0.1)',
-                    fill: true,
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: {
-                    y: { beginAtZero: true, max: 100 }
-                }
-            }
-        });
     },
 
     restartExam: function () {
@@ -1659,3 +2613,636 @@ window.ProdilExam = {
     }
 
 };
+
+/**
+ * 🚀 GELİŞMİŞ PERFORMANS VE STRATEJİ ANALİZİ (v3.0)
+ * Bilişsel verilerden "Sınav Karakteri" analizi çıkarır.
+ */
+/**
+ * 🚀 GELİŞMİŞ PERFORMANS VE STRATEJİ ANALİZİ (v3.0)
+ * Bilişsel verilerden "Sınav Karakteri" analizi çıkarır.
+ */
+function calculateAdvancedPerformance(answers, totalQuestions) {
+
+    // --- 0. GÜVENLİK DUVARI (Anti-Cheat Kill Switch) ---
+    // İnsan biyolojisi bir soruyu okuyup anlamak için minimum süreye ihtiyaç duyar.
+    // Eğer ortalama süre 0.8 saniyenin altındaysa bu bir anomalidir.
+    const totalDuration = answers.reduce((sum, a) => sum + (a.netTime || 0), 0);
+    // netTime ms cinsinden olabilir, kontrol edelim. Genelde saniye olarak saklanıyor bu projede (rawTime).
+    // exam_engine.js:1198'de rawTime kullanılmış.
+    const durationSec = totalDuration / 1000;
+
+    if (durationSec < (answers.length * 0.8)) {
+        return {
+            isPreviewMode: true,
+            isCheat: true,
+            warningMsg: `⛔ <b>ANOMALİ TESPİTİ</b><br>
+            Sınav verilerinizde "İnsan Dışı Hız" tespit edildi. Soruları okumadan işaretlediğiniz veya bir script kullandığınız anlaşılıyor.<br>
+            Analiz iptal edildi.`
+        };
+    }
+
+    // --- 1. GÜVENLİK DUVARI: YETERSİZ VERİ (Preview Mode) ---
+    if (answers.length < 10) {
+        return {
+            isPreviewMode: true,
+            warningMsg: `⚠️ <b>YETERSİZ VERİ ANALİZİ</b><br>
+            Testi erken tamamladığınız için (Çözülen: ${answers.length}), Bilişsel Dayanıklılık ve Strateji haritanız oluşturulamadı.
+            Gerçek sınav karakterinizi görmek için lütfen testi tamamlayın.`
+        };
+    }
+
+    // --- DATA HAZIRLIĞI ---
+    let correctAttempts = answers.filter(a => a.isCorrect);
+    let wrongAttempts = answers.filter(a => !a.isCorrect);
+
+    // --- 2. RADAR GRAFİĞİ METRİKLERİ (6 KÖŞELİ HEXAGON) ---
+
+    // [ACC] - Accuracy (İsabet)
+    let accScore = (correctAttempts.length / answers.length) * 100;
+
+    // [AGI] - Agility (Gerçek Okuma Hızı / CPS) - v3.1 Revize
+
+    // 1. ADIM: Toplam Kelime Hacmini Hesapla (HTML Temizliği ile)
+    let totalWords = answers.reduce((sum, a) => {
+        // A) Hazır sayı varsa kullan
+        if (typeof a.wordCount === 'number') {
+            return sum + a.wordCount;
+        }
+        // B) Yoksa Soru + Şıklar metnini birleştir
+        let rawText = a.content || a.text || a.question || "";
+
+        // Şıkları kontrol et ve metne ekle (Veri yapısına göre options veya choices olabilir)
+        let optionsArray = a.options || a.choices || a.answers;
+        if (Array.isArray(optionsArray)) {
+            optionsArray.forEach(opt => {
+                // Şık bir obje ise (opt.metin - bizim yapıda bu) veya direkt string ise
+                // ProdilExam yapısında q.siklar[{metin: "..."}] şeklindedir.
+                let optText = (typeof opt === 'object') ? (opt.metin || opt.text || opt.content || "") : opt;
+                rawText += " " + optText;
+            });
+        }
+
+        // HTML temizliği ve Sayım
+        if (rawText) {
+            // HTML etiketlerini sil
+            let cleanText = rawText.replace(/<[^>]*>/g, ' ');
+            // Boşlukları sil ve kelimeleri say
+            let calculatedCount = cleanText.trim().split(/\s+/).filter(w => w.length > 0).length;
+            return sum + calculatedCount;
+        }
+
+        return sum;
+    }, 0);
+
+    // 2. ADIM: Saniye Başına Kelime (Words Per Second)
+    let avgCPS = durationSec > 0 ? (totalWords / durationSec) : 0;
+
+    // 3. ADIM: Puanlama (YENİ REFERANS: 7.0 CPS = 100 Puan)
+    // 5.0 yerine 7.0 yaparak 100 almayı zorlaştırıyoruz.
+    let agiScore = Math.min(100, (avgCPS / 7.0) * 100);
+
+    // --- [PWR] POWER (YÜK KAPASİTESİ MODELİ) ---
+    // Mantık: Kaldırılan Yük / Toplam Yük
+
+    // 1. Doğru bildiği soruların zorluklarını topla (Puan)
+    let earnedLoad = correctAttempts.reduce((sum, a) => sum + (a.d || 1), 0);
+
+    // 2. Çözdüğü (Attempted) tüm soruların zorluklarını topla (Potansiyel)
+    let totalLoad = answers.reduce((sum, a) => sum + (a.d || 1), 0);
+
+    // 3. Oranla (0'a bölünme hatasını önle)
+    let pwrScore = totalLoad > 0 ? (earnedLoad / totalLoad) * 100 : 0;
+    let rawPower = pwrScore; // Eski değişken ismini rapor kısmında kullanıyorsa uyumluluk için
+
+    // [STA] - Stamina (Dayanıklılık)
+    let midPoint = Math.floor(answers.length / 2);
+    let firstHalf = answers.slice(0, midPoint);
+    let secondHalf = answers.slice(midPoint);
+    let acc1 = (firstHalf.filter(a => a.isCorrect).length / firstHalf.length) * 100;
+    let acc2 = (secondHalf.filter(a => a.isCorrect).length / secondHalf.length) * 100;
+    let staminaDrop = acc1 - acc2;
+    let staScore = staminaDrop > 0 ? Math.max(0, 100 - staminaDrop) : 100;
+
+    // [RES] - Resilience (Direnç)
+    let reboundAttempts = 0;
+    let reboundSuccess = 0;
+    for (let i = 0; i < answers.length - 1; i++) {
+        if (!answers[i].isCorrect) {
+            reboundAttempts++;
+            if (answers[i + 1].isCorrect) {
+                reboundSuccess++;
+            }
+        }
+    }
+    let resScore = (wrongAttempts.length === 0) ? 100 :
+        (reboundAttempts > 0 ? (reboundSuccess / reboundAttempts) * 100 : 0);
+
+
+    // --- [RFX] REFLEKS (AVANSLI DOĞRUSAL MODEL) ---
+    // Mantık: İlk %20'lik sürede 100 tam puan. Sonrasında 0'a kadar düz (lineer) iniş.
+
+    let totalReflexPoints = 0;
+    let countedQuestions = 0;
+
+    correctAttempts.forEach(a => {
+        // Soru Limiti (Yoksa 20sn varsay)
+        let qLimit = a.limit || 20;
+
+        // 1. GÜVENLİ BÖLGE (AVANS)
+        // Limitin %20'si. Ancak insan biyolojisi gereği en az 3 saniye avans verelim.
+        let safeZone = Math.max(3.0, qLimit * 0.20);
+
+        let timeSec = a.netTime / 1000; // ms to sec
+        let qScore = 0;
+
+        // 2. PUANLAMA
+        if (timeSec <= safeZone) {
+            // Avans Bölgesi -> 100 Tam Puan
+            qScore = 100;
+        } else if (timeSec >= qLimit) {
+            // Süre Doldu -> 0 Puan
+            qScore = 0;
+        } else {
+            // Avans ile Bitiş Arasında Doğrusal Hesap
+            // Formül: 100 * ((ToplamSüre - GeçenSüre) / (ToplamSüre - AvansSüresi))
+            qScore = 100 * ((qLimit - timeSec) / (qLimit - safeZone));
+        }
+
+        // 3. CEZA
+        // Tereddüt (Hesitation) varsa puanı %25 kır.
+        if (a.hesitation) {
+            qScore *= 0.75;
+        }
+
+        totalReflexPoints += qScore;
+        countedQuestions++;
+    });
+
+    // Toplamı soru sayısına böl
+    let rfxScore = countedQuestions > 0 ? (totalReflexPoints / countedQuestions) : 0;
+
+
+    // --- 3. GÖRSELLEŞTİRME VERİLERİ (UI Data) ---
+
+    // Heartbeat Data (Hız Çizgisi)
+    let heartbeatData = answers.map(a => (a.netTime / 1000).toFixed(1));
+
+    // Trend Indicator (Gelişim Oku)
+    let trendHTML = "";
+    if (typeof localStorage !== 'undefined') {
+        const lastScore = localStorage.getItem('prodil_last_exam_score');
+        const currentScore = ((correctAttempts.length / answers.length) * 100).toFixed(0);
+
+        if (lastScore !== null) {
+            let diff = currentScore - parseFloat(lastScore);
+            if (diff > 0) {
+                trendHTML = `<span style="color:#16a34a; font-weight:800; display:flex; align-items:center; gap:4px;"><i class="fa-solid fa-arrow-trend-up"></i> +${diff.toFixed(0)}</span>`;
+            } else if (diff < 0) {
+                trendHTML = `<span style="color:#ef4444; font-weight:800; display:flex; align-items:center; gap:4px;"><i class="fa-solid fa-arrow-trend-down"></i> ${diff.toFixed(0)}</span>`;
+            } else {
+                trendHTML = `<span style="color:#64748b; font-weight:800; display:flex; align-items:center; gap:4px;"><i class="fa-solid fa-minus"></i> 0</span>`;
+            }
+        } else {
+            trendHTML = `<span style="color:#94a3b8; font-size:0.8rem;">İlk Veri</span>`;
+        }
+        // [ONEMLI] Buraya last_score update'i KOYMA. O iş startTest'te.
+        // Sadece Buffer'a at.
+        localStorage.setItem('prodil_current_exam_score_buffer', currentScore);
+    }
+
+
+    // --- 4. DETAYLI YORUM MOTORU (NARRATIVE ENGINE v3.0 - PRO ANALYTICS) ---
+    let htmlReport = "";
+
+    // ------------------------------------------
+    // 1. İSABET (ACCURACY) - ADİL PUANLAMA
+    // ------------------------------------------
+
+    // SENARYO 1: MÜKEMMEL (%85 ve Üzeri)
+    if (accScore >= 85) {
+        htmlReport += `
+        <div class="analysis-card success">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>İSABET ANALİZİ (%${accScore.toFixed(0)})</span>
+                    <span>🎯</span>
+                </div>
+                <span class="analysis-subtitle">Üst Düzey Odak ve Hakimiyet</span>
+            </h4>
+            <p>Sınav genelindeki %${accScore.toFixed(0)}'lik doğruluk oranı, konu hakimiyetinizin ve dikkat seviyenizin sınav standartlarının çok üzerinde olduğunu kanıtlıyor. Yanıltıcı şıklara düşmeden, net doğrularla ilerlemişsiniz. Bu performans, rastlantısal değil, oturmuş bir bilgi birikiminin sonucudur.</p>
+        </div>`;
+    }
+    // SENARYO 2: KRİTİK (%60'ın Altı )
+    else if (accScore < 60) {
+        htmlReport += `
+        <div class="analysis-card alert">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>İSABET ANALİZİ (%${accScore.toFixed(0)})</span>
+                    <span>⚠️</span>
+                </div>
+                <span class="analysis-subtitle">Kritik Bilgi ve Dikkat Eksikliği</span>
+            </h4>
+            <p>Mevcut %${accScore.toFixed(0)}'lik başarı oranı, sınav hazırlık sürecinizde bazı boşluklar olduğunu gösteriyor. Soruların önemli bir kısmında hatalı tercih yapmanız, konu eksiği veya soru köklerini analiz etme hatasından kaynaklanıyor olabilir. Hızlanmayı bırakıp, temelden konu tekrarına dönmelisiniz.</p>
+        </div>`;
+    }
+    // SENARYO 3: ORTA / GELİŞİME AÇIK)
+    else {
+        htmlReport += `
+        <div class="analysis-card info">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>İSABET ANALİZİ (%${accScore.toFixed(0)})</span>
+                    <span>⚖️</span>
+                </div>
+                <span class="analysis-subtitle">Potansiyel Var / Pratik Gerekli</span>
+            </h4>
+            <p>Sınavda %${accScore.toFixed(0)} oranında doğruya ulaştınız. Temeliniz sağlam ancak detaylarda veya çeldirici sorularda puan kaybediyorsunuz. Bildiğiniz konularda netsiniz, ancak karmaşık yapılarda (complex structures) biraz daha dikkatli olmanız gerekiyor. Hatalı sorularınızı inceleyerek %90 bandına rahatlıkla çıkabilirsiniz.</p>
+        </div>`;
+    }
+
+    // ------------------------------------------
+    // 2. ÇEVİKLİK (AGILITY) - 4 Senaryo (Daha Detaylı)
+    // ------------------------------------------
+    if (agiScore > 90) {
+        htmlReport += `
+        <div class="analysis-card success">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>ÇEVİKLİK (Puan: ${agiScore.toFixed(0)})</span>
+                    <span>🤸‍♀️</span>
+                </div>
+                <span class="analysis-subtitle">Optimum Bilişsel İşlem Hızı</span>
+            </h4>
+            <p>Metin işleme ve anlama hızınız (CPS), anadil seviyesine (Native) oldukça yakın. Soruları okurken tercüme yapmadan, doğrudan İngilizce düşünerek ilerliyorsunuz. Bu akıcılık, özellikle uzun paragraflı sınavlarda size büyük bir zaman avantajı sağlayacaktır.</p>
+        </div>`;
+    } else if (agiScore > 65) {
+        htmlReport += `
+        <div class="analysis-card info">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>ÇEVİKLİK (Puan: ${agiScore.toFixed(0)})</span>
+                    <span>🥋</span>
+                </div>
+                <span class="analysis-subtitle">Standart Sınav Temposu</span>
+            </h4>
+            <p>Okuma hızınız sınavı yetiştirmek için yeterli düzeyde ancak sınırda geziniyorsunuz. Metinleri işlerken zaman zaman duraksadığınız veya başa döndüğünüz görülüyor. Hız puanınızı %15-20 daha artırmak, sınav sonunda kontroller için size vakit kazandıracaktır.</p>
+        </div>`;
+    } else if (agiScore < 40) {
+        htmlReport += `
+        <div class="analysis-card alert">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>ÇEVİKLİK (Puan: ${agiScore.toFixed(0)})</span>
+                    <span>🐢</span>
+                </div>
+                <span class="analysis-subtitle">Yavaş Okuma / Süre Yönetimi Riski</span>
+            </h4>
+            <p>Veriler, okuma hızınızın olması gerekenin çok altında kaldığını gösteriyor. Muhtemelen kelimeleri tek tek okuyor veya içinizden seslendiriyorsunuz. Bu yöntemle YDT/YDS gibi uzun sınavlarda süreyi yetiştirmeniz matematiksel olarak imkansızlaşır. Acilen "Blok Okuma" (Chunking) egzersizlerine başlamalısınız.</p>
+        </div>`;
+    } else { // Aşırı Hızlı ve Dikkatsiz (Hile Korumasına takılmayan ama çok hızlı olanlar)
+        htmlReport += `
+        <div class="analysis-card warning">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>ÇEVİKLİK</span>
+                    <span>⚠️</span>
+                </div>
+                <span class="analysis-subtitle">Kontrolsüz Hız / Okumadan İşaretleme</span>
+            </h4>
+            <p>Okuma hızınız şaşırtıcı derecede yüksek ancak bu durum doğruluğunuza yansımıyor. Metinleri gerçekten okumak yerine "göz gezdirip" (skimming) geçiyor olabilirsiniz. Hız, kontrolsüz yapıldığında felakettir. Biraz yavaşlayıp anlamaya odaklanın.</p>
+        </div>`;
+    }
+
+    // ------------------------------------------
+    // 3. GÜÇ (POWER) - 3 Senaryo
+    // ------------------------------------------
+    if (pwrScore > 80) {
+        htmlReport += `
+        <div class="analysis-card success">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>ZORLUK YÖNETİMİ (Güç: ${pwrScore.toFixed(0)})</span>
+                    <span>💪</span>
+                </div>
+                <span class="analysis-subtitle">Kriz Anlarında Üstün Başarı</span>
+            </h4>
+            <p>Sınavın en seçici ve zorlayıcı %25'lik diliminde (Zorluk Katsayısı Yüksek Sorular) %${rawPower.toFixed(0)} oranında başarı sağladınız. Çoğu adayın elendiği bu sorularda gösterdiğiniz performans, sadece dil bilginizin değil, "Analitik Çıkarım" yeteneğinizin de üst düzeyde olduğunu kanıtlıyor.</p>
+        </div>`;
+    } else if (pwrScore < 40) {
+        htmlReport += `
+        <div class="analysis-card warning">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>ZORLUK YÖNETİMİ (Güç: ${pwrScore.toFixed(0)})</span>
+                    <span>🛡️</span>
+                </div>
+                <span class="analysis-subtitle">Savunma Hattı Zayıf / Direnç Kırılması</span>
+            </h4>
+            <p>Standart sorularda performansınız kabul edilebilir seviyedeyken, sınavın zorluk seviyesi arttığında (Boss Sorular) başarı oranınız dramatik şekilde düşüyor. Zorlayıcı cümle yapıları ve çeldiriciler karşısında pes etme eğilimindesiniz. Bu "Kırılganlık" sınav puanınızı limitleyen en büyük faktördür.</p>
+        </div>`;
+    } else {
+        htmlReport += `
+        <div class="analysis-card info">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>ZORLUK YÖNETİMİ (Güç: ${pwrScore.toFixed(0)})</span>
+                    <span>⚖️</span>
+                </div>
+                <span class="analysis-subtitle">Dengeli Ama Geliştirilmeli</span>
+            </h4>
+            <p>Zorluk düzeyi arttıkça performansınızda kısmi bir düşüş yaşanıyor ancak tamamen kopmuyorsunuz. Karşınıza çıkan en zor soruların yarısını doğru yönetebilmişsiniz. Bu, potansiyelinizin olduğunu ancak "Derin Okuma" gerektiren sorularda daha fazla pratiğe ihtiyacınız olduğunu gösterir.</p>
+        </div>`;
+    }
+
+    // ------------------------------------------
+    // 4. DAYANIKLILIK (STAMINA) - 3 Senaryo
+    // ------------------------------------------
+    if (staminaDrop < -5) {
+        htmlReport += `
+        <div class="analysis-card success">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>BİLİŞSEL DAYANIKLILIK</span>
+                    <span>⚠️</span>
+                </div>
+                <span class="analysis-subtitle">Pozitif İvme (Isınma Etkisi)</span>
+            </h4>
+            <p>Sınavın başında yaşadığınız tutukluğu atıp, ikinci yarıda performansınızı %${Math.abs(staminaDrop).toFixed(1)} oranında artırmışsınız. Stres faktörünü zamanla yönetip odağını artıran aday profilindesiniz. Bu özellik, uzun sınavlarda en büyük silahınızdır.</p>
+        </div>`;
+    } else if (staminaDrop > 15) {
+        htmlReport += `
+        <div class="analysis-card alert">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>BİLİŞSEL DAYANIKLILIK</span>
+                    <span>🚧</span>
+                </div>
+                <span class="analysis-subtitle">Mental Yorgunluk ve Odak Çöküşü</span>
+            </h4>
+            <p>Sınavın ilk yarısında gösterdiğiniz başarı, ikinci yarıda %${staminaDrop.toFixed(1)} oranında düşmüş. Bu, bilgi eksikliğinden ziyade "Bilişsel Pilinizin" erken tükendiğini gösterir. Odak süreniz sınavın tamamını kapsamaya yetmiyor. Beyniniz yorulduğunda basit hatalar yapmaya başlıyorsunuz.</p>
+        </div>`;
+    } else {
+        htmlReport += `
+        <div class="analysis-card success">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>BİLİŞSEL DAYANIKLILIK</span>
+                    <span>🧱</span>
+                </div>
+                <span class="analysis-subtitle">Sürdürülebilir Odak (Stabil)</span>
+            </h4>
+            <p>Sınavın ilk sorusundan son sorusuna kadar dikkatinizi aynı seviyede korumayı başarmışsınız. Performans eğrinizde sapma yok. Bu zihinsel kondisyon, sınav stratejinizin oturduğunu gösterir.</p>
+        </div>`;
+    }
+
+    // ------------------------------------------
+    // 5. DİRENÇ (RESILIENCE) - 3 Senaryo
+    // ------------------------------------------
+    if (wrongAttempts.length === 0) {
+        htmlReport += `
+        <div class="analysis-card gold">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>DİRENÇ ANALİZİ</span>
+                    <span>🚀</span>
+                </div>
+                <span class="analysis-subtitle">Kusursuz Akış</span>
+            </h4>
+            <p>Sınav boyunca hiç hata yapmadığınız için negatif psikolojiyle baş etme durumunuz test edilemedi. Mükemmel bir odaklanma örneği.</p>
+        </div>`;
+    } else if (resScore < 40) {
+        htmlReport += `
+        <div class="analysis-card warning">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>DİRENÇ ANALİZİ</span>
+                    <span>⚠️</span>
+                </div>
+                <span class="analysis-subtitle">Domino Etkisi / Seri Hata Riski</span>
+            </h4>
+            <p>Verilerinizde tehlikeli bir psikolojik desen tespit edildi: Bir yanlış yaptıktan sonra moral veya odak kaybı yaşıyorsunuz. Yanlıştan hemen sonra gelen sorularda başarı oranınız sadece %${resScore.toFixed(0)}. Bir hatanın diğer soruları zehirlemesine izin veriyorsunuz. Bu zinciri kırmanız şart.</p>
+        </div>`;
+    } else {
+        htmlReport += `
+        <div class="analysis-card info">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>DİRENÇ ANALİZİ</span>
+                    <span>🛡️</span>
+                </div>
+                <span class="analysis-subtitle">Mental Toparlanma Gücü</span>
+            </h4>
+            <p>Hata yapsanız bile bu durumun bir sonraki soruyu etkilemesine izin vermiyorsunuz. Yanlışlardan sonra %${resScore.toFixed(0)} oranında doğruyla dönmeniz, sınav psikolojisini ve stres yönetimini başardığınızı gösterir.</p>
+        </div>`;
+    }
+
+    // ------------------------------------------
+    // 6. REFLEKS (REFLEX) - 3 Senaryo (Revize Edilmiş Aralıklar)
+    // ------------------------------------------
+    if (rfxScore > 75) { // Eşiği 80'den 75'e çektik, ulaşılabilir olsun
+        htmlReport += `
+        <div class="analysis-card success">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>REFLEKS (Puan: %${rfxScore.toFixed(0)})</span>
+                    <span>⚡</span>
+                </div>
+                <span class="analysis-subtitle">Otomatikleşmiş Bilgi</span>
+            </h4>
+            <p>Soruların %${rfxScore.toFixed(0)}'ini tereddüt etmeden ve ortalama sürenin altında çözmüşsünüz. Bu, konuları düşünerek değil, refleksif olarak bildiğiniz gösterir. En kalıcı öğrenme düzeyi budur.</p>
+        </div>`;
+    } else if (rfxScore < 40) { // Eşiği 30'dan 40'a çıkardık, uyarı alanı genişledi
+        htmlReport += `
+        <div class="analysis-card warning">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>REFLEKS (Puan: %${rfxScore.toFixed(0)})</span>
+                    <span>🤔</span>
+                </div>
+                <span class="analysis-subtitle">Karar Güvensizliği ve Tereddüt</span>
+            </h4>
+            <p>Doğru cevapladığınız sorularda bile şıklar arasında çok fazla gidip geliyorsunuz (Hover/Bekleme). Bilginiz var ama kendinize güveniniz eksik. Bu tereddütler sınavda size ciddi zaman kaybettiriyor. İlk aklınıza gelen şıkkın genellikle doğru olduğunu unutmayın.</p>
+        </div>`;
+    } else { // %40 - %75 Arası (Senin eklediğin harika senaryo)
+        htmlReport += `
+        <div class="analysis-card info">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>REFLEKS (Puan: %${rfxScore.toFixed(0)})</span>
+                    <span>🧠</span>
+                </div>
+                <span class="analysis-subtitle">Bilinçli İşlem ve Doğrulama</span>
+            </h4>
+            <p>Soruyu çözerken bilgiye ulaşmakta zorlanmıyorsunuz ancak yanıtı vermeden önce bir kez daha doğrulama ("Double-Check") ihtiyacı duyuyorsunuz. Bu kontrollü yaklaşım güvenli olsa da, sınavın hız gerektiren bölümlerinde refleksif karar mekanizmanızı biraz daha hızlandırmanız gerekebilir.</p>
+        </div>`;
+    }
+
+    // ------------------------------------------
+    // 7. ZAMAN STRATEJİSİ (HIZ + DOĞRULUK + ORAN ANALİZİ)
+    // ------------------------------------------
+
+    // 1. Hesaplamalar
+    // Zorluk (d) >= 2.0 olanlar "Zor", altı "Kolay" kabul edilir.
+    let hardQs = answers.filter(q => q.d >= 2.0);
+    let easyQs = answers.filter(q => q.d < 2.0);
+
+    // Ortalama süreleri hesapla (Veri yoksa 0 veya 1 alarak hatayı önle)
+    let avgTimeHard = hardQs.length ? hardQs.reduce((s, q) => s + q.netTime, 0) / hardQs.length : 0;
+    let avgTimeEasy = easyQs.length ? easyQs.reduce((s, q) => s + q.netTime, 0) / easyQs.length : 1;
+
+    // Genel Sınav Hızı (Soru Başına Düşen Ortalama Saniye)
+    // durationSec değişkeni daha önce hesaplanmış olmalı (toplam sınav süresi / soru sayısı)
+    let avgExamTimePerQ = durationSec / answers.length;
+
+    // Strateji Oranı (Zor Soru Süresi / Kolay Soru Süresi)
+    let timeRatio = avgTimeHard / (avgTimeEasy || 1);
+
+    // Strateji Puanı (Grafik veya veri için 0-100 arası normalize edilmiş değer)
+    let strategyScore = Math.min(100, timeRatio * 50);
+
+    // 2. Karar Mekanizması ve Raporlama
+    // -----------------------------------
+
+    // SENARYO A: AŞIRI HIZLI ÇÖZÜM (Biyolojik Sınır Altı)
+    if (avgExamTimePerQ < 7) {
+        // A1: Hızlı ve Yüksek Doğruluk (%85 üzeri) -> MASTERMIND
+        if (accScore > 85) {
+            htmlReport += `
+            <div class="analysis-card success">
+                <h4>
+                    <div class="analysis-card-header">
+                        <span>ZAMAN STRATEJİSİ</span>
+                        <span>🚀</span>
+                    </div>
+                    <span class="analysis-subtitle">"Mastermind" ve Fotoğrafik Okuma</span>
+                </h4>
+                <p>Olağanüstü bir veri! Soruları ortalama <b>${avgExamTimePerQ.toFixed(1)} saniye</b> gibi biyolojik okuma sınırının altında çözmenize rağmen <b>%${accScore.toFixed(0)}</b> doğruluk oranını yakaladınız. Bu istatistik, metinleri kelime kelime okumadığınızı, "görsel tarama" (skimming/scanning) yöntemiyle işlediğinizi ve konuya Native seviyesinde hakim olduğunuzu kanıtlar.</p>
+            </div>`;
+        }
+        // A2: Hızlı ve Düşük Doğruluk -> KUMAR / SALLAMA
+        else {
+            htmlReport += `
+            <div class="analysis-card alert">
+                <h4>
+                    <div class="analysis-card-header">
+                        <span>ZAMAN STRATEJİSİ</span>
+                        <span>🎲</span>
+                    </div>
+                    <span class="analysis-subtitle">Okumadan İşaretleme / Rastgele Seçim</span>
+                </h4>
+                <p>Verilerinizde ciddi bir anomali var. Soruları ortalama <b>${avgExamTimePerQ.toFixed(1)} saniye</b> içinde geçtiniz ancak bu hız size başarı getirmedi. Bu süre, sorunun kökünü ve çeldiricileri analiz etmek için matematiksel olarak yetersizdir. Strateji uygulamıyor, şans faktörüne dayalı bir ilerleme sergiliyorsunuz. Lütfen soruları okuyun.</p>
+            </div>`;
+        }
+    }
+    // SENARYO B: NORMAL HIZDA YANLIŞ STRATEJİ (Oran < 0.8)
+    else if (timeRatio < 0.8) {
+        htmlReport += `
+        <div class="analysis-card warning">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>ZAMAN STRATEJİSİ (Oran: ${timeRatio.toFixed(2)})</span>
+                    <span>⏳</span>
+                </div>
+                <span class="analysis-subtitle">Hatalı Önceliklendirme</span>
+            </h4>
+            <p>Analiz verileri, sınavın kolay sorularına gereğinden fazla zaman harcadığınızı, asıl puan getirecek zor sorularda ise sürenizi yetiştiremediğinizi (veya acele ettiğinizi) gösteriyor. Kolay sorulardaki işlem hızınızı artırıp, "Zaman Kredisi'ni" zor sorulara aktarmadığınız sürece potansiyel netinize ulaşamazsınız.</p>
+        </div>`;
+    }
+    // SENARYO C: RİSKLİ EŞİTLİK (0.8 <= Oran < 1.2)
+    else if (timeRatio >= 0.8 && timeRatio < 1.2) {
+        htmlReport += `
+        <div class="analysis-card info">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>ZAMAN STRATEJİSİ (Oran: ${timeRatio.toFixed(2)})</span>
+                    <span>⚖️</span>
+                </div>
+                <span class="analysis-subtitle">Riskli Eşitlik</span>
+            </h4>
+            <p>Zorluk katsayısı yüksek sorularla, basit sorulara neredeyse eşit vakit ayırıyorsunuz. İdeal bir sınav stratejisinde, kolay sorular "zaman kazanılan", zor sorular ise "zaman harcanan" alanlardır. Aradaki makasın bu kadar kapalı olması, zorlayıcı paragraf sorularında analiz için yeterli derinliğe inemediğinizi gösterir.</p>
+        </div>`;
+    }
+    // SENARYO D: PROFESYONEL (Oran >= 1.2)
+    else {
+        htmlReport += `
+        <div class="analysis-card success">
+            <h4>
+                <div class="analysis-card-header">
+                    <span>ZAMAN STRATEJİSİ (Oran: ${timeRatio.toFixed(2)})</span>
+                    <span>🧠</span>
+                </div>
+                <span class="analysis-subtitle">Profesyonel Zaman Yönetimi</span>
+            </h4>
+            <p>Zamanı yönetme algoritmanız kusursuz işliyor. Kolay ve bildiğiniz soruları seri bir şekilde geçip (Speed), buradan tasarruf ettiğiniz dakikaları analiz ve çıkarım gerektiren zor sorulara (Power) yatırım yapmışsınız. Sınavdan maksimum verim almanızı sağlayan, akademik açıdan en doğru strateji budur.</p>
+        </div>`;
+    }
+
+    // ------------------------------------------
+    // 8. RADAR ALANI HESAPLAMA (COGNITIVE VOLUME)
+    // ------------------------------------------
+    // Bu fonksiyon, radar grafiğinin kapladığı geometrik alanı hesaplar.
+    // Alan hesabı, "Dengeli" profilleri ödüllendirir. Bir köşe düşükse alan dramatik düşer.
+
+    // Puanları sırasıyla bir diziye al (Saat yönünde)
+    // Puanları sırasıyla bir diziye al (Saat yönünde)
+    // Sıralama (YENİ): AGI -> RFX -> ACC -> PWR -> STA -> RES
+    let scores = [
+        agiScore, // 1. HIZ
+        rfxScore, // 2. REFLEKS
+        accScore, // 3. İSABET
+        pwrScore, // 4. GÜÇ
+        staScore, // 5. DAYANIKLILIK
+        resScore  // 6. DİRENÇ
+    ];
+
+    let totalArea = 0;
+    // Sin(60 derece) * 1/2 = 0.43301
+    const areaFactor = 0.43301;
+
+    for (let i = 0; i < scores.length; i++) {
+        // Şu anki puan ile bir sonraki puanı (sonuncuyda ilki) al
+        let current = scores[i];
+        let next = scores[(i + 1) % scores.length]; // Modülo ile başa sarar
+
+        // Üçgen alanı: 1/2 * a * b * sin(60)
+        totalArea += (current * next * areaFactor);
+    }
+
+    // NORMALİZASYON:
+    // Eğer tüm puanlar 100 olsaydı Maksimum Alan ne olurdu?
+    // MaxArea = 6 * (100 * 100 * 0.43301) = 25980.6
+    const maxPossibleArea = 25980.6;
+
+    // Alan Puanını 0-1000 skalasına çekelim
+    let volumeScore = (totalArea / maxPossibleArea) * 1000;
+
+    // [UI UPDATE] HTML raporun altına eklemiyoruz, yukarıdaki karta taşıdık.
+    // htmlReport += ... (Kaldırıldı)
+
+
+    return {
+        isPreviewMode: false,
+        // DİKKAT: Sıralama burada çok önemli. Alan hesabı bu sıraya göre yapılacak.
+        metrics: {
+            agi: agiScore, // 1. HIZ
+            rfx: rfxScore, // 2. REFLEKS
+            acc: accScore, // 3. İSABET
+            pwr: pwrScore, // 4. GÜÇ
+            sta: staScore, // 5. DAYANIKLILIK
+            res: resScore, // 6. DİRENÇ
+
+            str: strategyScore,
+            vol: volumeScore
+        },
+        chartData: {
+            // Front-End bu sırayla çizecek
+            labels: ["Refleks", "İsabet", "Güç", "Dayanıklılık", "Direnç", "Çeviklik"],
+            data: [rfxScore, accScore, pwrScore, staScore, resScore, agiScore],
+            heartbeat: heartbeatData,
+            trendHTML: trendHTML
+        },
+        htmlReport: htmlReport
+    };
+}

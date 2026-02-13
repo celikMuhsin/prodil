@@ -7,7 +7,7 @@
 .exam-card {
     background: white;
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -54,13 +54,20 @@
     color: #a0aec0;
 }
 
-.stat-correct { color: #38a169; }
-.stat-wrong { color: #e53e3e; }
+.stat-correct {
+    color: #38a169;
+}
+
+.stat-wrong {
+    color: #e53e3e;
+}
 
 /* Question Area */
 .question-area {
     padding: 30px;
     min-height: 250px;
+    position: relative;
+    z-index: 5;
 }
 
 .question-text {
@@ -138,9 +145,20 @@
     font-size: 0.9rem;
 }
 
-.btn-prev { background: #edf2f7; color: #4a5568; }
-.btn-next { background: #3182ce; color: white; }
-.btn-hint { background: #feebc8; color: #7b341e; }
+.btn-prev {
+    background: #edf2f7;
+    color: #4a5568;
+}
+
+.btn-next {
+    background: #3182ce;
+    color: white;
+}
+
+.btn-hint {
+    background: #feebc8;
+    color: #7b341e;
+}
 
 .btn-ctrl:disabled {
     opacity: 0.5;
@@ -160,4 +178,95 @@
     border-radius: 8px;
     font-size: 0.9rem;
     display: none;
+}
+
+/* --- Advanced Performance Analysis Cards --- */
+.analysis-card {
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border-left: 5px solid transparent;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-size: 0.95rem;
+    color: #2d3748;
+}
+
+.analysis-card h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.analysis-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.analysis-subtitle {
+    display: block;
+    color: #000 !important;
+    font-weight: 600;
+    margin: 4px 0;
+    /* Boşluk azaltıldı: üst 4px, alt 4px */
+    font-size: 0.95rem;
+}
+
+.analysis-card p {
+    margin: 4px 0 0 0;
+    /* Alt başlık ile aynı (4px) boşluk */
+    line-height: 1.5;
+    color: #4a5568;
+}
+
+.analysis-card.success {
+    border-left-color: #48bb78;
+    /* Green */
+    background: #f0fff4;
+}
+
+.analysis-card.success h4 {
+    color: #2f855a;
+}
+
+.analysis-card.warning {
+    border-left-color: #ed8936;
+    /* Orange */
+    background: #fff5f5;
+}
+
+.analysis-card.warning h4 {
+    color: #c05621;
+}
+
+.analysis-card.info {
+    border-left-color: #4299e1;
+    /* Blue */
+    background: #ebf8ff;
+}
+
+.analysis-card.info h4 {
+    color: #2b6cb0;
+}
+
+.analysis-card.alert {
+    border-left-color: #f56565;
+    /* Red */
+    background: #fff5f5;
+}
+
+.analysis-card.alert h4 {
+    color: #c53030;
+}
+
+.analysis-card.gold {
+    border-left-color: #ecc94b;
+    /* Gold */
+    background: #fffff0;
+}
+
+.analysis-card.gold h4 {
+    color: #d69e2e;
 }
