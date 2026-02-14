@@ -1,0 +1,311 @@
+﻿{
+    "test_info": {
+        "level": "PRE-INTERMEDIATE (A2)",
+        "topic": "Grammar - Past Simple vs Past Continuous (When/While)",
+        "test_no": 18,
+        "description": "Serinin on sekizinci testi. 2.1-2.5 zorluk seviyesinde. 'When' ve 'While' bağlaçları kullanılarak geçmişte kesişen veya paralel ilerleyen olayların anlatımı.",
+        "block": "3/4 (Moderate)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "I _____ dinner when the phone rang.",
+            "o": {
+                "A": "had",
+                "B": "was having",
+                "C": "have",
+                "D": "am having",
+                "E": "did have"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 20,
+            "h": "Telefon çaldığında yemek yeme eylemi devam ediyordu.\n\nKISA DERS: Kısa bir olay (telefonun çalması) uzun bir eylemi (yemek yemek) böldüğünde, uzun eylem için 'Past Continuous' (was having) kullanılır."
+        },
+        {
+            "i": 2,
+            "t": "While she _____ to work, she saw an accident.",
+            "o": {
+                "A": "walked",
+                "B": "walks",
+                "C": "was walking",
+                "D": "is walking",
+                "E": "did walk"
+            },
+            "c": "C",
+            "d": 2.1,
+            "r": 15,
+            "h": "'While' (iken) bağlacı genellikle süren eylemi anlatır. Kaza görme anlık, yürüme süreçtir.\n\nKISA DERS: 'While'dan sonra genellikle Past Continuous (was/were + ing) gelir. While she was walking..."
+        },
+        {
+            "i": 3,
+            "t": "I broke my leg while I _____ football.",
+            "o": {
+                "A": "played",
+                "B": "playing",
+                "C": "am playing",
+                "D": "was playing",
+                "E": "play"
+            },
+            "c": "D",
+            "d": 2.2,
+            "r": 15,
+            "h": "Bacağımı kırdığımda futbol oynuyordum (süreç).\n\nKISA DERS: Uzun eylem (oynamak) 'was playing', kısa eylem (kırmak) 'broke'tur."
+        },
+        {
+            "i": 4,
+            "t": "When I arrived home, my mother _____ cooking.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "did",
+                "D": "were",
+                "E": "has"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Eve vardığımda annem yemek yapıyordu (eylemin ortasındaydı).\n\nKISA DERS: Geçmişte bir anda devam eden eylem için 'She was cooking' denir."
+        },
+        {
+            "i": 5,
+            "t": "We were watching TV when the electricity _____ out.",
+            "o": {
+                "A": "go",
+                "B": "went",
+                "C": "was going",
+                "D": "gone",
+                "E": "goes"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 18,
+            "h": "Biz TV izlerken (uzun), elektrikler kesildi (kısa/anlık).\n\nKISA DERS: 'When' bağlacından sonra genellikle anlık olaylar yani Simple Past (went) gelir."
+        },
+        {
+            "i": 6,
+            "t": "_____ you sleeping when I called you?",
+            "o": {
+                "A": "Did",
+                "B": "Were",
+                "C": "Was",
+                "D": "Are",
+                "E": "Do"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Aradığımda uyuyor muydun? (Süreç sorusu).\n\nKISA DERS: Geçmişte devam eden eylemi sormak için 'Were you sleeping?' kalıbı kullanılır."
+        },
+        {
+            "i": 7,
+            "t": "While my father was reading, my mother _____ listening to music.",
+            "o": {
+                "A": "was",
+                "B": "is",
+                "C": "did",
+                "D": "were",
+                "E": "has"
+            },
+            "c": "A",
+            "d": 2.4,
+            "r": 20,
+            "h": "İki eylem aynı anda yapılıyor (Paralel eylemler). Baba okurken, anne dinliyordu.\n\nKISA DERS: Geçmişte aynı anda devam eden iki uzun eylem için her iki tarafta da Past Continuous kullanılır. She was listening."
+        },
+        {
+            "i": 8,
+            "t": "It started to rain while we _____ in the park.",
+            "o": {
+                "A": "walked",
+                "B": "walking",
+                "C": "were walking",
+                "D": "are walking",
+                "E": "walk"
+            },
+            "c": "C",
+            "d": 2.2,
+            "r": 15,
+            "h": "Yağmur başladığında biz yürüyorduk.\n\nKISA DERS: 'We' öznesi ve geçmiş süreç için 'were walking' kullanılır."
+        },
+        {
+            "i": 9,
+            "t": "What were you doing when you _____ the noise?",
+            "o": {
+                "A": "hear",
+                "B": "hearing",
+                "C": "heard",
+                "D": "was hearing",
+                "E": "hears"
+            },
+            "c": "C",
+            "d": 2.3,
+            "r": 15,
+            "h": "Gürültüyü duyduğunda (anlık) ne yapıyordun?\n\nKISA DERS: Duymak (hear) anlık bir eylemdir ve 'When' cümlesinde Simple Past (heard) olarak kullanılır."
+        },
+        {
+            "i": 10,
+            "t": "Someone stole my bag while I _____ looking at the shoes.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "am",
+                "D": "did",
+                "E": "is"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 15,
+            "h": "Ben ayakkabılara bakarken (süreç), çantam çalındı.\n\nKISA DERS: 'I' öznesi Past Continuous yapısında 'was' yardımcı fiilini alır."
+        },
+        {
+            "i": 11,
+            "t": "She met her husband while she _____ in London.",
+            "o": {
+                "A": "lived",
+                "B": "lives",
+                "C": "was living",
+                "D": "is living",
+                "E": "living"
+            },
+            "c": "C",
+            "d": 2.3,
+            "r": 18,
+            "h": "Londra'da yaşarken (uzun bir dönem), eşiyle tanıştı.\n\nKISA DERS: Geçmişteki bir dönem veya süreç anlatılırken 'While she was living' kullanılır."
+        },
+        {
+            "i": 12,
+            "t": "As I _____ getting on the bus, I dropped my phone.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "am",
+                "D": "did",
+                "E": "is"
+            },
+            "c": "A",
+            "d": 2.4,
+            "r": 15,
+            "h": "'As' burada 'While' (iken) anlamındadır. Otobüse binerken telefonumu düşürdüm.\n\nKISA DERS: 'As' ve 'While' kendisinden sonra süreç (was getting) ister. 'I was getting'."
+        },
+        {
+            "i": 13,
+            "t": "The students _____ not listening when the teacher asked a question.",
+            "o": {
+                "A": "did",
+                "B": "were",
+                "C": "was",
+                "D": "are",
+                "E": "do"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Öğretmen soru sorduğunda öğrenciler dinlemiyordu. Özne 'Students' (çoğul).\n\nKISA DERS: Çoğul öznelerde Past Continuous olumsuzluğu 'were not' (weren't) şeklindedir."
+        },
+        {
+            "i": 14,
+            "t": "When I saw him, he _____ wearing a black hat.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "did",
+                "D": "wore",
+                "E": "wearing"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 12,
+            "h": "Onu gördüğümde siyah şapka takıyordu (üzerindeydi/durum).\n\nKISA DERS: 'Wear' (giymek/takmak) fiili o anki durumu anlattığı için 'was wearing' kullanılır."
+        },
+        {
+            "i": 15,
+            "t": "I _____ driving fast when the police stopped me.",
+            "o": {
+                "A": "didn't",
+                "B": "wasn't",
+                "C": "weren't",
+                "D": "not",
+                "E": "don't"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "Polis durdurduğunda hızlı sürmüyordum. Olumsuz süreç.\n\nKISA DERS: 'Drive' fiili '-ing' aldığı için yardımcı fiil 'wasn't' olur. 'Didn't' olamaz."
+        },
+        {
+            "i": 16,
+            "t": "Who _____ you talking to when I entered the room?",
+            "o": {
+                "A": "did",
+                "B": "were",
+                "C": "was",
+                "D": "are",
+                "E": "do"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Ben odaya girdiğimde kiminle konuşuyordun?\n\nKISA DERS: 'Who were you talking to?' kalıbı kullanılır."
+        },
+        {
+            "i": 17,
+            "t": "The boys broke the window while they _____ football.",
+            "o": {
+                "A": "play",
+                "B": "played",
+                "C": "were playing",
+                "D": "are playing",
+                "E": "was playing"
+            },
+            "c": "C",
+            "d": 2.2,
+            "r": 15,
+            "h": "Futbol oynarlarken camı kırdılar. Özne 'The boys' (çoğul).\n\nKISA DERS: Çoğul özne ve süreç: 'They were playing'."
+        },
+        {
+            "i": 18,
+            "t": "When the teacher _____, everyone stood up.",
+            "o": {
+                "A": "come",
+                "B": "coming",
+                "C": "came",
+                "D": "was coming",
+                "E": "comes"
+            },
+            "c": "C",
+            "d": 2.4,
+            "r": 18,
+            "h": "Öğretmen geldiğinde (anlık olay), herkes ayağa kalktı.\n\nKISA DERS: Bir olaylar zinciri (geldi -> kalktılar) varsa, her ikisi de Simple Past (came) olur. Süreç yok, anlık eylemler var."
+        },
+        {
+            "i": 19,
+            "t": "While I was studying, my brother _____ me.",
+            "o": {
+                "A": "disturb",
+                "B": "disturbed",
+                "C": "was disturbing",
+                "D": "is disturbing",
+                "E": "disturbs"
+            },
+            "c": "B",
+            "d": 2.5,
+            "r": 20,
+            "h": "Ben ders çalışırken kardeşim beni rahatsız etti (böldü).\n\nKISA DERS: Uzun eylemi bölen kısa eylem Simple Past Tense (disturbed) ile yazılır."
+        },
+        {
+            "i": 20,
+            "t": "_____ it raining when you left the office?",
+            "o": {
+                "A": "Did",
+                "B": "Was",
+                "C": "Were",
+                "D": "Is",
+                "E": "Does"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 12,
+            "h": "Ofisten çıktığında yağmur yağıyor muydu?\n\nKISA DERS: 'It' öznesi ile süreç sorusu: 'Was it raining?'"
+        }
+    ]
+}

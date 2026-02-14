@@ -1,0 +1,311 @@
+﻿{
+    "test_info": {
+        "level": "ELEMENTARY (A1-A2)",
+        "topic": "Grammar - Simple Past (Irregular Verbs)",
+        "test_no": 10,
+        "description": "Serinin onuncu testi. 1.6-2.0 zorluk seviyesinde. Düzensiz Fiillerin (Irregular Verbs) 2. halleri, geçmiş zaman olumsuz ve soru cümleleri.",
+        "block": "2/4 (Easy - Moderate)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "I _____ to the park yesterday.",
+            "o": {
+                "A": "go",
+                "B": "goed",
+                "C": "went",
+                "D": "going",
+                "E": "gone"
+            },
+            "c": "C",
+            "d": 1.6,
+            "r": 15,
+            "h": "Fiil 'go' (gitmek). Düzensiz bir fiildir. Geçmiş zaman hali 'goed' değildir.\n\nKISA DERS: 'Go' fiilinin 2. hali (V2) 'Went'tir. İngilizcede en sık kullanılan düzensiz fiillerden biridir."
+        },
+        {
+            "i": 2,
+            "t": "We _____ a movie last night.",
+            "o": {
+                "A": "see",
+                "B": "seed",
+                "C": "saw",
+                "D": "seen",
+                "E": "seeing"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "Fiil 'see' (görmek/izlemek). Düzensiz fiildir. Geçmiş zaman hali nedir?\n\nKISA DERS: 'See' fiilinin geçmiş zaman hali 'Saw'dur."
+        },
+        {
+            "i": 3,
+            "t": "She _____ not come to the party.",
+            "o": {
+                "A": "didn't",
+                "B": "don't",
+                "C": "wasn't",
+                "D": "isn't",
+                "E": "not"
+            },
+            "c": "A",
+            "d": 1.8,
+            "r": 18,
+            "h": "Geçmiş zaman olumsuz cümlesi. Fiil 'come' (gelmek). Yardımcı fiil ne olmalı?\n\nKISA DERS: Geçmiş zamanda fiil cümlelerini olumsuz yaparken 'didn't' kullanılır. 'Wasn't' kullanmak için fiil olmamalıydı."
+        },
+        {
+            "i": 4,
+            "t": "Did you _____ the email?",
+            "o": {
+                "A": "sent",
+                "B": "send",
+                "C": "sending",
+                "D": "sends",
+                "E": "to send"
+            },
+            "c": "B",
+            "d": 1.9,
+            "r": 18,
+            "h": "Soru 'Did' ile başlamış. Ana fiil ne durumda olmalı?\n\nKISA DERS: Cümlede 'Did' veya 'Didn't' varsa, ana fiil daima yalın (V1) haldedir. 'Sent' (V2) kullanılmaz, 'Send' kullanılır."
+        },
+        {
+            "i": 5,
+            "t": "He _____ pizza for dinner.",
+            "o": {
+                "A": "eat",
+                "B": "eated",
+                "C": "ate",
+                "D": "eating",
+                "E": "eats"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "Fiil 'eat' (yemek). Düzensiz fiildir. 'Eated' diye bir kelime yoktur.\n\nKISA DERS: 'Eat' fiilinin geçmiş zaman hali 'Ate'dir."
+        },
+        {
+            "i": 6,
+            "t": "They _____ a great time.",
+            "o": {
+                "A": "have",
+                "B": "has",
+                "C": "had",
+                "D": "haved",
+                "E": "having"
+            },
+            "c": "C",
+            "d": 1.6,
+            "r": 15,
+            "h": "Harika zaman geçirdiler. 'Have' fiilinin geçmiş zamanı.\n\nKISA DERS: 'Have' ve 'Has' fiillerinin geçmiş zaman hali ortaktır ve 'Had'dir."
+        },
+        {
+            "i": 7,
+            "t": "I _____ play football yesterday.",
+            "o": {
+                "A": "didn't",
+                "B": "don't",
+                "C": "wasn't",
+                "D": "not",
+                "E": "am not"
+            },
+            "c": "A",
+            "d": 1.8,
+            "r": 15,
+            "h": "Dün futbol oynamadım. Eylem bildiren olumsuz cümle.\n\nKISA DERS: Geçmişte yapılan eylemleri olumsuzlamak için 'didn't' kullanılır. 'Wasn't' durum bildirir (örneğin: I wasn't happy)."
+        },
+        {
+            "i": 8,
+            "t": "We _____ water.",
+            "o": {
+                "A": "drink",
+                "B": "drinked",
+                "C": "drank",
+                "D": "drunk",
+                "E": "drinking"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "Fiil 'drink' (içmek). Düzensiz fiildir. V2 hali nedir?\n\nKISA DERS: 'Drink' fiilinin geçmiş zaman hali 'Drank'tir. (Drunk 3. halidir)."
+        },
+        {
+            "i": 9,
+            "t": "_____ she go to school?",
+            "o": {
+                "A": "Do",
+                "B": "Did",
+                "C": "Is",
+                "D": "Was",
+                "E": "Were"
+            },
+            "c": "B",
+            "d": 1.8,
+            "r": 15,
+            "h": "Fiil 'go'. Geçmiş zaman sorusu (veya bağlam yoksa geniş zaman, ama şıklarda 'Does' yok).\n\nKISA DERS: Şıklarda 'Does' olmadığı için bu kesinlikle bir geçmiş zaman sorusudur. 'Did she go?'"
+        },
+        {
+            "i": 10,
+            "t": "My father _____ a new car.",
+            "o": {
+                "A": "buy",
+                "B": "buyed",
+                "C": "bought",
+                "D": "buys",
+                "E": "buying"
+            },
+            "c": "C",
+            "d": 1.9,
+            "r": 20,
+            "h": "Fiil 'buy' (satın almak). Düzensiz fiildir.\n\nKISA DERS: 'Buy' fiilinin geçmiş zaman hali 'Bought'tur. Okunuşu 'boot' gibidir."
+        },
+        {
+            "i": 11,
+            "t": "She _____ late for work.",
+            "o": {
+                "A": "was",
+                "B": "did",
+                "C": "were",
+                "D": "is",
+                "E": "has"
+            },
+            "c": "A",
+            "d": 1.6,
+            "r": 12,
+            "h": "İşe geç kaldı. Durum bildiriyor. Fiil yok. Özne 'She'.\n\nKISA DERS: Durum cümlelerinde 'She' için 'was' kullanılır. 'She was late.'"
+        },
+        {
+            "i": 12,
+            "t": "We _____ English yesterday.",
+            "o": {
+                "A": "speak",
+                "B": "speaked",
+                "C": "spoke",
+                "D": "speaking",
+                "E": "spoken"
+            },
+            "c": "C",
+            "d": 1.8,
+            "r": 15,
+            "h": "Fiil 'speak' (konuşmak). Düzensizdir.\n\nKISA DERS: 'Speak' fiilinin geçmiş zaman hali 'Spoke'tur."
+        },
+        {
+            "i": 13,
+            "t": "He _____ not understand the question.",
+            "o": {
+                "A": "didn't",
+                "B": "did",
+                "C": "was",
+                "D": "don't",
+                "E": "doesn't"
+            },
+            "c": "B",
+            "d": 1.9,
+            "r": 18,
+            "h": "Dikkat! Cümlede 'not' kelimesi zaten var. Sadece yardımcı fiil eksik. Geçmiş zaman.\n\nKISA DERS: Cümlede 'not' varsa, önüne 'did' gelir. 'He did not understand' (Kısaca didn't)."
+        },
+        {
+            "i": 14,
+            "t": "I _____ a letter to my friend.",
+            "o": {
+                "A": "write",
+                "B": "writed",
+                "C": "wrote",
+                "D": "writing",
+                "E": "written"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "Fiil 'write' (yazmak). Düzensiz fiildir.\n\nKISA DERS: 'Write' fiilinin geçmiş zaman hali 'Wrote'tur."
+        },
+        {
+            "i": 15,
+            "t": "They _____ in the sea last summer.",
+            "o": {
+                "A": "swim",
+                "B": "swimmed",
+                "C": "swam",
+                "D": "swimming",
+                "E": "swums"
+            },
+            "c": "C",
+            "d": 1.8,
+            "r": 15,
+            "h": "Fiil 'swim' (yüzmek). Düzensiz fiildir.\n\nKISA DERS: 'Swim' fiilinin geçmiş zaman hali 'Swam'dir. (A harfiyle)."
+        },
+        {
+            "i": 16,
+            "t": "What time _____ you get up?",
+            "o": {
+                "A": "did",
+                "B": "do",
+                "C": "were",
+                "D": "are",
+                "E": "was"
+            },
+            "c": "A",
+            "d": 1.9,
+            "r": 15,
+            "h": "Soru geçmişe yönelik (bağlamdan çıkarılır veya genel alışkanlık değilse). Şıklarda 'do' da var ama bu bir geçmiş zaman testi.\n\nKISA DERS: Geçmişte saat kaçta kalktığını sorarken 'What time did you get up?' denir. 'Were' kullanılamaz çünkü 'get up' fiili var."
+        },
+        {
+            "i": 17,
+            "t": "She _____ me a beautiful gift.",
+            "o": {
+                "A": "give",
+                "B": "gived",
+                "C": "gave",
+                "D": "given",
+                "E": "giving"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "Fiil 'give' (vermek). Düzensiz fiildir.\n\nKISA DERS: 'Give' fiilinin geçmiş zaman hali 'Gave'dir."
+        },
+        {
+            "i": 18,
+            "t": "I _____ my homework yesterday.",
+            "o": {
+                "A": "do",
+                "B": "did",
+                "C": "done",
+                "D": "doing",
+                "E": "does"
+            },
+            "c": "B",
+            "d": 1.6,
+            "r": 15,
+            "h": "Fiil 'do' (yapmak). Ana fiil olarak kullanılmış. Geçmiş zamanı nedir?\n\nKISA DERS: 'Do' fiili hem yardımcı fiildir hem de ana fiildir (yapmak). Ana fiil olarak geçmiş zamanı 'Did'dir. 'I did my homework.'"
+        },
+        {
+            "i": 19,
+            "t": "We _____ photos at the wedding.",
+            "o": {
+                "A": "take",
+                "B": "taked",
+                "C": "took",
+                "D": "taking",
+                "E": "taken"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "Fiil 'take' (almak/çekmek). Fotoğraf çekmek kalıbı. Düzensiz fiil.\n\nKISA DERS: 'Take' fiilinin geçmiş zaman hali 'Took'tur."
+        },
+        {
+            "i": 20,
+            "t": "He _____ come to school yesterday.",
+            "o": {
+                "A": "didn't",
+                "B": "don't",
+                "C": "wasn't",
+                "D": "not",
+                "E": "isn't"
+            },
+            "c": "A",
+            "d": 1.8,
+            "r": 15,
+            "h": "Fiil 'come'. Geçmiş zaman olumsuzluğu.\n\nKISA DERS: Geçmiş zaman olumsuz cümlesi: He didn't come. (Fiil yalın)."
+        }
+    ]
+}

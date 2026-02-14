@@ -1,7 +1,8 @@
 /**
- * Prodil Exam Engine
+ * Prodil Test Engine (Advanced)
  * Adapted from Uzman Matematik Engine
- * Handles JSON-based tests, visual timer, drawing canvas, and reporting.
+ * Handles JSON-based tests, visual timer, drawing canvas, and ICPE reporting.
+ * Dependencies: ExamUtils, Chart.js, html2canvas
  */
 
 /**
@@ -75,7 +76,7 @@ function generateFeedbackMsg(score, range) {
     return msg;
 }
 
-// 2. YARDIMCI MATEMATİK FONKSİYONLARI
+// 2. YARDIMCI MATEMATİK FONKSİYONLARI (Artık çoğu ExamUtils içinde)
 const ICPE_MATH = {
     // Kelime Sayısı Hesapla (Soru + Şıklar) -> W_eff
     calculateWordCount: function (q) {
@@ -1769,7 +1770,6 @@ window.ProdilExam = {
                 `;
 
 
-        // --- 4. Chart.js Entegrasyonu (Grafiği Çizdir) ---
         // --- 4. Chart.js Entegrasyonu (Grafiği Çizdir) ---
         console.log("📊 Chart.js Başlatılıyor (v3.0)...");
 

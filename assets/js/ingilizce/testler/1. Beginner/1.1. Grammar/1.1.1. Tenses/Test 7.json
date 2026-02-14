@@ -1,0 +1,311 @@
+﻿{
+    "test_info": {
+        "level": "BEGINNER (A0-A1)",
+        "topic": "Grammar - Basic Tenses (Mixed)",
+        "test_no": 7,
+        "description": "Serinin yedinci testi. 1.0-1.5 zorluk seviyesinde. Yaş, meslek ve durum bildiren 'To Be' cümleleri ile eylem bildiren zamanların karışık kullanımı.",
+        "block": "1/4 (Very Easy)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "I _____ 25 years old.",
+            "o": {
+                "A": "have",
+                "B": "has",
+                "C": "am",
+                "D": "is",
+                "E": "are"
+            },
+            "c": "C",
+            "d": 1.1,
+            "r": 10,
+            "h": "İngilizcede yaş söylerken 'sahip olmak' (have) değil, 'olmak' (to be) fiili kullanılır.\n\nKISA DERS: Türkçedeki gibi '25 yaşındayım' demek için 'I am 25 years old' kalıbı kullanılır. 'I have' yanlıştır."
+        },
+        {
+            "i": 2,
+            "t": "_____ you speak Spanish?",
+            "o": {
+                "A": "Are",
+                "B": "Is",
+                "C": "Do",
+                "D": "Does",
+                "E": "Have"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Fiil 'speak' (konuşmak). Geniş zaman sorusu. Özne 'You'.\n\nKISA DERS: Geniş zamanda fiil cümlelerinde soru 'Do' veya 'Does' ile başlar. 'You' öznesi 'Do' alır."
+        },
+        {
+            "i": 3,
+            "t": "My brother _____ not like fish.",
+            "o": {
+                "A": "don't",
+                "B": "doesn't",
+                "C": "isn't",
+                "D": "aren't",
+                "E": "not"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Özne 'My brother' (He). Fiil 'like'. Geniş zaman olumsuzluğu.\n\nKISA DERS: 3. tekil şahıslar (He/She/It) geniş zaman olumsuz cümlelerinde 'doesn't' alır."
+        },
+        {
+            "i": 4,
+            "t": "Where _____ they going?",
+            "o": {
+                "A": "do",
+                "B": "does",
+                "C": "are",
+                "D": "is",
+                "E": "am"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Fiil '-ing' almış (going). Şimdiki zaman sorusu. Özne 'They'.\n\nKISA DERS: Şimdiki zaman sorularında (Present Continuous) 'am/is/are' kullanılır. Çoğul özneler 'are' alır."
+        },
+        {
+            "i": 5,
+            "t": "It _____ a sunny day.",
+            "o": {
+                "A": "are",
+                "B": "am",
+                "C": "is",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.0,
+            "r": 10,
+            "h": "Hava durumu veya günün niteliğini belirtirken özne 'It' olur.\n\nKISA DERS: Tekil cansız varlıklar ve kavramlar (gün, hava) 'is' ile tanımlanır."
+        },
+        {
+            "i": 6,
+            "t": "We _____ students.",
+            "o": {
+                "A": "is",
+                "B": "am",
+                "C": "be",
+                "D": "are",
+                "E": "do"
+            },
+            "c": "D",
+            "d": 1.0,
+            "r": 10,
+            "h": "Biz öğrenciyiz. Çoğul özne (We) ile durum cümlesi.\n\nKISA DERS: İsim cümlelerinde 'We/You/They' özneleri 'are' alır. Fiil kullanılmaz."
+        },
+        {
+            "i": 7,
+            "t": "_____ she cooking dinner?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Is",
+                "D": "Are",
+                "E": "Has"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Fiil '-ing' almış (cooking). Şimdiki zaman sorusu. Özne 'She'.\n\nKISA DERS: Şimdiki zamanda tekil özneler (She) soru sorulurken 'Is' ile başlar. 'Does' sadece geniş zamanda kullanılır."
+        },
+        {
+            "i": 8,
+            "t": "I _____ not tired.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "am",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.0,
+            "r": 10,
+            "h": "'Tired' (yorgun) bir sıfattır. 'I' öznesi durum bildirmek için ne alır?\n\nKISA DERS: 'I' öznesi olumsuz durum cümlelerinde 'am not' alır."
+        },
+        {
+            "i": 9,
+            "t": "They usually _____ lunch at 12:00.",
+            "o": {
+                "A": "have",
+                "B": "has",
+                "C": "having",
+                "D": "is have",
+                "E": "are having"
+            },
+            "c": "A",
+            "d": 1.5,
+            "r": 15,
+            "h": "Zaman zarfı 'usually' (genellikle). Geniş zaman. Özne 'They'.\n\nKISA DERS: Geniş zamanda çoğul özneler (They) fiili yalın (ek almadan) kullanır. 'Have lunch' (öğle yemeği yemek) kalıptır."
+        },
+        {
+            "i": 10,
+            "t": "The children _____ playing in the park.",
+            "o": {
+                "A": "is",
+                "B": "am",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Özne 'The children' (Çocuklar - Çoğul). Fiil '-ing'li.\n\nKISA DERS: Çoğul özneler şimdiki zamanda 'are' alır. Tekil olsaydı (child) 'is' olurdu."
+        },
+        {
+            "i": 11,
+            "t": "_____ your father work in a bank?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Is",
+                "D": "Are",
+                "E": "Has"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Ana fiil 'work' (çalışmak). Özne 'Your father' (He). Soru eki ne olmalı?\n\nKISA DERS: 'Father' tekil olduğu için geniş zaman sorusu 'Does' ile sorulur."
+        },
+        {
+            "i": 12,
+            "t": "I _____ reading a book now.",
+            "o": {
+                "A": "am",
+                "B": "is",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "A",
+            "d": 1.1,
+            "r": 10,
+            "h": "Zaman zarfı 'now'. Özne 'I'. Şimdiki zaman yapısı.\n\nKISA DERS: Şimdiki zamanda 'I' öznesi her zaman 'am' alır. I am reading."
+        },
+        {
+            "i": 13,
+            "t": "She _____ very beautiful.",
+            "o": {
+                "A": "are",
+                "B": "am",
+                "C": "is",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.0,
+            "r": 10,
+            "h": "Sıfat cümlesi. 'O çok güzeldir.'\n\nKISA DERS: Tekil şahıslarda (She) durum ve sıfat bildirmek için 'is' kullanılır."
+        },
+        {
+            "i": 14,
+            "t": "We _____ live in Paris.",
+            "o": {
+                "A": "aren't",
+                "B": "isn't",
+                "C": "don't",
+                "D": "doesn't",
+                "E": "not"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Fiil 'live' (yaşamak). Geniş zaman olumsuzluğu. Özne 'We'.\n\nKISA DERS: 'We' öznesi geniş zamanda 'don't' ile olumsuz yapılır. 'Aren't' olması için fiil olmamalı veya '-ing' olmalıydı."
+        },
+        {
+            "i": 15,
+            "t": "_____ you hungry?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Are",
+                "D": "Is",
+                "E": "Have"
+            },
+            "c": "C",
+            "d": 1.1,
+            "r": 10,
+            "h": "'Hungry' (aç) sıfattır. Durum sorusu.\n\nKISA DERS: Sıfatlarda soru sorarken 'To Be' kullanılır. 'Are you hungry?'"
+        },
+        {
+            "i": 16,
+            "t": "My cat _____ sleeping on the sofa.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "do",
+                "D": "does",
+                "E": "has"
+            },
+            "c": "A",
+            "d": 1.2,
+            "r": 12,
+            "h": "Özne 'My cat' (It). Fiil '-ing'li. Şimdiki zaman.\n\nKISA DERS: Tekil özneler (The cat) şimdiki zamanda 'is' alır."
+        },
+        {
+            "i": 17,
+            "t": "He _____ not play guitar.",
+            "o": {
+                "A": "don't",
+                "B": "doesn't",
+                "C": "isn't",
+                "D": "aren't",
+                "E": "not"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Fiil 'play' (yalın). Geniş zaman olumsuz. Özne 'He'.\n\nKISA DERS: Geniş zamanda 'He' öznesi 'doesn't' ile kullanılır. 'He doesn't play.'"
+        },
+        {
+            "i": 18,
+            "t": "What _____ this?",
+            "o": {
+                "A": "are",
+                "B": "is",
+                "C": "do",
+                "D": "does",
+                "E": "am"
+            },
+            "c": "B",
+            "d": 1.0,
+            "r": 10,
+            "h": "'This' (Bu) tekil işaret zamiridir. 'Bu nedir?' diye soruyoruz.\n\nKISA DERS: Tekil nesneleri sorarken 'What is this?' kalıbı kullanılır."
+        },
+        {
+            "i": 19,
+            "t": "They _____ doctors.",
+            "o": {
+                "A": "is",
+                "B": "am",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.1,
+            "r": 10,
+            "h": "Meslek bildiriyor (doctors - çoğul). Özne 'They'.\n\nKISA DERS: Çoğul öznelerle meslek söylerken 'are' kullanılır. They are doctors."
+        },
+        {
+            "i": 20,
+            "t": "_____ Ali study hard?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Is",
+                "D": "Are",
+                "E": "Has"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Fiil 'study'. Geniş zaman sorusu. Özne 'Ali' (He).\n\nKISA DERS: Tekil şahıslarda fiil sorusu sorarken 'Does' kullanılır."
+        }
+    ]
+}

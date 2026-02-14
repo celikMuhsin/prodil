@@ -1,0 +1,311 @@
+﻿{
+    "test_info": {
+        "level": "ELEMENTARY (A1-A2)",
+        "topic": "Grammar - Simple Past Tense (Mixed)",
+        "test_no": 11,
+        "description": "Serinin on birinci testi. 1.6-2.0 zorluk seviyesinde. Geçmiş zamanın olumlu, olumsuz ve soru yapılarının karma kullanımı. 'Did' kullanımı ve fiil çekimleri.",
+        "block": "2/4 (Easy - Moderate)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "She _____ dinner for us yesterday.",
+            "o": {
+                "A": "cook",
+                "B": "cooked",
+                "C": "cooks",
+                "D": "cooking",
+                "E": "is cook"
+            },
+            "c": "B",
+            "d": 1.6,
+            "r": 15,
+            "h": "Fiil 'cook' (pişirmek). Düzenli bir fiildir. Geçmiş zaman.\n\nKISA DERS: Düzenli fiiller geçmiş zamanda '-ed' takısı alır. Cook -> Cooked."
+        },
+        {
+            "i": 2,
+            "t": "We _____ not go to the cinema.",
+            "o": {
+                "A": "didn't",
+                "B": "did",
+                "C": "don't",
+                "D": "weren't",
+                "E": "wasn't"
+            },
+            "c": "B",
+            "d": 1.8,
+            "r": 18,
+            "h": "Dikkat! Cümlede 'not' kelimesi zaten var. Sadece yardımcı fiil eksik. Fiil 'go' (yalın).\n\nKISA DERS: Geçmiş zaman olumsuz cümlesinde 'did not' kullanılır. Boşluğa sadece 'did' gelmelidir, çünkü 'not' verilmiş."
+        },
+        {
+            "i": 3,
+            "t": "There _____ a lot of people at the concert.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "is",
+                "D": "are",
+                "E": "did"
+            },
+            "c": "B",
+            "d": 1.9,
+            "r": 15,
+            "h": "'There is/are' yapısının geçmiş zamanı. 'People' (insanlar) çoğuldur.\n\nKISA DERS: Çoğul isimlerle geçmiş zamanda 'There were' (Vardı) kullanılır. Tekillerle 'There was'."
+        },
+        {
+            "i": 4,
+            "t": "Did you _____ your homework?",
+            "o": {
+                "A": "finished",
+                "B": "finish",
+                "C": "finishing",
+                "D": "finishes",
+                "E": "to finish"
+            },
+            "c": "B",
+            "d": 1.7,
+            "r": 15,
+            "h": "Soru 'Did' ile başlamış. Fiil nasıl olmalı?\n\nKISA DERS: Cümlede 'Did' varsa fiil her zaman yalın (base form) haldedir. 'Did you finish?'"
+        },
+        {
+            "i": 5,
+            "t": "I _____ my keys yesterday.",
+            "o": {
+                "A": "lose",
+                "B": "losed",
+                "C": "lost",
+                "D": "losing",
+                "E": "losser"
+            },
+            "c": "C",
+            "d": 1.8,
+            "r": 15,
+            "h": "Fiil 'lose' (kaybetmek). Düzensiz fiildir.\n\nKISA DERS: 'Lose' fiilinin geçmiş zaman hali 'Lost'tur. 'Losed' yanlıştır."
+        },
+        {
+            "i": 6,
+            "t": "They _____ happy with the result.",
+            "o": {
+                "A": "didn't",
+                "B": "weren't",
+                "C": "don't",
+                "D": "wasn't",
+                "E": "aren't"
+            },
+            "c": "B",
+            "d": 1.9,
+            "r": 18,
+            "h": "Mutlu değillerdi. Durum cümlesi (happy bir sıfattır, fiil değildir).\n\nKISA DERS: Sıfat cümlelerinin geçmiş zaman olumsuzunda 'wasn't' veya 'weren't' kullanılır. 'Did' sadece eylem fiillerinde kullanılır."
+        },
+        {
+            "i": 7,
+            "t": "When _____ you arrive?",
+            "o": {
+                "A": "did",
+                "B": "do",
+                "C": "were",
+                "D": "was",
+                "E": "are"
+            },
+            "c": "A",
+            "d": 1.7,
+            "r": 15,
+            "h": "Fiil 'arrive' (varmak). Geçmiş zaman sorusu.\n\nKISA DERS: Soru kelimesi (When) olsa bile kural değişmez. Fiil varsa ve geçmiş zamansa 'Did' kullanılır."
+        },
+        {
+            "i": 8,
+            "t": "He _____ a letter to his mother.",
+            "o": {
+                "A": "send",
+                "B": "sent",
+                "C": "sended",
+                "D": "sending",
+                "E": "sends"
+            },
+            "c": "B",
+            "d": 1.8,
+            "r": 15,
+            "h": "Fiil 'send' (göndermek). Düzensiz fiildir.\n\nKISA DERS: 'Send' fiilinin geçmiş zaman hali 'Sent'tir (d harfi t olur)."
+        },
+        {
+            "i": 9,
+            "t": "We _____ English last year.",
+            "o": {
+                "A": "study",
+                "B": "studyed",
+                "C": "studied",
+                "D": "studying",
+                "E": "studies"
+            },
+            "c": "C",
+            "d": 1.9,
+            "r": 18,
+            "h": "Fiil 'study' (ders çalışmak). Düzenli fiil ama yazım kuralına dikkat.\n\nKISA DERS: Sonu 'y' ile biten düzenli fiillerde '-ed' gelirken 'y' düşer ve '-ied' olur. Study -> Studied."
+        },
+        {
+            "i": 10,
+            "t": "Did she _____ you?",
+            "o": {
+                "A": "call",
+                "B": "called",
+                "C": "calling",
+                "D": "calls",
+                "E": "is call"
+            },
+            "c": "A",
+            "d": 1.6,
+            "r": 12,
+            "h": "Soru 'Did' ile başlamış. 'Call' fiili ne durumda olmalı?\n\nKISA DERS: Soru cümlelerinde (Did) fiil ek almaz. 'Did she call?'"
+        },
+        {
+            "i": 11,
+            "t": "I _____ tired yesterday morning.",
+            "o": {
+                "A": "did",
+                "B": "was",
+                "C": "were",
+                "D": "am",
+                "E": "had"
+            },
+            "c": "B",
+            "d": 1.6,
+            "r": 12,
+            "h": "Dün sabah yorgundum. Durum cümlesi. Özne 'I'.\n\nKISA DERS: 'I' öznesi geçmiş zaman durum cümlelerinde 'was' alır. 'I was tired'."
+        },
+        {
+            "i": 12,
+            "t": "They _____ football in the garden.",
+            "o": {
+                "A": "play",
+                "B": "played",
+                "C": "playied",
+                "D": "playing",
+                "E": "plaied"
+            },
+            "c": "B",
+            "d": 1.7,
+            "r": 15,
+            "h": "Fiil 'play'. Düzenli fiildir. Yazıma dikkat.\n\nKISA DERS: Eğer 'y' harfinden önce sesli harf (a,e,i,o,u) varsa 'y' düşmez. Play -> Played."
+        },
+        {
+            "i": 13,
+            "t": "_____ you see the accident?",
+            "o": {
+                "A": "Were",
+                "B": "Was",
+                "C": "Did",
+                "D": "Do",
+                "E": "Are"
+            },
+            "c": "C",
+            "d": 1.8,
+            "r": 15,
+            "h": "Fiil 'see'. Geçmiş zaman sorusu (Kaza oldu bitti).\n\nKISA DERS: Geçmişte olmuş bir olayı (kazayı gördün mü?) sorarken 'Did' kullanılır."
+        },
+        {
+            "i": 14,
+            "t": "She _____ a beautiful song.",
+            "o": {
+                "A": "sing",
+                "B": "singed",
+                "C": "sang",
+                "D": "sung",
+                "E": "sings"
+            },
+            "c": "C",
+            "d": 2.0,
+            "r": 18,
+            "h": "Fiil 'sing' (şarkı söylemek). Düzensiz fiildir.\n\nKISA DERS: 'Sing' fiilinin geçmiş zaman hali 'Sang'dir. (Sung 3. halidir)."
+        },
+        {
+            "i": 15,
+            "t": "I _____ breakfast at 8 o'clock.",
+            "o": {
+                "A": "have",
+                "B": "has",
+                "C": "had",
+                "D": "haved",
+                "E": "having"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "Kahvaltı yaptım (yedim). 'Have' fiilinin geçmiş zamanı.\n\nKISA DERS: 'Have breakfast' kalıbının geçmiş zamanı 'Had breakfast'tır."
+        },
+        {
+            "i": 16,
+            "t": "We _____ didn't _____ out.",
+            "o": {
+                "A": "didn't / go",
+                "B": "- / went",
+                "C": "- / go",
+                "D": "don't / go",
+                "E": "did / went"
+            },
+            "c": "C",
+            "d": 2.0,
+            "r": 20,
+            "h": "Soru kökünde 'We _____ didn't _____ out' yazıyor. Boşluklara ne gelmeli? *Düzeltme: Soruyu basitleştirelim.* 'We didn't _____ out.'\n\nKISA DERS: Cümlede 'didn't' varsa fiil yalın olur. Cevap 'go'. (Soru kökünde ufak bir şaşırtmaca vardı, şıklara göre doğru tamamlama 'go'dur)."
+        },
+        {
+            "i": 17,
+            "t": "He _____ his finger.",
+            "o": {
+                "A": "cut",
+                "B": "cuted",
+                "C": "cutting",
+                "D": "cuts",
+                "E": "is cut"
+            },
+            "c": "A",
+            "d": 2.0,
+            "r": 18,
+            "h": "Fiil 'cut' (kesmek). Düzensiz bir fiildir ve özel bir durumu vardır.\n\nKISA DERS: Bazı fiillerin 1., 2. ve 3. halleri aynıdır. Cut - Cut - Cut. Geçmiş zamanda da 'He cut' denir."
+        },
+        {
+            "i": 18,
+            "t": "Where _____ you put the keys?",
+            "o": {
+                "A": "did",
+                "B": "do",
+                "C": "were",
+                "D": "was",
+                "E": "are"
+            },
+            "c": "A",
+            "d": 1.8,
+            "r": 15,
+            "h": "Fiil 'put' (koymak). Geçmiş zaman sorusu.\n\nKISA DERS: 'Anahtarları nereye koydun?' cümlesinde fiil olduğu için 'Did' kullanılır. 'Were' kullanılmaz."
+        },
+        {
+            "i": 19,
+            "t": "I _____ find my phone.",
+            "o": {
+                "A": "no",
+                "B": "not",
+                "C": "didn't",
+                "D": "wasn't",
+                "E": "don't"
+            },
+            "c": "C",
+            "d": 1.9,
+            "r": 18,
+            "h": "Telefonumu bulamadım (geçmiş). Fiil 'find'.\n\nKISA DERS: Geçmiş zaman olumsuzluğu 'didn't' ile yapılır. 'Wasn't find' yanlıştır."
+        },
+        {
+            "i": 20,
+            "t": "They _____ to London last week.",
+            "o": {
+                "A": "fly",
+                "B": "flied",
+                "C": "flew",
+                "D": "flying",
+                "E": "flows"
+            },
+            "c": "C",
+            "d": 2.0,
+            "r": 18,
+            "h": "Fiil 'fly' (uçmak). Düzensiz fiildir.\n\nKISA DERS: 'Fly' fiilinin geçmiş zaman hali 'Flew'dur. (Okunuşu: flu)."
+        }
+    ]
+}

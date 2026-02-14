@@ -1,0 +1,311 @@
+﻿{
+    "test_info": {
+        "level": "PRE-INTERMEDIATE (A2-B1)",
+        "topic": "Grammar - Present Perfect (For vs Since)",
+        "test_no": 20,
+        "description": "Serinin yirminci testi. 2.1-2.5 zorluk seviyesinde. Present Perfect Tense ile kullanılan 'For' (süreç) ve 'Since' (başlangıç zamanı) edatlarının ayrımı.",
+        "block": "3/4 (Moderate)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "I have lived here _____ 10 years.",
+            "o": {
+                "A": "since",
+                "B": "for",
+                "C": "ago",
+                "D": "already",
+                "E": "yet"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "10 yıl bir süreçtir (toplam zaman). Süreçlerde hangisi kullanılır?\n\nKISA DERS: Toplam geçen süreyi (duration) belirtirken 'For' kullanılır. 'For 10 years' (10 yıldır)."
+        },
+        {
+            "i": 2,
+            "t": "She has been a teacher _____ 2015.",
+            "o": {
+                "A": "for",
+                "B": "since",
+                "C": "ago",
+                "D": "just",
+                "E": "from"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "2015 bir tarih yani başlangıç noktasıdır.\n\nKISA DERS: Eylemin ne zaman başladığını belirten tarihlerde 'Since' kullanılır. 'Since 2015' (2015'ten beri)."
+        },
+        {
+            "i": 3,
+            "t": "We haven't seen him _____ last week.",
+            "o": {
+                "A": "for",
+                "B": "since",
+                "C": "ago",
+                "D": "just",
+                "E": "already"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "'Geçen hafta' zamanın başlangıç noktasıdır.\n\nKISA DERS: 'Last week/month/year' ifadeleriyle 'Since' kullanılır. 'Since last week'."
+        },
+        {
+            "i": 4,
+            "t": "They have played football _____ two hours.",
+            "o": {
+                "A": "since",
+                "B": "for",
+                "C": "ago",
+                "D": "from",
+                "E": "in"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "İki saat (two hours) bir zaman dilimidir, süreçtir.\n\nKISA DERS: Rakamla belirtilen sürelerde (2 hours, 5 days) 'For' kullanılır."
+        },
+        {
+            "i": 5,
+            "t": "I have known her _____ we were children.",
+            "o": {
+                "A": "for",
+                "B": "since",
+                "C": "when",
+                "D": "ago",
+                "E": "just"
+            },
+            "c": "B",
+            "d": 2.4,
+            "r": 18,
+            "h": "Dikkat! Burada bir tarih yok, bir olay (biz çocukken) var. Bu da bir başlangıç noktasıdır.\n\nKISA DERS: 'Since'den sonra cümle (Clause) gelebilir. 'Since we were children' (Çocukluğumuzdan beri)."
+        },
+        {
+            "i": 6,
+            "t": "He has had this car _____ a long time.",
+            "o": {
+                "A": "since",
+                "B": "for",
+                "C": "ago",
+                "D": "just",
+                "E": "yet"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "'A long time' (uzun zaman) belirsiz de olsa bir süreçtir.\n\nKISA DERS: 'For a long time', 'For ages' kalıplaşmış ifadelerdir."
+        },
+        {
+            "i": 7,
+            "t": "_____ long have you lived in this city?",
+            "o": {
+                "A": "What",
+                "B": "When",
+                "C": "How",
+                "D": "Who",
+                "E": "Where"
+            },
+            "c": "C",
+            "d": 2.2,
+            "r": 15,
+            "h": "Ne kadar süredir yaşadığını soruyor.\n\nKISA DERS: Present Perfect Tense'de süre sormak için 'How long' (Ne kadar zamandır) kalıbı kullanılır."
+        },
+        {
+            "i": 8,
+            "t": "She hasn't eaten anything _____ breakfast.",
+            "o": {
+                "A": "for",
+                "B": "since",
+                "C": "ago",
+                "D": "just",
+                "E": "already"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Kahvaltı (breakfast) günün bir noktasıdır.\n\nKISA DERS: Günün bölümleri (morning, breakfast, noon) başlangıç noktası sayılır ve 'Since' alır."
+        },
+        {
+            "i": 9,
+            "t": "We have waited _____ 20 minutes.",
+            "o": {
+                "A": "since",
+                "B": "for",
+                "C": "ago",
+                "D": "already",
+                "E": "yet"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "20 dakika bir süredir.\n\nKISA DERS: Dakika, saat, gün gibi birimler rakamla verilirse 'For' kullanılır."
+        },
+        {
+            "i": 10,
+            "t": "I have worked here _____ March.",
+            "o": {
+                "A": "for",
+                "B": "since",
+                "C": "ago",
+                "D": "from",
+                "E": "in"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Mart (March) bir ay ismidir, yani başlangıç noktası.\n\nKISA DERS: Ay isimleri, günler, yıllar 'Since' ile kullanılır."
+        },
+        {
+            "i": 11,
+            "t": "They have been married _____ 50 years.",
+            "o": {
+                "A": "since",
+                "B": "for",
+                "C": "ago",
+                "D": "just",
+                "E": "yet"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "50 yıl (süreç).\n\nKISA DERS: 'For 50 years'."
+        },
+        {
+            "i": 12,
+            "t": "It hasn't rained _____ Monday.",
+            "o": {
+                "A": "for",
+                "B": "since",
+                "C": "ago",
+                "D": "from",
+                "E": "on"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Pazartesi (Monday) haftanın bir günüdür (Nokta).\n\nKISA DERS: Gün isimleri (Monday, Sunday) 'Since' alır."
+        },
+        {
+            "i": 13,
+            "t": "_____ did you start learning English?",
+            "o": {
+                "A": "How long",
+                "B": "Since",
+                "C": "When",
+                "D": "What time",
+                "E": "Where"
+            },
+            "c": "C",
+            "d": 2.5,
+            "r": 20,
+            "h": "Dikkat! Cümle 'Did' ile kurulmuş (Simple Past). Geçmiş zaman sorusu.\n\nKISA DERS: Eğer cümle 'Did' (Geçmiş Zaman) ise 'When' kullanılır. 'How long' genellikle Present Perfect ile kullanılır."
+        },
+        {
+            "i": 14,
+            "t": "I have loved music _____ I was born.",
+            "o": {
+                "A": "for",
+                "B": "since",
+                "C": "when",
+                "D": "ago",
+                "E": "just"
+            },
+            "c": "B",
+            "d": 2.4,
+            "r": 18,
+            "h": "Doğduğumdan beri.\n\nKISA DERS: 'Since I was born' kalıplaşmış bir kullanımdır."
+        },
+        {
+            "i": 15,
+            "t": "He has slept _____ 10 hours.",
+            "o": {
+                "A": "since",
+                "B": "for",
+                "C": "ago",
+                "D": "already",
+                "E": "yet"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "10 saat (süre).\n\nKISA DERS: 'For 10 hours'."
+        },
+        {
+            "i": 16,
+            "t": "We haven't been to the cinema _____ ages.",
+            "o": {
+                "A": "since",
+                "B": "for",
+                "C": "ago",
+                "D": "from",
+                "E": "in"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "'Ages' (yıllar, asırlar, çok uzun zaman) anlamında bir süreçtir.\n\nKISA DERS: 'For ages' (çok uzun zamandır) deyimsel bir ifadedir."
+        },
+        {
+            "i": 17,
+            "t": "_____ you seen him recently?",
+            "o": {
+                "A": "Has",
+                "B": "Have",
+                "C": "Did",
+                "D": "Do",
+                "E": "Are"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Onu son zamanlarda gördün mü? 'Recently' Present Perfect ipucudur.\n\nKISA DERS: 'Recently' veya 'Lately' ile Present Perfect kullanılır. 'Have you seen...'?"
+        },
+        {
+            "i": 18,
+            "t": "She has _____ ill since yesterday.",
+            "o": {
+                "A": "be",
+                "B": "been",
+                "C": "being",
+                "D": "was",
+                "E": "is"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "Dünden beri hasta. 'To be' fiilinin 3. hali gerekir.\n\nKISA DERS: Present Perfect yapısında 'has' + V3 kullanılır. 'Be' fiilinin V3 hali 'Been'dir."
+        },
+        {
+            "i": 19,
+            "t": "I have _____ tennis for 2 years.",
+            "o": {
+                "A": "play",
+                "B": "played",
+                "C": "playing",
+                "D": "plays",
+                "E": "player"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "2 yıldır tenis oynarım. Fiil 'play'. Düzenli fiil.\n\nKISA DERS: Have + V3 (Played)."
+        },
+        {
+            "i": 20,
+            "t": "How long has he _____ English?",
+            "o": {
+                "A": "study",
+                "B": "studied",
+                "C": "studying",
+                "D": "studies",
+                "E": "studie"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Ne kadar süredir İngilizce çalışıyor? Fiil 'study'.\n\nKISA DERS: Has + V3. Study -> Studied."
+        }
+    ]
+}

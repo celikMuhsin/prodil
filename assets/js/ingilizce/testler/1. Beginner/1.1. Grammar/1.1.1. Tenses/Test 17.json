@@ -1,0 +1,311 @@
+﻿{
+    "test_info": {
+        "level": "PRE-INTERMEDIATE (A2)",
+        "topic": "Grammar - Past Continuous Tense",
+        "test_no": 17,
+        "description": "Serinin on yedinci testi ve 3. Zorluk Bloğunun başlangıcı (2.1-2.5). Modals yok. Konu: 'Was/Were + V-ing' yapısı (Geçmişte belli bir anda devam eden eylemler).",
+        "block": "3/4 (Moderate)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "I _____ watching TV at 8 o'clock last night.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "am",
+                "D": "did",
+                "E": "do"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 15,
+            "h": "Geçmişte belli bir saatte (at 8 o'clock) yapılan eylem. Fiil '-ing' almış.\n\nKISA DERS: Past Continuous Tense (Geçmişte Süreklilik) yapısında 'I/He/She/It' özneleri 'Was', çoğul özneler 'Were' alır. I was watching."
+        },
+        {
+            "i": 2,
+            "t": "They _____ playing football in the garden.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "are",
+                "D": "did",
+                "E": "do"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Özne 'They' (Onlar). Olay geçmişte devam ediyordu (bağlam gereği).\n\nKISA DERS: Çoğul özneler (They) Past Continuous yapısında 'Were' yardımcı fiilini alır. They were playing."
+        },
+        {
+            "i": 3,
+            "t": "What _____ you doing yesterday afternoon?",
+            "o": {
+                "A": "did",
+                "B": "do",
+                "C": "were",
+                "D": "was",
+                "E": "are"
+            },
+            "c": "C",
+            "d": 2.2,
+            "r": 15,
+            "h": "Fiil 'doing' (-ing almış). Geçmiş zaman sorusu.\n\nKISA DERS: 'Ne yapıyordun?' sorusu Past Continuous'tur. 'You' öznesi olduğu için 'Were' kullanılır. 'What were you doing?'"
+        },
+        {
+            "i": 4,
+            "t": "It _____ raining heavily all day yesterday.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "were",
+                "D": "did",
+                "E": "has"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Dün tüm gün boyunca süren bir eylem (yağmur). Özne 'It'.\n\nKISA DERS: Süreklilik bildiren geçmiş zaman cümlelerinde 'It' öznesi 'Was' alır. It was raining."
+        },
+        {
+            "i": 5,
+            "t": "She _____ not sleeping when I came home.",
+            "o": {
+                "A": "wasn't",
+                "B": "didn't",
+                "C": "weren't",
+                "D": "isn't",
+                "E": "don't"
+            },
+            "c": "A",
+            "d": 2.3,
+            "r": 18,
+            "h": "Uyuyor değildi (uymuyordu). Fiil 'sleeping'. Özne 'She'.\n\nKISA DERS: Past Continuous olumsuzunda 'Was not' (Wasn't) kullanılır. 'Didn't' kullanmak için fiilin yalın (sleep) olması gerekirdi."
+        },
+        {
+            "i": 6,
+            "t": "_____ you working at 9 AM?",
+            "o": {
+                "A": "Did",
+                "B": "Do",
+                "C": "Were",
+                "D": "Was",
+                "E": "Are"
+            },
+            "c": "C",
+            "d": 2.2,
+            "r": 15,
+            "h": "Saat 9'da çalışıyor muydun? Fiil '-ing'li.\n\nKISA DERS: 'You' öznesi ile geçmişte süreklilik sorusu 'Were' ile başlar. 'Did you work?' (Çalıştın mı?) ile 'Were you working?' (Çalışıyor muydun?) farkına dikkat."
+        },
+        {
+            "i": 7,
+            "t": "We _____ having dinner when the phone rang.",
+            "o": {
+                "A": "did",
+                "B": "are",
+                "C": "was",
+                "D": "were",
+                "E": "had"
+            },
+            "c": "D",
+            "d": 2.4,
+            "r": 18,
+            "h": "Telefon çaldığında biz yemek yiyorduk (eylem devam ediyordu). Özne 'We'.\n\nKISA DERS: 'When' ile bağlanan cümlelerde, uzun süren eylem (yemek yemek) Past Continuous (Were having) ile anlatılır."
+        },
+        {
+            "i": 8,
+            "t": "He _____ studying English last year.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "is",
+                "D": "did",
+                "E": "does"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 15,
+            "h": "Geçen yıl İngilizce çalışıyordu (bir süreçten bahsediyor).\n\nKISA DERS: Tekil özneler (He) geçmişte süreklilik bildirirken 'Was' alır. He was studying."
+        },
+        {
+            "i": 9,
+            "t": "Why _____ the baby crying?",
+            "o": {
+                "A": "did",
+                "B": "was",
+                "C": "were",
+                "D": "is",
+                "E": "are"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Bebek neden ağlıyordu? (Geçmiş). Özne 'The baby' (tekil).\n\nKISA DERS: 'Why was the baby crying?' kalıbı kullanılır. Şimdiki zaman olsaydı 'is' olurdu ama bağlam geçmiş kurgusu."
+        },
+        {
+            "i": 10,
+            "t": "I saw you yesterday. You _____ waiting for the bus.",
+            "o": {
+                "A": "are",
+                "B": "were",
+                "C": "was",
+                "D": "did",
+                "E": "do"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "Seni gördüm (geçmiş). Otobüs bekliyordun (o esnada devam eden eylem).\n\nKISA DERS: 'You' öznesi geçmişte devam eden eylemde 'Were' alır. You were waiting."
+        },
+        {
+            "i": 11,
+            "t": "The birds _____ singing beautifully this morning.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "did",
+                "D": "are",
+                "E": "do"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Kuşlar ötüyordu. Özne 'The birds' (çoğul).\n\nKISA DERS: Çoğul öznelerle Past Continuous 'Were' kullanılır."
+        },
+        {
+            "i": 12,
+            "t": "_____ it snowing when you went out?",
+            "o": {
+                "A": "Did",
+                "B": "Was",
+                "C": "Is",
+                "D": "Were",
+                "E": "Does"
+            },
+            "c": "B",
+            "d": 2.4,
+            "r": 18,
+            "h": "Dışarı çıktığında kar yağıyor muydu? Özne 'It'.\n\nKISA DERS: 'It' öznesi soru sorulurken 'Was' başa gelir. 'Was it snowing?'"
+        },
+        {
+            "i": 13,
+            "t": "My friends _____ not watching the movie.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "did",
+                "D": "do",
+                "E": "are"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Filmi izlemiyorlardı. Özne 'My friends' (They). 'Not' zaten var.\n\nKISA DERS: Çoğul öznelerde olumsuzluk 'Were not' (Weren't) şeklindedir."
+        },
+        {
+            "i": 14,
+            "t": "Where _____ you going when I saw you?",
+            "o": {
+                "A": "did",
+                "B": "was",
+                "C": "were",
+                "D": "are",
+                "E": "do"
+            },
+            "c": "C",
+            "d": 2.3,
+            "r": 15,
+            "h": "Seni gördüğümde nereye gidiyordun? Fiil 'going'.\n\nKISA DERS: 'Where were you going?' kalıbı kullanılır."
+        },
+        {
+            "i": 15,
+            "t": "I _____ reading a book, I was writing a letter.",
+            "o": {
+                "A": "wasn't",
+                "B": "didn't",
+                "C": "weren't",
+                "D": "not",
+                "E": "am not"
+            },
+            "c": "A",
+            "d": 2.4,
+            "r": 18,
+            "h": "Kitap okumuyordum, mektup yazıyordum. Zıtlık var. Özne 'I'.\n\nKISA DERS: 'I' öznesi için olumsuzluk 'Wasn't'tır. 'I wasn't reading'."
+        },
+        {
+            "i": 16,
+            "t": "_____ they listening to the teacher?",
+            "o": {
+                "A": "Did",
+                "B": "Were",
+                "C": "Was",
+                "D": "Are",
+                "E": "Do"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Öğretmeni dinliyorlar mıydı? (Geçmiş). Özne 'They'.\n\nKISA DERS: 'Were they listening?'"
+        },
+        {
+            "i": 17,
+            "t": "The sun _____ shining.",
+            "o": {
+                "A": "is",
+                "B": "did",
+                "C": "was",
+                "D": "were",
+                "E": "has"
+            },
+            "c": "C",
+            "d": 2.1,
+            "r": 15,
+            "h": "Güneş parlıyordu. Özne 'The sun' (It).\n\nKISA DERS: Tekil öznelerde 'Was' kullanılır."
+        },
+        {
+            "i": 18,
+            "t": "Who _____ you talking to?",
+            "o": {
+                "A": "did",
+                "B": "was",
+                "C": "were",
+                "D": "are",
+                "E": "do"
+            },
+            "c": "C",
+            "d": 2.2,
+            "r": 15,
+            "h": "Kiminle konuşuyordun? Özne 'You'.\n\nKISA DERS: 'Who were you talking to?'"
+        },
+        {
+            "i": 19,
+            "t": "At 10 PM last night, I _____ sleeping.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "am",
+                "D": "did",
+                "E": "do"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 15,
+            "h": "Dün gece 10'da uyuyordum. Nokta atışı zaman.\n\nKISA DERS: Belirli bir zamanda devam eden eylemler için 'I was...' yapısı kullanılır."
+        },
+        {
+            "i": 20,
+            "t": "My parents _____ working in the garden.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "did",
+                "D": "are",
+                "E": "do"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Anne babam (çoğul) çalışıyordu.\n\nKISA DERS: Çoğul özneler (My parents = They) 'Were' alır."
+        }
+    ]
+}

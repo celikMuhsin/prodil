@@ -1,310 +1,310 @@
 {
     "test_info": {
-        "level": "BEGINNER (A1-A2)",
-        "topic": "Grammar - Tenses",
+        "level": "BEGINNER (A0-A1)",
+        "topic": "Grammar - Basic Tenses (Mixed)",
         "test_no": 1,
-        "description": "Temel zamanlar ve yardımcı fiiller (To Be, Present Simple, Present Continuous) üzerine giriş seviyesi testi."
+        "description": "Serinin ilk testi. En temel seviyede 'To Be', 'Present Simple' ve 'Present Continuous' yapılarını içerir. Zorluk 1.0-1.5 arasındadır."
     },
     "questions": [
         {
             "i": 1,
-            "t": "I _____ a student at Sakarya University.",
+            "t": "I _____ a student.",
             "o": {
                 "A": "is",
                 "B": "are",
                 "C": "am",
                 "D": "be",
-                "E": "being"
+                "E": "does"
             },
             "c": "C",
-            "d": 1.1,
-            "r": 15,
-            "h": "'I' (ben) öznesi ile şimdiki zamanda hangi yardımcı fiilin kullanıldığını hatırla."
+            "d": 1.0,
+            "r": 10,
+            "h": "'I' (Ben) öznesi ile kullanılan yardımcı fiil 'am'dir."
         },
         {
             "i": 2,
-            "t": "My father _____ a doctor; he works at a hospital.",
+            "t": "She _____ happy today.",
             "o": {
                 "A": "are",
                 "B": "is",
                 "C": "am",
-                "D": "be",
-                "E": "do"
+                "D": "do",
+                "E": "have"
             },
             "c": "B",
-            "d": 1.2,
-            "r": 15,
-            "h": "Üçüncü tekil şahıs (he/she/it) için 'to be' fiilinin çekimini düşün."
+            "d": 1.1,
+            "r": 10,
+            "h": "Tekil özneler (She/He/It) için 'is' kullanılır."
         },
         {
             "i": 3,
-            "t": "They _____ like playing football in the garden.",
+            "t": "They _____ at home now.",
             "o": {
-                "A": "doesn't",
-                "B": "aren't",
-                "C": "isn't",
-                "D": "don't",
-                "E": "not"
+                "A": "is",
+                "B": "am",
+                "C": "was",
+                "D": "are",
+                "E": "be"
             },
             "c": "D",
-            "d": 1.5,
-            "r": 25,
-            "h": "Geniş zamanda (Present Simple) çoğul özneler için olumsuzluk eki hangisidir?"
+            "d": 1.1,
+            "r": 10,
+            "h": "Çoğul özneler (They/We/You) için 'are' kullanılır."
         },
         {
             "i": 4,
-            "t": "She _____ English very well.",
+            "t": "Ali _____ football every Sunday.",
             "o": {
-                "A": "speak",
-                "B": "speaking",
-                "C": "speaks",
-                "D": "is speak",
-                "E": "are speaking"
-            },
-            "c": "C",
-            "d": 1.4,
-            "r": 20,
-            "h": "Geniş zamanda (Present Simple) 'she' öznesi fiile nasıl bir takı getirir?"
-        },
-        {
-            "i": 5,
-            "t": "Look! The baby _____.",
-            "o": {
-                "A": "sleep",
-                "B": "is sleeping",
-                "C": "sleeps",
-                "D": "slept",
-                "E": "are sleeping"
+                "A": "play",
+                "B": "plays",
+                "C": "playing",
+                "D": "is play",
+                "E": "are playing"
             },
             "c": "B",
             "d": 1.3,
-            "r": 20,
-            "h": "'Look!' (Bak!) ünlemi, eylemin şu anda gerçekleştiğini gösterir. Hangi zaman kullanılmalı?"
+            "r": 12,
+            "h": "Geniş zamanda 'He' (Ali) öznesi fiile '-s' takısı getirir."
         },
         {
-            "i": 6,
-            "t": "_____ you go to school by bus every day?",
+            "i": 5,
+            "t": "_____ you speak English?",
             "o": {
                 "A": "Are",
                 "B": "Is",
                 "C": "Do",
                 "D": "Does",
-                "E": "Have"
+                "E": "Has"
             },
             "c": "C",
-            "d": 1.5,
-            "r": 25,
-            "h": "Geniş zamanda (Present Simple) soru sorarken 'you' öznesi ile hangi yardımcı fiil başa gelir?"
+            "d": 1.2,
+            "r": 12,
+            "h": "Fiil cümlesinde soru sorarken 'Do' veya 'Does' kullanılır. 'You' için 'Do' seçilir."
+        },
+        {
+            "i": 6,
+            "t": "Look! The baby _____.",
+            "o": {
+                "A": "sleep",
+                "B": "sleeps",
+                "C": "is sleeping",
+                "D": "are sleeping",
+                "E": "sleeping"
+            },
+            "c": "C",
+            "d": 1.4,
+            "r": 15,
+            "h": "'Look!' (Bak!) şu anı gösterir. Tekil özne için 'is + V-ing' yapısı gerekir."
         },
         {
             "i": 7,
-            "t": "We _____ watching TV right now. We are studying.",
+            "t": "We _____ not tired.",
             "o": {
-                "A": "don't",
-                "B": "aren't",
-                "C": "isn't",
-                "D": "not",
-                "E": "doesn't"
+                "A": "is",
+                "B": "am",
+                "C": "are",
+                "D": "do",
+                "E": "does"
             },
-            "c": "B",
-            "d": 1.6,
-            "r": 25,
-            "h": "Şimdiki zamanda (Present Continuous) 'we' öznesi için olumsuz yardımcı fiil nedir?"
+            "c": "C",
+            "d": 1.1,
+            "r": 10,
+            "h": "'We' (Biz) öznesi ile olumsuz cümle kurarken 'are not' kullanılır."
         },
         {
             "i": 8,
-            "t": "Where _____ Ali live?",
+            "t": "_____ she your sister?",
             "o": {
-                "A": "do",
-                "B": "is",
-                "C": "are",
-                "D": "does",
-                "E": "doing"
+                "A": "Do",
+                "B": "Does",
+                "C": "Are",
+                "D": "Is",
+                "E": "Am"
             },
             "c": "D",
-            "d": 1.5,
-            "r": 25,
-            "h": "Ali (he) üçüncü tekil şahıstır. Geniş zaman soru cümlesinde hangi yardımcı fiil kullanılır?"
+            "d": 1.2,
+            "r": 12,
+            "h": "İsim cümlelerinde (kız kardeşin mi?) 'To Be' başa gelir. 'She' için 'Is' kullanılır."
         },
         {
             "i": 9,
-            "t": "The sun _____ in the east.",
+            "t": "I _____ like coffee.",
             "o": {
-                "A": "rise",
-                "B": "rising",
-                "C": "is rise",
-                "D": "rises",
-                "E": "are rising"
+                "A": "don't",
+                "B": "doesn't",
+                "C": "isn't",
+                "D": "aren't",
+                "E": "not"
             },
-            "c": "D",
-            "d": 1.8,
-            "r": 30,
-            "h": "Genel doğrular ve bilimsel gerçekler için hangi zaman kullanılır?"
+            "c": "A",
+            "d": 1.3,
+            "r": 12,
+            "h": "Geniş zamanda 'I' öznesi için olumsuzluk 'don't' ile yapılır."
         },
         {
             "i": 10,
-            "t": "I usually _____ coffee for breakfast, but today I _____ tea.",
+            "t": "My father _____ in a bank.",
             "o": {
-                "A": "drink / am drinking",
-                "B": "am drinking / drink",
-                "C": "drinks / drink",
-                "D": "drinking / am drinking",
-                "E": "drink / drinking"
+                "A": "work",
+                "B": "works",
+                "C": "working",
+                "D": "is work",
+                "E": "are working"
             },
-            "c": "A",
-            "d": 2.5,
-            "r": 45,
-            "h": "İlk kısım bir alışkanlığı (usually), ikinci kısım ise şu anki geçici bir durumu (today) anlatıyor."
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Geniş zaman ve tekil özne (He) olduğu için fiil '-s' takısı alır."
         },
         {
             "i": 11,
-            "t": "Please be quiet! The students _____ an exam.",
-            "o": {
-                "A": "take",
-                "B": "taking",
-                "C": "takes",
-                "D": "are taking",
-                "E": "do take"
-            },
-            "c": "D",
-            "d": 1.4,
-            "r": 20,
-            "h": "Konuşma anında gerçekleşen bir eylemden bahsediyoruz."
-        },
-        {
-            "i": 12,
-            "t": "What time _____ the train leave?",
-            "o": {
-                "A": "is",
-                "B": "do",
-                "C": "does",
-                "D": "are",
-                "E": "doing"
-            },
-            "c": "C",
-            "d": 2.2,
-            "r": 35,
-            "h": "Tarifeli seferler (tren, otobüs saatleri) gelecek zaman olsa bile geniş zaman ile sorulur."
-        },
-        {
-            "i": 13,
-            "t": "They _____ never late for class.",
-            "o": {
-                "A": "are",
-                "B": "do",
-                "C": "does",
-                "D": "have",
-                "E": "is"
-            },
-            "c": "A",
-            "d": 1.9,
-            "r": 30,
-            "h": "'Late' bir sıfattır, fiil değildir. Sıfatlardan önce hangi yardımcı fiil gelir?"
-        },
-        {
-            "i": 14,
-            "t": "How often _____ you visit your grandparents?",
+            "t": "It _____ raining right now.",
             "o": {
                 "A": "are",
                 "B": "do",
                 "C": "does",
                 "D": "is",
+                "E": "am"
+            },
+            "c": "D",
+            "d": 1.3,
+            "r": 12,
+            "h": "Şimdiki zaman (raining). 'It' öznesi 'is' yardımcı fiilini alır."
+        },
+        {
+            "i": 12,
+            "t": "Where _____ they live?",
+            "o": {
+                "A": "are",
+                "B": "is",
+                "C": "do",
+                "D": "does",
                 "E": "doing"
             },
-            "c": "B",
-            "d": 1.6,
-            "r": 25,
-            "h": "Sıklık bildiren sorular (How often) genellikle geniş zaman ile sorulur."
-        },
-        {
-            "i": 15,
-            "t": "My brother and I _____ want to go out tonight.",
-            "o": {
-                "A": "doesn't",
-                "B": "aren't",
-                "C": "don't",
-                "D": "isn't",
-                "E": "not"
-            },
             "c": "C",
-            "d": 1.8,
-            "r": 30,
-            "h": "Özne 'My brother and I' yani 'We' (biz). Geniş zamanda olumsuzluk nasıl yapılır?"
+            "d": 1.4,
+            "r": 15,
+            "h": "Fiil 'live' (yaşamak). Çoğul özne (they) için soru eki 'do' kullanılır."
         },
         {
-            "i": 16,
-            "t": "Currently, the company _____ a new project.",
+            "i": 13,
+            "t": "Ayşe _____ a doctor.",
             "o": {
-                "A": "develops",
-                "B": "is developing",
-                "C": "develop",
-                "D": "developing",
-                "E": "are developing"
+                "A": "is",
+                "B": "are",
+                "C": "am",
+                "D": "do",
+                "E": "does"
             },
-            "c": "B",
-            "d": 1.5,
-            "r": 25,
-            "h": "'Currently' (şu anda) zarfı, şimdiki zamanı işaret eder. 'Company' tekil bir öznedir."
+            "c": "A",
+            "d": 1.0,
+            "r": 10,
+            "h": "Meslek belirtirken 'to be' kullanılır. Ayşe (She) için 'is' doğrudur."
         },
         {
-            "i": 17,
-            "t": "Water _____ at 100 degrees Celsius.",
-            "o": {
-                "A": "boil",
-                "B": "is boiling",
-                "C": "boiling",
-                "D": "are boiling",
-                "E": "boils"
-            },
-            "c": "E",
-            "d": 1.7,
-            "r": 25,
-            "h": "Bilimsel bir gerçekten bahsederken geniş zaman kullanılır."
-        },
-        {
-            "i": 18,
-            "t": "Why _____ she crying?",
+            "i": 14,
+            "t": "We _____ watching TV at the moment.",
             "o": {
                 "A": "do",
                 "B": "does",
                 "C": "is",
                 "D": "are",
-                "E": "has"
+                "E": "have"
+            },
+            "c": "D",
+            "d": 1.3,
+            "r": 12,
+            "h": "Şimdiki zaman kuralı: We + are + V-ing."
+        },
+        {
+            "i": 15,
+            "t": "_____ you ready for the exam?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Are",
+                "D": "Is",
+                "E": "Have"
             },
             "c": "C",
-            "d": 1.6,
-            "r": 25,
-            "h": "Cümlede fiil '-ing' almış (crying). Bu şimdiki zamandır."
+            "d": 1.1,
+            "r": 10,
+            "h": "Sıfat cümlelerinde (ready) 'Do' kullanılmaz. 'You' için 'Are' kullanılır."
+        },
+        {
+            "i": 16,
+            "t": "He _____ not play tennis.",
+            "o": {
+                "A": "don't",
+                "B": "doesn't",
+                "C": "isn't",
+                "D": "aren't",
+                "E": "do"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Not: Soruda 'not' kelimesi zaten var veya şıklarda aranıyor. Geniş zaman olumsuzu 'He doesn't'."
+        },
+        {
+            "i": 17,
+            "t": "The cats _____ sleeping under the tree.",
+            "o": {
+                "A": "is",
+                "B": "am",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Özne 'The cats' (çoğul). Şimdiki zaman için 'are' gerekir."
+        },
+        {
+            "i": 18,
+            "t": "I _____ go to school by bus.",
+            "o": {
+                "A": "am",
+                "B": "is",
+                "C": "are",
+                "D": "usually",
+                "E": "not"
+            },
+            "c": "D",
+            "d": 1.5,
+            "r": 15,
+            "h": "Cümle yapısı geniş zaman. A, B, C şıkları fiil varken (go) kullanılmaz. 'Usually' bir sıklık zarfıdır."
         },
         {
             "i": 19,
-            "t": "I _____ agree with your opinion.",
+            "t": "_____ Ahmet study hard?",
             "o": {
-                "A": "am not",
-                "B": "don't",
-                "C": "doesn't",
-                "D": "not",
-                "E": "isn't"
+                "A": "Do",
+                "B": "Does",
+                "C": "Is",
+                "D": "Are",
+                "E": "Be"
             },
             "c": "B",
-            "d": 2.3,
-            "r": 40,
-            "h": "'Agree' (katılmak) durum bildiren bir fiildir (stative verb) ve genellikle geniş zamanla kullanılır."
+            "d": 1.4,
+            "r": 15,
+            "h": "Fiil 'study'. Özne 'Ahmet' (He). Soru sormak için 'Does' kullanılır."
         },
         {
             "i": 20,
-            "t": "Listen to the birds! They _____ so beautifully.",
+            "t": "They _____ students, they are teachers.",
             "o": {
-                "A": "sing",
-                "B": "sings",
-                "C": "are singing",
-                "D": "is singing",
-                "E": "sang"
+                "A": "aren't",
+                "B": "isn't",
+                "C": "don't",
+                "D": "doesn't",
+                "E": "not"
             },
-            "c": "C",
-            "d": 1.4,
-            "r": 20,
-            "h": "'Listen!' (Dinle!) anlık bir durumu belirtir. Özne 'They' olduğu için uygun yardımcı fiili seç."
+            "c": "A",
+            "d": 1.2,
+            "r": 12,
+            "h": "Çoğul özne (They) için olumsuz durum cümlesi: 'aren't'."
         }
     ]
 }

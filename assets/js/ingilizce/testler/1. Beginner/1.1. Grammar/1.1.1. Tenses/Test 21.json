@@ -1,0 +1,311 @@
+﻿{
+    "test_info": {
+        "level": "PRE-INTERMEDIATE (A2-B1)",
+        "topic": "Grammar - Present Perfect vs Simple Past",
+        "test_no": 21,
+        "description": "Serinin yirmi birinci testi. 2.1-2.5 zorluk seviyesinde. Belirli geçmiş zaman (Simple Past) ile belirsiz geçmiş zaman (Present Perfect) arasındaki farklar ve zaman zarfı ipuçları.",
+        "block": "3/4 (Moderate)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "I _____ my keys yesterday.",
+            "o": {
+                "A": "have lost",
+                "B": "lost",
+                "C": "has lost",
+                "D": "lose",
+                "E": "losing"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Zaman zarfı 'yesterday' (dün). Eylem belirli bir geçmiş zamanda olmuş.\n\nKISA DERS: Zaman belliyse (yesterday, last week) Simple Past Tense (V2) kullanılır. Lost."
+        },
+        {
+            "i": 2,
+            "t": "I _____ my keys. I can't find them now.",
+            "o": {
+                "A": "lost",
+                "B": "have lost",
+                "C": "did lose",
+                "D": "was losing",
+                "E": "lose"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Zaman belli değil, ama etkisi sürüyor (şu an bulamıyorum).\n\nKISA DERS: Olayın ne zaman olduğu değil, sonucu önemliyse Present Perfect (Have + V3) kullanılır."
+        },
+        {
+            "i": 3,
+            "t": "She _____ to Paris in 2015.",
+            "o": {
+                "A": "has gone",
+                "B": "went",
+                "C": "has been",
+                "D": "going",
+                "E": "goes"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "2015 belirli bir tarihtir ve geçmişte kalmıştır.\n\nKISA DERS: Tarih veriliyorsa (in 1999, in 2015) Simple Past (V2) kullanılır. She went."
+        },
+        {
+            "i": 4,
+            "t": "She _____ to Paris three times.",
+            "o": {
+                "A": "went",
+                "B": "has been",
+                "C": "did go",
+                "D": "was",
+                "E": "goes"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "Hayatı boyunca 3 kez gitmiş. Zaman belirsiz, tecrübe önemli.\n\nKISA DERS: Tekrar sayıları ve hayat tecrübeleri Present Perfect ile anlatılır. She has been."
+        },
+        {
+            "i": 5,
+            "t": "_____ you ever seen a shark?",
+            "o": {
+                "A": "Did",
+                "B": "Do",
+                "C": "Have",
+                "D": "Are",
+                "E": "Were"
+            },
+            "c": "C",
+            "d": 2.2,
+            "r": 15,
+            "h": "İpucu 'Ever' (Hiç). Hayat tecrübesi soruluyor.\n\nKISA DERS: 'Have you ever...' kalıbı Present Perfect Tense'dir."
+        },
+        {
+            "i": 6,
+            "t": "_____ you see the news last night?",
+            "o": {
+                "A": "Have",
+                "B": "Did",
+                "C": "Do",
+                "D": "Were",
+                "E": "Are"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Zaman zarfı 'last night' (dün gece).\n\nKISA DERS: 'Last night' geçmiş zamanı işaret eder. Soru 'Did' ile sorulur."
+        },
+        {
+            "i": 7,
+            "t": "My friend is a writer. He _____ many books.",
+            "o": {
+                "A": "wrote",
+                "B": "has written",
+                "C": "writes",
+                "D": "writed",
+                "E": "was writing"
+            },
+            "c": "B",
+            "d": 2.4,
+            "r": 18,
+            "h": "Arkadaşım hala hayatta ve yazar. Birçok kitap yazmış (ve yazmaya devam edebilir).\n\nKISA DERS: Yaşayan kişilerin hayat boyu yaptıkları işler (toplamda şu kadar yaptı) Present Perfect ile anlatılır. Has written."
+        },
+        {
+            "i": 8,
+            "t": "Shakespeare _____ many plays.",
+            "o": {
+                "A": "has written",
+                "B": "wrote",
+                "C": "writes",
+                "D": "writed",
+                "E": "was writing"
+            },
+            "c": "B",
+            "d": 2.5,
+            "r": 18,
+            "h": "Shakespeare öldü. Artık yeni kitap yazamaz.\n\nKISA DERS: Tarihi karakterlerin yaptıkları işler artık değişmeyeceği için Simple Past (V2) kullanılır. Wrote."
+        },
+        {
+            "i": 9,
+            "t": "I _____ my finger! It hurts.",
+            "o": {
+                "A": "cut",
+                "B": "have cut",
+                "C": "did cut",
+                "D": "cutting",
+                "E": "cuts"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "Parmağımı kestim ve şu an acıyor (etkisi taze).\n\nKISA DERS: Yeni olmuş ve etkisi süren olaylarda Present Perfect kullanılır. I have cut."
+        },
+        {
+            "i": 10,
+            "t": "When _____ you arrive?",
+            "o": {
+                "A": "have",
+                "B": "did",
+                "C": "are",
+                "D": "were",
+                "E": "do"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Soru kelimesi 'When'.\n\nKISA DERS: 'When' (ne zaman) sorusu kesin bir zamanı sorduğu için DAİMA Simple Past (Did) ile kullanılır. Present Perfect ile 'When' kullanılmaz."
+        },
+        {
+            "i": 11,
+            "t": "We _____ him since Monday.",
+            "o": {
+                "A": "didn't see",
+                "B": "haven't seen",
+                "C": "don't see",
+                "D": "weren't seeing",
+                "E": "not see"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "İpucu 'Since' (den beri). Pazartesi'den beri görmedik.\n\nKISA DERS: 'Since' ve 'For' genellikle Present Perfect ile kullanılır. Haven't seen."
+        },
+        {
+            "i": 12,
+            "t": "We _____ him two days ago.",
+            "o": {
+                "A": "didn't see",
+                "B": "haven't seen",
+                "C": "don't see",
+                "D": "weren't seeing",
+                "E": "not saw"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 15,
+            "h": "İpucu 'Ago' (önce).\n\nKISA DERS: 'Ago' kelimesi her zaman Simple Past Tense (V2/Did) gerektirir. Didn't see."
+        },
+        {
+            "i": 13,
+            "t": "Look! Someone _____ the window.",
+            "o": {
+                "A": "broke",
+                "B": "has broken",
+                "C": "breaks",
+                "D": "is breaking",
+                "E": "did break"
+            },
+            "c": "B",
+            "d": 2.4,
+            "r": 18,
+            "h": "Bak! Cam kırılmış (kırık duruyor). Olayın ne zaman olduğu değil, şu anki hali önemli.\n\nKISA DERS: Geçmiş eylemin sonucu şu an görülüyorsa Present Perfect kullanılır. Has broken."
+        },
+        {
+            "i": 14,
+            "t": "They _____ to London last month.",
+            "o": {
+                "A": "have moved",
+                "B": "moved",
+                "C": "move",
+                "D": "moving",
+                "E": "has moved"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Zaman zarfı 'last month' (geçen ay).\n\nKISA DERS: Zaman belliyse Simple Past. Moved."
+        },
+        {
+            "i": 15,
+            "t": "How long _____ you known Mary?",
+            "o": {
+                "A": "did",
+                "B": "have",
+                "C": "do",
+                "D": "are",
+                "E": "were"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "Ne kadar süredir tanıyorsun? Fiil 'known' (V3).\n\nKISA DERS: 'How long' ve fiilin 3. hali varsa Present Perfect'tir. Have you known."
+        },
+        {
+            "i": 16,
+            "t": "I _____ hungry. I haven't eaten anything.",
+            "o": {
+                "A": "am",
+                "B": "was",
+                "C": "have",
+                "D": "did",
+                "E": "had"
+            },
+            "c": "A",
+            "d": 2.2,
+            "r": 15,
+            "h": "Açım (şu an). Çünkü bir şey yemedim (Present Perfect).\n\nKISA DERS: Sonucun şu anki durumunu anlatırken 'am/is/are' kullanılır. I am hungry."
+        },
+        {
+            "i": 17,
+            "t": "_____ you finish the report yet?",
+            "o": {
+                "A": "Did",
+                "B": "Have",
+                "C": "Do",
+                "D": "Are",
+                "E": "Were"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "Cümle sonunda 'yet' var. Ana fiil 'finish' (V3 gibi düşün, düzenli olduğu için V2 ile aynı görünür ama 'yet' ipucudur).\n\nKISA DERS: 'Yet' varsa Present Perfect kullanılır. Have you finished (bazen d düşer konuşmada ama yazıda finished'dir, soruda yalın gibi durabilir ama have ile v3 gelir)."
+        },
+        {
+            "i": 18,
+            "t": "I _____ finish the report yesterday.",
+            "o": {
+                "A": "haven't",
+                "B": "didn't",
+                "C": "don't",
+                "D": "wasn't",
+                "E": "not"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Zaman zarfı 'yesterday'. Olumsuzluk.\n\nKISA DERS: Dün dediği için Simple Past olumsuzu 'didn't' kullanılır."
+        },
+        {
+            "i": 19,
+            "t": "She has _____ eaten sushi.",
+            "o": {
+                "A": "yesterday",
+                "B": "ago",
+                "C": "last",
+                "D": "never",
+                "E": "in 2010"
+            },
+            "c": "D",
+            "d": 2.2,
+            "r": 15,
+            "h": "Cümle yapısı 'has + V3'. Araya zaman zarfı gelmiş.\n\nKISA DERS: 'Never, just, already' gibi zarflar Present Perfect ile kullanılır. Diğer şıklar Simple Past zarfıdır."
+        },
+        {
+            "i": 20,
+            "t": "I _____ breakfast at 7:00 this morning.",
+            "o": {
+                "A": "have had",
+                "B": "had",
+                "C": "have",
+                "D": "having",
+                "E": "has"
+            },
+            "c": "B",
+            "d": 2.4,
+            "r": 18,
+            "h": "Şu an saat 11:00 olsun. Sabah 7:00 geçmişte kaldı. Kesin bir saat verilmiş.\n\nKISA DERS: Kesin bir saat (at 7:00) verildiğinde Simple Past (Had) tercih edilir."
+        }
+    ]
+}

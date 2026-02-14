@@ -1,0 +1,311 @@
+﻿{
+    "test_info": {
+        "level": "PRE-INTERMEDIATE (A2-B1)",
+        "topic": "Grammar - Present Perfect Tense (Have/Has + V3)",
+        "test_no": 19,
+        "description": "Serinin on dokuzuncu testi. 2.1-2.5 zorluk seviyesinde. Present Perfect Tense yapısı (Have/Has + V3), Ever, Never, Just, Yet kullanımı.",
+        "block": "3/4 (Moderate)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "I _____ finished my homework.",
+            "o": {
+                "A": "have",
+                "B": "has",
+                "C": "am",
+                "D": "did",
+                "E": "was"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 15,
+            "h": "Ödevimi bitirdim (etkisi sürüyor/yeni bitti). Fiil 'finished' (V3/ed).\n\nKISA DERS: Present Perfect Tense yapısında 'I/You/We/They' özneleri 'Have' yardımcı fiilini alır. 'I have finished'."
+        },
+        {
+            "i": 2,
+            "t": "She _____ visited London twice.",
+            "o": {
+                "A": "have",
+                "B": "has",
+                "C": "is",
+                "D": "was",
+                "E": "did"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Hayat tecrübesi (iki kez gitti). Özne 'She'.\n\nKISA DERS: Present Perfect yapısında tekil şahıslar (He/She/It) 'Has' alır. She has visited."
+        },
+        {
+            "i": 3,
+            "t": "We have _____ a new car.",
+            "o": {
+                "A": "buy",
+                "B": "bought",
+                "C": "buying",
+                "D": "buys",
+                "E": "buyed"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 18,
+            "h": "Fiil 'buy' (satın almak). 'Have'den sonra fiilin 3. hali gelir.\n\nKISA DERS: 'Buy' fiili düzensizdir. 1. Buy - 2. Bought - 3. Bought. Doğru cevap 'Bought'tur."
+        },
+        {
+            "i": 4,
+            "t": "_____ you ever seen a ghost?",
+            "o": {
+                "A": "Did",
+                "B": "Do",
+                "C": "Are",
+                "D": "Have",
+                "E": "Has"
+            },
+            "c": "D",
+            "d": 2.2,
+            "r": 15,
+            "h": "Hiç hayalet gördün mü? 'Ever' kelimesi ipucudur.\n\nKISA DERS: Hayat tecrübesi sorarken 'Have you ever...?' kalıbı kullanılır."
+        },
+        {
+            "i": 5,
+            "t": "He has _____ his keys.",
+            "o": {
+                "A": "lose",
+                "B": "lost",
+                "C": "losing",
+                "D": "losed",
+                "E": "loses"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Anahtarlarını kaybetti (ve şu an hala kayıp). 'Lose' fiilinin 3. hali.\n\nKISA DERS: Lose - Lost - Lost. V3 hali 'Lost'tur. He has lost."
+        },
+        {
+            "i": 6,
+            "t": "They haven't _____ lunch yet.",
+            "o": {
+                "A": "eat",
+                "B": "ate",
+                "C": "eaten",
+                "D": "eating",
+                "E": "eats"
+            },
+            "c": "C",
+            "d": 2.4,
+            "r": 18,
+            "h": "Henüz öğle yemeği yemediler. Fiil 'eat'.\n\nKISA DERS: 'Eat' fiilinin çekimi: Eat (V1) - Ate (V2) - Eaten (V3). Present Perfect'te V3 kullanılır."
+        },
+        {
+            "i": 7,
+            "t": "I have _____ been to Italy.",
+            "o": {
+                "A": "ever",
+                "B": "never",
+                "C": "yet",
+                "D": "since",
+                "E": "yesterday"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "İtalya'da hiç bulunmadım. Olumlu cümle yapısıyla olumsuz anlam.\n\nKISA DERS: 'Never' (asla/hiç) cümleye olumsuzluk katar ama gramer yapısı olumludur (I have never...). 'Ever' sadece sorularda kullanılır."
+        },
+        {
+            "i": 8,
+            "t": "She has _____ finished her work.",
+            "o": {
+                "A": "yet",
+                "B": "just",
+                "C": "ever",
+                "D": "ago",
+                "E": "since"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "İşini 'tam şimdi/az önce' bitirdi.\n\nKISA DERS: 'Just' yardımcı fiil (has) ile ana fiil (finished) arasına gelir ve eylemin çok kısa süre önce bittiğini anlatır."
+        },
+        {
+            "i": 9,
+            "t": "Have you done your homework _____?",
+            "o": {
+                "A": "just",
+                "B": "already",
+                "C": "yet",
+                "D": "ever",
+                "E": "never"
+            },
+            "c": "C",
+            "d": 2.3,
+            "r": 15,
+            "h": "Ödevini yaptın mı (henüz)? Soru cümlesinin sonu.\n\nKISA DERS: Soru ve olumsuz cümlelerin sonunda 'Yet' (henüz) kullanılır."
+        },
+        {
+            "i": 10,
+            "t": "We have _____ this movie before.",
+            "o": {
+                "A": "see",
+                "B": "saw",
+                "C": "seen",
+                "D": "seeing",
+                "E": "seed"
+            },
+            "c": "C",
+            "d": 2.1,
+            "r": 15,
+            "h": "Bu filmi daha önce gördük/izledik. 'See' fiilinin 3. hali.\n\nKISA DERS: See (V1) - Saw (V2) - Seen (V3). Doğru cevap 'Seen'."
+        },
+        {
+            "i": 11,
+            "t": "He has _____ his leg.",
+            "o": {
+                "A": "break",
+                "B": "broke",
+                "C": "broken",
+                "D": "breaking",
+                "E": "breaks"
+            },
+            "c": "C",
+            "d": 2.4,
+            "r": 18,
+            "h": "Bacağını kırdı. Fiil 'break'. 3. hali nedir?\n\nKISA DERS: Break (V1) - Broke (V2) - Broken (V3). He has broken his leg."
+        },
+        {
+            "i": 12,
+            "t": "_____ she arrived yet?",
+            "o": {
+                "A": "Did",
+                "B": "Has",
+                "C": "Have",
+                "D": "Is",
+                "E": "Was"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "O henüz vardı mı? Cümle sonunda 'yet' var. Özne 'She'.\n\nKISA DERS: Cümlede 'yet' varsa Present Perfect'tir. 'She' öznesi 'Has' ile sorulur."
+        },
+        {
+            "i": 13,
+            "t": "I have _____ the email.",
+            "o": {
+                "A": "write",
+                "B": "wrote",
+                "C": "written",
+                "D": "writing",
+                "E": "writed"
+            },
+            "c": "C",
+            "d": 2.3,
+            "r": 15,
+            "h": "E-postayı yazdım. Fiil 'write'.\n\nKISA DERS: Write (V1) - Wrote (V2) - Written (V3). I have written."
+        },
+        {
+            "i": 14,
+            "t": "They have _____ to Paris. (They are not here now).",
+            "o": {
+                "A": "go",
+                "B": "went",
+                "C": "gone",
+                "D": "been",
+                "E": "going"
+            },
+            "c": "C",
+            "d": 2.5,
+            "r": 20,
+            "h": "Paris'e gittiler (ve hala oradalar, dönmediler).\n\nKISA DERS: Eğer kişi gitti ve hala dönmediyse 'Gone' kullanılır. Gidip döndüyse 'Been' kullanılır. Parantezdeki bilgi dönmediklerini gösteriyor."
+        },
+        {
+            "i": 15,
+            "t": "I have already _____ my room.",
+            "o": {
+                "A": "clean",
+                "B": "cleaned",
+                "C": "cleaning",
+                "D": "cleans",
+                "E": "clenned"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Odamı çoktan temizledim. Düzenli fiil.\n\nKISA DERS: Düzenli fiillerin 2. ve 3. halleri aynıdır (-ed alır). Clean -> Cleaned."
+        },
+        {
+            "i": 16,
+            "t": "_____ you ever ridden a horse?",
+            "o": {
+                "A": "Has",
+                "B": "Did",
+                "C": "Have",
+                "D": "Are",
+                "E": "Do"
+            },
+            "c": "C",
+            "d": 2.2,
+            "r": 15,
+            "h": "Hiç ata bindin mi? Fiil 'ridden' (Ride-V3). Özne 'You'.\n\nKISA DERS: 'Have you ever...' kalıbı."
+        },
+        {
+            "i": 17,
+            "t": "My phone _____ stopped working.",
+            "o": {
+                "A": "have",
+                "B": "has",
+                "C": "is",
+                "D": "did",
+                "E": "was"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Telefonum çalışmayı durdurdu (bozuldu). Özne 'My phone' (It).\n\nKISA DERS: Tekil öznelerde 'Has' + V3 kullanılır."
+        },
+        {
+            "i": 18,
+            "t": "We have _____ known him for years.",
+            "o": {
+                "A": "know",
+                "B": "knew",
+                "C": "known",
+                "D": "knowing",
+                "E": "knows"
+            },
+            "c": "C",
+            "d": 2.3,
+            "r": 15,
+            "h": "Onu yıllardır tanıyoruz. Fiil 'know' (bilmek/tanımak).\n\nKISA DERS: Know (V1) - Knew (V2) - Known (V3). We have known."
+        },
+        {
+            "i": 19,
+            "t": "She has _____ drank coffee.",
+            "o": {
+                "A": "never",
+                "B": "ever",
+                "C": "yet",
+                "D": "since",
+                "E": "ago"
+            },
+            "c": "A",
+            "d": 2.4,
+            "r": 18,
+            "h": "O hiç kahve içmedi. Cümle gramer olarak olumlu (has), anlam olumsuz olmalı.\n\nKISA DERS: 'She has never drank...' (Not: 'Drunk' daha yaygın V3 olsa da 'Drank' V3 olarak da konuşma dilinde kullanılır, burada odak 'Never')."
+        },
+        {
+            "i": 20,
+            "t": "I haven't _____ you for a long time.",
+            "o": {
+                "A": "see",
+                "B": "saw",
+                "C": "seen",
+                "D": "seeing",
+                "E": "seed"
+            },
+            "c": "C",
+            "d": 2.2,
+            "r": 15,
+            "h": "Seni uzun zamandır görmedim. Fiil 'see'.\n\nKISA DERS: Olumsuz cümlede 'Have not' + V3 (Seen) kullanılır."
+        }
+    ]
+}

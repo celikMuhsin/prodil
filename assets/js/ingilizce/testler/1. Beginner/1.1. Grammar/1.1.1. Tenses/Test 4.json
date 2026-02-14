@@ -1,310 +1,311 @@
 ﻿{
-    "test_info":  {
-                      "level":  "BEGINNER (A1-A2)",
-                      "topic":  "Grammar - Tenses",
-                      "test_no":  4,
-                      "description":  "Present Perfect Tense: \u0027Have/Has + V3\u0027, \u0027Since/For\u0027, \u0027Just/Already/Yet\u0027 kullanımı ve Past Simple ayrımı."
-                  },
-    "questions":  [
-                      {
-                          "i":  1,
-                          "t":  "I _____ finished my homework. Can I go out now?",
-                          "o":  {
-                                    "A":  "has",
-                                    "B":  "have",
-                                    "C":  "am",
-                                    "D":  "did",
-                                    "E":  "was"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Present Perfect Tense\u0027de \u0027I\u0027 öznesi ile hangi yardımcı fiil kullanılır?"
-                      },
-                      {
-                          "i":  2,
-                          "t":  "She _____ visited London twice.",
-                          "o":  {
-                                    "A":  "have",
-                                    "B":  "having",
-                                    "C":  "has",
-                                    "D":  "is",
-                                    "E":  "did"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Üçüncü tekil şahıs (She) için Present Perfect yardımcı fiili nedir?"
-                      },
-                      {
-                          "i":  3,
-                          "t":  "We _____ cleaned the house. It is dirty.",
-                          "o":  {
-                                    "A":  "haven\u0027t",
-                                    "B":  "hasn\u0027t",
-                                    "C":  "didn\u0027t",
-                                    "D":  "don\u0027t",
-                                    "E":  "aren\u0027t"
-                                },
-                          "c":  "A",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Cümlenin ikinci kısmı evin kirli olduğunu söylüyor. Demek ki temizleme eylemi yapılmamış."
-                      },
-                      {
-                          "i":  4,
-                          "t":  "_____ you ever eaten Sushi?",
-                          "o":  {
-                                    "A":  "Do",
-                                    "B":  "Did",
-                                    "C":  "Has",
-                                    "D":  "Are",
-                                    "E":  "Have"
-                                },
-                          "c":  "E",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Bir tecrübeyi sorarken \u0027Ever\u0027 kullanılmış. Bu yapı \u0027Have you...?\u0027 kalıbıdır."
-                      },
-                      {
-                          "i":  5,
-                          "t":  "He has _____ his keys. He can\u0027t open the door.",
-                          "o":  {
-                                    "A":  "lose",
-                                    "B":  "lost",
-                                    "C":  "losing",
-                                    "D":  "losed",
-                                    "E":  "loses"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Present Perfect Tense\u0027de fiilin 3. hali (V3) kullanılır. \u0027Lose\u0027 düzensiz bir fiildir."
-                      },
-                      {
-                          "i":  6,
-                          "t":  "I have lived in Sakarya _____ 2010.",
-                          "o":  {
-                                    "A":  "for",
-                                    "B":  "since",
-                                    "C":  "ago",
-                                    "D":  "in",
-                                    "E":  "at"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Eylemin başlangıç noktası (tarih/yıl) verildiğinde \u0027since\u0027 kullanılır."
-                      },
-                      {
-                          "i":  7,
-                          "t":  "They have been married _____ ten years.",
-                          "o":  {
-                                    "A":  "since",
-                                    "B":  "from",
-                                    "C":  "for",
-                                    "D":  "ago",
-                                    "E":  "in"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Bir süreç veya zaman dilimi (on yıl) belirtiliyorsa \u0027for\u0027 kullanılır."
-                      },
-                      {
-                          "i":  8,
-                          "t":  "Have you called your mother _____?",
-                          "o":  {
-                                    "A":  "just",
-                                    "B":  "already",
-                                    "C":  "yet",
-                                    "D":  "never",
-                                    "E":  "since"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Soru cümlelerinin ve olumsuz cümlelerin sonunda \u0027henüz\u0027 anlamında kullanılan kelime hangisidir?"
-                      },
-                      {
-                          "i":  9,
-                          "t":  "I have _____ seen that movie. It was great.",
-                          "o":  {
-                                    "A":  "yet",
-                                    "B":  "already",
-                                    "C":  "ever",
-                                    "D":  "since",
-                                    "E":  "for"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Eylemin beklenenden önce yapıldığını veya tamamlandığını belirtmek için \u0027already\u0027 kullanılır."
-                      },
-                      {
-                          "i":  10,
-                          "t":  "She has _____ been to Italy.",
-                          "o":  {
-                                    "A":  "ever",
-                                    "B":  "yet",
-                                    "C":  "never",
-                                    "D":  "since",
-                                    "E":  "didn\u0027t"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Cümle yapıca olumlu ama anlamca olumsuz. \u0027Hiç bulunmadı\u0027 demek istiyoruz."
-                      },
-                      {
-                          "i":  11,
-                          "t":  "Where is Ali? He _____ to the market.",
-                          "o":  {
-                                    "A":  "has gone",
-                                    "B":  "has been",
-                                    "C":  "have gone",
-                                    "D":  "did go",
-                                    "E":  "was going"
-                                },
-                          "c":  "A",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Ali şu an burada değil, markete gitmiş ve henüz dönmemiş. (Gone vs Been ayrımı)."
-                      },
-                      {
-                          "i":  12,
-                          "t":  "My father _____ just _____ home.",
-                          "o":  {
-                                    "A":  "have / come",
-                                    "B":  "has / came",
-                                    "C":  "has / come",
-                                    "D":  "did / come",
-                                    "E":  "is / coming"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "\u0027Just\u0027 (az önce), Present Perfect ile kullanılır. \u0027Come\u0027 fiilinin 3. hali yine \u0027come\u0027dır."
-                      },
-                      {
-                          "i":  13,
-                          "t":  "I _____ him yesterday, but I _____ him today.",
-                          "o":  {
-                                    "A":  "have seen / haven\u0027t seen",
-                                    "B":  "saw / haven\u0027t seen",
-                                    "C":  "saw / didn\u0027t see",
-                                    "D":  "have seen / didn\u0027t see",
-                                    "E":  "see / saw"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "\u0027Yesterday\u0027 kesin bir geçmiş zamandır (Simple Past). \u0027Today\u0027 ise henüz bitmemiş bir zamandır (Present Perfect)."
-                      },
-                      {
-                          "i":  14,
-                          "t":  "_____ you finish the report yet?",
-                          "o":  {
-                                    "A":  "Did",
-                                    "B":  "Have",
-                                    "C":  "Are",
-                                    "D":  "Do",
-                                    "E":  "Has"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Cümle sonunda \u0027yet\u0027 var. Bu Present Perfect bir sorudur."
-                      },
-                      {
-                          "i":  15,
-                          "t":  "We _____ in this house for 20 years, and we still live here.",
-                          "o":  {
-                                    "A":  "lived",
-                                    "B":  "have lived",
-                                    "C":  "live",
-                                    "D":  "are living",
-                                    "E":  "were living"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Geçmişte başlayıp günümüzde hala devam eden eylemler için Present Perfect kullanılır."
-                      },
-                      {
-                          "i":  16,
-                          "t":  "Shakespeare _____ many plays.",
-                          "o":  {
-                                    "A":  "has written",
-                                    "B":  "wrote",
-                                    "C":  "writes",
-                                    "D":  "is writing",
-                                    "E":  "has wrote"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Shakespeare hayatta değil. Eylemleri geçmişte kaldı ve bitti. Bu yüzden Simple Past kullanılır."
-                      },
-                      {
-                          "i":  17,
-                          "t":  "Ow! I _____ my finger.",
-                          "o":  {
-                                    "A":  "cut",
-                                    "B":  "have cut",
-                                    "C":  "cutting",
-                                    "D":  "was cut",
-                                    "E":  "did cut"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Olay yeni oldu ve acısı/etkisi hala devam ediyor. Zaman belirtilmemiş."
-                      },
-                      {
-                          "i":  18,
-                          "t":  "_____ she _____ her homework?",
-                          "o":  {
-                                    "A":  "Did / finished",
-                                    "B":  "Has / finished",
-                                    "C":  "Has / finish",
-                                    "D":  "Have / finished",
-                                    "E":  "Is / finishing"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Present Perfect soru cümlesi. \u0027Finish\u0027 düzenli bir fiildir, \u0027-ed\u0027 alır."
-                      },
-                      {
-                          "i":  19,
-                          "t":  "I am not hungry. I have _____ had lunch.",
-                          "o":  {
-                                    "A":  "yet",
-                                    "B":  "ever",
-                                    "C":  "just",
-                                    "D":  "since",
-                                    "E":  "ago"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Tokum çünkü yemeği \u0027az önce\u0027 yedim."
-                      },
-                      {
-                          "i":  20,
-                          "t":  "When _____ you _____ to learn English?",
-                          "o":  {
-                                    "A":  "have / started",
-                                    "B":  "did / start",
-                                    "C":  "did / started",
-                                    "D":  "have / start",
-                                    "E":  "were / start"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "\u0027When\u0027 (Ne zaman) sorusu kesin bir zamanı sorar. Present Perfect ile \u0027When\u0027 sorusu sorulmaz, Simple Past kullanılır."
-                      }
-                  ]
+    "test_info": {
+        "level": "BEGINNER (A0-A1)",
+        "topic": "Grammar - Basic Tenses (Mixed)",
+        "test_no": 4,
+        "description": "Serinin dördüncü testi. Başlangıç seviyesindeki 'To Be', 'Present Simple' ve 'Present Continuous' yapılarını pekiştirmek için 1.0-1.5 zorluk seviyesinde sorular. Geniş kapsamlı konu anlatımlı ipuçları içerir.",
+        "block": "1/4 (Very Easy)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "This _____ my book.",
+            "o": {
+                "A": "are",
+                "B": "is",
+                "C": "am",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "B",
+            "d": 1.0,
+            "r": 10,
+            "h": "'This' (Bu) işaret zamiri tekil bir nesneyi gösterir. Tekil nesneler için 'to be' fiili nedir?\n\nKISA DERS: İşaret zamirlerinde 'This' (Bu) ve 'That' (Şu) tekildir ve her zaman 'is' alır. Çoğul olanlar 'These' ve 'Those' ise 'are' alır."
+        },
+        {
+            "i": 2,
+            "t": "Where _____ you live?",
+            "o": {
+                "A": "are",
+                "B": "is",
+                "C": "do",
+                "D": "does",
+                "E": "am"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Ana fiilimiz 'live' (yaşamak). Geniş zamanda 'You' öznesi ile soru sorarken hangi yardımcı fiil kullanılır?\n\nKISA DERS: 'Live', 'Go', 'Play' gibi eylem bildiren fiillerde, Geniş Zaman (Simple Present) soruları 'Do' veya 'Does' ile sorulur. 'You' öznesi 'Do' alır. 'Are' olması için fiilin '-ing' alması veya isim cümlesi olması gerekirdi."
+        },
+        {
+            "i": 3,
+            "t": "My friends _____ playing football.",
+            "o": {
+                "A": "is",
+                "B": "am",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Özne 'My friends' (Arkadaşlarım). Çoğul olduğunu '-s' takısından anlıyoruz. Şimdiki zamanda çoğul özne ne alır?\n\nKISA DERS: Özne çoğulsa (They), 'to be' fiili 'are' olur. Tekil olsaydı (My friend) 'is' olurdu. Fiil '-ing' aldığı için (playing) bu bir şimdiki zaman cümlesidir."
+        },
+        {
+            "i": 4,
+            "t": "She _____ tea every morning.",
+            "o": {
+                "A": "drink",
+                "B": "drinks",
+                "C": "drinking",
+                "D": "is drink",
+                "E": "are drinking"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "'Every morning' (her sabah) bir alışkanlıktır, yani Geniş Zaman. Özne 'She' olduğuna göre fiile dikkat et.\n\nKISA DERS: Simple Present Tense'de 3. tekil şahıslar (He/She/It) fiile '-s' takısı getirir. Bu yüzden 'drink' değil 'drinks' doğrudur."
+        },
+        {
+            "i": 5,
+            "t": "I _____ not hungry.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "am",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.0,
+            "r": 10,
+            "h": "Durum bildiriyor (aç değilim). 'I' (Ben) öznesi ile olumsuz cümle nasıl kurulur?\n\nKISA DERS: 'Hungry' (aç) bir sıfattır, fiil değildir. Sıfat cümlelerinde 'to be' kullanılır. 'I' öznesi 'am' alır. Olumsuzu 'I am not' tır."
+        },
+        {
+            "i": 6,
+            "t": "_____ Ali and Ayşe study together?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Is",
+                "D": "Are",
+                "E": "Has"
+            },
+            "c": "A",
+            "d": 1.5,
+            "r": 15,
+            "h": "Özneye dikkat: Ali VE Ayşe. Yani iki kişi (Onlar/They). Geniş zaman sorusunda çoğul özne ne alır?\n\nKISA DERS: Özne birden fazla kişiyse (Ali and Ayşe = They), soru sorarken 'Does' DEĞİL 'Do' kullanılır. 'Does' sadece tek bir kişi (He/She) içindir."
+        },
+        {
+            "i": 7,
+            "t": "It _____ snowing outside.",
+            "o": {
+                "A": "are",
+                "B": "do",
+                "C": "does",
+                "D": "is",
+                "E": "am"
+            },
+            "c": "D",
+            "d": 1.2,
+            "r": 12,
+            "h": "Hava olayı (snowing). Özne 'It'. Şimdiki zamanda tekil cansız varlıklar ne alır?\n\nKISA DERS: 'It' öznesi ile şimdiki zamanda 'is' yardımcı fiili kullanılır. 'It is snowing.' (Kar yağıyor.)"
+        },
+        {
+            "i": 8,
+            "t": "We _____ speak French.",
+            "o": {
+                "A": "aren't",
+                "B": "isn't",
+                "C": "don't",
+                "D": "doesn't",
+                "E": "not"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Fiil 'speak' (konuşmak). 'Biz Fransızca konuşmayız' demek için geniş zaman olumsuzu gerekir.\n\nKISA DERS: Geniş zamanda fiil cümlelerini olumsuz yaparken 'don't' veya 'doesn't' kullanılır. 'We' öznesi 'don't' alır. 'Aren't' kullanmak için fiilin '-ing' alması gerekirdi (speaking)."
+        },
+        {
+            "i": 9,
+            "t": "Are they _____ to music?",
+            "o": {
+                "A": "listen",
+                "B": "listens",
+                "C": "listening",
+                "D": "listened",
+                "E": "to listen"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Soru 'Are' ile başlamış. Bu bir şimdiki zaman sorusudur. Fiil nasıl olmalı?\n\nKISA DERS: Eğer cümlede yardımcı fiil olarak 'Am/Is/Are' varsa ve eylem devam ediyorsa, ana fiil mutlaka '-ing' takısı almalıdır (Present Continuous Tense)."
+        },
+        {
+            "i": 10,
+            "t": "My father _____ a doctor.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "am",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "A",
+            "d": 1.1,
+            "r": 10,
+            "h": "Meslek bildiriyor. 'My father' (Babam) tekil bir şahıstır (He).\n\nKISA DERS: Meslekleri söylerken 'to be' fiili kullanılır. Tekil şahıslar için 'is' kullanılır. 'He is a doctor.'"
+        },
+        {
+            "i": 11,
+            "t": "_____ you happy with your new job?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Are",
+                "D": "Is",
+                "E": "Am"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Cümlede fiil yok, 'happy' (mutlu) bir sıfattır. Durum sorusu soruluyor.\n\nKISA DERS: Sıfatlarda ve durum bildiren cümlelerde soru sorarken 'Do/Does' kullanılmaz, 'Am/Is/Are' kullanılır. 'You' öznesi için 'Are' başa gelir."
+        },
+        {
+            "i": 12,
+            "t": "The sun _____ hot.",
+            "o": {
+                "A": "are",
+                "B": "am",
+                "C": "do",
+                "D": "is",
+                "E": "does"
+            },
+            "c": "D",
+            "d": 1.0,
+            "r": 10,
+            "h": "Güneş (The sun) tekil bir varlıktır (It). Durum cümlesi (sıcak).\n\nKISA DERS: Tekil özneler ve doğa unsurları (Sun, Moon, Sky) 'It' kabul edilir ve 'to be' fiili olarak 'is' alırlar."
+        },
+        {
+            "i": 13,
+            "t": "She _____ usually go to bed late.",
+            "o": {
+                "A": "don't",
+                "B": "doesn't",
+                "C": "isn't",
+                "D": "aren't",
+                "E": "not"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Geniş zaman (usually). Özne 'She'. Olumsuzluk yaparken ne kullanılır?\n\nKISA DERS: Geniş zamanda 'She' öznesi olumsuzlukta 'doesn't' alır. Fiil (go) yalın hale döner. 'Isn't' olması için fiilin 'going' olması gerekirdi."
+        },
+        {
+            "i": 14,
+            "t": "Look! The bus _____ coming.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "do",
+                "D": "does",
+                "E": "am"
+            },
+            "c": "A",
+            "d": 1.2,
+            "r": 12,
+            "h": "'Bus' (Otobüs) tekildir (It). Fiil '-ing' almış (coming). Eksik olan nedir?\n\nKISA DERS: Present Continuous Tense yapısında yardımcı fiil unutulmamalıdır. Tekil özneler (The bus) 'is' alır."
+        },
+        {
+            "i": 15,
+            "t": "_____ they want to come with us?",
+            "o": {
+                "A": "Are",
+                "B": "Is",
+                "C": "Do",
+                "D": "Does",
+                "E": "Have"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Fiil 'want' (istemek). Durum değil, eylem bildirir (Stative verb olsa da gramer olarak Geniş Zaman kurallarına uyar). 'They' için soru eki nedir?\n\nKISA DERS: 'Want', 'Like', 'Know' gibi fiiller genellikle Geniş Zaman ile kullanılır. Soru sorarken 'They' öznesi için 'Do' başa gelir."
+        },
+        {
+            "i": 16,
+            "t": "I _____ reading a newspaper.",
+            "o": {
+                "A": "am",
+                "B": "is",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "A",
+            "d": 1.1,
+            "r": 10,
+            "h": "Özne 'I'. Fiil 'reading'. Çok temel bir şimdiki zaman kuralı.\n\nKISA DERS: İngilizcede 'I' (Ben) öznesi şimdiki zamanda SADECE 'am' yardımcı fiilini alır. Başka hiçbir özne 'am' almaz."
+        },
+        {
+            "i": 17,
+            "t": "Cats _____ milk.",
+            "o": {
+                "A": "like",
+                "B": "likes",
+                "C": "liking",
+                "D": "is like",
+                "E": "are like"
+            },
+            "c": "A",
+            "d": 1.4,
+            "r": 15,
+            "h": "Genel bir gerçekten bahsediyoruz (Geniş Zaman). Özne 'Cats' çoğul. Fiil nasıl olmalı?\n\nKISA DERS: Geniş zamanda özne çoğulsa (Cats = They), fiil HİÇBİR ek almaz, yalın kalır. Sadece tekil öznelerde (Cat = It) '-s' takısı gelir."
+        },
+        {
+            "i": 18,
+            "t": "What time _____ it?",
+            "o": {
+                "A": "are",
+                "B": "am",
+                "C": "is",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.0,
+            "r": 10,
+            "h": "Saati sorarken kullanılan kalıp. Özne 'it' (zaman).\n\nKISA DERS: Saati sorarken 'What time is it?' kalıbı kullanılır. Çünkü zaman (time) tekil ve soyut bir kavramdır, 'is' alır."
+        },
+        {
+            "i": 19,
+            "t": "_____ your father work here?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Is",
+                "D": "Are",
+                "E": "Has"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Özne 'Your father' (Senin baban). Bu 'He' demektir. Fiil 'work'. Soru eki ne olmalı?\n\nKISA DERS: Sahiplik sıfatları (Your, My, His) sizi şaşırtmasın. Önemli olan asıl öznedir (Father). Baba tekil olduğu için 'Does' kullanılır."
+        },
+        {
+            "i": 20,
+            "t": "They _____ not at the cinema.",
+            "o": {
+                "A": "do",
+                "B": "does",
+                "C": "are",
+                "D": "is",
+                "E": "have"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Yer bildiriyor (sinemada). Fiil yok. 'They' öznesi ile olumsuz durum cümlesi.\n\nKISA DERS: Yer, konum ve durum bildiren cümlelerde fiil yoksa 'To Be' kullanılır. 'They' için 'are' (olumsuzda aren't veya are not) kullanılır."
+        }
+    ]
 }

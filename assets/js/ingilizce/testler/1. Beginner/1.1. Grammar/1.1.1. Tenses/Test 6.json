@@ -1,0 +1,311 @@
+{
+    "test_info": {
+        "level": "BEGINNER (A0-A1)",
+        "topic": "Grammar - Basic Tenses (Mixed)",
+        "test_no": 6,
+        "description": "Serinin altıncı testi. 1.0-1.5 zorluk seviyesinde. Fiil ve İsim cümlelerinin ayrımı, soru kalıpları ve olumsuzluk yapıları üzerine detaylı ipuçlu sorular.",
+        "block": "1/4 (Very Easy)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "Where _____ you going?",
+            "o": {
+                "A": "do",
+                "B": "does",
+                "C": "are",
+                "D": "is",
+                "E": "am"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Fiil '-ing' almış (going). Özne 'You'. Bu bir şimdiki zaman sorusudur.\n\nKISA DERS: 'Where are you going?' (Nereye gidiyorsun?) kalıbında 'are' yardımcı fiili kullanılır. 'Do' kullanmak için fiilin yalın (go) olması gerekirdi."
+        },
+        {
+            "i": 2,
+            "t": "My brother _____ play football.",
+            "o": {
+                "A": "don't",
+                "B": "doesn't",
+                "C": "isn't",
+                "D": "aren't",
+                "E": "not"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Özne 'My brother' (He). Fiil 'play' (yalın halde). Geniş zaman olumsuzluğu.\n\nKISA DERS: Geniş zamanda 3. tekil şahıslar (He/She/It) için olumsuzluk 'doesn't' ile yapılır. 'Isn't' durum cümlelerinde veya şimdiki zamanda kullanılır."
+        },
+        {
+            "i": 3,
+            "t": "We _____ tired.",
+            "o": {
+                "A": "do",
+                "B": "does",
+                "C": "are",
+                "D": "is",
+                "E": "am"
+            },
+            "c": "C",
+            "d": 1.0,
+            "r": 10,
+            "h": "'Tired' (yorgun) bir sıfattır, fiil değildir. 'We' öznesi durum cümlelerinde ne alır?\n\nKISA DERS: Sıfatlarla 'to be' kullanılır. 'We' çoğul olduğu için 'are' alır. We are tired."
+        },
+        {
+            "i": 4,
+            "t": "_____ she study English?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Is",
+                "D": "Are",
+                "E": "Has"
+            },
+            "c": "B",
+            "d": 1.3,
+            "r": 12,
+            "h": "Fiil 'study'. Özne 'She'. Geniş zaman soru kalıbı.\n\nKISA DERS: Geniş zamanda fiil varsa ve özne tekilse (She), soru 'Does' ile başlar. Fiil yalın kalır."
+        },
+        {
+            "i": 5,
+            "t": "They _____ listening to the radio.",
+            "o": {
+                "A": "is",
+                "B": "am",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Fiil '-ing'li (listening). Şimdiki zaman. Özne 'They' (Onlar).\n\nKISA DERS: Present Continuous Tense'de çoğul özneler 'are' alır. They are listening."
+        },
+        {
+            "i": 6,
+            "t": "I _____ not a doctor.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "am",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.0,
+            "r": 10,
+            "h": "Meslek bildiren olumsuz bir cümle. 'I' öznesi ne alır?\n\nKISA DERS: 'I' öznesi sadece 'am' yardımcı fiilini alır. I am not a doctor."
+        },
+        {
+            "i": 7,
+            "t": "What time _____ the film start?",
+            "o": {
+                "A": "do",
+                "B": "does",
+                "C": "is",
+                "D": "are",
+                "E": "am"
+            },
+            "c": "B",
+            "d": 1.5,
+            "r": 15,
+            "h": "Özne 'The film' (It). Fiil 'start' (başlamak). Geniş zaman sorusu.\n\nKISA DERS: Film, otobüs, ders gibi cansız tekil öznelerde fiil sorusu sorarken 'Does' kullanılır."
+        },
+        {
+            "i": 8,
+            "t": "The cats _____ sleeping.",
+            "o": {
+                "A": "is",
+                "B": "am",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Özne 'The cats' (çoğul). Fiil '-ing' almış.\n\nKISA DERS: Çoğul özneler (They) şimdiki zamanda 'are' alır. The cats are sleeping."
+        },
+        {
+            "i": 9,
+            "t": "_____ you understand me?",
+            "o": {
+                "A": "Are",
+                "B": "Is",
+                "C": "Do",
+                "D": "Does",
+                "E": "Have"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Fiil 'understand' (anlamak). Durum fiili olsa da gramer olarak Geniş Zaman sorusudur.\n\nKISA DERS: 'Do you understand?' (Anlıyor musun?) kalıbı standarttır. Fiil olduğu için 'Are' kullanılmaz."
+        },
+        {
+            "i": 10,
+            "t": "It _____ cold in winter.",
+            "o": {
+                "A": "be",
+                "B": "is",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "B",
+            "d": 1.1,
+            "r": 10,
+            "h": "Genel bir durum (kışın soğuktur). Özne 'It'. Fiil yok, sıfat var.\n\nKISA DERS: Genel doğa olayları ve durumlarda 'It is' kullanılır."
+        },
+        {
+            "i": 11,
+            "t": "She _____ watching TV every day.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "does",
+                "D": "watches",
+                "E": "watch"
+            },
+            "c": "D",
+            "d": 1.5,
+            "r": 15,
+            "h": "Dikkat! Cümle sonunda 'every day' (her gün) var. Bu Geniş Zamandır. Şıklarda fiilin doğru hali hangisi?\n\nKISA DERS: 'Every day' geniş zamanı gösterir, şimdiki zamanı (is watching) değil. Geniş zamanda 'She' öznesi fiile '-es' takısı getirir: 'She watches'."
+        },
+        {
+            "i": 12,
+            "t": "We _____ happy today.",
+            "o": {
+                "A": "do",
+                "B": "does",
+                "C": "are",
+                "D": "is",
+                "E": "am"
+            },
+            "c": "C",
+            "d": 1.0,
+            "r": 10,
+            "h": "'Happy' bir sıfattır. 'We' öznesi durum cümlesinde ne alır?\n\nKISA DERS: Çoğul öznelerle (We) sıfat kullanıldığında 'are' yardımcı fiili gerekir."
+        },
+        {
+            "i": 13,
+            "t": "Ahmet _____ not swimming now.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "do",
+                "D": "does",
+                "E": "has"
+            },
+            "c": "A",
+            "d": 1.2,
+            "r": 12,
+            "h": "Şimdiki zaman olumsuzluğu. 'Ahmet' (He) tekil şahıstır.\n\nKISA DERS: Şimdiki zamanda tekil özneler 'is' alır. Ahmet is not swimming."
+        },
+        {
+            "i": 14,
+            "t": "_____ they live in Ankara?",
+            "o": {
+                "A": "Are",
+                "B": "Is",
+                "C": "Do",
+                "D": "Does",
+                "E": "Have"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Fiil 'live' (yaşamak). Geniş zaman sorusu. Özne 'They'.\n\nKISA DERS: 'They' öznesi ile fiil sorusu sorarken 'Do' başa gelir. 'Do they live...?'"
+        },
+        {
+            "i": 15,
+            "t": "My sister _____ beautiful eyes.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "have",
+                "D": "has",
+                "E": "do"
+            },
+            "c": "D",
+            "d": 1.4,
+            "r": 15,
+            "h": "Dikkat! 'Güzel gözleri var' demek istiyoruz. Sahiplik bildiriyor. Özne 'My sister' (She).\n\nKISA DERS: Sahip olmak fiili 'Have'dir. Ancak 3. tekil şahıslarda (He/She/It) 'Has' şekline dönüşür. 'She has beautiful eyes.'"
+        },
+        {
+            "i": 16,
+            "t": "I _____ usually drink tea.",
+            "o": {
+                "A": "am",
+                "B": "is",
+                "C": "are",
+                "D": "-",
+                "E": "not"
+            },
+            "c": "D",
+            "d": 1.5,
+            "r": 15,
+            "h": "Geniş zaman olumlu cümle. 'I' öznesi ile fiil arasına yardımcı fiil girer mi?\n\nKISA DERS: Geniş zaman olumlu cümlelerde 'I' öznesinden sonra direkt fiil veya zarf gelir. 'Am/Is/Are' kullanılmaz. Doğru cevap boş küme (veya tire) dir."
+        },
+        {
+            "i": 17,
+            "t": "The baby _____ crying.",
+            "o": {
+                "A": "are",
+                "B": "is",
+                "C": "do",
+                "D": "does",
+                "E": "am"
+            },
+            "c": "B",
+            "d": 1.2,
+            "r": 12,
+            "h": "Özne 'The baby' (tekil). Fiil '-ing' almış.\n\nKISA DERS: Tekil öznelerde şimdiki zaman yardımcı fiili 'is' dir."
+        },
+        {
+            "i": 18,
+            "t": "_____ your father a teacher?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Is",
+                "D": "Are",
+                "E": "Has"
+            },
+            "c": "C",
+            "d": 1.1,
+            "r": 12,
+            "h": "Meslek sorusu. Fiil yok. 'Your father' (He) tekildir.\n\nKISA DERS: İsim cümlelerinde soru sorarken 'To Be' kullanılır. 'Is your father...?'"
+        },
+        {
+            "i": 19,
+            "t": "We _____ not play video games.",
+            "o": {
+                "A": "aren't",
+                "B": "isn't",
+                "C": "don't",
+                "D": "doesn't",
+                "E": "not"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Fiil 'play' (yalın). Geniş zaman olumsuzluğu. Özne 'We'.\n\nKISA DERS: Geniş zamanda 'We' öznesi 'don't' ile olumsuz yapılır. 'We don't play.'"
+        },
+        {
+            "i": 20,
+            "t": "Where _____ Ali and Veli?",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "do",
+                "D": "does",
+                "E": "am"
+            },
+            "c": "B",
+            "d": 1.1,
+            "r": 10,
+            "h": "Özne 'Ali ve Veli' yani 'Onlar' (They). Konum sorusu.\n\nKISA DERS: Özne birden fazla kişi ise (çoğulsa), 'to be' fiili 'are' olur. 'Where are they?'"
+        }
+    ]
+}

@@ -1,0 +1,311 @@
+﻿{
+    "test_info": {
+        "level": "ELEMENTARY (A1-A2)",
+        "topic": "Grammar - Past Simple vs Present Tenses",
+        "test_no": 9,
+        "description": "Serinin dokuzuncu testi ve 2. Zorluk Bloğunun başlangıcı (1.6-2.0). 'Was/Were' kullanımı ve 'Simple Past Tense' (Geçmiş Zaman) giriş seviyesi soruları.",
+        "block": "2/4 (Easy - Moderate)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "I _____ at home yesterday.",
+            "o": {
+                "A": "am",
+                "B": "is",
+                "C": "was",
+                "D": "were",
+                "E": "do"
+            },
+            "c": "C",
+            "d": 1.6,
+            "r": 15,
+            "h": "Zaman zarfı 'yesterday' (dün). 'I' öznesinin geçmiş zamandaki 'to be' hali nedir?\n\nKISA DERS: 'Am' ve 'Is' yardımcı fiillerinin geçmiş zaman hali 'Was'dır. 'I was at home.' (Evdeydim.)"
+        },
+        {
+            "i": 2,
+            "t": "We _____ happy last night.",
+            "o": {
+                "A": "are",
+                "B": "was",
+                "C": "were",
+                "D": "did",
+                "E": "do"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "Zaman 'last night' (dün gece). Özne 'We' (Biz). Çoğul geçmiş zaman durumu.\n\nKISA DERS: 'Are' yardımcı fiilinin geçmiş zaman hali 'Were'dür. 'We/You/They' özneleri ile 'Were' kullanılır."
+        },
+        {
+            "i": 3,
+            "t": "_____ you go to school yesterday?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Did",
+                "D": "Are",
+                "E": "Were"
+            },
+            "c": "C",
+            "d": 1.8,
+            "r": 15,
+            "h": "Fiil 'go' (gitmek). Zaman 'yesterday'. Geçmiş zamanda soru eki nedir?\n\nKISA DERS: Simple Past Tense'de (Geçmiş Zaman) fiil cümlelerini soru yaparken 'Did' yardımcı fiili başa gelir. 'Were' olması için fiil olmamalıydı."
+        },
+        {
+            "i": 4,
+            "t": "She _____ football last weekend.",
+            "o": {
+                "A": "play",
+                "B": "plays",
+                "C": "played",
+                "D": "playing",
+                "E": "is play"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "Zaman 'last weekend'. Geçmiş zaman olumlu cümle. Düzenli fiil kuralını hatırla.\n\nKISA DERS: Simple Past Tense'de düzenli fiillerin sonuna '-ed' takısı gelir. Play -> Played."
+        },
+        {
+            "i": 5,
+            "t": "I _____ not see him yesterday.",
+            "o": {
+                "A": "don't",
+                "B": "didn't",
+                "C": "wasn't",
+                "D": "not",
+                "E": "doesn't"
+            },
+            "c": "B",
+            "d": 1.9,
+            "r": 18,
+            "h": "Fiil 'see' (görmek). Geçmiş zaman olumsuzluğu. Hangi yardımcı fiil gerekir?\n\nKISA DERS: Geçmiş zamanda fiil cümlelerini olumsuz yaparken 'didn't' kullanılır. Fiil yalın kalır (see). 'Wasn't' kullanmak için fiil olmamalı."
+        },
+        {
+            "i": 6,
+            "t": "Where _____ you born?",
+            "o": {
+                "A": "are",
+                "B": "did",
+                "C": "was",
+                "D": "were",
+                "E": "do"
+            },
+            "c": "D",
+            "d": 1.8,
+            "r": 15,
+            "h": "Doğmak eylemi geçmişte kalmıştır. 'You' öznesi ile 'be born' kalıbı nasıl kullanılır?\n\nKISA DERS: Doğum yeri ve tarihi sorulurken her zaman geçmiş zaman 'Was/Were' kullanılır. 'You' için 'Were' doğrudur. 'Where were you born?'"
+        },
+        {
+            "i": 7,
+            "t": "He _____ TV two hours ago.",
+            "o": {
+                "A": "watch",
+                "B": "watches",
+                "C": "watched",
+                "D": "watching",
+                "E": "is watch"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "'Ago' (önce) kelimesi geçmiş zamanı işaret eder. 'Watch' düzenli bir fiildir.\n\nKISA DERS: 'Ago' gördüğümüzde fiilin geçmiş zaman halini (-ed) kullanırız. Watch -> Watched."
+        },
+        {
+            "i": 8,
+            "t": "_____ she at the party last night?",
+            "o": {
+                "A": "Did",
+                "B": "Was",
+                "C": "Is",
+                "D": "Does",
+                "E": "Were"
+            },
+            "c": "B",
+            "d": 1.6,
+            "r": 15,
+            "h": "Cümlede eylem (gitmek, gelmek) yok. Durum sorusu (partide miydi?). Özne 'She'.\n\nKISA DERS: Geçmiş zamanda durum bildiren sorularda 'Was' veya 'Were' başa gelir. 'She' tekil olduğu için 'Was' kullanılır."
+        },
+        {
+            "i": 9,
+            "t": "They _____ to the cinema yesterday.",
+            "o": {
+                "A": "go",
+                "B": "gone",
+                "C": "went",
+                "D": "going",
+                "E": "goes"
+            },
+            "c": "C",
+            "d": 2.0,
+            "r": 20,
+            "h": "Fiil 'go' (gitmek). Düzensiz bir fiildir. Geçmiş zaman hali nedir?\n\nKISA DERS: Bazı fiiller '-ed' almaz, tamamen değişir. 'Go' fiilinin 2. hali (V2) 'Went'tir."
+        },
+        {
+            "i": 10,
+            "t": "Did you _____ the cake?",
+            "o": {
+                "A": "like",
+                "B": "liked",
+                "C": "liking",
+                "D": "likes",
+                "E": "to like"
+            },
+            "c": "A",
+            "d": 1.9,
+            "r": 18,
+            "h": "Soru cümlesi 'Did' ile başlamış. Fiil ne durumda olmalı?\n\nKISA DERS: Bir cümlede 'Did' (veya didn't) varsa, ana fiil HER ZAMAN yalın haldedir. Ek almaz. 'Did you like...?'"
+        },
+        {
+            "i": 11,
+            "t": "I _____ busy now, but I _____ free yesterday.",
+            "o": {
+                "A": "am / was",
+                "B": "was / am",
+                "C": "am / am",
+                "D": "was / was",
+                "E": "m / were"
+            },
+            "c": "A",
+            "d": 1.9,
+            "r": 20,
+            "h": "İki zamanlı cümle. Birinci kısım 'now' (şu an), ikinci kısım 'yesterday' (dün).\n\nKISA DERS: Şimdiki zaman için 'am', geçmiş zaman için 'was' kullanılır. I am busy now, I was free yesterday."
+        },
+        {
+            "i": 12,
+            "t": "We _____ play tennis last Sunday.",
+            "o": {
+                "A": "don't",
+                "B": "didn't",
+                "C": "weren't",
+                "D": "wasn't",
+                "E": "not"
+            },
+            "c": "B",
+            "d": 1.8,
+            "r": 15,
+            "h": "Fiil 'play'. Geçmiş zaman olumsuzluğu. 'Weren't' ile karıştırma.\n\nKISA DERS: Fiil olan cümlelerde geçmiş zaman olumsuzluğu 'didn't' ile yapılır. 'We didn't play'. 'Weren't' sadece durum cümlelerinde kullanılır."
+        },
+        {
+            "i": 13,
+            "t": "The weather _____ very cold yesterday.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "were",
+                "D": "did",
+                "E": "has"
+            },
+            "c": "B",
+            "d": 1.6,
+            "r": 15,
+            "h": "Hava durumu (The weather = It). Geçmiş zaman (Yesterday).\n\nKISA DERS: 'It' öznesi geçmiş zamanda 'was' alır. The weather was cold."
+        },
+        {
+            "i": 14,
+            "t": "_____ they visit their grandparents last week?",
+            "o": {
+                "A": "Do",
+                "B": "Are",
+                "C": "Did",
+                "D": "Were",
+                "E": "Have"
+            },
+            "c": "C",
+            "d": 1.8,
+            "r": 15,
+            "h": "Fiil 'visit' (ziyaret etmek). Geçmiş zaman sorusu.\n\nKISA DERS: Fiil içeren geçmiş zaman soruları 'Did' ile başlar. 'Did they visit...?'"
+        },
+        {
+            "i": 15,
+            "t": "I _____ a new car last month.",
+            "o": {
+                "A": "buy",
+                "B": "buyed",
+                "C": "bought",
+                "D": "buying",
+                "E": "buys"
+            },
+            "c": "C",
+            "d": 2.0,
+            "r": 20,
+            "h": "Fiil 'buy' (satın almak). Düzensiz bir fiildir. 'Last month' geçmiş zamanı gösterir.\n\nKISA DERS: 'Buy' fiilinin 2. hali (geçmiş zamanı) 'Bought'tur. 'Buyed' diye bir kelime yoktur."
+        },
+        {
+            "i": 16,
+            "t": "Where _____ you yesterday morning?",
+            "o": {
+                "A": "were",
+                "B": "did",
+                "C": "was",
+                "D": "are",
+                "E": "do"
+            },
+            "c": "A",
+            "d": 1.7,
+            "r": 15,
+            "h": "Fiil yok, yer soruyor. Özne 'You'. Geçmiş zaman.\n\nKISA DERS: Geçmişte konum sorarken 'Where were you?' kalıbı kullanılır."
+        },
+        {
+            "i": 17,
+            "t": "She _____ not hungry an hour ago.",
+            "o": {
+                "A": "did",
+                "B": "was",
+                "C": "were",
+                "D": "is",
+                "E": "had"
+            },
+            "c": "B",
+            "d": 1.7,
+            "r": 15,
+            "h": "Durum bildiriyor (hungry). Fiil yok. Özne 'She'. Geçmiş zaman.\n\nKISA DERS: Durum cümlelerinde 'She' öznesi 'was' alır. Olumsuzu 'was not' (wasn't). Burada 'not' zaten var."
+        },
+        {
+            "i": 18,
+            "t": "They _____ very tired after the game.",
+            "o": {
+                "A": "was",
+                "B": "did",
+                "C": "were",
+                "D": "are",
+                "E": "do"
+            },
+            "c": "C",
+            "d": 1.6,
+            "r": 15,
+            "h": "Maçtan sonra yorgunlardı. Çoğul özne (They) + Geçmiş durum.\n\nKISA DERS: 'They' öznesi geçmişte 'were' alır. They were tired."
+        },
+        {
+            "i": 19,
+            "t": "_____ it rain yesterday?",
+            "o": {
+                "A": "Was",
+                "B": "Did",
+                "C": "Is",
+                "D": "Does",
+                "E": "Were"
+            },
+            "c": "B",
+            "d": 1.9,
+            "r": 18,
+            "h": "Fiil 'rain' (yağmur yağmak). Geçmiş zaman sorusu.\n\nKISA DERS: 'Rain' burada fiil olarak kullanılmıştır. Bu yüzden 'Was it rain?' denmez, 'Did it rain?' denir."
+        },
+        {
+            "i": 20,
+            "t": "My father _____ hard all his life.",
+            "o": {
+                "A": "work",
+                "B": "worked",
+                "C": "working",
+                "D": "works",
+                "E": "is work"
+            },
+            "c": "B",
+            "d": 1.8,
+            "r": 15,
+            "h": "Hayatı boyunca çok çalıştı (geçmişten bahsediyor). Düzenli fiil.\n\nKISA DERS: Geçmiş zaman anlatımında düzenli fiil '-ed' alır. Worked."
+        }
+    ]
+}

@@ -1,0 +1,311 @@
+﻿{
+    "test_info": {
+        "level": "ELEMENTARY (A1-A2)",
+        "topic": "Grammar - Block 2 Review (Past, Future, Present)",
+        "test_no": 16,
+        "description": "Serinin on altıncı ve 2. bloğun son testi. 1.6-2.0 zorluk seviyesinde. Geçmiş ve Gelecek zaman yapılarının kapsamlı tekrarı.",
+        "block": "2/4 (Easy - Moderate Final)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "I _____ to school yesterday, but I _____ go tomorrow.",
+            "o": {
+                "A": "went / won't",
+                "B": "go / will",
+                "C": "gone / don't",
+                "D": "going / didn't",
+                "E": "goes / won't"
+            },
+            "c": "A",
+            "d": 2.0,
+            "r": 20,
+            "h": "Zaman zarfları: 'Yesterday' (Geçmiş - Olumlu) ve 'Tomorrow' (Gelecek - Olumsuz bağlam 'but').\n\nKISA DERS: Dün için 'went' (gittim), yarınki olumsuzluk için 'won't go' (gitmeyeceğim) kullanılır."
+        },
+        {
+            "i": 2,
+            "t": "_____ you watch the football match last night?",
+            "o": {
+                "A": "Do",
+                "B": "Did",
+                "C": "Will",
+                "D": "Are",
+                "E": "Were"
+            },
+            "c": "B",
+            "d": 1.7,
+            "r": 15,
+            "h": "Zaman 'last night'. Fiil 'watch'.\n\nKISA DERS: Geçmiş zaman sorularında 'Did' yardımcı fiili kullanılır."
+        },
+        {
+            "i": 3,
+            "t": "She _____ be here in five minutes.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "will",
+                "D": "did",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "Zaman 'in five minutes' (5 dakika içinde - gelecek). Fiil 'be'.\n\nKISA DERS: Gelecek zaman bildirirken 'will' kullanılır. 'She will be here.'"
+        },
+        {
+            "i": 4,
+            "t": "We _____ very happy to see you yesterday.",
+            "o": {
+                "A": "are",
+                "B": "were",
+                "C": "did",
+                "D": "will",
+                "E": "do"
+            },
+            "c": "B",
+            "d": 1.6,
+            "r": 12,
+            "h": "Zaman 'yesterday'. Durum cümlesi (happy). Özne 'We'.\n\nKISA DERS: Geçmiş zaman durum cümlelerinde çoğul özneler 'were' alır."
+        },
+        {
+            "i": 5,
+            "t": "He _____ not buy the car because it was too expensive.",
+            "o": {
+                "A": "doesn't",
+                "B": "didn't",
+                "C": "won't",
+                "D": "isn't",
+                "E": "don't"
+            },
+            "c": "B",
+            "d": 1.9,
+            "r": 18,
+            "h": "Sebep cümlesine bak: 'was too expensive' (çok pahalıydı). Olay geçmişte.\n\nKISA DERS: Geçmişteki olumsuz eylem 'didn't buy' şeklindedir."
+        },
+        {
+            "i": 6,
+            "t": "What _____ you going to do this weekend?",
+            "o": {
+                "A": "will",
+                "B": "do",
+                "C": "are",
+                "D": "did",
+                "E": "is"
+            },
+            "c": "C",
+            "d": 1.8,
+            "r": 15,
+            "h": "Kalıp: 'going to'. Planlanmış gelecek.\n\nKISA DERS: 'Be going to' kalıbında 'You' öznesi için 'Are' kullanılır."
+        },
+        {
+            "i": 7,
+            "t": "They _____ London two years ago.",
+            "o": {
+                "A": "visit",
+                "B": "visited",
+                "C": "visiting",
+                "D": "visits",
+                "E": "will visit"
+            },
+            "c": "B",
+            "d": 1.7,
+            "r": 15,
+            "h": "Zaman zarfı 'ago' (önce). Düzenli fiil.\n\nKISA DERS: Düzenli fiiller geçmiş zamanda '-ed' takısı alır. Visit -> Visited."
+        },
+        {
+            "i": 8,
+            "t": "I think it _____ rain soon.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "will",
+                "D": "did",
+                "E": "has"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "'I think' (bence) ve 'soon' (yakında). Tahmin.\n\nKISA DERS: Tahminlerde 'Will' kullanılır."
+        },
+        {
+            "i": 9,
+            "t": "_____ she at home last night?",
+            "o": {
+                "A": "Did",
+                "B": "Was",
+                "C": "Is",
+                "D": "Does",
+                "E": "Will"
+            },
+            "c": "B",
+            "d": 1.6,
+            "r": 12,
+            "h": "Fiil yok. Durum sorusu. Zaman 'last night'. Özne 'She'.\n\nKISA DERS: Geçmiş zaman durum sorularında 'Was' başa gelir."
+        },
+        {
+            "i": 10,
+            "t": "We _____ usually drink tea, but yesterday we _____ coffee.",
+            "o": {
+                "A": "drink / drank",
+                "B": "drank / drink",
+                "C": "drink / drink",
+                "D": "drinking / drank",
+                "E": "drinks / drank"
+            },
+            "c": "A",
+            "d": 2.0,
+            "r": 20,
+            "h": "'Usually' (Geniş Zaman) ve 'Yesterday' (Geçmiş Zaman).\n\nKISA DERS: Geniş zaman için 'drink', geçmiş zaman için düzensiz hali 'drank' kullanılır."
+        },
+        {
+            "i": 11,
+            "t": "Did you _____ the keys?",
+            "o": {
+                "A": "found",
+                "B": "find",
+                "C": "finding",
+                "D": "finds",
+                "E": "to find"
+            },
+            "c": "B",
+            "d": 1.8,
+            "r": 15,
+            "h": "Soru 'Did' ile başlamış. Fiil 'find' (bulmak).\n\nKISA DERS: Cümlede 'Did' varsa ana fiil yalın (V1) haldedir."
+        },
+        {
+            "i": 12,
+            "t": "I promise I _____ tell anyone your secret.",
+            "o": {
+                "A": "don't",
+                "B": "won't",
+                "C": "didn't",
+                "D": "not",
+                "E": "am not"
+            },
+            "c": "B",
+            "d": 1.8,
+            "r": 15,
+            "h": "Söz verme (Promise). Olumsuz anlam (söylemeyeceğim).\n\nKISA DERS: Söz verirken 'Won't' (will not) kullanılır."
+        },
+        {
+            "i": 13,
+            "t": "Where _____ you go for your holiday last summer?",
+            "o": {
+                "A": "were",
+                "B": "did",
+                "C": "do",
+                "D": "are",
+                "E": "was"
+            },
+            "c": "B",
+            "d": 1.7,
+            "r": 15,
+            "h": "Fiil 'go'. Zaman 'last summer'.\n\nKISA DERS: Geçmiş zaman tatil sorusu 'Where did you go?' şeklindedir."
+        },
+        {
+            "i": 14,
+            "t": "He _____ a new phone two days ago.",
+            "o": {
+                "A": "buy",
+                "B": "bought",
+                "C": "buying",
+                "D": "buys",
+                "E": "will buy"
+            },
+            "c": "B",
+            "d": 1.8,
+            "r": 15,
+            "h": "Zaman 'ago' (önce). Fiil 'buy' (satın almak).\n\nKISA DERS: 'Buy' fiilinin geçmiş zaman hali 'Bought'tur."
+        },
+        {
+            "i": 15,
+            "t": "Look! The cat _____ the tree.",
+            "o": {
+                "A": "climb",
+                "B": "climbed",
+                "C": "is climbing",
+                "D": "will climb",
+                "E": "climbs"
+            },
+            "c": "C",
+            "d": 1.6,
+            "r": 12,
+            "h": "'Look!' (Bak!) o anı gösterir.\n\nKISA DERS: Şimdiki zaman yapısı: is + climbing."
+        },
+        {
+            "i": 16,
+            "t": "_____ they play football tomorrow?",
+            "o": {
+                "A": "Do",
+                "B": "Did",
+                "C": "Will",
+                "D": "Are",
+                "E": "Is"
+            },
+            "c": "C",
+            "d": 1.7,
+            "r": 15,
+            "h": "Zaman 'tomorrow'. Gelecek zaman sorusu.\n\nKISA DERS: Gelecek zaman soruları 'Will' ile başlar."
+        },
+        {
+            "i": 17,
+            "t": "I _____ busy now, so I _____ call you later.",
+            "o": {
+                "A": "am / will",
+                "B": "was / did",
+                "C": "will / am",
+                "D": "am / am",
+                "E": "was / will"
+            },
+            "c": "A",
+            "d": 1.9,
+            "r": 18,
+            "h": "Şu anki durum (now) ve geleceğe yönelik söz (later).\n\nKISA DERS: Şu an 'I am', gelecek için 'I will'."
+        },
+        {
+            "i": 18,
+            "t": "Why _____ you crying yesterday?",
+            "o": {
+                "A": "did",
+                "B": "were",
+                "C": "was",
+                "D": "are",
+                "E": "do"
+            },
+            "c": "B",
+            "d": 1.9,
+            "r": 18,
+            "h": "Dikkat! Fiil '-ing' almış (crying) ve zaman geçmiş (yesterday). Bu 'Past Continuous'a giriş sayılır ama mantık 'Past of To Be'dir.\n\nKISA DERS: 'Why were you crying?' (Neden ağlıyordun?). Fiil '-ing'li olduğu için 'did' değil 'were' kullanılır."
+        },
+        {
+            "i": 19,
+            "t": "She _____ have time to help us.",
+            "o": {
+                "A": "doesn't",
+                "B": "didn't",
+                "C": "isn't",
+                "D": "won't",
+                "E": "aren't"
+            },
+            "c": "D",
+            "d": 1.8,
+            "r": 15,
+            "h": "Bağlam geleceğe yönelik bir ret veya tahmin gibi duruyor (Yardım edecek vakti olmayacak).\n\nKISA DERS: Gelecek zaman olumsuzluğu 'won't'tur. (Not: 'Doesn't' genel bir durumu anlatırsa doğru olabilir ama şıklarda 'won't' daha güçlü bir gelecek tahminidir)."
+        },
+        {
+            "i": 20,
+            "t": "How many books _____ you read last year?",
+            "o": {
+                "A": "did",
+                "B": "do",
+                "C": "were",
+                "D": "are",
+                "E": "will"
+            },
+            "c": "A",
+            "d": 1.8,
+            "r": 15,
+            "h": "Geçen yıl kaç kitap okudun? Eylem bitmiş.\n\nKISA DERS: Geçmiş zaman soru kalıbı 'Did' ile yapılır."
+        }
+    ]
+}

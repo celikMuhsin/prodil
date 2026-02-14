@@ -1,310 +1,311 @@
 ﻿{
-    "test_info":  {
-                      "level":  "BEGINNER (A1-A2)",
-                      "topic":  "Grammar - Tenses",
-                      "test_no":  5,
-                      "description":  "Past Continuous Tense: \u0027Was/Were doing\u0027, \u0027When/While\u0027 bağlaçları ve Simple Past ile kullanımı."
-                  },
-    "questions":  [
-                      {
-                          "i":  1,
-                          "t":  "At 8 o\u0027clock yesterday evening, I _____ TV.",
-                          "o":  {
-                                    "A":  "watch",
-                                    "B":  "watched",
-                                    "C":  "was watching",
-                                    "D":  "am watching",
-                                    "E":  "watching"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Geçmişte belli bir saatte (At 8 o\u0027clock) devam etmekte olan bir eylemden bahsediyoruz."
-                      },
-                      {
-                          "i":  2,
-                          "t":  "The children _____ playing in the garden when it started to rain.",
-                          "o":  {
-                                    "A":  "was",
-                                    "B":  "were",
-                                    "C":  "are",
-                                    "D":  "did",
-                                    "E":  "had"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Çoğul özne (Children) ve geçmişte devam eden bir eylem. \u0027To be\u0027 fiilinin geçmiş çoğul hali nedir?"
-                      },
-                      {
-                          "i":  3,
-                          "t":  "What _____ you doing when I called you?",
-                          "o":  {
-                                    "A":  "are",
-                                    "B":  "did",
-                                    "C":  "were",
-                                    "D":  "was",
-                                    "E":  "do"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Sen aradığında ne \u0027yapıyordun\u0027? Geçmişte süren eylemi soruyoruz."
-                      },
-                      {
-                          "i":  4,
-                          "t":  "While she _____ dinner, she cut her finger.",
-                          "o":  {
-                                    "A":  "cooked",
-                                    "B":  "was cooking",
-                                    "C":  "cooks",
-                                    "D":  "is cooking",
-                                    "E":  "cook"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "\u0027While\u0027 (iken) bağlacından sonra genellikle Past Continuous Tense (was/were V-ing) gelir."
-                      },
-                      {
-                          "i":  5,
-                          "t":  "He _____ sleeping when the thief entered the house.",
-                          "o":  {
-                                    "A":  "was",
-                                    "B":  "were",
-                                    "C":  "is",
-                                    "D":  "did",
-                                    "E":  "has"
-                                },
-                          "c":  "A",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Özne tekil (He). Olay geçmişte yaşanıyor."
-                      },
-                      {
-                          "i":  6,
-                          "t":  "I saw Ali yesterday. He _____ a red jacket.",
-                          "o":  {
-                                    "A":  "wear",
-                                    "B":  "wore",
-                                    "C":  "was wearing",
-                                    "D":  "is wearing",
-                                    "E":  "wears"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Onu gördüğüm o anda üzerinde kırmızı ceket vardı (giyiyordu)."
-                      },
-                      {
-                          "i":  7,
-                          "t":  "_____ it raining when you left home?",
-                          "o":  {
-                                    "A":  "Did",
-                                    "B":  "Was",
-                                    "C":  "Is",
-                                    "D":  "Were",
-                                    "E":  "Does"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "\u0027Rain\u0027 burada fiil olarak \u0027raining\u0027 şeklinde kullanılmış. Hava durumu tekil olduğu için \u0027Was\u0027 kullanılır."
-                      },
-                      {
-                          "i":  8,
-                          "t":  "My computer broke down while I _____ my homework.",
-                          "o":  {
-                                    "A":  "did",
-                                    "B":  "am doing",
-                                    "C":  "was doing",
-                                    "D":  "do",
-                                    "E":  "done"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Bilgisayar bozulduğunda ben ödevimi \u0027yapıyordum\u0027. Süreklilik bildiren kısım burasıdır."
-                      },
-                      {
-                          "i":  9,
-                          "t":  "They _____ listening to the teacher. They were talking.",
-                          "o":  {
-                                    "A":  "weren\u0027t",
-                                    "B":  "wasn\u0027t",
-                                    "C":  "didn\u0027t",
-                                    "D":  "aren\u0027t",
-                                    "E":  "don\u0027t"
-                                },
-                          "c":  "A",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Olumsuz bir durum. Öğretmeni dinlemiyorlardı, konuşuyorlardı."
-                      },
-                      {
-                          "i":  10,
-                          "t":  "When the teacher _____ into the class, the students were making noise.",
-                          "o":  {
-                                    "A":  "come",
-                                    "B":  "coming",
-                                    "C":  "came",
-                                    "D":  "was coming",
-                                    "E":  "comes"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "\u0027When\u0027 cümlesi genellikle kısa ve kesici eylemi (Simple Past) anlatır. Öğretmen sınıfa \u0027girdi\u0027."
-                      },
-                      {
-                          "i":  11,
-                          "t":  "While my mother was reading a book, my father _____ TV.",
-                          "o":  {
-                                    "A":  "watched",
-                                    "B":  "was watching",
-                                    "C":  "watches",
-                                    "D":  "is watching",
-                                    "E":  "watch"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "İki eylem geçmişte aynı anda paralel olarak devam ediyorsa, her iki tarafta da Past Continuous kullanılabilir."
-                      },
-                      {
-                          "i":  12,
-                          "t":  "I _____ fast when the accident happened.",
-                          "o":  {
-                                    "A":  "didn\u0027t drive",
-                                    "B":  "not driving",
-                                    "C":  "wasn\u0027t driving",
-                                    "D":  "don\u0027t drive",
-                                    "E":  "am not driving"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Kaza olduğunda hızlı \u0027sürmüyordum\u0027. Past Continuous Olumsuz yapı."
-                      },
-                      {
-                          "i":  13,
-                          "t":  "Who _____ you talking to when I saw you?",
-                          "o":  {
-                                    "A":  "did",
-                                    "B":  "were",
-                                    "C":  "was",
-                                    "D":  "are",
-                                    "E":  "do"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Soru kalıbı: Who were you...?"
-                      },
-                      {
-                          "i":  14,
-                          "t":  "The electricity went off while we _____ the match.",
-                          "o":  {
-                                    "A":  "watched",
-                                    "B":  "were watching",
-                                    "C":  "are watching",
-                                    "D":  "watch",
-                                    "E":  "watching"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Elektrik kesildiğinde biz maçı \u0027izliyorduk\u0027."
-                      },
-                      {
-                          "i":  15,
-                          "t":  "She fell down while she _____ for the bus.",
-                          "o":  {
-                                    "A":  "runs",
-                                    "B":  "ran",
-                                    "C":  "was running",
-                                    "D":  "run",
-                                    "E":  "is running"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Düşme eylemi anlıktır, koşma eylemi ise süreçtir. Süreç bildiren kısım \u0027While\u0027 ile kullanılır."
-                      },
-                      {
-                          "i":  16,
-                          "t":  "It was a beautiful day. The sun _____ and the birds _____.",
-                          "o":  {
-                                    "A":  "shone / sang",
-                                    "B":  "was shining / were singing",
-                                    "C":  "is shining / are singing",
-                                    "D":  "shines / sing",
-                                    "E":  "was shining / sang"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Hikaye anlatımında arka planı tasvir ederken (atmosfer) Past Continuous kullanılır."
-                      },
-                      {
-                          "i":  17,
-                          "t":  "I _____ hear the phone because I _____ to music.",
-                          "o":  {
-                                    "A":  "didn\u0027t / was listening",
-                                    "B":  "don\u0027t / listen",
-                                    "C":  "wasn\u0027t / listened",
-                                    "D":  "am not / listening",
-                                    "E":  "didn\u0027t / listened"
-                                },
-                          "c":  "A",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Telefonu duymadım (kısa eylem/sonuç), çünkü o sırada müzik dinliyordum (süreç)."
-                      },
-                      {
-                          "i":  18,
-                          "t":  "When we arrived at the party, everyone _____.",
-                          "o":  {
-                                    "A":  "dance",
-                                    "B":  "danced",
-                                    "C":  "was dancing",
-                                    "D":  "is dancing",
-                                    "E":  "are dancing"
-                                },
-                          "c":  "C",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Biz vardığımızda eylem hali hazırda devam ediyordu."
-                      },
-                      {
-                          "i":  19,
-                          "t":  "While I was studying, my friends _____ gaming.",
-                          "o":  {
-                                    "A":  "were",
-                                    "B":  "did",
-                                    "C":  "was",
-                                    "D":  "are",
-                                    "E":  "had"
-                                },
-                          "c":  "A",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "Onlar oyun \u0027oynuyorlardı\u0027. Ana fiil \u0027gaming\u0027 olarak verilmiş, yardımcı fiil eksik."
-                      },
-                      {
-                          "i":  20,
-                          "t":  "He _____ like the food, so he didn\u0027t eat it.",
-                          "o":  {
-                                    "A":  "wasn\u0027t",
-                                    "B":  "didn\u0027t",
-                                    "C":  "isn\u0027t",
-                                    "D":  "weren\u0027t",
-                                    "E":  "doesn\u0027t"
-                                },
-                          "c":  "B",
-                          "d":  1.2,
-                          "r":  30,
-                          "h":  "DİKKAT! \u0027Like\u0027 durum bildiren bir fiildir (Stative Verb). Asla \u0027was liking\u0027 şeklinde kullanılmaz. Simple Past olmalı."
-                      }
-                  ]
+    "test_info": {
+        "level": "BEGINNER (A0-A1)",
+        "topic": "Grammar - Basic Tenses (Mixed)",
+        "test_no": 5,
+        "description": "Serinin beşinci testi. 1.0-1.5 zorluk seviyesinde, temel zamanlar ve yardımcı fiil uyumuna odaklanan, detaylı konu anlatımlı ipuçları içeren sorular.",
+        "block": "1/4 (Very Easy)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "I _____ from Germany.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "am",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.0,
+            "r": 10,
+            "h": "Kişinin nereli olduğunu belirtirken 'To Be' fiili kullanılır. 'I' öznesi için bu hangisidir?\n\nKISA DERS: 'I' (Ben) öznesi, isim ve durum cümlelerinde sadece 'am' yardımcı fiilini alır. 'I am from...' kalıbı bir klasiktir."
+        },
+        {
+            "i": 2,
+            "t": "She _____ playing tennis now.",
+            "o": {
+                "A": "are",
+                "B": "is",
+                "C": "am",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "B",
+            "d": 1.2,
+            "r": 12,
+            "h": "Zaman zarfı 'now' (şimdi) ve fiil '-ing'li. Bu Şimdiki Zaman yapısıdır. 'She' ne alır?\n\nKISA DERS: Present Continuous Tense'de (Şimdiki Zaman) tekil şahıslar (She/He/It) 'is' yardımcı fiili ile kullanılır. Formül: She + is + Ving."
+        },
+        {
+            "i": 3,
+            "t": "We _____ not want pizza.",
+            "o": {
+                "A": "aren't",
+                "B": "isn't",
+                "C": "don't",
+                "D": "doesn't",
+                "E": "not"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Fiil 'want' (istemek) yalın halde. Geniş zaman olumsuz cümlesi kurmalısın. 'We' öznesi ne alır?\n\nKISA DERS: Geniş zamanda fiil cümlelerini olumsuz yaparken 'don't' veya 'doesn't' kullanılır. Çoğul özneler (We/You/They) ve 'I' öznesi 'don't' alır."
+        },
+        {
+            "i": 4,
+            "t": "_____ you a student?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Are",
+                "D": "Is",
+                "E": "Am"
+            },
+            "c": "C",
+            "d": 1.1,
+            "r": 10,
+            "h": "Cümlede eylem bildiren bir fiil (gitmek, gelmek gibi) yok. Bu bir isim cümlesidir (öğrenci misin?).\n\nKISA DERS: İsim cümlelerinde soru sorarken 'To Be' fiilleri (Am, Is, Are) başa gelir. 'You' öznesi için 'Are' kullanılır."
+        },
+        {
+            "i": 5,
+            "t": "Ali _____ fast.",
+            "o": {
+                "A": "run",
+                "B": "runs",
+                "C": "running",
+                "D": "is run",
+                "E": "are running"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Ali (He) hızlı koşar. Bu genel bir yetenektir, yani Geniş Zaman. Tekil özne fiile ne yapar?\n\nKISA DERS: Simple Present Tense'de olumlu cümlede özne 'He, She, It' ise fiil '-s' takısı alır. Ali runs fast."
+        },
+        {
+            "i": 6,
+            "t": "They _____ watching TV.",
+            "o": {
+                "A": "is",
+                "B": "am",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Fiil 'watching' (-ing almış). Özne 'They' (Onlar). Uygun yardımcı fiili seç.\n\nKISA DERS: Şimdiki zamanda çoğul özneler (They) 'are' yardımcı fiilini alır. 'They are watching.'"
+        },
+        {
+            "i": 7,
+            "t": "_____ she speak English?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Is",
+                "D": "Are",
+                "E": "Has"
+            },
+            "c": "B",
+            "d": 1.2,
+            "r": 12,
+            "h": "Ana fiil 'speak' (konuşmak). Geniş zaman sorusu. Özne 'She' (O).\n\nKISA DERS: Geniş zamanda fiil içeren soru cümlelerinde 'Do' veya 'Does' başa gelir. Tekil şahıslar (She) için 'Does' kullanılır."
+        },
+        {
+            "i": 8,
+            "t": "It _____ not raining.",
+            "o": {
+                "A": "are",
+                "B": "am",
+                "C": "is",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 10,
+            "h": "Hava durumu (raining). 'It' öznesi ile şimdiki zaman olumsuz yapısı.\n\nKISA DERS: Şimdiki zamanda 'It' öznesi 'is' yardımcı fiilini alır. Olumsuzluk için 'is not' (isn't) kullanılır. Cümlede 'not' zaten var, sadece 'is' eksik."
+        },
+        {
+            "i": 9,
+            "t": "My parents _____ teachers.",
+            "o": {
+                "A": "is",
+                "B": "am",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.1,
+            "r": 10,
+            "h": "Özne 'My parents' (Anne babam = They). Çoğul özne için durum bildiren fiil hangisidir?\n\nKISA DERS: Özne çoğul olduğunda (parents kelimesindeki 's' takısına dikkat), 'to be' fiili 'are' olur."
+        },
+        {
+            "i": 10,
+            "t": "What _____ you doing here?",
+            "o": {
+                "A": "do",
+                "B": "does",
+                "C": "are",
+                "D": "is",
+                "E": "am"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Fiil '-ing' almış (doing). 'You' öznesiyle şimdiki zaman sorusu.\n\nKISA DERS: Soru kelimesi (What) olsa bile kural değişmez. Şimdiki zamanda 'You' öznesi 'are' ile kullanılır. 'What are you doing?'"
+        },
+        {
+            "i": 11,
+            "t": "He _____ not like coffee.",
+            "o": {
+                "A": "don't",
+                "B": "doesn't",
+                "C": "isn't",
+                "D": "aren't",
+                "E": "not"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Özne 'He'. Fiil 'like' (sevmek). Geniş zaman olumsuzluğu.\n\nKISA DERS: Geniş zamanda 3. tekil şahıslar (He/She/It) olumsuz cümlede 'doesn't' alır. Fiil yalın hale döner."
+        },
+        {
+            "i": 12,
+            "t": "The dog _____ hungry.",
+            "o": {
+                "A": "are",
+                "B": "am",
+                "C": "is",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.0,
+            "r": 10,
+            "h": "'Hungry' (aç) bir sıfattır. 'The dog' (O/It) tekildir.\n\nKISA DERS: Sıfatlarla birlikte 'To Be' fiili kullanılır. Tekil özneler (The dog) için 'is' kullanılır."
+        },
+        {
+            "i": 13,
+            "t": "I _____ working at the office today.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "am",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.1,
+            "r": 10,
+            "h": "Özne 'I'. Zaman 'today' (bugün). Fiil '-ing'li. Hangi yardımcı fiil?\n\nKISA DERS: Şimdiki zamanda 'I' öznesi istisnasız olarak 'am' yardımcı fiilini alır."
+        },
+        {
+            "i": 14,
+            "t": "_____ they play football?",
+            "o": {
+                "A": "Are",
+                "B": "Is",
+                "C": "Do",
+                "D": "Does",
+                "E": "Have"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Fiil 'play' (oynamak). 'They' öznesi ile geniş zaman sorusu.\n\nKISA DERS: Geniş zamanda fiil cümlelerini soru yaparken, özne çoğulsa (They) başa 'Do' gelir."
+        },
+        {
+            "i": 15,
+            "t": "My sister _____ beautiful.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "am",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "A",
+            "d": 1.0,
+            "r": 10,
+            "h": "'Beautiful' (güzel) bir sıfattır. 'My sister' (Kız kardeşim/She) tekildir.\n\nKISA DERS: Durum bildiren cümlelerde tekil şahıslar için 'is' kullanılır."
+        },
+        {
+            "i": 16,
+            "t": "We _____ listening to you.",
+            "o": {
+                "A": "do",
+                "B": "does",
+                "C": "are",
+                "D": "is",
+                "E": "am"
+            },
+            "c": "C",
+            "d": 1.3,
+            "r": 12,
+            "h": "Fiil '-ing' almış. 'We' öznesi şimdiki zamanda hangi yardımcı fiille kullanılır?\n\nKISA DERS: Present Continuous Tense'de 'We/You/They' özneleri 'are' alır. We are listening."
+        },
+        {
+            "i": 17,
+            "t": "_____ Ali at home?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Are",
+                "D": "Is",
+                "E": "Has"
+            },
+            "c": "D",
+            "d": 1.1,
+            "r": 10,
+            "h": "Cümlede eylem bildiren fiil yok. Yer soruyor (Evde mi?). Ali tekildir.\n\nKISA DERS: İsim/Durum cümlelerinde soru sorarken 'To Be' kullanılır. Ali (He) için 'Is' başa gelir."
+        },
+        {
+            "i": 18,
+            "t": "You _____ not listening!",
+            "o": {
+                "A": "is",
+                "B": "am",
+                "C": "are",
+                "D": "do",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 1.2,
+            "r": 12,
+            "h": "Şimdiki zaman olumsuzluğu. 'You' öznesi için hangisi doğrudur?\n\nKISA DERS: 'You' öznesi şimdiki zamanda 'are' alır. Olumsuzu 'You are not' (You aren't)."
+        },
+        {
+            "i": 19,
+            "t": "_____ the cat like milk?",
+            "o": {
+                "A": "Do",
+                "B": "Does",
+                "C": "Is",
+                "D": "Are",
+                "E": "Has"
+            },
+            "c": "B",
+            "d": 1.4,
+            "r": 15,
+            "h": "Özne 'The cat' (It). Fiil 'like'. Geniş zaman sorusu.\n\nKISA DERS: Tekil öznelerde (The cat) geniş zaman sorusu 'Does' ile başlar. Fiil (like) yalın kalır."
+        },
+        {
+            "i": 20,
+            "t": "I _____ happy.",
+            "o": {
+                "A": "does",
+                "B": "do",
+                "C": "am",
+                "D": "is",
+                "E": "are"
+            },
+            "c": "C",
+            "d": 1.0,
+            "r": 10,
+            "h": "En temel durum cümlesi. 'Ben mutluyum.'\n\nKISA DERS: 'I' öznesi sıfatlarla (happy, sad, tired) kullanıldığında her zaman 'am' alır."
+        }
+    ]
 }
