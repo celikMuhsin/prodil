@@ -1,1 +1,311 @@
-﻿
+﻿{
+    "test_info": {
+        "level": "PRE-INTERMEDIATE (A2+)",
+        "topic": "Grammar - Conditionals (If Clauses Type 0 & 1)",
+        "test_no": 25,
+        "description": "Serinin yirmi beşinci testi ve en zor bloğun (2.6-3.0) başlangıcı. Koşul cümleleri (If Clauses). Type 0 (Genel Doğrular) ve Type 1 (Gelecek İhtimalleri) kuralları.",
+        "block": "4/4 (Hard)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "If you _____ water to 100 degrees, it boils.",
+            "o": {
+                "A": "heat",
+                "B": "will heat",
+                "C": "heated",
+                "D": "heating",
+                "E": "heats"
+            },
+            "c": "A",
+            "d": 2.6,
+            "r": 20,
+            "h": "Bu bilimsel bir gerçektir (Genel doğru). Type 0 kuralı uygulanır.\n\nKISA DERS: Bilimsel gerçeklerde ve her zaman doğru olan durumlarda her iki tarafta da Geniş Zaman (Present Simple) kullanılır. If you heat..."
+        },
+        {
+            "i": 2,
+            "t": "If it _____ tomorrow, we will stay at home.",
+            "o": {
+                "A": "rain",
+                "B": "rains",
+                "C": "will rain",
+                "D": "rained",
+                "E": "is raining"
+            },
+            "c": "B",
+            "d": 2.7,
+            "r": 20,
+            "h": "Yarın yağmur yağarsa... (Gelecek ihtimali - Type 1). 'If'li kısma dikkat!\n\nKISA DERS: If Clause Type 1 kuralı: 'If' kelimesinin olduğu cümlecikte ASLA 'Will' kullanılmaz. Geniş Zaman (Simple Present) kullanılır. If it rains..."
+        },
+        {
+            "i": 3,
+            "t": "If you don't hurry, you _____ the bus.",
+            "o": {
+                "A": "miss",
+                "B": "missed",
+                "C": "will miss",
+                "D": "are missing",
+                "E": "have missed"
+            },
+            "c": "C",
+            "d": 2.6,
+            "r": 20,
+            "h": "Acele etmezsen otobüsü kaçıracaksın. Sonuç kısmı.\n\nKISA DERS: Type 1 yapısında, koşul (If) kısmı Geniş Zaman, sonuç (Main Clause) kısmı Gelecek Zaman (Will) olur. You will miss."
+        },
+        {
+            "i": 4,
+            "t": "If I _____ time, I will help you.",
+            "o": {
+                "A": "have",
+                "B": "will have",
+                "C": "had",
+                "D": "am having",
+                "E": "has"
+            },
+            "c": "A",
+            "d": 2.6,
+            "r": 20,
+            "h": "Vaktim olursa... (Gelecek ihtimali). 'If' tarafı.\n\nKISA DERS: 'If' cümlesinde 'will' kullanılmaz. 'If I have time' (Eğer vaktim olursa) doğrudur."
+        },
+        {
+            "i": 5,
+            "t": "What _____ you do if he doesn't call you?",
+            "o": {
+                "A": "do",
+                "B": "did",
+                "C": "will",
+                "D": "are",
+                "E": "have"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 25,
+            "h": "O seni aramazsa ne yapacaksın? Soru, sonuç kısmında soruluyor.\n\nKISA DERS: Soru kelimesi (What) ana cümlededir, bu yüzden 'Will' kullanılır. 'What will you do...?'"
+        },
+        {
+            "i": 6,
+            "t": "If you mix red and white, you _____ pink.",
+            "o": {
+                "A": "get",
+                "B": "will get",
+                "C": "got",
+                "D": "getting",
+                "E": "gets"
+            },
+            "c": "A",
+            "d": 2.6,
+            "r": 20,
+            "h": "Kırmızı ve beyazı karıştırırsan pembe elde edersin. Bu değişmez bir kuraldır (Type 0).\n\nKISA DERS: Değişmez gerçeklerde sonuç kısmı da Geniş Zaman (Present Simple) olur. 'You get pink'."
+        },
+        {
+            "i": 7,
+            "t": "She _____ angry if you are late again.",
+            "o": {
+                "A": "be",
+                "B": "is",
+                "C": "will be",
+                "D": "was",
+                "E": "were"
+            },
+            "c": "C",
+            "d": 2.7,
+            "r": 20,
+            "h": "Geç kalırsan kızacak. Sonuç kısmı.\n\nKISA DERS: 'If' cümlenin ortasındaysa kural değişmez. 'If' olmayan taraf (She...) 'Will' alır. She will be angry."
+        },
+        {
+            "i": 8,
+            "t": "If he _____ hard, he will pass the exam.",
+            "o": {
+                "A": "study",
+                "B": "studies",
+                "C": "will study",
+                "D": "studied",
+                "E": "studying"
+            },
+            "c": "B",
+            "d": 2.7,
+            "r": 20,
+            "h": "Sıkı çalışırsa... Özne 'He'. Geniş zaman kuralı.\n\nKISA DERS: If tarafı Geniş Zaman olur. 'He' öznesi '-es' takısı alır. If he studies."
+        },
+        {
+            "i": 9,
+            "t": "Unless you _____ now, you will be late.",
+            "o": {
+                "A": "leave",
+                "B": "don't leave",
+                "C": "will leave",
+                "D": "won't leave",
+                "E": "leaves"
+            },
+            "c": "A",
+            "d": 2.9,
+            "r": 25,
+            "h": "'Unless' kelimesi 'If not' (Eğer ...mazsa) demektir. Kendisi zaten olumsuzdur.\n\nKISA DERS: 'Unless' kullanılan cümlecik gramer olarak OLUMLU yapıda olur (çünkü anlam olumsuzdur). 'Unless you leave' (Eğer şimdi çıkmazsan)."
+        },
+        {
+            "i": 10,
+            "t": "If I see him, I _____ him your message.",
+            "o": {
+                "A": "give",
+                "B": "gave",
+                "C": "will give",
+                "D": "giving",
+                "E": "given"
+            },
+            "c": "C",
+            "d": 2.6,
+            "r": 20,
+            "h": "Onu görürsem, mesajını vereceğim.\n\nKISA DERS: Standart Type 1 yapısı: If + Present, Future (Will). I will give."
+        },
+        {
+            "i": 11,
+            "t": "If you _____ ice, it turns into water.",
+            "o": {
+                "A": "heat",
+                "B": "heats",
+                "C": "will heat",
+                "D": "heated",
+                "E": "heating"
+            },
+            "c": "A",
+            "d": 2.6,
+            "r": 20,
+            "h": "Buzu ısıtırsan suya dönüşür. Fizik kuralı (Type 0).\n\nKISA DERS: Genel doğrularda 'If you heat' (Geniş Zaman) kullanılır."
+        },
+        {
+            "i": 12,
+            "t": "We will go to the beach if the weather _____ good.",
+            "o": {
+                "A": "be",
+                "B": "will be",
+                "C": "is",
+                "D": "was",
+                "E": "are"
+            },
+            "c": "C",
+            "d": 2.7,
+            "r": 20,
+            "h": "Hava güzel olursa... 'If' tarafında 'to be' fiili.\n\nKISA DERS: 'If' tarafında 'will be' kullanılmaz. Geniş zamanda 'be' fiili 'am/is/are' olur. Weather (it) is."
+        },
+        {
+            "i": 13,
+            "t": "If you _____ breakfast, you will be hungry later.",
+            "o": {
+                "A": "don't have",
+                "B": "won't have",
+                "C": "not have",
+                "D": "aren't have",
+                "E": "didn't have"
+            },
+            "c": "A",
+            "d": 2.8,
+            "r": 25,
+            "h": "Kahvaltı yapmazsan... 'If' tarafında olumsuzluk.\n\nKISA DERS: 'If' tarafında Geniş Zaman olumsuzu 'don't' veya 'doesn't' ile yapılır. If you don't have."
+        },
+        {
+            "i": 14,
+            "t": "If you are tired, _____ to bed early.",
+            "o": {
+                "A": "go",
+                "B": "will go",
+                "C": "going",
+                "D": "goes",
+                "E": "went"
+            },
+            "c": "A",
+            "d": 2.7,
+            "r": 20,
+            "h": "Yorgunsan, erken yat. (Emir kipi).\n\nKISA DERS: Type 1 yapısında sonuç kısmı Emir Cümlesi (Imperative) olabilir. Emir cümlelerinde özne olmaz ve fiil yalındır. 'Go to bed'."
+        },
+        {
+            "i": 15,
+            "t": "She won't talk to you if you _____ apologize.",
+            "o": {
+                "A": "won't",
+                "B": "don't",
+                "C": "didn't",
+                "D": "not",
+                "E": "aren't"
+            },
+            "c": "B",
+            "d": 2.8,
+            "r": 25,
+            "h": "Özür dilemezsen seninle konuşmayacak. 'If' tarafı.\n\nKISA DERS: 'If' tarafında Geniş Zaman olumsuzu 'don't' kullanılır. If you don't apologize."
+        },
+        {
+            "i": 16,
+            "t": "Where _____ you go if the cinema is closed?",
+            "o": {
+                "A": "do",
+                "B": "will",
+                "C": "are",
+                "D": "did",
+                "E": "have"
+            },
+            "c": "B",
+            "d": 2.7,
+            "r": 20,
+            "h": "Sinema kapalıysa nereye gideceksin? Soru ana cümlede.\n\nKISA DERS: Ana cümlede gelecek zaman sorusu 'Will' ile yapılır. 'Where will you go?'"
+        },
+        {
+            "i": 17,
+            "t": "If my mother _____, tell her I am out.",
+            "o": {
+                "A": "call",
+                "B": "will call",
+                "C": "calls",
+                "D": "called",
+                "E": "calling"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 20,
+            "h": "Annem ararsa... Özne 'My mother' (She). Geniş zaman.\n\nKISA DERS: Tekil şahıslarda fiil '-s' takısı alır. If my mother calls."
+        },
+        {
+            "i": 18,
+            "t": "You will get wet if you _____ take an umbrella.",
+            "o": {
+                "A": "don't",
+                "B": "won't",
+                "C": "not",
+                "D": "aren't",
+                "E": "didn't"
+            },
+            "c": "A",
+            "d": 2.7,
+            "r": 20,
+            "h": "Şemsiye almazsan ıslanacaksın.\n\nKISA DERS: 'If you don't take'."
+        },
+        {
+            "i": 19,
+            "t": "Unless it rains, we _____ a picnic.",
+            "o": {
+                "A": "have",
+                "B": "will have",
+                "C": "had",
+                "D": "having",
+                "E": "don't have"
+            },
+            "c": "B",
+            "d": 2.9,
+            "r": 25,
+            "h": "Yağmur yağmazsa piknik yapacağız. 'Unless' koşul kısmıdır.\n\nKISA DERS: Sonuç (ana) kısım Gelecek Zaman olur. We will have."
+        },
+        {
+            "i": 20,
+            "t": "If he _____ money, he will buy a car.",
+            "o": {
+                "A": "has",
+                "B": "have",
+                "C": "will have",
+                "D": "had",
+                "E": "having"
+            },
+            "c": "A",
+            "d": 2.7,
+            "r": 20,
+            "h": "Parası olursa... Özne 'He'. Sahip olmak fiili.\n\nKISA DERS: Geniş zamanda 'He' öznesi için 'Have' fiili 'Has' olur. If he has money."
+        }
+    ]
+}

@@ -1,1 +1,311 @@
-﻿
+﻿{
+    "test_info": {
+        "level": "PRE-INTERMEDIATE (A2-B1)",
+        "topic": "Grammar - Block 3 Review (Past Cont, Pres Perfect, Passive)",
+        "test_no": 24,
+        "description": "Serinin yirmi dördüncü ve 3. bloğun son testi. 2.1-2.5 zorluk seviyesinde. Geçmişte Süreklilik, Yakın Geçmiş ve Edilgen Çatı yapılarının kapsamlı tekrarı.",
+        "block": "3/4 (Moderate Final)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "I _____ a shower when the lights went out.",
+            "o": {
+                "A": "had",
+                "B": "was having",
+                "C": "have had",
+                "D": "am having",
+                "E": "did have"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 18,
+            "h": "Işıklar kesildiğinde (anlık), ben duş alıyordum (süreç).\n\nKISA DERS: Kısa eylem 'When' ile verilirse, uzun eylem 'Past Continuous' (was having) olur."
+        },
+        {
+            "i": 2,
+            "t": "This book _____ by J.K. Rowling.",
+            "o": {
+                "A": "wrote",
+                "B": "was written",
+                "C": "has written",
+                "D": "is writing",
+                "E": "did write"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Bu kitap J.K. Rowling tarafından yazıldı. Pasif yapı.\n\nKISA DERS: Kitap yazmaz, yazılır. Geçmiş zaman pasif: Was written."
+        },
+        {
+            "i": 3,
+            "t": "I have _____ eaten sushi.",
+            "o": {
+                "A": "yesterday",
+                "B": "ago",
+                "C": "last year",
+                "D": "never",
+                "E": "in 2010"
+            },
+            "c": "D",
+            "d": 2.1,
+            "r": 15,
+            "h": "Present Perfect (have + V3) yapısı. Zaman zarfı seçimi.\n\nKISA DERS: 'Never' (asla) Present Perfect ile kullanılır. Diğer şıklar Simple Past zarfıdır."
+        },
+        {
+            "i": 4,
+            "t": "Where _____ you born?",
+            "o": {
+                "A": "did",
+                "B": "were",
+                "C": "have",
+                "D": "are",
+                "E": "do"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 12,
+            "h": "Doğum yeri sorusu. Pasif gibi görünür ama kalıplaşmış 'Be born' yapısıdır.\n\nKISA DERS: 'Where were you born?' kalıbı kullanılır."
+        },
+        {
+            "i": 5,
+            "t": "While I was walking, I _____ an old friend.",
+            "o": {
+                "A": "meet",
+                "B": "met",
+                "C": "was meeting",
+                "D": "have met",
+                "E": "meeting"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "Yürürken (süreç), eski bir arkadaşla karşılaştım (anlık).\n\nKISA DERS: 'While' cümlesi süreci anlatır, ana cümle anlık olayı (Simple Past) anlatır. Meet -> Met."
+        },
+        {
+            "i": 6,
+            "t": "She hasn't _____ her homework yet.",
+            "o": {
+                "A": "finish",
+                "B": "finished",
+                "C": "finishing",
+                "D": "finishes",
+                "E": "did finish"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Henüz bitirmedi. Cümle sonunda 'yet' var.\n\nKISA DERS: Present Perfect yapısında fiilin 3. hali kullanılır. Düzenli fiil: Finished."
+        },
+        {
+            "i": 7,
+            "t": "The house _____ painted last week.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "has",
+                "D": "did",
+                "E": "were"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Ev boyandı (geçen hafta). Pasif yapı.\n\nKISA DERS: Geçmiş zaman pasifinde tekil özne 'Was' alır. Was painted."
+        },
+        {
+            "i": 8,
+            "t": "_____ you ever been to America?",
+            "o": {
+                "A": "Did",
+                "B": "Were",
+                "C": "Have",
+                "D": "Are",
+                "E": "Do"
+            },
+            "c": "C",
+            "d": 2.1,
+            "r": 15,
+            "h": "Hiç Amerika'da bulundun mu? Tecrübe sorusu.\n\nKISA DERS: 'Have you ever...' kalıbı."
+        },
+        {
+            "i": 9,
+            "t": "They _____ football when it started to rain.",
+            "o": {
+                "A": "played",
+                "B": "were playing",
+                "C": "have played",
+                "D": "are playing",
+                "E": "play"
+            },
+            "c": "B",
+            "d": 2.4,
+            "r": 18,
+            "h": "Yağmur başladığında onlar futbol oynuyordu (süreç).\n\nKISA DERS: 'When' anlık olayı verirken, ana eylem 'Past Continuous' (were playing) olur."
+        },
+        {
+            "i": 10,
+            "t": "We have lived here _____ 2010.",
+            "o": {
+                "A": "for",
+                "B": "since",
+                "C": "ago",
+                "D": "already",
+                "E": "just"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "2010 bir başlangıç tarihidir.\n\nKISA DERS: Yıllar ve tarihlerle 'Since' kullanılır."
+        },
+        {
+            "i": 11,
+            "t": "My car was _____ yesterday.",
+            "o": {
+                "A": "steal",
+                "B": "stole",
+                "C": "stolen",
+                "D": "stealing",
+                "E": "steals"
+            },
+            "c": "C",
+            "d": 2.3,
+            "r": 15,
+            "h": "Arabam çalındı. Pasif cümlede fiilin 3. hali.\n\nKISA DERS: Steal (V1) - Stole (V2) - Stolen (V3). Was stolen."
+        },
+        {
+            "i": 12,
+            "t": "I _____ seen him for a long time.",
+            "o": {
+                "A": "didn't",
+                "B": "haven't",
+                "C": "don't",
+                "D": "wasn't",
+                "E": "not"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Onu uzun zamandır görmedim. İpucu 'for a long time'. Fiil 'seen' (V3).\n\nKISA DERS: Fiil V3 olduğuna göre yapı Present Perfect'tir. 'Haven't seen'."
+        },
+        {
+            "i": 13,
+            "t": "The letters _____ delivered every morning.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "was",
+                "D": "were",
+                "E": "did"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Mektuplar her sabah dağıtılır (Genel gerçek/Pasif). Özne 'Letters' (Çoğul).\n\nKISA DERS: Geniş zaman pasifinde çoğul özneler 'Are' alır. Are delivered."
+        },
+        {
+            "i": 14,
+            "t": "What _____ you doing at 8 o'clock last night?",
+            "o": {
+                "A": "did",
+                "B": "do",
+                "C": "were",
+                "D": "was",
+                "E": "are"
+            },
+            "c": "C",
+            "d": 2.2,
+            "r": 15,
+            "h": "Dün gece 8'de ne yapıyordun? (Geçmişte belirli bir an).\n\nKISA DERS: Geçmiş süreç sorusu: 'What were you doing?'"
+        },
+        {
+            "i": 15,
+            "t": "He has _____ his key. He can't open the door.",
+            "o": {
+                "A": "lost",
+                "B": "lose",
+                "C": "losing",
+                "D": "losed",
+                "E": "loss"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 15,
+            "h": "Anahtarını kaybetti (sonuç: kapıyı açamıyor). Fiil V3.\n\nKISA DERS: Lose fiilinin 3. hali 'Lost'tur. He has lost."
+        },
+        {
+            "i": 16,
+            "t": "When I arrived, the meeting _____ already started.",
+            "o": {
+                "A": "has",
+                "B": "have",
+                "C": "had",
+                "D": "was",
+                "E": "did"
+            },
+            "c": "C",
+            "d": 2.5,
+            "r": 20,
+            "h": "Ben vardığımda toplantı çoktan başlamıştı. (Past Perfect'e ufak bir dokunuş/giriş).\n\nKISA DERS: Geçmişteki bir olaydan daha önceki bir olayı anlatırken 'Had + V3' kullanılır. 'The meeting had started'."
+        },
+        {
+            "i": 17,
+            "t": "_____ this car made in Germany?",
+            "o": {
+                "A": "Does",
+                "B": "Is",
+                "C": "Has",
+                "D": "Did",
+                "E": "Are"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Bu araba Almanya'da mı üretildi/üretilir? Pasif soru. Özne 'This car'.\n\nKISA DERS: Tekil özne pasif sorusu 'Is' ile başlar. 'Is this car made...?'"
+        },
+        {
+            "i": 18,
+            "t": "I _____ just finished my lunch.",
+            "o": {
+                "A": "did",
+                "B": "have",
+                "C": "am",
+                "D": "was",
+                "E": "had"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Öğle yemeğimi 'tam şimdi' (just) bitirdim.\n\nKISA DERS: 'Just' ve V3 (finished) varsa Present Perfect'tir. 'I have just finished'."
+        },
+        {
+            "i": 19,
+            "t": "We _____ watching TV when you called.",
+            "o": {
+                "A": "did",
+                "B": "were",
+                "C": "are",
+                "D": "have",
+                "E": "had"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Sen aradığında biz TV izliyorduk.\n\nKISA DERS: Geçmiş süreç: 'We were watching'."
+        },
+        {
+            "i": 20,
+            "t": "How long have you _____ here?",
+            "o": {
+                "A": "live",
+                "B": "lived",
+                "C": "living",
+                "D": "lives",
+                "E": "to live"
+            },
+            "c": "B",
+            "d": 2.1,
+            "r": 15,
+            "h": "Ne kadar süredir burada yaşıyorsun? Present Perfect yapısı.\n\nKISA DERS: Have you + V3. Live -> Lived."
+        }
+    ]
+}

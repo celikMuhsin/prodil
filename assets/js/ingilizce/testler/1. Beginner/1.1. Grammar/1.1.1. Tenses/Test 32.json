@@ -1,10 +1,311 @@
 ﻿{
     "test_info": {
-        "level": "BEGINNER (A0-A1)",
-        "topic": "Grammar - Basic Tenses (Mixed)",
+        "level": "INTERMEDIATE (B1)",
+        "topic": "Grammar - GRAND FINAL (All Tenses Review)",
         "test_no": 32,
-        "description": "Serinin 32. testi.",
-        "block": "1/4 (Very Easy)"
+        "description": "Serinin otuz ikinci ve son testi. 2.8-3.0 zorluk seviyesinde. İngilizcedeki tüm zamanların (Tenses) karma tekrarı ve karşılaştırması.",
+        "block": "4/4 (Hard Final)"
     },
-    "questions": []
+    "questions": [
+        {
+            "i": 1,
+            "t": "Listen! Someone _____ the violin.",
+            "o": {
+                "A": "plays",
+                "B": "played",
+                "C": "is playing",
+                "D": "has played",
+                "E": "will play"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 15,
+            "h": "'Listen!' (Dinle!) ünlemi şu anı gösterir.\n\nKISA DERS: Konuşma anında gerçekleşen eylemler Present Continuous (is playing) ile anlatılır."
+        },
+        {
+            "i": 2,
+            "t": "I _____ him three times this week.",
+            "o": {
+                "A": "see",
+                "B": "saw",
+                "C": "have seen",
+                "D": "am seeing",
+                "E": "had seen"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 20,
+            "h": "Bu hafta üç kez (henüz hafta bitmedi, sayı veriliyor).\n\nKISA DERS: Tamamlanmamış zaman dilimlerinde (this week) sayı ve tekrar belirtilirken Present Perfect (have seen) kullanılır."
+        },
+        {
+            "i": 3,
+            "t": "When I arrived home, my mother _____ dinner, so we ate together immediately.",
+            "o": {
+                "A": "cooked",
+                "B": "was cooking",
+                "C": "has cooked",
+                "D": "had cooked",
+                "E": "cooks"
+            },
+            "c": "D",
+            "d": 3.0,
+            "r": 25,
+            "h": "Ben eve vardığımda yemek hazırdı (pişirme bitmişti), hemen yedik.\n\nKISA DERS: Eve varmadan ÖNCE eylem tamamlandığı için Past Perfect (had cooked) kullanılır. (Was cooking olsaydı, pişirmeye devam ediyor olurdu)."
+        },
+        {
+            "i": 4,
+            "t": "By next year, they _____ the new bridge.",
+            "o": {
+                "A": "finish",
+                "B": "will finish",
+                "C": "will have finished",
+                "D": "are finishing",
+                "E": "have finished"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 20,
+            "h": "Gelecek yıla kadar (Deadline).\n\nKISA DERS: 'By' + Gelecek Zaman = Future Perfect (Will have finished)."
+        },
+        {
+            "i": 5,
+            "t": "While I _____ down the street, I met an old friend.",
+            "o": {
+                "A": "walked",
+                "B": "am walking",
+                "C": "was walking",
+                "D": "have walked",
+                "E": "walk"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 15,
+            "h": "Geçmişte caddede yürürken (süreç).\n\nKISA DERS: 'While' + Past Continuous (was walking)."
+        },
+        {
+            "i": 6,
+            "t": "She _____ usually _____ coffee, but today she is drinking tea.",
+            "o": {
+                "A": "don't / drink",
+                "B": "doesn't / drink",
+                "C": "didn't / drink",
+                "D": "isn't / drinking",
+                "E": "hasn't / drunk"
+            },
+            "c": "B",
+            "d": 2.8,
+            "r": 20,
+            "h": "Genellikle (Usually - Geniş Zaman) vs Bugün (Today - Şimdiki Zaman).\n\nKISA DERS: Geniş zaman olumsuzu: She doesn't drink."
+        },
+        {
+            "i": 7,
+            "t": "We _____ to the cinema yesterday evening.",
+            "o": {
+                "A": "go",
+                "B": "have gone",
+                "C": "went",
+                "D": "had gone",
+                "E": "were going"
+            },
+            "c": "C",
+            "d": 2.7,
+            "r": 15,
+            "h": "Zaman zarfı 'Yesterday evening' (Dün akşam - Belirli geçmiş).\n\nKISA DERS: Zaman belliyse Simple Past (went) kullanılır."
+        },
+        {
+            "i": 8,
+            "t": "Look at those black clouds! It _____ rain.",
+            "o": {
+                "A": "will",
+                "B": "is going to",
+                "C": "rains",
+                "D": "rained",
+                "E": "is raining"
+            },
+            "c": "B",
+            "d": 2.8,
+            "r": 20,
+            "h": "Kara bulutlar var (Kanıt). Yağmur yağacak.\n\nKISA DERS: Kanıta dayalı gelecek tahminlerinde 'Be going to' kullanılır."
+        },
+        {
+            "i": 9,
+            "t": "I _____ for you for two hours! Where have you been?",
+            "o": {
+                "A": "am waiting",
+                "B": "wait",
+                "C": "have been waiting",
+                "D": "waited",
+                "E": "will wait"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 20,
+            "h": "2 saattir seni bekliyorum (ve hala bekliyorum veya yeni bitti).\n\nKISA DERS: Geçmişte başlayıp süren eylemler: Present Perfect Continuous (Have been waiting)."
+        },
+        {
+            "i": 10,
+            "t": "Before he came to Ankara, he _____ in Istanbul for 5 years.",
+            "o": {
+                "A": "lived",
+                "B": "lives",
+                "C": "had lived",
+                "D": "has lived",
+                "E": "was living"
+            },
+            "c": "C",
+            "d": 3.0,
+            "r": 25,
+            "h": "Ankara'ya gelmeden önce (geçmiş), İstanbul'da yaşamıştı (daha önce).\n\nKISA DERS: Geçmişin geçmişi: Past Perfect (Had lived)."
+        },
+        {
+            "i": 11,
+            "t": "Next week at this time, I _____ on the beach.",
+            "o": {
+                "A": "lie",
+                "B": "will lie",
+                "C": "will be lying",
+                "D": "am lying",
+                "E": "have lain"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 20,
+            "h": "Haftaya bu saatte (Gelecek süreç).\n\nKISA DERS: Gelecekte belli bir anda devam edecek eylem: Future Continuous (Will be lying)."
+        },
+        {
+            "i": 12,
+            "t": "My father _____ me a new bike last month.",
+            "o": {
+                "A": "buy",
+                "B": "buys",
+                "C": "bought",
+                "D": "has bought",
+                "E": "had bought"
+            },
+            "c": "C",
+            "d": 2.7,
+            "r": 15,
+            "h": "Zaman zarfı 'Last month'.\n\nKISA DERS: Simple Past (Bought)."
+        },
+        {
+            "i": 13,
+            "t": "_____ you ever eaten sushi?",
+            "o": {
+                "A": "Did",
+                "B": "Do",
+                "C": "Have",
+                "D": "Are",
+                "E": "Had"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 15,
+            "h": "Hiç suşi yedin mi? (Tecrübe).\n\nKISA DERS: Present Perfect: Have you ever..."
+        },
+        {
+            "i": 14,
+            "t": "The train _____ at 9 o'clock every morning.",
+            "o": {
+                "A": "leave",
+                "B": "leaving",
+                "C": "leaves",
+                "D": "is leaving",
+                "E": "left"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 15,
+            "h": "Her sabah 9'da (Tarife/Çizelge).\n\nKISA DERS: Ulaşım tarifeleri ve programlı olaylar için Geniş Zaman (Simple Present) kullanılır. The train leaves."
+        },
+        {
+            "i": 15,
+            "t": "By the time you get home, I _____ sleeping.",
+            "o": {
+                "A": "will be",
+                "B": "am",
+                "C": "will have been",
+                "D": "was",
+                "E": "have been"
+            },
+            "c": "C",
+            "d": 3.0,
+            "r": 25,
+            "h": "Sen eve geldiğinde ben (bir süredir) uyuyor olacağım.\n\nKISA DERS: 'By the time' + süre vurgusu varsa Future Perfect Continuous (Will have been sleeping) kullanılır. Ancak şıklarda 'sleeping' zaten verilmiş, boşluğa 'will have been' gelir."
+        },
+        {
+            "i": 16,
+            "t": "I promise I _____ tell anyone.",
+            "o": {
+                "A": "don't",
+                "B": "didn't",
+                "C": "won't",
+                "D": "haven't",
+                "E": "not"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 15,
+            "h": "Söz veriyorum (Promise).\n\nKISA DERS: Söz verirken 'Will/Won't' kullanılır. Won't tell."
+        },
+        {
+            "i": 17,
+            "t": "We were watching TV when the electricity _____ out.",
+            "o": {
+                "A": "go",
+                "B": "went",
+                "C": "was going",
+                "D": "has gone",
+                "E": "had gone"
+            },
+            "c": "B",
+            "d": 2.8,
+            "r": 20,
+            "h": "Biz izlerken (süreç), elektrikler kesildi (anlık).\n\nKISA DERS: 'When' cümlesinde kısa olay Simple Past (went) olur."
+        },
+        {
+            "i": 18,
+            "t": "She is tired. She _____ hard all day.",
+            "o": {
+                "A": "works",
+                "B": "is working",
+                "C": "has been working",
+                "D": "worked",
+                "E": "will work"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 20,
+            "h": "Yorgun (şu an). Çünkü tüm gün çalıştı (etkisi sürüyor).\n\nKISA DERS: Sonuç şimdiki zamandaysa (is tired), sebep Present Perfect Continuous (has been working) olur."
+        },
+        {
+            "i": 19,
+            "t": "I knew his name because I _____ him before.",
+            "o": {
+                "A": "meet",
+                "B": "met",
+                "C": "had met",
+                "D": "have met",
+                "E": "meeting"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 20,
+            "h": "Adını biliyordum (geçmiş). Çünkü daha önce tanışmıştım (daha geçmiş).\n\nKISA DERS: Past Perfect (Had met)."
+        },
+        {
+            "i": 20,
+            "t": "Water _____ at 100 degrees Celsius.",
+            "o": {
+                "A": "boil",
+                "B": "boils",
+                "C": "is boiling",
+                "D": "boiled",
+                "E": "will boil"
+            },
+            "c": "B",
+            "d": 2.7,
+            "r": 15,
+            "h": "Bilimsel gerçek.\n\nKISA DERS: Genel doğrular Simple Present ile anlatılır. Water boils."
+        }
+    ]
 }

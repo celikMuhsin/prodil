@@ -1,10 +1,311 @@
 ﻿{
     "test_info": {
-        "level": "BEGINNER (A0-A1)",
-        "topic": "Grammar - Basic Tenses (Mixed)",
+        "level": "PRE-INTERMEDIATE (A2+)",
+        "topic": "Grammar - Past Simple vs Past Perfect",
         "test_no": 28,
-        "description": "Serinin 28. testi.",
-        "block": "1/4 (Very Easy)"
+        "description": "Serinin yirmi sekizinci testi. 2.6-3.0 zorluk seviyesinde. Geçmiş Zaman (V2) ile Miş'li Geçmiş Zaman (Had V3) arasındaki sıralama farkları.",
+        "block": "4/4 (Hard)"
     },
-    "questions": []
+    "questions": [
+        {
+            "i": 1,
+            "t": "When I arrived at the station, the train _____.",
+            "o": {
+                "A": "left",
+                "B": "had left",
+                "C": "leaves",
+                "D": "has left",
+                "E": "was leaving"
+            },
+            "c": "B",
+            "d": 2.7,
+            "r": 20,
+            "h": "Ben istasyona vardığımda tren orada yoktu (gitmişti). Olay ben gelmeden 'önce' oldu.\n\nKISA DERS: Geçmişteki bir olaydan daha önce gerçekleşen olaylar için Past Perfect (Had left) kullanılır."
+        },
+        {
+            "i": 2,
+            "t": "I washed the dishes after I _____ dinner.",
+            "o": {
+                "A": "eat",
+                "B": "ate",
+                "C": "had eaten",
+                "D": "have eaten",
+                "E": "eating"
+            },
+            "c": "C",
+            "d": 2.6,
+            "r": 20,
+            "h": "Bulaşıkları yıkadım (2. olay). Yemek yedikten sonra (1. olay).\n\nKISA DERS: 'After'dan sonra gelen eylem ilk yapılandır ve Past Perfect (Had eaten) alır."
+        },
+        {
+            "i": 3,
+            "t": "The lights went out while we _____ TV.",
+            "o": {
+                "A": "watched",
+                "B": "were watching",
+                "C": "had watched",
+                "D": "watch",
+                "E": "have watched"
+            },
+            "c": "B",
+            "d": 2.6,
+            "r": 20,
+            "h": "Dikkat! Burada sıralama değil, süreç var (While).\n\nKISA DERS: 'While' süreci anlatır. Işıklar gittiğinde izliyorduk (Past Continuous - Were watching). Past Perfect ile karıştırma."
+        },
+        {
+            "i": 4,
+            "t": "She failed the exam because she _____.",
+            "o": {
+                "A": "didn't study",
+                "B": "hasn't studied",
+                "C": "hadn't studied",
+                "D": "doesn't study",
+                "E": "not study"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 20,
+            "h": "Sınavdan kaldı (sonuç). Çünkü çalışmamıştı (sebep - daha önce).\n\nKISA DERS: Geçmişteki bir sonucun sebebi daha eskiye dayandığı için Past Perfect (Hadn't studied) kullanılır."
+        },
+        {
+            "i": 5,
+            "t": "By the time the police arrived, the thief _____ away.",
+            "o": {
+                "A": "run",
+                "B": "ran",
+                "C": "had run",
+                "D": "has run",
+                "E": "running"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 25,
+            "h": "Polis gelene kadar hırsız kaçmıştı.\n\nKISA DERS: 'By the time' kalıbı Past Perfect (Had run) ile sıkça kullanılır."
+        },
+        {
+            "i": 6,
+            "t": "I thanked him for what he _____.",
+            "o": {
+                "A": "do",
+                "B": "did",
+                "C": "had done",
+                "D": "has done",
+                "E": "does"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 20,
+            "h": "Ona teşekkür ettim (geçmiş). Yaptığı şeyler için (teşekkürden önce yaptı).\n\nKISA DERS: Teşekkür etme anından önce yapılan eylem: Had done."
+        },
+        {
+            "i": 7,
+            "t": "Before I went to sleep, I _____ my book.",
+            "o": {
+                "A": "read",
+                "B": "had read",
+                "C": "have read",
+                "D": "reading",
+                "E": "reads"
+            },
+            "c": "B",
+            "d": 2.7,
+            "r": 20,
+            "h": "Uyumadan önce (2. olay), kitabımı okudum/okumuştum (1. olay).\n\nKISA DERS: 'Before'lu cümlenin ana kısmı (diğer taraf) Past Perfect (Had read) olur."
+        },
+        {
+            "i": 8,
+            "t": "When we got to the party, everyone _____ dancing.",
+            "o": {
+                "A": "was",
+                "B": "had",
+                "C": "is",
+                "D": "did",
+                "E": "has"
+            },
+            "c": "A",
+            "d": 2.6,
+            "r": 20,
+            "h": "Partiye vardığımızda herkes dans ediyordu (O anki manzara).\n\nKISA DERS: 'Had danced' dersen 'dans etmişlerdi ve bitmişti' olur. Dans devam ediyorsa 'Was/Were dancing' kullanılır."
+        },
+        {
+            "i": 9,
+            "t": "He was sad because he _____ his wallet.",
+            "o": {
+                "A": "lost",
+                "B": "had lost",
+                "C": "has lost",
+                "D": "loses",
+                "E": "was losing"
+            },
+            "c": "B",
+            "d": 2.7,
+            "r": 20,
+            "h": "Üzgündü. Çünkü cüzdanını kaybetmişti.\n\nKISA DERS: Üzüntüden önceki olay: Had lost."
+        },
+        {
+            "i": 10,
+            "t": "After he _____ the letter, he posted it.",
+            "o": {
+                "A": "write",
+                "B": "wrote",
+                "C": "had written",
+                "D": "has written",
+                "E": "writing"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 20,
+            "h": "Mektubu yazdıktan sonra (önce yazdı), postaladı.\n\nKISA DERS: İlk eylem Past Perfect: Had written."
+        },
+        {
+            "i": 11,
+            "t": "I realized that I _____ to lock the door.",
+            "o": {
+                "A": "forget",
+                "B": "forgot",
+                "C": "had forgotten",
+                "D": "have forgotten",
+                "E": "forgetting"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 20,
+            "h": "Fark ettim ki (geçmiş), kapıyı kilitlemeyi unutmuşum (daha önce).\n\nKISA DERS: Unutma eylemi fark etmeden önce: Had forgotten."
+        },
+        {
+            "i": 12,
+            "t": "They went home after they _____ the work.",
+            "o": {
+                "A": "finish",
+                "B": "finished",
+                "C": "had finished",
+                "D": "has finished",
+                "E": "finishing"
+            },
+            "c": "C",
+            "d": 2.7,
+            "r": 20,
+            "h": "İşi bitirdikten sonra eve gittiler.\n\nKISA DERS: After + Past Perfect. Had finished."
+        },
+        {
+            "i": 13,
+            "t": "When I opened the fridge, I saw that someone _____ all the cake.",
+            "o": {
+                "A": "eat",
+                "B": "ate",
+                "C": "had eaten",
+                "D": "has eaten",
+                "E": "eating"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 25,
+            "h": "Dolabı açtım (geçmiş), birinin pastayı yediğini gördüm (daha önce yenmiş).\n\nKISA DERS: Had eaten."
+        },
+        {
+            "i": 14,
+            "t": "She told me she _____ never been to Italy.",
+            "o": {
+                "A": "has",
+                "B": "had",
+                "C": "was",
+                "D": "did",
+                "E": "is"
+            },
+            "c": "B",
+            "d": 2.7,
+            "r": 20,
+            "h": "Bana İtalya'ya hiç gitmediğini söyledi.\n\nKISA DERS: Söyleme anına kadarki tecrübe: Had never been."
+        },
+        {
+            "i": 15,
+            "t": "I knew him because I _____ him before.",
+            "o": {
+                "A": "met",
+                "B": "have met",
+                "C": "had met",
+                "D": "meet",
+                "E": "meeting"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 20,
+            "h": "Onu tanıdım, çünkü daha önce tanışmıştım.\n\nKISA DERS: Tanıdım (Knew) -> Ondan öncesi (Had met)."
+        },
+        {
+            "i": 16,
+            "t": "Comparison: I _____ breakfast before I went out. (Sıralama önemli)",
+            "o": {
+                "A": "have",
+                "B": "had",
+                "C": "had had",
+                "D": "have had",
+                "E": "having"
+            },
+            "c": "C",
+            "d": 3.0,
+            "r": 25,
+            "h": "Dışarı çıkmadan önce kahvaltı yapmıştım. (Had + V3).\n\nKISA DERS: 'Have breakfast' kalıbının Past Perfect hali: Yardımcı fiil 'Had' + Ana fiil 'Had' (V3). Yani 'Had had'."
+        },
+        {
+            "i": 17,
+            "t": "He didn't want to come because he _____ the film already.",
+            "o": {
+                "A": "saw",
+                "B": "had seen",
+                "C": "has seen",
+                "D": "sees",
+                "E": "was seeing"
+            },
+            "c": "B",
+            "d": 2.8,
+            "r": 20,
+            "h": "Gelmek istemedi, çünkü filmi çoktan görmüştü.\n\nKISA DERS: Had seen."
+        },
+        {
+            "i": 18,
+            "t": "Before the doctor arrived, the patient _____.",
+            "o": {
+                "A": "died",
+                "B": "has died",
+                "C": "had died",
+                "D": "dies",
+                "E": "dying"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 20,
+            "h": "Doktor gelmeden önce hasta ölmüştü.\n\nKISA DERS: Olay sıralamasında ilk olay: Had died."
+        },
+        {
+            "i": 19,
+            "t": "Simple Past vs Past Perfect: When he arrived, the meeting started. (Anlamı nedir?)",
+            "o": {
+                "A": "He was late.",
+                "B": "He arrived, then it started.",
+                "C": "It started before he arrived.",
+                "D": "He missed the start.",
+                "E": "He didn't go."
+            },
+            "c": "B",
+            "d": 2.8,
+            "r": 20,
+            "h": "Her iki taraf da Simple Past ise olaylar sırayla olmuştur.\n\nKISA DERS: 'When he arrived, it started' = O geldi, sonra başladı (Tam zamanında). 'Had started' olsaydı geç kalmış olurdu."
+        },
+        {
+            "i": 20,
+            "t": "We were tired. We _____ for 5 hours.",
+            "o": {
+                "A": "travelled",
+                "B": "were travelling",
+                "C": "had travelled",
+                "D": "have travelled",
+                "E": "travel"
+            },
+            "c": "C",
+            "d": 3.0,
+            "r": 25,
+            "h": "Yorgunduk. 5 saattir seyahat ediyorduk/etmiştik.\n\nKISA DERS: Burada 'Had been travelling' en doğrusudur ama şıklarda yoksa ve süreç vurgulanıyorsa 'Had travelled' (Past Perfect) Simple Past'tan daha iyidir."
+        }
+    ]
 }

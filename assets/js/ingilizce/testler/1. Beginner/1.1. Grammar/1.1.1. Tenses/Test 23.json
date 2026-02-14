@@ -1,1 +1,311 @@
-﻿
+﻿{
+    "test_info": {
+        "level": "PRE-INTERMEDIATE (A2-B1)",
+        "topic": "Grammar - Passive Voice (Present & Past Simple)",
+        "test_no": 23,
+        "description": "Serinin yirmi üçüncü testi. 2.1-2.5 zorluk seviyesinde. Edilgen Çatı (Passive Voice) giriş. Present Simple (am/is/are + V3) ve Past Simple (was/were + V3) kullanımı.",
+        "block": "3/4 (Moderate)"
+    },
+    "questions": [
+        {
+            "i": 1,
+            "t": "English _____ spoken all over the world.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "was",
+                "D": "has",
+                "E": "did"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 15,
+            "h": "İngilizce tüm dünyada konuşulur (Genel bir gerçek). Özne 'English' (Tekil).\n\nKISA DERS: Present Passive yapısı: 'Am/Is/Are + V3'. İngilizce konuşmaz, konuşulur. 'English is spoken'."
+        },
+        {
+            "i": 2,
+            "t": "The telephone _____ invented by Alexander Graham Bell.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "are",
+                "D": "were",
+                "E": "has"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Telefon icat edildi (Geçmişte). Özne 'The telephone' (Tekil).\n\nKISA DERS: Past Passive yapısı: 'Was/Were + V3'. Olay geçmişte olduğu için 'Was invented' kullanılır."
+        },
+        {
+            "i": 3,
+            "t": "This room _____ cleaned every day.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "are",
+                "D": "were",
+                "E": "does"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 15,
+            "h": "Zaman zarfı 'every day' (her gün). Geniş zaman edilgen.\n\nKISA DERS: Oda kendi kendine temizlemez, temizlenir. Geniş zamanda tekil özne için 'is cleaned' kullanılır."
+        },
+        {
+            "i": 4,
+            "t": "The Pyramids _____ built in Egypt thousands of years ago.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "are",
+                "D": "is",
+                "E": "did"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Piramitler inşa edildi (Geçmiş). Özne 'The Pyramids' (Çoğul).\n\nKISA DERS: Geçmiş zaman edilgen yapıda çoğul özneler 'Were + V3' alır. Were built."
+        },
+        {
+            "i": 5,
+            "t": "The letter was _____ yesterday.",
+            "o": {
+                "A": "write",
+                "B": "wrote",
+                "C": "written",
+                "D": "writing",
+                "E": "writed"
+            },
+            "c": "C",
+            "d": 2.3,
+            "r": 15,
+            "h": "Mektup yazıldı. Pasif cümlede fiilin kaçıncı hali kullanılır?\n\nKISA DERS: Passive Voice cümlelerinde fiil HER ZAMAN 3. haldedir (V3). Write - Wrote - Written."
+        },
+        {
+            "i": 6,
+            "t": "Oranges _____ grown in Antalya.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "are",
+                "D": "were",
+                "E": "did"
+            },
+            "c": "C",
+            "d": 2.1,
+            "r": 15,
+            "h": "Portakallar Antalya'da yetiştirilir (Genel gerçek). Özne 'Oranges' (Çoğul).\n\nKISA DERS: Geniş zaman pasif ve çoğul özne: 'Are grown'."
+        },
+        {
+            "i": 7,
+            "t": "My car _____ stolen last night.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "are",
+                "D": "were",
+                "E": "has"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Arabam dün gece çalındı. Zaman 'last night' (Geçmiş).\n\nKISA DERS: Geçmiş zaman pasif ve tekil özne: 'Was stolen'."
+        },
+        {
+            "i": 8,
+            "t": "Breakfast _____ served at 8 o'clock every morning.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "are",
+                "D": "has",
+                "E": "did"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 15,
+            "h": "Kahvaltı servis edilir. 'Every morning'.\n\nKISA DERS: Kahvaltı tekildir (Uncountable). Geniş zamanda 'Is served' kullanılır."
+        },
+        {
+            "i": 9,
+            "t": "The Mona Lisa was painted _____ Leonardo da Vinci.",
+            "o": {
+                "A": "with",
+                "B": "from",
+                "C": "of",
+                "D": "by",
+                "E": "for"
+            },
+            "c": "D",
+            "d": 2.3,
+            "r": 12,
+            "h": "Mona Lisa, Leonardo 'tarafından' boyandı.\n\nKISA DERS: Pasif cümlelerde işi yapan kişiyi belirtirken 'By' edatı kullanılır."
+        },
+        {
+            "i": 10,
+            "t": "How many windows _____ broken yesterday?",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "are",
+                "D": "is",
+                "E": "did"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Kaç pencere kırıldı? Özne 'Windows' (Çoğul). Zaman 'Yesterday'.\n\nKISA DERS: Geçmiş zaman pasif soru: 'Were broken'."
+        },
+        {
+            "i": 11,
+            "t": "Butter is _____ from milk.",
+            "o": {
+                "A": "make",
+                "B": "making",
+                "C": "made",
+                "D": "makes",
+                "E": "maked"
+            },
+            "c": "C",
+            "d": 2.1,
+            "r": 12,
+            "h": "Tereyağı sütten yapılır. 'Make' fiilinin 3. hali.\n\nKISA DERS: Pasif yapıda V3: Make - Made - Made."
+        },
+        {
+            "i": 12,
+            "t": "These cars _____ made in Germany.",
+            "o": {
+                "A": "is",
+                "B": "was",
+                "C": "are",
+                "D": "have",
+                "E": "did"
+            },
+            "c": "C",
+            "d": 2.1,
+            "r": 15,
+            "h": "Bu arabalar Almanya'da üretilir (Genel gerçek). Özne 'These cars'.\n\nKISA DERS: Çoğul öznelerde geniş zaman pasif: 'Are made'."
+        },
+        {
+            "i": 13,
+            "t": "The match _____ cancelled because of the rain.",
+            "o": {
+                "A": "was",
+                "B": "is",
+                "C": "were",
+                "D": "are",
+                "E": "did"
+            },
+            "c": "A",
+            "d": 2.2,
+            "r": 15,
+            "h": "Maç iptal edildi (Olay oldu bitti). Özne 'The match' (Tekil).\n\nKISA DERS: Geçmiş zaman pasif: 'Was cancelled'."
+        },
+        {
+            "i": 14,
+            "t": "I _____ not invited to the party last week.",
+            "o": {
+                "A": "am",
+                "B": "was",
+                "C": "were",
+                "D": "did",
+                "E": "have"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "Davet edilmedim (Ben). Zaman 'last week'.\n\nKISA DERS: 'I' öznesi geçmiş zaman pasif yapısında 'Was' alır. I was not invited."
+        },
+        {
+            "i": 15,
+            "t": "Where _____ coffee grown?",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "was",
+                "D": "were",
+                "E": "does"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 15,
+            "h": "Kahve nerede yetiştirilir? (Genel). Kahve sayılamayan (uncountable) bir isimdir.\n\nKISA DERS: Sayılamayan isimler tekil kabul edilir. 'Where is coffee grown?'"
+        },
+        {
+            "i": 16,
+            "t": "The thief was _____ by the police.",
+            "o": {
+                "A": "catch",
+                "B": "catched",
+                "C": "caught",
+                "D": "catching",
+                "E": "catcher"
+            },
+            "c": "C",
+            "d": 2.4,
+            "r": 18,
+            "h": "Hırsız yakalandı. 'Catch' fiilinin 3. hali.\n\nKISA DERS: Catch düzensiz bir fiildir. V3 hali 'Caught'tur (okunuşu: kot)."
+        },
+        {
+            "i": 17,
+            "t": "_____ you taken to the hospital yesterday?",
+            "o": {
+                "A": "Did",
+                "B": "Were",
+                "C": "Was",
+                "D": "Are",
+                "E": "Do"
+            },
+            "c": "B",
+            "d": 2.3,
+            "r": 15,
+            "h": "Hastaneye götürüldün mü? (Sen). Zaman 'yesterday'. Fiil 'taken' (V3).\n\nKISA DERS: Eğer fiil V3 ise ve geçmiş zamansa, soru 'Was/Were' ile sorulur. 'Were you taken?'"
+        },
+        {
+            "i": 18,
+            "t": "This song _____ sung by Tarkan.",
+            "o": {
+                "A": "is",
+                "B": "are",
+                "C": "were",
+                "D": "have",
+                "E": "do"
+            },
+            "c": "A",
+            "d": 2.1,
+            "r": 12,
+            "h": "Bu şarkı Tarkan tarafından söylenir (veya söylenmiştir - genel eser). Özne 'This song'.\n\nKISA DERS: Eser sahipliği belirtilirken genelde pasif kullanılır. 'This song is sung...' (Was da olabilir ama şıklarda tekil geçmiş yok)."
+        },
+        {
+            "i": 19,
+            "t": "Glass is _____ from sand.",
+            "o": {
+                "A": "make",
+                "B": "making",
+                "C": "made",
+                "D": "makes",
+                "E": "did"
+            },
+            "c": "C",
+            "d": 2.1,
+            "r": 12,
+            "h": "Cam kumdan yapılır.\n\nKISA DERS: Is + V3. Made."
+        },
+        {
+            "i": 20,
+            "t": "The keys _____ found under the sofa.",
+            "o": {
+                "A": "was",
+                "B": "were",
+                "C": "is",
+                "D": "are",
+                "E": "did"
+            },
+            "c": "B",
+            "d": 2.2,
+            "r": 15,
+            "h": "Anahtarlar bulundu (Geçmiş). Özne 'The keys' (Çoğul).\n\nKISA DERS: Çoğul özne geçmiş zaman pasif: 'Were found'."
+        }
+    ]
+}

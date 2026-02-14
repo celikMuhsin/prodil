@@ -1,10 +1,311 @@
 ﻿{
     "test_info": {
-        "level": "BEGINNER (A0-A1)",
-        "topic": "Grammar - Basic Tenses (Mixed)",
+        "level": "INTERMEDIATE (B1)",
+        "topic": "Grammar - Future Perfect Continuous Tense",
         "test_no": 31,
-        "description": "Serinin 31. testi.",
-        "block": "1/4 (Very Easy)"
+        "description": "Serinin otuz birinci testi. 2.8-3.0 zorluk seviyesinde. 'Will have been + V-ing' yapısı. Gelecekteki bir noktada sürecin vurgulanması.",
+        "block": "4/4 (Hard)"
     },
-    "questions": []
+    "questions": [
+        {
+            "i": 1,
+            "t": "By next year, we _____ in this city for 10 years.",
+            "o": {
+                "A": "live",
+                "B": "will live",
+                "C": "will have been living",
+                "D": "are living",
+                "E": "have lived"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 20,
+            "h": "Gelecek yıla gelindiğinde, 10 yıllık bir süreç tamamlanmış olacak ve yaşamaya devam ediyor olacağız.\n\nKISA DERS: 'By + Gelecek Zaman' ve 'For + Süre' varsa, Future Perfect Continuous (Will have been living) kullanılır."
+        },
+        {
+            "i": 2,
+            "t": "When you arrive, I _____ for you for two hours.",
+            "o": {
+                "A": "wait",
+                "B": "will wait",
+                "C": "will have waited",
+                "D": "will have been waiting",
+                "E": "am waiting"
+            },
+            "c": "D",
+            "d": 2.9,
+            "r": 20,
+            "h": "Sen vardığında, ben seni 2 saattir bekliyor olacağım (bekleme süreci vurgulanıyor).\n\nKISA DERS: Süreç (duration) vurgulandığı için 'Will have been waiting' tercih edilir."
+        },
+        {
+            "i": 3,
+            "t": "By 2030, she _____ as a doctor for 20 years.",
+            "o": {
+                "A": "works",
+                "B": "will work",
+                "C": "will have been working",
+                "D": "is working",
+                "E": "worked"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 20,
+            "h": "2030'a gelindiğinde, doktorluk yapma süresi 20 yıl olacak.\n\nKISA DERS: Gelecekteki bir tarihe kadar sürecek eylem: 'Will have been working'."
+        },
+        {
+            "i": 4,
+            "t": "Next month, they _____ married for 25 years.",
+            "o": {
+                "A": "are",
+                "B": "will be",
+                "C": "will have been",
+                "D": "have been",
+                "E": "will have been being"
+            },
+            "c": "C",
+            "d": 3.0,
+            "r": 25,
+            "h": "DİKKAT! 'Be' (olmak) fiili durum fiilidir, '-ing' almaz. Bu yüzden Future Perfect Continuous yerine Future Perfect kullanılır.\n\nKISA DERS: Durum fiilleri (be, know, love) continuous olmaz. 'Will have been being' YANLIŞTIR. Doğrusu: 'Will have been'."
+        },
+        {
+            "i": 5,
+            "t": "By the time the sun sets, we _____ football for 3 hours.",
+            "o": {
+                "A": "play",
+                "B": "will play",
+                "C": "will have been playing",
+                "D": "are playing",
+                "E": "played"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 20,
+            "h": "Güneş batana kadar 3 saattir futbol oynuyor olacağız.\n\nKISA DERS: Will have been playing."
+        },
+        {
+            "i": 6,
+            "t": "He will be tired when he gets home because he _____ for over 8 hours.",
+            "o": {
+                "A": "will work",
+                "B": "has worked",
+                "C": "will have been working",
+                "D": "works",
+                "E": "worked"
+            },
+            "c": "C",
+            "d": 3.0,
+            "r": 25,
+            "h": "Eve vardığında yorgun olacak (gelecek). Çünkü 8 saatten fazladır çalışıyor olacak.\n\nKISA DERS: Gelecekteki yorgunluğun sebebi olan süreç: 'Will have been working'."
+        },
+        {
+            "i": 7,
+            "t": "How long _____ you _____ here by the end of the month?",
+            "o": {
+                "A": "will / be working",
+                "B": "will / have been working",
+                "C": "do / work",
+                "D": "are / working",
+                "E": "have / worked"
+            },
+            "c": "B",
+            "d": 2.9,
+            "r": 20,
+            "h": "Ay sonuna kadar burada ne kadar süredir çalışıyor olacaksın?\n\nKISA DERS: Gelecekteki süreci sormak: 'How long will you have been working?'"
+        },
+        {
+            "i": 8,
+            "t": "I _____ English for five years next June.",
+            "o": {
+                "A": "learn",
+                "B": "will learn",
+                "C": "will have been learning",
+                "D": "am learning",
+                "E": "learned"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 20,
+            "h": "Gelecek Haziran'da İngilizce öğrenme sürecim 5. yılına girecek/tamamlanacak.\n\nKISA DERS: Will have been learning."
+        },
+        {
+            "i": 9,
+            "t": "By next week, I _____ him for a year.",
+            "o": {
+                "A": "know",
+                "B": "will know",
+                "C": "will have been knowing",
+                "D": "will have known",
+                "E": "am knowing"
+            },
+            "c": "D",
+            "d": 3.0,
+            "r": 25,
+            "h": "DİKKAT! 'Know' (tanımak/bilmek) fiili '-ing' ALMAZ.\n\nKISA DERS: Stative (durum) fiillerde Continuous yerine Perfect kullanılır. 'Will have been knowing' YANLIŞTIR. Doğrusu: 'Will have known'."
+        },
+        {
+            "i": 10,
+            "t": "They _____ all night by the time we wake up.",
+            "o": {
+                "A": "will drive",
+                "B": "will be driving",
+                "C": "will have been driving",
+                "D": "drive",
+                "E": "drove"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 20,
+            "h": "Biz uyanana kadar onlar bütün gece araba sürüyor olacaklar.\n\nKISA DERS: Will have been driving."
+        },
+        {
+            "i": 11,
+            "t": "By 5 o'clock, she _____ for 30 minutes.",
+            "o": {
+                "A": "wait",
+                "B": "waits",
+                "C": "will have been waiting",
+                "D": "will wait",
+                "E": "is waiting"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 20,
+            "h": "Saat 5 olduğunda, o 30 dakikadır bekliyor olacak.\n\nKISA DERS: Will have been waiting."
+        },
+        {
+            "i": 12,
+            "t": "We _____ (not) living here for long by the time you come back.",
+            "o": {
+                "A": "won't have been",
+                "B": "haven't been",
+                "C": "won't be",
+                "D": "didn't be",
+                "E": "don't be"
+            },
+            "c": "A",
+            "d": 2.9,
+            "r": 20,
+            "h": "Sen döndüğünde, biz burada uzun süredir yaşıyor olmayacağız (henüz yeni taşınmış olacağız vs.).\n\nKISA DERS: Olumsuz yapı: Won't have been living."
+        },
+        {
+            "i": 13,
+            "t": "Future Perfect vs Future Perfect Cont: 'I will have written the report' implies...",
+            "o": {
+                "A": "I will still be writing it.",
+                "B": "It will be finished.",
+                "C": "I started writing long ago.",
+                "D": "I write every day.",
+                "E": "I don't want to write."
+            },
+            "c": "B",
+            "d": 3.0,
+            "r": 25,
+            "h": "Anlam farkı sorusu. 'Will have written' (Bitirmiş olacağım).\n\nKISA DERS: Future Perfect (have V3) bitişi, Future Perfect Continuous (have been V-ing) süreci vurgular. Cevap: Bitmiş olacak (B)."
+        },
+        {
+            "i": 14,
+            "t": "Future Perfect vs Future Perfect Cont: 'I will have been writing the report' implies...",
+            "o": {
+                "A": "It will be finished.",
+                "B": "I will still be in the process of writing.",
+                "C": "I will finish it soon.",
+                "D": "I wrote it yesterday.",
+                "E": "I never write."
+            },
+            "c": "B",
+            "d": 3.0,
+            "r": 25,
+            "h": "Anlam farkı sorusu. 'Will have been writing'.\n\nKISA DERS: Eylem devam ediyor olacak veya o ana kadar sürmüş olacak (bitip bitmediği değil, ne kadar sürdüğü önemlidir)."
+        },
+        {
+            "i": 15,
+            "t": "By next year, I _____ playing the piano for ten years.",
+            "o": {
+                "A": "will be",
+                "B": "will have been",
+                "C": "am",
+                "D": "have been",
+                "E": "was"
+            },
+            "c": "B",
+            "d": 2.8,
+            "r": 20,
+            "h": "10 yıldır piyano çalıyor olacağım.\n\nKISA DERS: Will have been playing."
+        },
+        {
+            "i": 16,
+            "t": "My father _____ at this company for 30 years when he retires next month.",
+            "o": {
+                "A": "will work",
+                "B": "works",
+                "C": "will have been working",
+                "D": "is working",
+                "E": "worked"
+            },
+            "c": "C",
+            "d": 2.9,
+            "r": 20,
+            "h": "Gelecek ay emekli olduğunda, 30 yıldır çalışıyor olacak.\n\nKISA DERS: Will have been working."
+        },
+        {
+            "i": 17,
+            "t": "_____ you _____ TV for 5 hours by midnight?",
+            "o": {
+                "A": "Will / have been watching",
+                "B": "Do / watch",
+                "C": "Are / watching",
+                "D": "Will / watch",
+                "E": "Have / watched"
+            },
+            "c": "A",
+            "d": 2.8,
+            "r": 20,
+            "h": "Gece yarısına kadar 5 saattir TV izliyor mu olacaksın?\n\nKISA DERS: Will you have been watching...?"
+        },
+        {
+            "i": 18,
+            "t": "She _____ (sleep) for 10 hours by the time you wake her up.",
+            "o": {
+                "A": "will sleep",
+                "B": "is sleeping",
+                "C": "will have been sleeping",
+                "D": "slept",
+                "E": "has slept"
+            },
+            "c": "C",
+            "d": 2.8,
+            "r": 20,
+            "h": "Sen onu uyandırdığında, o 10 saattir uyuyor olacak.\n\nKISA DERS: Will have been sleeping."
+        },
+        {
+            "i": 19,
+            "t": "We _____ running.",
+            "o": {
+                "A": "will have been",
+                "B": "will have",
+                "C": "will be",
+                "D": "have been",
+                "E": "had been"
+            },
+            "c": "A",
+            "d": 2.7,
+            "r": 15,
+            "h": "Gramer tamamlama. Cümle sonu yok ama yapı: We will have been running.\n\nKISA DERS: Future Perfect Continuous yardımcı fiilleri 'will have been'dir."
+        },
+        {
+            "i": 20,
+            "t": "By the end of the day, how long _____ she _____ driving?",
+            "o": {
+                "A": "will / be",
+                "B": "will / have been",
+                "C": "is / be",
+                "D": "did / be",
+                "E": "has / been"
+            },
+            "c": "B",
+            "d": 2.9,
+            "r": 20,
+            "h": "Günün sonunda ne kadar süredir sürüyor olacak?\n\nKISA DERS: How long will she have been driving?"
+        }
+    ]
 }
