@@ -2,6 +2,16 @@
 <html lang="tr">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7E4VL2EC7L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7E4VL2EC7L');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="K0D7wAEK4DEkvqklUa06QX-tu2SUunjPFwEhrWQu6xc" />
@@ -138,23 +148,16 @@
             }
         }
 
-        /* Custom Scrollbar for Reviews Vertical Feed */
+        /* Smooth GPU-Accelerated Reviews Track */
         #reviews-vertical-feed {
-            scroll-behavior: auto !important;
+            touch-action: pan-x;
+            overscroll-behavior: contain;
         }
-        #reviews-vertical-feed::-webkit-scrollbar {
-            width: 6px;
-        }
-        #reviews-vertical-feed::-webkit-scrollbar-track {
-            background: #f1f5f9;
-            border-radius: 9999px;
-        }
-        #reviews-vertical-feed::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 9999px;
-        }
-        #reviews-vertical-feed::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
+        #reviews-scroll-track {
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform: translate3d(0, 0, 0);
         }
     </style>
 </head>
@@ -542,7 +545,7 @@
                                     </svg>
                                     <div>
                                         <h4 class="text-sm font-bold text-gray-900 leading-tight">Google Yorumları</h4>
-                                        <span class="text-[11px] text-gray-400">Doğrulanmış Öğrenci & Veli Görüşleri</span>
+                                        <span class="text-[11px] text-gray-400">Öğrenci & Veli Görüşleri</span>
                                     </div>
                                 </div>
                                 <span class="inline-flex items-center gap-1 bg-green-50 text-green-700 text-[11px] font-bold px-2 py-0.5 rounded-full border border-green-200">
@@ -575,8 +578,9 @@
 
                         <!-- Dikey Kayan Yorumlar Alanı (Uzatılmış ve Boşlukları Dengelenmiş) -->
                         <div id="reviews-vertical-feed" 
-                             class="overflow-y-auto space-y-[21px] my-3 h-[340px] sm:h-[355px] pr-2">
-                            <!-- Review 1 -->
+                             class="overflow-hidden my-3 h-[340px] sm:h-[355px] relative pr-2">
+                            <div id="reviews-scroll-track" class="space-y-[21px]">
+                                <!-- Review 1 -->
                             <div class="review-item bg-blue-50/40 rounded-xl p-3 border border-blue-100/60 transition-colors hover:bg-blue-50/70">
                                 <div class="flex items-center justify-between mb-1.5">
                                     <div class="flex items-center gap-2.5">
@@ -2296,6 +2300,11 @@
                                 </p>
                             </div>
                         </div>
+                        <!-- Özel Yumuşak Kaydırma Çubuğu -->
+                        <div id="reviews-scrollbar-track" class="absolute top-0 right-0.5 w-1.5 h-full bg-slate-100/80 rounded-full opacity-0 transition-opacity duration-300 pointer-events-none">
+                            <div id="reviews-scrollbar-thumb" class="w-full bg-slate-300 rounded-full" style="height: 48px; transform: translate3d(0, 0, 0);"></div>
+                        </div>
+                    </div>
 
                         <!-- Alt Aksiyon Butonları -->
                         <div class="pt-3 border-t border-gray-100 space-y-1.5">
@@ -2861,45 +2870,198 @@
             if (event.key === "Escape") { closeWhatsappModal(); closeEmailModal(); }
         });
 
-        // Google Reviews Vertical Feed Auto-Scroll Logic
+        // Google Reviews Vertical Feed Auto-Scroll Logic (GPU-Accelerated Sub-Pixel Smooth Gliding with Inertia Physics)
         (function initReviewsScroll() {
             function startScroll() {
                 const feed = document.getElementById('reviews-vertical-feed');
-                if (!feed) return;
+                const track = document.getElementById('reviews-scroll-track');
+                const thumb = document.getElementById('reviews-scrollbar-thumb');
+                const scrollbar = document.getElementById('reviews-scrollbar-track');
+                if (!feed || !track) return;
 
-                let isPaused = false;
-                let currentPos = feed.scrollTop || 0;
-                const scrollSpeed = 0.22; // Very gentle, slow and readable gliding speed
+                let currentPos = 0;
+                let maxScroll = Math.max(0, track.offsetHeight - feed.clientHeight);
 
-                // Keep currentPos synchronized when user scrolls manually via scrollbar or wheel
-                feed.addEventListener('scroll', () => {
-                    if (isPaused) {
-                        currentPos = feed.scrollTop;
+                let isDragging = false;
+                let isHovered = false;
+                let velocityY = 0; // px/ms
+                let lastDragTime = 0;
+                let lastDragY = 0;
+
+                function updateMetrics() {
+                    maxScroll = Math.max(0, track.offsetHeight - feed.clientHeight);
+                }
+                window.addEventListener('resize', updateMetrics);
+
+                function applyTransform() {
+                    track.style.transform = `translate3d(0, -${currentPos.toFixed(2)}px, 0)`;
+                    if (thumb && maxScroll > 0) {
+                        const progress = currentPos / maxScroll;
+                        const thumbHeight = Math.max(28, Math.min(60, (feed.clientHeight / track.offsetHeight) * feed.clientHeight));
+                        thumb.style.height = `${thumbHeight}px`;
+                        const maxThumbY = feed.clientHeight - thumbHeight;
+                        const thumbY = progress * maxThumbY;
+                        thumb.style.transform = `translate3d(0, ${thumbY.toFixed(2)}px, 0)`;
                     }
-                });
+                }
 
-                feed.addEventListener('mouseenter', () => { isPaused = true; });
-                feed.addEventListener('mouseleave', () => { 
-                    isPaused = false; 
-                    currentPos = feed.scrollTop;
-                });
-                feed.addEventListener('touchstart', () => { isPaused = true; }, { passive: true });
-                feed.addEventListener('touchend', () => { 
-                    isPaused = false; 
-                    currentPos = feed.scrollTop;
-                }, { passive: true });
+                function recordMove(y) {
+                    const now = performance.now();
+                    const dt = now - lastDragTime;
+                    if (dt > 8) {
+                        const dy = lastDragY - y; // Pozitif = aşağı doğru kaydırma (currentPos artar)
+                        velocityY = dy / dt; // px/ms
+                        lastDragTime = now;
+                        lastDragY = y;
+                    }
+                }
 
-                function scrollStep() {
-                    if (!isPaused && feed.scrollHeight > feed.clientHeight) {
-                        currentPos += scrollSpeed;
-                        if (currentPos >= (feed.scrollHeight - feed.clientHeight - 1)) {
-                            currentPos = 0;
+                function endDrag() {
+                    isDragging = false;
+                    // Eğer kullanıcı parmağını çekmeden önce ekranda durakladıysa (>70ms), fırlatma hızını sıfırla
+                    if (performance.now() - lastDragTime > 70) {
+                        velocityY = 0;
+                    } else {
+                        // Doğal his için maksimum hızı sınırla (±2.5 px/ms)
+                        velocityY = Math.max(-2.5, Math.min(2.5, velocityY));
+                    }
+                    if (scrollbar) scrollbar.classList.add('opacity-0');
+                    lastTime = performance.now();
+                }
+
+                // Saniyede ~14 piksel hız (Göz yormayan, okumaya uygun, son derece pürüzsüz akış)
+                const PIXELS_PER_SECOND = 14;
+                let lastTime = performance.now();
+
+                function scrollStep(now) {
+                    const elapsed = Math.min(now - lastTime, 50); // Sekme arka plandayken sıçramayı önler
+                    lastTime = now;
+
+                    if (!isDragging) {
+                        // Atalet / Momentum Hareketi (Fırlatma hızına göre kademeli yavaşlama)
+                        if (Math.abs(velocityY) > 0.02) {
+                            currentPos += velocityY * elapsed;
+                            // Doğal sürtünme katsayısı (her 16ms'de %93 oranında sönümleme)
+                            const friction = Math.pow(0.93, elapsed / 16.6);
+                            velocityY *= friction;
+
+                            if (currentPos <= 0) {
+                                currentPos = 0;
+                                velocityY = 0;
+                            } else if (currentPos >= maxScroll) {
+                                currentPos = maxScroll;
+                                velocityY = 0;
+                            }
+                            applyTransform();
+                        } else {
+                            // Momentum bittiğinde normal otomatik hafif akışa kesintisiz devam et
+                            velocityY = 0;
+                            if (!isHovered && maxScroll > 0) {
+                                currentPos += (PIXELS_PER_SECOND * elapsed) / 1000;
+                                if (currentPos >= maxScroll) {
+                                    currentPos = 0; // Başa dön
+                                }
+                                applyTransform();
+                            }
                         }
-                        feed.scrollTop = Math.floor(currentPos);
                     }
                     requestAnimationFrame(scrollStep);
                 }
                 requestAnimationFrame(scrollStep);
+
+                // Fare ile üzerine gelince duraklat, ayrılınca devam et
+                feed.addEventListener('mouseenter', () => { 
+                    isHovered = true; 
+                    if (scrollbar) scrollbar.classList.remove('opacity-0');
+                });
+                feed.addEventListener('mouseleave', () => { 
+                    isHovered = false; 
+                    lastTime = performance.now();
+                    if (scrollbar) scrollbar.classList.add('opacity-0');
+                });
+
+                // Fare tekerleği (wheel) ile serbestçe yukarı/aşağı gezinebilme
+                feed.addEventListener('wheel', (e) => {
+                    if (maxScroll <= 0) return;
+                    velocityY = 0; // Tekerlek hareketinde önceki fırlatma momentini kes
+                    const prev = currentPos;
+                    currentPos = Math.max(0, Math.min(maxScroll, currentPos + e.deltaY * 0.7));
+                    if (prev !== currentPos) {
+                        e.preventDefault();
+                        applyTransform();
+                    }
+                }, { passive: false });
+
+                // Mobil dokunmatik kaydırma desteği (Flick / Momentum destekli)
+                let touchStartY = 0;
+                feed.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                    velocityY = 0;
+                    if (e.touches && e.touches.length > 0) {
+                        touchStartY = e.touches[0].clientY;
+                        lastDragY = touchStartY;
+                        lastDragTime = performance.now();
+                    }
+                    if (scrollbar) scrollbar.classList.remove('opacity-0');
+                }, { passive: true });
+
+                feed.addEventListener('touchmove', (e) => {
+                    if (maxScroll <= 0 || !e.touches || e.touches.length === 0) return;
+                    const currentY = e.touches[0].clientY;
+                    const diff = touchStartY - currentY;
+                    touchStartY = currentY;
+
+                    // Yorum kutusu içinde kaydırırken web sayfasının birlikte kaymasını engeller
+                    if (e.cancelable) {
+                        e.preventDefault();
+                    }
+                    recordMove(currentY);
+                    currentPos = Math.max(0, Math.min(maxScroll, currentPos + diff));
+                    applyTransform();
+                }, { passive: false });
+
+                feed.addEventListener('touchend', endDrag, { passive: true });
+                feed.addEventListener('touchcancel', endDrag, { passive: true });
+
+                // Masaüstünde fareyle tıklayıp serbestçe kaydırabilme (Drag to scroll)
+                let isMouseDown = false;
+                let mouseStartY = 0;
+
+                feed.addEventListener('mousedown', (e) => {
+                    if (e.button !== 0) return; // Sadece sol tık
+                    isMouseDown = true;
+                    isDragging = true;
+                    velocityY = 0;
+                    mouseStartY = e.clientY;
+                    lastDragY = mouseStartY;
+                    lastDragTime = performance.now();
+                    feed.style.cursor = 'grabbing';
+                    feed.style.userSelect = 'none';
+                    if (scrollbar) scrollbar.classList.remove('opacity-0');
+                });
+
+                window.addEventListener('mousemove', (e) => {
+                    if (!isMouseDown || maxScroll <= 0) return;
+                    const diff = mouseStartY - e.clientY;
+                    mouseStartY = e.clientY;
+                    recordMove(e.clientY);
+                    currentPos = Math.max(0, Math.min(maxScroll, currentPos + diff));
+                    applyTransform();
+                });
+
+                window.addEventListener('mouseup', () => {
+                    if (!isMouseDown) return;
+                    isMouseDown = false;
+                    feed.style.cursor = '';
+                    feed.style.userSelect = '';
+                    endDrag();
+                });
+
+                // Sayfa ilk yüklendiğinde metrikleri hesapla
+                setTimeout(() => {
+                    updateMetrics();
+                    applyTransform();
+                }, 150);
             }
 
             if (document.readyState === 'loading') {
@@ -3042,29 +3204,29 @@
                 </div>
 
                 <!-- 4 Görünüm Modu Seçimi (Tümü / Blok / Kendin Doldur / Hızlı Net) -->
-                <div class="flex items-center gap-1 bg-gray-200/80 p-1 rounded-xl">
+                <div class="grid grid-cols-2 sm:flex items-center gap-1.5 w-full sm:w-auto bg-gray-200/60 p-1.5 rounded-2xl border border-gray-200/80">
                     <!-- Mod 1: Tümü -->
                     <button id="mode-all-btn" onclick="setViewMode('all')"
-                        class="px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-primary-900 text-white shadow-xs flex items-center gap-1.5 cursor-pointer">
-                        <i class="fa-solid fa-list-ol text-[10px]"></i>
+                        class="px-3 py-1.5 sm:py-1 rounded-xl sm:rounded-lg text-xs font-bold transition-all bg-primary-900 text-white shadow-sm border border-primary-900 flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap">
+                        <i class="fa-solid fa-list-ol text-[11px]"></i>
                         <span>Tümü</span>
                     </button>
                     <!-- Mod 2: Blok -->
                     <button id="mode-block-btn" onclick="setViewMode('block')"
-                        class="px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition-all text-gray-600 hover:text-gray-900 flex items-center gap-1.5 cursor-pointer">
-                        <i class="fa-solid fa-layer-group text-[10px]"></i>
+                        class="px-3 py-1.5 sm:py-1 rounded-xl sm:rounded-lg text-xs font-bold transition-all bg-white text-gray-700 hover:bg-gray-50 hover:text-gray-900 border border-gray-200/80 shadow-2xs flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap">
+                        <i class="fa-solid fa-layer-group text-[11px]"></i>
                         <span>Blok</span>
                     </button>
                     <!-- Mod 3: Kendin Doldur -->
                     <button id="mode-calc-btn" onclick="setViewMode('calc')"
-                        class="px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition-all text-gray-600 hover:text-gray-900 flex items-center gap-1.5 cursor-pointer">
-                        <i class="fa-solid fa-pen-to-square text-[10px]"></i>
+                        class="px-3 py-1.5 sm:py-1 rounded-xl sm:rounded-lg text-xs font-bold transition-all bg-white text-gray-700 hover:bg-gray-50 hover:text-gray-900 border border-gray-200/80 shadow-2xs flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap">
+                        <i class="fa-solid fa-pen-to-square text-[11px]"></i>
                         <span>Kendin Doldur</span>
                     </button>
                     <!-- Mod 4: Hızlı Net -->
                     <button id="mode-quick-btn" onclick="setViewMode('quick')"
-                        class="px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition-all text-gray-600 hover:text-gray-900 flex items-center gap-1.5 cursor-pointer">
-                        <i class="fa-solid fa-bolt text-[10px]"></i>
+                        class="px-3 py-1.5 sm:py-1 rounded-xl sm:rounded-lg text-xs font-bold transition-all bg-white text-gray-700 hover:bg-gray-50 hover:text-gray-900 border border-gray-200/80 shadow-2xs flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap">
+                        <i class="fa-solid fa-bolt text-[11px]"></i>
                         <span>Hızlı Net</span>
                     </button>
                 </div>
@@ -3074,9 +3236,9 @@
             <div id="net-calculator-bar" class="hidden bg-gradient-to-r from-primary-900 via-primary-800 to-indigo-950 text-white px-4 sm:px-6 py-2 border-b border-primary-700 shrink-0">
                 <div class="flex items-center justify-between gap-2">
                     <div class="flex items-center gap-2.5 sm:gap-4 text-xs font-semibold">
-                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> Doğru: <b id="calc-correct-count" class="text-emerald-300 text-xs sm:text-sm">0</b></span>
-                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-red-400"></span> Yanlış: <b id="calc-wrong-count" class="text-red-300 text-xs sm:text-sm">0</b></span>
-                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-gray-400"></span> Boş: <b id="calc-empty-count" class="text-gray-300 text-xs sm:text-sm">80</b></span>
+                        <span>Doğru: <b id="calc-correct-count" class="text-emerald-300 text-xs sm:text-sm">0</b></span>
+                        <span>Yanlış: <b id="calc-wrong-count" class="text-red-300 text-xs sm:text-sm">0</b></span>
+                        <span>Boş: <b id="calc-empty-count" class="text-gray-300 text-xs sm:text-sm">80</b></span>
                     </div>
                     <div class="flex items-center ml-auto">
                         <div class="bg-white/10 px-3 py-1 rounded-xl flex items-center gap-1.5 border border-white/20">
@@ -3619,8 +3781,8 @@
             const btnQuick = document.getElementById('mode-quick-btn');
             const netBar = document.getElementById('net-calculator-bar');
 
-            const activeClass = "px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-primary-900 text-white shadow-xs flex items-center gap-1.5 cursor-pointer";
-            const inactiveClass = "px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition-all text-gray-600 hover:text-gray-900 flex items-center gap-1.5 cursor-pointer";
+            const activeClass = "px-3 py-1.5 sm:py-1 rounded-xl sm:rounded-lg text-xs font-bold transition-all bg-primary-900 text-white shadow-sm border border-primary-900 flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap";
+            const inactiveClass = "px-3 py-1.5 sm:py-1 rounded-xl sm:rounded-lg text-xs font-bold transition-all bg-white text-gray-700 hover:bg-gray-50 hover:text-gray-900 border border-gray-200/80 shadow-2xs flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap";
 
             if (btnAll) btnAll.className = (mode === 'all') ? activeClass : inactiveClass;
             if (btnBlock) btnBlock.className = (mode === 'block') ? activeClass : inactiveClass;
@@ -3840,7 +4002,7 @@
             const perCol = Math.ceil(total / cols); // 80 soru için 27'şer soru
 
             let html = '<div class="space-y-3">';
-            html += '<p class="text-xs text-gray-600 mb-3 text-center">Soruların yanındaki <b>Doğru (D)</b> veya <b>Yanlış (Y)</b> butonuna tıklayarak netinizi ve karnenizi anında oluşturabilirsiniz </br> <span class="text-gray-400">(Seçimi kaldırmak için tekrar dokunun)</span></p>';
+            html += '<p class="text-xs text-gray-600 mb-3 text-center">Soruların yanındaki <b>Doğru </b> veya <b>Yanlış </b> butonuna tıklayarak netinizi ve karnenizi oluşturabilirsiniz </br> <span class="text-gray-400">(Seçimi kaldırmak için tekrar dokunun)</span></p>';
 
             // Masaüstünde sütunlar yan yana durur, her sütun kendi içinde 1'den başlayıp aşağı doğru artarak akar.
             // Mobilde ise tek sütunda kesintisiz 1'den 80'e aşağı doğru akar.
@@ -3939,8 +4101,6 @@
         // ==========================================
         let quickTotalD = 0;
         let quickTotalY = 0;
-        let quickSubMode = 'general'; // 'general' veya 'sections'
-        let quickSectionStats = YDT_DEFAULT_SECTIONS.map(() => ({ d: 0, y: 0 }));
 
         // Soru sayısı sınırını aşmaya çalıştığında gösterilen şık renkli uyarı bildirimi
         function showQuickWarningToast(msg) {
@@ -3966,126 +4126,74 @@
         function getQuickScoreBadge(net) {
             if (net >= 75) {
                 return {
-                    title: "Full Çeken Canavar / Efsane Dilci 🦄",
-                    level: "75 - 80 Net",
+                    title: "Full Çeken Canavar / Efsane Dilci 🥇",
                     advice: "Sınav tekniklerinin efendisi! Sınavı hazırlayan ÖSYM komisyonu bile senden çekiniyor olabilir. Nazarlardan korun!",
                     bg: "from-amber-500/20 via-yellow-500/15 to-orange-500/10",
-                    border: "border-amber-300",
-                    badgeBg: "bg-amber-400 text-amber-950",
-                    icon: "fa-crown",
-                    textColor: "text-amber-800"
+                    border: "border-amber-300"
                 };
             } else if (net >= 70) {
                 return {
                     title: "Derece Adayı / Şampiyonlar Ligi 🏆",
-                    level: "70 - 74.9 Net",
                     advice: "Boğaziçi, ODTÜ veya Hacettepe amfilerinde yerin ayrılmış gibi. Formunu koru, ilk 1.000 seni bekliyor!",
                     bg: "from-emerald-500/20 via-teal-500/15 to-green-500/10",
-                    border: "border-emerald-300",
-                    badgeBg: "bg-emerald-500 text-white",
-                    icon: "fa-trophy",
-                    textColor: "text-emerald-800"
+                    border: "border-emerald-300"
                 };
             } else if (net >= 65) {
                 return {
                     title: "Prestij Ligi / Zirveye Ramak Kaldı 👑",
-                    level: "65 - 69.9 Net",
                     advice: "Köklü devlet üniversitelerinin tüm kapıları sana ardına kadar açık. Birkaç ince taktikle 70+ kulübündesin!",
                     bg: "from-blue-500/20 via-indigo-500/15 to-sky-500/10",
-                    border: "border-blue-300",
-                    badgeBg: "bg-blue-600 text-white",
-                    icon: "fa-gem",
-                    textColor: "text-blue-800"
+                    border: "border-blue-300"
                 };
             } else if (net >= 60) {
                 return {
                     title: "Mütercim Tercüman Adayı 💎",
-                    level: "60 - 64.9 Net",
                     advice: "Zorlu paragraflara hükmetmeye başladın, çeviriler senden sorulur. Çok sağlam ve imrenilecek bir tempo!",
                     bg: "from-indigo-500/20 via-purple-500/15 to-violet-500/10",
-                    border: "border-indigo-300",
-                    badgeBg: "bg-indigo-600 text-white",
-                    icon: "fa-medal",
-                    textColor: "text-indigo-800"
+                    border: "border-indigo-300"
                 };
             } else if (net >= 55) {
                 return {
-                    title: "İstikrarlı Dilci / Devlet ELT Radarda 🌟",
-                    level: "55 - 59.9 Net",
+                    title: "İstikrarlı Dilci / Az Kaldı Dayan 🌟",
                     advice: "Devlet üniversiteleri İngilizce Öğretmenliği hedefi için kritik eşiği aştın. Deneme analizlerine devam!",
                     bg: "from-sky-500/20 via-cyan-500/15 to-blue-500/10",
-                    border: "border-sky-300",
-                    badgeBg: "bg-sky-500 text-white",
-                    icon: "fa-star",
-                    textColor: "text-sky-800"
+                    border: "border-sky-300"
                 };
             } else if (net >= 50) {
                 return {
-                    title: "Hedefe Kilitlenenler / Edebiyat Açık 🔥",
-                    level: "50 - 54.9 Net",
+                    title: "Hedefe Kilitlenenler / Oluyor Gibi 🔥",
                     advice: "İngiliz Dili ve Edebiyatı / Amerikan Kültürü bölümleri cepte. Şimdi hedef 60+ nete sıçramak!",
                     bg: "from-orange-500/20 via-amber-500/15 to-yellow-500/10",
-                    border: "border-orange-300",
-                    badgeBg: "bg-orange-500 text-white",
-                    icon: "fa-fire",
-                    textColor: "text-orange-800"
+                    border: "border-orange-300"
                 };
             } else if (net >= 45) {
                 return {
                     title: "Vites Yükseltenler / Ritim Yakalandı ⚡",
-                    level: "45 - 49.9 Net",
                     advice: "Paragraflar artık gözünü korkutmuyor, sınavın yarısından fazlası seninle. 50 eşiğini kırmaya çok az kaldı!",
                     bg: "from-yellow-500/20 via-amber-500/15 to-orange-500/10",
-                    border: "border-yellow-300",
-                    badgeBg: "bg-yellow-500 text-yellow-950",
-                    icon: "fa-bolt",
-                    textColor: "text-yellow-800"
+                    border: "border-yellow-300"
                 };
             } else if (net >= 40) {
                 return {
                     title: "40+ Kulübü / Isınma Turları Tamam 🎯",
-                    level: "40 - 44.9 Net",
                     advice: "Temel sağlam atıldı! Cümle tamamlama ve bağlaçlara biraz daha yüklenirsen netlerin uçuşa geçer.",
                     bg: "from-rose-500/20 via-pink-500/15 to-red-500/10",
-                    border: "border-rose-300",
-                    badgeBg: "bg-rose-500 text-white",
-                    icon: "fa-bullseye",
-                    textColor: "text-rose-800"
+                    border: "border-rose-300"
                 };
             } else {
                 return {
                     title: "Yolun Başındasın / Roket Ateşleniyor 🚀",
-                    level: "< 40 Net",
                     advice: "Unutma, her şampiyon sıfırdan başladı! Günlük düzenli Phrasal Verbs & Gramer tekrarlarıyla hızla yükseleceksin.",
                     bg: "from-gray-500/20 via-slate-500/15 to-zinc-500/10",
-                    border: "border-gray-300",
-                    badgeBg: "bg-gray-600 text-white",
-                    icon: "fa-rocket",
-                    textColor: "text-gray-800"
+                    border: "border-gray-300"
                 };
             }
         }
 
-        function setQuickSubMode(mode) {
-            quickSubMode = mode;
-            renderQuickView();
-        }
-
         function getQuickBadgeHtml(badge) {
             return `
-                <div class="flex items-center justify-between gap-2">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <div class="w-8 h-8 rounded-xl bg-white shadow-xs flex items-center justify-center ${badge.textColor} text-sm shrink-0">
-                            <i class="fa-solid ${badge.icon}"></i>
-                        </div>
-                        <div class="min-w-0">
-                            <span class="text-[10px] font-bold uppercase tracking-wider ${badge.textColor} block">${badge.level}</span>
-                            <h5 class="text-xs sm:text-sm font-black text-gray-900 leading-tight truncate">${badge.title}</h5>
-                        </div>
-                    </div>
-                    <span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold ${badge.badgeBg} shadow-2xs shrink-0">
-                        Rozet
-                    </span>
+                <div class="min-w-0">
+                    <h5 class="text-xs sm:text-sm font-black text-gray-900 leading-tight">${badge.title}</h5>
                 </div>
                 <p class="text-xs text-gray-700 font-medium leading-relaxed bg-white/70 p-2.5 rounded-xl border border-white/80">
                     ${badge.advice}
@@ -4114,14 +4222,8 @@
             const netEl = document.getElementById('quick-net-val');
             if (netEl) netEl.innerText = net.toFixed(2);
 
-            const countsEl = document.getElementById('quick-counts-val');
-            if (countsEl) countsEl.innerText = `${quickTotalD} D - ${quickTotalY} Y`;
-
             const pctEl = document.getElementById('quick-pct-val');
             if (pctEl) pctEl.innerText = `%${pct}`;
-
-            const ydtEl = document.getElementById('quick-ydt-val');
-            if (ydtEl) ydtEl.innerText = (net * 1.25).toFixed(1);
 
             const badgeContainer = document.getElementById('quick-badge-container');
             if (badgeContainer) {
@@ -4182,74 +4284,9 @@
             updateQuickOutputs(true);
         }
 
-        function onQuickSectionInputChange(idx, type, val, inputEl) {
-            const sec = YDT_DEFAULT_SECTIONS[idx];
-            if (!sec) return;
-            const qCount = sec.end - sec.start + 1;
-
-            if (val === "" || val === null) {
-                if (type === 'd') quickSectionStats[idx].d = 0;
-                else quickSectionStats[idx].y = 0;
-                updateSectionNetAndTotals(idx);
-                return;
-            }
-
-            let num = parseInt(val, 10);
-            if (isNaN(num)) num = 0;
-            if (num < 0) num = 0;
-
-            if (type === 'd') {
-                const curY = quickSectionStats[idx].y || 0;
-                const maxAllowed = qCount - curY;
-                if (num > maxAllowed) {
-                    num = maxAllowed;
-                    if (inputEl) inputEl.value = num;
-                    if (curY > 0) {
-                        showQuickWarningToast(`⚠️ ${sec.title} (${qCount} Soru): ${curY} Yanlış varken en fazla ${maxAllowed} Doğru girebilirsiniz.`);
-                    } else {
-                        showQuickWarningToast(`⚠️ ${sec.title} bloğunda en fazla ${qCount} soru bulunmaktadır.`);
-                    }
-                }
-                quickSectionStats[idx].d = num;
-            } else {
-                const curD = quickSectionStats[idx].d || 0;
-                const maxAllowed = qCount - curD;
-                if (num > maxAllowed) {
-                    num = maxAllowed;
-                    if (inputEl) inputEl.value = num;
-                    if (curD > 0) {
-                        showQuickWarningToast(`⚠️ ${sec.title} (${qCount} Soru): ${curD} Doğru varken en fazla ${maxAllowed} Yanlış girebilirsiniz.`);
-                    } else {
-                        showQuickWarningToast(`⚠️ ${sec.title} bloğunda en fazla ${qCount} soru bulunmaktadır.`);
-                    }
-                }
-                quickSectionStats[idx].y = num;
-            }
-
-            updateSectionNetAndTotals(idx);
-        }
-
-        function updateSectionNetAndTotals(idx) {
-            const st = quickSectionStats[idx] || { d: 0, y: 0 };
-            const secNet = Math.max(0, st.d - (st.y * 0.25));
-            const secNetEl = document.getElementById(`quick-sec-net-${idx}`);
-            if (secNetEl) secNetEl.innerText = `${secNet.toFixed(2)} Net`;
-
-            let sumD = 0, sumY = 0;
-            quickSectionStats.forEach(s => {
-                sumD += (s.d || 0);
-                sumY += (s.y || 0);
-            });
-            quickTotalD = sumD;
-            quickTotalY = sumY;
-
-            updateQuickOutputs(false);
-        }
-
         function resetQuickCalc() {
             quickTotalD = 0;
             quickTotalY = 0;
-            quickSectionStats = quickSectionStats.map(() => ({ d: 0, y: 0 }));
             renderQuickView();
         }
 
@@ -4262,26 +4299,10 @@
             const badge = getQuickScoreBadge(parseFloat(net));
             const text = encodeURIComponent(
                 `Merhaba, ${examName} Sonucum: ${quickTotalD} Doğru, ${quickTotalY} Yanlış, ${empty} Boş ile *${net} Net!*\n` +
-                `🏆 *Seviye Rozetim:* ${badge.title} (${badge.level})\n` +
+                `🏆 *Seviye Rozetim:* ${badge.title}\n` +
                 `Cevap anahtarı & Hızlı Net: https://prodil.net/?deneme=${examId}`
             );
             window.open(`https://wa.me/?text=${text}`, '_blank');
-        }
-
-        function openKarneFromQuick() {
-            const total = 80;
-            userCalcAnswers = Array(total).fill(null);
-            YDT_DEFAULT_SECTIONS.forEach((sec, idx) => {
-                const s = quickSectionStats[idx] || { d: 0, y: 0 };
-                let cur = sec.start - 1;
-                for (let i = 0; i < s.d && cur <= sec.end - 1 && cur < total; i++, cur++) {
-                    userCalcAnswers[cur] = 'D';
-                }
-                for (let j = 0; j < s.y && cur <= sec.end - 1 && cur < total; j++, cur++) {
-                    userCalcAnswers[cur] = 'Y';
-                }
-            });
-            openKarneModal();
         }
 
         // Mod 4: Hızlı Net Hesaplayıcı Arayüzü (Kalıcı DOM - Kullanıcı yazarken yenilenmez)
@@ -4297,23 +4318,10 @@
 
             let html = `
             <div class="max-w-xl mx-auto space-y-4 select-none">
-                <!-- Alt Sekme Seçimi: Genel Giriş vs Bölüm Bazlı -->
-                <div class="flex items-center justify-center p-1 bg-gray-200/80 rounded-xl max-w-xs mx-auto">
-                    <button type="button" onclick="setQuickSubMode('general')" class="flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${quickSubMode === 'general' ? 'bg-white text-primary-900 shadow-xs' : 'text-gray-600 hover:text-gray-900'}">
-                        <i class="fa-solid fa-calculator mr-1.5"></i>Genel Net
-                    </button>
-                    <button type="button" onclick="setQuickSubMode('sections')" class="flex-1 py-1.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${quickSubMode === 'sections' ? 'bg-white text-primary-900 shadow-xs' : 'text-gray-600 hover:text-gray-900'}">
-                        <i class="fa-solid fa-layer-group mr-1.5"></i>Bölüm Bölüm
-                    </button>
-                </div>
-            `;
-
-            if (quickSubMode === 'general') {
-                html += `
                 <!-- 1) Genel Giriş Modu -->
                 <div class="bg-white rounded-2xl p-4 sm:p-5 border border-gray-200/80 shadow-2xs space-y-4">
                     <div class="text-center">
-                        <h4 class="text-xs sm:text-sm font-extrabold text-gray-900">Doğru & Yanlış Sayılarını Girin</h4>
+                        <h4 class="text-xs sm:text-sm font-extrabold text-gray-900">Doğru ve Yanlış Sayılarınızı Girin</h4>
                     </div>
 
                     <!-- 2 Büyük Giriş Kutusu: Doğru ve Yanlış -->
@@ -4353,69 +4361,16 @@
                         <span>Kalan Boş: <b id="quick-empty-val" class="text-gray-900">${emptyCount}</b></span>
                     </div>
                 </div>
-                `;
-            } else {
-                html += `
-                <!-- 2) Bölüm Bazlı Giriş Modu -->
-                <div class="bg-white rounded-2xl p-4 sm:p-5 border border-gray-200/80 shadow-2xs space-y-3">
-                    <div class="text-center">
-                        <h4 class="text-xs sm:text-sm font-extrabold text-gray-900">Soru Bloklarına Göre Doğru & Yanlış Gir</h4>
-                    </div>
 
-                    <div class="space-y-2">`;
-                YDT_DEFAULT_SECTIONS.forEach((sec, idx) => {
-                    const qCount = sec.end - sec.start + 1;
-                    const st = quickSectionStats[idx] || { d: 0, y: 0 };
-                    const secNet = Math.max(0, st.d - (st.y * 0.25));
-                    html += `
-                        <div class="p-2.5 rounded-xl bg-gray-50 border border-gray-200/80 flex items-center justify-between gap-2">
-                            <div class="min-w-0">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="px-1.5 py-0.5 rounded bg-white border border-gray-200 text-[10px] font-bold text-gray-600 shrink-0">${sec.start}-${sec.end}</span>
-                                    <span class="text-xs font-bold text-gray-900 truncate">${sec.title}</span>
-                                </div>
-                                <span class="text-[10px] text-gray-400 mt-0.5 block">${qCount} Soru • <b id="quick-sec-net-${idx}" class="text-primary-900">${secNet.toFixed(2)} Net</b></span>
-                            </div>
-                            <div class="flex items-center gap-2 shrink-0">
-                                <div class="flex items-center gap-1">
-                                    <span class="text-[10px] font-bold text-emerald-700">D:</span>
-                                    <input id="quick-sec-d-${idx}" type="number" min="0" max="${qCount}" value="${st.d}"
-                                        onfocus="if (this.value === '0') this.value = '';"
-                                        onblur="if (this.value === '') { this.value = '0'; onQuickSectionInputChange(${idx}, 'd', '0', this); }"
-                                        oninput="onQuickSectionInputChange(${idx}, 'd', this.value, this)"
-                                        class="w-10 sm:w-12 py-1 text-center font-black text-xs bg-emerald-50 text-emerald-800 rounded-lg border border-emerald-300 focus:outline-none focus:ring-1 focus:ring-emerald-500">
-                                </div>
-                                <div class="flex items-center gap-1">
-                                    <span class="text-[10px] font-bold text-red-700">Y:</span>
-                                    <input id="quick-sec-y-${idx}" type="number" min="0" max="${qCount}" value="${st.y}"
-                                        onfocus="if (this.value === '0') this.value = '';"
-                                        onblur="if (this.value === '') { this.value = '0'; onQuickSectionInputChange(${idx}, 'y', '0', this); }"
-                                        oninput="onQuickSectionInputChange(${idx}, 'y', this.value, this)"
-                                        class="w-10 sm:w-12 py-1 text-center font-black text-xs bg-red-50 text-red-800 rounded-lg border border-red-300 focus:outline-none focus:ring-1 focus:ring-red-500">
-                                </div>
-                            </div>
-                        </div>`;
-                });
-                html += `</div></div>`;
-            }
-
-            html += `
-                <!-- Canlı Skor Kartları (Net, Yüzde, Ham Puan) -->
-                <div class="grid grid-cols-3 gap-2 sm:gap-3">
-                    <div class="bg-primary-900 text-white rounded-2xl p-2.5 sm:p-3 text-center shadow-md">
+                <!-- Canlı Skor Kartları (Toplam Net ve Başarı %) -->
+                <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                    <div class="bg-primary-900 text-white rounded-2xl p-3 sm:p-4 text-center shadow-md">
                         <span class="text-[10px] font-bold uppercase tracking-wider text-amber-300 block">TOPLAM NET</span>
-                        <span id="quick-net-val" class="text-xl sm:text-2xl font-black mt-0.5 block">${net.toFixed(2)}</span>
-                        <span id="quick-counts-val" class="text-[9px] text-blue-200 block mt-0.5">${quickTotalD} D - ${quickTotalY} Y</span>
+                        <span id="quick-net-val" class="text-2xl sm:text-3xl font-black mt-0.5 block">${net.toFixed(2)}</span>
                     </div>
-                    <div class="bg-white border border-gray-200/80 rounded-2xl p-2.5 sm:p-3 text-center shadow-2xs">
+                    <div class="bg-white border border-gray-200/80 rounded-2xl p-3 sm:p-4 text-center shadow-2xs">
                         <span class="text-[10px] font-bold uppercase tracking-wider text-gray-500 block">BAŞARI (%)</span>
-                        <span id="quick-pct-val" class="text-xl sm:text-2xl font-black text-gray-900 mt-0.5 block">%${pct}</span>
-                        <span class="text-[9px] text-gray-400 block mt-0.5">${total} Soru</span>
-                    </div>
-                    <div class="bg-white border border-gray-200/80 rounded-2xl p-2.5 sm:p-3 text-center shadow-2xs">
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-gray-500 block">YDT PUANI</span>
-                        <span id="quick-ydt-val" class="text-xl sm:text-2xl font-black text-indigo-700 mt-0.5 block">${(net * 1.25).toFixed(1)}</span>
-                        <span class="text-[9px] text-gray-400 block mt-0.5">100 Üzerinden</span>
+                        <span id="quick-pct-val" class="text-2xl sm:text-3xl font-black text-gray-900 mt-0.5 block">%${pct}</span>
                     </div>
                 </div>
 
@@ -4431,11 +4386,6 @@
                         <span>Sıfırla</span>
                     </button>
                     <div class="flex items-center gap-2 ml-auto">
-                        ${quickSubMode === 'sections' ? `
-                        <button type="button" onclick="openKarneFromQuick()" class="bg-amber-400 hover:bg-amber-300 text-primary-950 font-black py-2 px-3.5 rounded-xl text-xs flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
-                            <i class="fa-solid fa-chart-column"></i>
-                            <span>Karne Oluştur</span>
-                        </button>` : ''}
                         <button type="button" onclick="shareQuickWhatsApp()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-xl text-xs flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs">
                             <i class="fa-brands fa-whatsapp text-sm"></i>
                             <span>Netimi Paylaş</span>
