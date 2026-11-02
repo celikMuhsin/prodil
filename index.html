@@ -3240,10 +3240,10 @@
                 </div>
                 <!-- TYT Branş Netleri Özeti (Sadece TYT'de görünür - Yatayda Ortalı) -->
                 <div id="tyt-calc-branch-nets" class="hidden flex items-center justify-center gap-1.5 sm:gap-2 text-[11px] font-bold mt-2 pt-1.5 border-t border-gray-200">
-                    <span class="bg-blue-50/90 text-blue-700 border border-blue-200/80 px-2 py-0.5 rounded-lg shadow-2xs">Tr: <b id="tyt-net-tr" class="text-blue-900 font-mono">0.00</b></span>
-                    <span class="bg-amber-50/90 text-amber-700 border border-amber-200/80 px-2 py-0.5 rounded-lg shadow-2xs">Sos: <b id="tyt-net-sos" class="text-amber-900 font-mono">0.00</b></span>
-                    <span class="bg-emerald-50/90 text-emerald-700 border border-emerald-200/80 px-2 py-0.5 rounded-lg shadow-2xs">Mat: <b id="tyt-net-mat" class="text-emerald-900 font-mono">0.00</b></span>
-                    <span class="bg-purple-50/90 text-purple-700 border border-purple-200/80 px-2 py-0.5 rounded-lg shadow-2xs">Fen: <b id="tyt-net-fen" class="text-purple-900 font-mono">0.00</b></span>
+                    <span class="bg-blue-50/90 text-blue-700 border border-blue-200/80 px-2 py-0.5 rounded-lg shadow-2xs"><span id="tyt-lbl-1">Tr:</span> <b id="tyt-net-tr" class="text-blue-900 font-mono">0.00</b></span>
+                    <span class="bg-amber-50/90 text-amber-700 border border-amber-200/80 px-2 py-0.5 rounded-lg shadow-2xs"><span id="tyt-lbl-2">Sos:</span> <b id="tyt-net-sos" class="text-amber-900 font-mono">0.00</b></span>
+                    <span class="bg-emerald-50/90 text-emerald-700 border border-emerald-200/80 px-2 py-0.5 rounded-lg shadow-2xs"><span id="tyt-lbl-3">Mat:</span> <b id="tyt-net-mat" class="text-emerald-900 font-mono">0.00</b></span>
+                    <span class="bg-purple-50/90 text-purple-700 border border-purple-200/80 px-2 py-0.5 rounded-lg shadow-2xs"><span id="tyt-lbl-4">Fen:</span> <b id="tyt-net-fen" class="text-purple-900 font-mono">0.00</b></span>
                 </div>
             </div>
 
@@ -3442,20 +3442,39 @@
             { id: "biyoloji", ders: "Biyoloji", title: "Biyoloji", start: 115, end: 120, secStart: 15, secEnd: 20, count: 6, icon: "fa-dna", color: "emerald", advice: "Hücre bölünmeleri, kalıtım (soyağaçları) ve ekoloji konularını tekrar etmelisin." }
         ];
 
-        function formatDersName(ders) {
+const AYT_DEFAULT_SECTIONS = [
+            { id: "turkce", test: "Edebiyat-Sosyal-1", ders: "Türkçe", title: "Türkçe (Paragraf/Anlam)", start: 1, end: 6, secStart: 1, secEnd: 6, count: 6, icon: "fa-book-open", color: "blue", advice: "Paragrafta anlam ve söz öbekleri pratiklerini ihmal etmemelisin." },
+            { id: "edebiyat", test: "Edebiyat-Sosyal-1", ders: "Edebiyat", title: "Türk Dili ve Edebiyatı", start: 7, end: 24, secStart: 7, secEnd: 24, count: 18, icon: "fa-feather", color: "fuchsia", advice: "Şiir bilgisi, divan ve halk edebiyatı nazım şekilleri ile sanatçı-eser eşleştirmelerini tekrar etmelisin." },
+            { id: "tarih1", test: "Edebiyat-Sosyal-1", ders: "Tarih", title: "Tarih-1", start: 25, end: 34, secStart: 25, secEnd: 34, count: 10, icon: "fa-landmark", color: "amber", advice: "İlk Türk devletleri, Osmanlı yükselme dönemi ve İnkılap Tarihi konularını pekiştirmelisin." },
+            { id: "cografya1", test: "Edebiyat-Sosyal-1", ders: "Coğrafya", title: "Coğrafya-1", start: 35, end: 40, secStart: 35, secEnd: 40, count: 6, icon: "fa-earth-americas", color: "teal", advice: "Biyoçeşitlilik, Türkiye'nin doğal kaynakları ve nüfus politikalarına ağırlık vermelisin." },
+            { id: "tarih2", test: "Sosyal-2", ders: "Tarih", title: "Tarih-2", start: 41, end: 51, secStart: 1, secEnd: 11, count: 11, icon: "fa-landmark", color: "amber", advice: "Osmanlı siyasi tarihi ve 20. yüzyıl başlarındaki küresel gelişmeleri gözden geçirmelisin." },
+            { id: "cografya2", test: "Sosyal-2", ders: "Coğrafya", title: "Coğrafya-2", start: 52, end: 62, secStart: 12, secEnd: 22, count: 11, icon: "fa-earth-americas", color: "teal", advice: "İlk kültür merkezleri, uluslararası örgütler ve çevre sorunlarına odaklanmalısın." },
+            { id: "felsefe", test: "Sosyal-2", ders: "Felsefe", title: "Felsefe", start: 63, end: 68, secStart: 23, secEnd: 28, count: 6, icon: "fa-brain", color: "purple", advice: "Varlık, bilgi ve siyaset felsefesi ile psikolojinin temel yöntemlerini pekiştirmelisin." },
+            { id: "felsefe_grubu", test: "Sosyal-2", ders: "Felsefe Grubu", title: "Felsefe Grubu (Sosyoloji/Mantık)", start: 69, end: 74, secStart: 29, secEnd: 34, count: 6, icon: "fa-users-gear", color: "violet", advice: "Sosyolojiye giriş ve akıl yürütme yöntemleri/mantık ilkelerine çalışmalısın." },
+            { id: "din", test: "Sosyal-2", ders: "Din Kültürü", title: "Din Kültürü", start: 75, end: 80, secStart: 35, secEnd: 40, count: 6, icon: "fa-moon", color: "emerald", advice: "İnançla ilgili meseleler ve din-bilim ilişkisi konularını gözden geçirmelisin." },
+            { id: "matematik", test: "Matematik", ders: "Matematik", title: "Matematik", start: 81, end: 110, secStart: 1, secEnd: 30, count: 30, icon: "fa-calculator", color: "indigo", advice: "Polinom, parabol, eşitsizlik, trigonometri ve logaritma konularında soru çeşitliliğini artırmalısın." },
+            { id: "geometri", test: "Matematik", ders: "Geometri", title: "Geometri", start: 111, end: 120, secStart: 31, secEnd: 40, count: 10, icon: "fa-shapes", color: "cyan", advice: "Doğrunun analitiği, çember-daire, katı cisimler ve dönüşüm geometrisine odaklanmalısın." },
+            { id: "fizik", test: "Fen Bilimleri", ders: "Fizik", title: "Fizik", start: 121, end: 134, secStart: 1, secEnd: 14, count: 14, icon: "fa-bolt-lightning", color: "sky", advice: "Kuvvet-hareket, tork-denge, manyetizma, alternatif akım ve çembersel hareketi pekiştirmelisin." },
+            { id: "kimya", test: "Fen Bilimleri", ders: "Kimya", title: "Kimya", start: 135, end: 147, secStart: 15, secEnd: 27, count: 13, icon: "fa-flask-vial", color: "rose", advice: "Gazlar, çözeltiler, tepkime hız-denge, asit-baz ve elektrokimya konularına çalışmalısın." },
+            { id: "biyoloji", test: "Fen Bilimleri", ders: "Biyoloji", title: "Biyoloji", start: 148, end: 160, secStart: 28, secEnd: 40, count: 13, icon: "fa-dna", color: "emerald", advice: "Genden proteine, nükleik asitler, genetik materyal organizasyonu ve biyoteknolojiye odaklanmalısın." }
+        ];
+
+function formatDersName(ders) {
             if (!ders) return '';
             const d = String(ders).trim();
             if (d.toLowerCase().startsWith('din')) return 'Din Kültürü';
-            return d.replace(/[-\s]*1$/, '').trim();
+            return d.replace(/[-\s]*[12]$/, '').trim();
         }
 
         function getDersBadgeClass(ders) {
             const d = formatDersName(ders);
             const map = {
                 'Türkçe': 'bg-blue-50/90 text-blue-700 border border-blue-200/70 hover:bg-blue-100',
+                'Edebiyat': 'bg-fuchsia-50/90 text-fuchsia-700 border border-fuchsia-200/70 hover:bg-fuchsia-100',
                 'Tarih': 'bg-amber-50/90 text-amber-700 border border-amber-200/70 hover:bg-amber-100',
                 'Coğrafya': 'bg-teal-50/90 text-teal-700 border border-teal-200/70 hover:bg-teal-100',
                 'Felsefe': 'bg-purple-50/90 text-purple-700 border border-purple-200/70 hover:bg-purple-100',
+                'Felsefe Grubu': 'bg-violet-50/90 text-violet-700 border border-violet-200/70 hover:bg-violet-100',
                 'Din Kültürü': 'bg-emerald-50/90 text-emerald-700 border border-emerald-200/70 hover:bg-emerald-100',
                 'Matematik': 'bg-indigo-50/90 text-indigo-700 border border-indigo-200/70 hover:bg-indigo-100',
                 'Geometri': 'bg-cyan-50/90 text-cyan-700 border border-cyan-200/70 hover:bg-cyan-100',
@@ -3546,6 +3565,27 @@
         let countdownTimerId = null;
         let openBlockIndices = new Set([0]);
 
+                // Duyuru başındaki kırmızı yanıp sönen noktanın görünme koşulu:
+        // Vakti henüz gelmemişse VEYA yayınlanma zamanından sonraki 2 gün (48 saat) içindeyse gösterilir; 2 gün geçince kalkar.
+        function shouldShowAnnouncementPulse(item) {
+            const dateStr = item.yayinZamani || item.tarih;
+            if (!dateStr) return false;
+            const releaseDate = parseCustomDate(dateStr);
+            if (!releaseDate) return false;
+
+            const now = new Date();
+            // 1) Vakti henüz gelmemişse (kilitli / geri sayım aşamasında) -> göster
+            if (now < releaseDate) return true;
+
+            // 2) Yayınlandıktan sonra 2 gün (48 saat) boyunca devam etsin -> göster
+            const twoDaysMs = 2 * 24 * 60 * 60 * 1000;
+            const timeSinceRelease = now.getTime() - releaseDate.getTime();
+            if (timeSinceRelease <= twoDaysMs) return true;
+
+            // 3) 2 gün geçtikten sonra kalksın -> gizle
+            return false;
+        }
+
         // Sol Alttaki Duyuru Listesini Tarihe Göre Sıralı Oluştur
         function renderAnnouncementsList() {
             const listEl = document.getElementById('announcements-list');
@@ -3603,7 +3643,7 @@
                     class="pt-2 first:pt-0 group cursor-pointer p-2.5 rounded-xl border transition-all ${cardStyle}">
                     <div class="flex items-center justify-between text-[11px] mb-1 gap-2">
                         <span class="font-bold text-gray-900 group-hover:text-primary-900 flex items-center gap-1.5">
-                            ${idx === 0 ? '<span class="w-2 h-2 rounded-full bg-accent-500 animate-ping shrink-0"></span>' : ''}
+                            ${shouldShowAnnouncementPulse(item) ? '<span class="relative flex h-2 w-2 shrink-0"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span></span>' : ''}
                             <span>${item.baslik}</span>
                         </span>
                         <span class="text-gray-400 font-medium text-[10px] shrink-0">${item.tarih || ''}</span>
@@ -3715,6 +3755,7 @@
             const answersB = parseAnswerString(found.cevaplarB);
             const hasBookletB = answersB.length > 0;
             const isTyt = (found.sinavTuru === 'tyt');
+            const isAyt = (found.sinavTuru === 'ayt');
 
             currentExamObj = {
                 rawItem: found,
@@ -3741,9 +3782,9 @@
 
             document.getElementById('exam-modal-title').innerText = currentExamObj.name;
             const qCountEl = document.getElementById('exam-modal-qcount');
-            if (qCountEl) qCountEl.innerText = isTyt ? 'TYT' : (currentExamObj.sinavTuru ? currentExamObj.sinavTuru.toUpperCase() : 'YDT');
+            if (qCountEl) qCountEl.innerText = isTyt ? 'TYT' : (isAyt ? 'AYT' : (currentExamObj.sinavTuru ? currentExamObj.sinavTuru.toUpperCase() : 'YDT'));
             const subtitleEl = document.getElementById('exam-modal-subtitle');
-            if (subtitleEl) subtitleEl.innerText = `Uygulama Tarihi: ${currentExamObj.date} • ` + (isTyt ? 'TYT Kurumsal Deneme' : 'YKS-Dil Hazırlık');
+            if (subtitleEl) subtitleEl.innerText = `Uygulama Tarihi: ${currentExamObj.date} • ` + (isTyt ? 'TYT Kurumsal Deneme' : (isAyt ? 'AYT Kurumsal Deneme' : 'YKS-Dil Hazırlık'));
 
             const multiBtns = document.getElementById('multi-booklet-btns');
             const singleBadge = document.getElementById('single-booklet-badge');
@@ -3759,7 +3800,15 @@
 
             const tytNets = document.getElementById('tyt-calc-branch-nets');
             if (tytNets) {
-                tytNets.classList.toggle('hidden', !isTyt);
+                tytNets.classList.toggle('hidden', !isTyt && !isAyt);
+                const l1 = document.getElementById('tyt-lbl-1');
+                const l2 = document.getElementById('tyt-lbl-2');
+                const l3 = document.getElementById('tyt-lbl-3');
+                const l4 = document.getElementById('tyt-lbl-4');
+                if (l1) l1.innerText = isAyt ? 'Ed-Sos:' : 'Tr:';
+                if (l2) l2.innerText = isAyt ? 'Sos-2:' : 'Sos:';
+                if (l3) l3.innerText = isAyt ? 'Mat:' : 'Mat:';
+                if (l4) l4.innerText = isAyt ? 'Fen:' : 'Fen:';
             }
 
             updateCalcStats();
@@ -4109,6 +4158,47 @@
             const container = document.getElementById('view-all-container');
             if (!container || !currentExamObj) return;
 
+                        // AYT Görünümü
+            if (currentExamObj.sinavTuru === 'ayt') {
+                const questions = (currentBooklet === 'A' || !currentExamObj.hasBookletB)
+                    ? currentExamObj.sorularA
+                    : currentExamObj.sorularB;
+
+                const branchMeta = {
+                    edebiyat_sos1: { title: "Türk Dili ve Ed. - Sosyal-1", range: "1 - 40", icon: "fa-book-open", bg: "bg-blue-900" },
+                    sosyal2: { title: "Sosyal Bilimler-2", range: "1 - 40", icon: "fa-landmark", bg: "bg-amber-800" },
+                    matematik: { title: "Matematik", range: "1 - 40", icon: "fa-calculator", bg: "bg-emerald-900" },
+                    fen: { title: "Fen Bilimleri", range: "1 - 40", icon: "fa-flask", bg: "bg-purple-900" }
+                };
+
+                let html = '<div class="space-y-4">';
+                html += '<p class="text-[11px] text-gray-500 font-medium text-center">💡 Soru kazanımını görmek için satıra dokunabilirsiniz</p>';
+
+                const branchKeys = ['edebiyat_sos1', 'sosyal2', 'matematik', 'fen'];
+
+                branchKeys.forEach(brKey => {
+                    const brQuestions = questions.filter(q => q.secId === brKey);
+                    if (brQuestions.length === 0) return;
+                    const meta = branchMeta[brKey];
+
+                    html += `
+                    <div class="space-y-2">
+                        <div class="max-w-md mx-auto ${meta.bg} text-white px-3.5 py-1.5 rounded-xl flex items-center justify-between text-xs font-bold shadow-2xs">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid ${meta.icon} text-amber-300 text-[11px]"></i>
+                                <span>${meta.title}</span>
+                            </div>
+                            <span class="text-[10px] bg-white/20 px-2.5 py-0.5 rounded-md font-medium">${brQuestions.length} Soru (${currentBooklet} Kitapçığı)</span>
+                        </div>
+                        ${renderTwoColumnTable(brQuestions)}
+                    </div>`;
+                });
+
+                html += '</div>';
+                container.innerHTML = html;
+                return;
+            }
+
             // TYT Görünümü
             if (currentExamObj.sinavTuru === 'tyt') {
                 const questions = (currentBooklet === 'A' || !currentExamObj.hasBookletB)
@@ -4187,6 +4277,46 @@
         function renderBlockView() {
             const container = document.getElementById('view-block-container');
             if (!container || !currentExamObj) return;
+
+                        // AYT Blok Görünümü (Ders bazlı 14 Blok)
+            if (currentExamObj.sinavTuru === 'ayt') {
+                const questions = (currentBooklet === 'A' || !currentExamObj.hasBookletB)
+                    ? currentExamObj.sorularA
+                    : currentExamObj.sorularB;
+
+                let html = '<div class="space-y-3.5">';
+                html += '<p class="text-[11px] text-gray-500 font-medium text-center">💡 Soru kazanımını görmek için satıra dokunabilirsiniz</p>';
+
+                AYT_DEFAULT_SECTIONS.forEach((sec, idx) => {
+                    const isOpen = openBlockIndices.has(idx);
+                    const secQuestions = questions.slice(sec.start - 1, sec.end);
+
+                    html += `
+                    <div class="bg-gray-50 rounded-2xl border border-gray-200/80 overflow-hidden transition-all">
+                        <button type="button" onclick="toggleBlockAccordion(${idx})" class="w-full flex items-center justify-between p-3 sm:p-3.5 text-left hover:bg-gray-100/70 transition-colors cursor-pointer gap-2">
+                            <div class="flex items-center gap-2.5 min-w-0">
+                                <div class="w-7 h-7 rounded-lg bg-primary-900 text-white flex items-center justify-center text-xs shrink-0">
+                                    <i class="fa-solid ${sec.icon}"></i>
+                                </div>
+                                <h4 class="text-xs sm:text-sm font-bold text-gray-900 truncate">${sec.title}</h4>
+                            </div>
+                            <div class="flex items-center gap-2 shrink-0 ml-auto">
+                                <span class="text-[11px] text-gray-500 font-medium">${sec.count} Soru (${sec.secStart}-${sec.secEnd})</span>
+                                <div class="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-500">
+                                    <i id="block-chevron-${idx}" class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}"></i>
+                                </div>
+                            </div>
+                        </button>
+                        <div id="block-body-${idx}" class="${isOpen ? '' : 'hidden'} p-3 sm:p-4 border-t border-gray-200/80 bg-white">
+                            ${renderTwoColumnTable(secQuestions)}
+                        </div>
+                    </div>`;
+                });
+
+                html += '</div>';
+                container.innerHTML = html;
+                return;
+            }
 
             // TYT Blok Görünümü (Ders bazlı 10 Blok)
             if (currentExamObj.sinavTuru === 'tyt') {
@@ -4273,6 +4403,56 @@
         function renderCalcView() {
             const container = document.getElementById('view-calc-container');
             if (!container || !currentExamObj) return;
+
+                        // AYT Kendin Doldur Modu
+            if (currentExamObj.sinavTuru === 'ayt') {
+                const questions = (currentBooklet === 'A' || !currentExamObj.hasBookletB)
+                    ? currentExamObj.sorularA
+                    : currentExamObj.sorularB;
+
+                let html = '<div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">';
+
+                questions.forEach((q, idx) => {
+                    const gIdx = q.globalNo - 1;
+                    const state = userCalcAnswers[gIdx];
+                    const isD = (state === 'D');
+                    const isY = (state === 'Y');
+                    const badgeColor = getDersBadgeClass(q.ders);
+                    const defaultRowBg = (idx % 2 === 0)
+                        ? 'bg-white border-gray-200/80 hover:border-gray-300'
+                        : 'bg-blue-50/80 border-blue-100 hover:border-blue-200';
+
+                    const safeDers = q.ders ? String(q.ders).replace(/'/g, "\\'") : '';
+                    const safeKazanim = q.kazanim ? String(q.kazanim).replace(/'/g, "\\'").replace(/"/g, '&quot;') : '';
+                    const safeKod = q.kod ? String(q.kod).replace(/'/g, "\\'") : '';
+
+                    html += `
+                    <div class="px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl border ${isD ? 'bg-emerald-50 border-emerald-300' : isY ? 'bg-red-50 border-red-300' : defaultRowBg} flex items-center justify-between transition-colors shadow-2xs gap-1.5">
+                        <div class="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm shrink-0 min-w-0">
+                            <span class="font-bold text-gray-800 w-5 sm:w-6 text-right">${q.secNo}</span>
+                            <span class="text-gray-300 font-semibold">-</span>
+                            <span class="font-black text-primary-900 w-4 text-left">${q.cevap}</span>
+                            <span onclick="openKazanimPopup('${safeDers}', '${safeKod}', '${safeKazanim}', ${q.secNo})" class="cursor-pointer ${badgeColor} px-1.5 py-0.5 rounded text-[10px] font-bold truncate max-w-[85px] sm:max-w-[105px] transition-transform active:scale-95" title="${q.ders}: ${q.kazanim}">
+                                ${formatDersName(q.ders)}
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                            <button type="button" onclick="setCalcAnswer(${gIdx}, 'D')" 
+                                class="px-2 sm:px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all ${isD ? 'bg-emerald-600 text-white shadow-xs' : 'bg-gray-100 text-gray-600 hover:bg-emerald-100 hover:text-emerald-700'} flex items-center justify-center cursor-pointer" title="Doğru (İptal için tekrar tıkla)">
+                                Doğru
+                            </button>
+                            <button type="button" onclick="setCalcAnswer(${gIdx}, 'Y')" 
+                                class="px-2 sm:px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all ${isY ? 'bg-red-600 text-white shadow-xs' : 'bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-700'} flex items-center justify-center cursor-pointer" title="Yanlış (İptal için tekrar tıkla)">
+                                Yanlış
+                            </button>
+                        </div>
+                    </div>`;
+                });
+
+                html += '</div>';
+                container.innerHTML = html;
+                return;
+            }
 
             // TYT Kendin Doldur Modu
             if (currentExamObj.sinavTuru === 'tyt') {
@@ -4423,45 +4603,50 @@
             if (eEl) eEl.innerText = empty;
             if (nEl) nEl.innerText = net;
 
-            // TYT Branş Bazlı Netler
-            if (currentExamObj && currentExamObj.sinavTuru === 'tyt') {
+            // TYT / AYT Branş Bazlı Netler
+            if (currentExamObj && (currentExamObj.sinavTuru === 'tyt' || currentExamObj.sinavTuru === 'ayt')) {
+                const isAyt = (currentExamObj.sinavTuru === 'ayt');
                 const branchCounts = {
-                    turkce: { d: 0, y: 0 },
-                    sosyal: { d: 0, y: 0 },
-                    matematik: { d: 0, y: 0 },
-                    fen: { d: 0, y: 0 }
+                    b1: { d: 0, y: 0 },
+                    b2: { d: 0, y: 0 },
+                    b3: { d: 0, y: 0 },
+                    b4: { d: 0, y: 0 }
                 };
 
-                for (let i = 0; i < 40 && i < total; i++) {
-                    if (userCalcAnswers[i] === 'D') branchCounts.turkce.d++;
-                    else if (userCalcAnswers[i] === 'Y') branchCounts.turkce.y++;
+                const limits = isAyt
+                    ? [40, 80, 120, 160]
+                    : [40, 60, 100, 120];
+
+                for (let i = 0; i < limits[0] && i < total; i++) {
+                    if (userCalcAnswers[i] === 'D') branchCounts.b1.d++;
+                    else if (userCalcAnswers[i] === 'Y') branchCounts.b1.y++;
                 }
-                for (let i = 40; i < 60 && i < total; i++) {
-                    if (userCalcAnswers[i] === 'D') branchCounts.sosyal.d++;
-                    else if (userCalcAnswers[i] === 'Y') branchCounts.sosyal.y++;
+                for (let i = limits[0]; i < limits[1] && i < total; i++) {
+                    if (userCalcAnswers[i] === 'D') branchCounts.b2.d++;
+                    else if (userCalcAnswers[i] === 'Y') branchCounts.b2.y++;
                 }
-                for (let i = 60; i < 100 && i < total; i++) {
-                    if (userCalcAnswers[i] === 'D') branchCounts.matematik.d++;
-                    else if (userCalcAnswers[i] === 'Y') branchCounts.matematik.y++;
+                for (let i = limits[1]; i < limits[2] && i < total; i++) {
+                    if (userCalcAnswers[i] === 'D') branchCounts.b3.d++;
+                    else if (userCalcAnswers[i] === 'Y') branchCounts.b3.y++;
                 }
-                for (let i = 100; i < 120 && i < total; i++) {
-                    if (userCalcAnswers[i] === 'D') branchCounts.fen.d++;
-                    else if (userCalcAnswers[i] === 'Y') branchCounts.fen.y++;
+                for (let i = limits[2]; i < limits[3] && i < total; i++) {
+                    if (userCalcAnswers[i] === 'D') branchCounts.b4.d++;
+                    else if (userCalcAnswers[i] === 'Y') branchCounts.b4.y++;
                 }
 
-                const netTr = Math.max(0, branchCounts.turkce.d - (branchCounts.turkce.y * 0.25)).toFixed(2);
-                const netSos = Math.max(0, branchCounts.sosyal.d - (branchCounts.sosyal.y * 0.25)).toFixed(2);
-                const netMat = Math.max(0, branchCounts.matematik.d - (branchCounts.matematik.y * 0.25)).toFixed(2);
-                const netFen = Math.max(0, branchCounts.fen.d - (branchCounts.fen.y * 0.25)).toFixed(2);
+                const net1 = Math.max(0, branchCounts.b1.d - (branchCounts.b1.y * 0.25)).toFixed(2);
+                const net2 = Math.max(0, branchCounts.b2.d - (branchCounts.b2.y * 0.25)).toFixed(2);
+                const net3 = Math.max(0, branchCounts.b3.d - (branchCounts.b3.y * 0.25)).toFixed(2);
+                const net4 = Math.max(0, branchCounts.b4.d - (branchCounts.b4.y * 0.25)).toFixed(2);
 
                 const elTr = document.getElementById('tyt-net-tr');
                 const elSos = document.getElementById('tyt-net-sos');
                 const elMat = document.getElementById('tyt-net-mat');
                 const elFen = document.getElementById('tyt-net-fen');
-                if (elTr) elTr.innerText = netTr;
-                if (elSos) elSos.innerText = netSos;
-                if (elMat) elMat.innerText = netMat;
-                if (elFen) elFen.innerText = netFen;
+                if (elTr) elTr.innerText = net1;
+                if (elSos) elSos.innerText = net2;
+                if (elMat) elMat.innerText = net3;
+                if (elFen) elFen.innerText = net4;
             }
         }
 
@@ -5025,15 +5210,17 @@
         // Öğrencinin karne analitiğini hesaplar
         function computeKarneAnalytics() {
             const isTyt = currentExamObj && currentExamObj.sinavTuru === 'tyt';
-            const total = currentExamObj ? (currentExamObj.bookletA.length || (isTyt ? 120 : 80)) : 80;
+            const isAyt = currentExamObj && currentExamObj.sinavTuru === 'ayt';
+            const total = currentExamObj ? (currentExamObj.bookletA.length || (isTyt ? 120 : (isAyt ? 160 : 80))) : 80;
             let totalD = 0, totalY = 0, totalB = 0;
 
-            if (isTyt) {
+            if (isTyt || isAyt) {
+                const defaultSections = isAyt ? AYT_DEFAULT_SECTIONS : TYT_DEFAULT_SECTIONS;
                 const currentQuestions = (currentBooklet === 'A' || !currentExamObj.hasBookletB)
                     ? currentExamObj.sorularA
                     : currentExamObj.sorularB;
 
-                const sections = TYT_DEFAULT_SECTIONS.map((sec, idx) => {
+                const sections = defaultSections.map((sec, idx) => {
                     let d = 0, y = 0, b = 0;
                     for (let q = sec.start; q <= sec.end && q <= total; q++) {
                         const st = userCalcAnswers[q - 1];
@@ -5080,7 +5267,8 @@
                 });
 
                 return {
-                    isTyt: true,
+                    isTyt,
+                    isAyt,
                     total,
                     totalD,
                     totalY,
@@ -5242,7 +5430,7 @@
             const kazanimBox = document.getElementById('karne-kazanim-analysis');
             const kazanimList = document.getElementById('karne-kazanim-list');
             if (kazanimBox && kazanimList) {
-                if (stats.isTyt) {
+                if (stats.isTyt || stats.isAyt) {
                     kazanimBox.classList.remove('hidden');
                     if (stats.missedTopics.length > 0) {
                         let kHtml = '';
@@ -5444,7 +5632,7 @@
                 `✅ Doğru: ${stats.totalD} | ❌ Yanlış: ${stats.totalY} | ⚪ Boş: ${stats.totalB}\n` +
                 `⭐ *Toplam Net: ${stats.totalNet}* (Başarı: %${stats.totalPct})\n\n`;
 
-            if (stats.isTyt) {
+            if (stats.isTyt || stats.isAyt) {
                 text += `📘 Türkçe: ${stats.sections[0].net} Net\n` +
                     `🏛️ Sosyal: ${(parseFloat(stats.sections[1].net) + parseFloat(stats.sections[2].net) + parseFloat(stats.sections[3].net) + parseFloat(stats.sections[4].net)).toFixed(2)} Net\n` +
                     `📐 Matematik: ${(parseFloat(stats.sections[5].net) + parseFloat(stats.sections[6].net)).toFixed(2)} Net\n` +
