@@ -24,15 +24,27 @@
 
 const PRODIL_DUYURULAR = [
     {
+        "id": "tercih-robotu",
+        "tur": "duyuru",
+        "baslik": "Puan ve Tercih Robotu Eklendi!",
+        "tarih": "06.11.2026",
+        "yayinZamani": "06.11.2026 10:00",
+        "kategori": "Yeni Özellik",
+        "link": "tercih-robotu.html",
+        "linkButonMetni": "Tercih Robotuna Git",
+        "aciklama": "TYT, AYT ve YDT netlerinizle sıralamanızı hesaplayın ve 21.602 üniversite bölümünü filtreleyin.",
+        "detayMetni": "ÖSYM yerleştirme verileri ve yığınsal dağılım tablolarıyla hazırlanan kapsamlı 'Puan ve Tercih Robotu' sitemize eklendi!\n\n• TYT, AYT ve YDT doğru/yanlış sayılarınızı girerek tahmini puan ve başarı sıralamanızı anında hesaplayabilir,\n• 227 üniversite ve 21.602 program arasından şehir, burs, üniversite türü ve özel sıralama marjına göre filtreleme yapabilir,\n• Kendi 24 tercihlik ÖSYM Tercih Listenizi oluşturabilirsiniz."
+    },
+    {
         "id": "miray-ayt-1",
         "tur": "sinav",
         "sinavTuru": "ayt",
         "baslik": "MİRAY AYT 1. Kurumsal Deneme",
         "tarih": "02.11.2026",
-        "yayinZamani": "02.11.2026 20:15",
+        "yayinZamani": "02.11.2026 19:30",
         "kilitliGoster": true,
         "kategori": "AYT Deneme",
-        "aciklama": "Cevap anahtarı 2 Kasım 2026 Pazartesi günü saat 20:15'te erişime açılacaktır.",
+        "aciklama": "MİRAY Yayınları AYT 1. Kurumsal Deneme Sınavı cevap anahtarı, A/B kitapçığı ve konu kazanımları.",
         "cevaplarA": "CEDBCAEDBCAECDABECADBADDECBDEAEBACCBDBEADBACEADBCEDDCCBDADCEBADBBCECAAECCEACDEEBDCDCECDEDBDBACCDBEACBBACBECBCACEBDDBCCACCCDABEECBDACCDEABACBCEBDDCCDAEAEBDCECEBA",
         "cevaplarB": "DCEABCBECDCAEEDABBCADDDADBCEAEACBEBCADBEACDBCDAEDBECADDCBDBACEBBDECCAEACECDACBEEDCDCEDECBDBDCDACEACBBABCCBBECACDEBBDCACCDCCEEBADACBDCCBABCEAECDBCDCADAEBEECDCABE",
         "sorularA": [

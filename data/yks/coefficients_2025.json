@@ -1,0 +1,189 @@
+{
+  "yil": 2025,
+  "kaynak": "ÖSYM 2025-YKS Sayısal Bilgiler (Sayfa 3) & YKS Puan Hesaplama Katsayıları",
+  "yanlisGoturmeOrani": 0.25,
+  "obpCarpani": {
+    "normal": 0.12,
+    "kirik": 0.06,
+    "diplomaCarpani": 5
+  },
+  "tabanPuanlar": {
+    "TYT": 100,
+    "SAY": 100,
+    "EA": 100,
+    "SOZ": 100,
+    "DIL": 100
+  },
+  "dersler": {
+    "tyt": {
+      "turkce": {
+        "ad": "Türkçe",
+        "soruSayisi": 40,
+        "ortalama": 21.243,
+        "standartSapma": 7.848,
+        "katsayi": {
+          "TYT": 3.3,
+          "SAY": 1.32,
+          "EA": 1.32,
+          "SOZ": 1.32,
+          "DIL": 1.32
+        }
+      },
+      "sosyal": {
+        "ad": "Sosyal Bilimler",
+        "soruSayisi": 20,
+        "ortalama": 9.496,
+        "standartSapma": 4.042,
+        "katsayi": {
+          "TYT": 3.4,
+          "SAY": 1.36,
+          "EA": 1.36,
+          "SOZ": 1.36,
+          "DIL": 1.36
+        }
+      },
+      "matematik": {
+        "ad": "Temel Matematik",
+        "soruSayisi": 40,
+        "ortalama": 6.006,
+        "standartSapma": 7.067,
+        "katsayi": {
+          "TYT": 3.3,
+          "SAY": 1.32,
+          "EA": 1.32,
+          "SOZ": 1.32,
+          "DIL": 1.32
+        }
+      },
+      "fen": {
+        "ad": "Fen Bilimleri",
+        "soruSayisi": 20,
+        "ortalama": 4.122,
+        "standartSapma": 4.862,
+        "katsayi": {
+          "TYT": 3.4,
+          "SAY": 1.36,
+          "EA": 1.36,
+          "SOZ": 1.36,
+          "DIL": 1.36
+        }
+      }
+    },
+    "ayt": {
+      "matematik": {
+        "ad": "AYT Matematik",
+        "soruSayisi": 40,
+        "ortalama": 6.798,
+        "standartSapma": 8.12,
+        "katsayi": {
+          "SAY": 3,
+          "EA": 3
+        }
+      },
+      "fizik": {
+        "ad": "Fizik",
+        "soruSayisi": 14,
+        "ortalama": 2.442,
+        "standartSapma": 3.313,
+        "katsayi": {
+          "SAY": 2.8571
+        }
+      },
+      "kimya": {
+        "ad": "Kimya",
+        "soruSayisi": 13,
+        "ortalama": 1.758,
+        "standartSapma": 3.229,
+        "katsayi": {
+          "SAY": 3.0769
+        }
+      },
+      "biyoloji": {
+        "ad": "Biyoloji",
+        "soruSayisi": 13,
+        "ortalama": 2.596,
+        "standartSapma": 3.227,
+        "katsayi": {
+          "SAY": 3.0769
+        }
+      },
+      "edebiyat": {
+        "ad": "Türk Dili ve Edebiyatı",
+        "soruSayisi": 24,
+        "ortalama": 6.63,
+        "standartSapma": 5.452,
+        "katsayi": {
+          "EA": 3,
+          "SOZ": 3
+        }
+      },
+      "tarih1": {
+        "ad": "Tarih-1",
+        "soruSayisi": 10,
+        "ortalama": 2.243,
+        "standartSapma": 2.423,
+        "katsayi": {
+          "EA": 2.8,
+          "SOZ": 2.8
+        }
+      },
+      "cografya1": {
+        "ad": "Coğrafya-1",
+        "soruSayisi": 6,
+        "ortalama": 1.436,
+        "standartSapma": 1.515,
+        "katsayi": {
+          "EA": 3.3333,
+          "SOZ": 3.3333
+        }
+      },
+      "tarih2": {
+        "ad": "Tarih-2",
+        "soruSayisi": 11,
+        "ortalama": 1.426,
+        "standartSapma": 1.965,
+        "katsayi": {
+          "SOZ": 2.9091
+        }
+      },
+      "cografya2": {
+        "ad": "Coğrafya-2",
+        "soruSayisi": 11,
+        "ortalama": 2.635,
+        "standartSapma": 2.808,
+        "katsayi": {
+          "SOZ": 2.9091
+        }
+      },
+      "felsefe": {
+        "ad": "Felsefe Grubu",
+        "soruSayisi": 12,
+        "ortalama": 1.918,
+        "standartSapma": 2.372,
+        "katsayi": {
+          "SOZ": 3
+        }
+      },
+      "din": {
+        "ad": "DKAB / Ek Felsefe",
+        "soruSayisi": 6,
+        "ortalama": 1.473,
+        "standartSapma": 1.796,
+        "katsayi": {
+          "SOZ": 3.3333
+        }
+      }
+    },
+    "ydt": {
+      "yabanciDil": {
+        "ad": "Yabancı Dil (YDT)",
+        "soruSayisi": 80,
+        "ortalama": 35.096,
+        "standartSapma": 21.162,
+        "katsayi": {
+          "DIL": 3
+        }
+      }
+    }
+  }
+}

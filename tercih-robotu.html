@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7E4VL2EC7L"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-7E4VL2EC7L');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YKS & YDT Puan Hesaplama ve Üniversite Tercih Robotu (2025 ÖSYM) | Prodil</title>
+    <link rel="canonical" href="https://prodil.net/tercih-robotu.html">
+    <link rel="alternate" type="text/plain" href="https://prodil.net/llms.txt" title="LLM Context">
+
+    <meta name="description"
+        content="ÖSYM 2025-YKS resmi yerleştirme verileri ve yığınsal dağılım tablolarıyla geliştirilmiş YDT (Dil), SAY, EA, SÖZ ve TYT Puan Hesaplama ve Üniversite Tercih Robotu. Netlerinizi girin, 21.602 program arasından size en uygun üniversiteleri filtreleyin.">
+    <meta name="keywords"
+        content="yks tercih robotu, ydt tercih robotu, yks puan hesaplama, ydt puan hesaplama, yks sıralama hesaplama, ydt sıralama hesaplama, ösym tercih robotu, üniversite taban puanları 2025, 2 yıllık taban puanları, 4 yıllık taban puanları, ydt taban puanları, ingilizce öğretmenliği taban puanları, mütercim tercümanlık sıralama, ingiliz dili ve edebiyatı taban puanları, obp hesaplama, sakarya ydt hazırlık, prodil tercih robotu">
+    <meta name="author" content="Muhsin Çelik - Prodil">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PRODİL - İngilizce Sınav Teknikleri Merkezi">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:title" content="YKS & YDT Puan Hesaplama ve Üniversite Tercih Robotu | Prodil">
+    <meta property="og:description"
+        content="Netlerinizi girin, 2025 ÖSYM Yığınsal Dağılım Tablosu ile tahmini başarı sıralamanızı hesaplayın ve ±%20 marjla 21.602 üniversite bölümünü filtreleyin.">
+    <meta property="og:image" content="https://prodil.net/assets/img/png_arsiv/logo.png">
+    <meta property="og:url" content="https://prodil.net/tercih-robotu.html">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YKS & YDT Puan Hesaplama ve Üniversite Tercih Robotu | Prodil">
+    <meta name="twitter:description"
+        content="TYT, AYT ve YDT netlerinizle gerçek ÖSYM sıralamanızı hesaplayın, 21.602 önlisans ve lisans programını anında filtreleyin.">
+    <meta name="twitter:image" content="https://prodil.net/assets/img/png_arsiv/logo.png">
+
+    <!-- Google Zengin Sonuçlar (Rich Snippets) ve Yapay Zeka (AI) için Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://prodil.net/tercih-robotu.html#app",
+          "name": "Prodil YKS & YDT Puan Hesaplama ve Üniversite Tercih Robotu",
+          "url": "https://prodil.net/tercih-robotu.html",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "All",
+          "inLanguage": "tr-TR",
+          "isAccessibleForFree": true,
+          "description": "ÖSYM 2025-YKS Tablo-3 (Önlisans), Tablo-4 (Lisans) ve Yığınsal Dağılım Tablolarını kullanarak TYT, SAY, EA, SÖZ ve YDT (Dil) puan ve başarı sıralaması hesaplayan, 21.602 üniversite bölümünü ±%20 marjla filtreleyen interaktif tercih robotu.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "TRY"
+          },
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "PRODİL - İngilizce Sınav Teknikleri Merkezi",
+            "url": "https://prodil.net/"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Anasayfa",
+              "item": "https://prodil.net/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "YKS & YDT Puan ve Tercih Robotu",
+              "item": "https://prodil.net/tercih-robotu.html"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "YKS ve YDT başarı sıralaması nasıl hesaplanır?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Öğrencinin TYT ve AYT/YDT doğru-yanlış sayılarından (4 yanlış 1 doğruyu götürerek) netleri çıkarılır, ders katsayıları ile çarpılarak ham puan bulunur ve OBP (Diploma Notu x 0.6) eklenerek yerleştirme puanı elde edilir. Bu puan ÖSYM Yığınsal Dağılım Tablosu üzerinde doğrusal interpolasyon yapılarak tahmini başarı sıralamasına dönüştürülür."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Üniversite tercihlerinde sıralama marjı ne kadar olmalıdır?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Uzman rehberlik kriterlerine göre öğrencinin tahmini başarı sıralamasının ±%20 aralığı (veya -%20 üst sürpriz tercihlerden +%50 güvenli tercihlere kadar) ideal tercih havuzunu oluşturur. Prodil Tercih Robotu 21.602 önlisans ve lisans programını Sürpriz, İdeal ve Garanti olarak sınıflandırır."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="assets/img/png_arsiv/favicon.png">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            900: '#003366', // Prodil Blue
+                            800: '#002244',
+                            700: '#004080',
+                        },
+                        accent: {
+                            500: '#D9232E', // Prodil Red
+                            600: '#b91c1c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-container {
+            position: relative;
+            width: 10rem;
+            height: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid rgba(0, 51, 102, 0.1);
+            border-top-color: #003366;
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-logo {
+            width: 6.5rem;
+            height: 6.5rem;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(0.92); opacity: 0.85; }
+            50% { transform: scale(1.04); opacity: 1; }
+        }
+
+        /* Sayı inputlarında okları gizle */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        @media print {
+            header, footer, #hesaplama-sol-kolon, #filtre-kontrol-paneli, #floating-basket-btn {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-700 bg-slate-50 antialiased flex flex-col min-h-screen">
+    <h1 class="sr-only">YKS ve YDT Puan Hesaplama ve Üniversite Tercih Robotu (2025 ÖSYM Verileri)</h1>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-container">
+            <div class="loader-circle"></div>
+            <img src="assets/img/png_arsiv/favicon.png" alt="Yükleniyor..." class="loader-logo">
+        </div>
+    </div>
+
+    <!-- Bildirim (Toast) Alanı -->
+    <div id="yks-toast-container" class="fixed bottom-20 right-4 z-[9999] flex flex-col gap-2"></div>
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-[9000]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Area -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="assets/img/png_arsiv/logo.png" alt="Prodil Logo"
+                            class="h-12 md:h-12 w-auto object-contain">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Anasayfa</a>
+                    <a href="index.html#about"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Kurumsal</a>
+                    <a href="index.html#features"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">Neden Biz?</a>
+                    <div class="relative group">
+                        <button class="flex items-center gap-1.5 text-primary-900 font-bold transition-colors py-2">
+                            <span>Çalışma Odası</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] opacity-70 group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <div class="absolute left-0 top-full w-56 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-[100]">
+                            <div class="bg-white border border-gray-100 rounded-xl shadow-xl overflow-hidden py-2">
+                                <a href="dersler.html"
+                                    class="flex items-center gap-2 pl-2 pr-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-900 transition-colors">
+                                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+                                        <i class="fa-solid fa-book-open"></i>
+                                    </div>
+                                    <span class="font-semibold">Kelime Çalışması</span>
+                                </a>
+                                <a href="egzersiz.html"
+                                    class="flex items-center gap-2 pl-2 pr-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-accent-500 transition-colors">
+                                    <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center text-accent-500">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </div>
+                                    <span class="font-semibold">Egzersizler</span>
+                                </a>
+                                <a href="testler.html"
+                                    class="flex items-center gap-2 pl-2 pr-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition-colors">
+                                    <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600">
+                                        <i class="fa-solid fa-vial"></i>
+                                    </div>
+                                    <span class="font-semibold">Testler</span>
+                                </a>
+                                <a href="tercih-robotu.html"
+                                    class="flex items-center gap-2 pl-2 pr-4 py-3 text-sm bg-emerald-50/60 text-emerald-800 hover:bg-emerald-50 transition-colors">
+                                    <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                    <span class="font-bold">YKS Tercih Robotu</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="index.html#contact"
+                        class="text-gray-600 hover:text-primary-900 font-medium transition-colors">İletişim</a>
+                </nav>
+
+                <!-- Sağ: Tercih Listem Butonu & CTA -->
+                <div class="hidden md:flex items-center gap-3">
+                    <button onclick="window.TercihRobotuUI.openPreferenceModal()"
+                        class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 border-primary-900/15 bg-blue-50/60 text-primary-900 font-bold text-sm hover:bg-blue-100/70 transition-all">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span>Tercih Listem</span>
+                        <span class="pref-count-badge px-2 py-0.5 rounded-md bg-primary-900 text-white text-xs font-extrabold">0/24</span>
+                    </button>
+                    <a href="index.html#contact"
+                        class="bg-primary-900 text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-primary-800 transition-all shadow-md">
+                        Bilgi Al
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button onclick="window.TercihRobotuUI.openPreferenceModal()"
+                        class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-blue-50 text-primary-900 font-bold text-xs">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span class="pref-count-badge">0/24</span>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none p-1"
+                        onclick="toggleMobileMenu()">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-20 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-[9999] rounded-b-3xl">
+            <div class="px-4 pt-2 pb-5 space-y-1">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50">Anasayfa</a>
+                <a href="index.html#about"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50">Kurumsal</a>
+                <div class="py-1">
+                    <div class="px-3 py-1.5 text-sm font-bold text-gray-400 uppercase tracking-wider">Çalışma Odası</div>
+                    <div class="space-y-1 border-l-2 border-gray-100 ml-4 pl-3">
+                        <a href="dersler.html" class="block py-1.5 text-sm font-semibold text-gray-700 hover:text-primary-900">Kelime Çalışması</a>
+                        <a href="egzersiz.html" class="block py-1.5 text-sm font-semibold text-gray-700 hover:text-primary-900">Egzersizler</a>
+                        <a href="testler.html" class="block py-1.5 text-sm font-semibold text-gray-700 hover:text-primary-900">Testler</a>
+                        <a href="tercih-robotu.html" class="block py-1.5 text-sm font-extrabold text-primary-900">🎓 YKS Tercih Robotu</a>
+                    </div>
+                </div>
+                <a href="index.html#contact"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-900 hover:bg-gray-50">İletişim</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Üst Hero Başlık Bandı -->
+    <section class="pt-24 pb-6 bg-gradient-to-br from-primary-900 via-primary-800 to-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                        Puan ve Tercih Robotu
+                    </h2>
+                    <p class="text-xs sm:text-sm text-blue-100/90 mt-1 max-w-3xl">
+                        Tahmini sıralamanızı hesaplayın ve ±%20 marjla <strong>21.602</strong> bölüm arasından size en uygun üniversiteleri filtreleyin.
+                    </p>
+                </div>
+
+                <!-- Hızlı Örnek Profil Butonları -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-3 shrink-0">
+                    <div class="text-[11px] font-bold uppercase tracking-wider text-blue-200 mb-2 text-center">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Hızlı Örnek Net Doldur:
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-1.5">
+                        <button data-preset-profile="dil"
+                            class="px-3 py-1.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white text-xs font-bold transition-all shadow-sm">
+                            YDT
+                        </button>
+                        <button data-preset-profile="say"
+                            class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-sm">
+                            SAY
+                        </button>
+                        <button data-preset-profile="ea"
+                            class="px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-white text-xs font-bold transition-all shadow-sm">
+                            EA
+                        </button>
+                        <button data-preset-profile="soz"
+                            class="px-3 py-1.5 rounded-xl bg-rose-500 hover:bg-rose-400 text-white text-xs font-bold transition-all shadow-sm">
+                            SÖZ
+                        </button>
+                        <button data-preset-profile="clear"
+                            class="px-3 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-white text-xs font-semibold transition-all">
+                            Sıfırla
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ana İçerik Izgarası (Sol: Net & Puan Hesaplama | Sağ: Tercih Filtreleme ve Bölümler) -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+            <!-- ============================================================ -->
+            <!-- SOL KOLON (5/12): NET GİRİŞİ, OBP VE PUAN/SIRALAMA KARTLARI -->
+            <!-- ============================================================ -->
+            <div id="hesaplama-sol-kolon" class="lg:col-span-5 space-y-5">
+
+                <!-- 1. TYT Net Giriş Kartı -->
+                <div class="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-3.5 sm:p-4">
+                    <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-gray-100">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-xs">
+                                1
+                            </span>
+                            <div>
+                                <h3 class="text-sm sm:text-base font-extrabold text-gray-900">TYT Netlerini Gir</h3>
+                                <p class="text-[11px] text-gray-500">120 Soru | %40 etki eder</p>
+                            </div>
+                        </div>
+                        <span id="tyt-total-net-badge" class="px-2.5 py-1 rounded-xl bg-sky-50 text-sky-700 font-extrabold text-xs border border-sky-200 whitespace-nowrap shrink-0">
+                            0 / 120 Net
+                        </span>
+                    </div>
+
+                    <!-- Sütun Başlıkları (Ders | Doğru | Yanlış | Net) -->
+                    <div class="flex items-center justify-between gap-1.5 px-2.5 pb-1 text-[10px] font-bold">
+                        <span class="flex-1 text-gray-400 uppercase tracking-wider">Ders</span>
+                        <div class="flex items-center gap-1 shrink-0">
+                            <span class="w-10 text-center text-emerald-700">Doğru</span>
+                            <span class="w-10 text-center text-rose-600">Yanlış</span>
+                            <span class="w-12 text-center text-primary-900">Net</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <!-- Türkçe (40) -->
+                        <div data-subject-row="tyt.turkce" data-max-questions="40"
+                            class="flex items-center justify-between gap-1.5 bg-gray-50/80 hover:bg-gray-50 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Türkçe <span class="text-[11px] font-normal text-gray-400">(40)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 21,2</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="40" value="31" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 focus:border-primary-900 focus:ring-2 focus:ring-primary-900/15 outline-none">
+                                <input type="number" min="0" max="40" value="4" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/15 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">
+                                    30,00
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Sosyal Bilimler (20) -->
+                        <div data-subject-row="tyt.sosyal" data-max-questions="20"
+                            class="flex items-center justify-between gap-1.5 bg-gray-50/80 hover:bg-gray-50 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Sosyal Bilimler <span class="text-[11px] font-normal text-gray-400">(20)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 9,5</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="20" value="15" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 focus:border-primary-900 focus:ring-2 focus:ring-primary-900/15 outline-none">
+                                <input type="number" min="0" max="20" value="3" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/15 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">
+                                    14,25
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Temel Matematik (40) -->
+                        <div data-subject-row="tyt.matematik" data-max-questions="40"
+                            class="flex items-center justify-between gap-1.5 bg-gray-50/80 hover:bg-gray-50 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Temel Matematik <span class="text-[11px] font-normal text-gray-400">(40)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 6,0</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="40" value="14" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 focus:border-primary-900 focus:ring-2 focus:ring-primary-900/15 outline-none">
+                                <input type="number" min="0" max="40" value="4" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/15 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">
+                                    13,00
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Fen Bilimleri (20) -->
+                        <div data-subject-row="tyt.fen" data-max-questions="20"
+                            class="flex items-center justify-between gap-1.5 bg-gray-50/80 hover:bg-gray-50 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Fen Bilimleri <span class="text-[11px] font-normal text-gray-400">(20)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 4,1</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="20" value="7" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 focus:border-primary-900 focus:ring-2 focus:ring-primary-900/15 outline-none">
+                                <input type="number" min="0" max="20" value="2" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/15 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">
+                                    6,50
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. YDT / AYT Alan Testleri Kartı -->
+                <div class="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-3.5 sm:p-4">
+                    <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-gray-100">
+                        <div class="flex items-center gap-2">
+                            <span class="w-7 h-7 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-xs shrink-0">
+                                2
+                            </span>
+                            <div>
+                                <h3 class="text-sm sm:text-base font-extrabold text-gray-900">AYT veya YDT Netlerini Gir</h3>
+                                <p class="text-[11px] text-gray-500">Alanını seç ve netlerini gir | %60 etki eder</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alan Sekmeleri -->
+                    <div class="flex gap-1.5 mb-3">
+                        <button type="button" data-exam-tab="say"
+                            class="exam-tab-btn flex-1 py-2 px-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">
+                            SAY
+                        </button>
+                        <button type="button" data-exam-tab="ea"
+                            class="exam-tab-btn flex-1 py-2 px-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">
+                            EA
+                        </button>
+                        <button type="button" data-exam-tab="soz"
+                            class="exam-tab-btn flex-1 py-2 px-2.5 rounded-xl font-semibold text-xs sm:text-sm transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">
+                            SÖZ
+                        </button>
+                        <button type="button" data-exam-tab="ydt"
+                            class="exam-tab-btn active flex-1 py-2 px-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all bg-primary-900 text-white shadow-md">
+                            YDT
+                        </button>						
+                    </div>
+
+                    <!-- Sütun Başlıkları (Ders | Doğru | Yanlış | Net) -->
+                    <div class="flex items-center justify-between gap-1.5 px-2.5 pb-1 text-[10px] font-bold">
+                        <span class="flex-1 text-gray-400 uppercase tracking-wider">Ders</span>
+                        <div class="flex items-center gap-1 shrink-0">
+                            <span class="w-10 text-center text-emerald-700">Doğru</span>
+                            <span class="w-10 text-center text-rose-600">Yanlış</span>
+                            <span class="w-12 text-center text-primary-900">Net</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <!-- YDT Yabancı Dil (80) -->
+                        <div data-exam-panel="ydt" data-subject-row="ydt.yabanciDil" data-max-questions="80"
+                            class="flex items-center justify-between gap-1.5 bg-indigo-50/60 rounded-xl px-2.5 py-2 border border-indigo-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-extrabold text-indigo-950 whitespace-nowrap">YDT Yabancı Dil <span class="text-[11px] font-normal text-indigo-500">(80)</span></div>
+                                <div data-avg-badge class="text-[11px] text-indigo-600 whitespace-nowrap">TR Ort: 35,1</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="80" value="66" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-indigo-200 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 focus:border-indigo-600 outline-none">
+                                <input type="number" min="0" max="80" value="8" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-indigo-200 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 focus:border-rose-500 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-indigo-200 flex items-center justify-center text-xs font-extrabold text-indigo-900 whitespace-nowrap">
+                                    64,00
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- AYT Matematik (SAY, EA) -->
+                        <div data-exam-panel="say,ea" data-subject-row="ayt.matematik" data-max-questions="40"
+                            class="hidden flex items-center justify-between gap-1.5 bg-gray-50/80 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">AYT Matematik <span class="text-[11px] font-normal text-gray-400">(40)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 6,8</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="40" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <input type="number" min="0" max="40" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">0,00</span>
+                            </div>
+                        </div>
+
+                        <!-- AYT Fizik (SAY) -->
+                        <div data-exam-panel="say" data-subject-row="ayt.fizik" data-max-questions="14"
+                            class="hidden flex items-center justify-between gap-1.5 bg-gray-50/80 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Fizik <span class="text-[11px] font-normal text-gray-400">(14)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 2,4</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="14" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <input type="number" min="0" max="14" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">0,00</span>
+                            </div>
+                        </div>
+
+                        <!-- AYT Kimya (SAY) -->
+                        <div data-exam-panel="say" data-subject-row="ayt.kimya" data-max-questions="13"
+                            class="hidden flex items-center justify-between gap-1.5 bg-gray-50/80 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Kimya <span class="text-[11px] font-normal text-gray-400">(13)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 1,8</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="13" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <input type="number" min="0" max="13" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">0,00</span>
+                            </div>
+                        </div>
+
+                        <!-- AYT Biyoloji (SAY) -->
+                        <div data-exam-panel="say" data-subject-row="ayt.biyoloji" data-max-questions="13"
+                            class="hidden flex items-center justify-between gap-1.5 bg-gray-50/80 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Biyoloji <span class="text-[11px] font-normal text-gray-400">(13)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 2,6</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="13" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <input type="number" min="0" max="13" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">0,00</span>
+                            </div>
+                        </div>
+
+                        <!-- AYT Edebiyat (EA, SOZ) -->
+                        <div data-exam-panel="ea,soz" data-subject-row="ayt.edebiyat" data-max-questions="24"
+                            class="hidden flex items-center justify-between gap-1.5 bg-gray-50/80 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Edebiyat <span class="text-[11px] font-normal text-gray-400">(24)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 6,6</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="24" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <input type="number" min="0" max="24" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">0,00</span>
+                            </div>
+                        </div>
+
+                        <!-- AYT Tarih-1 (EA, SOZ) -->
+                        <div data-exam-panel="ea,soz" data-subject-row="ayt.tarih1" data-max-questions="10"
+                            class="hidden flex items-center justify-between gap-1.5 bg-gray-50/80 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Tarih-1 <span class="text-[11px] font-normal text-gray-400">(10)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 2,2</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="10" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <input type="number" min="0" max="10" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">0,00</span>
+                            </div>
+                        </div>
+
+                        <!-- AYT Coğrafya-1 (EA, SOZ) -->
+                        <div data-exam-panel="ea,soz" data-subject-row="ayt.cografya1" data-max-questions="6"
+                            class="hidden flex items-center justify-between gap-1.5 bg-gray-50/80 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Coğrafya-1 <span class="text-[11px] font-normal text-gray-400">(6)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 1,4</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="6" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <input type="number" min="0" max="6" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">0,00</span>
+                            </div>
+                        </div>
+
+                        <!-- AYT Tarih-2 (SOZ) -->
+                        <div data-exam-panel="soz" data-subject-row="ayt.tarih2" data-max-questions="11"
+                            class="hidden flex items-center justify-between gap-1.5 bg-gray-50/80 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Tarih-2 <span class="text-[11px] font-normal text-gray-400">(11)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 1,4</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="11" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <input type="number" min="0" max="11" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">0,00</span>
+                            </div>
+                        </div>
+
+                        <!-- AYT Coğrafya-2 (SOZ) -->
+                        <div data-exam-panel="soz" data-subject-row="ayt.cografya2" data-max-questions="11"
+                            class="hidden flex items-center justify-between gap-1.5 bg-gray-50/80 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Coğrafya-2 <span class="text-[11px] font-normal text-gray-400">(11)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 2,6</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="11" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <input type="number" min="0" max="11" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">0,00</span>
+                            </div>
+                        </div>
+
+                        <!-- AYT Felsefe Grubu (SOZ) -->
+                        <div data-exam-panel="soz" data-subject-row="ayt.felsefe" data-max-questions="12"
+                            class="hidden flex items-center justify-between gap-1.5 bg-gray-50/80 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">Felsefe Grubu <span class="text-[11px] font-normal text-gray-400">(12)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 1,9</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="12" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <input type="number" min="0" max="12" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">0,00</span>
+                            </div>
+                        </div>
+
+                        <!-- AYT DKAB (SOZ) -->
+                        <div data-exam-panel="soz" data-subject-row="ayt.din" data-max-questions="6"
+                            class="hidden flex items-center justify-between gap-1.5 bg-gray-50/80 rounded-xl px-2.5 py-2 border border-gray-100">
+                            <div class="flex-1 min-w-0">
+                                <div class="text-xs font-bold text-gray-800 whitespace-nowrap">DKAB / Ek Felsefe <span class="text-[11px] font-normal text-gray-400">(6)</span></div>
+                                <div data-avg-badge class="text-[11px] text-gray-400 whitespace-nowrap">TR Ort: 1,5</div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <input type="number" min="0" max="6" data-input-type="d" placeholder="D"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <input type="number" min="0" max="6" data-input-type="y" placeholder="Y"
+                                    class="yks-net-input w-10 h-8 rounded-lg border border-gray-300 bg-white text-center text-xs sm:text-sm font-bold text-gray-800 outline-none">
+                                <span data-net-display class="w-12 h-8 rounded-lg bg-white border border-gray-200 flex items-center justify-center text-xs font-extrabold text-primary-900 whitespace-nowrap">0,00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. OBP (Okul Başarı Puanı) Kartı -->
+                <div class="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-3.5 sm:p-4">
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <div class="flex items-center gap-2 min-w-0">
+                            <span class="w-7 h-7 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-xs shrink-0">
+                                3
+                            </span>
+                            <h3 class="text-sm sm:text-base font-extrabold text-gray-900 whitespace-nowrap">Dip. Notu (OBP)</h3>
+                        </div>
+                        <span id="obp-summary-badge" class="px-2.5 py-1 rounded-xl bg-sky-50 text-sky-700 font-extrabold text-xs border border-sky-200 whitespace-nowrap shrink-0">
+                            OBP: 430 (+51,6)
+                        </span>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <input id="obp-diploma-slider" type="range" min="50" max="100" step="0.5" value="86"
+                            class="flex-1 accent-primary-900 cursor-pointer">
+                        <input id="obp-diploma-input" type="number" min="50" max="100" step="0.5" value="86"
+                            class="w-20 h-10 rounded-xl border border-gray-300 text-center font-extrabold text-sm text-primary-900 focus:border-primary-900 outline-none">
+                    </div>
+
+                    <label class="mt-3 flex items-center gap-2 text-xs text-gray-600 cursor-pointer select-none">
+                        <input id="obp-kirik-checkbox" type="checkbox" class="w-4 h-4 rounded text-primary-900 focus:ring-primary-900">
+                        <span>Geçen yıl bir programına yerleştim <strong></strong></span>
+                    </label>
+                </div>
+
+                <!-- 4. Hesaplanan Puan ve Sıralama Sonuç Kartları -->
+                <div class="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-3.5 sm:p-4">
+                    <div class="pb-3 mb-3 border-b border-gray-100">
+                        <h3 class="text-base sm:text-lg font-extrabold text-gray-900 tracking-tight">
+                            Tahmini Puan & Sıralamalarınız
+                        </h3>
+                        <p class="text-[11px] text-gray-400 mt-0.5">Karta tıklayarak filtreleyin</p>
+
+                        <!-- Yıl Seçici Butonlar (Başlık alanının içinde, çizginin üzerinde) -->
+                        <div id="calc-year-tabs" class="flex flex-wrap items-center gap-1.5 mt-2.5">
+                            <button type="button" data-calc-year="2025"
+                                class="calc-year-btn active px-3.5 py-1.5 rounded-xl font-bold text-xs transition-all bg-primary-900 text-white shadow-sm">
+                                2025
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="score-cards-container" class="space-y-2.5"></div>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SAĞ KOLON (7/12): TERCİH ROBOTU FİLTRELERİ VE BÖLÜM LİSTESİ -->
+            <!-- ============================================================ -->
+            <div id="tercih-listesi-bolumu" class="lg:col-span-7 space-y-4">
+
+                <!-- Filtre Kontrol Paneli -->
+                <div id="filtre-kontrol-paneli" class="bg-white rounded-2xl border border-gray-200/80 shadow-sm p-4 sm:p-5 space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-gray-100">
+                        <div>
+                            <h3 class="text-base sm:text-lg font-extrabold text-gray-900">
+                                <i class="fa-solid fa-sliders text-primary-900 mr-1.5"></i>Tercih Robotu
+                            </h3>
+                            <p class="text-xs text-gray-500"></p>
+                        </div>
+
+                        <!-- Puan Türü Seçici -->
+                        <div class="flex flex-wrap justify-center gap-1.5">
+                            <button type="button" data-filter-score-type="DIL"
+                                class="px-3.5 py-2 rounded-xl font-extrabold text-xs sm:text-sm bg-primary-900 text-white shadow-md transition-all">
+                                DİL
+                            </button>
+                            <button type="button" data-filter-score-type="SAY"
+                                class="px-3.5 py-2 rounded-xl font-semibold text-xs sm:text-sm bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all">
+                                SAY
+                            </button>
+                            <button type="button" data-filter-score-type="EA"
+                                class="px-3.5 py-2 rounded-xl font-semibold text-xs sm:text-sm bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all">
+                                EA
+                            </button>
+                            <button type="button" data-filter-score-type="SOZ"
+                                class="px-3.5 py-2 rounded-xl font-semibold text-xs sm:text-sm bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all">
+                                SÖZ
+                            </button>
+                            <button type="button" data-filter-score-type="TYT"
+                                class="px-3.5 py-2 rounded-xl font-semibold text-xs sm:text-sm bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all">
+                                TYT
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Sıralama & ±%20 Marj Ayar Satırı -->
+                    <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 bg-blue-50/50 rounded-xl p-3 border border-blue-100">
+                        <div class="sm:col-span-4">
+                            <label class="block text-[11px] font-bold text-gray-700 mb-1">Tahmini Sıralamanız</label>
+                            <input id="filter-target-rank" type="number" min="1" max="2500000" value="10326"
+                                class="w-full h-10 px-3 rounded-xl border border-blue-200 bg-white font-extrabold text-sm text-primary-900 focus:border-primary-900 outline-none">
+                        </div>
+                        <div class="sm:col-span-4">
+                            <label class="block text-[11px] font-bold text-gray-700 mb-1">Sıralama Marjı</label>
+                            <select id="filter-margin-percent"
+                                class="w-full h-10 px-2.5 rounded-xl border border-blue-200 bg-white font-bold text-xs sm:text-sm text-gray-800 focus:border-primary-900 outline-none">
+                                <option value="10">±%10 (Dar Aralık)</option>
+                                <option value="20" selected>±%20 (Önerilen Marj)</option>
+                                <option value="30">±%30 (Geniş Aralık)</option>
+                                <option value="50">±%50 (Çok Geniş Aralık)</option>
+                                <option value="custom">Özel Marj Gir ( -% ?  /  +% ? )</option>
+                                <option value="all">Tüm Sıralamaları Göster</option>
+                            </select>
+                            <!-- Öğrencinin kendi marj yüzdelerini girebileceği kutular -->
+                            <div id="custom-margin-inputs-wrapper" class="hidden mt-2 flex items-center gap-1.5">
+                                <div class="relative w-1/2">
+                                    <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-[11px] font-extrabold text-amber-600 pointer-events-none">-%</span>
+                                    <input id="filter-custom-margin-minus" type="number" min="0" max="100" value="20" placeholder="Üst %"
+                                        class="w-full h-9 pl-8 pr-2 rounded-xl border border-blue-300 bg-white text-center font-extrabold text-xs text-gray-800 focus:border-primary-900 outline-none"
+                                        title="Sıralamanızın yüzde kaç üstü (daha yüksek puanlı bölümler)">
+                                </div>
+                                <span class="text-gray-400 font-bold">/</span>
+                                <div class="relative w-1/2">
+                                    <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-[11px] font-extrabold text-emerald-600 pointer-events-none">+%</span>
+                                    <input id="filter-custom-margin-plus" type="number" min="0" max="500" value="40" placeholder="Alt %"
+                                        class="w-full h-9 pl-8 pr-2 rounded-xl border border-blue-300 bg-white text-center font-extrabold text-xs text-gray-800 focus:border-primary-900 outline-none"
+                                        title="Sıralamanızın yüzde kaç altı (daha güvenli bölümler)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-4">
+                            <label class="block text-[11px] font-bold text-gray-700 mb-1">Özel Sıralama Aralığı (Min - Max)</label>
+                            <div class="flex items-center gap-1.5">
+                                <input id="filter-min-rank" type="number" min="1" placeholder="Min"
+                                    class="w-1/2 h-10 px-2 rounded-xl border border-blue-200 bg-white text-center font-bold text-xs text-gray-800 outline-none">
+                                <span class="text-gray-400 font-bold">–</span>
+                                <input id="filter-max-rank" type="number" min="1" placeholder="Max"
+                                    class="w-1/2 h-10 px-2 rounded-xl border border-blue-200 bg-white text-center font-bold text-xs text-gray-800 outline-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kelime Arama ve Çoklu Filtreler -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <!-- Arama Kutusu (Otomatik Tamamlama Destekli) -->
+                        <div id="filter-search-wrapper" class="sm:col-span-2 lg:col-span-3 relative">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none"></i>
+                            <input id="filter-search-input" type="text" autocomplete="off"
+                                placeholder="Üniversite, bölüm, şehir veya 9 haneli program kodu ara (örn: Sakarya, İngilizce Öğretmenliği, Boğaziçi)..."
+                                class="w-full h-10 pl-10 pr-9 rounded-xl border border-gray-200 bg-gray-50/70 focus:bg-white text-xs sm:text-sm font-medium text-gray-800 focus:border-primary-900 outline-none transition-all">
+                            <button id="filter-search-clear" type="button" title="Aramayı Temizle"
+                                class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 w-6 h-6 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-200/60 flex items-center justify-center text-xs transition-all">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <!-- Açılır Otomatik Tamamlama Listesi -->
+                            <div id="search-autocomplete-dropdown"
+                                class="hidden absolute left-0 right-0 top-[calc(100%+6px)] z-40 bg-white rounded-2xl border border-gray-200 shadow-xl max-h-72 overflow-y-auto divide-y divide-gray-100">
+                            </div>
+                        </div>
+
+                        <!-- Şehir Filtresi -->
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-500 mb-1">Şehir</label>
+                            <select id="filter-sehir"
+                                class="w-full h-10 px-2.5 rounded-xl border border-gray-200 bg-white text-xs font-semibold text-gray-700 focus:border-primary-900 outline-none">
+                                <option value="Tümü">Tüm Şehirler</option>
+                            </select>
+                        </div>
+
+                        <!-- Bölüm Filtresi -->
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-500 mb-1">Bölüm Seçimi</label>
+                            <select id="filter-bolum"
+                                class="w-full h-10 px-2.5 rounded-xl border border-gray-200 bg-white text-xs font-semibold text-gray-700 focus:border-primary-900 outline-none">
+                                <option value="Tümü">Tüm Bölümler</option>
+                            </select>
+                        </div>
+
+                        <!-- Üniversite Türü -->
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-500 mb-1">Üniversite Türü</label>
+                            <select id="filter-uni-tur"
+                                class="w-full h-10 px-2.5 rounded-xl border border-gray-200 bg-white text-xs font-semibold text-gray-700 focus:border-primary-900 outline-none">
+                                <option value="Tümü">Tümü (Devlet / Vakıf / KKTC)</option>
+                                <option value="Devlet">Devlet Üniversiteleri</option>
+                                <option value="Vakıf">Vakıf Üniversiteleri</option>
+                                <option value="KKTC">KKTC Üniversiteleri</option>
+                                <option value="Yurt Dışı">Yurt Dışı Üniversiteleri</option>
+                            </select>
+                        </div>
+
+                        <!-- Burs / Ücret Durumu -->
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-500 mb-1">Burs / Ücret Durumu</label>
+                            <select id="filter-burs"
+                                class="w-full h-10 px-2.5 rounded-xl border border-gray-200 bg-white text-xs font-semibold text-gray-700 focus:border-primary-900 outline-none">
+                                <option value="Tümü">Tüm Burs / Ücret Türleri</option>
+                                <option value="Ücretsiz">Ücretsiz (Devlet)</option>
+                                <option value="Burslu">Tam Burslu</option>
+                                <option value="%50 İndirimli">%50 İndirimli</option>
+                                <option value="%25 İndirimli">%25 İndirimli</option>
+                                <option value="Ücretli">Ücretli</option>
+                            </select>
+                        </div>
+
+                        <!-- Öğretim Türü -->
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-500 mb-1">Öğretim Türü</label>
+                            <select id="filter-ogretim"
+                                class="w-full h-10 px-2.5 rounded-xl border border-gray-200 bg-white text-xs font-semibold text-gray-700 focus:border-primary-900 outline-none">
+                                <option value="Tümü">Tüm Öğretim Türleri</option>
+                                <option value="Örgün">Örgün Öğretim</option>
+                                <option value="Açıköğretim">Açıköğretim</option>
+                                <option value="Uzaktan Öğretim">Uzaktan Öğretim</option>
+                            </select>
+                        </div>
+
+                        <!-- Sıralama Kriteri -->
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-500 mb-1">Listeleme Sırası</label>
+                            <select id="filter-sort"
+                                class="w-full h-10 px-2.5 rounded-xl border border-gray-200 bg-white text-xs font-semibold text-gray-700 focus:border-primary-900 outline-none">
+                                <option value="siralama_artan">Başarı Sırası (İyiden Geriye)</option>
+                                <option value="hedefe_yakin">Sıralamama En Yakın Bölümler</option>
+                                <option value="siralama_azalan">Başarı Sırası (Geriden İyiye)</option>
+                                <option value="uni_az">Üniversite Adı (A-Z)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Alt Seçenekler ve Sıfırlama -->
+                    <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-gray-100 text-xs">
+                        <div class="flex flex-wrap items-center gap-4">
+                            <label class="inline-flex items-center gap-1.5 text-gray-600 cursor-pointer select-none">
+                                <input id="filter-all-ranks" type="checkbox" class="w-4 h-4 rounded text-primary-900">
+                                <span>Sıralama sınırını kaldır (Tüm bölümler)</span>
+                            </label>
+                            <label class="inline-flex items-center gap-1.5 text-gray-600 cursor-pointer select-none">
+                                <input id="filter-show-unfilled" type="checkbox" class="w-4 h-4 rounded text-primary-900">
+                                <span>Kontenjanı dolmayanları da dahil et</span>
+                            </label>
+                        </div>
+                        <button id="btn-reset-filters" type="button"
+                            class="text-xs font-bold text-accent-500 hover:text-accent-600 flex items-center gap-1">
+                            <i class="fa-solid fa-rotate-left"></i> Filtreleri Sıfırla
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sonuç Özet Bandı -->
+                <div id="filter-summary-banner" class="scroll-mt-20"></div>
+
+                <!-- Bölüm Kartları Listesi -->
+                <div id="programs-results-container" class="scroll-mt-20"></div>
+
+                <!-- Sayfalama (Pagination) -->
+                <div id="programs-pagination-container"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Yüzen Tercih Sepeti Butonu (Mobil & Masaüstü Hızlı Erişim) -->
+    <button id="floating-basket-btn" onclick="window.TercihRobotuUI.openPreferenceModal()"
+        class="fixed bottom-5 right-5 z-[8500] bg-primary-900 hover:bg-primary-800 text-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2.5 transition-all hover:scale-105">
+        <i class="fa-solid fa-graduation-cap text-lg text-amber-400"></i>
+        <span class="text-xs sm:text-sm font-extrabold">Tercih Listem</span>
+        <span class="pref-count-badge px-2 py-0.5 rounded-lg bg-white text-primary-900 text-xs font-black">0/24</span>
+    </button>
+
+    <!-- 24 Tercihlik Tercih Sepeti Modalı -->
+    <div id="preference-basket-modal"
+        class="hidden fixed inset-0 z-[9500] bg-slate-900/60 backdrop-blur-sm items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-gray-100">
+            <div class="px-6 py-4 bg-primary-900 text-white flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-list-ol text-xl text-amber-400"></i>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-extrabold">ÖSYM Tercih Listem (Maks. 24 Tercih)</h3>
+                        <p class="text-[11px] text-blue-200">Tarayıcınıza otomatik kaydedilir • Oklarla sıralamayı değiştirebilirsiniz</p>
+                    </div>
+                </div>
+                <button onclick="window.TercihRobotuUI.closePreferenceModal()"
+                    class="w-8 h-8 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div id="preference-modal-items" class="p-4 sm:p-6 overflow-y-auto flex-1"></div>
+
+            <div class="px-6 py-3.5 bg-gray-50 border-t border-gray-200 flex flex-wrap items-center justify-between gap-2">
+                <button onclick="window.TercihRobotuUI.clearBasket()"
+                    class="px-3.5 py-2 rounded-xl text-xs font-bold text-red-600 hover:bg-red-50 transition-colors">
+                    <i class="fa-solid fa-trash mr-1"></i> Listeyi Temizle
+                </button>
+                <div class="flex items-center gap-2">
+                    <button onclick="window.TercihRobotuUI.copyPreferenceListToClipboard()"
+                        class="px-4 py-2 rounded-xl bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 text-xs font-bold transition-all">
+                        <i class="fa-regular fa-copy mr-1"></i> Panoya Kopyala
+                    </button>
+                    <button onclick="window.print()"
+                        class="px-4 py-2 rounded-xl bg-primary-900 text-white hover:bg-primary-800 text-xs font-bold transition-all">
+                        <i class="fa-solid fa-print mr-1"></i> Yazdır / PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-gray-400 py-8 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+            <div class="flex items-center gap-3">
+                <img src="assets/img/png_arsiv/logo.png" alt="Prodil Logo" class="h-8 w-auto bg-white p-1 rounded-lg">
+                <span>© 2025 PRODİL Yabancı Dil Kursu • Sakarya YKS & YDT Hazırlık Merkezi</span>
+            </div>
+            <div class="text-center sm:text-right text-[11px] text-gray-500">
+                Veriler ÖSYM'nin 21.07.2025 Sayısal Bilgiler ve 25.08.2025 Merkezi Yerleştirme (Tablo-3 / Tablo-4) resmi tablolarından derlenmiştir. Bilgilendirme amaçlıdır.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobil Menü Scripti -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('-translate-x-full')) {
+                menu.classList.remove('-translate-x-full');
+            } else {
+                menu.classList.add('-translate-x-full');
+            }
+        }
+    </script>
+
+    <!-- YKS Hesaplama, Filtreleme ve Arayüz Modülleri -->
+    <script src="assets/js/yks/calculator_engine.js"></script>
+    <script src="assets/js/yks/filter_engine.js"></script>
+    <script src="assets/js/yks/tercih_robotu_ui.js"></script>
+</body>
+
+</html>
