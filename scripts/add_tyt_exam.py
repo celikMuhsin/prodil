@@ -144,10 +144,12 @@ def add_exam(csv_path, exam_id, baslik, tarih, yayin_zamani="", kilitli_goster=T
 
     bracket_pos = content.find("[", insert_pos)
     item_json = json.dumps(new_exam, ensure_ascii=False, indent=8)
+    if item_json.endswith("\n}"):
+        item_json = item_json[:-2] + "\n    }"
 
     new_content = (
         content[:bracket_pos+1] + "\n    " +
-        item_json + ",\n" +
+        item_json + ",\n    " +
         content[bracket_pos+1:].lstrip()
     )
 
