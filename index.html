@@ -367,7 +367,7 @@
                     </div>
                     <div class="flex flex-col items-end gap-1.5">
                         <button type="button" onclick="scrollToYorumlar(event)"
-                            class="pointer-events-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 hover:bg-white active:bg-gray-100 text-gray-800 hover:text-primary-900 text-xs sm:text-[13px] font-semibold shadow-md hover:shadow-lg transition-all duration-200 active:scale-95 border border-white/40 cursor-pointer"
+                            class="pointer-events-auto h-7 sm:h-8 inline-flex items-center gap-1.5 px-3 rounded-full bg-white/95 hover:bg-white active:bg-gray-100 text-gray-800 hover:text-primary-900 text-xs sm:text-[13px] leading-none font-semibold shadow-md hover:shadow-lg transition-all duration-200 active:scale-95 border border-white/40 cursor-pointer whitespace-nowrap"
                             title="Google Öğrenci Yorumlarına Git">
                             <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24">
                                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -378,11 +378,17 @@
                             <span>Yorumlar</span>
                         </button>
                         <a href="tercih-robotu.html"
-                            class="pointer-events-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 hover:bg-white active:bg-gray-100 text-gray-800 hover:text-primary-900 text-xs sm:text-[13px] font-semibold shadow-md hover:shadow-lg transition-all duration-200 active:scale-95 border border-white/40 cursor-pointer"
+                            class="pointer-events-auto h-7 sm:h-8 inline-flex items-center gap-1.5 px-3 rounded-full bg-white/95 hover:bg-white active:bg-gray-100 text-gray-800 hover:text-primary-900 text-xs sm:text-[13px] leading-none font-semibold shadow-md hover:shadow-lg transition-all duration-200 active:scale-95 border border-white/40 cursor-pointer whitespace-nowrap"
                             title="YKS & YDT Puan Hesaplama ve Tercih Robotu">
                             <i class="fa-solid fa-graduation-cap text-primary-900 text-xs shrink-0"></i>
                             <span>Tercih Robotu</span>
                         </a>
+                        <button type="button" onclick="openScheduleModal('deneme-takvimi-2026-2027')"
+                            class="pointer-events-auto h-7 sm:h-8 inline-flex items-center gap-1.5 px-3 rounded-full bg-white/95 hover:bg-white active:bg-gray-100 text-gray-800 hover:text-primary-900 text-xs sm:text-[13px] leading-none font-semibold shadow-md hover:shadow-lg transition-all duration-200 active:scale-95 border border-white/40 cursor-pointer whitespace-nowrap"
+                            title="2026-2027 Kurumsal Deneme Takvimi">
+                            <i class="fa-solid fa-calendar-days text-accent-500 text-xs shrink-0"></i>
+                            <span>Deneme Takvimi</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -3222,6 +3228,98 @@
         </div>
     </div>
 
+    <!-- Kurumsal Deneme Takvimi Pop-Up Modal (İnteraktif & Filtrelenebilir Şablon) -->
+    <div id="schedule-modal"
+        class="fixed inset-0 bg-slate-900/65 backdrop-blur-xs z-[99999] flex items-center justify-center p-2.5 sm:p-5 opacity-0 invisible transition-all duration-300 select-none">
+        <div id="schedule-modal-card"
+            class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-4xl max-h-[92vh] flex flex-col overflow-hidden border border-gray-100 transform scale-95 transition-transform duration-300">
+            
+            <!-- Üst Başlık (Prodil Lacivert & Kırmızı Vurgu) -->
+            <div class="bg-gradient-to-r from-primary-900 via-primary-800 to-indigo-950 text-white px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between shrink-0 relative overflow-hidden">
+                <div class="flex items-center gap-3 min-w-0 relative z-10">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-accent-500 flex items-center justify-center text-white text-base sm:text-lg shrink-0 shadow-md">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-2">
+                            <span id="schedule-modal-badge" class="px-2 py-0.5 rounded-md bg-white/15 text-amber-300 text-[10px] font-bold uppercase tracking-wider">Sınav Takvimi</span>
+                            <span id="schedule-total-pill" class="text-[11px] text-blue-200 font-semibold hidden sm:inline">• 53 Kurumsal Deneme</span>
+                        </div>
+                        <h3 id="schedule-modal-title" class="text-sm sm:text-lg font-extrabold text-white truncate mt-0.5">Kurumsal Deneme Takvimi</h3>
+                    </div>
+                </div>
+                <button onclick="closeScheduleModal()"
+                    class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white/10 hover:bg-accent-500 text-white flex items-center justify-center transition-all cursor-pointer shrink-0 ml-2 relative z-10"
+                    title="Kapat">
+                    <i class="fa-solid fa-xmark text-sm sm:text-base"></i>
+                </button>
+            </div>
+
+            <!-- Sıradaki Deneme Banner + İstatistik & Filtre Barı -->
+            <div class="bg-gray-50 border-b border-gray-200 px-3 sm:px-6 py-3 space-y-2.5 shrink-0">
+                <!-- Sıradaki Deneme Vurgusu -->
+                <div id="next-exam-highlight" class="bg-gradient-to-r from-blue-50 via-indigo-50/70 to-amber-50/60 border border-blue-200/80 rounded-2xl p-2.5 sm:p-3 flex flex-wrap items-center justify-between gap-2 shadow-2xs"></div>
+
+                <!-- Arama ve Alan Filtre Butonları -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2">
+                    <!-- Alan Sekmeleri -->
+                    <div class="grid grid-cols-4 sm:flex items-center gap-1 bg-gray-200/70 p-1 rounded-xl border border-gray-200/80">
+                        <button type="button" onclick="setScheduleFilter('ALL')" id="sch-filter-ALL"
+                            class="px-1.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-extrabold transition-all bg-primary-900 text-white shadow-2xs cursor-pointer whitespace-nowrap flex items-center justify-center gap-1">
+                            <span>Tümü</span>
+                            <span id="sch-count-ALL" class="px-1 sm:px-1.5 py-0.2 rounded bg-white/20 text-[10px]">0</span>
+                        </button>
+                        <button type="button" onclick="setScheduleFilter('TYT')" id="sch-filter-TYT"
+                            class="px-1.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all text-gray-700 hover:bg-white/80 cursor-pointer whitespace-nowrap flex items-center justify-center gap-1">
+                            <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-600 shrink-0"></span>
+                            <span>TYT</span>
+                            <span id="sch-count-TYT" class="px-1 sm:px-1.5 py-0.2 rounded bg-gray-200 text-gray-700 text-[10px]">0</span>
+                        </button>
+                        <button type="button" onclick="setScheduleFilter('AYT')" id="sch-filter-AYT"
+                            class="px-1.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all text-gray-700 hover:bg-white/80 cursor-pointer whitespace-nowrap flex items-center justify-center gap-1">
+                            <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-600 shrink-0"></span>
+                            <span>AYT</span>
+                            <span id="sch-count-AYT" class="px-1 sm:px-1.5 py-0.2 rounded bg-gray-200 text-gray-700 text-[10px]">0</span>
+                        </button>
+                        <button type="button" onclick="setScheduleFilter('MSÜ')" id="sch-filter-MSÜ"
+                            class="px-1.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all text-gray-700 hover:bg-white/80 cursor-pointer whitespace-nowrap flex items-center justify-center gap-1">
+                            <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-amber-500 shrink-0"></span>
+                            <span>MSÜ</span>
+                            <span id="sch-count-MSÜ" class="px-1 sm:px-1.5 py-0.2 rounded bg-gray-200 text-gray-700 text-[10px]">0</span>
+                        </button>
+                    </div>
+
+                    <!-- Yayın / Tarih Arama Kutusu -->
+                    <div class="relative flex-1 sm:max-w-xs">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                        <input id="schedule-search-input" type="text" placeholder="Yayın adı veya ay ara (Örn: Orijinal, Mayıs)..."
+                            oninput="onScheduleSearch(this.value)"
+                            class="w-full pl-8 pr-7 py-1.5 bg-white border border-gray-200 rounded-xl text-xs font-semibold text-gray-800 placeholder-gray-400 focus:outline-none focus:border-primary-900 focus:ring-2 focus:ring-primary-900/10 transition-all">
+                        <button id="schedule-search-clear" type="button" onclick="clearScheduleSearch()"
+                            class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs cursor-pointer">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Takvim Gövdesi (Aylara Göre Gruplanmış Akış) -->
+            <div id="schedule-modal-body" class="flex-1 overflow-y-auto p-3 sm:p-6 space-y-5 bg-slate-50/60"></div>
+
+            <!-- Alt Bilgi Barı -->
+            <div class="bg-white border-t border-gray-200 px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-2 text-xs text-gray-500 shrink-0">
+                <div class="flex items-center gap-2 text-[11px] text-gray-600 font-medium">
+                    <i class="fa-solid fa-circle-info text-primary-900"></i>
+                    <span>Öğrencilerimizin sınav saatinden en az <b>15 dakika önce</b> kurumda hazır bulunmaları rica olunur.</span>
+                </div>
+                <button onclick="closeScheduleModal()"
+                    class="ml-auto bg-primary-900 hover:bg-primary-800 text-white text-xs font-bold px-4 py-1.5 rounded-xl transition-colors cursor-pointer shadow-2xs">
+                    Tamam
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Cevap Anahtarı Pop-Up Modal (Tüm Ekranı Kapsayan Şık Pencere) -->
     <div id="answer-key-modal" 
         class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-[99999] flex items-center justify-center p-2.5 sm:p-5 opacity-0 invisible transition-all duration-300 select-none">
@@ -3667,26 +3765,35 @@ function formatDersName(ders) {
             let html = '';
             sortedList.forEach((item, idx) => {
                 const isExam = (item.tur === 'sinav');
+                const isSchedule = (item.tur === 'takvim');
                 const locked = isItemLocked(item);
                 const clickHandler = isExam
                     ? `openAnswerKeyModal('${item.id}')`
-                    : `openAnnouncementDetailModal('${item.id || idx}')`;
+                    : isSchedule
+                        ? `openScheduleModal('${item.id || idx}')`
+                        : `openAnnouncementDetailModal('${item.id || idx}')`;
 
                 const cardStyle = isExam
                     ? 'bg-blue-50/50 hover:bg-blue-100/60 border-blue-100'
-                    : 'hover:bg-amber-50/50 border-transparent hover:border-amber-100';
+                    : isSchedule
+                        ? 'bg-indigo-50/50 hover:bg-indigo-100/60 border-indigo-100'
+                        : 'hover:bg-amber-50/50 border-transparent hover:border-amber-100';
 
                 const badgeStyle = locked
                     ? 'bg-amber-500 text-white'
                     : isExam
                         ? 'bg-primary-900 text-white'
-                        : 'bg-amber-100 text-amber-800';
+                        : isSchedule
+                            ? 'bg-accent-500 text-white'
+                            : 'bg-amber-100 text-amber-800';
 
                 const badgeIcon = locked
                     ? 'fa-clock'
                     : isExam
                         ? (item.sinavTuru === 'tyt' ? 'fa-graduation-cap' : 'fa-file-circle-check')
-                        : 'fa-bullhorn';
+                        : isSchedule
+                            ? 'fa-calendar-days'
+                            : 'fa-bullhorn';
 
                 let descHtml = '';
                 if (locked) {
@@ -3719,10 +3826,10 @@ function formatDersName(ders) {
                     </div>
                     <div class="flex items-center justify-between gap-2 mt-1">
                         <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-bold ${badgeStyle}">
-                            <i class="fa-solid ${badgeIcon} text-[9px]"></i> ${locked ? 'Yakında Açılacak' : (item.kategori || (isExam ? (item.sinavTuru === 'tyt' ? 'TYT Deneme' : 'Cevap Anahtarı') : 'Duyuru'))}
+                            <i class="fa-solid ${badgeIcon} text-[9px]"></i> ${locked ? 'Yakında Açılacak' : (item.kategori || (isExam ? (item.sinavTuru === 'tyt' ? 'TYT Deneme' : 'Cevap Anahtarı') : (isSchedule ? 'Sınav Takvimi' : 'Duyuru')))}
                         </span>
                         <span class="text-[11px] text-accent-500 font-bold group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
-                            ${locked ? 'Saatini Gör' : (isExam ? 'Cevapları Gör' : 'Detay')} <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                            ${locked ? 'Saatini Gör' : (isExam ? 'Cevapları Gör' : (isSchedule ? 'Takvimi İncele' : 'Detay'))} <i class="fa-solid fa-arrow-right text-[9px]"></i>
                         </span>
                     </div>
                     ${descHtml}
@@ -3815,6 +3922,393 @@ function formatDersName(ders) {
         document.getElementById('announcement-detail-modal')?.addEventListener('click', (e) => {
             if (e.target.id === 'announcement-detail-modal') closeAnnouncementDetailModal();
         });
+
+        // Kurumsal Deneme Takvimi Modalı Mantığı
+        let currentScheduleObj = null;
+        let currentScheduleFilter = 'ALL';
+        let currentScheduleSearch = '';
+
+        function openScheduleModal(idOrIdx) {
+            if (typeof PRODIL_DUYURULAR === 'undefined') return;
+            const sorted = getSortedAnnouncements();
+            let item = sorted.find(x => String(x.id) === String(idOrIdx))
+                || PRODIL_DUYURULAR.find(x => x.tur === 'takvim' && String(x.id) === String(idOrIdx))
+                || PRODIL_DUYURULAR.find(x => x.tur === 'takvim');
+            if (!item || !Array.isArray(item.takvimVerisi)) return;
+
+            currentScheduleObj = item;
+            currentScheduleFilter = 'ALL';
+            currentScheduleSearch = '';
+
+            const searchInput = document.getElementById('schedule-search-input');
+            const clearBtn = document.getElementById('schedule-search-clear');
+            if (searchInput) searchInput.value = '';
+            if (clearBtn) clearBtn.classList.add('hidden');
+
+            document.getElementById('schedule-modal-badge').innerText = item.kategori || 'Sınav Takvimi';
+            document.getElementById('schedule-modal-title').innerText = item.baslik || 'Kurumsal Deneme Takvimi';
+            const totalPill = document.getElementById('schedule-total-pill');
+            if (totalPill) totalPill.innerText = `• ${item.takvimVerisi.length} Kurumsal Deneme`;
+
+            updateScheduleFilterButtons();
+            renderScheduleModalContent();
+
+            const modal = document.getElementById('schedule-modal');
+            const card = document.getElementById('schedule-modal-card');
+            modal.classList.remove('invisible', 'opacity-0');
+            modal.classList.add('opacity-100');
+            card.classList.remove('scale-95');
+            card.classList.add('scale-100');
+
+            // Açıldığında otomatik olarak sıradaki sınava yumuşak kaydır (başa hizala)
+            setTimeout(() => {
+                scrollToNextExamCard(true);
+            }, 180);
+        }
+
+        function scrollToNextExamCard(smooth = true) {
+            const bodyEl = document.getElementById('schedule-modal-body');
+            const nextCardEl = document.getElementById('next-upcoming-exam-card');
+            if (!bodyEl || !nextCardEl) return;
+
+            const bodyRect = bodyEl.getBoundingClientRect();
+            const cardRect = nextCardEl.getBoundingClientRect();
+            const targetTop = bodyEl.scrollTop + (cardRect.top - bodyRect.top) - 14;
+
+            bodyEl.scrollTo({
+                top: Math.max(0, targetTop),
+                behavior: smooth ? 'smooth' : 'auto'
+            });
+        }
+
+        function openAnswerKeyFromSchedule(examId) {
+            closeScheduleModal();
+            setTimeout(() => {
+                openAnswerKeyModal(examId);
+            }, 180);
+        }
+
+        // Takvim satırı için duyurular.js içinde eşleşen bir sınav/cevap anahtarı var mı kontrol eder
+        function findMatchingAnswerKeyExam(scheduleRow) {
+            if (typeof PRODIL_DUYURULAR === 'undefined' || !scheduleRow) return null;
+            const exams = PRODIL_DUYURULAR.filter(x => x.tur === 'sinav');
+
+            // 1) Doğrudan cevapAnahtariId tanımlanmışsa onu kullan
+            if (scheduleRow.cevapAnahtariId) {
+                const byId = exams.find(x => String(x.id) === String(scheduleRow.cevapAnahtariId));
+                if (byId) return byId;
+            }
+
+            // 2) Aynı tarihte ve aynı sınav türünde (TYT/AYT) sınav varsa otomatik eşleştir
+            const rowDate = (scheduleRow.tarih || '').trim();
+            const rowAlan = (scheduleRow.alan || '').toLowerCase();
+            if (rowDate) {
+                const byDate = exams.find(x => (x.tarih || '').trim() === rowDate && (!x.sinavTuru || x.sinavTuru.toLowerCase() === rowAlan));
+                if (byDate) return byDate;
+            }
+
+            return null;
+        }
+
+        function closeScheduleModal() {
+            const modal = document.getElementById('schedule-modal');
+            const card = document.getElementById('schedule-modal-card');
+            if (!modal) return;
+            modal.classList.add('opacity-0');
+            modal.classList.remove('opacity-100');
+            card.classList.add('scale-95');
+            card.classList.remove('scale-100');
+            setTimeout(() => modal.classList.add('invisible'), 300);
+        }
+
+        document.getElementById('schedule-modal')?.addEventListener('click', (e) => {
+            if (e.target.id === 'schedule-modal') closeScheduleModal();
+        });
+
+        function setScheduleFilter(filterKey) {
+            currentScheduleFilter = filterKey;
+            updateScheduleFilterButtons();
+            renderScheduleModalContent();
+            setTimeout(() => scrollToNextExamCard(true), 80);
+        }
+
+        function onScheduleSearch(val) {
+            currentScheduleSearch = (val || '').trim();
+            const clearBtn = document.getElementById('schedule-search-clear');
+            if (clearBtn) {
+                clearBtn.classList.toggle('hidden', currentScheduleSearch.length === 0);
+            }
+            renderScheduleModalContent();
+        }
+
+        function clearScheduleSearch() {
+            currentScheduleSearch = '';
+            const searchInput = document.getElementById('schedule-search-input');
+            const clearBtn = document.getElementById('schedule-search-clear');
+            if (searchInput) {
+                searchInput.value = '';
+                searchInput.focus();
+            }
+            if (clearBtn) clearBtn.classList.add('hidden');
+            renderScheduleModalContent();
+            setTimeout(() => scrollToNextExamCard(true), 80);
+        }
+
+        function updateScheduleFilterButtons() {
+            if (!currentScheduleObj || !Array.isArray(currentScheduleObj.takvimVerisi)) return;
+            const list = currentScheduleObj.takvimVerisi;
+
+            const counts = {
+                ALL: list.length,
+                TYT: list.filter(x => x.alan === 'TYT').length,
+                AYT: list.filter(x => x.alan === 'AYT').length,
+                'MSÜ': list.filter(x => x.alan === 'MSÜ').length
+            };
+
+            ['ALL', 'TYT', 'AYT', 'MSÜ'].forEach(key => {
+                const countEl = document.getElementById(`sch-count-${key}`);
+                if (countEl) countEl.innerText = counts[key] || 0;
+
+                const btn = document.getElementById(`sch-filter-${key}`);
+                if (!btn) return;
+                const isActive = (currentScheduleFilter === key);
+                if (isActive) {
+                    btn.className = "px-1.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-extrabold transition-all bg-primary-900 text-white shadow-2xs cursor-pointer whitespace-nowrap flex items-center justify-center gap-1";
+                    if (countEl) countEl.className = "px-1 sm:px-1.5 py-0.2 rounded bg-white/20 text-white text-[10px]";
+                } else {
+                    btn.className = "px-1.5 sm:px-3 py-1.5 rounded-lg text-[11px] sm:text-xs font-bold transition-all text-gray-700 hover:bg-white/80 cursor-pointer whitespace-nowrap flex items-center justify-center gap-1";
+                    if (countEl) countEl.className = "px-1 sm:px-1.5 py-0.2 rounded bg-gray-200 text-gray-700 text-[10px]";
+                }
+            });
+        }
+
+        function renderScheduleModalContent() {
+            const bodyEl = document.getElementById('schedule-modal-body');
+            const highlightEl = document.getElementById('next-exam-highlight');
+            if (!bodyEl || !currentScheduleObj) return;
+
+            const monthNamesTr = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+            const monthShortTr = ["OCA", "ŞUB", "MAR", "NİS", "MAY", "HAZ", "TEM", "AĞU", "EYL", "EKİ", "KAS", "ARA"];
+            const dayNamesTr = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
+
+            const now = new Date();
+            const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+
+            const enriched = currentScheduleObj.takvimVerisi.map((row, idx) => {
+                const d = parseCustomDate(row.tarih);
+                // Son seans saatini baz al (Örn: "17:15" veya "10:15")
+                const seansList = Array.isArray(row.seanslar) && row.seanslar.length > 0 ? row.seanslar : ["17:15"];
+                const lastSeansStr = String(seansList[seansList.length - 1]).replace('.', ':');
+                const timeParts = lastSeansStr.split(':');
+                const endHour = parseInt(timeParts[0], 10) || 17;
+                const endMin = parseInt(timeParts[1], 10) || 15;
+
+                const examFinishTime = d ? new Date(d.getFullYear(), d.getMonth(), d.getDate(), endHour, endMin, 0) : null;
+                const isPast = examFinishTime ? (now > examFinishTime) : false;
+                const isToday = d ? (d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth() && d.getDate() === now.getDate()) : false;
+                const dayNum = d ? String(d.getDate()).padStart(2, '0') : '--';
+                const monthIdx = d ? d.getMonth() : 0;
+                const yearNum = d ? d.getFullYear() : 2026;
+                const dayName = d ? dayNamesTr[d.getDay()] : '';
+                const monthTitle = d ? `${monthNamesTr[monthIdx]} ${yearNum}` : 'Diğer';
+                const monthKey = d ? `${yearNum}-${String(monthIdx + 1).padStart(2, '0')}` : '0000-00';
+                const matchedExam = findMatchingAnswerKeyExam(row);
+
+                return {
+                    ...row,
+                    idx,
+                    dateObj: d,
+                    examFinishTime,
+                    isPast,
+                    isToday,
+                    dayNum,
+                    monthShort: monthShortTr[monthIdx] || '',
+                    monthName: monthNamesTr[monthIdx] || '',
+                    yearNum,
+                    dayName,
+                    monthTitle,
+                    monthKey,
+                    matchedExam
+                };
+            });
+
+            // Sıradaki ilk sınavı bul (saati henüz geçmemiş ilk sınav)
+            const upcomingList = enriched.filter(x => !x.isPast);
+            const nextExam = upcomingList.length > 0 ? upcomingList[0] : null;
+
+            if (highlightEl) {
+                if (nextExam) {
+                    const diffDays = nextExam.dateObj ? Math.ceil((nextExam.dateObj.getTime() - todayStart.getTime()) / (1000 * 60 * 60 * 24)) : 0;
+                    const remainBadge = nextExam.isToday
+                        ? '<span class="px-2.5 py-1 rounded-lg bg-red-600 text-white text-[11px] font-black animate-pulse">BUGÜN UYGULANIYOR</span>'
+                        : `<span class="px-2.5 py-1 rounded-lg bg-primary-900 text-amber-300 text-[11px] font-extrabold"><i class="fa-regular fa-clock mr-1"></i>${diffDays} Gün Kaldı</span>`;
+
+                    const alanBadge = nextExam.alan === 'TYT'
+                        ? 'bg-blue-600 text-white'
+                        : nextExam.alan === 'AYT'
+                            ? 'bg-purple-600 text-white'
+                            : 'bg-amber-500 text-white';
+
+                    highlightEl.innerHTML = `
+                        <div onclick="scrollToNextExamCard(true)" class="flex items-center gap-2.5 min-w-0 cursor-pointer group" title="Sıradaki sınava git">
+                            <span class="px-2 py-1 rounded-lg bg-accent-500 text-white text-[10px] font-black uppercase tracking-wider shrink-0 flex items-center gap-1">
+                                <i class="fa-solid fa-bolt"></i> Sıradaki Deneme
+                            </span>
+                            <span class="px-2 py-0.5 rounded-md text-[10px] font-black ${alanBadge} shrink-0">${nextExam.alan}</span>
+                            <span class="text-xs sm:text-sm font-extrabold text-gray-900 group-hover:text-primary-900 truncate">${nextExam.yayin}</span>
+                        </div>
+                        <div class="flex items-center gap-2 ml-auto shrink-0">
+                            <span class="text-[11px] font-bold text-gray-600">
+                                <i class="fa-regular fa-calendar text-primary-900 mr-1"></i>${nextExam.dayNum} ${nextExam.monthName} ${nextExam.dayName} • ${(nextExam.seanslar || []).join(' / ')}
+                            </span>
+                            ${remainBadge}
+                        </div>
+                    `;
+                    highlightEl.classList.remove('hidden');
+                } else {
+                    highlightEl.classList.add('hidden');
+                }
+            }
+
+            // Filtreleme
+            const q = currentScheduleSearch.toLocaleLowerCase('tr-TR');
+            const filtered = enriched.filter(item => {
+                if (currentScheduleFilter !== 'ALL' && item.alan !== currentScheduleFilter) return false;
+                if (q) {
+                    const haystack = `${item.yayin} ${item.tarih} ${item.monthTitle} ${item.dayName} ${item.alan}`.toLocaleLowerCase('tr-TR');
+                    if (!haystack.includes(q)) return false;
+                }
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                bodyEl.innerHTML = `
+                    <div class="bg-white rounded-2xl p-8 text-center border border-gray-200/80 my-4 space-y-2">
+                        <div class="w-12 h-12 rounded-2xl bg-gray-100 text-gray-400 flex items-center justify-center mx-auto text-xl">
+                            <i class="fa-regular fa-calendar-xmark"></i>
+                        </div>
+                        <h4 class="text-sm font-extrabold text-gray-800">Aramanızla Eşleşen Deneme Bulunamadı</h4>
+                        <p class="text-xs text-gray-500">Farklı bir yayın adı arayabilir veya filtreyi "Tümü" olarak değiştirebilirsiniz.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Aylara göre grupla
+            const groupsMap = new Map();
+            filtered.forEach(item => {
+                if (!groupsMap.has(item.monthKey)) {
+                    groupsMap.set(item.monthKey, {
+                        title: item.monthTitle,
+                        items: []
+                    });
+                }
+                groupsMap.get(item.monthKey).items.push(item);
+            });
+
+            let html = '';
+            groupsMap.forEach((group) => {
+                const doneCount = group.items.filter(x => x.isPast).length;
+                const allGroupDone = (doneCount === group.items.length);
+
+                html += `
+                <div class="space-y-2.5">
+                    <div class="flex items-center justify-between px-1">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-5 rounded-full ${allGroupDone ? 'bg-emerald-500' : 'bg-primary-900'}"></span>
+                            <h4 class="text-xs sm:text-sm font-black ${allGroupDone ? 'text-gray-500' : 'text-gray-900'} tracking-tight uppercase">${group.title}</h4>
+                            ${doneCount > 0 ? `<span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full"><i class="fa-solid fa-check mr-1"></i>${doneCount}/${group.items.length} Yapıldı</span>` : ''}
+                        </div>
+                        <span class="text-[11px] font-bold text-gray-500 bg-gray-200/70 px-2.5 py-0.5 rounded-full">${group.items.length} Sınav</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                `;
+
+                group.items.forEach(item => {
+                    const isNext = nextExam && (item.idx === nextExam.idx);
+                    const alanStyle = item.alan === 'TYT'
+                        ? { badge: 'bg-blue-100 text-blue-800 border-blue-200', leftBox: 'bg-blue-600 text-white', border: 'border-blue-200/90' }
+                        : item.alan === 'AYT'
+                            ? { badge: 'bg-purple-100 text-purple-800 border-purple-200', leftBox: 'bg-purple-600 text-white', border: 'border-purple-200/90' }
+                            : { badge: 'bg-amber-100 text-amber-900 border-amber-300', leftBox: 'bg-amber-500 text-white', border: 'border-amber-200/90' };
+
+                    const cardExtra = isNext
+                        ? 'ring-2 ring-accent-500 bg-amber-50/40 border-accent-500/50 shadow-md'
+                        : item.isPast
+                            ? 'opacity-70 bg-gray-50/90 border-gray-200/90'
+                            : 'bg-white hover:border-primary-900/40 hover:shadow-md border-gray-200/80';
+
+                    const seansPills = (item.seanslar || []).map((s, sIdx) => {
+                        const icon = sIdx === 0 ? 'fa-sun text-amber-500' : 'fa-moon text-indigo-500';
+                        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-gray-100 border border-gray-200 text-gray-700 font-bold text-[10px]">
+                            <i class="fa-solid ${icon} text-[9px]"></i> ${s}
+                        </span>`;
+                    }).join('');
+
+                    const statusTag = isNext
+                        ? `<span class="px-2 py-0.5 rounded-md bg-accent-500 text-white text-[10px] font-black uppercase flex items-center gap-1 shadow-2xs"><i class="fa-solid fa-bolt text-[9px]"></i> Sıradaki</span>`
+                        : item.isPast
+                            ? `<span class="px-2 py-0.5 rounded-md bg-emerald-100 border border-emerald-200 text-emerald-800 text-[10px] font-extrabold flex items-center gap-1"><i class="fa-solid fa-circle-check text-emerald-600 text-[10px]"></i> Yapıldı</span>`
+                            : '';
+
+                    const answerKeyBtn = item.matchedExam
+                        ? `<button type="button" onclick="openAnswerKeyFromSchedule('${item.matchedExam.id}')"
+                            class="ml-auto inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary-900 hover:bg-accent-500 text-white font-bold text-[10px] transition-colors cursor-pointer shadow-2xs shrink-0">
+                            <i class="fa-solid fa-key text-[9px] text-amber-300"></i>
+                            <span>Cevap Anahtarı</span>
+                        </button>`
+                        : '';
+
+                    const leftBoxClass = item.isPast
+                        ? 'bg-slate-400 text-white'
+                        : alanStyle.leftBox;
+
+                    const titleClass = item.isPast
+                        ? 'line-through text-gray-500'
+                        : 'text-gray-900';
+
+                    html += `
+                        <div ${isNext ? 'id="next-upcoming-exam-card"' : ''} class="rounded-2xl p-3 border transition-all flex items-center gap-3 ${cardExtra}">
+                            <!-- Sol Tarih Yaprağı -->
+                            <div class="w-12 h-14 sm:w-14 sm:h-16 rounded-xl ${leftBoxClass} flex flex-col items-center justify-center shrink-0 shadow-xs relative">
+                                <span class="text-[9px] font-extrabold uppercase tracking-wider opacity-90 leading-none">${item.monthShort}</span>
+                                <span class="text-lg sm:text-xl font-black leading-tight mt-0.5">${item.dayNum}</span>
+                                <span class="text-[8px] font-semibold opacity-85 leading-none">${item.dayName.slice(0, 3)}</span>
+                            </div>
+
+                            <!-- Sağ Sınav Detayları -->
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between gap-1.5 mb-1">
+                                    <div class="flex items-center gap-1.5 flex-wrap">
+                                        <span class="px-2 py-0.5 rounded-md text-[10px] font-black border ${alanStyle.badge}">${item.alan}</span>
+                                        <span class="text-[11px] font-semibold text-gray-500">${item.dayName}</span>
+                                    </div>
+                                    ${statusTag}
+                                </div>
+
+                                <h5 class="text-xs sm:text-[13px] font-extrabold ${titleClass} truncate" title="${item.yayin}">
+                                    ${item.yayin}
+                                </h5>
+
+                                <div class="flex items-center justify-between gap-2 mt-2 flex-wrap">
+                                    <div class="flex items-center gap-1.5 flex-wrap">
+                                        <span class="text-[10px] font-bold text-gray-400 mr-0.5">Seanslar:</span>
+                                        ${seansPills}
+                                    </div>
+                                    ${answerKeyBtn}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                    </div>
+                </div>`;
+            });
+
+            bodyEl.innerHTML = html;
+        }
 
         // Cevap Anahtarı Modal Açma / Kapatma
         function openAnswerKeyModal(examId) {
@@ -3944,6 +4438,11 @@ function formatDersName(ders) {
                 const karneModal = document.getElementById('karne-modal');
                 if (karneModal && !karneModal.classList.contains('invisible')) {
                     closeKarneModal();
+                    return;
+                }
+                const scheduleModal = document.getElementById('schedule-modal');
+                if (scheduleModal && !scheduleModal.classList.contains('invisible')) {
+                    closeScheduleModal();
                     return;
                 }
                 closeAnswerKeyModal();
@@ -5782,12 +6281,17 @@ function formatDersName(ders) {
 
             const params = new URLSearchParams(window.location.search);
             const examParam = params.get('deneme') || params.get('sinav') || params.get('cevap');
+            const takvimParam = params.get('takvim');
             const duyuruParam = params.get('duyuru');
             const hash = window.location.hash;
 
             if (examParam || hash === '#cevap-anahtari' || hash === '#sinav') {
                 setTimeout(() => {
                     openAnswerKeyModal(examParam || '1');
+                }, 350);
+            } else if (takvimParam || hash === '#deneme-takvimi' || hash === '#takvim') {
+                setTimeout(() => {
+                    openScheduleModal(takvimParam || 'deneme-takvimi-2026-2027');
                 }, 350);
             } else if (duyuruParam) {
                 setTimeout(() => {
